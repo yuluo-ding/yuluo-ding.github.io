@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SSL证书的配置过程 | yuluo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Apache 2配置SSL证书本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSL证书的配置过程">
+<meta property="og:url" content="http://www.yuluoding.com/2016/10/27/SSL证书的配置过程/index.html">
+<meta property="og:site_name" content="yuluo">
+<meta property="og:description" content="Apache 2配置SSL证书本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSL证书的配置过程">
+<meta name="twitter:description" content="Apache 2配置SSL证书本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。">
+  
+    <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
+  
+
+  
+  	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- <link rel="icon" href="/favicon.png"> -->
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+  
+
+<script type="text/javascript">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?09f99e1cd94cce11276e07fa0c1221f6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</script>
+
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yuluo</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The home of yuluoding!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="www.yuluoding.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-SSL证书的配置过程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/27/SSL证书的配置过程/" class="article-date">
+  <time datetime="2016-10-27T01:44:42.000Z" itemprop="datePublished">2016-10-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSL证书的配置过程
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Apache_2配置SSL证书">Apache 2配置SSL证书</h3><p>本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。</p>
+<a id="more"></a>
+<h4 id="确保Apache_SSL模块的开启">确保Apache SSL模块的开启</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod ssl</span><br></pre></td></tr></table></figure>
+<h4 id="配置SSL证书">配置SSL证书</h4><p>完整的SSL证书分为四个部分：</p>
+<ul>
+<li>CA 根证书 (root CA)</li>
+<li>中级证书 (Intermediate Certificate)</li>
+<li>域名证书</li>
+<li>证书密钥 (仅本人持有)</li>
+</ul>
+<p>以 COMODO PositiveSSL 证书为例，将收到四份文件：</p>
+<ul>
+<li>根证书 - <code>AddTrustExternalCARoot.crt</code></li>
+<li>中级证书 - <code>COMODORSAAddTrustCA.crt</code></li>
+<li>中级证书 - <code>COMODORSADomainValidationSecureServerCA.crt</code></li>
+<li>您的域名证书 - <code>example_com.crt</code></li>
+</ul>
+<p>要依照 <strong>中间证书 -&gt; 根证书</strong> 的顺序串联为证书链，才能被绝大多数浏览器信任。使用 <code>cat</code> 命令串联证书：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt &#62; ca-bundle.crt</span><br></pre></td></tr></table></figure>
+<p>得到 <code>ca-bundle.crt</code> 后，和证书文件 <code>example_com.crt</code>，密钥文件 <code>example_com.key</code> 一同上传至服务器并保存在安全的位置，例如 <code>/etc/ssl/private</code> 目录下 (没有此目录请创建)。</p>
+<h4 id="修改Apache站点配置">修改Apache站点配置</h4><p>下面是一份针对 Apache 2.4 的 SSL 部分配置</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SSLEngine on</span><br><span class="line">SSLCertificateFile    <span class="regexp">/etc/</span>ssl<span class="regexp">/private/</span>example_com.crt</span><br><span class="line">SSLCertificateKeyFile <span class="regexp">/etc/</span>ssl<span class="regexp">/private/</span>example_com.key</span><br><span class="line">SSLCertificateChainFile <span class="regexp">/etc/</span>ssl<span class="regexp">/private/</span>ca-bundle.crt</span><br></pre></td></tr></table></figure>
+<p>以下为 <virtualhost> 的详细配置</virtualhost></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;VirtualHost *:443&#62;&#10;DocumentRoot /var/www/&#10;SSLEngine on&#10;SSLCertificateFile    /etc/ssl/private/example_com.crt&#10;SSLCertificateKeyFile /etc/ssl/private/example_com.key&#10;SSLCertificateChainFile /etc/ssl/private/ca-bundle.crt&#10;&#60;/VirtualHost&#62;</span><br></pre></td></tr></table></figure>
+<p><strong>请注意如果你的 Apache2 版本大于 2.4.8，您可以将所有证书串联为一个文件作为 SSLCertificateFile 的值，而不必写 SSLCertificateChainFile</strong></p>
+<h4 id="强制定向到HTTPS">强制定向到HTTPS</h4><p>首先，我们需要确认 Apache 开启 <code>mod_rewrite</code> 模块，如果没有开启，请使用 <code>sudo a2enmod rewrite</code> 命令开启。</p>
+<p>其次，你需要在站点配置文件中开启 <code>AllowOverride</code>，这样 <code>.htaccess</code> 文件才会起作用。</p>
+<p>开启并重启 <code>Apache</code> 后，复制一下代码到你目录的 <code>.htaccess</code> 文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine On&#10;RewriteCond %&#123;HTTPS&#125; off&#10;RewriteRule (.*) https://%&#123;HTTP_HOST&#125;%&#123;REQUEST_URI&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="SSL安全配置">SSL安全配置</h4><h5 id="禁用压缩">禁用压缩</h5><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">SSLCompression</span> <span class="built_in">off</span></span><br></pre></td></tr></table></figure>
+<h5 id="禁用_SSLv2_和_SSLv3">禁用 SSLv2 和 SSLv3</h5><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SSLProtocol</span> <span class="literal">All</span> -SSLv2 -SSLv3</span><br></pre></td></tr></table></figure>
+<h5 id="抵御_Poodle_和_SSL_Downgrade_攻击">抵御 Poodle 和 SSL Downgrade 攻击</h5><p>您需要支持 <code>TLS-FALLBACK-SCSV</code> 以自动开启此功能。下列 OpenSSL 版本包含对 <code>TLS-FALLBACK-SCSV</code> 的支持，Lighttpd 会自动启用此特性。</p>
+<ul>
+<li>OpenSSL <strong>1.0.1</strong> 在 <code>1.0.1j</code> 及之后的版本中支持</li>
+<li>OpenSSL <strong>1.0.0</strong> 在 <code>1.0.0o</code> 及之后的版本中支持</li>
+<li>OpenSSL <strong>0.9.8</strong> 在 <code>0.9.8zc</code> 及之后的版本中支持</li>
+</ul>
+<h5 id="加密和交换算法">加密和交换算法</h5><p>一份推荐的配置：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">SSLCipherSuite</span> <span class="constant">EECDH</span>+<span class="constant">AESGCM</span><span class="symbol">:EDH+AESGCM</span><span class="symbol">:AES256+EECDH</span><span class="symbol">:AES256+EDH</span></span><br></pre></td></tr></table></figure>
+<p>如果您需要兼容老式系统和浏览器 (Windows XP, IE6)，请使用下面的：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">SSLCipherSuite</span> <span class="constant">EECDH</span>+<span class="constant">AESGCM</span><span class="symbol">:EDH+AESGCM</span><span class="symbol">:AES256+EECDH</span><span class="symbol">:ECDHE-RSA-AES128-SHA</span><span class="symbol">:DHE-RSA-AES128-GCM-SHA256</span><span class="symbol">:AES256+EDH</span><span class="symbol">:ECDHE-RSA-AES256-GCM-SHA384</span><span class="symbol">:ECDHE-RSA-AES128-GCM-SHA256</span><span class="symbol">:DHE-RSA-AES256-GCM-SHA384</span><span class="symbol">:ECDHE-RSA-AES256-SHA384</span><span class="symbol">:ECDHE-RSA-AES128-SHA256</span><span class="symbol">:ECDHE-RSA-AES256-SHA</span><span class="symbol">:DHE-RSA-AES256-SHA256</span><span class="symbol">:DHE-RSA-AES128-SHA256</span><span class="symbol">:DHE-RSA-AES256-SHA</span><span class="symbol">:DHE-RSA-AES128-SHA</span><span class="symbol">:ECDHE-RSA-DES-CBC3-SHA</span><span class="symbol">:EDH-RSA-DES-CBC3-SHA</span><span class="symbol">:AES256-GCM-SHA384</span><span class="symbol">:AES128-GCM-SHA256</span><span class="symbol">:AES256-SHA256</span><span class="symbol">:AES128-SHA256</span><span class="symbol">:AES256-SHA</span><span class="symbol">:AES128-SHA</span><span class="symbol">:DES-CBC3-SHA</span><span class="symbol">:HIGH</span><span class="symbol">:</span>!<span class="symbol">aNULL:</span>!<span class="symbol">eNULL:</span>!<span class="constant">EXPORT</span><span class="symbol">:</span>!<span class="constant">DES</span><span class="symbol">:</span>!<span class="constant">MD5</span><span class="symbol">:</span>!<span class="constant">PSK</span><span class="symbol">:</span>!<span class="constant">RC4</span></span><br></pre></td></tr></table></figure>
+<h5 id="Forward_Secrecy_和_DHE_参数">Forward Secrecy 和 DHE 参数</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/ssl/certs&#10;openssl dhparam -out dhparam.pem 4096</span><br></pre></td></tr></table></figure>
+<p><strong>建议您使用性能强劲的平台生成此文件</strong>，例如最新版的至强物理机。如果您只有一台小型 VPS，请使用 <code>openssl dhparam -out dhparam.pem 2048</code> 命令生成 2048bit 的参数文件。</p>
+<p>添加到配置文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SSLOpenSSLConfCmd DHParameters &#34;/etc/ssl/certs/dhparam.pem&#34;</span><br></pre></td></tr></table></figure>
+<h5 id="启用_HSTS">启用 HSTS</h5><p>添加到配置文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Optionally load the headers module:&#10;LoadModule headers_module modules/mod_headers.so&#10;&#10;&#60;VirtualHost 67.89.123.45:443&#62;&#10;    Header always set Strict-Transport-Security &#34;max-age=63072000; includeSubdomains; preload&#34;&#10;&#60;/VirtualHost&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="重启_Apache">重启 Apache</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2016/10/27/SSL证书的配置过程/" data-id="ciyzzekwb0020o3jrm2oefcld" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2016/10/27/SSL证书的配置过程/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/10/Git移除-deal等配置文件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git移除.deal等配置文件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/24/Linux虚拟机分辨率设置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux虚拟机分辨率设置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    
+  <div class="ds-thread" data-thread-key="2016/10/27/SSL证书的配置过程/" data-title="SSL证书的配置过程" data-url="http://www.yuluoding.com/2016/10/27/SSL证书的配置过程/"></div>
+  
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xuelu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </section>
+
+
+
+<div class="ds-share" data-thread-key="2016/10/27/SSL证书的配置过程/" data-title="SSL证书的配置过程" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h3 id=&quot;Apache_2配置SSL证书&quot;&gt;Apache 2配置SSL证书&lt;/h3&gt;&lt;p&gt;本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;确保Apache_SSL模块的开启&quot;&gt;确保Apache SSL模块的开启&lt;/h4&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo a2enmod ssl&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;配置SSL证书&quot;&gt;配置SSL证书&lt;/h4&gt;&lt;p&gt;完整的SSL证书分为四个部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CA 根证书 (root CA)&lt;/li&gt;
+&lt;li&gt;中级证书 (Intermediate Certificate)&lt;/li&gt;
+&lt;li&gt;域名证书&lt;/li&gt;
+&lt;li&gt;证书密钥 (仅本人持有)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以 COMODO PositiveSSL 证书为例，将收到四份文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;根证书 - &lt;code&gt;AddTrustExternalCARoot.crt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;中级证书 - &lt;code&gt;COMODORSAAddTrustCA.crt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;中级证书 - &lt;code&gt;COMODORSADomainValidationSecureServerCA.crt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;您的域名证书 - &lt;code&gt;example_com.crt&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;要依照 &lt;strong&gt;中间证书 -&amp;gt; 根证书&lt;/strong&gt; 的顺序串联为证书链，才能被绝大多数浏览器信任。使用 &lt;code&gt;cat&lt;/code&gt; 命令串联证书：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt &amp;#62; ca-bundle.crt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;得到 &lt;code&gt;ca-bundle.crt&lt;/code&gt; 后，和证书文件 &lt;code&gt;example_com.crt&lt;/code&gt;，密钥文件 &lt;code&gt;example_com.key&lt;/code&gt; 一同上传至服务器并保存在安全的位置，例如 &lt;code&gt;/etc/ssl/private&lt;/code&gt; 目录下 (没有此目录请创建)。&lt;/p&gt;
+&lt;h4 id=&quot;修改Apache站点配置&quot;&gt;修改Apache站点配置&lt;/h4&gt;&lt;p&gt;下面是一份针对 Apache 2.4 的 SSL 部分配置&lt;/p&gt;
+&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SSLEngine on&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SSLCertificateFile    &lt;span class=&quot;regexp&quot;&gt;/etc/&lt;/span&gt;ssl&lt;span class=&quot;regexp&quot;&gt;/private/&lt;/span&gt;example_com.crt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SSLCertificateKeyFile &lt;span class=&quot;regexp&quot;&gt;/etc/&lt;/span&gt;ssl&lt;span class=&quot;regexp&quot;&gt;/private/&lt;/span&gt;example_com.key&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SSLCertificateChainFile &lt;span class=&quot;regexp&quot;&gt;/etc/&lt;/span&gt;ssl&lt;span class=&quot;regexp&quot;&gt;/private/&lt;/span&gt;ca-bundle.crt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以下为 &lt;virtualhost&gt; 的详细配置&lt;/virtualhost&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;VirtualHost *:443&amp;#62;&amp;#10;DocumentRoot /var/www/&amp;#10;SSLEngine on&amp;#10;SSLCertificateFile    /etc/ssl/private/example_com.crt&amp;#10;SSLCertificateKeyFile /etc/ssl/private/example_com.key&amp;#10;SSLCertificateChainFile /etc/ssl/private/ca-bundle.crt&amp;#10;&amp;#60;/VirtualHost&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;请注意如果你的 Apache2 版本大于 2.4.8，您可以将所有证书串联为一个文件作为 SSLCertificateFile 的值，而不必写 SSLCertificateChainFile&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;强制定向到HTTPS&quot;&gt;强制定向到HTTPS&lt;/h4&gt;&lt;p&gt;首先，我们需要确认 Apache 开启 &lt;code&gt;mod_rewrite&lt;/code&gt; 模块，如果没有开启，请使用 &lt;code&gt;sudo a2enmod rewrite&lt;/code&gt; 命令开启。&lt;/p&gt;
+&lt;p&gt;其次，你需要在站点配置文件中开启 &lt;code&gt;AllowOverride&lt;/code&gt;，这样 &lt;code&gt;.htaccess&lt;/code&gt; 文件才会起作用。&lt;/p&gt;
+&lt;p&gt;开启并重启 &lt;code&gt;Apache&lt;/code&gt; 后，复制一下代码到你目录的 &lt;code&gt;.htaccess&lt;/code&gt; 文件&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;RewriteEngine On&amp;#10;RewriteCond %&amp;#123;HTTPS&amp;#125; off&amp;#10;RewriteRule (.*) https://%&amp;#123;HTTP_HOST&amp;#125;%&amp;#123;REQUEST_URI&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;SSL安全配置&quot;&gt;SSL安全配置&lt;/h4&gt;&lt;h5 id=&quot;禁用压缩&quot;&gt;禁用压缩&lt;/h5&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;SSLCompression&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;off&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;禁用_SSLv2_和_SSLv3&quot;&gt;禁用 SSLv2 和 SSLv3&lt;/h5&gt;&lt;figure class=&quot;highlight apache&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;SSLProtocol&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;All&lt;/span&gt; -SSLv2 -SSLv3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;抵御_Poodle_和_SSL_Downgrade_攻击&quot;&gt;抵御 Poodle 和 SSL Downgrade 攻击&lt;/h5&gt;&lt;p&gt;您需要支持 &lt;code&gt;TLS-FALLBACK-SCSV&lt;/code&gt; 以自动开启此功能。下列 OpenSSL 版本包含对 &lt;code&gt;TLS-FALLBACK-SCSV&lt;/code&gt; 的支持，Lighttpd 会自动启用此特性。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OpenSSL &lt;strong&gt;1.0.1&lt;/strong&gt; 在 &lt;code&gt;1.0.1j&lt;/code&gt; 及之后的版本中支持&lt;/li&gt;
+&lt;li&gt;OpenSSL &lt;strong&gt;1.0.0&lt;/strong&gt; 在 &lt;code&gt;1.0.0o&lt;/code&gt; 及之后的版本中支持&lt;/li&gt;
+&lt;li&gt;OpenSSL &lt;strong&gt;0.9.8&lt;/strong&gt; 在 &lt;code&gt;0.9.8zc&lt;/code&gt; 及之后的版本中支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;加密和交换算法&quot;&gt;加密和交换算法&lt;/h5&gt;&lt;p&gt;一份推荐的配置：&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;constant&quot;&gt;SSLCipherSuite&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;EECDH&lt;/span&gt;+&lt;span class=&quot;constant&quot;&gt;AESGCM&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:EDH+AESGCM&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES256+EECDH&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES256+EDH&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果您需要兼容老式系统和浏览器 (Windows XP, IE6)，请使用下面的：&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;constant&quot;&gt;SSLCipherSuite&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;EECDH&lt;/span&gt;+&lt;span class=&quot;constant&quot;&gt;AESGCM&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:EDH+AESGCM&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES256+EECDH&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:ECDHE-RSA-AES128-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:DHE-RSA-AES128-GCM-SHA256&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES256+EDH&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:ECDHE-RSA-AES256-GCM-SHA384&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:ECDHE-RSA-AES128-GCM-SHA256&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:DHE-RSA-AES256-GCM-SHA384&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:ECDHE-RSA-AES256-SHA384&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:ECDHE-RSA-AES128-SHA256&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:ECDHE-RSA-AES256-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:DHE-RSA-AES256-SHA256&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:DHE-RSA-AES128-SHA256&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:DHE-RSA-AES256-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:DHE-RSA-AES128-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:ECDHE-RSA-DES-CBC3-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:EDH-RSA-DES-CBC3-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES256-GCM-SHA384&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES128-GCM-SHA256&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES256-SHA256&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES128-SHA256&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES256-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:AES128-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:DES-CBC3-SHA&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:HIGH&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:&lt;/span&gt;!&lt;span class=&quot;symbol&quot;&gt;aNULL:&lt;/span&gt;!&lt;span class=&quot;symbol&quot;&gt;eNULL:&lt;/span&gt;!&lt;span class=&quot;constant&quot;&gt;EXPORT&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:&lt;/span&gt;!&lt;span class=&quot;constant&quot;&gt;DES&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:&lt;/span&gt;!&lt;span class=&quot;constant&quot;&gt;MD5&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:&lt;/span&gt;!&lt;span class=&quot;constant&quot;&gt;PSK&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:&lt;/span&gt;!&lt;span class=&quot;constant&quot;&gt;RC4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;Forward_Secrecy_和_DHE_参数&quot;&gt;Forward Secrecy 和 DHE 参数&lt;/h5&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd /etc/ssl/certs&amp;#10;openssl dhparam -out dhparam.pem 4096&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;建议您使用性能强劲的平台生成此文件&lt;/strong&gt;，例如最新版的至强物理机。如果您只有一台小型 VPS，请使用 &lt;code&gt;openssl dhparam -out dhparam.pem 2048&lt;/code&gt; 命令生成 2048bit 的参数文件。&lt;/p&gt;
+&lt;p&gt;添加到配置文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SSLOpenSSLConfCmd DHParameters &amp;#34;/etc/ssl/certs/dhparam.pem&amp;#34;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;启用_HSTS&quot;&gt;启用 HSTS&lt;/h5&gt;&lt;p&gt;添加到配置文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Optionally load the headers module:&amp;#10;LoadModule headers_module modules/mod_headers.so&amp;#10;&amp;#10;&amp;#60;VirtualHost 67.89.123.45:443&amp;#62;&amp;#10;    Header always set Strict-Transport-Security &amp;#34;max-age=63072000; includeSubdomains; preload&amp;#34;&amp;#10;&amp;#60;/VirtualHost&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;重启_Apache&quot;&gt;重启 Apache&lt;/h2&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo service apache2 restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+" data-url="http://www.yuluoding.com/2016/10/27/SSL证书的配置过程/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget category">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">6</span></li></ul>
+      	
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/20/Xshell配色方案/">Xshell配色方案</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Python两个字典的合并/">Python两个字典的合并</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/12/Pyhton的文件操作/">Pyhton的文件操作</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/09/Linux提示Give-root-password-for-maintenance/">Linux提示Give root password for maintenance</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/30/Python创建目录/">Python创建目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://xiguabaobao.com" target="_blank">auther</a>
+          </li>
+        
+          <li>
+            <a href="" target="_blank">sina</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Luo Yu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="totop"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xuelu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>window._bd_share_config={"common":{},"share":{"bdCustomStyle":"/css/bdshare.css"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+</div>
+</body>
+</html>
