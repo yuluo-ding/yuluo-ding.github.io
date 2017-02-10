@@ -92,261 +92,6 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
-    <article id="post-统计一个文件中某个单词的出现次数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/30/统计一个文件中某个单词的出现次数/" class="article-date">
-  <time datetime="2016-11-30T08:44:17.000Z" itemprop="datePublished">2016-11-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/30/统计一个文件中某个单词的出现次数/">统计一个文件中某个单词的出现次数</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先有一个最简单的方法，就是用正则匹配</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">tmp = open(<span class="string">"123.txt"</span>, <span class="string">"r"</span>).read()</span><br><span class="line"><span class="keyword">print</span> len(re.findall(<span class="string">"hello"</span>, tmp))</span><br></pre></td></tr></table></figure>
-<p>还可以利用Counter来实现更多的功能</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/30/统计一个文件中某个单词的出现次数/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2016/11/30/统计一个文件中某个单词的出现次数/" data-id="ciz01cijv0007lrjr7k350d3w" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2016/11/30/统计一个文件中某个单词的出现次数/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2016/11/30/统计一个文件中某个单词的出现次数/" data-title="统计一个文件中某个单词的出现次数" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;首先有一个最简单的方法，就是用正则匹配&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; re&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tmp = open(&lt;span class=&quot;string&quot;&gt;&quot;123.txt&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;r&quot;&lt;/span&gt;).read()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; len(re.findall(&lt;span class=&quot;string&quot;&gt;&quot;hello&quot;&lt;/span&gt;, tmp))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;还可以利用Counter来实现更多的功能&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; collections&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; re&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pa = re.compile(&lt;span class=&quot;string&quot;&gt;&quot;\w+&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;counter = collections.Counter(patt.findall(open(&lt;span class=&quot;string&quot;&gt;&#39;reparser.py&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;rt&#39;&lt;/span&gt;).read()))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# top 100&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; word, times &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; counter.most_common(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; word, times&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# find word&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;counter_dict = dict(counter.most_common(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tobefind = &lt;span class=&quot;string&quot;&gt;&#39;hello&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; tobefind, counter_dict.get(tobefind, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;" data-url="http://www.yuluoding.com/2016/11/30/统计一个文件中某个单词的出现次数/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
-    <article id="post-把SQL的显示结果输出到文本中" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/30/把SQL的显示结果输出到文本中/" class="article-date">
-  <time datetime="2016-11-30T08:33:02.000Z" itemprop="datePublished">2016-11-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/SQL/">SQL</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/30/把SQL的显示结果输出到文本中/">把SQL的显示结果输出到文本中</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="MySQL查询结果有三种方法输出到文本中">MySQL查询结果有三种方法输出到文本中</h3><ol>
-<li><p>直接执行命令</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; select name from table  into outfile '/tmp/test.txt';</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/30/把SQL的显示结果输出到文本中/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2016/11/30/把SQL的显示结果输出到文本中/" data-id="ciz01cik4000jlrjrxo2o4ktr" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2016/11/30/把SQL的显示结果输出到文本中/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2016/11/30/把SQL的显示结果输出到文本中/" data-title="把SQL的显示结果输出到文本中" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h3 id=&quot;MySQL查询结果有三种方法输出到文本中&quot;&gt;MySQL查询结果有三种方法输出到文本中&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;直接执行命令&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; select name from table  into outfile &#39;/tmp/test.txt&#39;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;在目录&lt;code&gt;/tmp/&lt;/code&gt;下会产生文件test.txt&lt;/p&gt;
-&lt;p&gt;报错：&lt;code&gt;ERROR 1 (HY000): Can&amp;#39;t create/write to file &amp;#39;/data/test.xls&amp;#39; (Errcode: 13)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;mysql没有写权限&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查询时自动写入文件&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; pager cat &amp;gt; /tmp/test.txt ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PAGER set to &#39;cat &amp;gt; /tmp/test.txt&#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;之后的所有查询结果都自动写入&lt;code&gt;/tmp/test.txt&amp;#39;&lt;/code&gt;，并前后覆盖&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;直接在bash下执行&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# mysql -h 127.0.0.1 -u root -p dabase_name -P 3306 -e &quot;&lt;span class=&quot;operator&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&quot;  &amp;gt; /tmp/test.txt&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;​&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-" data-url="http://www.yuluoding.com/2016/11/30/把SQL的显示结果输出到文本中/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
-    <article id="post-Git移除-deal等配置文件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/10/Git移除-deal等配置文件/" class="article-date">
-  <time datetime="2016-11-10T06:54:33.000Z" itemprop="datePublished">2016-11-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/Git移除-deal等配置文件/">Git移除.deal等配置文件</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何在已经提交代码之后，移除-idea等配置文件">如何在已经提交代码之后，移除<code>.idea</code>等配置文件</h3><p>总结，先删除，再提交。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/10/Git移除-deal等配置文件/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2016/11/10/Git移除-deal等配置文件/" data-id="ciz01cip60041lrjrf3iorixl" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2016/11/10/Git移除-deal等配置文件/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2016/11/10/Git移除-deal等配置文件/" data-title="Git移除.deal等配置文件" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h3 id=&quot;如何在已经提交代码之后，移除-idea等配置文件&quot;&gt;如何在已经提交代码之后，移除&lt;code&gt;.idea&lt;/code&gt;等配置文件&lt;/h3&gt;&lt;p&gt;总结，先删除，再提交。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;ol&gt;
-&lt;li&gt;先把&lt;code&gt;.idea&lt;/code&gt;的配置文件剪贴到别的地方&lt;/li&gt;
-&lt;li&gt;通过git提交&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git commit -m &amp;quot;&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git push origin master&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;去git仓库会发现配置文件已经没有了&lt;/li&gt;
-&lt;li&gt;新建&lt;code&gt;.gitignore&lt;/code&gt;文件，由于在windows中，无法新建没有名称的txt文件，所以需要通过git bash来创建。&lt;ol&gt;
-&lt;li&gt;在项目根目录下打开git bash&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;touch .gitignore&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;打开新建的文件，添加&lt;code&gt;.idea&lt;/code&gt;等要忽略的文件&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;把第一部的配置文件重新剪切回来&lt;/li&gt;
-&lt;li&gt;重新添加提交&lt;/li&gt;
-&lt;/ol&gt;
-" data-url="http://www.yuluoding.com/2016/11/10/Git移除-deal等配置文件/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
     <article id="post-SSL证书的配置过程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/27/SSL证书的配置过程/" class="article-date">
@@ -547,9 +292,272 @@ var _hmt = _hmt || [];
     </div>
  </div>
   
+    <article id="post-Python列出目录下的所有文件夹和文件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/13/Python列出目录下的所有文件夹和文件/" class="article-date">
+  <time datetime="2016-10-13T06:35:06.000Z" itemprop="datePublished">2016-10-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/13/Python列出目录下的所有文件夹和文件/">Python列出目录下的所有文件夹和文件</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Python版本：2.7.x</p>
+<p>代码如下：</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/13/Python列出目录下的所有文件夹和文件/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2016/10/13/Python列出目录下的所有文件夹和文件/" data-id="ciz01cint002slrjrnmfzqm2n" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2016/10/13/Python列出目录下的所有文件夹和文件/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2016/10/13/Python列出目录下的所有文件夹和文件/" data-title="Python列出目录下的所有文件夹和文件" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;Python版本：2.7.x&lt;/p&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#!/usr/bin/python&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# -*- coding:utf8 -*-&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;allFileNum = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;printPath&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(level, path)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;global&lt;/span&gt; allFileNum&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;&#39;&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        打印一个目录下的所有文件夹和文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &#39;&#39;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 所有文件夹，第一个字段是次目录的级别&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dirList = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 所有文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fileList = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 返回一个列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    files = os.listdir(path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 添加目录级别&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dirList.append(str(level))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; f &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; files:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(os.path.isdir(path + &lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt; + f)):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(f[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] == &lt;span class=&quot;string&quot;&gt;&quot;.&quot;&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;pass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;# 添加非隐藏文件夹&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                dirList.append(f)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(os.path.isfile(path + &lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt; + f)):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            fileList.append(f)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 当一个标志使用，文件夹列表第一个级别不打印&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    i_dl = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; dl &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; dirList:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (i_dl == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            i_dl += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;# 打印至控制台，不是第一个的目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;-&#39;&lt;/span&gt; * (int(dirList[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;])), dl&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;# 打印目录下的所有文件夹和文件，目录级别+1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            printPath((int(dirList[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]) + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;), path + &lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt; + dl)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; fl &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; fileList:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;-&#39;&lt;/span&gt; * (int(dirList[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;])), fl&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        allFileNum = allFileNum + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; __name__ == &lt;span class=&quot;string&quot;&gt;&#39;__main__&#39;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    printPath(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;D:\python\python_tool&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;总文件数 = &quot;&lt;/span&gt;, allFileNum&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+" data-url="http://www.yuluoding.com/2016/10/13/Python列出目录下的所有文件夹和文件/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
+    <article id="post-Python中把列表转换为字典" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/01/Python中把列表转换为字典/" class="article-date">
+  <time datetime="2016-10-01T13:56:18.000Z" itemprop="datePublished">2016-10-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/01/Python中把列表转换为字典/">Python中把列表转换为字典</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有以下几个方法：</p>
+<p>1、    现在有两个列表，<code>list1 = [&#39;key1&#39;,&#39;key2&#39;,&#39;key3&#39;]</code>和<code>list2 = [&#39;1&#39;,&#39;2&#39;,&#39;3&#39;]</code>，把他们转为这样的字典：<code>{&#39;key1&#39;:&#39;1&#39;,&#39;key2&#39;:&#39;2&#39;,&#39;key3&#39;:&#39;3&#39;}</code></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/01/Python中把列表转换为字典/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2016/10/01/Python中把列表转换为字典/" data-id="ciz01cinu002ulrjr27hw1lau" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2016/10/01/Python中把列表转换为字典/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2016/10/01/Python中把列表转换为字典/" data-title="Python中把列表转换为字典" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;有以下几个方法：&lt;/p&gt;
+&lt;p&gt;1、    现在有两个列表，&lt;code&gt;list1 = [&amp;#39;key1&amp;#39;,&amp;#39;key2&amp;#39;,&amp;#39;key3&amp;#39;]&lt;/code&gt;和&lt;code&gt;list2 = [&amp;#39;1&amp;#39;,&amp;#39;2&amp;#39;,&amp;#39;3&amp;#39;]&lt;/code&gt;，把他们转为这样的字典：&lt;code&gt;{&amp;#39;key1&amp;#39;:&amp;#39;1&amp;#39;,&amp;#39;key2&amp;#39;:&amp;#39;2&amp;#39;,&amp;#39;key3&amp;#39;:&amp;#39;3&amp;#39;}&lt;/code&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;list1 = [&lt;span class=&quot;string&quot;&gt;&#39;key1&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;key2&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;key3&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list2 = [&lt;span class=&quot;string&quot;&gt;&#39;1&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;2&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;3&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; dict(zip(list1, list2))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# &amp;#123;&#39;key3&#39;: &#39;value3&#39;, &#39;key2&#39;: &#39;value2&#39;, &#39;key1&#39;: &#39;value1&#39;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2、    将嵌套列表转为字典，有两种方法&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;new_list= [[&lt;span class=&quot;string&quot;&gt;&#39;key1&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;value1&#39;&lt;/span&gt;],[&lt;span class=&quot;string&quot;&gt;&#39;key2&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;value2&#39;&lt;/span&gt;],[&lt;span class=&quot;string&quot;&gt;&#39;key3&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;value3&#39;&lt;/span&gt;]]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;new_dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; new_list:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	new_dict[i[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]] = i[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; new_dict()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&amp;#123;&#39;key3&#39;: &#39;value3&#39;, &#39;key2&#39;: &#39;value2&#39;, &#39;key1&#39;: &#39;value1&#39;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;new_list= [[&lt;span class=&quot;string&quot;&gt;&#39;key1&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;value1&#39;&lt;/span&gt;],[&lt;span class=&quot;string&quot;&gt;&#39;key2&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;value2&#39;&lt;/span&gt;],[&lt;span class=&quot;string&quot;&gt;&#39;key3&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;value3&#39;&lt;/span&gt;]]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; dict(new_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&amp;#123;&#39;key3&#39;: &#39;value3&#39;, &#39;key2&#39;: &#39;value2&#39;, &#39;key1&#39;: &#39;value1&#39;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;3、    list1 = [k1 : {key1 : value1,  key2 : value3}] 转变成 list2 = [k1: [ {key1 : value1}, {key2 : value2}] ]&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; list1.items:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sm = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sm[k] = v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    list2.append(sm)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; list2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# [k1: [ &amp;#123;key1 : value1&amp;#125;, &amp;#123;key2 : value2&amp;#125;] ]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+" data-url="http://www.yuluoding.com/2016/10/01/Python中把列表转换为字典/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
+    <article id="post-Linux压缩解压的几个命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/21/Linux压缩解压的几个命令/" class="article-date">
+  <time datetime="2016-09-21T06:43:31.000Z" itemprop="datePublished">2016-09-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/21/Linux压缩解压的几个命令/">Linux压缩解压的几个命令</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令">该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令</h4><ol>
+<li><p><code>.tar</code></p>
+<p>解包：<code>tar xvf FileName.tar</code></p>
+<p>打包：<code>tar cvf FileName.tar DirName</code></p>
+<p>PS：打包和压缩是两个概念</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/21/Linux压缩解压的几个命令/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2016/09/21/Linux压缩解压的几个命令/" data-id="ciz01cioi003flrjrtv4lv7zn" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2016/09/21/Linux压缩解压的几个命令/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2016/09/21/Linux压缩解压的几个命令/" data-title="Linux压缩解压的几个命令" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令&quot;&gt;该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.tar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解包：&lt;code&gt;tar xvf FileName.tar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打包：&lt;code&gt;tar cvf FileName.tar DirName&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;PS：打包和压缩是两个概念&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.gz&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压1：&lt;code&gt;gunzip FileName.gz&lt;/code&gt;&lt;br&gt;解压2：&lt;code&gt;gzip -d FileName.gz&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;gzip FileName&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.tar.gz&lt;/code&gt; 和 &lt;code&gt;.tgz&lt;/code&gt;&lt;br&gt;解压：&lt;code&gt;tar zxvf FileName.tar.gz&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;tar zcvf FileName.tar.gz DirName&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.bz2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压1：&lt;code&gt;bzip2 -d FileName.bz2&lt;/code&gt;&lt;br&gt;解压2：&lt;code&gt;bunzip2 FileName.bz2&lt;/code&gt;&lt;br&gt;压缩： &lt;code&gt;bzip2 -z FileName&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.tar.bz2&lt;/code&gt;&lt;br&gt;解压：&lt;code&gt;tar jxvf FileName.tar.bz2&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;tar jcvf FileName.tar.bz2 DirName&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.zip&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压：&lt;code&gt;unzip FileName.zip&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;zip FileName.zip DirName&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.rar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压：&lt;code&gt;rar x FileName.rar&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;rar a FileName.rar DirName&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.rmp&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解包：&lt;code&gt;rpm2cpio FileName.rpm | cpio -div&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.deb&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解包：&lt;code&gt;ar p FileName.deb data.tar.gz | tar zxf -&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea&lt;/p&gt;
+&lt;p&gt;解压：&lt;code&gt;sEx x FileName.*&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;sEx a FileName.* FileName&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;PS：sEx只是调用相关程序，本身并无压缩、解压功能，请注意！&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+" data-url="http://www.yuluoding.com/2016/09/21/Linux压缩解压的几个命令/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -571,7 +579,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -587,19 +595,19 @@ var _hmt = _hmt || [];
           </li>
         
           <li>
-            <a href="/2017/02/11/atest-2/">atest</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/11/atest-1/">atest</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/11/atest/">atest</a>
-          </li>
-        
-          <li>
             <a href="/2017/01/20/Xshell配色方案/">Xshell配色方案</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Python两个字典的合并/">Python两个字典的合并</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/12/Pyhton的文件操作/">Pyhton的文件操作</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/09/Linux提示Give-root-password-for-maintenance/">Linux提示Give root password for maintenance</a>
           </li>
         
       </ul>
