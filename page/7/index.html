@@ -92,6 +92,84 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-Xshell连接Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/01/Xshell连接Ubuntu/" class="article-date">
+  <time datetime="2016-08-01T15:39:51.000Z" itemprop="datePublished">2016-08-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Soft/">Soft</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/01/Xshell连接Ubuntu/">Xshell连接Ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/01/Xshell连接Ubuntu/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/" data-id="ciz0063te001sdrjr1aksr97q" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2016/08/01/Xshell连接Ubuntu/" data-title="Xshell连接Ubuntu" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;Xshell连接VM内的Ubuntu16&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;Xshell&lt;/span&gt; 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。&lt;span class=&quot;keyword&quot;&gt;Xshell&lt;/span&gt; 通过互联网到远程主机的安全连接以及它创新性的设计和特色帮助用户在复杂的网络环境中享受他们的工作。
+
+但是在用SSH连接的时候会发现连接不上，其实这是由于Ubuntu默认不安装openssh服务导致的，
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;所以若要使用ssh远程登录Ubuntu主机，首先需要安装ssh服务器。&lt;/p&gt;
+&lt;p&gt;首先，判断Ubuntu是否安装了ssh服务：&lt;/p&gt;
+&lt;p&gt;首先，判断Ubuntu是否安装了ssh服务：&lt;br&gt;1、输入：#ps -e | grep ssh 如果服务已经启动，则可以看到“sshd”，否则表示没有安装服务，或没有开机启动&lt;br&gt;2、安装ssh服务，输入命令：&lt;code&gt;#sudo apt-get install openssh-server&lt;/code&gt;&lt;br&gt;3、启动服务:&lt;code&gt;#/etc/init.d/ssh start&lt;/code&gt;&lt;br&gt;4、本机测试是否能够成功登录：#ssh -l 用户名 本机ip&lt;br&gt;5、用远程工具进行远程连接，若拒接访问，则关闭防火墙或允许22端口，参考如下。&lt;/p&gt;
+&lt;p&gt;桥接模式可以使路由器使用DHCP的方式分配IP，如果你的电脑所处的网络拓扑中没有路由器的话也是ping不通的。如果有路由器，因为防火墙导致无法连接，可以使用  &lt;code&gt;sudo ufw disable&lt;/code&gt; 命令禁用防火墙。或者在防火墙开启的情况下开放22端口命令是 &lt;code&gt;sudo ufw allow 22&lt;/code&gt;&lt;/p&gt;
+" data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
     <article id="post-Python学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/07/Python学习笔记/" class="article-date">
@@ -130,7 +208,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/07/07/Python学习笔记/" data-id="ciyzzekxh002jo3jrw46mmjw7" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/07/07/Python学习笔记/" data-id="ciz0063ud002mdrjrbaln0ewe" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -227,7 +305,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/06/24/VMware无法打开/" data-id="ciyzzekw0001uo3jribxvl78v" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/06/24/VMware无法打开/" data-id="ciz0063ti001xdrjr3snabozk" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -299,7 +377,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/04/04/算法和数据结构/" data-id="ciyzzekst000ao3jr8jj0bebp" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/04/04/算法和数据结构/" data-id="ciz0063qu000adrjrmvycwljr" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -506,7 +584,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/04/03/Soft/" data-id="ciyzzekw7001yo3jr6gio4pd2" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/04/03/Soft/" data-id="ciz0063tm0021drjr5ynmadpw" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -558,73 +636,6 @@ var _hmt = _hmt || [];
     </div>
  </div>
   
-    <article id="post-把自己的lib上传到中央库" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/25/把自己的lib上传到中央库/" class="article-date">
-  <time datetime="2016-02-25T02:49:57.000Z" itemprop="datePublished">2016-02-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Github/">Github</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/25/把自己的lib上传到中央库/">把自己的lib上传到中央库</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="如何使用Android_Studio把自己的Android_library分发到jCenter和Maven_Central">如何使用Android Studio把自己的Android library分发到jCenter和Maven Central</h4><p><a href="http://www.devtf.cn/?p=760" target="_blank" rel="external">把自己的lib上传到中央库</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2016/02/25/把自己的lib上传到中央库/" data-id="ciyzzeksy000go3jr2kyyc57h" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2016/02/25/把自己的lib上传到中央库/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2016/02/25/把自己的lib上传到中央库/" data-title="把自己的lib上传到中央库" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;如何使用Android_Studio把自己的Android_library分发到jCenter和Maven_Central&quot;&gt;如何使用Android Studio把自己的Android library分发到jCenter和Maven Central&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://www.devtf.cn/?p=760&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;把自己的lib上传到中央库&lt;/a&gt;&lt;/p&gt;
-" data-url="http://www.yuluoding.com/2016/02/25/把自己的lib上传到中央库/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
@@ -638,7 +649,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget category">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Test/">Test</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">6</span></li></ul>
       	
     </div>
   </div>
@@ -649,7 +660,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -659,6 +670,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/11/a-test/">a test</a>
+          </li>
         
           <li>
             <a href="/2017/01/20/Xshell配色方案/">Xshell配色方案</a>
@@ -674,10 +689,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2017/01/09/Linux提示Give-root-password-for-maintenance/">Linux提示Give root password for maintenance</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/30/Python创建目录/">Python创建目录</a>
           </li>
         
       </ul>
