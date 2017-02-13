@@ -92,6 +92,102 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-Eclipse安装插件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/21/Eclipse安装插件/" class="article-date">
+  <time datetime="2016-01-21T08:09:26.000Z" itemprop="datePublished">2016-01-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/21/Eclipse安装插件/">Eclipse安装插件</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Eclipse中添加web_dynamic_project">Eclipse中添加web dynamic project</h4><p>很多Eclipse版本是不能直接新建web dynamic project的，需要从网上找插件或更新。<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/21/Eclipse安装插件/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2016/01/21/Eclipse安装插件/" data-id="ciz476b3f0044zhjrws5x6bdf" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2016/01/21/Eclipse安装插件/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2016/01/21/Eclipse安装插件/" data-title="Eclipse安装插件" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;Eclipse中添加web_dynamic_project&quot;&gt;Eclipse中添加web dynamic project&lt;/h4&gt;&lt;p&gt;很多Eclipse版本是不能直接新建web dynamic project的，需要从网上找插件或更新。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;我的Eclipse的版本是（Version: 4.5.1）代号为Mars&lt;br&gt;版本号和代号如下图&lt;br&gt;&lt;img src=&quot;/2016/01/21/Eclipse安装插件/version.png&quot;&gt;&lt;br&gt;比较方便的是在Help → Install-New-Software&lt;br&gt;&lt;img src=&quot;/2016/01/21/Eclipse安装插件/add.png&quot;&gt;&lt;br&gt;选择&lt;code&gt;Web&lt;/code&gt;，&lt;code&gt;Xml&lt;/code&gt;，&lt;code&gt;Java EE Development&lt;/code&gt;，点击next，finish，更新一段时间，重启Eclipse就能在File→New→other中找到Web及其目录下的web dynamic project了。&lt;/p&gt;
+&lt;p&gt;在Eclipse配置tomcat的时候，我发现在Eclipse—-Preferences—-server—-Runtime Environment中，点击“Add”按钮，里面看不到tomcat的，只有个“J2EE Runtime Library”。&lt;/p&gt;
+&lt;p&gt;解决办法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Help -&amp;gt; Install New Software&lt;/li&gt;
+&lt;li&gt;Choose “Luna - &lt;a href=&quot;http://download.eclipse.org/releases/Luna&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://download.eclipse.org/releases/Luna&lt;/a&gt;“ site&lt;/li&gt;
+&lt;li&gt;Expand “Web, XML, and Java EE Development”&lt;/li&gt;
+&lt;li&gt;Check JST Server Adapters (version 3.2.2) and  JST Server Adapters Extentions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;参考：&lt;a href=&quot;https://www.wikiwand.com/zh/Eclipse#/.E7.89.88.E6.9C.AC&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Eclipse&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;Eclipse配置文件导入和导出&quot;&gt;Eclipse配置文件导入和导出&lt;/h4&gt;&lt;p&gt;导出配置&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;设置好workspace配置后可以将配置保存为 *.epf 文件。&lt;/li&gt;
+&lt;li&gt;进入 File -&amp;gt; Export ；&lt;/li&gt;
+&lt;li&gt;选择 General -&amp;gt; Preferences ，下一步；&lt;/li&gt;
+&lt;li&gt;选择 Export all，在 To preference file 中输入要保存的路径和文件名；&lt;/li&gt;
+&lt;li&gt;Finish。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;导入配置&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将 *.epf 配置文件导入workspace。&lt;/li&gt;
+&lt;li&gt;进入 File -&amp;gt; Export ；&lt;/li&gt;
+&lt;li&gt;选择 General -&amp;gt; Preferences ，下一步；&lt;/li&gt;
+&lt;li&gt;选择 Import all，在 From Preference File 中选择 *.epf 文件；&lt;/li&gt;
+&lt;li&gt;Finish。&lt;/li&gt;
+&lt;/ol&gt;
+" data-url="http://www.yuluoding.com/2016/01/21/Eclipse安装插件/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
     <article id="post-Android-Studio插件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/20/Android-Studio插件/" class="article-date">
@@ -130,7 +226,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/01/20/Android-Studio插件/" data-id="ciz2t1c22004v34jr9yi97rn5" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/01/20/Android-Studio插件/" data-id="ciz476b4y004xzhjrd9ctrbqo" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -208,7 +304,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/01/19/Android-Gson的使用/" data-id="ciz2t1c26005134jr95zsoa79" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/01/19/Android-Gson的使用/" data-id="ciz476b530053zhjr90pvwezt" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -275,7 +371,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/01/18/Android-Material-Design中文版/" data-id="ciz2t1c25004z34jr9rsd04jq" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/01/18/Android-Material-Design中文版/" data-id="ciz476b520051zhjrhin7af5x" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -342,7 +438,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/01/17/Android6-0-新特性详解/" data-id="ciz2t1c15004c34jromjilr8n" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/01/17/Android6-0-新特性详解/" data-id="ciz476b3s004czhjr9keazbm3" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -375,82 +471,9 @@ var _hmt = _hmt || [];
     </div>
  </div>
   
-    <article id="post-Gradle-for-Android系列" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/14/Gradle-for-Android系列/" class="article-date">
-  <time datetime="2016-01-14T07:05:45.000Z" itemprop="datePublished">2016-01-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Android-Studio/">Android Studio</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/14/Gradle-for-Android系列/">Gradle for Android系列</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="关于Android_Studio的Gradle_系列文章">关于Android Studio的Gradle 系列文章</h4>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/14/Gradle-for-Android系列/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2016/01/14/Gradle-for-Android系列/" data-id="ciz2t1c0m003v34jr1rkqoors" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2016/01/14/Gradle-for-Android系列/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2016/01/14/Gradle-for-Android系列/" data-title="Gradle for Android系列" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;关于Android_Studio的Gradle_系列文章&quot;&gt;关于Android Studio的Gradle 系列文章&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004229002&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle for Android 第一篇( 从 Gradle 和 AS 开始 )&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004234712?_ea=538654&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle for Android 第二篇( Build.gradle入门 )&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004237922&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle for Android 第三篇( 依赖管理 )&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004241503&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle for Android 第四篇( 构建变体 )&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004247809&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle for Android 第五篇( 多模块构建 )&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004260141&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle for Android 第六篇( 测试)&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://segmentfault.com/a/1190000004276167&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gradle for Android 第七篇( Groovy入门 )&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;用Gradle_构建你的android程序&quot;&gt;用Gradle 构建你的android程序&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/youxilua/archive/2013/05/20/3087935.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;用Gradle 构建你的android程序&lt;/a&gt;&lt;/p&gt;
-" data-url="http://www.yuluoding.com/2016/01/14/Gradle-for-Android系列/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -461,7 +484,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget category">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
       	
     </div>
   </div>
@@ -472,7 +495,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -482,6 +505,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/">Android java.lang.OutOfMemoryError: GC overhead limit exceeded</a>
+          </li>
         
           <li>
             <a href="/2017/02/12/hexo教程-error/">hexo教程 error</a>
@@ -497,10 +524,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2017/01/17/Python两个字典的合并/">Python两个字典的合并</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/12/Pyhton的文件操作/">Pyhton的文件操作</a>
           </li>
         
       </ul>
