@@ -92,6 +92,82 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-关于GIT的一些错误" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/23/关于GIT的一些错误/" class="article-date">
+  <time datetime="2015-05-23T02:53:58.000Z" itemprop="datePublished">2015-05-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/23/关于GIT的一些错误/">关于GIT的一些错误</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚创建的github版本库，在push代码时出错：<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/05/23/关于GIT的一些错误/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2015/05/23/关于GIT的一些错误/" data-id="cizotm48a0010ubjrldnbadvv" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2015/05/23/关于GIT的一些错误/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2015/05/23/关于GIT的一些错误/" data-title="关于GIT的一些错误" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;刚创建的github版本库，在push代码时出错：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ git push -u origin master&lt;/code&gt;&lt;br&gt;提示如下错误&lt;br&gt;&lt;figure class=&quot;highlight ocaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;! [rejected]        master -&amp;gt; master (non-fast-forward)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;error: failed &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; push some refs &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;&#39;git&lt;/span&gt;@github.com:******/&lt;span class=&quot;type&quot;&gt;Demo&lt;/span&gt;.git&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hint: &lt;span class=&quot;type&quot;&gt;Updates&lt;/span&gt; were rejected because the tip &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; your current branch is behind&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hint: its remote counterpart. &lt;span class=&quot;type&quot;&gt;Merge&lt;/span&gt; the remote changes (e.g. &lt;span class=&quot;symbol&quot;&gt;&#39;git&lt;/span&gt; pull&#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hint: before pushing again.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hint: &lt;span class=&quot;type&quot;&gt;See&lt;/span&gt; the &lt;span class=&quot;symbol&quot;&gt;&#39;Note&lt;/span&gt; about fast-forwards&#39; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;&#39;git&lt;/span&gt; push --help&#39; &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; details.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;因为远程repository和本地的repository冲突导致的，而我在创建版本库后，在github的版本库页面点击了创建README.md文件的按钮创建了说明文档，但是却没有pull到本地。这样就产生了版本冲突的问题。&lt;/p&gt;
+&lt;p&gt;解决方案：&lt;br&gt;1.使用强制push的方法：&lt;br&gt;&lt;code&gt;$ git push -u origin master -f&lt;/code&gt;&lt;br&gt;这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。&lt;/p&gt;
+&lt;p&gt;2.push前先将远程repository修改pull下来&lt;br&gt;&lt;code&gt;$ git pull origin master&lt;/code&gt;&lt;br&gt;再进行push&lt;br&gt;&lt;code&gt;$ git push -u origin master&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;3.若不想merge远程和本地修改，可以先创建新的分支：&lt;br&gt;&lt;code&gt;$ git branch [name]&lt;/code&gt;&lt;br&gt;然后push&lt;br&gt;&lt;code&gt;$ git push -u origin [name]&lt;/code&gt;&lt;/p&gt;
+" data-url="http://www.yuluoding.com/2015/05/23/关于GIT的一些错误/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
     <article id="post-adb-shell-错误" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/05/16/adb-shell-错误/" class="article-date">
@@ -130,7 +206,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2015/05/16/adb-shell-错误/" data-id="ciz476azz001nzhjrdl5e4gqw" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2015/05/16/adb-shell-错误/" data-id="cizotm49i001nubjru5dfmg24" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -200,7 +276,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2015/05/13/Android关于TextView-点击的问题/" data-id="ciz476b3q004azhjr8c9fwi23" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2015/05/13/Android关于TextView-点击的问题/" data-id="cizotm4cr004cubjr1nrbvtsg" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -268,7 +344,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2015/05/12/Android-hander错误/" data-id="ciz476b4f004rzhjr63i61dmx" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2015/05/12/Android-hander错误/" data-id="cizotm4df004tubjrehk7zt2u" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -340,7 +416,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2015/05/09/购买域名设置DNS/" data-id="ciz476avp0001zhjrxbm70ogn" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2015/05/09/购买域名设置DNS/" data-id="cizotm46k0001ubjr8wg19gnp" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -378,81 +454,6 @@ var _hmt = _hmt || [];
     </div>
  </div>
   
-    <article id="post-hexo-教程4添加评论代码等优化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/04/hexo-教程4添加评论代码等优化/" class="article-date">
-  <time datetime="2015-05-04T12:55:11.000Z" itemprop="datePublished">2015-05-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/hexo教程/">hexo教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/04/hexo-教程4添加评论代码等优化/">hexo 教程4:添加评论代码等优化</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="添加多说评论">添加多说评论</h5><p>hexo默认使用国外比较流行的disqus，不过，按照“因地制宜”的原则，我们修改为国内用的多又好用的“多说”评论系统。步骤非常简单：<br>1.在 <a href="http://duoshuo.com">多说</a>进行注册，获得通用代码。<br>2.将通用代码粘贴到<code>themes\light\layout\_partial\comment.ejs</code>里面，如下：<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/05/04/hexo-教程4添加评论代码等优化/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2015/05/04/hexo-教程4添加评论代码等优化/" data-id="ciz476azt001jzhjrp3kv2nuz" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2015/05/04/hexo-教程4添加评论代码等优化/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2015/05/04/hexo-教程4添加评论代码等优化/" data-title="hexo 教程4:添加评论代码等优化" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h5 id=&quot;添加多说评论&quot;&gt;添加多说评论&lt;/h5&gt;&lt;p&gt;hexo默认使用国外比较流行的disqus，不过，按照“因地制宜”的原则，我们修改为国内用的多又好用的“多说”评论系统。步骤非常简单：&lt;br&gt;1.在 &lt;a href=&quot;http://duoshuo.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;多说&lt;/a&gt;进行注册，获得通用代码。&lt;br&gt;2.将通用代码粘贴到&lt;code&gt;themes\light\layout\_partial\comment.ejs&lt;/code&gt;里面，如下：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight erb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ( page.comments)&amp;#123; &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;comment&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;通用代码&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;section&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &amp;#125; &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h5 id=&quot;添加&amp;lt;页面导航&amp;gt;&quot;&gt;添加&amp;lt;页面导航&amp;gt;&lt;/h5&gt;&lt;p&gt;在刚才添加「多说」评论的文件中，加入一段代码，如下：&lt;br&gt;&lt;figure class=&quot;highlight erb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ( page.comments)&amp;#123; &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;nav&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;pagination&quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (page.prev) &amp;#123; &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&amp;lt;%-&lt;span class=&quot;ruby&quot;&gt; config.root &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;value&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&amp;lt;%-&lt;span class=&quot;ruby&quot;&gt; page.prev.path &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;value&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;alignleft prev&quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;&lt;/span&gt;&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; _&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;prev&#39;&lt;/span&gt;) &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &amp;#125; &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (page.&lt;span class=&quot;keyword&quot;&gt;next&lt;/span&gt;) &amp;#123; &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&amp;lt;%-&lt;span class=&quot;ruby&quot;&gt; config.root &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;value&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&amp;lt;%-&lt;span class=&quot;ruby&quot;&gt; page.&lt;span class=&quot;keyword&quot;&gt;next&lt;/span&gt;.path &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;value&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;alignright next&quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;&lt;/span&gt;&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; _&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;next&#39;&lt;/span&gt;) &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &amp;#125; &lt;/span&gt;%&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;clearfix&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;nav&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;comment&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h5 id=&quot;添加小图标&quot;&gt;添加小图标&lt;/h5&gt;&lt;p&gt;在&lt;code&gt;themes/light/layout/_partial/head.ejs&lt;/code&gt;里将&lt;code&gt;&amp;lt;link href=&amp;quot;&amp;lt;%- config.root %&amp;gt;favicon.png&amp;quot; rel=&amp;quot;icon&amp;quot;&amp;gt;&lt;/code&gt;替换为&lt;code&gt;&amp;lt;link href=&amp;quot;&amp;lt;%- config.root %&amp;gt;favicon.ico&amp;quot; rel=&amp;quot;icon&amp;quot; type=&amp;quot;image/x-ico&amp;quot;&amp;gt;&lt;/code&gt;。将favicon.ico图标文件放在source目录下。&lt;/p&gt;
-&lt;h5 id=&quot;导航栏添加”关于”&quot;&gt;导航栏添加”关于”&lt;/h5&gt;&lt;p&gt;1.&lt;code&gt;hexo new page &amp;quot;about&amp;quot;&lt;/code&gt;&lt;br&gt;2.到&lt;code&gt;source/about/index.md&lt;/code&gt;编辑内容。&lt;br&gt;3.在&lt;code&gt;themes/light/_config.yml&lt;/code&gt;中，添加如下：&lt;br&gt;&lt;figure class=&quot;highlight mel&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;menu&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  关于: /&lt;span class=&quot;keyword&quot;&gt;about&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-" data-url="http://www.yuluoding.com/2015/05/04/hexo-教程4添加评论代码等优化/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
@@ -466,7 +467,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget category">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
       	
     </div>
   </div>
@@ -477,7 +478,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -487,6 +488,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/">Ubuntu 16.04LTS 搭建 Shadowsocks</a>
+          </li>
         
           <li>
             <a href="/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/">Android java.lang.OutOfMemoryError: GC overhead limit exceeded</a>
@@ -502,10 +507,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2017/01/20/Xshell配色方案/">Xshell配色方案</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/17/Python两个字典的合并/">Python两个字典的合并</a>
           </li>
         
       </ul>
