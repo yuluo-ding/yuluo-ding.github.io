@@ -132,6 +132,8 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json <span class="operator">-d</span> start</span><br></pre></td></tr></table></figure>
 <p>为了能够开机自启，把上面的命令加入到<code>/etc/rc.loacl</code>里面，在 <code>exit</code>之前就行。</p>
 <p>最后下载客户端：<a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="external">SS客户端</a></p>
+<p>可能在 VPS 会遇到以下的一个错误：<br><code>Python locale error: unsupported locale setting</code></p>
+<p>只要执行以下几行命令就可以了:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_ALL=<span class="string">"en_US.UTF-8"</span></span><br><span class="line"><span class="built_in">export</span> LC_CTYPE=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -195,6 +197,8 @@ var duoshuoQuery = {short_name:"xuelu"};
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssserver -c /etc/shadowsocks.json &lt;span class=&quot;operator&quot;&gt;-d&lt;/span&gt; start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;为了能够开机自启，把上面的命令加入到&lt;code&gt;/etc/rc.loacl&lt;/code&gt;里面，在 &lt;code&gt;exit&lt;/code&gt;之前就行。&lt;/p&gt;
 &lt;p&gt;最后下载客户端：&lt;a href=&quot;https://shadowsocks.org/en/download/clients.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SS客户端&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可能在 VPS 会遇到以下的一个错误：&lt;br&gt;&lt;code&gt;Python locale error: unsupported locale setting&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;只要执行以下几行命令就可以了:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; LC_ALL=&lt;span class=&quot;string&quot;&gt;&quot;en_US.UTF-8&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; LC_CTYPE=&lt;span class=&quot;string&quot;&gt;&quot;en_US.UTF-8&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo dpkg-reconfigure locales&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 " data-url="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
