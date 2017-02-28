@@ -7,26 +7,17 @@
   <title>Ubuntu 16.04LTS 搭建 Shadowsocks | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks
-pip 是 Python 下方便的包管理工具
-之后在/etc/shadowsocks编写配置文件：
-12345678910&amp;#123;    &quot;server&quot;:&quot;my_server_ip&quot;,    &quot;server_port&quot;:8388,    &quot;loca">
+123apt updateapt install python-pippip install shadowsocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 16.04LTS 搭建 Shadowsocks">
 <meta property="og:url" content="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks
-pip 是 Python 下方便的包管理工具
-之后在/etc/shadowsocks编写配置文件：
-12345678910&amp;#123;    &quot;server&quot;:&quot;my_server_ip&quot;,    &quot;server_port&quot;:8388,    &quot;loca">
+123apt updateapt install python-pippip install shadowsocks">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 16.04LTS 搭建 Shadowsocks">
 <meta name="twitter:description" content="执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks
-pip 是 Python 下方便的包管理工具
-之后在/etc/shadowsocks编写配置文件：
-12345678910&amp;#123;    &quot;server&quot;:&quot;my_server_ip&quot;,    &quot;server_port&quot;:8388,    &quot;loca">
+123apt updateapt install python-pippip install shadowsocks">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -132,6 +123,7 @@ var _hmt = _hmt || [];
       
         <p>执行很简单，首先是三条命令</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install python-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>pip 是 Python 下方便的包管理工具</p>
 <p>之后在<code>/etc/shadowsocks</code>编写配置文件：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">server</span>":<span class="value"><span class="string">"my_server_ip"</span></span>,</span><br><span class="line">    "<span class="attribute">server_port</span>":<span class="value"><span class="number">8388</span></span>,</span><br><span class="line">    "<span class="attribute">local_address</span>": <span class="value"><span class="string">"127.0.0.1"</span></span>,</span><br><span class="line">    "<span class="attribute">local_port</span>":<span class="value"><span class="number">1080</span></span>,</span><br><span class="line">    "<span class="attribute">password</span>":<span class="value"><span class="string">"mypassword"</span></span>,</span><br><span class="line">    "<span class="attribute">timeout</span>":<span class="value"><span class="number">300</span></span>,</span><br><span class="line">    "<span class="attribute">method</span>":<span class="value"><span class="string">"aes-256-cfb"</span></span>,</span><br><span class="line">    "<span class="attribute">fast_open</span>": <span class="value"><span class="literal">false</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
@@ -194,6 +186,7 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 <div class="ds-share" data-thread-key="2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-title="Ubuntu 16.04LTS 搭建 Shadowsocks" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;执行很简单，首先是三条命令&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt install python-pip&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install shadowsocks&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;pip 是 Python 下方便的包管理工具&lt;/p&gt;
 &lt;p&gt;之后在&lt;code&gt;/etc/shadowsocks&lt;/code&gt;编写配置文件：&lt;/p&gt;
 &lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;my_server_ip&quot;&lt;/span&gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;server_port&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;8388&lt;/span&gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;local_address&lt;/span&gt;&quot;: &lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;local_port&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;1080&lt;/span&gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;password&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;mypassword&quot;&lt;/span&gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;timeout&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;method&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;aes-256-cfb&quot;&lt;/span&gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;fast_open&lt;/span&gt;&quot;: &lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
