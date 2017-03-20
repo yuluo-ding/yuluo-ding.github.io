@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://www.yuluoding.com/2016/08/11/Python读写json/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json.load">
+<meta property="og:updated_time" content="2016-08-11T15:21:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python读写json">
 <meta name="twitter:description" content="读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json.load">
@@ -24,7 +25,7 @@
     <!-- <link rel="icon" href="/favicon.png"> -->
   
 
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
   
   
@@ -119,21 +120,21 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json-load">读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用<code>json.load</code></h4><a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = file(path)</span><br><span class="line">data = json.load(f)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f = file(path)</div><div class="line">data = json.load(f)</div></pre></td></tr></table></figure>
 <p>json是被载入到一个dict类型的object对象中。</p>
 <p>使用<code>json.dump</code>可以输出json。不过输出的文本不是中文而是转换为utf-8的格式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output = json.dump(jsonData,targetFile,ensure_ascii=<span class="keyword">False</span>,indent=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">output = json.dump(jsonData,targetFile,ensure_ascii=<span class="keyword">False</span>,indent=<span class="number">4</span>)</div></pre></td></tr></table></figure>
 <p>输出中文的json。通过使用 ensure_ascii=False，输出原有的语言文字。indent参数是缩进数量。</p>
 <p>如果把上文的String直接写入文件可能会出错，一般是在Python2.7的版本出现：</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnicodeEncodeError: <span class="attribute">'ascii</span>' codec can<span class="attribute">'t</span> encode characters <span class="keyword">in</span> position <span class="number">1</span>-<span class="number">9</span>: ordinal <span class="keyword">not</span> <span class="keyword">in</span> <span class="keyword">range</span>(<span class="number">128</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 1-9: ordinal not in range(128)</div></pre></td></tr></table></figure>
 <p>解决的办法是在输出的时候进行编码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"><span class="keyword">with</span> codecs.open(path,<span class="string">'w'</span>,<span class="string">'utf-8'</span>) <span class="keyword">as</span> w:</span><br><span class="line">    <span class="comment">#write to w</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codecs</div><div class="line"><span class="keyword">with</span> codecs.open(path,<span class="string">'w'</span>,<span class="string">'utf-8'</span>) <span class="keyword">as</span> w:</div><div class="line">    <span class="comment">#write to w</span></div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/08/11/Python读写json/" data-id="cj0hitluo002dnxjryx1i99s2" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/08/11/Python读写json/" data-id="cj0hqfhdt003ev9jr9weyd4o5" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -190,15 +191,15 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 
 <div class="ds-share" data-thread-key="2016/08/11/Python读写json/" data-title="Python读写json" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json-load&quot;&gt;读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用&lt;code&gt;json.load&lt;/code&gt;&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;f = file(path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;data = json.load(f)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;f = file(path)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;data = json.load(f)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;json是被载入到一个dict类型的object对象中。&lt;/p&gt;
 &lt;p&gt;使用&lt;code&gt;json.dump&lt;/code&gt;可以输出json。不过输出的文本不是中文而是转换为utf-8的格式。&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;output = json.dump(jsonData,targetFile,ensure_ascii=&lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;,indent=&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;output = json.dump(jsonData,targetFile,ensure_ascii=&lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;,indent=&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;输出中文的json。通过使用 ensure_ascii=False，输出原有的语言文字。indent参数是缩进数量。&lt;/p&gt;
 &lt;p&gt;如果把上文的String直接写入文件可能会出错，一般是在Python2.7的版本出现：&lt;/p&gt;
-&lt;figure class=&quot;highlight vhdl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;UnicodeEncodeError: &lt;span class=&quot;attribute&quot;&gt;&#39;ascii&lt;/span&gt;&#39; codec can&lt;span class=&quot;attribute&quot;&gt;&#39;t&lt;/span&gt; encode characters &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; position &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;: ordinal &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;range&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;128&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;UnicodeEncodeError: &amp;apos;ascii&amp;apos; codec can&amp;apos;t encode characters in position 1-9: ordinal not in range(128)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;解决的办法是在输出的时候进行编码：&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; codecs&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; codecs.open(path,&lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;utf-8&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; w:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;#write to w&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; codecs&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; codecs.open(path,&lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;utf-8&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; w:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;#write to w&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 " data-url="http://www.yuluoding.com/2016/08/11/Python读写json/">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
@@ -354,12 +355,12 @@ var duoshuoQuery = {short_name:"xuelu"};
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
 </div>
 </body>

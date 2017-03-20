@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://www.yuluoding.com/2017/02/12/hexo教程-error/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="​    MacBook在安装好 hexo 和 node 之后，还是会出现如下的错误。">
+<meta property="og:updated_time" content="2017-02-12T15:07:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo教程 error">
 <meta name="twitter:description" content="​    MacBook在安装好 hexo 和 node 之后，还是会出现如下的错误。">
@@ -24,7 +25,7 @@
     <!-- <link rel="icon" href="/favicon.png"> -->
   
 
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
   
   
@@ -120,14 +121,14 @@ var _hmt = _hmt || [];
       
         <p>​    MacBook在安装好 hexo 和 node 之后，还是会出现如下的错误。</p>
 <a id="more"></a>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#20840;&#23616;&#24050;&#32463;&#23433;&#35013;hexo&#65292;&#24403;&#21069;&#39033;&#30446;&#19979;&#20063;&#35013;&#20102;&#10;blog git:(master) &#10007; hexo&#10;&#123; [Error: Cannot find module &#39;./build/Release/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; &#125;&#10;&#123; [Error: Cannot find module &#39;./build/default/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; &#125;&#10;&#123; [Error: Cannot find module &#39;./build/Debug/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; &#125;&#10;&#123; [Error: Cannot find module &#39;./build/Release/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; &#125;&#10;&#123; [Error: Cannot find module &#39;./build/default/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; &#125;&#10;&#123; [Error: Cannot find module &#39;./build/Debug/DTraceProviderBindings&#39;] code: &#39;MODULE_NOT_FOUND&#39; &#125;&#10;ERROR Local hexo not found in ~/Documents/DATA/github/blog&#10;ERROR Try running: &#39;npm install hexo --save&#39;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional&#10;if it doesn&#39;t work&#10;try&#10;$ npm uninstall hexo-cli -g&#10;$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">全局已经安装hexo，当前项目下也装了</div><div class="line">blog git:(master) ✗ hexo</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">ERROR Local hexo not found in ~/Documents/DATA/github/blog</div><div class="line">ERROR Try running: &apos;npm install hexo --save&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo --no-optional</div><div class="line">if it doesn't work</div><div class="line">try</div><div class="line">$ npm uninstall hexo-cli -g</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/12/hexo教程-error/" data-id="cj0hitltq001fnxjr73lqxjgo" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/12/hexo教程-error/" data-id="cj0hqfhel004cv9jrswfg1j2d" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -185,8 +186,8 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 <div class="ds-share" data-thread-key="2017/02/12/hexo教程-error/" data-title="hexo教程 error" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;​    MacBook在安装好 hexo 和 node 之后，还是会出现如下的错误。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#20840;&amp;#23616;&amp;#24050;&amp;#32463;&amp;#23433;&amp;#35013;hexo&amp;#65292;&amp;#24403;&amp;#21069;&amp;#39033;&amp;#30446;&amp;#19979;&amp;#20063;&amp;#35013;&amp;#20102;&amp;#10;blog git:(master) &amp;#10007; hexo&amp;#10;&amp;#123; [Error: Cannot find module &amp;#39;./build/Release/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; &amp;#125;&amp;#10;&amp;#123; [Error: Cannot find module &amp;#39;./build/default/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; &amp;#125;&amp;#10;&amp;#123; [Error: Cannot find module &amp;#39;./build/Debug/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; &amp;#125;&amp;#10;&amp;#123; [Error: Cannot find module &amp;#39;./build/Release/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; &amp;#125;&amp;#10;&amp;#123; [Error: Cannot find module &amp;#39;./build/default/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; &amp;#125;&amp;#10;&amp;#123; [Error: Cannot find module &amp;#39;./build/Debug/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; &amp;#125;&amp;#10;ERROR Local hexo not found in ~/Documents/DATA/github/blog&amp;#10;ERROR Try running: &amp;#39;npm install hexo --save&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo --no-optional&amp;#10;if it doesn&amp;#39;t work&amp;#10;try&amp;#10;$ npm uninstall hexo-cli -g&amp;#10;$ npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;全局已经安装hexo，当前项目下也装了&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;blog git:(master) ✗ hexo&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/Release/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/default/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/Debug/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/Release/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/default/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/Debug/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ERROR Local hexo not found in ~/Documents/DATA/github/blog&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ERROR Try running: &amp;apos;npm install hexo --save&amp;apos;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install hexo --no-optional&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;if it doesn&#39;t work&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;try&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ npm uninstall hexo-cli -g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ npm install hexo-cli -g&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 " data-url="http://www.yuluoding.com/2017/02/12/hexo教程-error/">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
@@ -342,12 +343,12 @@ var duoshuoQuery = {short_name:"xuelu"};
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
 </div>
 </body>

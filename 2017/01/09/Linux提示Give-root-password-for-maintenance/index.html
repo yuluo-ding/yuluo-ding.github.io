@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://www.yuluoding.com/2017/01/09/Linux提示Give-root-password-for-maintenance/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="由于非法重启或硬盘故障，会导致linux系统无法启动，无法进入操作系统。当你看到提示：give root password for maintenance(or type control-D to continue):的时候，你还有补救的机会。问题原因应该是/usr /home /boot分区磁盘检测出了问题。">
+<meta property="og:updated_time" content="2017-01-09T06:55:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux提示Give root password for maintenance">
 <meta name="twitter:description" content="由于非法重启或硬盘故障，会导致linux系统无法启动，无法进入操作系统。当你看到提示：give root password for maintenance(or type control-D to continue):的时候，你还有补救的机会。问题原因应该是/usr /home /boot分区磁盘检测出了问题。">
@@ -24,7 +25,7 @@
     <!-- <link rel="icon" href="/favicon.png"> -->
   
 
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
   
   
@@ -133,7 +134,7 @@ var _hmt = _hmt || [];
 <p>方法二：</p>
 <ol>
 <li><p>重启后界面停在：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">give root password for maintenance&#10;(or type control-D to continue):</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">give root password for maintenance</div><div class="line">(or type control-D to continue):</div></pre></td></tr></table></figure>
 <p>此时输入root密码，回车</p>
 </li>
 <li><p>输入<code>fsck -y</code>回车，会开始修复文件系统，时间长短不一。</p>
@@ -146,7 +147,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/01/09/Linux提示Give-root-password-for-maintenance/" data-id="cj0hitlw8003mnxjruv3j2wb1" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/01/09/Linux提示Give-root-password-for-maintenance/" data-id="cj0hqfhcs001zv9jreg2ryyr1" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -217,7 +218,7 @@ var duoshuoQuery = {short_name:"xuelu"};
 &lt;p&gt;方法二：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;重启后界面停在：&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;give root password for maintenance&amp;#10;(or type control-D to continue):&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;give root password for maintenance&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(or type control-D to continue):&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;此时输入root密码，回车&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;输入&lt;code&gt;fsck -y&lt;/code&gt;回车，会开始修复文件系统，时间长短不一。&lt;/p&gt;
@@ -380,12 +381,12 @@ var duoshuoQuery = {short_name:"xuelu"};
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
 </div>
 </body>

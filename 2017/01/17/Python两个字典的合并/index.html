@@ -14,6 +14,7 @@
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="两个字典合并的，有几种方法
 1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
+<meta property="og:updated_time" content="2017-03-20T02:21:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python两个字典的合并">
 <meta name="twitter:description" content="两个字典合并的，有几种方法
@@ -27,7 +28,7 @@
     <!-- <link rel="icon" href="/favicon.png"> -->
   
 
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
   
   
@@ -122,7 +123,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>两个字典合并的，有几种方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict1=&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>]&#125;</span><br><span class="line">dict2=&#123;<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</span><br><span class="line"><span class="comment">#得到如下的结果</span></span><br><span class="line">&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>],<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">dict1=&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>]&#125;</div><div class="line">dict2=&#123;<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</div><div class="line"><span class="comment">#得到如下的结果</span></div><div class="line">&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>],<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>两个方法：</p>
 <ol>
@@ -135,15 +136,15 @@ var _hmt = _hmt || [];
 </ol>
 <p>但是如果两个字典中有相同的key怎么办？</p>
 <p>如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = dict(a=<span class="number">1</span>, b=<span class="keyword">None</span>, c=<span class="number">3</span>)</span><br><span class="line">b = dict(a=<span class="keyword">None</span>, b=<span class="number">2</span>, c=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = dict(a=<span class="number">1</span>, b=<span class="keyword">None</span>, c=<span class="number">3</span>)</div><div class="line">b = dict(a=<span class="keyword">None</span>, b=<span class="number">2</span>, c=<span class="number">4</span>)</div></pre></td></tr></table></figure>
 <p>要合并这两个字典该怎么办？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> b.items():</span><br><span class="line">    <span class="keyword">if</span> v:</span><br><span class="line">        a[k] = v</span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> b.items():</div><div class="line">    <span class="keyword">if</span> v:</div><div class="line">        a[k] = v</div><div class="line"><span class="keyword">print</span> a</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/01/17/Python两个字典的合并/" data-id="cj0hitlvo002znxjrdra99wrk" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/01/17/Python两个字典的合并/" data-id="cj0hqfhd8002jv9jrp0qw81xj" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -200,7 +201,7 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 
 <div class="ds-share" data-thread-key="2017/01/17/Python两个字典的合并/" data-title="Python两个字典的合并" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;两个字典合并的，有几种方法&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dict1=&amp;#123;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;111&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;222&lt;/span&gt;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dict2=&amp;#123;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;33&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;333&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;444&lt;/span&gt;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#得到如下的结果&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;111&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;222&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;33&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;333&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;444&lt;/span&gt;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;dict1=&amp;#123;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;111&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;222&lt;/span&gt;]&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dict2=&amp;#123;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;33&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;333&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;444&lt;/span&gt;]&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#得到如下的结果&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;111&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;222&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;33&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;333&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;444&lt;/span&gt;]&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;两个方法：&lt;/p&gt;
 &lt;ol&gt;
@@ -213,9 +214,9 @@ var duoshuoQuery = {short_name:"xuelu"};
 &lt;/ol&gt;
 &lt;p&gt;但是如果两个字典中有相同的key怎么办？&lt;/p&gt;
 &lt;p&gt;如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;a = dict(a=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, b=&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, c=&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b = dict(a=&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, b=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, c=&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;a = dict(a=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, b=&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, c=&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b = dict(a=&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, b=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, c=&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;要合并这两个字典该怎么办？&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; b.items():&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; v:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        a[k] = v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; a&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; b.items():&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; v:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a[k] = v&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; a&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 " data-url="http://www.yuluoding.com/2017/01/17/Python两个字典的合并/">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
@@ -371,12 +372,12 @@ var duoshuoQuery = {short_name:"xuelu"};
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
 </div>
 </body>
