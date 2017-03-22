@@ -4,21 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Python两个字典的合并 | yuluo</title>
+  <title>Python2.7的UnicodeEncodeError | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="两个字典合并的，有几种方法
-1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
+  <meta name="description" content="UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误
+​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Python2的默认是ASCII的，Python默认环境编码通过下面的方法可以获取：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python两个字典的合并">
-<meta property="og:url" content="http://www.yuluoding.com/2017/01/17/Python两个字典的合并/index.html">
+<meta property="og:title" content="Python2.7的UnicodeEncodeError">
+<meta property="og:url" content="http://www.yuluoding.com/2017/03/22/Python2-7的UnicodeEncodeError/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="两个字典合并的，有几种方法
-1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
-<meta property="og:updated_time" content="2017-03-20T02:21:17.000Z">
+<meta property="og:description" content="UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误
+​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Python2的默认是ASCII的，Python默认环境编码通过下面的方法可以获取：">
+<meta property="og:updated_time" content="2017-03-22T14:40:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python两个字典的合并">
-<meta name="twitter:description" content="两个字典合并的，有几种方法
-1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
+<meta name="twitter:title" content="Python2.7的UnicodeEncodeError">
+<meta name="twitter:description" content="UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误
+​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Python2的默认是ASCII的，Python默认环境编码通过下面的方法可以获取：">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -94,10 +94,10 @@ var _hmt = _hmt || [];
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-Python两个字典的合并" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-Python2-7的UnicodeEncodeError" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/17/Python两个字典的合并/" class="article-date">
-  <time datetime="2017-01-17T06:01:13.000Z" itemprop="datePublished">2017-01-17</time>
+    <a href="/2017/03/22/Python2-7的UnicodeEncodeError/" class="article-date">
+  <time datetime="2017-03-22T14:15:58.000Z" itemprop="datePublished">2017-03-22</time>
 </a>
     
   <div class="article-category">
@@ -112,7 +112,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Python两个字典的合并
+      Python2.7的UnicodeEncodeError
     </h1>
   
 
@@ -122,33 +122,26 @@ var _hmt = _hmt || [];
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>两个字典合并的，有几种方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">dict1=&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>]&#125;</div><div class="line">dict2=&#123;<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</div><div class="line"><span class="comment">#得到如下的结果</span></div><div class="line">&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>],<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</div></pre></td></tr></table></figure>
+        <p>UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误</p>
+<p>​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Python2的默认是<code>ASCII</code>的，Python默认环境编码通过下面的方法可以获取：</p>
 <a id="more"></a>
-<p>两个方法：</p>
-<ol>
-<li><p><code>dictMerged=dict(dict1.items()+dict2.items())</code></p>
-</li>
-<li><p><code>dictMerged2=dict(dict1, **dict2)</code></p>
-<p>其中方法2类似于：</p>
-<p><code>dictMerged=dict1.copy()</code><br><code>dictMerged.update(dict2)</code></p>
-</li>
-</ol>
-<p>但是如果两个字典中有相同的key怎么办？</p>
-<p>如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = dict(a=<span class="number">1</span>, b=<span class="keyword">None</span>, c=<span class="number">3</span>)</div><div class="line">b = dict(a=<span class="keyword">None</span>, b=<span class="number">2</span>, c=<span class="number">4</span>)</div></pre></td></tr></table></figure>
-<p>要合并这两个字典该怎么办？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> b.items():</div><div class="line">    <span class="keyword">if</span> v:</div><div class="line">        a[k] = v</div><div class="line"><span class="keyword">print</span> a</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">print</span> sys.getdefaultencoding()</div><div class="line"><span class="comment"># 'ascii'</span></div></pre></td></tr></table></figure>
+<p>​    基本上是ascii编码方式，由此Python自然调用ascii编码解码程序去处理字符流，当字符流不属于ascii范围内，就会抛出异常（ordinal not in range(128)）。</p>
+<p>​    解决的方案很简单，修改默认的编码模式。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">reload(sys)</div><div class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure>
+<p>​    还有一种更好的方法，在输出的时候，对文件制定特定的UTF-8编码即可。</p>
+<p>​    就是在打开一个文件的时候，不是用<code>open</code>而是用<code>codecs</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fp = codecs.open(‘output.txt’, ‘a+’, ‘utf<span class="number">-8</span>’)</div><div class="line">fp.write(row[<span class="number">1</span>])</div><div class="line">fp.close()</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/01/17/Python两个字典的合并/" data-id="cj0l2tkms002q27jrlml1wkbv" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/03/22/Python2-7的UnicodeEncodeError/" data-id="cj0l2tkmr002o27jr93x016r0" class="article-share-link" data-share="baidu">Share</a>
       
 
       
-        <a href="http://www.yuluoding.com/2017/01/17/Python两个字典的合并/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://www.yuluoding.com/2017/03/22/Python2-7的UnicodeEncodeError/#ds-thread" class="article-comment-link">Comments</a>
       
 
       
@@ -158,19 +151,10 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2017/01/20/Xshell配色方案/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Xshell配色方案
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/12/Pyhton的文件操作/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/03/20/Python去重列表的重复元素/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Pyhton的文件操作</div>
+      <div class="article-nav-title">Python去重列表的重复元素</div>
     </a>
   
 </nav>
@@ -181,7 +165,7 @@ var _hmt = _hmt || [];
 
   <section id="comments">
     
-  <div class="ds-thread" data-thread-key="2017/01/17/Python两个字典的合并/" data-title="Python两个字典的合并" data-url="http://www.yuluoding.com/2017/01/17/Python两个字典的合并/"></div>
+  <div class="ds-thread" data-thread-key="2017/03/22/Python2-7的UnicodeEncodeError/" data-title="Python2.7的UnicodeEncodeError" data-url="http://www.yuluoding.com/2017/03/22/Python2-7的UnicodeEncodeError/"></div>
   
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"xuelu"};
@@ -200,24 +184,17 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 
 
-<div class="ds-share" data-thread-key="2017/01/17/Python两个字典的合并/" data-title="Python两个字典的合并" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;两个字典合并的，有几种方法&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;dict1=&amp;#123;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;111&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;222&lt;/span&gt;]&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dict2=&amp;#123;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;33&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;333&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;444&lt;/span&gt;]&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#得到如下的结果&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;111&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;222&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;33&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;333&lt;/span&gt;],&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;:[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;444&lt;/span&gt;]&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+<div class="ds-share" data-thread-key="2017/03/22/Python2-7的UnicodeEncodeError/" data-title="Python2.7的UnicodeEncodeError" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误&lt;/p&gt;
+&lt;p&gt;​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Python2的默认是&lt;code&gt;ASCII&lt;/code&gt;的，Python默认环境编码通过下面的方法可以获取：&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;两个方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;dictMerged=dict(dict1.items()+dict2.items())&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;dictMerged2=dict(dict1, **dict2)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;其中方法2类似于：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;dictMerged=dict1.copy()&lt;/code&gt;&lt;br&gt;&lt;code&gt;dictMerged.update(dict2)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;但是如果两个字典中有相同的key怎么办？&lt;/p&gt;
-&lt;p&gt;如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;a = dict(a=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, b=&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, c=&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b = dict(a=&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, b=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, c=&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;要合并这两个字典该怎么办？&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; b.items():&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; v:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a[k] = v&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; a&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-" data-url="http://www.yuluoding.com/2017/01/17/Python两个字典的合并/">
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; sys&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; sys.getdefaultencoding()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# &#39;ascii&#39;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;​    基本上是ascii编码方式，由此Python自然调用ascii编码解码程序去处理字符流，当字符流不属于ascii范围内，就会抛出异常（ordinal not in range(128)）。&lt;/p&gt;
+&lt;p&gt;​    解决的方案很简单，修改默认的编码模式。&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; sys&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;reload(sys)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sys.setdefaultencoding(&lt;span class=&quot;string&quot;&gt;&#39;utf-8&#39;&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;​    还有一种更好的方法，在输出的时候，对文件制定特定的UTF-8编码即可。&lt;/p&gt;
+&lt;p&gt;​    就是在打开一个文件的时候，不是用&lt;code&gt;open&lt;/code&gt;而是用&lt;code&gt;codecs&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fp = codecs.open(‘output.txt’, ‘a+’, ‘utf&lt;span class=&quot;number&quot;&gt;-8&lt;/span&gt;’)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fp.write(row[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;])&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fp.close()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+" data-url="http://www.yuluoding.com/2017/03/22/Python2-7的UnicodeEncodeError/">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
         
