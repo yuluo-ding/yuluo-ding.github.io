@@ -92,6 +92,114 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-Linux压缩解压的几个命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/21/Linux压缩解压的几个命令/" class="article-date">
+  <time datetime="2016-09-21T06:43:31.000Z" itemprop="datePublished">2016-09-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/21/Linux压缩解压的几个命令/">Linux压缩解压的几个命令</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令">该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令</h4><ol>
+<li><p><code>.tar</code></p>
+<p>解包：<code>tar xvf FileName.tar</code></p>
+<p>打包：<code>tar cvf FileName.tar DirName</code></p>
+<p>PS：打包和压缩是两个概念</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/21/Linux压缩解压的几个命令/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2016/09/21/Linux压缩解压的几个命令/" data-id="cj1fya4ro001x7pjr0wabpszl" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2016/09/21/Linux压缩解压的几个命令/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2016/09/21/Linux压缩解压的几个命令/" data-title="Linux压缩解压的几个命令" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令&quot;&gt;该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.tar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解包：&lt;code&gt;tar xvf FileName.tar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;打包：&lt;code&gt;tar cvf FileName.tar DirName&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;PS：打包和压缩是两个概念&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.gz&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压1：&lt;code&gt;gunzip FileName.gz&lt;/code&gt;&lt;br&gt;解压2：&lt;code&gt;gzip -d FileName.gz&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;gzip FileName&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.tar.gz&lt;/code&gt; 和 &lt;code&gt;.tgz&lt;/code&gt;&lt;br&gt;解压：&lt;code&gt;tar zxvf FileName.tar.gz&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;tar zcvf FileName.tar.gz DirName&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.bz2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压1：&lt;code&gt;bzip2 -d FileName.bz2&lt;/code&gt;&lt;br&gt;解压2：&lt;code&gt;bunzip2 FileName.bz2&lt;/code&gt;&lt;br&gt;压缩： &lt;code&gt;bzip2 -z FileName&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.tar.bz2&lt;/code&gt;&lt;br&gt;解压：&lt;code&gt;tar jxvf FileName.tar.bz2&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;tar jcvf FileName.tar.bz2 DirName&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.zip&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压：&lt;code&gt;unzip FileName.zip&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;zip FileName.zip DirName&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.rar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解压：&lt;code&gt;rar x FileName.rar&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;rar a FileName.rar DirName&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.rmp&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解包：&lt;code&gt;rpm2cpio FileName.rpm | cpio -div&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.deb&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解包：&lt;code&gt;ar p FileName.deb data.tar.gz | tar zxf -&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea&lt;/p&gt;
+&lt;p&gt;解压：&lt;code&gt;sEx x FileName.*&lt;/code&gt;&lt;br&gt;压缩：&lt;code&gt;sEx a FileName.* FileName&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;PS：sEx只是调用相关程序，本身并无压缩、解压功能，请注意！&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+" data-url="http://www.yuluoding.com/2016/09/21/Linux压缩解压的几个命令/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
     <article id="post-Python进行URL解码" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/18/Python进行URL解码/" class="article-date">
@@ -131,7 +239,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/09/18/Python进行URL解码/" data-id="cj1erkv2c003k9rjrgtwd14gk" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/09/18/Python进行URL解码/" data-id="cj1fya4sy003q7pjrtv0zxywp" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -211,7 +319,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/09/14/Python批量重命名/" data-id="cj1erkv2a003g9rjry9eq42ez" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/09/14/Python批量重命名/" data-id="cj1fya4sq003i7pjrenvvxuy6" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -286,7 +394,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/09/05/SSH文件上传错误/" data-id="cj1erkv2h003q9rjr08aiclp3" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/09/05/SSH文件上传错误/" data-id="cj1fya4sz003u7pjrx2aewr2r" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -370,7 +478,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/09/04/搞了台台式机/" data-id="cj1erkv3q005g9rjrhoal0k5l" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/09/04/搞了台台式机/" data-id="cj1fya4uj005x7pjrphceypu2" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -427,86 +535,6 @@ var _hmt = _hmt || [];
     </div>
  </div>
   
-    <article id="post-解决Win10下WIFI无法连接到网络" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/27/解决Win10下WIFI无法连接到网络/" class="article-date">
-  <time datetime="2016-08-27T13:21:18.000Z" itemprop="datePublished">2016-08-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/27/解决Win10下WIFI无法连接到网络/">解决Win10下WIFI无法连接到网络</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​    最近在家连接WIFI，出现了【无法连接到网络】的问题。</p>
-<p>​    具体表现为：在WIFI列表中，可以搜索到WIFI信号，但是连接的时候，就出现了【无法连接到网络】的报错提示。或者在连接上之后，出现了无Internet，安全字样。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/08/27/解决Win10下WIFI无法连接到网络/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2016/08/27/解决Win10下WIFI无法连接到网络/" data-id="cj1erkv46005y9rjri43o1six" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2016/08/27/解决Win10下WIFI无法连接到网络/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2016/08/27/解决Win10下WIFI无法连接到网络/" data-title="解决Win10下WIFI无法连接到网络" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;​    最近在家连接WIFI，出现了【无法连接到网络】的问题。&lt;/p&gt;
-&lt;p&gt;​    具体表现为：在WIFI列表中，可以搜索到WIFI信号，但是连接的时候，就出现了【无法连接到网络】的报错提示。或者在连接上之后，出现了无Internet，安全字样。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;解决办法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;看其余笔记本和手机是否能正常上网，可以的话，路由器没问题。&lt;/li&gt;
-&lt;li&gt;确认自己的笔记本在别的WIFI环境下能否正常上网，可以的话，WIFI驱动是没问题的。其中，把WIFI模块的电源管理给关闭掉。&lt;/li&gt;
-&lt;li&gt;在路由器的控制界面，它的工作模式是【802.11 b/g/n mixed】混合模式。将其改成&lt;code&gt;n only&lt;/code&gt;就可以了。重启路由器就可以了。&lt;/li&gt;
-&lt;/ol&gt;
-" data-url="http://www.yuluoding.com/2016/08/27/解决Win10下WIFI无法连接到网络/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -520,7 +548,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget category">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
       	
     </div>
   </div>
@@ -531,7 +559,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -541,6 +569,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/04/13/Python-统计列表中重复项/">Python 统计列表中重复项</a>
+          </li>
         
           <li>
             <a href="/2017/04/12/Python-OS文件操作模块常用函数/">Python OS文件操作模块常用函数</a>
@@ -556,10 +588,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2017/03/20/Python去重列表的重复元素/">Python去重列表的重复元素</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/20/Python-两个列表合并/">Python 两个列表合并</a>
           </li>
         
       </ul>
