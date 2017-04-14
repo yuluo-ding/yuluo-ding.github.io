@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://www.yuluoding.com/2017/04/12/Python-OS文件操作模块常用函数/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="Python提供了一个os模块，里面包含了很多操作文件和目录的函数全部函数可以用help(os)或是dir(os)查看其用法。">
-<meta property="og:updated_time" content="2017-04-14T08:18:25.000Z">
+<meta property="og:updated_time" content="2017-04-14T08:23:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python OS文件操作模块常用函数">
 <meta name="twitter:description" content="Python提供了一个os模块，里面包含了很多操作文件和目录的函数全部函数可以用help(os)或是dir(os)查看其用法。">
@@ -130,15 +130,15 @@ var _hmt = _hmt || [];
 <p>6.创建多级目录：<code>os.makedirs(r&quot;c:\python \test&quot;)</code></p>
 <p>7.创建单个目录：<code>os.mkdir(&quot;test&quot;)</code></p>
 <p>8.删除多个目录：<code>os.removedirs(r&quot;c:\python&quot;)</code> <code>#删除所给路径最后一个目录下所有空目录。</code></p>
-<p><code>9.删除单个目录：</code>os.rmdir(“test”)</p>
-<p><code>10.获取文件属性：</code>os.stat(file)</p>
-<p><code>11.修改文件权限与时间戳：</code>os.chmod(file)</p>
-<p><code>12.执行操作系统命令：</code>os.system(“dir”)</p>
-<p><code>13.启动新进程：</code>os.exec()<code>,</code>os.execvp()</p>
+<p>9.删除单个目录：<code>os.rmdir(&quot;test&quot;)</code></p>
+<p>10.获取文件属性：<code>os.stat(file)</code></p>
+<p>11.修改文件权限与时间戳：<code>os.chmod(file)</code></p>
+<p>12.执行操作系统命令：<code>os.system(&quot;dir&quot;)</code></p>
+<p>13.启动新进程：<code>os.exec()</code>, `os.execvp()</p>
 <p>14.在后台执行程序：<code>osspawnv()</code></p>
 <p>15.终止当前进程：<code>os.exit()</code>, <code>os._exit()</code></p>
 <p>16.分离文件名：<code>os.path.split(r&quot;c:\python\hello.py&quot;)</code> —&gt; (“c:\python”, “hello.py”)</p>
-<p><code>17.分离扩展名：</code>os.path.splitext(r”c:\python\hello.py”)<code>--&gt; (&quot;c:\\python\\hello&quot;, &quot;.py&quot;)</code></p>
+<p>17.分离扩展名：<code>os.path.splitext(r&quot;c:\python\hello.py&quot;)</code> —&gt; (“c:\python\hello”, “.py”)`</p>
 <p>18.获取路径名：<code>os.path.dirname(r&quot;c:\python\hello.py&quot;)</code> —&gt; “c:\python”</p>
 <p>19.获取文件名：<code>os.path.basename(r&quot;r:\python\hello.py&quot;)</code> —&gt; “hello.py”</p>
 <p>20.判断文件或目录是否存在：<code>os.path.exists(r&quot;c:\python\hello.py&quot;)</code> —&gt; True</p>
@@ -221,15 +221,15 @@ var duoshuoQuery = {short_name:"xuelu"};
 &lt;p&gt;6.创建多级目录：&lt;code&gt;os.makedirs(r&amp;quot;c:\python \test&amp;quot;)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;7.创建单个目录：&lt;code&gt;os.mkdir(&amp;quot;test&amp;quot;)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;8.删除多个目录：&lt;code&gt;os.removedirs(r&amp;quot;c:\python&amp;quot;)&lt;/code&gt; &lt;code&gt;#删除所给路径最后一个目录下所有空目录。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;9.删除单个目录：&lt;/code&gt;os.rmdir(“test”)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;10.获取文件属性：&lt;/code&gt;os.stat(file)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;11.修改文件权限与时间戳：&lt;/code&gt;os.chmod(file)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;12.执行操作系统命令：&lt;/code&gt;os.system(“dir”)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;13.启动新进程：&lt;/code&gt;os.exec()&lt;code&gt;,&lt;/code&gt;os.execvp()&lt;/p&gt;
+&lt;p&gt;9.删除单个目录：&lt;code&gt;os.rmdir(&amp;quot;test&amp;quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;10.获取文件属性：&lt;code&gt;os.stat(file)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;11.修改文件权限与时间戳：&lt;code&gt;os.chmod(file)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;12.执行操作系统命令：&lt;code&gt;os.system(&amp;quot;dir&amp;quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;13.启动新进程：&lt;code&gt;os.exec()&lt;/code&gt;, `os.execvp()&lt;/p&gt;
 &lt;p&gt;14.在后台执行程序：&lt;code&gt;osspawnv()&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;15.终止当前进程：&lt;code&gt;os.exit()&lt;/code&gt;, &lt;code&gt;os._exit()&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;16.分离文件名：&lt;code&gt;os.path.split(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; (“c:\python”, “hello.py”)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;17.分离扩展名：&lt;/code&gt;os.path.splitext(r”c:\python\hello.py”)&lt;code&gt;--&amp;gt; (&amp;quot;c:\\python\\hello&amp;quot;, &amp;quot;.py&amp;quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;17.分离扩展名：&lt;code&gt;os.path.splitext(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; (“c:\python\hello”, “.py”)`&lt;/p&gt;
 &lt;p&gt;18.获取路径名：&lt;code&gt;os.path.dirname(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; “c:\python”&lt;/p&gt;
 &lt;p&gt;19.获取文件名：&lt;code&gt;os.path.basename(r&amp;quot;r:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; “hello.py”&lt;/p&gt;
 &lt;p&gt;20.判断文件或目录是否存在：&lt;code&gt;os.path.exists(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; True&lt;/p&gt;
