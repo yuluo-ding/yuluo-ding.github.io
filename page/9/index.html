@@ -92,6 +92,81 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-MUT和MSS的关系" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/09/MUT和MSS的关系/" class="article-date">
+  <time datetime="2016-08-09T15:21:02.000Z" itemprop="datePublished">2016-08-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTTP/">HTTP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/09/MUT和MSS的关系/">MUT和MSS的关系</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="TCP层的分段和IP层的分片之间的关系">TCP层的分段和IP层的分片之间的关系</h4>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/09/MUT和MSS的关系/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2016/08/09/MUT和MSS的关系/" data-id="cj1pres6g002b4ljrp5wnxabr" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2016/08/09/MUT和MSS的关系/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2016/08/09/MUT和MSS的关系/" data-title="MUT和MSS的关系" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;TCP层的分段和IP层的分片之间的关系&quot;&gt;TCP层的分段和IP层的分片之间的关系&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;strong&gt;数据报的分段和分片确实发生，分段发生在传输层，分片发生在网络层。但是对于分段来说，这是经常发生在UDP传输层协议上的情况，对于传输层使用TCP协议的通道来说，这种事情很少发生。&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;1.    MTU（Maximum Transmission Unit，MTU），最大传输单元&lt;/strong&gt;&lt;br&gt;（1）以太网和802.3对数据帧的长度都有一个限制，其最大 值分别是1500和1492个字节。链路层的这个特性称作MTU。不同类型的网络大多数都有一个上限。如果IP层有一个数据要传，且数据的长度比链路层的 MTU还大，那么IP层就要进行分片（fragmentation），把数据报分成若干片，这样每一个分片都小于MTU。&lt;br&gt; （2）把一份IP数据报进行分片以后，由到达目的端的IP层来进行重新组装，其目的是使分片和重新组装过程对运输层（TCP/UDP）是透明的。由于每一分片都是一个独立的包，当这些数据报的片到达目的端时有可能会失序，但是在IP首部中有足够的信息让接收端能正确组装这些数据报片。&lt;br&gt; （3）尽管IP分片过程看起来透明的，但有一点让人不想使用它：即使只丢失一片数据也要重新传整个数据报。why？因为IP层本身没有超时重传机制———由更高层（比如TCP）来负责超时和重传。当来自TCP报文段的某一片丢失后，TCP在超时后会重发整个TCP报文段，该报文段对应于一份IP数据报（而不是一个分片），没有办法只重传数据报中的一个数据分片。&lt;br&gt; （4）使用UDP很容易导致IP分片，TCP试图避免IP分片。 那么TCP是如何试图避免IP分片的呢？其实说白了，采用TCP协议进行数据传输是不会造成IP分片的，因为一旦TCP数据过大，超过了MSS，则在传输 层会对TCP包进行分段（如何分，见下文！），自然到了IP层的数据报肯定不会超过MTU，当然也就不用分片了。而对于UDP数据报，如果UDP组成的 IP数据报长度超过了1500，那么IP数据报显然就要进行分片，因为UDP不能像TCP一样自己进行分段。总结：UDP不会分段，就由我IP来分。TCP会分段，当然也就不用我IP来分了！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.    MSS（Maxitum Segment Size）最大分段大小的缩写，是TCP协议里面的一个概念&lt;/strong&gt;&lt;br&gt;（1）MSS就是TCP数据包每次能够传输的最大数据分段。为了达到最佳的传输效能TCP协议在建立连接的时候通常要协商双方的MSS值，这个值TCP协议在实现的时候往往用MTU值代替（需要减去IP数据包包头的大小20Bytes和TCP数据段的包头20Bytes）所以往往MSS为1460。通讯双方会根据双方提供的MSS值得最小值确定为这次连接的最大MSS值。&lt;br&gt;（2）相信看到这里，还有最后一个问题：TCP是如何实现分段的呢？其实TCP无所谓分段，因为每个TCP数据报在组成前其大小就已经被MSS限制了，所以TCP数据报的长度是不可能大于MSS的，当然由它形成的IP包的长度也就不会大于MTU，自然也就不用IP分片了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.    结论&lt;/strong&gt;&lt;br&gt;   1.IP分片产生的原因是网络层的MTU；TCP分段产生原因是MSS.&lt;br&gt;   2.IP分片由网络层完成，也在网络层进行重组；TCP分段是在传输层完成，并在传输层进行重组.   //透明性&lt;br&gt;   3.对于以太网，MSS为1460字节，而MUT往往会大于MSS.&lt;br&gt;   故采用TCP协议进行数据传输，是不会造成IP分片的。若数据过大，只会在传输层进行数据分段，到了IP层就不用分片。&lt;br&gt;   所以可以看成是这种情况：传输层协议想发送一个超过了MTI的数据报，这个时候网络层就需要对其进行分片，一般UDP和ICMP会出现分片情况，但是TCP不会出现这种情况！因为TCP使用了MSS来避免分片！&lt;br&gt;   IP分片只有第一个带有传输层或ICMP首部，其余的分片只有IP头。至于怎么重组就是到对端以后IP层的事情了。&lt;br&gt;若TCP报文非常长那么在IP层传输时就有可能要分解成多个短数据报片。（计算机网络谢希仁）&lt;br&gt;TCP分段每个都有完整首部。&lt;br&gt;PS:所以我觉得是这样的，TCP的分段是针对应用层的数据来说的，比如使用TCP发送70KB的数据，这个时候就需要将70KB分成若干个MSS，到了网络层就不需要分片了。MSS的存在就避免了网络层分片的发生，&lt;br&gt;   IP层的分片是针对传输层中使用UDP协议来说的，如果使用UDP发送数据，UDP并不知道如何分段，那么到了IP层就需要进行分片，分片的原则根据MTU，那么分UDP最大的数据负载就是1500-8=1492&lt;/p&gt;
+&lt;p&gt;转载自：&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/yusiguyuan/article/details/22782943&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt; TCP层的分段和IP层的分片之间的关系 &amp;amp; MTU和MSS之间的关系&lt;/a&gt;&lt;/p&gt;
+" data-url="http://www.yuluoding.com/2016/08/09/MUT和MSS的关系/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
     <article id="post-HTTP协议下的分段下载" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/09/HTTP协议下的分段下载/" class="article-date">
@@ -130,7 +205,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/08/09/HTTP协议下的分段下载/" data-id="cj1fya4rc001j7pjrz379zdoh" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/08/09/HTTP协议下的分段下载/" data-id="cj1pres5s001f4ljr2ifz18xe" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -202,7 +277,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/" data-id="cj1fya4ti004a7pjrgux35lxd" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/" data-id="cj1pres7w004a4ljryz17sxfz" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -280,7 +355,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/07/07/Python学习笔记/" data-id="cj1fya4so003e7pjrv5qmg2it" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/07/07/Python学习笔记/" data-id="cj1pres76003e4ljrouht7p6p" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -377,7 +452,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/06/24/VMware无法打开/" data-id="cj1fya4t500437pjrumethquh" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/06/24/VMware无法打开/" data-id="cj1pres7u00454ljr33h2yaqa" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -411,216 +486,9 @@ var _hmt = _hmt || [];
     </div>
  </div>
   
-    <article id="post-算法和数据结构" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/算法和数据结构/" class="article-date">
-  <time datetime="2016-04-04T04:44:18.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Study-Class/">Study Class</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/算法和数据结构/">算法和数据结构</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="算法与数据结构">算法与数据结构</h4><p><a href="https://github.com/ty4z2008/Qix/blob/master/algorithm.md">算法与数据结构</a><br>
-        
-          <p class="article-more-link">
-            <a href="/2016/04/04/算法和数据结构/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2016/04/04/算法和数据结构/" data-id="cj1fya4ul005y7pjrlqo91kpo" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2016/04/04/算法和数据结构/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2016/04/04/算法和数据结构/" data-title="算法和数据结构" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;算法与数据结构&quot;&gt;算法与数据结构&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/ty4z2008/Qix/blob/master/algorithm.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;算法与数据结构&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://isa.unomaha.edu/wp-content/uploads/2012/08/Advanced-Data-structures.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Data structures》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：高级数据结构大全,&lt;a href=&quot;http://algorithms.openmymind.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;基本算法：二叉树等&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/02/ranking_algorithm_hacker_news.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《基于用户投票的排名算法（一）：Delicious和Hacker News》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：此外还有&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/03/ranking_algorithm_reddit.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《基于用户投票的排名算法（二）：Reddit》&lt;/a&gt;、&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/03/ranking_algorithm_stack_overflow.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《基于用户投票的排名算法（三）：Stack Overflow》&lt;/a&gt;、&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/03/ranking_algorithm_newton_s_law_of_cooling.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《基于用户投票的排名算法（四）：牛顿冷却定律》&lt;/a&gt;、&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/03/ranking_algorithm_wilson_score_interval.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《基于用户投票的排名算法（五）：威尔逊区间》&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/Paxos%E7%AE%97%E6%B3%95&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Paxos算法》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：这是目前的一种基于消息传递且具有高度容错特性的一致性算法，google在分布式文件系统中与分布式锁中就应用到了这个算法，MapReduce，bigTable等等，中国的&lt;a href=&quot;http://jm-blog.aliapp.com/?tag=paxos&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;alibaba集团的中间件&lt;/a&gt;也使用此算法．他们把这个算法的&lt;a href=&quot;http://research.microsoft.com/en-us/um/people/lamport/pubs/lamport-paxos.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;英文版&lt;/a&gt;翻译成了&lt;a href=&quot;http://wenku.baidu.com/view/87276e1dfad6195f312ba6d7.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;中文版&lt;/a&gt;．有关它的更多描叙可以参考耶鲁大学的&lt;a href=&quot;http://www.cs.yale.edu/homes/aspnes/pinewiki/Paxos.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;专题页面&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://sevennet.org/2014/11/21/how-to-what-are-the-lesser-known-but-useful-data-structures/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《How to: What are the lesser known but useful data structures?》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：很少人知道但很有用的数据结构&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://opendatastructures.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Open Data Structures》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：《开放数据结构》，里面有C++.java相关实现的书籍&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.andrew.cmu.edu/user/mm6/95-771/schedule.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Data Structure and Algorithms for Information Processing》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：卡内基梅隆大学的信息处理的数据结构与算法课程课件&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://homepages.inf.ed.ac.uk/rbf/CVonline/applic.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《CVonline: Applications》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：图像和视觉算法的应用领域概括，共包含了29个大类，从中可以看到图像视觉算法应用之广泛。例如人就分生物认证、身体、头、脸、脚、手等不同的领域。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://fastcompression.blogspot.fr/2015/04/sampling-or-faster-lz4.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Sampling, or a faster LZ4》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：高速数据压缩算法&lt;a href=&quot;https://github.com/Cyan4973/lz4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LZ4&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://codingvc.com/fundraising-roadmap-algorithm/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Fundraising Roadmap Algorithm》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：融资路线图算法.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://jeremykun.com/2015/05/18/boosting-census/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Weak Learning, Boosting, and the AdaBoost algorithm》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：弱学习/Boosting/AdaBoost算法.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.garrisonjensen.com/programming/2015/05/15/easy-red-black-tree.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《The easy way to implement a Red-Black tree》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：红黑树最容易的实现方式.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.cambridge.org/journals/nisan/downloads/Nisan_Non-printable.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Algorithmic Game Theory》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:这是一本关于博弈论算法的电子书,&lt;a href=&quot;https://www.wikiwand.com/zh/%E5%8D%9A%E5%BC%88%E8%AE%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博弈论介绍&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://papers.nips.cc/paper/4443-algorithms-for-hyper-parameter-optimization.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Algorithms for Hyper-Parameter Optimization》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：参数优化算法.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://algosaur.us/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《A guide to Algorithmic Complexity》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:Introduce Algorithmic Complexity with images.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@_marcos_otero/the-real-10-algorithms-that-dominate-our-world-e95fa9f16c04&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《The real 10 algorithms that dominate our world》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:真正统治世界的十大算法,&lt;a href=&quot;http://blog.jobbole.com/70639/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;译版&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.quora.com/What-is-the-importance-of-this-algorithm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《What is the importance of this algorithm?》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:Quora上的一篇关于有哪些重要的算法提问.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.cleveralgorithms.com/nature-inspired/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Clever Algorithms: Nature-Inspired Programming Recipes》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:智能算法手册(7类/45个之智能相关算法及示例).&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.cs.usfca.edu/~galles/visualization/Algorithms.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Data Structure Visualizations》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:数据结构可视化图形.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.quora.com/Distributed-Systems/What-is-a-simple-explanation-of-the-Paxos-algorithm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Paxos algorithm》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:如果简单的解释Paxos算法,此外推荐论文&lt;a href=&quot;https://pdos.csail.mit.edu/6.824/papers/paxos-simple.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Paxos Made Simple&lt;/a&gt;,&lt;a href=&quot;http://the-paper-trail.org/blog/consensus-protocols-paxos/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Consensus Protocols: Paxos&lt;/a&gt;,&lt;a href=&quot;http://the-paper-trail.org/blog/consensus-protocols-two-phase-commit/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Consensus Protocols: Two-Phase Commit&lt;/a&gt;,&lt;a href=&quot;http://the-paper-trail.org/blog/consensus-protocols-three-phase-commit/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Consensus Protocols: Three-phase Commit&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://courses.csail.mit.edu/6.006/fall11/staff.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Introduction to Algorithms》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:Introduction to Algorithms.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.pivotal.io/big-data-pivotal/case-studies/an-open-source-reference-architecture-for-real-time-stock-prediction&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《An Open Source Reference Architecture For Real-Time Stock Prediction》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:实时股票分析系统的架构与算法&lt;a href=&quot;http://www.infoq.com/cn/news/2015/12/open-source-reference-architectu&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;译文&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://buildingrecommenders.wordpress.com/2015/11/16/overview-of-recommender-algorithms-part-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Overview of Recommender Algorithms part1》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍：推荐算法概览&lt;a href=&quot;https://buildingrecommenders.wordpress.com/2015/11/18/overview-of-recommender-algorithms-part-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;part2&lt;/a&gt;,&lt;a href=&quot;https://buildingrecommenders.wordpress.com/2015/11/19/overview-of-recommender-algorithms-part-3/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;part3&lt;/a&gt;,&lt;a href=&quot;https://buildingrecommenders.wordpress.com/2015/11/20/overview-of-recommender-algorithms-part-4/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;part4&lt;/a&gt;,&lt;a href=&quot;https://buildingrecommenders.wordpress.com/2015/11/23/overview-of-recommender-algorithms-part-5/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;part5&lt;/a&gt;,部分译文&lt;a href=&quot;http://www.infoq.com/cn/articles/recommendation-algorithm-overview-part01&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;part1&lt;/a&gt;,&lt;a href=&quot;http://www.infoq.com/cn/articles/recommendation-algorithm-overview-part02&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;part2&lt;/a&gt;,同时推荐&lt;a href=&quot;https://buildingrecommenders.wordpress.com/2015/11/18/recommender-systems-in-netflix/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Recommender Systems in Netflix&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://arxiv.org/abs/1511.05263&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《The Use of Machine Learning Algorithms in Recommender Systems: A Systematic Review》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:推荐系统机器学习算法系统综述.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://rayli.net/blog/data/top-10-data-mining-algorithms-in-plain-english/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Top 10 data mining algorithms in plain English》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:白话数据挖掘十大算法&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jkchu.com/2016/02/17/designing-and-implementing-a-ranking-algorithm/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Designing and Implementing a Ranking Algorithm》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:排名算法的设计与实现&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.nature.com/articles/npjqi201523?WT.mc_id=FBK_NPG_1602_npjQI&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Quantum algorithms: an overview》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:量子算法概述&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.cs.princeton.edu/~rs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Robert Sedgewick HomePage》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:罗伯特·塞奇威克的主页，是算法一书的作者，目前这本书已经到了第四版&lt;a href=&quot;http://algs4.cs.princeton.edu/home/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt; Algorithms, 4th Edition&lt;/a&gt;,电子版是免费的，而且还有相对于的源码和课程资料,他的&lt;a href=&quot;http://ac.cs.princeton.edu/home/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Analytic Combinatorics&lt;/a&gt;解析组合数学也很有名&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://spinroot.com/courses/summer/Papers/hoare_1978.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Communicating sequential processes》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:通信顺序进程是并发编程的经典论文,Go的模型（还有Erlang等）都是基于CPS.此外推荐&lt;a href=&quot;http://www.cs.cmu.edu/~brookes/papers/hoare.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Communicating Parallel Processes&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.inf.ethz.ch/personal/wirth/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Niklaus Wirth Homepage》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:尼克劳斯·维尔特主页，图灵奖获得者。Algol W， Modula， Pascal ，Modula-2， Oberon之父。他的论文&lt;a href=&quot;https://www.inf.ethz.ch/personal/wirth/ProgInOberon.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Programming in Oberon: Steps beyond Pascal and Modula.&lt;/a&gt;被视为软件工程的经典之作&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www-cs-faculty.stanford.edu/~uno/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Donald E. Knuth HomePage》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:唐纳德·尔文·克努斯是图灵奖获得者.其经典著作《计算机程序设计艺术》更是被誉为算法中“真正”的圣经，像KMP和LR(K)这样令人不可思议的算法，在此书比比皆是。难怪连Bill Gates都说：“如果能做对书里所有的习题，就直接来微软上班吧！”&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://c2.com/cgi/wiki?JonBentley&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Jon Bentley HomePage》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:著有编程珠玑&lt;a href=&quot;https://tfetimes.com/wp-content/uploads/2015/04/ProgrammingPearls2nd.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Programming Pearls, Second Edition&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.cs.utexas.edu/~EWD/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Edsger Wybe Dijkstra HomePage》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:艾兹赫尔·韦伯·戴克斯特拉是荷兰第一位以程式为专业的科学家,以发现了图论中的最短路径算法（&lt;a href=&quot;https://www.ssucet.org/old/pluginfile.php/2121/mod_resource/content/1/21-dijkstra.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dijkstra算法&lt;/a&gt;）而闻名于世，1972年因为ALGOL第二代编程语言而获得图灵奖。GOTO有害论“&lt;a href=&quot;http://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Go To StatementConsidered Harmful&lt;/a&gt;”(EWD215)也是被广为传颂的经典之作.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.columbia.edu/cu/computinghistory/backus.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《John Backus HomePage》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:FORTRAN之父,提出了规范描述编程语言语法的BNF。这位当年的“差生”终于被整个计算机世界肯定——美国计算机协会于1977年授予John Backus图灵奖&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://ethw.org/James_W._Cooley&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《James Cooley HomePage》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;介绍:美国数学家，哥伦比亚大学的数学博士，以他所创造的快速傅立叶变换(FFT)而著名&lt;/p&gt;
-" data-url="http://www.yuluoding.com/2016/04/04/算法和数据结构/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -631,7 +499,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget category">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
       	
     </div>
   </div>
@@ -642,7 +510,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -652,6 +520,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/04/20/iTerm2保持-SSH-连接/">iTerm2保持 SSH 连接</a>
+          </li>
         
           <li>
             <a href="/2017/04/13/Python-统计列表中重复项/">Python 统计列表中重复项</a>
@@ -667,10 +539,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2017/03/22/Python2-7的UnicodeEncodeError/">Python2.7的UnicodeEncodeError</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/20/Python去重列表的重复元素/">Python去重列表的重复元素</a>
           </li>
         
       </ul>
