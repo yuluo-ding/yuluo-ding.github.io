@@ -4,17 +4,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | yuluo</title>
+  <title>Linux 免密登录 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The home of yuluoding!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yuluo">
-<meta property="og:url" content="http://www.yuluoding.com/archives/page/15/index.html">
+  <meta name="description" content="A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为192.168.1.1 ;A和B的系统都是Linux.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 免密登录">
+<meta property="og:url" content="http://www.yuluoding.com/2017/04/27/Linux-免密登录/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="The home of yuluoding!">
+<meta property="og:description" content="A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为192.168.1.1 ;A和B的系统都是Linux.">
+<meta property="og:updated_time" content="2017-04-27T08:52:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yuluo">
-<meta name="twitter:description" content="The home of yuluoding!">
+<meta name="twitter:title" content="Linux 免密登录">
+<meta name="twitter:description" content="A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为192.168.1.1 ;A和B的系统都是Linux.">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -91,125 +92,115 @@ var _hmt = _hmt || [];
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/06/Linux知识点小结/" class="archive-article-date">
-  <time datetime="2016-01-06T02:51:46.000Z" itemprop="datePublished">Jan 6</time>
+      <section id="main"><article id="post-Linux-免密登录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/27/Linux-免密登录/" class="article-date">
+  <time datetime="2017-04-27T08:47:16.000Z" itemprop="datePublished">2017-04-27</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/06/Linux知识点小结/">Linux知识点小结</a>
+    <h1 class="article-title" itemprop="name">
+      Linux 免密登录
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/05/ADB的教程/" class="archive-article-date">
-  <time datetime="2016-01-05T01:32:58.000Z" itemprop="datePublished">Jan 5</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/05/ADB的教程/">ADB的教程</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/12/30/Chrome插件开发入门教程/" class="archive-article-date">
-  <time datetime="2015-12-30T01:50:08.000Z" itemprop="datePublished">Dec 30</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/30/Chrome插件开发入门教程/">Chrome插件开发入门教程</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/12/28/Android知识清单/" class="archive-article-date">
-  <time datetime="2015-12-28T14:00:34.000Z" itemprop="datePublished">Dec 28</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/28/Android知识清单/">Android知识清单</a>
-    </h1>
-  
+        <p>A为本地主机(即用于控制其他主机的机器) ;<br>B为远程主机(即被控制的机器Server), 假如ip为<code>192.168.1.1</code> ;<br>A和B的系统都是Linux.</p>
+<a id="more"></a>
+<p>在A上的命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ssh-keygen -t rsa (连续三次回车,即在本地生成了公钥和私钥,不设置密码)</span></div><div class="line"><span class="comment"># ssh root@172.24.253.2 "mkdir .ssh;chmod 0700 .ssh" (需要输入密码， 注:必须将.ssh的权限设为700)</span></div><div class="line"><span class="comment"># scp ~/.ssh/id_rsa.pub root@172.24.253.2:.ssh/id_rsa.pub (需要输入密码)</span></div></pre></td></tr></table></figure>
+<p>在 B 上的命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># touch /root/.ssh/authorized_keys (如果已经存在这个文件, 跳过这条)</span></div><div class="line"><span class="comment"># chmod 600 ~/.ssh/authorized_keys  (# 注意： 必须将~/.ssh/authorized_keys的权限改为600, 该文件用于保存ssh客户端生成的公钥，可以修改服务器的ssh服务端配置文件/etc/ssh/sshd_config来指定其他文件名）</span></div><div class="line"><span class="comment"># cat /root/.ssh/id_rsa.pub  &gt;&gt; /root/.ssh/authorized_keys (将id_rsa.pub的内容追加到 authorized_keys 中, 注意不要用 &gt; ，否则会清空原有的内容，使其他人无法使用原有的密钥登录)</span></div></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/11/09/Sublime-Text3/" class="archive-article-date">
-  <time datetime="2015-11-09T13:24:07.000Z" itemprop="datePublished">Nov 9</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/09/Sublime-Text3/">Sublime Text3</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2017/04/27/Linux-免密登录/" data-id="cj20682is001zsnjrpqm2vgj6" class="article-share-link" data-share="baidu">Share</a>
+      
 
-    </header>
+      
+        <a href="http://www.yuluoding.com/2017/04/27/Linux-免密登录/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/20/iTerm2保持-SSH-连接/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">iTerm2保持 SSH 连接</div>
+    </a>
+  
+</nav>
+
+  
 </article>
+
+
+  <section id="comments">
+    
+  <div class="ds-thread" data-thread-key="2017/04/27/Linux-免密登录/" data-title="Linux 免密登录" data-url="http://www.yuluoding.com/2017/04/27/Linux-免密登录/"></div>
   
-  
-    </div></section>
-  
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xuelu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </section>
+
+
+
+<div class="ds-share" data-thread-key="2017/04/27/Linux-免密登录/" data-title="Linux 免密登录" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;A为本地主机(即用于控制其他主机的机器) ;&lt;br&gt;B为远程主机(即被控制的机器Server), 假如ip为&lt;code&gt;192.168.1.1&lt;/code&gt; ;&lt;br&gt;A和B的系统都是Linux.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在A上的命令:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# ssh-keygen -t rsa (连续三次回车,即在本地生成了公钥和私钥,不设置密码)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# ssh root@172.24.253.2 &quot;mkdir .ssh;chmod 0700 .ssh&quot; (需要输入密码， 注:必须将.ssh的权限设为700)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# scp ~/.ssh/id_rsa.pub root@172.24.253.2:.ssh/id_rsa.pub (需要输入密码)&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在 B 上的命令:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# touch /root/.ssh/authorized_keys (如果已经存在这个文件, 跳过这条)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# chmod 600 ~/.ssh/authorized_keys  (# 注意： 必须将~/.ssh/authorized_keys的权限改为600, 该文件用于保存ssh客户端生成的公钥，可以修改服务器的ssh服务端配置文件/etc/ssh/sshd_config来指定其他文件名）&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# cat /root/.ssh/id_rsa.pub  &amp;gt;&amp;gt; /root/.ssh/authorized_keys (将id_rsa.pub的内容追加到 authorized_keys 中, 注意不要用 &amp;gt; ，否则会清空原有的内容，使其他人无法使用原有的密钥登录)&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+" data-url="http://www.yuluoding.com/2017/04/27/Linux-免密登录/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+
+
 </section>
       
       <aside id="sidebar">
