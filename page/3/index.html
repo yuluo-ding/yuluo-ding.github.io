@@ -121,8 +121,9 @@ var _hmt = _hmt || [];
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>执行很简单，首先是三条命令</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt update</div><div class="line">apt install python-pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure>
+        <p>只针对Ubuntu16以上的版本。</p>
+<p>执行很简单，首先是三条命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt update</div><div class="line">apt install python-pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/#more">Read More</a>
@@ -132,7 +133,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cj20682mg004dsnjr9blbtad2" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cj24jy0p20045gnjr8cscdfqu" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -148,13 +149,14 @@ var _hmt = _hmt || [];
 
 
 
-<div class="ds-share" data-thread-key="2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-title="Ubuntu 16.04LTS 搭建 Shadowsocks" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;执行很简单，首先是三条命令&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apt update&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;apt install python-pip&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pip install shadowsocks&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+<div class="ds-share" data-thread-key="2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-title="Ubuntu 16.04LTS 搭建 Shadowsocks" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;只针对Ubuntu16以上的版本。&lt;/p&gt;
+&lt;p&gt;执行很简单，首先是三条命令&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apt update&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;apt install python-pip&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pip install shadowsocks&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;pip 是 Python 下方便的包管理工具&lt;/p&gt;
 &lt;p&gt;之后在&lt;code&gt;/etc/shadowsocks&lt;/code&gt;编写配置文件：&lt;/p&gt;
 &lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;server&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;my_server_ip&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;server_port&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;8388&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;local_address&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;local_port&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;1080&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;password&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;mypassword&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;timeout&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;method&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;aes-256-cfb&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;fast_open&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上面一些数值，替换成自己相应的就好&lt;/p&gt;
+&lt;p&gt;上面一些数值，替换成自己相应的就好，&lt;code&gt;method&lt;/code&gt;建议128的就好。&lt;/p&gt;
 &lt;p&gt;接下来运行如下命令：&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ssserver -c /etc/shadowsocks.json &lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt; start&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;为了能够开机自启，把上面的命令加入到&lt;code&gt;/etc/rc.loacl&lt;/code&gt;里面，在 &lt;code&gt;exit&lt;/code&gt;之前就行。&lt;/p&gt;
@@ -217,7 +219,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" data-id="cj20682h9000dsnjruon3wzm5" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" data-id="cj24jy0l4000ggnjrywzk6r5e" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -296,7 +298,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/12/hexo教程-error/" data-id="cj20682n8004vsnjrwjh7y13a" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/12/hexo教程-error/" data-id="cj24jy0pd004rgnjr49p4afqb" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -371,7 +373,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/11/Hexo添加文章自动打开编辑器/" data-id="cj20682ij001psnjrk1pmseff" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/11/Hexo添加文章自动打开编辑器/" data-id="cj24jy0m9001sgnjrbdlugi9y" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -448,7 +450,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/01/20/Xshell配色方案/" data-id="cj20682mz004hsnjr7jdo6t7s" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/01/20/Xshell配色方案/" data-id="cj24jy0p6004egnjrs5r5jtyn" class="article-share-link" data-share="baidu">Share</a>
       
 
       

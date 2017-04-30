@@ -6,18 +6,21 @@
   
   <title>Ubuntu 16.04LTS 搭建 Shadowsocks | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="执行很简单，首先是三条命令
+  <meta name="description" content="只针对Ubuntu16以上的版本。
+执行很简单，首先是三条命令
 123apt updateapt install python-pippip install shadowsocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 16.04LTS 搭建 Shadowsocks">
 <meta property="og:url" content="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="执行很简单，首先是三条命令
+<meta property="og:description" content="只针对Ubuntu16以上的版本。
+执行很简单，首先是三条命令
 123apt updateapt install python-pippip install shadowsocks">
-<meta property="og:updated_time" content="2017-02-28T01:09:57.000Z">
+<meta property="og:updated_time" content="2017-04-30T10:27:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 16.04LTS 搭建 Shadowsocks">
-<meta name="twitter:description" content="执行很简单，首先是三条命令
+<meta name="twitter:description" content="只针对Ubuntu16以上的版本。
+执行很简单，首先是三条命令
 123apt updateapt install python-pippip install shadowsocks">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
@@ -123,13 +126,14 @@ var _hmt = _hmt || [];
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>执行很简单，首先是三条命令</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt update</div><div class="line">apt install python-pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure>
+        <p>只针对Ubuntu16以上的版本。</p>
+<p>执行很简单，首先是三条命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt update</div><div class="line">apt install python-pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>pip 是 Python 下方便的包管理工具</p>
 <p>之后在<code>/etc/shadowsocks</code>编写配置文件：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,</div><div class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</div><div class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</div><div class="line">    <span class="attr">"password"</span>:<span class="string">"mypassword"</span>,</div><div class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</div><div class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</div><div class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面一些数值，替换成自己相应的就好</p>
+<p>上面一些数值，替换成自己相应的就好，<code>method</code>建议128的就好。</p>
 <p>接下来运行如下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssserver -c /etc/shadowsocks.json <span class="_">-d</span> start</div></pre></td></tr></table></figure>
 <p>为了能够开机自启，把上面的命令加入到<code>/etc/rc.loacl</code>里面，在 <code>exit</code>之前就行。</p>
@@ -141,7 +145,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cj20682mg004dsnjr9blbtad2" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cj24jy0p20045gnjr8cscdfqu" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -197,13 +201,14 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 
 
-<div class="ds-share" data-thread-key="2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-title="Ubuntu 16.04LTS 搭建 Shadowsocks" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;执行很简单，首先是三条命令&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apt update&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;apt install python-pip&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pip install shadowsocks&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+<div class="ds-share" data-thread-key="2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-title="Ubuntu 16.04LTS 搭建 Shadowsocks" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;只针对Ubuntu16以上的版本。&lt;/p&gt;
+&lt;p&gt;执行很简单，首先是三条命令&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apt update&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;apt install python-pip&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pip install shadowsocks&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;pip 是 Python 下方便的包管理工具&lt;/p&gt;
 &lt;p&gt;之后在&lt;code&gt;/etc/shadowsocks&lt;/code&gt;编写配置文件：&lt;/p&gt;
 &lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;server&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;my_server_ip&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;server_port&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;8388&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;local_address&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;local_port&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;1080&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;password&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;mypassword&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;timeout&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;method&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;aes-256-cfb&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;fast_open&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上面一些数值，替换成自己相应的就好&lt;/p&gt;
+&lt;p&gt;上面一些数值，替换成自己相应的就好，&lt;code&gt;method&lt;/code&gt;建议128的就好。&lt;/p&gt;
 &lt;p&gt;接下来运行如下命令：&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ssserver -c /etc/shadowsocks.json &lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt; start&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;为了能够开机自启，把上面的命令加入到&lt;code&gt;/etc/rc.loacl&lt;/code&gt;里面，在 &lt;code&gt;exit&lt;/code&gt;之前就行。&lt;/p&gt;
