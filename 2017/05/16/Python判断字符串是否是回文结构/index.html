@@ -4,18 +4,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android关于TextView 点击的问题 | yuluo</title>
+  <title>Python判断字符串是否是回文结构 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在xml文件中定义一个android:onClick=&amp;quot;NextQuestion&amp;quot;之后在方法类中点击Textview进行操作没反应，需要在onCreate中定义onClick方法才可以。">
+  <meta name="description" content="​    回文（Palindrome），就是一个序列（如字符串）正着读反着读是一样的。生物信息学上最常见的就是转录因子在DNA上的结合位点通常都是回文结构。在 Python 应该如何判断字符串？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android关于TextView 点击的问题">
-<meta property="og:url" content="http://www.yuluoding.com/2015/05/13/Android关于TextView-点击的问题/index.html">
+<meta property="og:title" content="Python判断字符串是否是回文结构">
+<meta property="og:url" content="http://www.yuluoding.com/2017/05/16/Python判断字符串是否是回文结构/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="在xml文件中定义一个android:onClick=&amp;quot;NextQuestion&amp;quot;之后在方法类中点击Textview进行操作没反应，需要在onCreate中定义onClick方法才可以。">
-<meta property="og:updated_time" content="2015-05-13T14:42:40.000Z">
+<meta property="og:description" content="​    回文（Palindrome），就是一个序列（如字符串）正着读反着读是一样的。生物信息学上最常见的就是转录因子在DNA上的结合位点通常都是回文结构。在 Python 应该如何判断字符串？">
+<meta property="og:updated_time" content="2017-05-16T07:16:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android关于TextView 点击的问题">
-<meta name="twitter:description" content="在xml文件中定义一个android:onClick=&amp;quot;NextQuestion&amp;quot;之后在方法类中点击Textview进行操作没反应，需要在onCreate中定义onClick方法才可以。">
+<meta name="twitter:title" content="Python判断字符串是否是回文结构">
+<meta name="twitter:description" content="​    回文（Palindrome），就是一个序列（如字符串）正着读反着读是一样的。生物信息学上最常见的就是转录因子在DNA上的结合位点通常都是回文结构。在 Python 应该如何判断字符串？">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -92,14 +92,14 @@ var _hmt = _hmt || [];
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-Android关于TextView-点击的问题" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-Python判断字符串是否是回文结构" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/05/13/Android关于TextView-点击的问题/" class="article-date">
-  <time datetime="2015-05-13T14:40:05.000Z" itemprop="datePublished">2015-05-13</time>
+    <a href="/2017/05/16/Python判断字符串是否是回文结构/" class="article-date">
+  <time datetime="2017-05-16T06:47:36.000Z" itemprop="datePublished">2017-05-16</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
   </div>
 
   </div>
@@ -110,7 +110,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Android关于TextView 点击的问题
+      Python判断字符串是否是回文结构
     </h1>
   
 
@@ -120,17 +120,30 @@ var _hmt = _hmt || [];
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在xml文件中定义一个<code>android:onClick=&quot;NextQuestion&quot;</code>之后在方法类中点击Textview进行操作没反应，需要在<code>onCreate</code>中定义<code>onClick</code>方法才可以。</p>
+        <p>​    回文（Palindrome），就是一个序列（如字符串）正着读反着读是一样的。生物信息学上最常见的就是转录因子在DNA上的结合位点通常都是回文结构。在 Python 应该如何判断字符串？</p>
+<a id="more"></a>
+<ol>
+<li><p>递归</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(s)</span>:</span></div><div class="line">    <span class="keyword">if</span> len(s) &lt;= <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> s[<span class="number">0</span>] == s[<span class="number">-1</span>] <span class="keyword">and</span> isPalindrome(s[<span class="number">1</span>:<span class="number">-1</span>])</div></pre></td></tr></table></figure>
+</li>
+<li><p>循环</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome1</span><span class="params">(s)</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s))/<span class="number">2</span>:</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s[i] == s[len(s)-i<span class="number">-1</span>]:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>python的切片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome2</span><span class="params">(s)</span>:</span></div><div class="line">    <span class="keyword">return</span> s == s[::<span class="number">-1</span>]</div></pre></td></tr></table></figure>
+<p>以上的实现复杂度也是O(n)的。</p>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2015/05/13/Android关于TextView-点击的问题/" data-id="cj2r85q11000z72jrx9mp6fsb" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/05/16/Python判断字符串是否是回文结构/" data-id="cj2r85q2t003h72jrp8es1b7g" class="article-share-link" data-share="baidu">Share</a>
       
 
       
-        <a href="http://www.yuluoding.com/2015/05/13/Android关于TextView-点击的问题/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://www.yuluoding.com/2017/05/16/Python判断字符串是否是回文结构/#ds-thread" class="article-comment-link">Comments</a>
       
 
       
@@ -140,19 +153,10 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2015/05/16/adb-shell-错误/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          adb shell 错误
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/05/12/Android-hander错误/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/05/10/Python第三方库unrar/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android hander错误及后续错误</div>
+      <div class="article-nav-title">Python第三方库unrar</div>
     </a>
   
 </nav>
@@ -163,7 +167,7 @@ var _hmt = _hmt || [];
 
   <section id="comments">
     
-  <div class="ds-thread" data-thread-key="2015/05/13/Android关于TextView-点击的问题/" data-title="Android关于TextView 点击的问题" data-url="http://www.yuluoding.com/2015/05/13/Android关于TextView-点击的问题/"></div>
+  <div class="ds-thread" data-thread-key="2017/05/16/Python判断字符串是否是回文结构/" data-title="Python判断字符串是否是回文结构" data-url="http://www.yuluoding.com/2017/05/16/Python判断字符串是否是回文结构/"></div>
   
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"xuelu"};
@@ -182,8 +186,21 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 
 
-<div class="ds-share" data-thread-key="2015/05/13/Android关于TextView-点击的问题/" data-title="Android关于TextView 点击的问题" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;在xml文件中定义一个&lt;code&gt;android:onClick=&amp;quot;NextQuestion&amp;quot;&lt;/code&gt;之后在方法类中点击Textview进行操作没反应，需要在&lt;code&gt;onCreate&lt;/code&gt;中定义&lt;code&gt;onClick&lt;/code&gt;方法才可以。&lt;/p&gt;
-" data-url="http://www.yuluoding.com/2015/05/13/Android关于TextView-点击的问题/">
+<div class="ds-share" data-thread-key="2017/05/16/Python判断字符串是否是回文结构/" data-title="Python判断字符串是否是回文结构" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;​    回文（Palindrome），就是一个序列（如字符串）正着读反着读是一样的。生物信息学上最常见的就是转录因子在DNA上的结合位点通常都是回文结构。在 Python 应该如何判断字符串？&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;递归&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isPalindrome&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(s)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; len(s) &amp;lt;= &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; s[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] == s[&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;] &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; isPalindrome(s[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;])&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;循环&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isPalindrome1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(s)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(len(s))/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; s[i] == s[len(s)-i&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;python的切片&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isPalindrome2&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(s)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; s == s[::&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以上的实现复杂度也是O(n)的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+" data-url="http://www.yuluoding.com/2017/05/16/Python判断字符串是否是回文结构/">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
         
