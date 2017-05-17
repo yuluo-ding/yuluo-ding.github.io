@@ -93,6 +93,96 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-Pyhton遍历文件夹" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/10/Pyhton遍历文件夹/" class="article-date">
+  <time datetime="2017-03-10T01:13:29.000Z" itemprop="datePublished">2017-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/10/Pyhton遍历文件夹/">Pyhton遍历文件夹</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是一个常用的功能，可以有两种方法，<code>os.walk</code>和<code>os.listdir</code></p>
+<p>文档是这么解释的：</p>
+<blockquote>
+<p>os.<strong>listdir</strong>(<em>path</em>)</p>
+<p>Return a list containing the names of the entries in the directory given by <em>path</em>. The list is in arbitrary order. It does not include the special entries ‘.’ and ‘..’ even if they are present in the directory.</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2017/03/10/Pyhton遍历文件夹/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2017/03/10/Pyhton遍历文件夹/" data-id="cj2saqk8s002nb4jr2hfl3naq" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2017/03/10/Pyhton遍历文件夹/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2017/03/10/Pyhton遍历文件夹/" data-title="Pyhton遍历文件夹" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;这是一个常用的功能，可以有两种方法，&lt;code&gt;os.walk&lt;/code&gt;和&lt;code&gt;os.listdir&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;文档是这么解释的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;os.&lt;strong&gt;listdir&lt;/strong&gt;(&lt;em&gt;path&lt;/em&gt;)&lt;/p&gt;
+&lt;p&gt;Return a list containing the names of the entries in the directory given by &lt;em&gt;path&lt;/em&gt;. The list is in arbitrary order. It does not include the special entries ‘.’ and ‘..’ even if they are present in the directory.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;blockquote&gt;
+&lt;p&gt;os.&lt;strong&gt;walk&lt;/strong&gt;(&lt;em&gt;top&lt;/em&gt;, &lt;em&gt;topdown=True&lt;/em&gt;, &lt;em&gt;onerror=None&lt;/em&gt;, &lt;em&gt;followlinks=False&lt;/em&gt;)&lt;/p&gt;
+&lt;p&gt;Generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory &lt;em&gt;top&lt;/em&gt; (including &lt;em&gt;top&lt;/em&gt; itself), it yields a 3-tuple (dirpath, dirnames, filenames).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# -*- coding: utf-8 -*- &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;list_dir&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(rootDir)&lt;/span&gt;:&lt;/span&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    list_dirs = os.walk(rootDir) &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; root, dirs, files &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; list_dirs: &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; d &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; dirs: &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; os.path.join(root, d)      &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; f &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; files: &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; os.path.join(root, f)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# -*- coding: utf-8 -*- &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;list_dir&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(rootDir)&lt;/span&gt;:&lt;/span&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; lists &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; os.listdir(rootDir): &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        path = os.path.join(rootDir, lists) &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; path &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; os.path.isdir(path): &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            list_dir(path)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;对于第一种方法，输出总是先文件夹后文件名的，对于第二种，则是按照目录树结构以及按照首字母排序进行输出的。&lt;/p&gt;
+" data-url="http://www.yuluoding.com/2017/03/10/Pyhton遍历文件夹/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
     <article id="post-Ubuntu-16-04LTS-搭建-Shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" class="article-date">
@@ -133,7 +223,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cj2r85q3h004f72jrp1hgabfk" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cj2saqkbb004gb4jrlcyb2czq" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -219,7 +309,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" data-id="cj2r85q0o000g72jry553b55y" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" data-id="cj2saqk5n000db4jrsk5wxeio" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -298,7 +388,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/12/hexo教程-error/" data-id="cj2r85q3r005172jr0czxkm5f" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/12/hexo教程-error/" data-id="cj2saqkc7005cb4jr7e2djuiq" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -373,7 +463,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/02/11/Hexo添加文章自动打开编辑器/" data-id="cj2r85q1n001o72jrq37lqwp1" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/02/11/Hexo添加文章自动打开编辑器/" data-id="cj2saqk7l001rb4jrf9s0o9ug" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -412,88 +502,6 @@ var _hmt = _hmt || [];
     </div>
  </div>
   
-    <article id="post-Xshell配色方案" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/20/Xshell配色方案/" class="article-date">
-  <time datetime="2017-01-20T08:39:04.000Z" itemprop="datePublished">2017-01-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Soft/">Soft</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/20/Xshell配色方案/">Xshell配色方案</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Xshell是Windows下很好用的一款SSH软件，但是性冷淡的配色终究还是有点枯燥，分享两个还可以的配色方案。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/20/Xshell配色方案/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2017/01/20/Xshell配色方案/" data-id="cj2r85q3k004m72jr1q8zrlzp" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2017/01/20/Xshell配色方案/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2017/01/20/Xshell配色方案/" data-title="Xshell配色方案" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;Xshell是Windows下很好用的一款SSH软件，但是性冷淡的配色终究还是有点枯燥，分享两个还可以的配色方案。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;第一个&lt;strong&gt;isayme.xcs&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[isayme]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;text(bold)=eaeaea&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;magenta(bold)=ff00ff&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;text=ffffff&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;white(bold)=eaeaea&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;green=00c000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;red(bold)=d20000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;green(bold)=00ff00&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;black(bold)=808080&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;red=c00000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;blue=113fcc&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;black=000000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;blue(bold)=0080ff&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yellow(bold)=ffff00&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cyan(bold)=00ffff&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yellow=c0c000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;magenta=c000c0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;background=222222&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;white=c0c0c0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cyan=00c0c0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[Names]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;count=1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;name0=isayme&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;第二个&lt;strong&gt;ubuntu.xcs&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[ubuntu]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;text(bold)=ffffff&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;magenta(bold)=ad7fa8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;text=ffffff&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;white(bold)=eeeeec&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;green=4e9a06&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;red(bold)=ef2929&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;green(bold)=8ae234&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;black(bold)=555753&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;red=cc0000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;blue=3465a4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;black=000000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;blue(bold)=729fcf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yellow(bold)=fce94f&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cyan(bold)=34e2e2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yellow=c4a000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;magenta=75507b&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;background=300a24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;white=d3d7cf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cyan=06989a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[Names]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;count=1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;name0=ubuntu&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;保存为xcs格式文件就好，然后导入到Xshell&lt;/p&gt;
-&lt;p&gt;工具——&amp;gt;配色方案——&amp;gt;导入&lt;/p&gt;
-" data-url="http://www.yuluoding.com/2017/01/20/Xshell配色方案/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -507,7 +515,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget category">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pyhton/">Pyhton</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
       	
     </div>
   </div>
@@ -518,7 +526,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -528,6 +536,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/05/17/Python-Pip-使用警告/">Python Pip 使用警告</a>
+          </li>
         
           <li>
             <a href="/2017/05/16/Python判断字符串是否是回文结构/">Python判断字符串是否是回文结构</a>
@@ -543,10 +555,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2017/05/04/Linux中的apt-get和apt-cache命令的原理/">Linux中的apt-get和apt-cache命令的原理</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/03/Python字符串处理/">Python字符串处理</a>
           </li>
         
       </ul>
