@@ -15,7 +15,7 @@
 <meta property="og:description" content="在macOS更新完pip(9.0.1)之后使用会出现如下警告：
 1DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006MhlIggy1ffo3b7rgkfj30ab0j8mzf">
-<meta property="og:updated_time" content="2017-05-17T01:15:59.000Z">
+<meta property="og:updated_time" content="2017-05-17T01:21:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Pip 使用警告">
 <meta name="twitter:description" content="在macOS更新完pip(9.0.1)之后使用会出现如下警告：
@@ -127,6 +127,7 @@ var _hmt = _hmt || [];
       
         <p>在macOS更新完pip(9.0.1)之后使用会出现如下警告：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DEPRECATION: The default format will switch to columns <span class="keyword">in</span> the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) <span class="keyword">in</span> your pip.conf under the [list] section) to <span class="built_in">disable</span> this warning.</div></pre></td></tr></table></figure>
+<p>虽然不影响使用，但是还是要解决。方法如下：</p>
 <a id="more"></a>
 <p>虽然不影响使用，但是还是要解决。方法如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~</div><div class="line">mkdir .pip</div><div class="line"><span class="built_in">cd</span> .pip/</div><div class="line">vi pip.conf</div></pre></td></tr></table></figure>
@@ -193,6 +194,7 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 <div class="ds-share" data-thread-key="2017/05/17/Python-Pip-使用警告/" data-title="Python Pip 使用警告" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;在macOS更新完pip(9.0.1)之后使用会出现如下警告：&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;DEPRECATION: The default format will switch to columns &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; your pip.conf under the [list] section) to &lt;span class=&quot;built_in&quot;&gt;disable&lt;/span&gt; this warning.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;虽然不影响使用，但是还是要解决。方法如下：&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;虽然不影响使用，但是还是要解决。方法如下：&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ~&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mkdir .pip&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; .pip/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;vi pip.conf&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
