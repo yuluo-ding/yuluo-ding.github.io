@@ -19,31 +19,12 @@
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
-
   
-  	<link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <!-- <link rel="icon" href="/favicon.png"> -->
+    <link rel="icon" href="/favicon.png">
   
-
   <link rel="stylesheet" href="/css/style.css">
   <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
   
-  
-
-<script type="text/javascript">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?4fa0c4724c9f99bd42beb3046574586e";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-</script>
-
 </head>
 <body>
 <div id="container">
@@ -69,8 +50,6 @@ var _hmt = _hmt || [];
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
-          <a class="main-nav-link" href="/about">About</a>
-        
       </nav>
       <nav id="sub-nav">
         
@@ -79,7 +58,7 @@ var _hmt = _hmt || [];
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
           <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
           <input type="submit" value="" class="search-form-submit">
           <input name=tn type=hidden value="bds">
@@ -116,8 +95,6 @@ var _hmt = _hmt || [];
 
       </header>
     
-
-
     <div class="article-entry" itemprop="articleBody">
       
         <p>Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：<br><a id="more"></a><br>Xshell连接VM内的Ubuntu16</p>
@@ -133,7 +110,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/" data-id="cj2w2ypx6004pcyjr7qgbliip" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/" data-id="cj2w2ypx6004pcyjr7qgbliip" class="article-share-link" data-share="baidu" data-title="Xshell连接Ubuntu">Share</a>
       
 
       
@@ -169,51 +146,8 @@ var _hmt = _hmt || [];
 
 
   <section id="comments">
-    
-  <div class="ds-thread" data-thread-key="2016/08/01/Xshell连接Ubuntu/" data-title="Xshell连接Ubuntu" data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/"></div>
-  
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"xuelu"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-
-
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/08/01/Xshell连接Ubuntu/" data-title="Xshell连接Ubuntu" data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/"></div>
   </section>
-
-
-
-<div class="ds-share" data-thread-key="2016/08/01/Xshell连接Ubuntu/" data-title="Xshell连接Ubuntu" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;Xshell连接VM内的Ubuntu16&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;Xshell&lt;/span&gt; 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。&lt;span class=&quot;keyword&quot;&gt;Xshell&lt;/span&gt; 通过互联网到远程主机的安全连接以及它创新性的设计和特色帮助用户在复杂的网络环境中享受他们的工作。
-
-但是在用SSH连接的时候会发现连接不上，其实这是由于Ubuntu默认不安装openssh服务导致的，
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;所以若要使用ssh远程登录Ubuntu主机，首先需要安装ssh服务器。&lt;/p&gt;
-&lt;p&gt;首先，判断Ubuntu是否安装了ssh服务：&lt;/p&gt;
-&lt;p&gt;首先，判断Ubuntu是否安装了ssh服务：&lt;br&gt;1、输入：#ps -e | grep ssh 如果服务已经启动，则可以看到“sshd”，否则表示没有安装服务，或没有开机启动&lt;br&gt;2、安装ssh服务，输入命令：&lt;code&gt;#sudo apt-get install openssh-server&lt;/code&gt;&lt;br&gt;3、启动服务:&lt;code&gt;#/etc/init.d/ssh start&lt;/code&gt;&lt;br&gt;4、本机测试是否能够成功登录：#ssh -l 用户名 本机ip&lt;br&gt;5、用远程工具进行远程连接，若拒接访问，则关闭防火墙或允许22端口，参考如下。&lt;/p&gt;
-&lt;p&gt;桥接模式可以使路由器使用DHCP的方式分配IP，如果你的电脑所处的网络拓扑中没有路由器的话也是ping不通的。如果有路由器，因为防火墙导致无法连接，可以使用  &lt;code&gt;sudo ufw disable&lt;/code&gt; 命令禁用防火墙。或者在防火墙开启的情况下开放22端口命令是 &lt;code&gt;sudo ufw allow 22&lt;/code&gt;&lt;/p&gt;
-" data-url="http://www.yuluoding.com/2016/08/01/Xshell连接Ubuntu/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-
-
 </section>
       
       <aside id="sidebar">
@@ -221,13 +155,15 @@ var duoshuoQuery = {short_name:"xuelu"};
     
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
-    <div class="widget category">
+    <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pyhton/">Pyhton</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
-      	
     </div>
   </div>
 
-
+  
+    
+  
+    
   
     
   <div class="widget-wrap">
@@ -276,11 +212,15 @@ var duoshuoQuery = {short_name:"xuelu"};
       <ul>
         
           <li>
-            <a href="http://xiguabaobao.com" target="_blank">auther</a>
+            <a href="http://arvinxiang.com" target="_blank">主题作者</a>
           </li>
         
           <li>
-            <a href="" target="_blank">sina</a>
+            <a href="http://reqianduan.com" target="_blank">热前端</a>
+          </li>
+        
+          <li>
+            <a href="http://yuancheng.work" target="_blank">远程.work</a>
           </li>
         
       </ul>
@@ -296,7 +236,7 @@ var duoshuoQuery = {short_name:"xuelu"};
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Luo Yu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
     </div>
@@ -309,8 +249,6 @@ var duoshuoQuery = {short_name:"xuelu"};
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
-  
 </nav>
   <!-- totop start -->
 <div id="totop">
@@ -321,13 +259,13 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 <!-- 多说公共js代码 start -->
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"xuelu"};
+var duoshuoQuery = {short_name:"reqianduan"};
   (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;
     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
     ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
+    (document.getElementsByTagName('head')[0]
      || document.getElementsByTagName('body')[0]).appendChild(ds);
   })();
   </script>
@@ -345,15 +283,25 @@ var duoshuoQuery = {short_name:"xuelu"};
     <a class="article-share-more" data-cmd="more" title="更多"></a>
   </div>
 </div>
-<script>window._bd_share_config={"common":{},"share":{"bdCustomStyle":"/css/bdshare.css"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
 <!-- 百度分享 end -->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 

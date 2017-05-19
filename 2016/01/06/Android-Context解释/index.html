@@ -19,31 +19,12 @@
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
-
   
-  	<link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <!-- <link rel="icon" href="/favicon.png"> -->
+    <link rel="icon" href="/favicon.png">
   
-
   <link rel="stylesheet" href="/css/style.css">
   <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
   
-  
-
-<script type="text/javascript">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?4fa0c4724c9f99bd42beb3046574586e";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-</script>
-
 </head>
 <body>
 <div id="container">
@@ -69,8 +50,6 @@ var _hmt = _hmt || [];
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
-          <a class="main-nav-link" href="/about">About</a>
-        
       </nav>
       <nav id="sub-nav">
         
@@ -79,7 +58,7 @@ var _hmt = _hmt || [];
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
           <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
           <input type="submit" value="" class="search-form-submit">
           <input name=tn type=hidden value="bds">
@@ -116,8 +95,6 @@ var _hmt = _hmt || [];
 
       </header>
     
-
-
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="Android中的Context解释">Android中的Context解释</h4><a id="more"></a>
@@ -133,7 +110,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2016/01/06/Android-Context解释/" data-id="cj2w2ypsg0001cyjr6198v38m" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2016/01/06/Android-Context解释/" data-id="cj2w2ypsg0001cyjr6198v38m" class="article-share-link" data-share="baidu" data-title="Android-Context解释">Share</a>
       
 
       
@@ -169,51 +146,8 @@ var _hmt = _hmt || [];
 
 
   <section id="comments">
-    
-  <div class="ds-thread" data-thread-key="2016/01/06/Android-Context解释/" data-title="Android-Context解释" data-url="http://www.yuluoding.com/2016/01/06/Android-Context解释/"></div>
-  
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"xuelu"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-
-
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/01/06/Android-Context解释/" data-title="Android-Context解释" data-url="http://www.yuluoding.com/2016/01/06/Android-Context解释/"></div>
   </section>
-
-
-
-<div class="ds-share" data-thread-key="2016/01/06/Android-Context解释/" data-title="Android-Context解释" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;Android中的Context解释&quot;&gt;Android中的Context解释&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;Android系统的上下文对象，即在Context中，Activity、Service、Application都是继承自Context。&lt;br&gt;Android应用程序会在如下所示的几个时间点创建应用上下文Context&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;创建Application&lt;/li&gt;
-&lt;li&gt;创建Activity&lt;/li&gt;
-&lt;li&gt;创建Service&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;由上可知，创建Context的时机就是在创建Context的实现类的时候。&lt;br&gt;应用程序第一次启动的时候，Android系统都会创建一个Application对象，同事创建Application Context，所有的组件都共同拥有这样一个Context对象，这个应用上下文对象贯穿整个应用进程的生命周期，为应用全局提供功能和环境支持。而创建Activity和Service组件时，系统也会给它们提供运行的上下文环境，即创建Activity实例、Service实例的Context对象。&lt;br&gt;在Activity中获取Context对象时，可以直接使用this，而在匿名内部类中，就必须指定XXXXActivity.this才可以获得该Activity的Context对象。也可以通过getApplicationContext()方法来获取整个App的Context，但是通过getApplicationContext()方法获得是整个应用的上下文引用，这个与某个组件的上下文引用，在某些时候还是有区别的。&lt;/p&gt;
-" data-url="http://www.yuluoding.com/2016/01/06/Android-Context解释/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-
-
 </section>
       
       <aside id="sidebar">
@@ -221,13 +155,15 @@ var duoshuoQuery = {short_name:"xuelu"};
     
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
-    <div class="widget category">
+    <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pyhton/">Pyhton</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
-      	
     </div>
   </div>
 
-
+  
+    
+  
+    
   
     
   <div class="widget-wrap">
@@ -276,11 +212,15 @@ var duoshuoQuery = {short_name:"xuelu"};
       <ul>
         
           <li>
-            <a href="http://xiguabaobao.com" target="_blank">auther</a>
+            <a href="http://arvinxiang.com" target="_blank">主题作者</a>
           </li>
         
           <li>
-            <a href="" target="_blank">sina</a>
+            <a href="http://reqianduan.com" target="_blank">热前端</a>
+          </li>
+        
+          <li>
+            <a href="http://yuancheng.work" target="_blank">远程.work</a>
           </li>
         
       </ul>
@@ -296,7 +236,7 @@ var duoshuoQuery = {short_name:"xuelu"};
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Luo Yu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
     </div>
@@ -309,8 +249,6 @@ var duoshuoQuery = {short_name:"xuelu"};
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
-  
 </nav>
   <!-- totop start -->
 <div id="totop">
@@ -321,13 +259,13 @@ var duoshuoQuery = {short_name:"xuelu"};
 
 <!-- 多说公共js代码 start -->
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"xuelu"};
+var duoshuoQuery = {short_name:"reqianduan"};
   (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;
     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
     ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
+    (document.getElementsByTagName('head')[0]
      || document.getElementsByTagName('body')[0]).appendChild(ds);
   })();
   </script>
@@ -345,15 +283,25 @@ var duoshuoQuery = {short_name:"xuelu"};
     <a class="article-share-more" data-cmd="more" title="更多"></a>
   </div>
 </div>
-<script>window._bd_share_config={"common":{},"share":{"bdCustomStyle":"/css/bdshare.css"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
 <!-- 百度分享 end -->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
