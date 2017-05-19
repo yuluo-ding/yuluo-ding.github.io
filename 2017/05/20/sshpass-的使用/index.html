@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>sshpass 的使用 | yuluo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sshpass 的使用">
+<meta property="og:url" content="http://www.yuluoding.com/2017/05/20/sshpass-的使用/index.html">
+<meta property="og:site_name" content="yuluo">
+<meta property="og:description" content="​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。">
+<meta property="og:updated_time" content="2017-05-19T16:49:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sshpass 的使用">
+<meta name="twitter:description" content="​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。">
+  
+    <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
+  
+
+  
+  	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- <link rel="icon" href="/favicon.png"> -->
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+  
+
+<script type="text/javascript">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4fa0c4724c9f99bd42beb3046574586e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</script>
+
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yuluo</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The home of yuluoding!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="www.yuluoding.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-sshpass-的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/20/sshpass-的使用/" class="article-date">
+  <time datetime="2017-05-19T16:28:27.000Z" itemprop="datePublished">2017-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sshpass 的使用
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。</p>
+<a id="more"></a>
+<h4 id="安装">安装</h4><ol>
+<li><p><strong>Installing on Ubuntu</strong></p>
+<p><code>apt-get install sshpass</code></p>
+</li>
+<li><p><strong>Installing on OS X</strong></p>
+<ul>
+<li><p>开始之前需要安装<code>install xcode and command line tools.</code></p>
+</li>
+<li><p>之后安装Installing with Homebrew</p>
+</li>
+<li><p>由于安全问题，brew 官方默认不允许安装，可以尝试如下方法：</p>
+<p><code>brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb</code></p>
+</li>
+</ul>
+</li>
+<li><p><strong>源码安装</strong></p>
+<ul>
+<li>Download the <a href="http://sourceforge.net/projects/sshpass/" target="_blank" rel="external">Source Code</a></li>
+<li>Extract it and cd into the directory</li>
+<li><code>./configure</code></li>
+<li><code>sudo make install</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="用法介绍">用法介绍</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[root@zhu ~]<span class="comment"># sshpass --help</span></div><div class="line">sshpass: invalid option -- <span class="string">'-'</span></div><div class="line">Usage: sshpass [<span class="_">-f</span>|<span class="_">-d</span>|-p|<span class="_">-e</span>] [-hV] <span class="built_in">command</span> parameters</div><div class="line">   <span class="_">-f</span> filename   Take password to use from file</div><div class="line">   <span class="_">-d</span> number     Use number as file descriptor <span class="keyword">for</span> getting password</div><div class="line">   -p password   Provide password as argument (security unwise)</div><div class="line">   <span class="_">-e</span>            Password is passed as env-var <span class="string">"SSHPASS"</span></div><div class="line">   With no parameters - password will be taken from stdin</div><div class="line">   -h            Show <span class="built_in">help</span> (this screen)</div><div class="line">   -V            Print version information</div><div class="line">At most one of <span class="_">-f</span>, <span class="_">-d</span>, -p or <span class="_">-e</span> should be used</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">-p password <span class="comment">#后跟密码</span></div><div class="line">[root@zhu ~]<span class="comment"># sshpass -p 123456 ssh root@192.168.56.102</span></div><div class="line">Last login: Wed Apr 16 15:35:22 2014 from 192.168.56.1</div><div class="line">[root@jiang ~]<span class="comment"># exit</span></div><div class="line"><span class="built_in">logout</span></div><div class="line">Connection to 192.168.56.102 closed.</div><div class="line"><span class="_">-f</span> filename <span class="comment">#后跟保存密码的文件名，密码是文件内容的第一行。</span></div><div class="line">[root@zhu ~]<span class="comment"># cat 1.txt</span></div><div class="line">123456</div><div class="line">[root@zhu ~]<span class="comment"># sshpass -f 1.txt  ssh root@192.168.56.102</span></div><div class="line">Last login: Fri Apr 18 13:48:20 2014 from 192.168.56.101</div><div class="line">[root@jiang ~]<span class="comment"># exit</span></div><div class="line"><span class="built_in">logout</span></div><div class="line">Connection to 192.168.56.102 closed.</div><div class="line"><span class="_">-e</span> <span class="comment">#将环境变量SSHPASS作为密码</span></div><div class="line">[root@zhu ~]<span class="comment"># export SSHPASS=123456</span></div><div class="line">[root@zhu ~]<span class="comment"># sshpass -e  ssh root@192.168.56.102</span></div><div class="line">Last login: Fri Apr 18 13:51:45 2014 from 192.168.56.101</div><div class="line">[root@jiang ~]<span class="comment"># exit</span></div><div class="line"><span class="built_in">logout</span></div><div class="line">Connection to 192.168.56.102 closed.</div></pre></td></tr></table></figure>
+<p>如果在多台主机执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[root@zhu ~]<span class="comment"># cat a.sh</span></div><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(cat /root/1.txt)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> <span class="variable">$i</span></div><div class="line">    sshpass -p123456 ssh root@<span class="variable">$i</span> <span class="string">'ls -l'</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2017/05/20/sshpass-的使用/" data-id="cj2w2ypxe0058cyjrna5imq7s" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2017/05/20/sshpass-的使用/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/05/17/Python-Pip-使用警告/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Pip 使用警告</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    
+  <div class="ds-thread" data-thread-key="2017/05/20/sshpass-的使用/" data-title="sshpass 的使用" data-url="http://www.yuluoding.com/2017/05/20/sshpass-的使用/"></div>
+  
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xuelu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </section>
+
+
+
+<div class="ds-share" data-thread-key="2017/05/20/sshpass-的使用/" data-title="sshpass 的使用" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;安装&quot;&gt;安装&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Installing on Ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt-get install sshpass&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Installing on OS X&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;开始之前需要安装&lt;code&gt;install xcode and command line tools.&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;之后安装Installing with Homebrew&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;由于安全问题，brew 官方默认不允许安装，可以尝试如下方法：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;源码安装&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href=&quot;http://sourceforge.net/projects/sshpass/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Source Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract it and cd into the directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./configure&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo make install&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;用法介绍&quot;&gt;用法介绍&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[root@zhu ~]&lt;span class=&quot;comment&quot;&gt;# sshpass --help&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sshpass: invalid option -- &lt;span class=&quot;string&quot;&gt;&#39;-&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Usage: sshpass [&lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt;|&lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt;|-p|&lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt;] [-hV] &lt;span class=&quot;built_in&quot;&gt;command&lt;/span&gt; parameters&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; filename   Take password to use from file&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt; number     Use number as file descriptor &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; getting password&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   -p password   Provide password as argument (security unwise)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt;            Password is passed as env-var &lt;span class=&quot;string&quot;&gt;&quot;SSHPASS&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   With no parameters - password will be taken from stdin&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   -h            Show &lt;span class=&quot;built_in&quot;&gt;help&lt;/span&gt; (this screen)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   -V            Print version information&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;At most one of &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt;, &lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt;, -p or &lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt; should be used&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;-p password &lt;span class=&quot;comment&quot;&gt;#后跟密码&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[root@zhu ~]&lt;span class=&quot;comment&quot;&gt;# sshpass -p 123456 ssh root@192.168.56.102&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Last login: Wed Apr 16 15:35:22 2014 from 192.168.56.1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[root@jiang ~]&lt;span class=&quot;comment&quot;&gt;# exit&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;logout&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Connection to 192.168.56.102 closed.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; filename &lt;span class=&quot;comment&quot;&gt;#后跟保存密码的文件名，密码是文件内容的第一行。&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[root@zhu ~]&lt;span class=&quot;comment&quot;&gt;# cat 1.txt&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;123456&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[root@zhu ~]&lt;span class=&quot;comment&quot;&gt;# sshpass -f 1.txt  ssh root@192.168.56.102&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Last login: Fri Apr 18 13:48:20 2014 from 192.168.56.101&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[root@jiang ~]&lt;span class=&quot;comment&quot;&gt;# exit&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;logout&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Connection to 192.168.56.102 closed.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;#将环境变量SSHPASS作为密码&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[root@zhu ~]&lt;span class=&quot;comment&quot;&gt;# export SSHPASS=123456&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[root@zhu ~]&lt;span class=&quot;comment&quot;&gt;# sshpass -e  ssh root@192.168.56.102&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Last login: Fri Apr 18 13:51:45 2014 from 192.168.56.101&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[root@jiang ~]&lt;span class=&quot;comment&quot;&gt;# exit&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;logout&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Connection to 192.168.56.102 closed.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果在多台主机执行命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[root@zhu ~]&lt;span class=&quot;comment&quot;&gt;# cat a.sh&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; $(cat /root/1.txt)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$i&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sshpass -p123456 ssh root@&lt;span class=&quot;variable&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;ls -l&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;done&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+" data-url="http://www.yuluoding.com/2017/05/20/sshpass-的使用/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget category">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pyhton/">Pyhton</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+      	
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/20/sshpass-的使用/">sshpass 的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/Python-Pip-使用警告/">Python Pip 使用警告</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/16/Python判断字符串是否是回文结构/">Python判断字符串是否是回文结构</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/10/Python第三方库unrar/">Python第三方库unrar</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/07/Python-使用-paramiko-模块实现-ssh-和-scp/">Python 使用 paramiko 模块实现 ssh 和 scp</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://xiguabaobao.com" target="_blank">auther</a>
+          </li>
+        
+          <li>
+            <a href="" target="_blank">sina</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Luo Yu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="totop"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xuelu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>window._bd_share_config={"common":{},"share":{"bdCustomStyle":"/css/bdshare.css"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

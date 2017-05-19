@@ -93,6 +93,91 @@ var _hmt = _hmt || [];
     <div class="outer">
       <section id="main">
   
+    <article id="post-Linux中的apt-get和apt-cache命令的原理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/04/Linux中的apt-get和apt-cache命令的原理/" class="article-date">
+  <time datetime="2017-05-04T07:56:10.000Z" itemprop="datePublished">2017-05-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/04/Linux中的apt-get和apt-cache命令的原理/">Linux中的apt-get和apt-cache命令的原理</a>
+    </h1>
+  
+
+      </header>
+    
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>先介绍几个和apt-get相关的目录:</strong></p>
+<p><code>/var/lib/dpkg/available</code>文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包.</p>
+<p><code>/var/cache/apt/archives</code>目录是在用 apt-get install 安装软件时，软件包的临时存放路径</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/05/04/Linux中的apt-get和apt-cache命令的原理/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://www.yuluoding.com/2017/05/04/Linux中的apt-get和apt-cache命令的原理/" data-id="cj2w2ypuh0023cyjrmqp1n3cz" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://www.yuluoding.com/2017/05/04/Linux中的apt-get和apt-cache命令的原理/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<div class="ds-share" data-thread-key="2017/05/04/Linux中的apt-get和apt-cache命令的原理/" data-title="Linux中的apt-get和apt-cache命令的原理" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;p&gt;&lt;strong&gt;先介绍几个和apt-get相关的目录:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/var/lib/dpkg/available&lt;/code&gt;文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/var/cache/apt/archives&lt;/code&gt;目录是在用 apt-get install 安装软件时，软件包的临时存放路径&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;存放的是软件源站点, 当你执行 &lt;code&gt;sudo apt-get install xxx&lt;/code&gt;时，Ubuntu 就去这些站点下载软件包到本地并执行安装&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/var/lib/apt/lists&lt;/code&gt;使用&lt;code&gt;apt-get update&lt;/code&gt;命令会从&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;中下载软件列表，并保存到该目录&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;APT工作原理：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu采用集中式的软件仓库机制，将各式各样的软件包分门别类地存放在软件仓库中，进行有效地组织和管理。然后，将软件仓库置于许许多多的镜像服务器中，并保持基本一致。这样，所有的Ubuntu用户随时都能获得最新版本的安装软件包。因此，对于用户，这些镜像服务器就是他们的软件源（Reposity）。&lt;/p&gt;
+&lt;p&gt;然而，由于每位用户所处的网络环境不同，不可能随意地访问各镜像站点。为了能够有选择地访问，在Ubuntu系统中，使用软件源配置文件&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;列出最合适访问的镜像站点地址。&lt;/p&gt;
+&lt;p&gt;apt-get的更新过程:执行apt-get update程序分析/etc/apt/sources.list自动连网寻找list中对应的&lt;code&gt;Packages/Sources/Release&lt;/code&gt;列表文件，如果有更新则下载之，存入&lt;code&gt;/var/lib/apt/lists/&lt;/code&gt;目录然后 apt-get install 相应的包 ，下载并安装。&lt;/p&gt;
+&lt;p&gt;即使这样，软件源配置文件只是告知Ubuntu系统可以访问的镜像站点地址，但那些镜像站点具体都拥有什么软件资源并不清楚。若每安装一个软件包，就在服务器上寻找一遍，效率是很低的。因而，就有必要为这些软件资源列个清单（建立索引文件），以便本地主机查询。&lt;/p&gt;
+&lt;p&gt;apt-get install 下载的软件存放到 &lt;code&gt;/var/cache/apt/archives/&lt;/code&gt;下。&lt;/p&gt;
+&lt;p&gt;同时，APT能够检查Ubuntu Linux系统中的软件包依赖关系，大大简化了Ubuntu用户安装和卸载软件包的过程。&lt;/p&gt;
+" data-url="http://www.yuluoding.com/2017/05/04/Linux中的apt-get和apt-cache命令的原理/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+  
     <article id="post-Python字符串处理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/05/03/Python字符串处理/" class="article-date">
@@ -136,7 +221,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/05/03/Python字符串处理/" data-id="cj2saqkad003mb4jr305i12q2" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/05/03/Python字符串处理/" data-id="cj2w2ypwl003rcyjrt5knw6xf" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -307,7 +392,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/04/27/Linux-免密登录/" data-id="cj2saqk7z001zb4jrh57gioc9" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/04/27/Linux-免密登录/" data-id="cj2w2ypui0024cyjrn92za875" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -405,7 +490,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/04/20/iTerm2保持-SSH-连接/" data-id="cj2saqkdc005lb4jrhbjxu4fm" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/04/20/iTerm2保持-SSH-连接/" data-id="cj2w2ypxg005ccyjrkl7pi29a" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -493,7 +578,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://www.yuluoding.com/2017/04/13/Python-统计列表中重复项/" data-id="cj2saqk960032b4jryu8aifaw" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://www.yuluoding.com/2017/04/13/Python-统计列表中重复项/" data-id="cj2w2ypvy0032cyjrvces21dw" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -533,106 +618,6 @@ var _hmt = _hmt || [];
     </div>
  </div>
   
-    <article id="post-Python-OS文件操作模块常用函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/12/Python-OS文件操作模块常用函数/" class="article-date">
-  <time datetime="2017-04-12T09:15:26.000Z" itemprop="datePublished">2017-04-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/12/Python-OS文件操作模块常用函数/">Python OS文件操作模块常用函数</a>
-    </h1>
-  
-
-      </header>
-    
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Python提供了一个os模块，里面包含了很多操作文件和目录的函数">Python提供了一个os模块，里面包含了很多操作文件和目录的函数</h4><p>全部函数可以用<code>help(os)</code>或是<code>dir(os)</code>查看其用法。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/04/12/Python-OS文件操作模块常用函数/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://www.yuluoding.com/2017/04/12/Python-OS文件操作模块常用函数/" data-id="cj2saqk8v002pb4jrly74sjc1" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://www.yuluoding.com/2017/04/12/Python-OS文件操作模块常用函数/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<div class="ds-share" data-thread-key="2017/04/12/Python-OS文件操作模块常用函数/" data-title="Python OS文件操作模块常用函数" data-images="此处请替换为分享时显示的图片的链接地址" data-content="&lt;h4 id=&quot;Python提供了一个os模块，里面包含了很多操作文件和目录的函数&quot;&gt;Python提供了一个os模块，里面包含了很多操作文件和目录的函数&lt;/h4&gt;&lt;p&gt;全部函数可以用&lt;code&gt;help(os)&lt;/code&gt;或是&lt;code&gt;dir(os)&lt;/code&gt;查看其用法。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1.重命名：&lt;code&gt;os.rename(old, new)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;2.删除：&lt;code&gt;os.remove(file)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;3.列出目录下的文件 ：&lt;code&gt;os.listdir(path)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;4.获取当前工作目录：&lt;code&gt;os.getcwd()&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;5.改变工作目录：&lt;code&gt;os.chdir(newdir)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;6.创建多级目录：&lt;code&gt;os.makedirs(r&amp;quot;c:\python \test&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;7.创建单个目录：&lt;code&gt;os.mkdir(&amp;quot;test&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;8.删除多个目录：&lt;code&gt;os.removedirs(r&amp;quot;c:\python&amp;quot;)&lt;/code&gt; &lt;code&gt;#删除所给路径最后一个目录下所有空目录。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;9.删除单个目录：&lt;code&gt;os.rmdir(&amp;quot;test&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;10.获取文件属性：&lt;code&gt;os.stat(file)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;11.修改文件权限与时间戳：&lt;code&gt;os.chmod(file)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;12.执行操作系统命令：&lt;code&gt;os.system(&amp;quot;dir&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;13.启动新进程：&lt;code&gt;os.exec()&lt;/code&gt;, `os.execvp()&lt;/p&gt;
-&lt;p&gt;14.在后台执行程序：&lt;code&gt;osspawnv()&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;15.终止当前进程：&lt;code&gt;os.exit()&lt;/code&gt;, &lt;code&gt;os._exit()&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;16.分离文件名：&lt;code&gt;os.path.split(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;(&amp;quot;c:\\python&amp;quot;, &amp;quot;hello.py&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;17.分离扩展名：&lt;code&gt;os.path.splitext(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;(&amp;quot;c:\\python\\hello&amp;quot;, &amp;quot;.py&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;18.获取路径名：&lt;code&gt;os.path.dirname(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;&amp;quot;c:\\python&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;19.获取文件名：&lt;code&gt;os.path.basename(r&amp;quot;r:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;&amp;quot;hello.py&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;20.判断文件或目录是否存在：&lt;code&gt;os.path.exists(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;True&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;21.判断是否是绝对路径：&lt;code&gt;os.path.isabs(r&amp;quot;.\python\&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;False&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;22.判断是否是目录：&lt;code&gt;os.path.isdir(r&amp;quot;c:\python&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;True&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;23.判断是否是文件：&lt;code&gt;os.path.isfile(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;True&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;24.判断是否是链接文件：&lt;code&gt;os.path.islink(r&amp;quot;c:\python\hello.py&amp;quot;)&lt;/code&gt; —&amp;gt; &lt;code&gt;False&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;25.获取文件大小：&lt;code&gt;os.path.getsize(filename)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;26.搜索目录下的所有文件：&lt;code&gt;os.path.walk()&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-" data-url="http://www.yuluoding.com/2017/04/12/Python-OS文件操作模块常用函数/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-        
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-        
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -646,7 +631,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget category">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pyhton/">Pyhton</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pyhton/">Pyhton</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
       	
     </div>
   </div>
@@ -657,7 +642,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -667,6 +652,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/05/20/sshpass-的使用/">sshpass 的使用</a>
+          </li>
         
           <li>
             <a href="/2017/05/17/Python-Pip-使用警告/">Python Pip 使用警告</a>
@@ -682,10 +671,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2017/05/07/Python-使用-paramiko-模块实现-ssh-和-scp/">Python 使用 paramiko 模块实现 ssh 和 scp</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/04/Linux中的apt-get和apt-cache命令的原理/">Linux中的apt-get和apt-cache命令的原理</a>
           </li>
         
       </ul>
