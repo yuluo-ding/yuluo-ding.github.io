@@ -4,17 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: Study Class | yuluo</title>
+  <title>让 MacBook 读取 txt 文本 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The home of yuluo!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yuluo">
-<meta property="og:url" content="yuluo-ding.github.io/categories/Study-Class/index.html">
+  <meta name="description" content="请问如何让 MacBook 读取Windows 下的 txt 文本？很多时候，每次打开都是乱码。
+这个就是一个编码转换的问题。Linux 和 MacBook 都提供了一个强大的命令行命令：iconv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让 MacBook 读取 txt 文本">
+<meta property="og:url" content="yuluo-ding.github.io/2017/05/31/让-macbook-读取-txt-文本/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="The home of yuluo!">
+<meta property="og:description" content="请问如何让 MacBook 读取Windows 下的 txt 文本？很多时候，每次打开都是乱码。
+这个就是一个编码转换的问题。Linux 和 MacBook 都提供了一个强大的命令行命令：iconv">
+<meta property="og:updated_time" content="2017-05-31T14:49:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yuluo">
-<meta name="twitter:description" content="The home of yuluo!">
+<meta name="twitter:title" content="让 MacBook 读取 txt 文本">
+<meta name="twitter:description" content="请问如何让 MacBook 读取Windows 下的 txt 文本？很多时候，每次打开都是乱码。
+这个就是一个编码转换的问题。Linux 和 MacBook 都提供了一个强大的命令行命令：iconv">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -72,202 +76,78 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/04/算法和数据结构/" class="archive-article-date">
-  <time datetime="2016-04-04T04:44:18.000Z" itemprop="datePublished">Apr 4</time>
+      <section id="main"><article id="post-让-macbook-读取-txt-文本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/31/让-macbook-读取-txt-文本/" class="article-date">
+  <time datetime="2017-05-31T14:37:28.000Z" itemprop="datePublished">2017-05-31</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Apple/">Apple</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/04/算法和数据结构/">算法和数据结构</a>
+    <h1 class="article-title" itemprop="name">
+      让 MacBook 读取 txt 文本
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/19/如何阅读Android源码/" class="archive-article-date">
-  <time datetime="2016-02-19T06:39:45.000Z" itemprop="datePublished">Feb 19</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/19/如何阅读Android源码/">如何阅读Android源码</a>
-    </h1>
-  
+        <p>请问如何让 MacBook 读取Windows 下的 txt 文本？很多时候，每次打开都是乱码。</p>
+<p>这个就是一个编码转换的问题。Linux 和 MacBook 都提供了一个强大的命令行命令：<code>iconv</code></p>
+<a id="more"></a>
+<p>步骤如下：</p>
+<ol>
+<li>打开terminal，在其中输入：<code>cd [文件所在目录]</code></li>
+<li>回车之后，输入：<code>iconv -c -f GB2312 -t UTF-8 [你要看的文件] &gt;&gt; [新文件的名称]</code></li>
+</ol>
+<p>如上即可。</p>
+<p>PS：需要注意的是，在上述命令中，GB2312指的是原文件的编码，UTF-8是要转换的目的文件的编码。GB2312这个是常用的中文编码，其他还有gbk等等编码，如果这个命令不行可以试试其他编码。UTF-8是MacBook能够识别的编码。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/02/关于Anroid的/" class="archive-article-date">
-  <time datetime="2016-02-02T02:35:39.000Z" itemprop="datePublished">Feb 2</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/02/关于Anroid的/">关于Anroid的</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="yuluo-ding.github.io/2017/05/31/让-macbook-读取-txt-文本/" data-id="cj3d3z1ek006cwujrxcpnyn3j" class="article-share-link" data-share="baidu" data-title="让 MacBook 读取 txt 文本">Share</a>
+      
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/23/夜深写算法系列/" class="archive-article-date">
-  <time datetime="2016-01-23T06:21:58.000Z" itemprop="datePublished">Jan 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/23/夜深写算法系列/">夜深写算法系列</a>
-    </h1>
-  
+        <a href="yuluo-ding.github.io/2017/05/31/让-macbook-读取-txt-文本/#disqus_thread" class="article-comment-link">Comments</a>
+      
 
-    </header>
+      
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/09/RxJava开发精要/" class="archive-article-date">
-  <time datetime="2016-01-09T09:47:23.000Z" itemprop="datePublished">Jan 9</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/09/RxJava开发精要/">RxJava开发精要</a>
-    </h1>
   
+    <a href="/2017/05/24/Test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Test</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/08/Javva回调机制/" class="archive-article-date">
-  <time datetime="2016-01-08T07:53:23.000Z" itemprop="datePublished">Jan 8</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/08/Javva回调机制/">Java回调机制</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/05/ADB的教程/" class="archive-article-date">
-  <time datetime="2016-01-05T01:32:58.000Z" itemprop="datePublished">Jan 5</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/05/ADB的教程/">ADB的教程</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/12/30/Chrome插件开发入门教程/" class="archive-article-date">
-  <time datetime="2015-12-30T01:50:08.000Z" itemprop="datePublished">Dec 30</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/30/Chrome插件开发入门教程/">Chrome插件开发入门教程</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/16/adb-shell-错误/" class="archive-article-date">
-  <time datetime="2015-05-16T07:39:37.000Z" itemprop="datePublished">May 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/16/adb-shell-错误/">adb shell 错误</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+  <section id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
 </section>
       
       <aside id="sidebar">
@@ -382,11 +262,13 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
+  var disqus_url = 'yuluo-ding.github.io/2017/05/31/让-macbook-读取-txt-文本/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
