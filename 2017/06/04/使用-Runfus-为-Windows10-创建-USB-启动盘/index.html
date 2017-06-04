@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用 Runfus 为 Windows10 创建 USB 启动盘 | yuluo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Rufus 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。
+在如下场景中会非常有用：
+
+你需要把一些可引导的ISO格式的镜像（Windows，Linux，UEFI等）创建成USB安装盘的时候
+你需要使用一个还没有安装操作系统的设备的时候
+你需要从DOS系统刷写BIOS或者其他固件的时候
+你需要运行一个非常底层的工具的时候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Runfus 为 Windows10 创建 USB 启动盘">
+<meta property="og:url" content="yuluo-ding.github.io/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/index.html">
+<meta property="og:site_name" content="yuluo">
+<meta property="og:description" content="Rufus 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。
+在如下场景中会非常有用：
+
+你需要把一些可引导的ISO格式的镜像（Windows，Linux，UEFI等）创建成USB安装盘的时候
+你需要使用一个还没有安装操作系统的设备的时候
+你需要从DOS系统刷写BIOS或者其他固件的时候
+你需要运行一个非常底层的工具的时候">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006MhlIggy1fg9597hxmuj30i30rj79i">
+<meta property="og:updated_time" content="2017-06-04T06:21:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 Runfus 为 Windows10 创建 USB 启动盘">
+<meta name="twitter:description" content="Rufus 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。
+在如下场景中会非常有用：
+
+你需要把一些可引导的ISO格式的镜像（Windows，Linux，UEFI等）创建成USB安装盘的时候
+你需要使用一个还没有安装操作系统的设备的时候
+你需要从DOS系统刷写BIOS或者其他固件的时候
+你需要运行一个非常底层的工具的时候">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/006MhlIggy1fg9597hxmuj30i30rj79i">
+  
+    <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yuluo</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The home of yuluo!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yuluo-ding.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-使用-Runfus-为-Windows10-创建-USB-启动盘" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/" class="article-date">
+  <time datetime="2017-06-04T05:22:34.000Z" itemprop="datePublished">2017-06-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Soft/">Soft</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用 Runfus 为 Windows10 创建 USB 启动盘
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://rufus.akeo.ie/?locale=zh_CN" target="_blank" rel="external">Rufus</a> 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。</p>
+<p>在如下场景中会非常有用：</p>
+<ul>
+<li>你需要把一些可引导的ISO格式的镜像（Windows，Linux，UEFI等）创建成USB安装盘的时候</li>
+<li>你需要使用一个还没有安装操作系统的设备的时候</li>
+<li>你需要从DOS系统刷写BIOS或者其他固件的时候</li>
+<li>你需要运行一个非常底层的工具的时候</li>
+</ul>
+<a id="more"></a>
+<h3 id="前期准备">前期准备</h3><ul>
+<li>Windows ISO镜像（Windows 10）</li>
+<li>Rufus</li>
+<li>U盘（最少4GB）</li>
+</ul>
+<h3 id="关于_Rufus">关于 Rufus</h3><p><img src="http://ww3.sinaimg.cn/large/006MhlIggy1fg9597hxmuj30i30rj79i" alt=""></p>
+<h4 id="支持的语言:">支持的语言:</h4><p>Bahasa Indonesia ,  Bahasa Malaysia ,  Български ,  Čeština ,  Dansk ,  Deutsch ,  Ελληνικά ,  English ,<br>Español ,  Français ,  Hrvatski ,  Italiano ,  Latviešu ,  Lietuvių ,  Magyar ,  Nederlands ,  Norsk ,  Polski ,<br>Português ,  Português do Brasil ,  Русский ,  Română ,  Slovensky ,  Slovenščina ,  Suomi ,  Svenska ,<br>Tiếng Việt ,  Türkçe ,  Українська ,  العربية ,  简体中文 ,  正體中文 ,  日本語 ,  한국어 .</p>
+<h4 id="系统需求">系统需求</h4><p>需要Windows XP以上的操作系统，无所谓32位还是64位，下载后开箱即用。</p>
+<h4 id="Rufus_目前已知（但不限于）的支持的ISO镜像如下：">Rufus 目前已知（但不限于）的支持的ISO镜像如下：</h4><p>Arch Linux ,CentOS , Debian , Fedora ,  Gentoo, Kubuntu ,Linux Mint , OpenSUSE ,Slackware , Ubuntu ,<br>,Windows XP (SP2+) , Windows Server 2003 R2 , Windows Vista , Windows 7 ,<br>Windows 8 , Windows 8.1 , Windows 10 , …</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="yuluo-ding.github.io/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/" data-id="cj3ibk6hk005h2ejreywtgqje" class="article-share-link" data-share="baidu" data-title="使用 Runfus 为 Windows10 创建 USB 启动盘">Share</a>
+      
+
+      
+        <a href="yuluo-ding.github.io/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/#disqus_thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/05/31/让-macbook-读取-txt-文本/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">让 MacBook 读取 txt 文本</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/">使用 Runfus 为 Windows10 创建 USB 启动盘</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/31/让-macbook-读取-txt-文本/">让 MacBook 读取 txt 文本</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/20/sshpass-的使用/">sshpass 的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/Python-Pip-使用警告/">Python Pip 使用警告</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/16/Python判断字符串是否是回文结构/">Python判断字符串是否是回文结构</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://arvinxiang.com" target="_blank">主题作者</a>
+          </li>
+        
+          <li>
+            <a href="http://reqianduan.com" target="_blank">热前端</a>
+          </li>
+        
+          <li>
+            <a href="http://yuancheng.work" target="_blank">远程.work</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Luo Yu<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="totop"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<script>
+  var disqus_shortname = 'yuluo-1';
+  
+  var disqus_url = 'yuluo-ding.github.io/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
