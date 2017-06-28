@@ -4,17 +4,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | yuluo</title>
+  <title>Mac使用 Git和 Github 连接 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The home of yuluo!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yuluo">
-<meta property="og:url" content="yuluo-ding.github.io/archives/page/8/index.html">
+  <meta name="description" content="记录整理下怎么在 MacBook 上使用 Git 连接 Github。
+Git 的安装有几个方式：
+
+源码安装：
+Git 官网下载地址 for Mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac使用 Git和 Github 连接">
+<meta property="og:url" content="yuluo-ding.github.io/2017/06/28/Mac使用-Git和-Github-连接/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="The home of yuluo!">
+<meta property="og:description" content="记录整理下怎么在 MacBook 上使用 Git 连接 Github。
+Git 的安装有几个方式：
+
+源码安装：
+Git 官网下载地址 for Mac">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006MhlIggy1fh0vtlz83jj31k90ryn24">
+<meta property="og:updated_time" content="2017-06-28T06:12:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yuluo">
-<meta name="twitter:description" content="The home of yuluo!">
+<meta name="twitter:title" content="Mac使用 Git和 Github 连接">
+<meta name="twitter:description" content="记录整理下怎么在 MacBook 上使用 Git 连接 Github。
+Git 的安装有几个方式：
+
+源码安装：
+Git 官网下载地址 for Mac">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/006MhlIggy1fh0vtlz83jj31k90ryn24">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -72,215 +87,106 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/19/Android-Gson的使用/" class="archive-article-date">
-  <time datetime="2016-01-19T14:20:23.000Z" itemprop="datePublished">Jan 19</time>
+      <section id="main"><article id="post-Mac使用-Git和-Github-连接" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/28/Mac使用-Git和-Github-连接/" class="article-date">
+  <time datetime="2017-06-28T03:07:10.000Z" itemprop="datePublished">2017-06-28</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Github/">Github</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/19/Android-Gson的使用/">Android Gson的使用</a>
+    <h1 class="article-title" itemprop="name">
+      Mac使用 Git和 Github 连接
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/18/Android-Material-Design中文版/" class="archive-article-date">
-  <time datetime="2016-01-18T14:36:01.000Z" itemprop="datePublished">Jan 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/18/Android-Material-Design中文版/">Android Material Design中文版</a>
-    </h1>
-  
+        <p>记录整理下怎么在 MacBook 上使用 Git 连接 Github。</p>
+<p><strong>Git 的安装有几个方式：</strong></p>
+<ol>
+<li><p>源码安装：</p>
+<p><a href="https://git-scm.com/" target="_blank" rel="external">Git 官网下载地址 for Mac</a></p>
+<a id="more"></a>
+</li>
+<li><p>XCode自带：</p>
+<p>XCode 自带 Git 程序，但是因为权限问题，不建议使用。</p>
+</li>
+<li><p>Homebrew 安装：</p>
+<p>这个是最简便的方式，如果 MacBook 安装了 Homebrew，那么安装 Git 就一个命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install git</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<p><strong>创建 SSH KEY</strong></p>
+<p>按照提示输入以下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> $ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot; </div><div class="line"> #记得输入你的github账号的邮箱 </div><div class="line"> #会输出下面语句</div><div class="line"> </div><div class="line"> $ Generating public/private rsa key pair. Enter file in which to save thekeys  (/Users/your_user_directory/.ssh/id_rsa): </div><div class="line"> </div><div class="line"> # 这里需要按下 enter 键就好</div><div class="line"> </div><div class="line"> #按下 enter 之后，又会出现下面的提示：</div><div class="line"></div><div class="line">#输入回车后提示输入一个类似于密码的自定义的通行证号，如果直接回车则为空</div><div class="line"></div><div class="line">$Enter passphrase(empty for no passphrase):</div><div class="line"></div><div class="line">#提示重新输入以便确认输入是否正确</div><div class="line"></div><div class="line">$Enter same passphraseagain:</div><div class="line"></div><div class="line">#随后，你会收到一大串的提示，大概的意思是告诉你创建好了 id_rsa 和 id_rsa.pub 文件。</div></pre></td></tr></table></figure>
+<p><strong>在 Github 上添加 SSH KEY</strong></p>
+<ol>
+<li>在Github中添加ssh（如图示）：</li>
+<li>登陆Github，选择Account Settings—&gt;SSH Keys 添加ssh</li>
+<li>Title：xxxxx@xxxx.com</li>
+<li>Key：打开你生成的id_rsa.pub文件，将其中内容拷贝至此。创建成功会有相应的提示。</li>
+</ol>
+<p><img src="http://ww3.sinaimg.cn/large/006MhlIggy1fh0vtlz83jj31k90ryn24" alt="Github"></p>
+<p><strong>验证连接</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>第一次会出现这个信息：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;   The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established. </div><div class="line">&gt;   RSA key fingerprint is XXXXXXXXX </div><div class="line">&gt;   Are you sure you want to continue connecting (yes/no)?</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>输入 yes：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure>
+<p><strong>配置个人信息</strong></p>
+<p>设置本地 Git 的个人信息，来方便Git 进行 commit 的追踪管理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$git config --global user.name &quot;your real name&quot;</div><div class="line">$git config --global user.email &quot;xxxxx@gmail.com&quot;</div></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/17/Android6-0-新特性详解/" class="archive-article-date">
-  <time datetime="2016-01-17T14:12:32.000Z" itemprop="datePublished">Jan 17</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/17/Android6-0-新特性详解/">Android6.0 新特性详解</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/14/Gradle-for-Android系列/" class="archive-article-date">
-  <time datetime="2016-01-14T07:05:45.000Z" itemprop="datePublished">Jan 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/14/Gradle-for-Android系列/">Gradle for Android系列</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/13/Python安装pywin32问题/" class="archive-article-date">
-  <time datetime="2016-01-13T14:12:38.000Z" itemprop="datePublished">Jan 13</time>
-</a>
+        <a data-url="yuluo-ding.github.io/2017/06/28/Mac使用-Git和-Github-连接/" data-id="cj4glu8tw002f3vjratzn49s4" class="article-share-link" data-share="baidu" data-title="Mac使用 Git和 Github 连接">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/13/Python安装pywin32问题/">Python安装pywin32问题</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/13/Python编码问题/" class="archive-article-date">
-  <time datetime="2016-01-13T13:12:22.000Z" itemprop="datePublished">Jan 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/13/Python编码问题/">Python编码问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/11/Python学习记录/" class="archive-article-date">
-  <time datetime="2016-01-11T12:25:05.000Z" itemprop="datePublished">Jan 11</time>
-</a>
+        <a href="yuluo-ding.github.io/2017/06/28/Mac使用-Git和-Github-连接/#disqus_thread" class="article-comment-link">Comments</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/11/Python学习记录/">Python学习记录</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/10/Android-Studio-调试技巧/" class="archive-article-date">
-  <time datetime="2016-01-10T06:31:48.000Z" itemprop="datePublished">Jan 10</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/10/Android-Studio-调试技巧/">Android Studio 调试技巧</a>
-    </h1>
-  
-
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/20/install-PyQt5-for-Macbook/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Install PyQt5 for Macbook</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/09/Git常用命令/" class="archive-article-date">
-  <time datetime="2016-01-09T09:56:52.000Z" itemprop="datePublished">Jan 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/09/Git常用命令/">Git常用命令</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/09/RxJava开发精要/" class="archive-article-date">
-  <time datetime="2016-01-09T09:47:23.000Z" itemprop="datePublished">Jan 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/09/RxJava开发精要/">RxJava开发精要</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
 
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/page/7/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/9/">Next &raquo;</a>
-  </nav>
+  <section id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
 </section>
       
       <aside id="sidebar">
@@ -395,11 +301,13 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
+  var disqus_url = 'yuluo-ding.github.io/2017/06/28/Mac使用-Git和-Github-连接/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
