@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python 字符编码 | yuluo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="字符串也是一种数据类型，但比较特殊的是字符串存在一个编码问题，也就是我们怎么用计算机来表示相应的字符并存储。在编程语言中，我们经常会处理文本编码之间的转化问题，因为文本可能存在不同的编码，比如 ASCII、GBK、UTF-8 等等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 字符编码">
+<meta property="og:url" content="yuluo-ding.github.io/2017/08/07/Python-字符编码/index.html">
+<meta property="og:site_name" content="yuluo">
+<meta property="og:description" content="字符串也是一种数据类型，但比较特殊的是字符串存在一个编码问题，也就是我们怎么用计算机来表示相应的字符并存储。在编程语言中，我们经常会处理文本编码之间的转化问题，因为文本可能存在不同的编码，比如 ASCII、GBK、UTF-8 等等。">
+<meta property="og:updated_time" content="2017-08-07T00:38:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 字符编码">
+<meta name="twitter:description" content="字符串也是一种数据类型，但比较特殊的是字符串存在一个编码问题，也就是我们怎么用计算机来表示相应的字符并存储。在编程语言中，我们经常会处理文本编码之间的转化问题，因为文本可能存在不同的编码，比如 ASCII、GBK、UTF-8 等等。">
+  
+    <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yuluo</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The home of yuluo!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yuluo-ding.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-Python-字符编码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/07/Python-字符编码/" class="article-date">
+  <time datetime="2017-08-07T00:37:42.000Z" itemprop="datePublished">2017-08-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python 字符编码
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>字符串也是一种数据类型，但比较特殊的是字符串存在一个编码问题，也就是我们怎么用计算机来表示相应的字符并存储。在编程语言中，我们经常会处理文本编码之间的转化问题，因为文本可能存在不同的编码，比如 ASCII、GBK、UTF-8 等等。</p>
+<a id="more"></a>
+<p>如果希望正确的处理文本，就必须了解<code>字符</code>的抽象概念。我们可以认为字符表示的是文本中的单个符号。更重要的是，一个字符不是一个字节。比如，”中”在文本中是一个字符，但它存储在计算机中时却不是一个字节。一个字符有许多表示方法，不同的表示方法会使用不同的字节数，这就是所谓的编码。<strong>字符就是文本中最小的单元</strong>。</p>
+<p>由于计算机是美国人发明的，因此，最早只有 127 个字母被编码到计算机里，也就是大小写英文字母、数字和一些符号，这个编码表被称为 ASCII 编码。但是计算机被广泛应用之后，ASCII 编码已经不足以表示世界上的各种语言，于是后来便出现了 Unicode 编码。</p>
+<p><code>Unicode</code> 是一种编码规范， 用来统一表示世界上的各种语言。Unicode 只是规定如何编码，并没有规定如何传输和保存等等，因此 Unicode 编码有不同的实现方式，比如：UTF-8、UTF-16 。<code>UTF-8</code> 编码把一个 Unicode 字符根据不同的数字大小编码成 1-6 个字节，常用的英文字母被编码成 1 个字节，汉字通常是 3 个字节，只有很生僻的字符才会被编码成 4-6 个字节。Unicode 以大家都认可的方式定义了一系列的字符，可以将其理解成一个字符数据库，每个字符都与唯一的数字关联，称为 <code>code point</code>。这样，英文大写字母 A 的 codepoint 是 U+0041，而欧元符号的 codepoint 是 U+20A0。一个文本字符串就是一系列的 <code>code point</code>，表示字符串中每个字符元素。</p>
+<p>Python 由荷兰人 <code>Guido van Rossum</code> 于 1989 年发明，第一个公开发行版发行于 1991 年。Guido 在设计之初并没有关心编码问题（当时他也不知道后来会出现编码问题）, 而且 Python 的诞生比 Unicode 标准发布的时间要早，因此 Python 默认编码在 Python3 之前是 ASCII。查看 Python 的默认编码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefaultencoding()</div><div class="line"><span class="string">'ascii'</span></div></pre></td></tr></table></figure>
+<p>这么默认编码有什么用呢？如果你在 Python 中进行编码和解码的时候，不指定编码方式，那么 Python 就会使用 <code>defaultencoding</code>。</p>
+<p>字符串在 Python 内部的表示是 Unicode 编码, 在 Python 内部使用两个字节来存储一个 Unicode。也就是 Python 在内存中统一使用 Unicode 编码存储字符数据，当需要保存到硬盘或者需要传输的时候，就转换为其他编码，比如 UTF-8。</p>
+<p>在 Python2 中，字符串的类型有两种，即 str 和 unicode，他们都是 basestring 的子类。<code>unicode</code> 表示 Unicode 字符串（文本字符串），<code>str</code> 表示<strong>字节</strong>字符串（二进制数据），由 unicode 经过编码后的字节组成。也就是说：</p>
+<ul>
+<li><strong>str</strong> 存储的是已经编码后的字节序列，输出时看到每个字节用 16 进制表示，以<code>\x</code>开头。每个汉字会占用3个字节的长度。</li>
+<li><strong>unicode</strong> 是“字符”串，存储的是编码前的字符，输出是看到字符以<code>\u</code>开头。每个汉字占用一个长度。定义一个 Unicode 对象时，以 <code>u</code> 开头。</li>
+</ul>
+<p>在 Python 中 <code>Unicode</code> 被视为是一种中间码，如果要在不同的编码间进行转化，通常是先将字符串解码（decode）成 Unicode 编码，再从 Unicode 编码（encode）成另一种编码：</p>
+<ul>
+<li><strong>decode</strong>: 的作用是将其他编码的字符串转换成 Unicode 编码，例如: name.decode(“GB2312”)，表示将 GB2312 编码的字符串 name 转换成 Unicode 编码</li>
+<li><strong>encode</strong>: 的作用是将 Unicode 编码转换成其他编码的字符串例如，例如: name.encode(”GB2312“)，表示 Unicode 编码的字符串 name 转换成 GB2312 编码</li>
+</ul>
+<p>我们会在很多 Python 的源码文件的头部看到如下的声明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># coding:utf-8</div></pre></td></tr></table></figure>
+<p>这表示声明源代码中的文本编码为 UTF-8，也就是告诉 Python 解释器将文件中的文本视为 UTF-8 编码的字符串，因此声明的编码应该与文件的编码保持一致。在代码中我们通常会处理一些其他来源的文本，比如网络，它们的编码不一定也是 UTF-8 的，因此就要进行编码转换。</p>
+<p>Python 试图在字节串和字符串之间以不为人所察觉的方式进行转化。在不同的转换中，在条件允许的情况下，Python 会试图在字节串和 unicode 字符串直接进行转换。例如将字节串和 unicode 字节串连接到一起时。但是不使用 encoding 就在不同类型之间进行转换是没有意义的。所以 Python 依赖一个 <code>默认编码</code>，该编码由 <code>sys.setdefaultencoding()</code> 指定。在大多数平台上，默认的是 ASCII 编码。但对于所有转换，使用这种编码几乎都是错误的。如果不手动指定编码就调用 str() 或 unicode() ，或是函数以字符串作为参数，但传递的是其他类型的参数时，都会使用这个默认编码。这就是很多时候出现 <code>UnicodeEncodeError</code> 和 <code>UnicodeDecodeError</code> 错误的原因，也就是<strong>字符串对象互相转化时没有指定字符编码</strong>。</p>
+<p>例如，如果对 unicode 和 str 类型通过 <code>+</code> 拼接时，输出结果是 unicode 类型，相当于先将 str 类型的字符串通过 decode() 方法解码成 unicode 再拼接。此时如果解码时没有明确指明编码类型，可能会出现错误。</p>
+<p>解决这个问题的一个办法是，调用 <code>sys.setdefaultencoding()</code> 将默认的编码设置为真正会用到的编码。但这样仅仅是将问题隐藏起来，虽然这样刚开始能解决一些文本处理问题。但缺乏实际可行性，因为许多应用，特别是网络应用，在不同的地方会使用不同的文本编码。</p>
+<p>要注意的一点是，对 Unicode 进行编码和对 str 进行编码都是错误的。即不要对 str 使用 encode，不要对 unicode 使用 decode（事实上可以对 str 进行 encode 的，但不建议）。</p>
+<p>下面是一些处理 Python 中字符编码的建议：</p>
+<ul>
+<li>所有文本字符串都应该是 unicode 类型，而不是 str 类型。</li>
+<li>若要将字节串解码成字符串，需要使用正确的解码，即 var.decode(encoding)，如： var.decode(‘utf-8’)；将文本字符串编码成字节，使用 var.encode(encoding)。</li>
+<li>永远不要对 unicode 字符串使用 str() ，也不要在不指定编码的情况下就对字节串使用 unicode() 。</li>
+<li>当应用从外部读取数据时，应将其视为字节串，即 str 类型的，接着调用 <code>.decode()</code> 将其解释成文本。同样，在将文本发送到外部时，总是对文本调用 <code>.encode()</code>。</li>
+<li>对标准流进行操作时，可以改变环境变量 <code>PYTHONIOENCODING</code> 的值来设置标准流的默认编码， <code>sys.stdin.encoding</code> 和 <code>sys.stdout.encoding</code> 的值为期望的编码。</li>
+</ul>
+<p>以上内容的讨论都仅限于 Python2，在 Python3 中已经修复了这些问题，可以正确的处理 unicode 和字符串。</p>
+<p>来源：</p>
+<p><a href="https://kuanghy.github.io/2016/10/14/python-encoding" target="_blank" rel="external">https://kuanghy.github.io/2016/10/14/python-encoding</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="yuluo-ding.github.io/2017/08/07/Python-字符编码/" data-id="cj61fi6vo002t51jr1ueicot9" class="article-share-link" data-share="baidu" data-title="Python 字符编码">Share</a>
+      
+
+      
+        <a href="yuluo-ding.github.io/2017/08/07/Python-字符编码/#disqus_thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/23/模块zlib-压缩与解压/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">模块zlib 压缩与解压</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a><span class="category-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/07/Python-字符编码/">Python 字符编码</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/模块zlib-压缩与解压/">模块zlib 压缩与解压</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/21/Python递归实现字典中的Unicode转换成str/">Python递归实现字典中的Unicode转换成str</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/21/Python-列出当前目录的文件和文件夹/">Python 列出当前目录的文件和文件夹</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/28/Mac使用-Git和-Github-连接/">Mac使用 Git和 Github 连接</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://arvinxiang.com" target="_blank">主题作者</a>
+          </li>
+        
+          <li>
+            <a href="http://reqianduan.com" target="_blank">热前端</a>
+          </li>
+        
+          <li>
+            <a href="http://yuancheng.work" target="_blank">远程.work</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Luo Yu<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="totop"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<script>
+  var disqus_shortname = 'yuluo-1';
+  
+  var disqus_url = 'yuluo-ding.github.io/2017/08/07/Python-字符编码/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
