@@ -4,18 +4,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Python删除文件和目录的方法 | yuluo</title>
+  <title>IMEI 和 IMSI 区别 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python删除文件和目录的方法os.remove(path)">
+  <meta name="description" content="IMSI号：IMSI是国际移动用户识别码的简称(International Mobile Subscriber Identity)它是在公众陆地移动电话网（PLMN）中用于唯一识别移动用户的一个号码。在GSM网络，这个号码通常被存放在SIM卡中。IMSI共有15位，其结构如下：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python删除文件和目录的方法">
-<meta property="og:url" content="yuluo-ding.github.io/2016/08/11/Python删除文件和目录的方法/index.html">
+<meta property="og:title" content="IMEI 和 IMSI 区别">
+<meta property="og:url" content="yuluo-ding.github.io/2017/08/08/IMEI-和-IMSI-区别/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="Python删除文件和目录的方法os.remove(path)">
-<meta property="og:updated_time" content="2016-08-11T06:43:00.000Z">
+<meta property="og:description" content="IMSI号：IMSI是国际移动用户识别码的简称(International Mobile Subscriber Identity)它是在公众陆地移动电话网（PLMN）中用于唯一识别移动用户的一个号码。在GSM网络，这个号码通常被存放在SIM卡中。IMSI共有15位，其结构如下：">
+<meta property="og:updated_time" content="2017-08-08T06:04:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python删除文件和目录的方法">
-<meta name="twitter:description" content="Python删除文件和目录的方法os.remove(path)">
+<meta name="twitter:title" content="IMEI 和 IMSI 区别">
+<meta name="twitter:description" content="IMSI号：IMSI是国际移动用户识别码的简称(International Mobile Subscriber Identity)它是在公众陆地移动电话网（PLMN）中用于唯一识别移动用户的一个号码。在GSM网络，这个号码通常被存放在SIM卡中。IMSI共有15位，其结构如下：">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -73,14 +73,14 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-Python删除文件和目录的方法" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-IMEI-和-IMSI-区别" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/08/11/Python删除文件和目录的方法/" class="article-date">
-  <time datetime="2016-08-11T06:42:03.000Z" itemprop="datePublished">2016-08-11</time>
+    <a href="/2017/08/08/IMEI-和-IMSI-区别/" class="article-date">
+  <time datetime="2017-08-08T06:02:15.000Z" itemprop="datePublished">2017-08-08</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
+    <a class="article-category-link" href="/categories/HTTP/">HTTP</a>
   </div>
 
   </div>
@@ -91,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python删除文件和目录的方法
+      IMEI 和 IMSI 区别
     </h1>
   
 
@@ -99,22 +99,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Python删除文件和目录的方法<br><code>os.remove(path)</code></p>
+        <p>IMSI号：<br>IMSI是国际移动用户识别码的简称(International Mobile Subscriber Identity)<br>它是在公众陆地移动电话网（PLMN）中用于唯一识别移动用户的一个号码。在GSM网络，这个号码通常被存放在SIM卡中。IMSI共有15位，其结构如下： </p>
 <a id="more"></a>
-<p>删除文件 path. 如果path是一个目录， 抛出 OSError错误。如果要删除目录，请使用rmdir().<br>remove() 同 unlink() 的功能是一样的<br>在Windows系统中，删除一个正在使用的文件，将抛出异常。在Unix中，目录表中的记录被删除，但文件的存储还在。</p>
-<p><code>os.removedirs(path)</code><br>递归地删除目录。类似于rmdir(), 如果子目录被成功删除， removedirs() 将会删除父目录；但子目录没有成功删除，将抛出错误。<br>举个例子， os.removedirs(“foo/bar/baz”) 将首先删除 “foo/bar/ba”目录，然后再删除foo/bar 和 foo, 如果他们是空的话<br>如果子目录不能成功删除，将 抛出 OSError异常<br>os.rmdir(path)<br>删除目录 path，要求path必须是个空目录，否则抛出OSError错误</p>
-<p>递归删除目录和文件（类似DOS命令DeleteTree）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(top, topdown=<span class="keyword">False</span>):</div><div class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</div><div class="line">        os.remove(os.path.join(root, name))</div><div class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> dirs:</div><div class="line">        os.rmdir(os.path.join(root, name))</div></pre></td></tr></table></figure></p>
-<p>还有一个更简单的：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> shutil</div><div class="line">shutil.rmtree()</div><div class="line">__import__(<span class="string">'shutil'</span>).rmtree()</div></pre></td></tr></table></figure></p>
+<p><strong>MCC+MNC+MSIN </strong></p>
+<p><strong>MCC：</strong>Mobile Country Code，移动国家码，MCC的资源由国际电联（ITU）统一分配和管理，唯一识别移动用户所属的国家，共3位，中国为460; </p>
+<p><strong>MNC:</strong>Mobile NetworkCode，移动网络码，共2位 </p>
+<p>在中国，中国移动TD系统使用00，中国联通GSM系统使用01，中国移动GSM系统使用02，中国电信CDMA系统使用03，</p>
+<p>合起来就是（也是Android手机中APN配置文件中的代码）： </p>
+<p>中国移动：46000 46002 </p>
+<p>中国联通：46001 </p>
+<p>中国电信：46003 </p>
+<p>举例，一个典型的IMSI号码为460030912121001 </p>
+<p><strong>MSIN号：</strong></p>
+<p>MSIN:Mobile Subscriber IdentificationNumber，为移动客户识别码，采用等长11位数字构成，其结构如下：</p>
+<p>09+M0M1M2M3+ABCD</p>
+<p>其中的M0M1M2M3和MDN号码中的H0H1H2H3可存在对应关系，ABCD四位为自由分配。</p>
+<p>唯一地识别国内GSM移动通信网中移动客户。所以要区分是移动还是联通，只需取得SIM卡中的MNC字段即可 </p>
+<p>可以看出IMSI在MSIN号码前加了MCC即NMSI，可以区别出每个用户的来自的国家，因此可以实现国际漫游。在同一个国家内，如果有多个移动网络运营商，可以通过MNC来进行区别.</p>
+<h1 id="IMEI号：">IMEI号：</h1><p>IMEI是International Mobile Equipment Identity （国际移动设备标识）的简称 </p>
+<p>即通常所说的手机序列号，用于在手机网络中识别每一部独立的手机，是国际上公认的手机标志序号，相当于移动电话的身份证。国际移动装备辨识码一般贴于机身背面与外包装上，同时也存在于手机记忆体中，通过输入*#06#即可查询。</p>
+<p>IMEI由15位数字组成的”电子串号”，它与每台手机一一对应，而且该码是全世界唯一的 </p>
+<p>其组成为： </p>
+<ol>
+<li>前6位数(TAC)是”型号核准号码”，一般代表机型 </li>
+<li>接着的2位数(FAC)是”最后装配号”，一般代表产地 </li>
+<li>之后的6位数(SNR)是”串号”，一般代表生产顺序号 </li>
+<li>最后1位数(SP)通常是”0″，为检验码，目前暂备用</li>
+</ol>
+<p><strong>来源</strong></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/08/11/Python删除文件和目录的方法/" data-id="cj636lkm4003j0ajr79g99zv5" class="article-share-link" data-share="baidu" data-title="Python删除文件和目录的方法">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/08/IMEI-和-IMSI-区别/" data-id="cj636lkii001k0ajr7ue5ij0q" class="article-share-link" data-share="baidu" data-title="IMEI 和 IMSI 区别">Share</a>
       
 
       
-        <a href="yuluo-ding.github.io/2016/08/11/Python删除文件和目录的方法/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="yuluo-ding.github.io/2017/08/08/IMEI-和-IMSI-区别/#disqus_thread" class="article-comment-link">Comments</a>
       
 
       
@@ -124,19 +146,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/11/Python读写json/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python读写json
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/10/Pyhton-显示时间/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/08/07/Python-字符编码/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Pyhton 显示时间</div>
+      <div class="article-nav-title">Python 字符编码</div>
     </a>
   
 </nav>
@@ -264,7 +277,7 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
-  var disqus_url = 'yuluo-ding.github.io/2016/08/11/Python删除文件和目录的方法/';
+  var disqus_url = 'yuluo-ding.github.io/2017/08/08/IMEI-和-IMSI-区别/';
   
   (function(){
     var dsq = document.createElement('script');
