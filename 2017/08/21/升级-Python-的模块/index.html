@@ -4,18 +4,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>VMware无法打开 | yuluo</title>
+  <title>升级 Python 的模块 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件按照以下步骤开启相应的服务就好">
+  <meta name="description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。
+列出当前安装的包：
+1pip list">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VMware无法打开">
-<meta property="og:url" content="yuluo-ding.github.io/2016/06/24/VMware无法打开/index.html">
+<meta property="og:title" content="升级 Python 的模块">
+<meta property="og:url" content="yuluo-ding.github.io/2017/08/21/升级-Python-的模块/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件按照以下步骤开启相应的服务就好">
-<meta property="og:updated_time" content="2016-06-24T15:07:14.000Z">
+<meta property="og:description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。
+列出当前安装的包：
+1pip list">
+<meta property="og:updated_time" content="2017-08-21T13:41:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VMware无法打开">
-<meta name="twitter:description" content="vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件按照以下步骤开启相应的服务就好">
+<meta name="twitter:title" content="升级 Python 的模块">
+<meta name="twitter:description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。
+列出当前安装的包：
+1pip list">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -73,16 +79,12 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-VMware无法打开" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-升级-Python-的模块" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/24/VMware无法打开/" class="article-date">
-  <time datetime="2016-06-24T15:03:35.000Z" itemprop="datePublished">2016-06-24</time>
+    <a href="/2017/08/21/升级-Python-的模块/" class="article-date">
+  <time datetime="2017-08-21T13:37:52.000Z" itemprop="datePublished">2017-08-21</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -91,7 +93,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      VMware无法打开
+      升级 Python 的模块
     </h1>
   
 
@@ -99,18 +101,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="vmware安装无法打开内核设备_\-\Global\vmx86:_系统找不到指定的文件">vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件</h4><p>按照以下步骤开启相应的服务就好</p>
+        <p>pip 当前内建命令并不支持升级所有已安装的Python模块。</p>
+<p>列出当前安装的包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip list</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">net start vmci</div><div class="line"></div><div class="line">net start vmx86</div><div class="line"></div><div class="line">net start VMnetuserif</div><div class="line"></div><div class="line">sc config vmci=auto</div><div class="line"></div><div class="line">sc config vmx86=auto</div><div class="line"></div><div class="line">sc config VMnetuserif=auto</div></pre></td></tr></table></figure>
+<p>列出可升级的包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip list --outdate</div></pre></td></tr></table></figure>
+<p>升级一个包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</div></pre></td></tr></table></figure>
+<p>升级所有可升级的包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip install -U</div><div class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/06/24/VMware无法打开/" data-id="cj6m7n97e004uabtlx86egfno" class="article-share-link" data-share="baidu" data-title="VMware无法打开">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/21/升级-Python-的模块/" data-id="cj6m7n9820061abtlop0u8enx" class="article-share-link" data-share="baidu" data-title="升级 Python 的模块">Share</a>
       
 
       
-        <a href="yuluo-ding.github.io/2016/06/24/VMware无法打开/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="yuluo-ding.github.io/2017/08/21/升级-Python-的模块/#disqus_thread" class="article-comment-link">Comments</a>
       
 
       
@@ -120,19 +130,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/07/Python学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python学习笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/04/算法和数据结构/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/08/18/卸载-JDK-for-Mac/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">算法和数据结构</div>
+      <div class="article-nav-title">卸载 JDK for Mac</div>
     </a>
   
 </nav>
@@ -260,7 +261,7 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
-  var disqus_url = 'yuluo-ding.github.io/2016/06/24/VMware无法打开/';
+  var disqus_url = 'yuluo-ding.github.io/2017/08/21/升级-Python-的模块/';
   
   (function(){
     var dsq = document.createElement('script');
