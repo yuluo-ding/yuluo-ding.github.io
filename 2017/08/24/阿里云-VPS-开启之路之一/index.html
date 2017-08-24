@@ -4,24 +4,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Ubuntu 16.04LTS 搭建 Shadowsocks | yuluo</title>
+  <title>阿里云 VPS 开启之路之一 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="只针对Ubuntu16以上的版本。
-执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks">
+  <meta name="description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
+
+卸载阿里云安骑士
+下载 wget &amp;lt;http://update.aegis.aliyun.com/download/uninstall.sh&amp;gt;
+执行下列命令：
+12chmod +x uninstall.sh./uninstall.sh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu 16.04LTS 搭建 Shadowsocks">
-<meta property="og:url" content="yuluo-ding.github.io/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/index.html">
+<meta property="og:title" content="阿里云 VPS 开启之路之一">
+<meta property="og:url" content="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="只针对Ubuntu16以上的版本。
-执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks">
-<meta property="og:updated_time" content="2017-04-30T10:27:21.000Z">
+<meta property="og:description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
+
+卸载阿里云安骑士
+下载 wget &amp;lt;http://update.aegis.aliyun.com/download/uninstall.sh&amp;gt;
+执行下列命令：
+12chmod +x uninstall.sh./uninstall.sh">
+<meta property="og:updated_time" content="2017-08-24T15:10:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu 16.04LTS 搭建 Shadowsocks">
-<meta name="twitter:description" content="只针对Ubuntu16以上的版本。
-执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks">
+<meta name="twitter:title" content="阿里云 VPS 开启之路之一">
+<meta name="twitter:description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
+
+卸载阿里云安骑士
+下载 wget &amp;lt;http://update.aegis.aliyun.com/download/uninstall.sh&amp;gt;
+执行下列命令：
+12chmod +x uninstall.sh./uninstall.sh">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -79,14 +88,14 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-Ubuntu-16-04LTS-搭建-Shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-阿里云-VPS-开启之路之一" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" class="article-date">
-  <time datetime="2017-02-28T00:43:04.000Z" itemprop="datePublished">2017-02-28</time>
+    <a href="/2017/08/24/阿里云-VPS-开启之路之一/" class="article-date">
+  <time datetime="2017-08-24T14:47:34.000Z" itemprop="datePublished">2017-08-24</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -97,7 +106,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ubuntu 16.04LTS 搭建 Shadowsocks
+      阿里云 VPS 开启之路之一
     </h1>
   
 
@@ -105,30 +114,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>只针对Ubuntu16以上的版本。</p>
-<p>执行很简单，首先是三条命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt update</div><div class="line">apt install python-pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure>
+        <p>阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。</p>
+<ol>
+<li><p>卸载阿里云安骑士</p>
+<p>下载 <code>wget &lt;http://update.aegis.aliyun.com/download/uninstall.sh</code>&gt;</p>
+<p>执行下列命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod +x uninstall.sh</div><div class="line">./uninstall.sh</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>pip 是 Python 下方便的包管理工具</p>
-<p>之后在<code>/etc/shadowsocks</code>编写配置文件：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,</div><div class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</div><div class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</div><div class="line">    <span class="attr">"password"</span>:<span class="string">"mypassword"</span>,</div><div class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</div><div class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</div><div class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面一些数值，替换成自己相应的就好，<code>method</code>建议128的就好。</p>
-<p>接下来运行如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssserver -c /etc/shadowsocks.json <span class="_">-d</span> start</div></pre></td></tr></table></figure>
-<p>为了能够开机自启，把上面的命令加入到<code>/etc/rc.loacl</code>里面，在 <code>exit</code>之前就行。</p>
-<p>最后下载客户端：<a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="external">SS客户端</a></p>
-<p>可能在 VPS 会遇到以下的一个错误：<br><code>Python locale error: unsupported locale setting</code></p>
-<p>只要执行以下几行命令就可以了:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LC_ALL=<span class="string">"en_US.UTF-8"</span></div><div class="line"><span class="built_in">export</span> LC_CTYPE=<span class="string">"en_US.UTF-8"</span></div><div class="line">sudo dpkg-reconfigure locales</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>卸载阿里云aliyun.service</p>
+<p><code>killall aliyun-service &amp;&amp; echo &quot;&quot; &gt;/usr/sbin/aliyun-service</code></p>
+</li>
+<li><p>删除阿里云登录界面欢迎信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /etc/motd</div><div class="line">#编辑/删除倒数第二行的 Welcome to Alibaba Cloud Elastic Compute Service !</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加用户，授予 <code>sudo</code>权限</p>
+<ol>
+<li><p>添加用户</p>
+<p><code>adduser username</code></p>
+</li>
+<li><p>给该用户添加密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">passwd username</div><div class="line">New password:</div><div class="line">Retype new password:</div></pre></td></tr></table></figure>
+</li>
+<li><p>授予 sudo 权限</p>
+<p><code>vi /etc/sudoers</code>然后找到，如下添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">## Allow root to run any commands anywhere</div><div class="line">root	ALL(ALL) = ALL</div><div class="line">username	ALL(ALL) = ALL   # username 是新建的用户名</div></pre></td></tr></table></figure>
+<p> 在保存的时候可能需要<code>wq!</code></p>
+</li>
+</ol>
+</li>
+<li><p>修改 SSH 默认端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_config</div><div class="line">Port 2000</div><div class="line">MaxAuthTries 6</div><div class="line">PermitEmptyPasswords no</div><div class="line">service ssh restart  #CentOS6</div><div class="line">systemctl restart sshd #CentOS7</div></pre></td></tr></table></figure>
+</li>
+<li><p>禁止 root 用户登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_config</div><div class="line">PermitRootLogin no</div><div class="line">service ssh restart  #CentOS6</div><div class="line">systemctl restart sshd #CentOS7</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>现在就可以用新建的那个用户登录了。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cj6ql5qqk0054iltlj5yqxc7q" class="article-share-link" data-share="baidu" data-title="Ubuntu 16.04LTS 搭建 Shadowsocks">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/" data-id="cj6ql5qs00074iltlwlneueiw" class="article-share-link" data-share="baidu" data-title="阿里云 VPS 开启之路之一">Share</a>
       
 
       
-        <a href="yuluo-ding.github.io/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/#disqus_thread" class="article-comment-link">Comments</a>
       
 
       
@@ -138,19 +170,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/03/10/Pyhton遍历文件夹/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Pyhton遍历文件夹
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/08/21/升级-Python-的模块/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android java.lang.OutOfMemoryError: GC overhead limit exceeded</div>
+      <div class="article-nav-title">升级 Python 的模块</div>
     </a>
   
 </nav>
@@ -278,7 +301,7 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
-  var disqus_url = 'yuluo-ding.github.io/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/';
+  var disqus_url = 'yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/';
   
   (function(){
     var dsq = document.createElement('script');
