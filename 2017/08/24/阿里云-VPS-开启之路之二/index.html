@@ -4,33 +4,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>阿里云 VPS 开启之路之一 | yuluo</title>
+  <title>阿里云 VPS 开启之路之二 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
+  <meta name="description" content="在客户端来看，SSH提供两种级别的安全验证。
 
-卸载阿里云安骑士
-下载 wget &amp;lt;http://update.aegis.aliyun.com/download/uninstall.sh&amp;gt;
-执行下列命令：
-12chmod +x uninstall.sh./uninstall.sh">
+第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。
+第二种级别（基于密钥的安全验证），需要依靠密钥，也就是你必须为自己创建一对密钥，并把公有密钥放在需要访问的服务器上。
+
+
+这里要讨论的ssh密钥认证自动登录正是基于第二种级别的安全验证方式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里云 VPS 开启之路之一">
-<meta property="og:url" content="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/index.html">
+<meta property="og:title" content="阿里云 VPS 开启之路之二">
+<meta property="og:url" content="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之二/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
+<meta property="og:description" content="在客户端来看，SSH提供两种级别的安全验证。
 
-卸载阿里云安骑士
-下载 wget &amp;lt;http://update.aegis.aliyun.com/download/uninstall.sh&amp;gt;
-执行下列命令：
-12chmod +x uninstall.sh./uninstall.sh">
-<meta property="og:updated_time" content="2017-08-24T15:10:27.000Z">
+第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。
+第二种级别（基于密钥的安全验证），需要依靠密钥，也就是你必须为自己创建一对密钥，并把公有密钥放在需要访问的服务器上。
+
+
+这里要讨论的ssh密钥认证自动登录正是基于第二种级别的安全验证方式。">
+<meta property="og:updated_time" content="2017-08-24T16:05:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里云 VPS 开启之路之一">
-<meta name="twitter:description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
+<meta name="twitter:title" content="阿里云 VPS 开启之路之二">
+<meta name="twitter:description" content="在客户端来看，SSH提供两种级别的安全验证。
 
-卸载阿里云安骑士
-下载 wget &amp;lt;http://update.aegis.aliyun.com/download/uninstall.sh&amp;gt;
-执行下列命令：
-12chmod +x uninstall.sh./uninstall.sh">
+第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。
+第二种级别（基于密钥的安全验证），需要依靠密钥，也就是你必须为自己创建一对密钥，并把公有密钥放在需要访问的服务器上。
+
+
+这里要讨论的ssh密钥认证自动登录正是基于第二种级别的安全验证方式。">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -88,10 +91,10 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-阿里云-VPS-开启之路之一" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-阿里云-VPS-开启之路之二" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/08/24/阿里云-VPS-开启之路之一/" class="article-date">
-  <time datetime="2017-08-24T14:47:34.000Z" itemprop="datePublished">2017-08-24</time>
+    <a href="/2017/08/24/阿里云-VPS-开启之路之二/" class="article-date">
+  <time datetime="2017-08-24T15:19:24.000Z" itemprop="datePublished">2017-08-24</time>
 </a>
     
   <div class="article-category">
@@ -106,7 +109,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      阿里云 VPS 开启之路之一
+      阿里云 VPS 开启之路之二
     </h1>
   
 
@@ -114,53 +117,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。</p>
-<ol>
-<li><p>卸载阿里云安骑士</p>
-<p>下载 <code>wget &lt;http://update.aegis.aliyun.com/download/uninstall.sh</code>&gt;</p>
-<p>执行下列命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod +x uninstall.sh</div><div class="line">./uninstall.sh</div></pre></td></tr></table></figure>
+        <h4 id="在客户端来看，SSH提供两种级别的安全验证。">在客户端来看，SSH提供两种级别的安全验证。</h4><blockquote>
+<ul>
+<li>第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。</li>
+<li>第二种级别（基于<strong>密钥</strong>的安全验证），需要依靠密钥，也就是你必须为自己创建一对密钥，并把公有密钥放在需要访问的服务器上。</li>
+</ul>
+</blockquote>
+<p>这里要讨论的<strong>ssh密钥认证自动登录</strong>正是基于第二种级别的安全验证方式。</p>
 <a id="more"></a>
-</li>
-<li><p>卸载阿里云aliyun.service</p>
-<p><code>killall aliyun-service &amp;&amp; echo &quot;&quot; &gt;/usr/sbin/aliyun-service</code></p>
-</li>
-<li><p>删除阿里云登录界面欢迎信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /etc/motd</div><div class="line">#编辑/删除倒数第二行的 Welcome to Alibaba Cloud Elastic Compute Service !</div></pre></td></tr></table></figure>
-</li>
-<li><p>添加用户，授予 <code>sudo</code>权限</p>
 <ol>
-<li><p>添加用户</p>
-<p><code>adduser username</code></p>
+<li><p>本地创建公钥</p>
+<p>打开终端运行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -f filename -C  &apos;your email@domain.com&apos;</div></pre></td></tr></table></figure>
 </li>
-<li><p>给该用户添加密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">passwd username</div><div class="line">New password:</div><div class="line">Retype new password:</div></pre></td></tr></table></figure>
+<li><p>在 VPS 对应用户目录下新建对应目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mkdir ~/.ssh</div><div class="line">chmod 700 ~/.ssh</div><div class="line">cd .ssh</div><div class="line">touch authorized_keys</div><div class="line">chmod 600 authorized_keys</div></pre></td></tr></table></figure>
 </li>
-<li><p>授予 sudo 权限</p>
-<p><code>vi /etc/sudoers</code>然后找到，如下添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">## Allow root to run any commands anywhere</div><div class="line">root	ALL(ALL) = ALL</div><div class="line">username	ALL(ALL) = ALL   # username 是新建的用户名</div></pre></td></tr></table></figure>
-<p> 在保存的时候可能需要<code>wq!</code></p>
+<li><p>把生成的公钥复制到VPS 服务，并且合并到authorized_keys</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scp -P port ~/.ssh/*.pub username@hostname:/home/name/.ssh/</div><div class="line">cat *.pub authorized_keys</div></pre></td></tr></table></figure>
+</li>
+<li><p>快捷登录</p>
+<ol>
+<li><p>修改 config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi ~/.ssh/config  #没有就新建</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加如下配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host vps</div><div class="line">    HostName hostname</div><div class="line">    IdentityFile ~/.ssh/cert</div><div class="line">    Port port</div><div class="line">    User username</div></pre></td></tr></table></figure>
+</li>
+<li><p>保存即可登录<br> <code>ssh vps</code>即可自动登录</p>
+</li>
+<li><p>如果你本地终端使用的是<strong>zsh</strong>，给 <strong>zsh</strong>添加别名</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">echo &quot;alias ssh-to-username=&apos;ssh username@hostname&apos;&quot; &gt;&gt; ~/.zshrc #将username和hostname替换为你的服务器信息</div><div class="line">source ~/.zshrc   #重新加载更改后的zshrc文件</div><div class="line">ssh-to-username   #使用别名，一条命令即可登录你的ssh服务器</div></pre></td></tr></table></figure>
+<p> ​</p>
 </li>
 </ol>
 </li>
-<li><p>修改 SSH 默认端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_config</div><div class="line">Port 2000</div><div class="line">MaxAuthTries 6</div><div class="line">PermitEmptyPasswords no</div><div class="line">service ssh restart  #CentOS6</div><div class="line">systemctl restart sshd #CentOS7</div></pre></td></tr></table></figure>
-</li>
-<li><p>禁止 root 用户登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_config</div><div class="line">PermitRootLogin no</div><div class="line">service ssh restart  #CentOS6</div><div class="line">systemctl restart sshd #CentOS7</div></pre></td></tr></table></figure>
-</li>
 </ol>
-<p>现在就可以用新建的那个用户登录了。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/" data-id="cj6qn4dv5007436tlbibzcr6x" class="article-share-link" data-share="baidu" data-title="阿里云 VPS 开启之路之一">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之二/" data-id="cj6qn4dv3007236tl4h2bx1d0" class="article-share-link" data-share="baidu" data-title="阿里云 VPS 开启之路之二">Share</a>
       
 
       
-        <a href="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之二/#disqus_thread" class="article-comment-link">Comments</a>
       
 
       
@@ -170,19 +172,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/08/24/阿里云-VPS-开启之路之二/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          阿里云 VPS 开启之路之二
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/21/升级-Python-的模块/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/08/24/阿里云-VPS-开启之路之一/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">升级 Python 的模块</div>
+      <div class="article-nav-title">阿里云 VPS 开启之路之一</div>
     </a>
   
 </nav>
@@ -310,7 +303,7 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
-  var disqus_url = 'yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/';
+  var disqus_url = 'yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之二/';
   
   (function(){
     var dsq = document.createElement('script');
