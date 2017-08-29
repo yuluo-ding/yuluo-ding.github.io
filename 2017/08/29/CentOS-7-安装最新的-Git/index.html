@@ -4,18 +4,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>sshpass 的使用 | yuluo</title>
+  <title>CentOS 7 安装最新的 Git | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。">
+  <meta name="description" content="yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sshpass 的使用">
-<meta property="og:url" content="yuluo-ding.github.io/2017/05/20/sshpass-的使用/index.html">
+<meta property="og:title" content="CentOS 7 安装最新的 Git">
+<meta property="og:url" content="yuluo-ding.github.io/2017/08/29/CentOS-7-安装最新的-Git/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。">
-<meta property="og:updated_time" content="2017-05-19T16:49:32.000Z">
+<meta property="og:description" content="yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。">
+<meta property="og:updated_time" content="2017-08-29T08:11:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sshpass 的使用">
-<meta name="twitter:description" content="​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。">
+<meta name="twitter:title" content="CentOS 7 安装最新的 Git">
+<meta name="twitter:description" content="yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -73,10 +73,10 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-sshpass-的使用" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-CentOS-7-安装最新的-Git" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/05/20/sshpass-的使用/" class="article-date">
-  <time datetime="2017-05-19T16:28:27.000Z" itemprop="datePublished">2017-05-20</time>
+    <a href="/2017/08/29/CentOS-7-安装最新的-Git/" class="article-date">
+  <time datetime="2017-08-29T07:53:10.000Z" itemprop="datePublished">2017-08-29</time>
 </a>
     
   <div class="article-category">
@@ -91,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      sshpass 的使用
+      CentOS 7 安装最新的 Git
     </h1>
   
 
@@ -99,46 +99,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。</p>
+        <blockquote>
+<p>yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。</p>
+</blockquote>
 <a id="more"></a>
-<h4 id="安装">安装</h4><ol>
-<li><p><strong>Installing on Ubuntu</strong></p>
-<p><code>apt-get install sshpass</code></p>
+<ol>
+<li><p>查看 yum 源仓库的 Git 信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum info git</div></pre></td></tr></table></figure>
+<p>​可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最<a href="https://github.com/git/git/releases" target="_blank" rel="external">新的 Git 发布版本</a>，已经 2.14.1 了。</p>
 </li>
-<li><p><strong>Installing on OS X</strong></p>
-<ul>
-<li><p>开始之前需要安装<code>install xcode and command line tools.</code></p>
+<li><p>依赖库安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</div><div class="line"># yum install  gcc perl-ExtUtils-MakeMaker</div></pre></td></tr></table></figure>
 </li>
-<li><p>之后安装Installing with Homebrew</p>
+<li><p>卸载低版本Git,下载行的源码包，并解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># yum remove git</div><div class="line"># wget https://github.com/git/git/archive/v2.14.1.tar.gz</div><div class="line"># tar -zxvf v2.14.1.tar.gz</div></pre></td></tr></table></figure>
 </li>
-<li><p>由于安全问题，brew 官方默认不允许安装，可以尝试如下方法：</p>
-<p><code>brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb</code></p>
+<li><p>编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># make prefix=/usr/local/git all</div><div class="line"># make prefix=/usr/local/git install</div></pre></td></tr></table></figure>
 </li>
-</ul>
-</li>
-<li><p><strong>源码安装</strong></p>
-<ul>
-<li>Download the <a href="http://sourceforge.net/projects/sshpass/" target="_blank" rel="external">Source Code</a></li>
-<li>Extract it and cd into the directory</li>
-<li><code>./configure</code></li>
-<li><code>sudo make install</code></li>
-</ul>
+<li><p>添加到环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</div><div class="line"># source /etc/bashrc # 实时生效</div></pre></td></tr></table></figure>
+<p>​</p>
+<p>以上 CentOS 7.3就完成了更新 Git。​</p>
 </li>
 </ol>
-<h4 id="用法介绍">用法介绍</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[root@zhu ~]<span class="comment"># sshpass --help</span></div><div class="line">sshpass: invalid option -- <span class="string">'-'</span></div><div class="line">Usage: sshpass [<span class="_">-f</span>|<span class="_">-d</span>|-p|<span class="_">-e</span>] [-hV] <span class="built_in">command</span> parameters</div><div class="line">   <span class="_">-f</span> filename   Take password to use from file</div><div class="line">   <span class="_">-d</span> number     Use number as file descriptor <span class="keyword">for</span> getting password</div><div class="line">   -p password   Provide password as argument (security unwise)</div><div class="line">   <span class="_">-e</span>            Password is passed as env-var <span class="string">"SSHPASS"</span></div><div class="line">   With no parameters - password will be taken from stdin</div><div class="line">   -h            Show <span class="built_in">help</span> (this screen)</div><div class="line">   -V            Print version information</div><div class="line">At most one of <span class="_">-f</span>, <span class="_">-d</span>, -p or <span class="_">-e</span> should be used</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">-p password <span class="comment">#后跟密码</span></div><div class="line">[root@zhu ~]<span class="comment"># sshpass -p 123456 ssh root@192.168.56.102</span></div><div class="line">Last login: Wed Apr 16 15:35:22 2014 from 192.168.56.1</div><div class="line">[root@jiang ~]<span class="comment"># exit</span></div><div class="line"><span class="built_in">logout</span></div><div class="line">Connection to 192.168.56.102 closed.</div><div class="line"><span class="_">-f</span> filename <span class="comment">#后跟保存密码的文件名，密码是文件内容的第一行。</span></div><div class="line">[root@zhu ~]<span class="comment"># cat 1.txt</span></div><div class="line">123456</div><div class="line">[root@zhu ~]<span class="comment"># sshpass -f 1.txt  ssh root@192.168.56.102</span></div><div class="line">Last login: Fri Apr 18 13:48:20 2014 from 192.168.56.101</div><div class="line">[root@jiang ~]<span class="comment"># exit</span></div><div class="line"><span class="built_in">logout</span></div><div class="line">Connection to 192.168.56.102 closed.</div><div class="line"><span class="_">-e</span> <span class="comment">#将环境变量SSHPASS作为密码</span></div><div class="line">[root@zhu ~]<span class="comment"># export SSHPASS=123456</span></div><div class="line">[root@zhu ~]<span class="comment"># sshpass -e  ssh root@192.168.56.102</span></div><div class="line">Last login: Fri Apr 18 13:51:45 2014 from 192.168.56.101</div><div class="line">[root@jiang ~]<span class="comment"># exit</span></div><div class="line"><span class="built_in">logout</span></div><div class="line">Connection to 192.168.56.102 closed.</div></pre></td></tr></table></figure>
-<p>如果在多台主机执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[root@zhu ~]<span class="comment"># cat a.sh</span></div><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(cat /root/1.txt)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> <span class="variable">$i</span></div><div class="line">    sshpass -p123456 ssh root@<span class="variable">$i</span> <span class="string">'ls -l'</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/05/20/sshpass-的使用/" data-id="cj6xbdtux005x5k9knxy8z7ov" class="article-share-link" data-share="baidu" data-title="sshpass 的使用">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/29/CentOS-7-安装最新的-Git/" data-id="cj6xbdtqu00145k9k1al2ea2o" class="article-share-link" data-share="baidu" data-title="CentOS 7 安装最新的 Git">Share</a>
       
 
       
-        <a href="yuluo-ding.github.io/2017/05/20/sshpass-的使用/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="yuluo-ding.github.io/2017/08/29/CentOS-7-安装最新的-Git/#disqus_thread" class="article-comment-link">Comments</a>
       
 
       
@@ -148,19 +142,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/05/31/让-macbook-读取-txt-文本/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          让 MacBook 读取 txt 文本
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/17/Python-Pip-使用警告/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/08/27/CentOS-7-3-升级Python-2-7-13/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python Pip 使用警告</div>
+      <div class="article-nav-title">CentOS 7.3 升级Python 2.7.13</div>
     </a>
   
 </nav>
@@ -288,7 +273,7 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
-  var disqus_url = 'yuluo-ding.github.io/2017/05/20/sshpass-的使用/';
+  var disqus_url = 'yuluo-ding.github.io/2017/08/29/CentOS-7-安装最新的-Git/';
   
   (function(){
     var dsq = document.createElement('script');
