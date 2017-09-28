@@ -4,18 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android Studio插件 | yuluo</title>
+  <title>Ubuntu中vi使用方向键与退格键乱码问题 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Android Studio 实用插件推荐几款实用的Android Studio 插件">
+  <meta name="description" content="在Ubuntu中 使用方向键与退格键会出现ABCD等字母。
+主要有两个解决方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Studio插件">
-<meta property="og:url" content="yuluo-ding.github.io/2016/01/20/Android-Studio插件/index.html">
+<meta property="og:title" content="Ubuntu中vi使用方向键与退格键乱码问题">
+<meta property="og:url" content="yuluo-ding.github.io/2017/09/28/Ubuntu中vi使用方向键与退格键乱码问题/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="Android Studio 实用插件推荐几款实用的Android Studio 插件">
-<meta property="og:updated_time" content="2016-01-20T13:09:08.000Z">
+<meta property="og:description" content="在Ubuntu中 使用方向键与退格键会出现ABCD等字母。
+主要有两个解决方法。">
+<meta property="og:updated_time" content="2017-09-28T01:59:49.379Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Studio插件">
-<meta name="twitter:description" content="Android Studio 实用插件推荐几款实用的Android Studio 插件">
+<meta name="twitter:title" content="Ubuntu中vi使用方向键与退格键乱码问题">
+<meta name="twitter:description" content="在Ubuntu中 使用方向键与退格键会出现ABCD等字母。
+主要有两个解决方法。">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -73,14 +76,14 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-Android-Studio插件" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-Ubuntu中vi使用方向键与退格键乱码问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/20/Android-Studio插件/" class="article-date">
-  <time datetime="2016-01-20T13:06:52.000Z" itemprop="datePublished">2016-01-20</time>
+    <a href="/2017/09/28/Ubuntu中vi使用方向键与退格键乱码问题/" class="article-date">
+  <time datetime="2017-09-28T01:52:21.000Z" itemprop="datePublished">2017-09-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android-Studio/">Android Studio</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -91,7 +94,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Android Studio插件
+      Ubuntu中vi使用方向键与退格键乱码问题
     </h1>
   
 
@@ -99,28 +102,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Android_Studio_实用插件推荐">Android Studio 实用插件推荐</h4><p><a href="http://www.jianshu.com/p/6f5f818afe4b?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">几款实用的Android Studio 插件</a><br><a id="more"></a></p>
-<ol>
-<li>android-butterknife-zelezny</li>
-<li>Gsonformat</li>
-<li>Android Postfix Completion</li>
-<li>AndroidAccessors</li>
-<li>Lifecycle Sorter</li>
-<li>JsonOnlineViewer</li>
-<li>CodeGlance</li>
-<li>findBugs-IDEA</li>
-<li>ADB WIFI</li>
-</ol>
+        <p>在Ubuntu中 使用方向键与退格键会出现ABCD等字母。</p>
+<p>主要有两个解决方法。</p>
+<a id="more"></a>
+<p><strong>方案一：</strong></p>
+<p>可以安装vim full版本，在full版本下键盘正常，安装好后同样使用vi命令。</p>
+<p>安装vim：</p>
+<p>ubuntu预装的是vim tiny版本，而需要的是vim full版本。执行下面的语句安装vim full版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$sudo apt-get remove vim-common</div><div class="line">$sudo apt-get install vim</div></pre></td></tr></table></figure>
+<p>这样就行了，vim是一款优秀的软件，可以在运用中体会到。</p>
+<p><strong>方案二：</strong></p>
+<p>在vi命令行使用命令“：set nocompatible”，就是设置vi不使用兼容模式。</p>
+<p>Ubuntu中的vi命令：</p>
+<p>vi 有三种模式，输入模式，编辑模式，“：”命令模式</p>
+<p>vi 进入以后默认是编辑模式</p>
+<p>vi 编辑模式默认的快捷键 上下左右分别是  J K H L</p>
+<p>vi 在编辑模式使用 i 可以进入输入模式</p>
+<p>vi 输入模式只能输入英文，默认不能使用上下左右箭头</p>
+<p>vi 输入模式用Esc可以返回到编辑模式</p>
+<p>vi 编辑模式 Shift + ; 可以进入命令模式</p>
+<p>vi 命令模式w保存，q退出</p>
+<p><strong>1）对所有用户都有效,解决系统中所用用户的vi中文乱码问题</strong></p>
+<p>   sudo gedit /etc/vim/vimrc.tiny</p>
+<p>加入如下内容：</p>
+<p>#该文件的内容显示如下：</p>
+<p>“ Encoding related</p>
+<p>set encoding=UTF-8</p>
+<p>set langmenu=zh_CN.UTF-8</p>
+<p>language message zh_CN.UTF-8</p>
+<p>set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1</p>
+<p>set fileencoding=utf-8</p>
+<p><strong>2)只对当前用户有效的解决方法</strong></p>
+<p>  ubuntu默认在当前用户的家目录下，没有.vimrc文件，这个时候可以自己touch一个.vimrc文件，且在其中加入  </p>
+<p>#该文件的内容显示如下：</p>
+<p>“ Encoding related </p>
+<p>set encoding=UTF-8</p>
+<p>set langmenu=zh_CN.UTF-8</p>
+<p>language message zh_CN.UTF-8</p>
+<p>set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1</p>
+<p>set fileencoding=utf-8</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/01/20/Android-Studio插件/" data-id="cj83tayhs0008hevdyp7owqd1" class="article-share-link" data-share="baidu" data-title="Android Studio插件">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/09/28/Ubuntu中vi使用方向键与退格键乱码问题/" data-id="cj83taymd004vhevd35xlm83p" class="article-share-link" data-share="baidu" data-title="Ubuntu中vi使用方向键与退格键乱码问题">Share</a>
       
 
       
-        <a href="yuluo-ding.github.io/2016/01/20/Android-Studio插件/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="yuluo-ding.github.io/2017/09/28/Ubuntu中vi使用方向键与退格键乱码问题/#disqus_thread" class="article-comment-link">Comments</a>
       
 
       
@@ -130,19 +160,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/21/Eclipse安装插件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Eclipse安装插件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/19/Android-Gson的使用/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/01/Linux-下的五个查找命令/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android Gson的使用</div>
+      <div class="article-nav-title">Linux 下的五个查找命令</div>
     </a>
   
 </nav>
@@ -270,7 +291,7 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
-  var disqus_url = 'yuluo-ding.github.io/2016/01/20/Android-Studio插件/';
+  var disqus_url = 'yuluo-ding.github.io/2017/09/28/Ubuntu中vi使用方向键与退格键乱码问题/';
   
   (function(){
     var dsq = document.createElement('script');
