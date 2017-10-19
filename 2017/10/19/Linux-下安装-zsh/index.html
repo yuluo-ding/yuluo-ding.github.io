@@ -4,17 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | yuluo</title>
+  <title>Linux 下安装 zsh | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The home of yuluo!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yuluo">
-<meta property="og:url" content="yuluo-ding.github.io/archives/2016/page/5/index.html">
+  <meta name="description" content="Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。
+安装过程：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 下安装 zsh">
+<meta property="og:url" content="yuluo-ding.github.io/2017/10/19/Linux-下安装-zsh/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="The home of yuluo!">
+<meta property="og:description" content="Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。
+安装过程：">
+<meta property="og:updated_time" content="2017-10-19T11:39:35.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yuluo">
-<meta name="twitter:description" content="The home of yuluo!">
+<meta name="twitter:title" content="Linux 下安装 zsh">
+<meta name="twitter:description" content="Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。
+安装过程：">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -72,215 +76,74 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/19/Android-Gson的使用/" class="archive-article-date">
-  <time datetime="2016-01-19T14:20:23.000Z" itemprop="datePublished">Jan 19</time>
+      <section id="main"><article id="post-Linux-下安装-zsh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/19/Linux-下安装-zsh/" class="article-date">
+  <time datetime="2017-10-19T11:36:31.000Z" itemprop="datePublished">2017-10-19</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/19/Android-Gson的使用/">Android Gson的使用</a>
+    <h1 class="article-title" itemprop="name">
+      Linux 下安装 zsh
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/18/Android-Material-Design中文版/" class="archive-article-date">
-  <time datetime="2016-01-18T14:36:01.000Z" itemprop="datePublished">Jan 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/18/Android-Material-Design中文版/">Android Material Design中文版</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/17/Android6-0-新特性详解/" class="archive-article-date">
-  <time datetime="2016-01-17T14:12:32.000Z" itemprop="datePublished">Jan 17</time>
-</a>
+        <p><a href="http://zsh.sourceforge.net/Intro/intro_1.html" target="_blank" rel="external">Zsh</a> 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 <a href="https://wiki.archlinux.org/index.php/Bash" target="_blank" rel="external">Bash</a> 的同时 (默认不兼容，除非设置成 <code>emulate sh</code>) 还有提供了很多改进。</p>
+<p>安装过程：</p>
+<a id="more"></a>
+<h5 id="1-_安装_zsh_软件包和_git">1. 安装 zsh 软件包和 git</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CentOS： yum -y install zsh git</div><div class="line">Ubuntu:  sudo apt -y install zsh git</div></pre></td></tr></table></figure>
+<h5 id="2-_克隆_oh-my-zsh">2. 克隆 oh-my-zsh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</div></pre></td></tr></table></figure>
+<h5 id="3-_复制_-zshrc，修改命令提示符样式">3. 复制 .zshrc，修改命令提示符样式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</div><div class="line">ZSH_THEME=&quot;ys&quot;</div></pre></td></tr></table></figure>
+<h5 id="4-_修改_shell_类型">4. 修改 shell 类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/zsh</div></pre></td></tr></table></figure>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/17/Android6-0-新特性详解/">Android6.0 新特性详解</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/14/Gradle-for-Android系列/" class="archive-article-date">
-  <time datetime="2016-01-14T07:05:45.000Z" itemprop="datePublished">Jan 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/14/Gradle-for-Android系列/">Gradle for Android系列</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/13/Python安装pywin32问题/" class="archive-article-date">
-  <time datetime="2016-01-13T14:12:38.000Z" itemprop="datePublished">Jan 13</time>
-</a>
+        <a data-url="yuluo-ding.github.io/2017/10/19/Linux-下安装-zsh/" data-id="cj8ye9fsq0026nbu3j5gng82c" class="article-share-link" data-share="baidu" data-title="Linux 下安装 zsh">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/13/Python安装pywin32问题/">Python安装pywin32问题</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/13/Python编码问题/" class="archive-article-date">
-  <time datetime="2016-01-13T13:12:22.000Z" itemprop="datePublished">Jan 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/13/Python编码问题/">Python编码问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/11/Python学习记录/" class="archive-article-date">
-  <time datetime="2016-01-11T12:25:05.000Z" itemprop="datePublished">Jan 11</time>
-</a>
+        <a href="yuluo-ding.github.io/2017/10/19/Linux-下安装-zsh/#disqus_thread" class="article-comment-link">Comments</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/11/Python学习记录/">Python学习记录</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/10/Android-Studio-调试技巧/" class="archive-article-date">
-  <time datetime="2016-01-10T06:31:48.000Z" itemprop="datePublished">Jan 10</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/10/Android-Studio-调试技巧/">Android Studio 调试技巧</a>
-    </h1>
-  
-
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/18/Android-O的感叹号或者叉-怎么去掉呢/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Android O的感叹号或者叉 怎么去掉呢</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/09/Git常用命令/" class="archive-article-date">
-  <time datetime="2016-01-09T09:56:52.000Z" itemprop="datePublished">Jan 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/09/Git常用命令/">Git常用命令</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/09/RxJava开发精要/" class="archive-article-date">
-  <time datetime="2016-01-09T09:47:23.000Z" itemprop="datePublished">Jan 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/09/RxJava开发精要/">RxJava开发精要</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
 
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/2016/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/2016/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2016/page/3/">3</a><a class="page-number" href="/archives/2016/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/2016/page/6/">6</a><a class="extend next" rel="next" href="/archives/2016/page/6/">Next &raquo;</a>
-  </nav>
+  <section id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
 </section>
       
       <aside id="sidebar">
@@ -395,11 +258,13 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
+  var disqus_url = 'yuluo-ding.github.io/2017/10/19/Linux-下安装-zsh/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
