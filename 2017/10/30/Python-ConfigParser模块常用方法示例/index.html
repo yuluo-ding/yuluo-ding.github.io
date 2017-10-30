@@ -4,18 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Gradle for Android系列 | yuluo</title>
+  <title>Python ConfigParser模块常用方法示例 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于Android Studio的Gradle 系列文章">
+  <meta name="description" content="在程序中使用配置文件来灵活的配置一些参数是一件很常见的事情，配置文件的解析并不复杂，在Python里更是如此，在官方发布的库中就包含有做这件事情的库，那就是ConfigParser，这里简单的做一些介绍。  
+Python ConfigParser模块解析的配置文件的格式比较象ini的配置文件格式，就是文件中由多个section构成，每个section下又有多个配置项.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gradle for Android系列">
-<meta property="og:url" content="yuluo-ding.github.io/2016/01/14/Gradle-for-Android系列/index.html">
+<meta property="og:title" content="Python ConfigParser模块常用方法示例">
+<meta property="og:url" content="yuluo-ding.github.io/2017/10/30/Python-ConfigParser模块常用方法示例/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="关于Android Studio的Gradle 系列文章">
-<meta property="og:updated_time" content="2016-01-18T14:31:42.000Z">
+<meta property="og:description" content="在程序中使用配置文件来灵活的配置一些参数是一件很常见的事情，配置文件的解析并不复杂，在Python里更是如此，在官方发布的库中就包含有做这件事情的库，那就是ConfigParser，这里简单的做一些介绍。  
+Python ConfigParser模块解析的配置文件的格式比较象ini的配置文件格式，就是文件中由多个section构成，每个section下又有多个配置项.">
+<meta property="og:updated_time" content="2017-10-30T08:04:33.728Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gradle for Android系列">
-<meta name="twitter:description" content="关于Android Studio的Gradle 系列文章">
+<meta name="twitter:title" content="Python ConfigParser模块常用方法示例">
+<meta name="twitter:description" content="在程序中使用配置文件来灵活的配置一些参数是一件很常见的事情，配置文件的解析并不复杂，在Python里更是如此，在官方发布的库中就包含有做这件事情的库，那就是ConfigParser，这里简单的做一些介绍。  
+Python ConfigParser模块解析的配置文件的格式比较象ini的配置文件格式，就是文件中由多个section构成，每个section下又有多个配置项.">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -73,14 +76,14 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-Gradle-for-Android系列" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-Python-ConfigParser模块常用方法示例" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/14/Gradle-for-Android系列/" class="article-date">
-  <time datetime="2016-01-14T07:05:45.000Z" itemprop="datePublished">2016-01-14</time>
+    <a href="/2017/10/30/Python-ConfigParser模块常用方法示例/" class="article-date">
+  <time datetime="2017-10-30T08:02:46.000Z" itemprop="datePublished">2017-10-30</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android-Studio/">Android Studio</a>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
   </div>
 
   </div>
@@ -91,7 +94,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Gradle for Android系列
+      Python ConfigParser模块常用方法示例
     </h1>
   
 
@@ -99,19 +102,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="关于Android_Studio的Gradle_系列文章">关于Android Studio的Gradle 系列文章</h4><a id="more"></a>
-<p><a href="http://segmentfault.com/a/1190000004229002" target="_blank" rel="external">Gradle for Android 第一篇( 从 Gradle 和 AS 开始 )</a><br><a href="http://segmentfault.com/a/1190000004234712?_ea=538654" target="_blank" rel="external">Gradle for Android 第二篇( Build.gradle入门 )</a><br><a href="http://segmentfault.com/a/1190000004237922" target="_blank" rel="external">Gradle for Android 第三篇( 依赖管理 )</a><br><a href="http://segmentfault.com/a/1190000004241503" target="_blank" rel="external">Gradle for Android 第四篇( 构建变体 )</a><br><a href="http://segmentfault.com/a/1190000004247809" target="_blank" rel="external">Gradle for Android 第五篇( 多模块构建 )</a><br><a href="http://segmentfault.com/a/1190000004260141" target="_blank" rel="external">Gradle for Android 第六篇( 测试)</a><br><a href="http://segmentfault.com/a/1190000004276167" target="_blank" rel="external">Gradle for Android 第七篇( Groovy入门 )</a></p>
-<h4 id="用Gradle_构建你的android程序">用Gradle 构建你的android程序</h4><p><a href="http://www.cnblogs.com/youxilua/archive/2013/05/20/3087935.html" target="_blank" rel="external">用Gradle 构建你的android程序</a></p>
+        <p>在程序中使用配置文件来灵活的配置一些参数是一件很常见的事情，配置文件的解析并不复杂，在Python里更是如此，在官方发布的库中就包含有做这件事情的库，那就是ConfigParser，这里简单的做一些介绍。  </p>
+<p><code>Python ConfigParser</code>模块解析的配置文件的格式比较象ini的配置文件格式，就是文件中由多个section构成，每个section下又有多个配置项.</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[db]    </div><div class="line">db_host=192.168.1.1   </div><div class="line">db_port=3306   </div><div class="line">db_user=root   </div><div class="line">db_pass=password   </div><div class="line">[concurrent]    </div><div class="line">thread=200   </div><div class="line">processor=400</div></pre></td></tr></table></figure>
+<p>  假设上面的配置文件的名字为test.conf。里面包含两个section,一个是db, 另一个是concurrent, db里面还包含有4项，concurrent里面有两项。这里来做做解析：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#-*- encoding: utf-8 -*-    </span></div><div class="line"><span class="keyword">import</span> ConfigParser,string,os,sys    </div><div class="line">cf = ConfigParser.ConfigParser()    </div><div class="line">cf.read(<span class="string">"test.conf"</span>)   </div><div class="line">  </div><div class="line"><span class="comment"># 返回所有的section    </span></div><div class="line">s = cf.sections()    </div><div class="line"><span class="keyword">print</span> <span class="string">'section:'</span>, s    </div><div class="line">o = cf.options(<span class="string">"db"</span>)    </div><div class="line"><span class="keyword">print</span> <span class="string">'options:'</span>, o    </div><div class="line">v = cf.items(<span class="string">"db"</span>)    </div><div class="line"><span class="keyword">print</span> <span class="string">'db:'</span>, v    </div><div class="line"><span class="keyword">print</span> <span class="string">'-'</span>*<span class="number">60</span>    </div><div class="line">  </div><div class="line"><span class="comment">#可以按照类型读取出来  </span></div><div class="line">db_host = cf.get(<span class="string">"db"</span>, <span class="string">"db_host"</span>)    </div><div class="line">db_port = cf.getint(<span class="string">"db"</span>, <span class="string">"db_port"</span>)    </div><div class="line">db_user = cf.get(<span class="string">"db"</span>, <span class="string">"db_user"</span>)    </div><div class="line">db_pass = cf.get(<span class="string">"db"</span>, <span class="string">"db_pass"</span>)   </div><div class="line">  </div><div class="line"><span class="comment"># 返回的是整型的    </span></div><div class="line">threads = cf.getint(<span class="string">"concurrent"</span>, <span class="string">"thread"</span>)    </div><div class="line">processors = cf.getint(<span class="string">"concurrent"</span>, <span class="string">"processor"</span>)    </div><div class="line"><span class="keyword">print</span> <span class="string">"db_host:"</span>, db_host    </div><div class="line"><span class="keyword">print</span> <span class="string">"db_port:"</span>, db_port    </div><div class="line"><span class="keyword">print</span> <span class="string">"db_user:"</span>, db_user    </div><div class="line"><span class="keyword">print</span> <span class="string">"db_pass:"</span>, db_pass    </div><div class="line"><span class="keyword">print</span> <span class="string">"thread:"</span>, threads    </div><div class="line"><span class="keyword">print</span> <span class="string">"processor:"</span>, processors   </div><div class="line">  </div><div class="line"><span class="comment">#修改一个值，再写回去    </span></div><div class="line">cf.set(<span class="string">"db"</span>, <span class="string">"db_pass"</span>, <span class="string">"zhaowei"</span>)    </div><div class="line">cf.write(open(<span class="string">"test.conf"</span>, <span class="string">"w"</span>))   </div><div class="line">  </div><div class="line"><span class="comment">#添加一个section。（同样要写回）  </span></div><div class="line">cf.add_section(<span class="string">'liuqing'</span>)  </div><div class="line">cf.set(<span class="string">'liuqing'</span>, <span class="string">'int'</span>, <span class="string">'15'</span>)  </div><div class="line">cf.set(<span class="string">'liuqing'</span>, <span class="string">'bool'</span>, <span class="string">'true'</span>)  </div><div class="line">cf.set(<span class="string">'liuqing'</span>, <span class="string">'float'</span>, <span class="string">'3.1415'</span>)  </div><div class="line">cf.set(<span class="string">'liuqing'</span>, <span class="string">'baz'</span>, <span class="string">'fun'</span>)  </div><div class="line">cf.set(<span class="string">'liuqing'</span>, <span class="string">'bar'</span>, <span class="string">'Python'</span>)  </div><div class="line">cf.set(<span class="string">'liuqing'</span>, <span class="string">'foo'</span>, <span class="string">'%(bar)s is %(baz)s!'</span>)  </div><div class="line">cf.write(open(<span class="string">"test.conf"</span>, <span class="string">"w"</span>))  </div><div class="line">  </div><div class="line"><span class="comment">#移除section 或者option 。（只要进行了修改就要写回的哦）  </span></div><div class="line">cf.remove_option(<span class="string">'liuqing'</span>,<span class="string">'int'</span>)  </div><div class="line">cf.remove_section(<span class="string">'liuqing'</span>)  </div><div class="line">cf.write(open(<span class="string">"test.conf"</span>, <span class="string">"w"</span>))</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/01/14/Gradle-for-Android系列/" data-id="cj9dwfd0r001m03u3gvrgvebj" class="article-share-link" data-share="baidu" data-title="Gradle for Android系列">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/10/30/Python-ConfigParser模块常用方法示例/" data-id="cj9dwfd1w003603u3pow7fe4d" class="article-share-link" data-share="baidu" data-title="Python ConfigParser模块常用方法示例">Share</a>
       
 
       
-        <a href="yuluo-ding.github.io/2016/01/14/Gradle-for-Android系列/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="yuluo-ding.github.io/2017/10/30/Python-ConfigParser模块常用方法示例/#disqus_thread" class="article-comment-link">Comments</a>
       
 
       
@@ -121,19 +127,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/17/Android6-0-新特性详解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Android6.0 新特性详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/13/Python安装pywin32问题/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/19/Linux-下安装-zsh/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python安装pywin32问题</div>
+      <div class="article-nav-title">Linux 下安装 zsh</div>
     </a>
   
 </nav>
@@ -261,7 +258,7 @@
 <script>
   var disqus_shortname = 'yuluo-1';
   
-  var disqus_url = 'yuluo-ding.github.io/2016/01/14/Gradle-for-Android系列/';
+  var disqus_url = 'yuluo-ding.github.io/2017/10/30/Python-ConfigParser模块常用方法示例/';
   
   (function(){
     var dsq = document.createElement('script');
