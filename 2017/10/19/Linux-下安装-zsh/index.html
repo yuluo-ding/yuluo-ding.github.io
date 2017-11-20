@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。
 安装过程：">
-<meta property="og:updated_time" content="2017-10-19T11:39:35.779Z">
+<meta property="og:updated_time" content="2017-11-20T06:30:08.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 下安装 zsh">
 <meta name="twitter:description" content="Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。
@@ -106,9 +106,14 @@
 <p>安装过程：</p>
 <a id="more"></a>
 <h5 id="1-_安装_zsh_软件包和_git">1. 安装 zsh 软件包和 git</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CentOS： yum -y install zsh git</div><div class="line">Ubuntu:  sudo apt -y install zsh git</div></pre></td></tr></table></figure>
-<h5 id="2-_克隆_oh-my-zsh">2. 克隆 oh-my-zsh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</div></pre></td></tr></table></figure>
-<h5 id="3-_复制_-zshrc，修改命令提示符样式">3. 复制 .zshrc，修改命令提示符样式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</div><div class="line">ZSH_THEME=&quot;ys&quot;</div></pre></td></tr></table></figure>
-<h5 id="4-_修改_shell_类型">4. 修改 shell 类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/zsh</div></pre></td></tr></table></figure>
+<h5 id="2-_克隆_oh-my-zsh">2. 克隆 oh-my-zsh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</div></pre></td></tr></table></figure>
+<h5 id="3-_复制_-zshrc，修改命令提示符样式">3. 复制 .zshrc，修改命令提示符样式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</div><div class="line">ZSH_THEME=&quot;ys&quot;</div></pre></td></tr></table></figure>
+<h5 id="4-_修改_shell_类型">4. 修改 shell 类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ chsh -s /bin/zsh</div></pre></td></tr></table></figure>
+<p><strong>5、更新 oh-my-zsh</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ upgrade_oh_my_zsh</div></pre></td></tr></table></figure>
+<p><strong>6、如果要换 oh-my-fish</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ uninstall_oh_my_zsh</div><div class="line">$ brew install fish</div><div class="line">$ curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.sh | sh</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
