@@ -12,7 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2016/11/10/Git移除-deal等配置文件/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="如何在已经提交代码之后，移除.idea等配置文件总结，先删除，再提交。">
-<meta property="og:updated_time" content="2016-11-10T07:05:02.000Z">
+<meta property="og:updated_time" content="2017-12-04T05:59:20.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git移除.deal等配置文件">
 <meta name="twitter:description" content="如何在已经提交代码之后，移除.idea等配置文件总结，先删除，再提交。">
@@ -110,6 +110,7 @@
 </ol>
 </li>
 <li>去git仓库会发现配置文件已经没有了</li>
+<li>干净后，<code>git rm -r --cached .idea</code> 取消跟踪</li>
 <li>新建<code>.gitignore</code>文件，由于在windows中，无法新建没有名称的txt文件，所以需要通过git bash来创建。<ol>
 <li>在项目根目录下打开git bash</li>
 <li><code>touch .gitignore</code></li>
