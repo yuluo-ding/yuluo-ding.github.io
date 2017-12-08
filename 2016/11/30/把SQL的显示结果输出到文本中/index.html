@@ -6,22 +6,17 @@
   
   <title>把SQL的显示结果输出到文本中 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL查询结果有三种方法输出到文本中
-直接执行命令
-1&amp;gt; select name from table  into outfile &apos;/tmp/test.txt&apos;;">
+  <meta name="description" content="MySQL查询结果有三种方法输出到文本中 直接执行命令 1&amp;gt; select name from table  into outfile &apos;/tmp/test.txt&apos;;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="把SQL的显示结果输出到文本中">
 <meta property="og:url" content="yuluo-ding.github.io/2016/11/30/把SQL的显示结果输出到文本中/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="MySQL查询结果有三种方法输出到文本中
-直接执行命令
-1&amp;gt; select name from table  into outfile &apos;/tmp/test.txt&apos;;">
+<meta property="og:description" content="MySQL查询结果有三种方法输出到文本中 直接执行命令 1&amp;gt; select name from table  into outfile &apos;/tmp/test.txt&apos;;">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2016-11-30T08:55:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="把SQL的显示结果输出到文本中">
-<meta name="twitter:description" content="MySQL查询结果有三种方法输出到文本中
-直接执行命令
-1&amp;gt; select name from table  into outfile &apos;/tmp/test.txt&apos;;">
+<meta name="twitter:description" content="MySQL查询结果有三种方法输出到文本中 直接执行命令 1&amp;gt; select name from table  into outfile &apos;/tmp/test.txt&apos;;">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -107,18 +102,18 @@
       
         <h3 id="MySQL查询结果有三种方法输出到文本中">MySQL查询结果有三种方法输出到文本中</h3><ol>
 <li><p>直接执行命令</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; select name from table  into outfile '/tmp/test.txt';</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; select name from table  into outfile '/tmp/test.txt';</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>在目录<code>/tmp/</code>下会产生文件test.txt</p>
 <p>报错：<code>ERROR 1 (HY000): Can&#39;t create/write to file &#39;/data/test.xls&#39; (Errcode: 13)</code></p>
 <p>mysql没有写权限</p>
 </li>
 <li><p>查询时自动写入文件</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; pager cat &gt; /tmp/test.txt ;</div><div class="line">PAGER set to 'cat &gt; /tmp/test.txt'</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; pager cat &gt; /tmp/test.txt ;</span><br><span class="line">PAGER <span class="keyword">set</span> <span class="keyword">to</span> <span class="string">'cat &gt; /tmp/test.txt'</span></span><br></pre></td></tr></table></figure>
 <p>之后的所有查询结果都自动写入<code>/tmp/test.txt&#39;</code>，并前后覆盖</p>
 </li>
 <li><p>直接在bash下执行</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># mysql -h 127.0.0.1 -u root -p dabase_name -P 3306 -e "select * from table"  &gt; /tmp/test.txt</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mysql -h 127.0.0.1 -u root -p dabase_name -P 3306 -e "select * from table"  &gt; /tmp/test.txt</span><br></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ol>
@@ -127,7 +122,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/11/30/把SQL的显示结果输出到文本中/" data-id="cjats3n920073qdu30ejkdv39" class="article-share-link" data-share="baidu" data-title="把SQL的显示结果输出到文本中">Share</a>
+        <a data-url="yuluo-ding.github.io/2016/11/30/把SQL的显示结果输出到文本中/" data-id="cjaxjqbkl00762ju3rd96nj8h" class="article-share-link" data-share="baidu" data-title="把SQL的显示结果输出到文本中">Share</a>
       
 
       

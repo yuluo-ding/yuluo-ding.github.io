@@ -6,19 +6,17 @@
   
   <title>Python两个字典的合并 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="两个字典合并的，有几种方法
-1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
+  <meta name="description" content="两个字典合并的，有几种方法 1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python两个字典的合并">
 <meta property="og:url" content="yuluo-ding.github.io/2017/01/17/Python两个字典的合并/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="两个字典合并的，有几种方法
-1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
+<meta property="og:description" content="两个字典合并的，有几种方法 1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-03-20T02:21:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python两个字典的合并">
-<meta name="twitter:description" content="两个字典合并的，有几种方法
-1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
+<meta name="twitter:description" content="两个字典合并的，有几种方法 1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -103,7 +101,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>两个字典合并的，有几种方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">dict1=&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>]&#125;</div><div class="line">dict2=&#123;<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</div><div class="line"><span class="comment">#得到如下的结果</span></div><div class="line">&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>],<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict1=&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>]&#125;</span><br><span class="line">dict2=&#123;<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</span><br><span class="line"><span class="comment">#得到如下的结果</span></span><br><span class="line">&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>],<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>两个方法：</p>
 <ol>
@@ -116,15 +114,15 @@
 </ol>
 <p>但是如果两个字典中有相同的key怎么办？</p>
 <p>如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = dict(a=<span class="number">1</span>, b=<span class="keyword">None</span>, c=<span class="number">3</span>)</div><div class="line">b = dict(a=<span class="keyword">None</span>, b=<span class="number">2</span>, c=<span class="number">4</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = dict(a=<span class="number">1</span>, b=<span class="keyword">None</span>, c=<span class="number">3</span>)</span><br><span class="line">b = dict(a=<span class="keyword">None</span>, b=<span class="number">2</span>, c=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 <p>要合并这两个字典该怎么办？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> b.items():</div><div class="line">    <span class="keyword">if</span> v:</div><div class="line">        a[k] = v</div><div class="line"><span class="keyword">print</span> a</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> b.items():</span><br><span class="line">    <span class="keyword">if</span> v:</span><br><span class="line">        a[k] = v</span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/01/17/Python两个字典的合并/" data-id="cjats3n5y003tqdu3y3cdy9ev" class="article-share-link" data-share="baidu" data-title="Python两个字典的合并">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/01/17/Python两个字典的合并/" data-id="cjaxjqbio003x2ju308p3kg18" class="article-share-link" data-share="baidu" data-title="Python两个字典的合并">Share</a>
       
 
       

@@ -6,19 +6,17 @@
   
   <title>CentOS 7.3 升级Python 2.7.13 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。
-安装依赖：1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel">
+  <meta name="description" content="Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。 安装依赖：1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 7.3 升级Python 2.7.13">
 <meta property="og:url" content="yuluo-ding.github.io/2017/08/27/CentOS-7-3-升级Python-2-7-13/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。
-安装依赖：1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel">
+<meta property="og:description" content="Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。 安装依赖：1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-08-27T14:55:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7.3 升级Python 2.7.13">
-<meta name="twitter:description" content="Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。
-安装依赖：1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel">
+<meta name="twitter:description" content="Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。 安装依赖：1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -103,27 +101,27 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。</p>
-<h4 id="安装依赖：">安装依赖：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel</div></pre></td></tr></table></figure>
+<h4 id="安装依赖：">安装依赖：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h4 id="下载并正确配置">下载并正确配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#官网下载python源代码</div><div class="line">wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz</div><div class="line">tar -zxvf Python-2.7.13.tgz</div></pre></td></tr></table></figure>
-<h4 id="编译并安装">编译并安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd Python-2.7.13/</div><div class="line">#请注意一定要加 `--enable-shared --prefix=/usr/local CFLAGS=-fPIC  LDFLAGS=&quot;-Wl,-rpath /usr/local/lib&quot; --enable-unicode=ucs4`</div><div class="line">./configure --enable-shared --prefix=/usr/local CFLAGS=-fPIC LDFLAGS=&quot;-Wl,-rpath /usr/local/lib&quot; --enable-unicode=ucs4</div><div class="line">make -j24</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<h4 id="下载并正确配置">下载并正确配置</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">官网下载python源代码</span></span><br><span class="line">wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz</span><br><span class="line">tar -zxvf Python-2.7.13.tgz</span><br></pre></td></tr></table></figure>
+<h4 id="编译并安装">编译并安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd Python-2.7.13/</span><br><span class="line"><span class="meta">#</span><span class="bash">请注意一定要加 `--<span class="built_in">enable</span>-shared --prefix=/usr/<span class="built_in">local</span> CFLAGS=-fPIC  LDFLAGS=<span class="string">"-Wl,-rpath /usr/local/lib"</span> --<span class="built_in">enable</span>-unicode=ucs4`</span></span><br><span class="line">./configure --enable-shared --prefix=/usr/local CFLAGS=-fPIC LDFLAGS="-Wl,-rpath /usr/local/lib" --enable-unicode=ucs4</span><br><span class="line">make -j24</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 <h4 id="替换旧版本">替换旧版本</h4><p><strong>请注意千万不要覆盖原有的系统自带的python，否则会导致yum不再可用，无法修复</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mv /usr/bin/python /usr/bin/python2.7.5</div><div class="line">ln -sf /usr/local/bin/python /usr/bin/python</div><div class="line">#验证版本</div><div class="line">python -V</div></pre></td></tr></table></figure>
-<h4 id="修改配置文件，解决yum、firewall-cmd等报错问题">修改配置文件，解决yum、firewall-cmd等报错问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi /usr/bin/yum</div><div class="line">#修改第一句，替换成保留的2.7.5的版本：</div><div class="line">!/usr/bin/python2.7.5</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mv /usr/bin/python /usr/bin/python2.7.5</span><br><span class="line">ln -sf /usr/local/bin/python /usr/bin/python</span><br><span class="line"><span class="meta">#</span><span class="bash">验证版本</span></span><br><span class="line">python -V</span><br></pre></td></tr></table></figure>
+<h4 id="修改配置文件，解决yum、firewall-cmd等报错问题">修改配置文件，解决yum、firewall-cmd等报错问题</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/bin/yum</span><br><span class="line"><span class="meta">#</span><span class="bash">修改第一句，替换成保留的2.7.5的版本：</span></span><br><span class="line">!/usr/bin/python2.7.5</span><br></pre></td></tr></table></figure>
 <p>修改<code>/usr/libexec/urlgrabber-ext-down</code>下的第一句：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!/usr/bin/python2<span class="number">.7</span><span class="number">.5</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!/usr/bin/python2<span class="number">.7</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
 <p>修改<code>/usr/bin/firewall-cmd</code>下的第一句：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python2.7.5 -Es</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python2.7.5 -Es</span></span><br></pre></td></tr></table></figure>
 <p>修改<code>/sbin/authconfig</code>下的第一句：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python2.7.5</span></div></pre></td></tr></table></figure>
-<h4 id="安装setuptools">安装setuptools</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://bootstrap.pypa.io/ez_setup.py</div><div class="line">python ez_setup.py</div></pre></td></tr></table></figure>
-<h4 id="安装最新版本的pip">安装最新版本的pip</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wget https://bootstrap.pypa.io/get-pip.py</div><div class="line">python get-pip.py </div><div class="line"></div><div class="line">ln -s /usr/local/bin/pip /usr/bin/pip</div><div class="line">ln -s /usr/local/bin/pip /usr/bin/pip2</div><div class="line">pip -V</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python2.7.5</span></span><br></pre></td></tr></table></figure>
+<h4 id="安装setuptools">安装setuptools</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://bootstrap.pypa.io/ez_setup.py</span><br><span class="line">python ez_setup.py</span><br></pre></td></tr></table></figure>
+<h4 id="安装最新版本的pip">安装最新版本的pip</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://bootstrap.pypa.io/get-pip.py</span><br><span class="line">python get-pip.py </span><br><span class="line"></span><br><span class="line">ln -s /usr/local/bin/pip /usr/bin/pip</span><br><span class="line">ln -s /usr/local/bin/pip /usr/bin/pip2</span><br><span class="line">pip -V</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/08/27/CentOS-7-3-升级Python-2-7-13/" data-id="cjats3n3n0015qdu3yloo3kc6" class="article-share-link" data-share="baidu" data-title="CentOS 7.3 升级Python 2.7.13">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/27/CentOS-7-3-升级Python-2-7-13/" data-id="cjaxjqbfw00152ju35angq18v" class="article-share-link" data-share="baidu" data-title="CentOS 7.3 升级Python 2.7.13">Share</a>
       
 
       

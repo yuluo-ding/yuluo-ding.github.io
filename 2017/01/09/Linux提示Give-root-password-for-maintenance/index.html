@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2017/01/09/Linux提示Give-root-password-for-maintenance/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="由于非法重启或硬盘故障，会导致linux系统无法启动，无法进入操作系统。当你看到提示：give root password for maintenance(or type control-D to continue):的时候，你还有补救的机会。问题原因应该是/usr /home /boot分区磁盘检测出了问题。">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-01-09T06:55:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux提示Give root password for maintenance">
@@ -114,7 +115,7 @@
 <p>方法二：</p>
 <ol>
 <li><p>重启后界面停在：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">give root password for maintenance</div><div class="line">(or type control-D to continue):</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">give root password for maintenance</span><br><span class="line">(or type control-D to continue):</span><br></pre></td></tr></table></figure>
 <p>此时输入root密码，回车</p>
 </li>
 <li><p>输入<code>fsck -y</code>回车，会开始修复文件系统，时间长短不一。</p>
@@ -127,7 +128,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/01/09/Linux提示Give-root-password-for-maintenance/" data-id="cjats3n4x002lqdu3mzuua9kn" class="article-share-link" data-share="baidu" data-title="Linux提示Give root password for maintenance">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/01/09/Linux提示Give-root-password-for-maintenance/" data-id="cjaxjqbhe002p2ju3mo1q854j" class="article-share-link" data-share="baidu" data-title="Linux提示Give root password for maintenance">Share</a>
       
 
       

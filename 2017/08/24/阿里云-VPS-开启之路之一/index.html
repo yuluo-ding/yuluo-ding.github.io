@@ -6,31 +6,17 @@
   
   <title>阿里云 VPS 开启之路之一 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
-
-卸载阿里云安骑士
-下载 wget http://update.aegis.aliyun.com/download/uninstall.sh
-执行下列命令：
-12chmod +x uninstall.sh./uninstall.sh">
+  <meta name="description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。  卸载阿里云安骑士 下载 wget http://update.aegis.aliyun.com/download/uninstall.sh 执行下列命令： 12chmod +x uninstall.sh./uninstall.sh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云 VPS 开启之路之一">
 <meta property="og:url" content="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
-
-卸载阿里云安骑士
-下载 wget http://update.aegis.aliyun.com/download/uninstall.sh
-执行下列命令：
-12chmod +x uninstall.sh./uninstall.sh">
+<meta property="og:description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。  卸载阿里云安骑士 下载 wget http://update.aegis.aliyun.com/download/uninstall.sh 执行下列命令： 12chmod +x uninstall.sh./uninstall.sh">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-08-29T14:19:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云 VPS 开启之路之一">
-<meta name="twitter:description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
-
-卸载阿里云安骑士
-下载 wget http://update.aegis.aliyun.com/download/uninstall.sh
-执行下列命令：
-12chmod +x uninstall.sh./uninstall.sh">
+<meta name="twitter:description" content="阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。  卸载阿里云安骑士 下载 wget http://update.aegis.aliyun.com/download/uninstall.sh 执行下列命令： 12chmod +x uninstall.sh./uninstall.sh">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -119,14 +105,14 @@
 <li><p>卸载阿里云安骑士</p>
 <p>下载 <code>wget http://update.aegis.aliyun.com/download/uninstall.sh</code></p>
 <p>执行下列命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod +x uninstall.sh</div><div class="line">./uninstall.sh</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x uninstall.sh</span><br><span class="line">./uninstall.sh</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 </li>
 <li><p>卸载阿里云aliyun.service</p>
 <p><code>killall aliyun-service &amp;&amp; echo &quot;&quot; &gt;/usr/sbin/aliyun-service</code></p>
 </li>
 <li><p>删除阿里云登录界面欢迎信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /etc/motd</div><div class="line">#编辑/删除倒数第二行的 Welcome to Alibaba Cloud Elastic Compute Service !</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/motd</span><br><span class="line"><span class="meta">#</span><span class="bash">编辑/删除倒数第二行的 Welcome to Alibaba Cloud Elastic Compute Service !</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>添加用户，授予 <code>sudo</code>权限</p>
 <ol>
@@ -134,20 +120,20 @@
 <p><code>adduser username</code></p>
 </li>
 <li><p>给该用户添加密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">passwd username</div><div class="line">New password:</div><div class="line">Retype new password:</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">passwd username</span><br><span class="line">New password:</span><br><span class="line">Retype new password:</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>授予 sudo 权限</p>
 <p><code>vi /etc/sudoers</code>然后找到，如下添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">## Allow root to run any commands anywhere</div><div class="line">root	ALL(ALL) = ALL</div><div class="line">username	ALL(ALL) = ALL   # username 是新建的用户名</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Allow root to run any commands anywhere</span></span></span><br><span class="line">root	ALL(ALL) = ALL</span><br><span class="line">username	ALL(ALL) = ALL   # username 是新建的用户名</span><br></pre></td></tr></table></figure>
 <p> 在保存的时候可能需要<code>wq!</code></p>
 </li>
 </ol>
 </li>
 <li><p>修改 SSH 默认端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_config</div><div class="line">Port 2000</div><div class="line">MaxAuthTries 6</div><div class="line">PermitEmptyPasswords no</div><div class="line">service ssh restart  #CentOS6</div><div class="line">systemctl restart sshd #CentOS7</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line">Port 2000</span><br><span class="line">MaxAuthTries 6</span><br><span class="line">PermitEmptyPasswords no</span><br><span class="line">service ssh restart  #CentOS6</span><br><span class="line">systemctl restart sshd #CentOS7</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>禁止 root 用户登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_config</div><div class="line">PermitRootLogin no</div><div class="line">service ssh restart  #CentOS6</div><div class="line">systemctl restart sshd #CentOS7</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line">PermitRootLogin no</span><br><span class="line">service ssh restart  #CentOS6</span><br><span class="line">systemctl restart sshd #CentOS7</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>现在就可以用新建的那个用户登录了。</p>
@@ -156,7 +142,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/" data-id="cjats3n9l007rqdu3wzxnwwwx" class="article-share-link" data-share="baidu" data-title="阿里云 VPS 开启之路之一">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/24/阿里云-VPS-开启之路之一/" data-id="cjaxjqbkv007o2ju3avvpmbd9" class="article-share-link" data-share="baidu" data-title="阿里云 VPS 开启之路之一">Share</a>
       
 
       

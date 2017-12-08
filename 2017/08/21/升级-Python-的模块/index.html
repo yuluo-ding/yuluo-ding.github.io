@@ -6,22 +6,17 @@
   
   <title>升级 Python 的模块 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。
-列出当前安装的包：
-1pip list">
+  <meta name="description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。 列出当前安装的包： 1pip list">
 <meta property="og:type" content="article">
 <meta property="og:title" content="升级 Python 的模块">
 <meta property="og:url" content="yuluo-ding.github.io/2017/08/21/升级-Python-的模块/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。
-列出当前安装的包：
-1pip list">
+<meta property="og:description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。 列出当前安装的包： 1pip list">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-08-29T08:44:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="升级 Python 的模块">
-<meta name="twitter:description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。
-列出当前安装的包：
-1pip list">
+<meta name="twitter:description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。 列出当前安装的包： 1pip list">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -103,20 +98,20 @@
       
         <p>pip 当前内建命令并不支持升级所有已安装的Python模块。</p>
 <p>列出当前安装的包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip list</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>列出可升级的包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip list --outdate</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list --outdate</span><br></pre></td></tr></table></figure>
 <p>升级一个包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</span><br></pre></td></tr></table></figure>
 <p>升级所有可升级的包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip install -U</div><div class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip install -U</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/08/21/升级-Python-的模块/" data-id="cjats3n8w006vqdu3d6azd5mi" class="article-share-link" data-share="baidu" data-title="升级 Python 的模块">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/21/升级-Python-的模块/" data-id="cjaxjqbkd006s2ju37101bnrh" class="article-share-link" data-share="baidu" data-title="升级 Python 的模块">Share</a>
       
 
       

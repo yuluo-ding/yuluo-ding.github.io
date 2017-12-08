@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2016/06/24/VMware无法打开/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件按照以下步骤开启相应的服务就好">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2016-06-24T15:07:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VMware无法打开">
@@ -101,12 +102,12 @@
       
         <h4 id="vmware安装无法打开内核设备_\-\Global\vmx86:_系统找不到指定的文件">vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件</h4><p>按照以下步骤开启相应的服务就好</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">net start vmci</div><div class="line"></div><div class="line">net start vmx86</div><div class="line"></div><div class="line">net start VMnetuserif</div><div class="line"></div><div class="line">sc config vmci=auto</div><div class="line"></div><div class="line">sc config vmx86=auto</div><div class="line"></div><div class="line">sc config VMnetuserif=auto</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">net start vmci</span><br><span class="line"></span><br><span class="line">net start vmx86</span><br><span class="line"></span><br><span class="line">net start VMnetuserif</span><br><span class="line"></span><br><span class="line">sc config vmci=auto</span><br><span class="line"></span><br><span class="line">sc config vmx86=auto</span><br><span class="line"></span><br><span class="line">sc config VMnetuserif=auto</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/06/24/VMware无法打开/" data-id="cjats3n7g005fqdu302e0wjv5" class="article-share-link" data-share="baidu" data-title="VMware无法打开">Share</a>
+        <a data-url="yuluo-ding.github.io/2016/06/24/VMware无法打开/" data-id="cjaxjqbjo005h2ju3ubno70ze" class="article-share-link" data-share="baidu" data-title="VMware无法打开">Share</a>
       
 
       

@@ -6,20 +6,18 @@
   
   <title>Python Pip 使用警告 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在macOS更新完pip(9.0.1)之后使用会出现如下警告：
-1DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under">
+  <meta name="description" content="在macOS更新完pip(9.0.1)之后使用会出现如下警告： 1DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Pip 使用警告">
 <meta property="og:url" content="yuluo-ding.github.io/2017/05/17/Python-Pip-使用警告/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="在macOS更新完pip(9.0.1)之后使用会出现如下警告：
-1DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under">
+<meta property="og:description" content="在macOS更新完pip(9.0.1)之后使用会出现如下警告： 1DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under">
+<meta property="og:locale" content="default">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006MhlIggy1ffo3b7rgkfj30ab0j8mzf">
 <meta property="og:updated_time" content="2017-05-19T17:11:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Pip 使用警告">
-<meta name="twitter:description" content="在macOS更新完pip(9.0.1)之后使用会出现如下警告：
-1DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under">
+<meta name="twitter:description" content="在macOS更新完pip(9.0.1)之后使用会出现如下警告： 1DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/006MhlIggy1ffo3b7rgkfj30ab0j8mzf">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
@@ -105,26 +103,26 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在macOS更新完pip(9.0.1)之后使用会出现如下警告：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DEPRECATION: The default format will switch to columns <span class="keyword">in</span> the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) <span class="keyword">in</span> your pip.conf under the [list] section) to <span class="built_in">disable</span> this warning.</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DEPRECATION: The default format will switch to columns <span class="keyword">in</span> the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) <span class="keyword">in</span> your pip.conf under the [list] section) to <span class="built_in">disable</span> this warning.</span><br></pre></td></tr></table></figure>
 <p>虽然不影响使用，但是还是要解决。方法如下：</p>
 <a id="more"></a>
 <p>虽然不影响使用，但是还是要解决。方法如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~</div><div class="line">mkdir .pip</div><div class="line"><span class="built_in">cd</span> .pip/</div><div class="line">vi pip.conf</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">mkdir .pip</span><br><span class="line"><span class="built_in">cd</span> .pip/</span><br><span class="line">vi pip.conf</span><br></pre></td></tr></table></figure>
 <p>接着在 vim 编辑</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[list]</div><div class="line">format=columns</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[list]</span><br><span class="line">format=columns</span><br></pre></td></tr></table></figure>
 <p>最后进行保存，</p>
 <p>再次使用<code>pip list</code>，会发现效果如下。</p>
 <p><img src="http://ww3.sinaimg.cn/large/006MhlIggy1ffo3b7rgkfj30ab0j8mzf" alt=""></p>
 <p>至于 Windows 也依旧类似。</p>
 <p>在<code>C:\Users\Administrator</code>下建立<code>pip</code>文件夹，在<code>pip</code>下新建<code>pip.ini</code>：</p>
 <p>内容为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[list]</div><div class="line">format=columns</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[list]</span><br><span class="line">format=columns</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/05/17/Python-Pip-使用警告/" data-id="cjats3n5m003hqdu307ncma9o" class="article-share-link" data-share="baidu" data-title="Python Pip 使用警告">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/05/17/Python-Pip-使用警告/" data-id="cjaxjqbib003h2ju3spubnyzi" class="article-share-link" data-share="baidu" data-title="Python Pip 使用警告">Share</a>
       
 
       

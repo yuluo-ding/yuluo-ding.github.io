@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2017/05/16/Python判断字符串是否是回文结构/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="​    回文（Palindrome），就是一个序列（如字符串）正着读反着读是一样的。生物信息学上最常见的就是转录因子在DNA上的结合位点通常都是回文结构。在 Python 应该如何判断字符串？">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-05-16T07:16:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python判断字符串是否是回文结构">
@@ -103,13 +104,13 @@
 <a id="more"></a>
 <ol>
 <li><p>递归</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(s)</span>:</span></div><div class="line">    <span class="keyword">if</span> len(s) &lt;= <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> s[<span class="number">0</span>] == s[<span class="number">-1</span>] <span class="keyword">and</span> isPalindrome(s[<span class="number">1</span>:<span class="number">-1</span>])</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(s) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> s[<span class="number">0</span>] == s[<span class="number">-1</span>] <span class="keyword">and</span> isPalindrome(s[<span class="number">1</span>:<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>循环</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome1</span><span class="params">(s)</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s))/<span class="number">2</span>:</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s[i] == s[len(s)-i<span class="number">-1</span>]:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome1</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s))/<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s[i] == s[len(s)-i<span class="number">-1</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>python的切片</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome2</span><span class="params">(s)</span>:</span></div><div class="line">    <span class="keyword">return</span> s == s[::<span class="number">-1</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome2</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> s == s[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
 <p>以上的实现复杂度也是O(n)的。</p>
 </li>
 </ol>
@@ -118,7 +119,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/05/16/Python判断字符串是否是回文结构/" data-id="cjats3n6k004hqdu3jqsnjqfk" class="article-share-link" data-share="baidu" data-title="Python判断字符串是否是回文结构">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/05/16/Python判断字符串是否是回文结构/" data-id="cjaxjqbix00492ju3diwt7vls" class="article-share-link" data-share="baidu" data-title="Python判断字符串是否是回文结构">Share</a>
       
 
       

@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2017/08/29/CentOS-7-安装最新的-Git/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-08-29T08:11:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7 安装最新的 Git">
@@ -105,20 +106,20 @@
 <a id="more"></a>
 <ol>
 <li><p>查看 yum 源仓库的 Git 信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum info git</div></pre></td></tr></table></figure>
-<p>​可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最<a href="https://github.com/git/git/releases" target="_blank" rel="external">新的 Git 发布版本</a>，已经 2.14.1 了。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum info git</span></span><br></pre></td></tr></table></figure>
+<p>​可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最<a href="https://github.com/git/git/releases" target="_blank" rel="noopener">新的 Git 发布版本</a>，已经 2.14.1 了。</p>
 </li>
 <li><p>依赖库安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</div><div class="line"># yum install  gcc perl-ExtUtils-MakeMaker</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> yum install  gcc perl-ExtUtils-MakeMaker</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>卸载低版本Git,下载行的源码包，并解压</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># yum remove git</div><div class="line"># wget https://github.com/git/git/archive/v2.14.1.tar.gz</div><div class="line"># tar -zxvf v2.14.1.tar.gz</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum remove git</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> wget https://github.com/git/git/archive/v2.14.1.tar.gz</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> tar -zxvf v2.14.1.tar.gz</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>编译安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># make prefix=/usr/local/git all</div><div class="line"># make prefix=/usr/local/git install</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> make prefix=/usr/<span class="built_in">local</span>/git all</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> make prefix=/usr/<span class="built_in">local</span>/git install</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>添加到环境变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</div><div class="line"># source /etc/bashrc # 实时生效</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"export PATH=<span class="variable">$PATH</span>:/usr/local/git/bin"</span> &gt;&gt; /etc/bashrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">source</span> /etc/bashrc <span class="comment"># 实时生效</span></span></span><br></pre></td></tr></table></figure>
 <p>​</p>
 <p>以上 CentOS 7.3就完成了更新 Git。​</p>
 </li>
@@ -128,7 +129,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/08/29/CentOS-7-安装最新的-Git/" data-id="cjats3n3k0013qdu3k9xq58su" class="article-share-link" data-share="baidu" data-title="CentOS 7 安装最新的 Git">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/29/CentOS-7-安装最新的-Git/" data-id="cjaxjqbfy00172ju3di2ga3el" class="article-share-link" data-share="baidu" data-title="CentOS 7 安装最新的 Git">Share</a>
       
 
       

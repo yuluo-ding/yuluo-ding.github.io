@@ -6,28 +6,17 @@
   
   <title>Python创建目录 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="流程如下：
-
-判断目录是否存在os.path.exists(path)
-创建多层目录os.path.makedirs(path)
-创建目录os.mkdir(path)">
+  <meta name="description" content="流程如下：  判断目录是否存在os.path.exists(path) 创建多层目录os.path.makedirs(path) 创建目录os.mkdir(path)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python创建目录">
 <meta property="og:url" content="yuluo-ding.github.io/2016/12/30/Python创建目录/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="流程如下：
-
-判断目录是否存在os.path.exists(path)
-创建多层目录os.path.makedirs(path)
-创建目录os.mkdir(path)">
+<meta property="og:description" content="流程如下：  判断目录是否存在os.path.exists(path) 创建多层目录os.path.makedirs(path) 创建目录os.mkdir(path)">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2016-12-30T01:11:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python创建目录">
-<meta name="twitter:description" content="流程如下：
-
-判断目录是否存在os.path.exists(path)
-创建多层目录os.path.makedirs(path)
-创建目录os.mkdir(path)">
+<meta name="twitter:description" content="流程如下：  判断目录是否存在os.path.exists(path) 创建多层目录os.path.makedirs(path) 创建目录os.mkdir(path)">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -118,14 +107,14 @@
 <li>创建目录<code>os.mkdir(path)</code></li>
 </ol>
 <a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /bin/python</span></div><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mkdir</span><span class="params">(path)</span>:</span></div><div class="line">	path = path.strip() <span class="comment">#去除首位空格</span></div><div class="line">	path = path.rstrip(<span class="string">"\\"</span>) <span class="comment">#去除尾部 \ 符号</span></div><div class="line"></div><div class="line">	isExists = os.path.exists(path)</div><div class="line"></div><div class="line">	<span class="keyword">if</span> <span class="keyword">not</span> isExists:</div><div class="line">		os.makedirs(path)</div><div class="line">		<span class="keyword">print</span> path + <span class="string">'创建成功'</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">True</span></div><div class="line"></div><div class="line">	<span class="keyword">else</span>:</div><div class="line">		<span class="keyword">print</span> path + <span class="string">' 目录已经存在'</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line"></div><div class="line">mkpath = <span class="string">'c:\\test'</span></div><div class="line">mkdir(mkpath)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /bin/python</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mkdir</span><span class="params">(path)</span>:</span></span><br><span class="line">	path = path.strip() <span class="comment">#去除首位空格</span></span><br><span class="line">	path = path.rstrip(<span class="string">"\\"</span>) <span class="comment">#去除尾部 \ 符号</span></span><br><span class="line"></span><br><span class="line">	isExists = os.path.exists(path)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> isExists:</span><br><span class="line">		os.makedirs(path)</span><br><span class="line">		<span class="keyword">print</span> path + <span class="string">'创建成功'</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">print</span> path + <span class="string">' 目录已经存在'</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mkpath = <span class="string">'c:\\test'</span></span><br><span class="line">mkdir(mkpath)</span><br></pre></td></tr></table></figure>
 <p><strong>当父目录不存在的时候os.mkdir(path)不会创建，os.makedirs(path)则会创建父目录</strong></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/12/30/Python创建目录/" data-id="cjats3n6a0045qdu3xhk6pz2h" class="article-share-link" data-share="baidu" data-title="Python创建目录">Share</a>
+        <a data-url="yuluo-ding.github.io/2016/12/30/Python创建目录/" data-id="cjaxjqbiv00452ju3c8mo18ha" class="article-share-link" data-share="baidu" data-title="Python创建目录">Share</a>
       
 
       

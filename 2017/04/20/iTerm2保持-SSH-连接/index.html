@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2017/04/20/iTerm2保持-SSH-连接/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="使用 iTerm2的时候，在 SSH 连接 VPS 过程中，要是有段时间不操作就会断开连接。其中要是有写了一半的数据，那就呵呵呵了。有两种方法暂时可以解决该问题。">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-04-20T01:59:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iTerm2保持 SSH 连接">
@@ -110,18 +111,18 @@
 </ol>
 <p>第二种方法：</p>
 <p>正确的做法是，通过配置 <code>ServerAliveInterval</code> 来实现，在 <code>~/.ssh/config</code> 中加入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ServerAliveInterval=30</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServerAliveInterval=30</span><br></pre></td></tr></table></figure>
 <p>如果没有<code>config</code>文件，那就新建一个。要修改该文件的权限，否则配置将不起作用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 600 ~/.ssh/config</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 ~/.ssh/config</span><br></pre></td></tr></table></figure>
 <p>当然，各个服务器的配置不一样，也可以做差异化的配置，以减少不必要的发包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Host *hostname.com</div><div class="line">   ServerAliveInterval 60</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Host *hostname.com</span><br><span class="line">   ServerAliveInterval 60</span><br></pre></td></tr></table></figure>
 <p>以上就能解决了。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/04/20/iTerm2保持-SSH-连接/" data-id="cjats3n84006aqdu3nl9rhjx9" class="article-share-link" data-share="baidu" data-title="iTerm2保持 SSH 连接">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/04/20/iTerm2保持-SSH-连接/" data-id="cjaxjqbk300682ju3wg0m5ikj" class="article-share-link" data-share="baidu" data-title="iTerm2保持 SSH 连接">Share</a>
       
 
       

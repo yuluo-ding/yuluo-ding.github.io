@@ -6,22 +6,17 @@
   
   <title>Python去重列表的重复元素 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有一个List：
-l1 = [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;d&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;a&amp;#39;]
-要去除其中的重复部分">
+  <meta name="description" content="有一个List： l1 = [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;d&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;a&amp;#39;] 要去除其中的重复部分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python去重列表的重复元素">
 <meta property="og:url" content="yuluo-ding.github.io/2017/03/20/Python去重列表的重复元素/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="有一个List：
-l1 = [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;d&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;a&amp;#39;]
-要去除其中的重复部分">
+<meta property="og:description" content="有一个List： l1 = [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;d&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;a&amp;#39;] 要去除其中的重复部分">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-03-20T02:57:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python去重列表的重复元素">
-<meta name="twitter:description" content="有一个List：
-l1 = [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;d&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;a&amp;#39;]
-要去除其中的重复部分">
+<meta name="twitter:description" content="有一个List： l1 = [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;d&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;a&amp;#39;] 要去除其中的重复部分">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -110,20 +105,20 @@ l1 = [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;d&amp;#39;,&amp;#39;b&amp
 <p>要去除其中的重复部分</p>
 <a id="more"></a>
 <p>有两个方法，一个是 <code>set</code>一个是<code>fromkeys</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</div><div class="line">l2 = list(set(l1))</div><div class="line"><span class="keyword">print</span> l2</div><div class="line">l3 = &#123;&#125;.fromkeys(l1).keys()</div><div class="line"><span class="keyword">print</span> l3</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</span><br><span class="line">l2 = list(set(l1))</span><br><span class="line"><span class="keyword">print</span> l2</span><br><span class="line">l3 = &#123;&#125;.fromkeys(l1).keys()</span><br><span class="line"><span class="keyword">print</span> l3</span><br></pre></td></tr></table></figure>
 <p>但是上面的有个缺点，就是执行完，lsit 的顺序就跟之前不一样了。</p>
 <p><strong>如果想要保持他们原来的排序：</strong></p>
 <p>可以用list类的<code>sort</code>方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</div><div class="line">l2 = list(set(l1))</div><div class="line">l2.sort(key=l1.index)</div><div class="line"><span class="keyword">print</span> l2</div><div class="line">l3 = sorted(set(l1),key=l1.index)</div><div class="line"><span class="keyword">print</span> l3</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</span><br><span class="line">l2 = list(set(l1))</span><br><span class="line">l2.sort(key=l1.index)</span><br><span class="line"><span class="keyword">print</span> l2</span><br><span class="line">l3 = sorted(set(l1),key=l1.index)</span><br><span class="line"><span class="keyword">print</span> l3</span><br></pre></td></tr></table></figure>
 <p>也可以用遍历的方法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</div><div class="line">l2 = []</div><div class="line">[l2.append(i) <span class="keyword">for</span> i <span class="keyword">in</span> l1 <span class="keyword">if</span> <span class="keyword">not</span> i <span class="keyword">in</span> l2]</div><div class="line"><span class="keyword">print</span> l2</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</span><br><span class="line">l2 = []</span><br><span class="line">[l2.append(i) <span class="keyword">for</span> i <span class="keyword">in</span> l1 <span class="keyword">if</span> <span class="keyword">not</span> i <span class="keyword">in</span> l2]</span><br><span class="line"><span class="keyword">print</span> l2</span><br></pre></td></tr></table></figure>
 <p>这样输出的列表的顺序就不会变了。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/03/20/Python去重列表的重复元素/" data-id="cjats3n6c0047qdu3r8jl824w" class="article-share-link" data-share="baidu" data-title="Python去重列表的重复元素">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/03/20/Python去重列表的重复元素/" data-id="cjaxjqbiz004b2ju3i6p63qse" class="article-share-link" data-share="baidu" data-title="Python去重列表的重复元素">Share</a>
       
 
       

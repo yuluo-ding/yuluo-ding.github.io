@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2015/05/16/adb-shell-错误/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="使用adb shell提示adb server is out of date. killing...?">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2016-01-05T01:37:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="adb shell 错误">
@@ -100,15 +101,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>使用adb shell提示<code>adb server is out of date. killing...?</code><br><a id="more"></a></p>
-<h5 id="是ADB端口被占用了">是ADB端口被占用了</h5><p>先执行<code>adb nodaemon server</code> ，查看adb server的端口是多少<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">C:\Users\xxxx&gt;adb nodaemon server  </div><div class="line">cannot bind &apos;tcp:5037&apos;</div></pre></td></tr></table></figure></p>
-<p>再执行下<code>netstat -ano | findstr &quot;5037&quot;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">C:\Users\xxxxxx&gt;netstat -ano | findstr &quot;5037&quot;  </div><div class="line">  TCP    127.0.0.1:5037         0.0.0.0:0              LISTENING       4236  </div><div class="line">  TCP    127.0.0.1:5037         127.0.0.1:49422        ESTABLISHED     搜索4236  </div><div class="line">  TCP    127.0.0.1:49422        127.0.0.1:5037         ESTABLISHED     3840</div></pre></td></tr></table></figure></p>
+<h5 id="是ADB端口被占用了">是ADB端口被占用了</h5><p>先执行<code>adb nodaemon server</code> ，查看adb server的端口是多少<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxxx&gt;adb nodaemon server  </span><br><span class="line">cannot bind &apos;tcp:5037&apos;</span><br></pre></td></tr></table></figure></p>
+<p>再执行下<code>netstat -ano | findstr &quot;5037&quot;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxxxxx&gt;netstat -ano | findstr &quot;5037&quot;  </span><br><span class="line">  TCP    127.0.0.1:5037         0.0.0.0:0              LISTENING       4236  </span><br><span class="line">  TCP    127.0.0.1:5037         127.0.0.1:49422        ESTABLISHED     搜索4236  </span><br><span class="line">  TCP    127.0.0.1:49422        127.0.0.1:5037         ESTABLISHED     3840</span><br></pre></td></tr></table></figure></p>
 <p>最后执行<code>tskill 4236</code>即可。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2015/05/16/adb-shell-错误/" data-id="cjats3n7m005oqdu3wkzerasr" class="article-share-link" data-share="baidu" data-title="adb shell 错误">Share</a>
+        <a data-url="yuluo-ding.github.io/2015/05/16/adb-shell-错误/" data-id="cjaxjqbjs005r2ju3tite9fow" class="article-share-link" data-share="baidu" data-title="adb shell 错误">Share</a>
       
 
       

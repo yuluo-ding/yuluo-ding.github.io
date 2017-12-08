@@ -6,19 +6,17 @@
   
   <title>重置 MacBook 的网卡 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 WIFI 就能上网。所以猜测应该是 Unifi 的那个控制器搞坏了网卡设置。
-那么问题来了。MacBook Pro 如何重置网卡的设置。方法如下：">
+  <meta name="description" content="手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 WIFI 就能上网。所以猜测应该是 Unifi 的那个控制器搞坏了网卡设置。 那么问题来了。MacBook Pro 如何重置网卡的设置。方法如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重置 MacBook 的网卡">
 <meta property="og:url" content="yuluo-ding.github.io/2017/08/16/重置-MacBook-的网卡/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 WIFI 就能上网。所以猜测应该是 Unifi 的那个控制器搞坏了网卡设置。
-那么问题来了。MacBook Pro 如何重置网卡的设置。方法如下：">
+<meta property="og:description" content="手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 WIFI 就能上网。所以猜测应该是 Unifi 的那个控制器搞坏了网卡设置。 那么问题来了。MacBook Pro 如何重置网卡的设置。方法如下：">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-08-16T05:22:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重置 MacBook 的网卡">
-<meta name="twitter:description" content="手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 WIFI 就能上网。所以猜测应该是 Unifi 的那个控制器搞坏了网卡设置。
-那么问题来了。MacBook Pro 如何重置网卡的设置。方法如下：">
+<meta name="twitter:description" content="手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 WIFI 就能上网。所以猜测应该是 Unifi 的那个控制器搞坏了网卡设置。 那么问题来了。MacBook Pro 如何重置网卡的设置。方法如下：">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -105,7 +103,7 @@
         <p>手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 WIFI 就能上网。所以猜测应该是 Unifi 的那个控制器搞坏了网卡设置。</p>
 <p>那么问题来了。MacBook Pro 如何重置网卡的设置。方法如下：</p>
 <a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /Library/Preferences/SystemConfiguration/</div><div class="line">sudo mv preferences.plist preferences.plist.bak</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /Library/Preferences/SystemConfiguration/</span><br><span class="line">sudo mv preferences.plist preferences.plist.bak</span><br></pre></td></tr></table></figure>
 <p>然后输入密码，重启。</p>
 <p>网络配置会丢失，特殊设置提前备份。</p>
 
@@ -113,7 +111,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/08/16/重置-MacBook-的网卡/" data-id="cjats3n9j007pqdu3n0nxwgu8" class="article-share-link" data-share="baidu" data-title="重置 MacBook 的网卡">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/08/16/重置-MacBook-的网卡/" data-id="cjaxjqbl1007u2ju3mrywkc45" class="article-share-link" data-share="baidu" data-title="重置 MacBook 的网卡">Share</a>
       
 
       

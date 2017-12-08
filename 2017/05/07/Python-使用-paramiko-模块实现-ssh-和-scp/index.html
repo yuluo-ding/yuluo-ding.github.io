@@ -6,19 +6,17 @@
   
   <title>Python 使用 paramiko 模块实现 ssh 和 scp | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="介绍
-这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。">
+  <meta name="description" content="介绍 这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 使用 paramiko 模块实现 ssh 和 scp">
 <meta property="og:url" content="yuluo-ding.github.io/2017/05/07/Python-使用-paramiko-模块实现-ssh-和-scp/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="介绍
-这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。">
+<meta property="og:description" content="介绍 这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-05-07T14:26:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 使用 paramiko 模块实现 ssh 和 scp">
-<meta name="twitter:description" content="介绍
-这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。">
+<meta name="twitter:description" content="介绍 这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -106,45 +104,45 @@
 <li><p><strong>介绍</strong></p>
 <p>这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 执行shell语句</div><div class="line">ssh -i ~/.ssh/id_rsa -p 1098  rds@12.164.145.21 -e &apos;ls -al&apos;</div><div class="line"></div><div class="line"># 拷贝数据到远程计算机</div><div class="line">scp -i ~/.ssh/id_rsa -P 1098 -r data rds@12.164.145.21:~/data</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 执行shell语句</span></span><br><span class="line">ssh -i ~/.ssh/id_rsa -p 1098  rds@12.164.145.21 -e 'ls -al'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 拷贝数据到远程计算机</span></span><br><span class="line">scp -i ~/.ssh/id_rsa -P 1098 -r data rds@12.164.145.21:~/data</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>安装</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip instal paramiko</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip instal paramiko</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>建立SSH连接</strong></p>
 <ol>
 <li><p>使用密码连接：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> paramiko</div><div class="line">ssh = paramiko.SSHClient()</div><div class="line"></div><div class="line"><span class="comment">#这行代码的作用是允许连接不在know_hosts文件中的主机。</span></div><div class="line">ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</div><div class="line">ssh.connect(<span class="string">"IP"</span>,  port, <span class="string">"username"</span>, <span class="string">"password"</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> paramiko</span><br><span class="line">ssh = paramiko.SSHClient()</span><br><span class="line"></span><br><span class="line"><span class="comment">#这行代码的作用是允许连接不在know_hosts文件中的主机。</span></span><br><span class="line">ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</span><br><span class="line">ssh.connect(<span class="string">"IP"</span>,  port, <span class="string">"username"</span>, <span class="string">"password"</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用私钥连接：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh = paramiko.SSHClient()</div><div class="line">ssh.connect(&apos;10.120.48.109&apos;, port, &apos;用户名&apos;,key_filename=&apos;私钥&apos;)</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh = paramiko.SSHClient()</span><br><span class="line">ssh.connect('10.120.48.109', port, '用户名',key_filename='私钥')</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>连接以后可以执行shell命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [8]: ssh.exec_command(&apos;ls&apos;)</div><div class="line">Out[8]:</div><div class="line">(&lt;paramiko.ChannelFile from &lt;paramiko.Channel 1 (open) window=2097152 -&gt; &lt;paramiko.Transport at 0x377c690L (cipher aes128-ctr, 128 bits) (active; 2 open channel(s))&gt;&gt;&gt;,</div><div class="line"> &lt;paramiko.ChannelFile from &lt;paramiko.Channel 1 (open) window=2097152 -&gt; &lt;paramiko.Transport at 0x377c690L (cipher aes128-ctr, 128 bits) (active; 2 open channel(s))&gt;&gt;&gt;,</div><div class="line"> &lt;paramiko.ChannelFile from &lt;paramiko.Channel 1 (open) window=2097152 -&gt; &lt;paramiko.Transport at 0x377c690L (cipher aes128-ctr, 128 bits) (active; 2 open channel(s))&gt;&gt;&gt;)</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [8]: ssh.exec_command('ls')</span><br><span class="line">Out[8]:</span><br><span class="line">(&lt;paramiko.ChannelFile from &lt;paramiko.Channel 1 (open) window=2097152 -&gt; &lt;paramiko.Transport at 0x377c690L (cipher aes128-ctr, 128 bits) (active; 2 open channel(s))&gt;&gt;&gt;,</span><br><span class="line"> &lt;paramiko.ChannelFile from &lt;paramiko.Channel 1 (open) window=2097152 -&gt; &lt;paramiko.Transport at 0x377c690L (cipher aes128-ctr, 128 bits) (active; 2 open channel(s))&gt;&gt;&gt;,</span><br><span class="line"> &lt;paramiko.ChannelFile from &lt;paramiko.Channel 1 (open) window=2097152 -&gt; &lt;paramiko.Transport at 0x377c690L (cipher aes128-ctr, 128 bits) (active; 2 open channel(s))&gt;&gt;&gt;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>执行shell命令以后，并不会立即打印命令的执行结果，而是返回几个Channel, 只能像下面这样获取输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">In [9]: stdin, stdout, stderr = ssh.exec_command(&apos;ls&apos;)</div><div class="line"></div><div class="line">In [10]: print stdout.readlines()</div><div class="line">[&apos;AgentBackkup_2015-06-11\n&apos;, &apos;AgentBackup\n&apos;, &apos;log\n&apos;, &apos;mysql.sh\n&apos;, &apos;rdsAgent\n&apos;]</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [9]: stdin, stdout, stderr = ssh.exec_command('ls')</span><br><span class="line"></span><br><span class="line">In [10]: print stdout.readlines()</span><br><span class="line">['AgentBackkup_2015-06-11\n', 'AgentBackup\n', 'log\n', 'mysql.sh\n', 'rdsAgent\n']</span><br></pre></td></tr></table></figure>
 <p><strong>注意：</strong> 命令执行出错并不会抛出异常，所以，对于命令出错需要根据自己的需求进行相应的处理：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">In [54]: stdin, stdout, stderr = ssh.exec_command(&apos;cat file_not_found&apos;)</div><div class="line">In [55]: print stdout.readlines()</div><div class="line">[]</div><div class="line"></div><div class="line">In [56]: print stderr.readlines()</div><div class="line">[u&apos;cat: file_not_found: No such file or directory\n&apos;]</div><div class="line"></div><div class="line">In [57]: stdin, stdout, stderr = ssh.exec_command(&apos;ls&apos;)</div><div class="line">In [58]: print stderr.readlines()</div><div class="line">[]</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [54]: stdin, stdout, stderr = ssh.exec_command('cat file_not_found')</span><br><span class="line">In [55]: print stdout.readlines()</span><br><span class="line">[]</span><br><span class="line"></span><br><span class="line">In [56]: print stderr.readlines()</span><br><span class="line">[u'cat: file_not_found: No such file or directory\n']</span><br><span class="line"></span><br><span class="line">In [57]: stdin, stdout, stderr = ssh.exec_command('ls')</span><br><span class="line">In [58]: print stderr.readlines()</span><br><span class="line">[]</span><br></pre></td></tr></table></figure>
 <p><a href="[https://paramiko-docs.readthedocs.org/en/1.15/api/client.html](https://paramiko-docs.readthedocs.org/en/1.15/api/client.html">API文档</a>)</p>
 </li>
 </ol>
 </li>
 <li><p><strong>SCP vs SFTP</strong></p>
 <p>通过paramiko还可以传输文件，这是我写这篇博客的主要原因。搜了很多博客，都没有说明白如何通过paramiko在计算机之间传输文件，通过阅读官方文档，发现有如下两种方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sftp = paramiko.SFTPClient.from_transport(ssh.get_transport())</div><div class="line">sftp = ssh.open_sftp()</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sftp = paramiko.SFTPClient.from_transport(ssh.get_transport())</span><br><span class="line">sftp = ssh.open_sftp()</span><br></pre></td></tr></table></figure>
 <p>即新建一个SFTPClient对象，该对象复用之前的SSH连接，因此，我们使用sftp传输文件时，不需要再次进行用户认证。</p>
 <ul>
 <li><p>文件上传</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">In [59]: sftp.put(&apos;memory.py&apos;, &apos;memory.py&apos;)</div><div class="line">Out[59]: &lt;SFTPAttributes: [ size=288 uid=1000 gid=1000 mode=0100644 atime=1435391914 mtime=1435391914 ]&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [59]: sftp.put('memory.py', 'memory.py')</span><br><span class="line">Out[59]: &lt;SFTPAttributes: [ size=288 uid=1000 gid=1000 mode=0100644 atime=1435391914 mtime=1435391914 ]&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>文件下载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">In [60]: sftp.get(&apos;memory.py&apos;, &apos;backup.py&apos;)</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">In [60]: sftp.get('memory.py', 'backup.py')</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>执行命令</p>
 <p>paramiko并没有提供一个叫做scp的子模块，如果我们希望在计算机之间传输数据，可以通过sftp(sftp实现了scp所有的功能，也就没有必再实现一个scp)传输文件，还可以通过sftp执行命令，如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">In [44]: sftp.listdir()</div><div class="line">Out[44]:</div><div class="line">[&apos;.viminfo&apos;,</div><div class="line">&apos;.bash_logout&apos;,</div><div class="line">&apos;.bash_history&apos;,</div><div class="line">&apos;AgentBackkup_2015-06-10&apos;,</div><div class="line">&apos;AgentBackup&apos;,</div><div class="line">&apos;rdsAgent&apos;]</div><div class="line"></div><div class="line">In [45]: sftp.rename(&apos;AgentBackkup_2015-06-10&apos;, &apos;AgentBackkup_2015-06-11&apos;)</div><div class="line"></div><div class="line">In [46]: sftp.listdir()</div><div class="line">Out[46]:</div><div class="line">[&apos;AgentBackkup_2015-06-11&apos;,</div><div class="line">&apos;.viminfo&apos;,</div><div class="line">&apos;.bash_logout&apos;,</div><div class="line">&apos;.bash_history&apos;,</div><div class="line">&apos;AgentBackup&apos;,</div><div class="line">&apos;rdsAgent&apos;]</div></pre></td></tr></table></figure>
-<p><a href="https://paramiko-docs.readthedocs.org/en/1.15/api/sftp.html" target="_blank" rel="external">SFTP官方文档</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">In [44]: sftp.listdir()</span><br><span class="line">Out[44]:</span><br><span class="line">['.viminfo',</span><br><span class="line">'.bash_logout',</span><br><span class="line">'.bash_history',</span><br><span class="line">'AgentBackkup_2015-06-10',</span><br><span class="line">'AgentBackup',</span><br><span class="line">'rdsAgent']</span><br><span class="line"></span><br><span class="line">In [45]: sftp.rename('AgentBackkup_2015-06-10', 'AgentBackkup_2015-06-11')</span><br><span class="line"></span><br><span class="line">In [46]: sftp.listdir()</span><br><span class="line">Out[46]:</span><br><span class="line">['AgentBackkup_2015-06-11',</span><br><span class="line">'.viminfo',</span><br><span class="line">'.bash_logout',</span><br><span class="line">'.bash_history',</span><br><span class="line">'AgentBackup',</span><br><span class="line">'rdsAgent']</span><br></pre></td></tr></table></figure>
+<p><a href="https://paramiko-docs.readthedocs.org/en/1.15/api/sftp.html" target="_blank" rel="noopener">SFTP官方文档</a></p>
 </li>
 </ul>
 </li>
@@ -154,7 +152,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/05/07/Python-使用-paramiko-模块实现-ssh-和-scp/" data-id="cjats3n5q003lqdu3k8ys6hme" class="article-share-link" data-share="baidu" data-title="Python 使用 paramiko 模块实现 ssh 和 scp">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/05/07/Python-使用-paramiko-模块实现-ssh-和-scp/" data-id="cjaxjqbid003l2ju33ndjoel6" class="article-share-link" data-share="baidu" data-title="Python 使用 paramiko 模块实现 ssh 和 scp">Share</a>
       
 
       

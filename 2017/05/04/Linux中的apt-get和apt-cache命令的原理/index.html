@@ -6,22 +6,17 @@
   
   <title>Linux中的apt-get和apt-cache命令的原理 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="先介绍几个和apt-get相关的目录:
-/var/lib/dpkg/available文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包.
-/var/cache/apt/archives目录是在用 apt-get install 安装软件时，软件包的临时存放路径">
+  <meta name="description" content="先介绍几个和apt-get相关的目录: /var/lib/dpkg/available文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包. /var/cache/apt/archives目录是在用 apt-get install 安装软件时，软件包的临时存放路径">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux中的apt-get和apt-cache命令的原理">
 <meta property="og:url" content="yuluo-ding.github.io/2017/05/04/Linux中的apt-get和apt-cache命令的原理/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="先介绍几个和apt-get相关的目录:
-/var/lib/dpkg/available文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包.
-/var/cache/apt/archives目录是在用 apt-get install 安装软件时，软件包的临时存放路径">
+<meta property="og:description" content="先介绍几个和apt-get相关的目录: /var/lib/dpkg/available文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包. /var/cache/apt/archives目录是在用 apt-get install 安装软件时，软件包的临时存放路径">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-05-04T07:57:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux中的apt-get和apt-cache命令的原理">
-<meta name="twitter:description" content="先介绍几个和apt-get相关的目录:
-/var/lib/dpkg/available文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包.
-/var/cache/apt/archives目录是在用 apt-get install 安装软件时，软件包的临时存放路径">
+<meta name="twitter:description" content="先介绍几个和apt-get相关的目录: /var/lib/dpkg/available文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包. /var/cache/apt/archives目录是在用 apt-get install 安装软件时，软件包的临时存放路径">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -123,7 +118,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/05/04/Linux中的apt-get和apt-cache命令的原理/" data-id="cjats3n4s002eqdu31jacp7zw" class="article-share-link" data-share="baidu" data-title="Linux中的apt-get和apt-cache命令的原理">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/05/04/Linux中的apt-get和apt-cache命令的原理/" data-id="cjaxjqbhc002k2ju3s8lffo6o" class="article-share-link" data-share="baidu" data-title="Linux中的apt-get和apt-cache命令的原理">Share</a>
       
 
       

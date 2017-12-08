@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2016/08/11/Python删除文件和目录的方法/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="Python删除文件和目录的方法os.remove(path)">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2016-08-11T06:43:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python删除文件和目录的方法">
@@ -103,14 +104,14 @@
 <a id="more"></a>
 <p>删除文件 path. 如果path是一个目录， 抛出 OSError错误。如果要删除目录，请使用rmdir().<br>remove() 同 unlink() 的功能是一样的<br>在Windows系统中，删除一个正在使用的文件，将抛出异常。在Unix中，目录表中的记录被删除，但文件的存储还在。</p>
 <p><code>os.removedirs(path)</code><br>递归地删除目录。类似于rmdir(), 如果子目录被成功删除， removedirs() 将会删除父目录；但子目录没有成功删除，将抛出错误。<br>举个例子， os.removedirs(“foo/bar/baz”) 将首先删除 “foo/bar/ba”目录，然后再删除foo/bar 和 foo, 如果他们是空的话<br>如果子目录不能成功删除，将 抛出 OSError异常<br>os.rmdir(path)<br>删除目录 path，要求path必须是个空目录，否则抛出OSError错误</p>
-<p>递归删除目录和文件（类似DOS命令DeleteTree）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(top, topdown=<span class="keyword">False</span>):</div><div class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</div><div class="line">        os.remove(os.path.join(root, name))</div><div class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> dirs:</div><div class="line">        os.rmdir(os.path.join(root, name))</div></pre></td></tr></table></figure></p>
-<p>还有一个更简单的：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> shutil</div><div class="line">shutil.rmtree()</div><div class="line">__import__(<span class="string">'shutil'</span>).rmtree()</div></pre></td></tr></table></figure></p>
+<p>递归删除目录和文件（类似DOS命令DeleteTree）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(top, topdown=<span class="keyword">False</span>):</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">        os.remove(os.path.join(root, name))</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> dirs:</span><br><span class="line">        os.rmdir(os.path.join(root, name))</span><br></pre></td></tr></table></figure></p>
+<p>还有一个更简单的：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.rmtree()</span><br><span class="line">__import__(<span class="string">'shutil'</span>).rmtree()</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/08/11/Python删除文件和目录的方法/" data-id="cjats3n670041qdu38owpw4jr" class="article-share-link" data-share="baidu" data-title="Python删除文件和目录的方法">Share</a>
+        <a data-url="yuluo-ding.github.io/2016/08/11/Python删除文件和目录的方法/" data-id="cjaxjqbiw00472ju3ewfcbppg" class="article-share-link" data-share="baidu" data-title="Python删除文件和目录的方法">Share</a>
       
 
       

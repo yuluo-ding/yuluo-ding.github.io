@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/2016/09/14/Python批量重命名/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="使用Python2.7版本代码如下：">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2016-09-14T08:56:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python批量重命名">
@@ -101,13 +102,13 @@
       
         <h4 id="使用Python2-7版本">使用Python2.7版本</h4><p>代码如下：</p>
 <a id="more"></a>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># /user/bin/python</div><div class="line"># -*- coding=UTF-8 -*-   </div><div class="line">import os  </div><div class="line">  </div><div class="line">#执行重命名  </div><div class="line">path = 'D:\\check\\Images'  </div><div class="line">for file in os.listdir(path):  </div><div class="line">    if os.path.isfile(os.path.join(path,file))==True:  </div><div class="line">        newname = file.replace("test","a.xml")  </div><div class="line">        os.rename(os.path.join(path,file),os.path.join(path,newname))  </div><div class="line">  </div><div class="line">#打印文件名列表          </div><div class="line">for file in os.listdir(path):  </div><div class="line">    if os.path.isfile(os.path.join(path,file))==True:  </div><div class="line">        print file&lt;/span&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /user/bin/python</span></span><br><span class="line"><span class="comment"># -*- coding=UTF-8 -*-   </span></span><br><span class="line"><span class="keyword">import</span> os  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#执行重命名  </span></span><br><span class="line">path = <span class="string">'D:\\check\\Images'</span>  </span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(path):  </span><br><span class="line">    <span class="keyword">if</span> os.path.isfile(os.path.join(path,file))==<span class="keyword">True</span>:  </span><br><span class="line">        newname = file.replace(<span class="string">"test"</span>,<span class="string">"a.xml"</span>)  </span><br><span class="line">        os.rename(os.path.join(path,file),os.path.join(path,newname))  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#打印文件名列表          </span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(path):  </span><br><span class="line">    <span class="keyword">if</span> os.path.isfile(os.path.join(path,file))==<span class="keyword">True</span>:  </span><br><span class="line">        print file&lt;/span&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/09/14/Python批量重命名/" data-id="cjats3n6h004dqdu3l1bgzk9j" class="article-share-link" data-share="baidu" data-title="Python批量重命名">Share</a>
+        <a data-url="yuluo-ding.github.io/2016/09/14/Python批量重命名/" data-id="cjaxjqbj4004l2ju3tbjd1ma3" class="article-share-link" data-share="baidu" data-title="Python批量重命名">Share</a>
       
 
       

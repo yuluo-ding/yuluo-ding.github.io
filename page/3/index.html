@@ -12,6 +12,7 @@
 <meta property="og:url" content="yuluo-ding.github.io/page/3/index.html">
 <meta property="og:site_name" content="yuluo">
 <meta property="og:description" content="The home of yuluo!">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yuluo">
 <meta name="twitter:description" content="The home of yuluo!">
@@ -111,7 +112,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/07/23/模块zlib-压缩与解压/" data-id="cjats3n99007cqdu344y30s5s" class="article-share-link" data-share="baidu" data-title="模块zlib 压缩与解压">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/07/23/模块zlib-压缩与解压/" data-id="cjaxjqbkq007f2ju374wyz0xa" class="article-share-link" data-share="baidu" data-title="模块zlib 压缩与解压">Share</a>
       
 
       
@@ -154,13 +155,13 @@
       
         <p>由于<code>josn</code>库的<code>loads</code>方法会把类型全部转换成 Unicode。如果想要变成str对象的话，就要自己去encode。</p>
 <p>试试如下代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">byteify</span><span class="params">(input)</span>:</span></div><div class="line">    <span class="keyword">if</span> isinstance(input, dict):</div><div class="line">        <span class="keyword">return</span> &#123;byteify(key): byteify(value) <span class="keyword">for</span> key, value <span class="keyword">in</span> input.iteritems()&#125;</div><div class="line">    <span class="keyword">elif</span> isinstance(input, list):</div><div class="line">        <span class="keyword">return</span> [byteify(element) <span class="keyword">for</span> element <span class="keyword">in</span> input]</div><div class="line">    <span class="keyword">elif</span> isinstance(input, unicode):</div><div class="line">        <span class="keyword">return</span> input.encode(<span class="string">'utf-8'</span>)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> input</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">byteify</span><span class="params">(input)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(input, dict):</span><br><span class="line">        <span class="keyword">return</span> &#123;byteify(key): byteify(value) <span class="keyword">for</span> key, value <span class="keyword">in</span> input.iteritems()&#125;</span><br><span class="line">    <span class="keyword">elif</span> isinstance(input, list):</span><br><span class="line">        <span class="keyword">return</span> [byteify(element) <span class="keyword">for</span> element <span class="keyword">in</span> input]</span><br><span class="line">    <span class="keyword">elif</span> isinstance(input, unicode):</span><br><span class="line">        <span class="keyword">return</span> input.encode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> input</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/07/21/Python递归实现字典中的Unicode转换成str/" data-id="cjats3n6v004tqdu389v78vhh" class="article-share-link" data-share="baidu" data-title="Python递归实现字典中的Unicode转换成str">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/07/21/Python递归实现字典中的Unicode转换成str/" data-id="cjaxjqbjd004x2ju3o8rxaoha" class="article-share-link" data-share="baidu" data-title="Python递归实现字典中的Unicode转换成str">Share</a>
       
 
       
@@ -202,7 +203,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>只获取当前目录的文件和文件夹</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">list = os.listdir(rootdir)<span class="comment">#列出目录下的所有文件和目录</span></div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> list:</div><div class="line">    filepath = os.path.join(rootdir,line)</div><div class="line">    <span class="keyword">if</span> os.path.isdir(filepath):<span class="comment">#如果filepath是目录</span></div><div class="line">        <span class="keyword">print</span> <span class="string">"dir:"</span> + filepath</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">"file:"</span> + filepath</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list = os.listdir(rootdir)<span class="comment">#列出目录下的所有文件和目录</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> list:</span><br><span class="line">    filepath = os.path.join(rootdir,line)</span><br><span class="line">    <span class="keyword">if</span> os.path.isdir(filepath):<span class="comment">#如果filepath是目录</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"dir:"</span> + filepath</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"file:"</span> + filepath</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2017/07/21/Python-列出当前目录的文件和文件夹/#more">Read More</a>
@@ -212,7 +213,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/07/21/Python-列出当前目录的文件和文件夹/" data-id="cjats3n5o003jqdu3eiv6pbik" class="article-share-link" data-share="baidu" data-title="Python 列出当前目录的文件和文件夹">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/07/21/Python-列出当前目录的文件和文件夹/" data-id="cjaxjqbif003n2ju3h83zgcjp" class="article-share-link" data-share="baidu" data-title="Python 列出当前目录的文件和文件夹">Share</a>
       
 
       
@@ -257,7 +258,7 @@
 <p><strong>Git 的安装有几个方式：</strong></p>
 <ol>
 <li><p>源码安装：</p>
-<p><a href="https://git-scm.com/">Git 官网下载地址 for Mac</a></p>
+<p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git 官网下载地址 for Mac</a></p>
         
           <p class="article-more-link">
             <a href="/2017/06/28/Mac使用-Git和-Github-连接/#more">Read More</a>
@@ -267,7 +268,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/06/28/Mac使用-Git和-Github-连接/" data-id="cjats3n5b0032qdu3lgrh82v1" class="article-share-link" data-share="baidu" data-title="Mac使用 Git和 Github 连接">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/06/28/Mac使用-Git和-Github-连接/" data-id="cjaxjqbhm00322ju3yt0qnuxg" class="article-share-link" data-share="baidu" data-title="Mac使用 Git和 Github 连接">Share</a>
       
 
       
@@ -318,7 +319,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/06/20/install-PyQt5-for-Macbook/" data-id="cjats3n810065qdu33zefyug3" class="article-share-link" data-share="baidu" data-title="Install PyQt5 for Macbook">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/06/20/install-PyQt5-for-Macbook/" data-id="cjaxjqbk5006c2ju3x2aqjal0" class="article-share-link" data-share="baidu" data-title="Install PyQt5 for Macbook">Share</a>
       
 
       
@@ -369,7 +370,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/06/13/Python中执行-Sehll-命令/" data-id="cjats3n63003xqdu3b6skguoa" class="article-share-link" data-share="baidu" data-title="Python中执行 Sehll 命令">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/06/13/Python中执行-Sehll-命令/" data-id="cjaxjqbiq003z2ju341ttuju1" class="article-share-link" data-share="baidu" data-title="Python中执行 Sehll 命令">Share</a>
       
 
       
@@ -410,7 +411,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://rufus.akeo.ie/?locale=zh_CN">Rufus</a> 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。</p>
+        <p><a href="https://rufus.akeo.ie/?locale=zh_CN" target="_blank" rel="noopener">Rufus</a> 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。</p>
 <p>在如下场景中会非常有用：</p>
 <ul>
 <li>你需要把一些可引导的ISO格式的镜像（Windows，Linux，UEFI等）创建成USB安装盘的时候</li>
@@ -427,7 +428,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/" data-id="cjats3n8l006jqdu3l5b4rqxe" class="article-share-link" data-share="baidu" data-title="使用 Runfus 为 Windows10 创建 USB 启动盘">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/" data-id="cjaxjqbk8006j2ju3mlq6vv09" class="article-share-link" data-share="baidu" data-title="使用 Runfus 为 Windows10 创建 USB 启动盘">Share</a>
       
 
       
@@ -479,7 +480,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/05/31/让-macbook-读取-txt-文本/" data-id="cjats3n9h007nqdu301jnxvf0" class="article-share-link" data-share="baidu" data-title="让 MacBook 读取 txt 文本">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/05/31/让-macbook-读取-txt-文本/" data-id="cjaxjqbkx007q2ju3f9p4g6ie" class="article-share-link" data-share="baidu" data-title="让 MacBook 读取 txt 文本">Share</a>
       
 
       
@@ -530,7 +531,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/05/20/sshpass-的使用/" data-id="cjats3n8n006lqdu3rpdmdhpj" class="article-share-link" data-share="baidu" data-title="sshpass 的使用">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/05/20/sshpass-的使用/" data-id="cjaxjqbk7006f2ju35c1ilhac" class="article-share-link" data-share="baidu" data-title="sshpass 的使用">Share</a>
       
 
       
@@ -572,7 +573,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在macOS更新完pip(9.0.1)之后使用会出现如下警告：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DEPRECATION: The default format will switch to columns <span class="keyword">in</span> the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) <span class="keyword">in</span> your pip.conf under the [list] section) to <span class="built_in">disable</span> this warning.</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DEPRECATION: The default format will switch to columns <span class="keyword">in</span> the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) <span class="keyword">in</span> your pip.conf under the [list] section) to <span class="built_in">disable</span> this warning.</span><br></pre></td></tr></table></figure>
 <p>虽然不影响使用，但是还是要解决。方法如下：</p>
         
           <p class="article-more-link">
@@ -583,7 +584,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/05/17/Python-Pip-使用警告/" data-id="cjats3n5m003hqdu307ncma9o" class="article-share-link" data-share="baidu" data-title="Python Pip 使用警告">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/05/17/Python-Pip-使用警告/" data-id="cjaxjqbib003h2ju3spubnyzi" class="article-share-link" data-share="baidu" data-title="Python Pip 使用警告">Share</a>
       
 
       

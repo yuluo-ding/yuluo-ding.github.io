@@ -6,22 +6,17 @@
   
   <title>Android java.lang.OutOfMemoryError: GC overhead limit exceeded | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。
-1java.lang.OutOfMemoryError: GC overhead limit exceeded
-​    根据 Sun 的描述：    1&amp;quot;if too much time is being spent in garbage collection: if more than 98% of th">
+  <meta name="description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。 1java.lang.OutOfMemoryError: GC overhead limit exceeded ​    根据 Sun 的描述：    1&amp;quot;if too much time is being spent in garbage collection: if more than 98% of th">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android java.lang.OutOfMemoryError: GC overhead limit exceeded">
 <meta property="og:url" content="yuluo-ding.github.io/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。
-1java.lang.OutOfMemoryError: GC overhead limit exceeded
-​    根据 Sun 的描述：    1&amp;quot;if too much time is being spent in garbage collection: if more than 98% of th">
+<meta property="og:description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。 1java.lang.OutOfMemoryError: GC overhead limit exceeded ​    根据 Sun 的描述：    1&amp;quot;if too much time is being spent in garbage collection: if more than 98% of th">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-02-13T14:35:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android java.lang.OutOfMemoryError: GC overhead limit exceeded">
-<meta name="twitter:description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。
-1java.lang.OutOfMemoryError: GC overhead limit exceeded
-​    根据 Sun 的描述：    1&amp;quot;if too much time is being spent in garbage collection: if more than 98% of th">
+<meta name="twitter:description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。 1java.lang.OutOfMemoryError: GC overhead limit exceeded ​    根据 Sun 的描述：    1&amp;quot;if too much time is being spent in garbage collection: if more than 98% of th">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -106,20 +101,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>​    再用 Android Studio 编辑项目的时候，会出现如下错误。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.lang.OutOfMemoryError: GC overhead <span class="built_in">limit</span> exceeded</div></pre></td></tr></table></figure>
-<p>​    根据 Sun 的描述：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;if too much time is being spent in garbage collection: if more than 98% of the total time is spent in garbage collection and less than 2% of the heap is recovered, an OutOfMemoryError will be thrown.&quot;</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.OutOfMemoryError: GC overhead <span class="built_in">limit</span> exceeded</span><br></pre></td></tr></table></figure>
+<p>​    根据 Sun 的描述：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;if too much time is being spent in garbage collection: if more than 98% of the total time is spent in garbage collection and less than 2% of the heap is recovered, an OutOfMemoryError will be thrown.&quot;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>​    首先更改 Android Studio 的运行内存，MacBook 在<code>Content/bin/studio.vmoptions</code>,修改如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># *DO NOT* modify this file directly. If there is a value that you would like to override,</span></div><div class="line"><span class="comment"># please add it to your user specific configuration file.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># See http://tools.android.com/tech-docs/configuration</span></div><div class="line"><span class="comment">#</span></div><div class="line">-Xms256m</div><div class="line">-Xmx4096m</div><div class="line">-XX:MaxPermSize=1024m</div><div class="line">-XX:ReservedCodeCacheSize=768m</div><div class="line">-XX:+UseCompressedOops</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># *DO NOT* modify this file directly. If there is a value that you would like to override,</span></span><br><span class="line"><span class="comment"># please add it to your user specific configuration file.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># See http://tools.android.com/tech-docs/configuration</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">-Xms256m</span><br><span class="line">-Xmx4096m</span><br><span class="line">-XX:MaxPermSize=1024m</span><br><span class="line">-XX:ReservedCodeCacheSize=768m</span><br><span class="line">-XX:+UseCompressedOops</span><br></pre></td></tr></table></figure>
 <p>​    之后在项目的<code>build.gradle</code>中添加一个设置:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exOptions &#123;</div><div class="line">        javaMaxHeapSize "4g"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exOptions &#123;</span><br><span class="line">        javaMaxHeapSize "4g"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​    接下来运行就能通过。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" data-id="cjats3n2h000fqdu3o4ko9q5d" class="article-share-link" data-share="baidu" data-title="Android java.lang.OutOfMemoryError: GC overhead limit exceeded">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" data-id="cjaxjqbfe000h2ju3ueev14jb" class="article-share-link" data-share="baidu" data-title="Android java.lang.OutOfMemoryError: GC overhead limit exceeded">Share</a>
       
 
       

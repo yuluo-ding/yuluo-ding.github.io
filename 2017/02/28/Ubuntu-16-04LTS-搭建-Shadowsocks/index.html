@@ -6,22 +6,17 @@
   
   <title>Ubuntu 16.04LTS 搭建 Shadowsocks | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="只针对Ubuntu16以上的版本。
-执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks">
+  <meta name="description" content="只针对Ubuntu16以上的版本。 执行很简单，首先是三条命令 123apt updateapt install python-pippip install shadowsocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 16.04LTS 搭建 Shadowsocks">
 <meta property="og:url" content="yuluo-ding.github.io/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="只针对Ubuntu16以上的版本。
-执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks">
+<meta property="og:description" content="只针对Ubuntu16以上的版本。 执行很简单，首先是三条命令 123apt updateapt install python-pippip install shadowsocks">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-04-30T10:27:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 16.04LTS 搭建 Shadowsocks">
-<meta name="twitter:description" content="只针对Ubuntu16以上的版本。
-执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks">
+<meta name="twitter:description" content="只针对Ubuntu16以上的版本。 执行很简单，首先是三条命令 123apt updateapt install python-pippip install shadowsocks">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -107,24 +102,24 @@
       
         <p>只针对Ubuntu16以上的版本。</p>
 <p>执行很简单，首先是三条命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt update</div><div class="line">apt install python-pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install python-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>pip 是 Python 下方便的包管理工具</p>
 <p>之后在<code>/etc/shadowsocks</code>编写配置文件：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,</div><div class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</div><div class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</div><div class="line">    <span class="attr">"password"</span>:<span class="string">"mypassword"</span>,</div><div class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</div><div class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</div><div class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,</span><br><span class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"password"</span>:<span class="string">"mypassword"</span>,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面一些数值，替换成自己相应的就好，<code>method</code>建议128的就好。</p>
 <p>接下来运行如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssserver -c /etc/shadowsocks.json <span class="_">-d</span> start</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
 <p>为了能够开机自启，把上面的命令加入到<code>/etc/rc.loacl</code>里面，在 <code>exit</code>之前就行。</p>
-<p>最后下载客户端：<a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="external">SS客户端</a></p>
+<p>最后下载客户端：<a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="noopener">SS客户端</a></p>
 <p>可能在 VPS 会遇到以下的一个错误：<br><code>Python locale error: unsupported locale setting</code></p>
-<p>只要执行以下几行命令就可以了:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LC_ALL=<span class="string">"en_US.UTF-8"</span></div><div class="line"><span class="built_in">export</span> LC_CTYPE=<span class="string">"en_US.UTF-8"</span></div><div class="line">sudo dpkg-reconfigure locales</div></pre></td></tr></table></figure></p>
+<p>只要执行以下几行命令就可以了:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_ALL=<span class="string">"en_US.UTF-8"</span></span><br><span class="line"><span class="built_in">export</span> LC_CTYPE=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cjats3n7b005aqdu3ie3b0gk2" class="article-share-link" data-share="baidu" data-title="Ubuntu 16.04LTS 搭建 Shadowsocks">Share</a>
+        <a data-url="yuluo-ding.github.io/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" data-id="cjaxjqbjk005a2ju3g6y8izul" class="article-share-link" data-share="baidu" data-title="Ubuntu 16.04LTS 搭建 Shadowsocks">Share</a>
       
 
       

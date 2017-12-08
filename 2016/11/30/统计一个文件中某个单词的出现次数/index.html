@@ -6,22 +6,17 @@
   
   <title>统计一个文件中某个单词的出现次数 | yuluo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先有一个最简单的方法，就是用正则匹配
-123import retmp = open(&quot;123.txt&quot;, &quot;r&quot;).read()print len(re.findall(&quot;hello&quot;, tmp))
-还可以利用Counter来实现更多的功能">
+  <meta name="description" content="首先有一个最简单的方法，就是用正则匹配 123import retmp = open(&quot;123.txt&quot;, &quot;r&quot;).read()print len(re.findall(&quot;hello&quot;, tmp)) 还可以利用Counter来实现更多的功能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="统计一个文件中某个单词的出现次数">
 <meta property="og:url" content="yuluo-ding.github.io/2016/11/30/统计一个文件中某个单词的出现次数/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="首先有一个最简单的方法，就是用正则匹配
-123import retmp = open(&quot;123.txt&quot;, &quot;r&quot;).read()print len(re.findall(&quot;hello&quot;, tmp))
-还可以利用Counter来实现更多的功能">
+<meta property="og:description" content="首先有一个最简单的方法，就是用正则匹配 123import retmp = open(&quot;123.txt&quot;, &quot;r&quot;).read()print len(re.findall(&quot;hello&quot;, tmp)) 还可以利用Counter来实现更多的功能">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2016-11-30T08:48:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="统计一个文件中某个单词的出现次数">
-<meta name="twitter:description" content="首先有一个最简单的方法，就是用正则匹配
-123import retmp = open(&quot;123.txt&quot;, &quot;r&quot;).read()print len(re.findall(&quot;hello&quot;, tmp))
-还可以利用Counter来实现更多的功能">
+<meta name="twitter:description" content="首先有一个最简单的方法，就是用正则匹配 123import retmp = open(&quot;123.txt&quot;, &quot;r&quot;).read()print len(re.findall(&quot;hello&quot;, tmp)) 还可以利用Counter来实现更多的功能">
   
     <link rel="alternative" href="/atom.xml" title="yuluo" type="application/atom+xml">
   
@@ -106,15 +101,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>首先有一个最简单的方法，就是用正则匹配</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">tmp = open(<span class="string">"123.txt"</span>, <span class="string">"r"</span>).read()</div><div class="line"><span class="keyword">print</span> len(re.findall(<span class="string">"hello"</span>, tmp))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">tmp = open(<span class="string">"123.txt"</span>, <span class="string">"r"</span>).read()</span><br><span class="line"><span class="keyword">print</span> len(re.findall(<span class="string">"hello"</span>, tmp))</span><br></pre></td></tr></table></figure>
 <p>还可以利用Counter来实现更多的功能</p>
 <a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line"><span class="keyword">import</span> re</div><div class="line"> </div><div class="line">pa = re.compile(<span class="string">"\w+"</span>)</div><div class="line">counter = collections.Counter(patt.findall(open(<span class="string">'reparser.py'</span>,<span class="string">'rt'</span>).read()))</div><div class="line"> </div><div class="line"><span class="comment"># top 100</span></div><div class="line"><span class="keyword">for</span> word, times <span class="keyword">in</span> counter.most_common(<span class="number">100</span>):</div><div class="line">    <span class="keyword">print</span> word, times</div><div class="line"> </div><div class="line"><span class="comment"># find word</span></div><div class="line">counter_dict = dict(counter.most_common(<span class="number">0</span>))</div><div class="line">tobefind = <span class="string">'hello'</span></div><div class="line"><span class="keyword">print</span> tobefind, counter_dict.get(tobefind, <span class="number">0</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"> </span><br><span class="line">pa = re.compile(<span class="string">"\w+"</span>)</span><br><span class="line">counter = collections.Counter(patt.findall(open(<span class="string">'reparser.py'</span>,<span class="string">'rt'</span>).read()))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># top 100</span></span><br><span class="line"><span class="keyword">for</span> word, times <span class="keyword">in</span> counter.most_common(<span class="number">100</span>):</span><br><span class="line">    <span class="keyword">print</span> word, times</span><br><span class="line"> </span><br><span class="line"><span class="comment"># find word</span></span><br><span class="line">counter_dict = dict(counter.most_common(<span class="number">0</span>))</span><br><span class="line">tobefind = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">print</span> tobefind, counter_dict.get(tobefind, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="yuluo-ding.github.io/2016/11/30/统计一个文件中某个单词的出现次数/" data-id="cjats3n9c007hqdu39xpwys9y" class="article-share-link" data-share="baidu" data-title="统计一个文件中某个单词的出现次数">Share</a>
+        <a data-url="yuluo-ding.github.io/2016/11/30/统计一个文件中某个单词的出现次数/" data-id="cjaxjqbkt007k2ju3393cjio4" class="article-share-link" data-share="baidu" data-title="统计一个文件中某个单词的出现次数">Share</a>
       
 
       
