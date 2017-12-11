@@ -1,48 +1,360 @@
-extends base
+<!DOCTYPE html>
+<html lang="en">
 
-block title
-  title= page.title + ' | ' + config.title
+<!-- Head tag -->
+<head>
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span 条评论
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true
-      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    include _partial/tag.pug
-    include _partial/post_nav.pug
+    <!--Description-->
+    
+        <meta name="description" content="The home of yuluo!">
+    
 
-    if page.comments
-      include _partial/comments.pug
+    <!--Author-->
+    
+        <meta name="author" content="Luo Yu">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Sublime Text3"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="The home of yuluo!" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="yuluo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Sublime Text3 - yuluo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="yuluo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="yuluo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Sublime Text3</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2015-11-09</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+
+                    <!-- Main Post Content -->
+                    <h4 id="Sublime_Text3_快捷键">Sublime Text3 快捷键</h4><a id="more"></a>
+<ul>
+<li>Ctrl+D 选词 （反复按快捷键，即可继续向下同时选中下一个相同的文本进行同时编辑）</li>
+<li>Ctrl+G 跳转到相应的行</li>
+<li>Ctrl+J 合并行（已选择需要合并的多行时）</li>
+<li>Ctrl+L 选择整行（按住-继续选择下行）</li>
+<li>Ctrl+M 光标移动至括号内开始或结束的位置</li>
+<li>Ctrl+T 词互换</li>
+<li>Ctrl+U 软撤销</li>
+<li>Ctrl+P 查找当前项目中的文件和快速搜索；输入 @ 查找文件主标题/函数；或者输入 : 跳转到文件某行；</li>
+<li>Ctrl+R 快速列出/跳转到某个函数</li>
+<li>Ctrl+K Backspace 从光标处删除至行首</li>
+<li>Ctrl+K+B 开启/关闭侧边栏</li>
+<li>Ctrl+KK 从光标处删除至行尾</li>
+<li>Ctrl+K+T 折叠属性</li>
+<li>Ctrl+K+U 改为大写</li>
+<li>Ctrl+K+L 改为小写</li>
+<li>Ctrl+K+0 展开所有</li>
+<li>Ctrl+Enter 插入行后（快速换行）</li>
+<li>Ctrl+Tab 当前窗口中的标签页切换</li>
+</ul>
+<ul>
+<li>Ctrl+Shift+A 选择光标位置父标签对儿</li>
+<li>Ctrl+Shift+D 复制光标所在整行，插入在该行之前</li>
+<li>ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找</li>
+<li>Ctrl+Shift+K 删除整行</li>
+<li>Ctrl+Shift+L 鼠标选中多行（按下快捷键），即可同时编辑这些行</li>
+<li>Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号）</li>
+<li>Ctrl+Shift+P 打开命令面板</li>
+<li>Ctrl+Shift+/ 注释已选择内容</li>
+<li>Ctrl+Shift+↑可以移动此行代码，与上行互换</li>
+<li>Ctrl+Shift+↓可以移动此行代码，与下行互换</li>
+<li>Ctrl+Shift+[ 折叠代码</li>
+<li>Ctrl+Shift+] 展开代码</li>
+<li>Ctrl+Shift+Enter 光标前插入行</li>
+</ul>
+<ul>
+<li>Ctrl+PageDown 、Ctrl+PageUp 文件按开启的前后顺序切换</li>
+</ul>
+<ul>
+<li>Ctrl+Z 撤销</li>
+<li>Ctrl+Y 恢复撤销</li>
+<li>Ctrl+F2 设置/取消书签</li>
+<li>Ctrl+/ 注释整行（如已选择内容，同“Ctrl+Shift+/”效果）</li>
+<li>Ctrl+鼠标左键 可以同时选择要编辑的多处文本</li>
+</ul>
+<ul>
+<li>Shift+鼠标右键（或使用鼠标中键）可以用鼠标进行竖向多行选择</li>
+<li>Shift+F2 上一个书签</li>
+<li>Shift+Tab 去除缩进</li>
+<li>Alt+Shift+1（非小键盘）窗口分屏，恢复默认1屏</li>
+<li>Alt+Shift+2 左右分屏-2列</li>
+<li>Alt+Shift+3 左右分屏-3列</li>
+<li>Alt+Shift+4 左右分屏-4列</li>
+<li>Alt+Shift+5 等分4屏</li>
+<li>Alt+Shift+8 垂直分屏-2屏</li>
+<li>Alt+Shift+9 垂直分屏-3屏</li>
+</ul>
+<ul>
+<li>Ctrl+Shift+分屏序号 将当前焦点页分配到分屏序号页</li>
+</ul>
+<ul>
+<li>Alt+. 闭合当前标签</li>
+<li>Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑</li>
+</ul>
+<ul>
+<li>Tab 缩进 自动完成</li>
+<li>F2 下一个书签</li>
+<li>F6 检测语法错误</li>
+<li>F9 行排序(按a-z)</li>
+</ul>
+<h4 id="sublime_text修改TAB缩进为空格">sublime text修改TAB缩进为空格</h4><p>在sublime text中将TAB缩进直接转化为4个空格，可以按照如下方式操作：</p>
+<p>菜单栏: Preferences -&gt; Settings – More -&gt; Syntax Specific – User</p>
+<p>然后添加设置代码就可以了，文件保存在$Packages/User下</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tab_size"</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="attr">"translate_tabs_to_spaces"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Luo Yu">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+                        <div class="mt5 tc tl-l">
+    <h3>Categories</h3>
+    
+        <p>
+            <a href="/categories/Soft/">Soft</a>
+        </p>
+    
+</div>
+
+
+                        <hr class="dn-l mw4 black-50 mt5" />
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2017/12/05/Git配置不同项目的不同账号/">Git配置不同项目的不同账号</a>
+        </p>
+    
+        <p>
+            <a href="/2017/11/13/Python的最大递归深度错误/">Python的最大递归深度错误</a>
+        </p>
+    
+        <p>
+            <a href="/2017/11/12/Ubuntu安装-redis，并后台运行/">Ubuntu安装 redis，并后台运行</a>
+        </p>
+    
+        <p>
+            <a href="/2017/11/01/Linux-下后台运行Python脚本/">Linux 下后台运行Python脚本</a>
+        </p>
+    
+        <p>
+            <a href="/2017/10/30/Python-ConfigParser模块常用方法示例/">Python ConfigParser模块常用方法示例</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

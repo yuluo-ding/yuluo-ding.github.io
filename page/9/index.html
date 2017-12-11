@@ -1,55 +1,393 @@
-extends base
+<!DOCTYPE html>
+<html lang="en">
 
-block title
-  if config.subtitle
-    title= config.title + ' | ' + config.subtitle
-  else
-    title= config.title
+<!-- Head tag -->
+<head>
 
-block content
-  for post in page.posts.toArray()
-    .post
-      h1.post-title
-        include _partial/helpers.pug
-        a(href=url_for(post.path))
-          +title(post)
-      .post-meta= post.date.format(config.date_format)
-      if theme.disqus
-        a.disqus-comment-count(data-disqus-identifier=post.path, href=url_for(post.path) + '#disqus_thread')
-      if theme.changyan
-        a.ds-thread-count(href=url_for(post.path) + '#SOHUCS')
-          span.cy_cmt_count(id='sourceId::' + post.date.valueOf() style='margin: 0 3px 0 1px;') 0
-          span= ' ' + __('Comment')
-      if post.description
-        .post-content
-          != post.description
-      else if post.excerpt
-        .post-content
-          != post.excerpt
-      else if post.content
-        - var br = 0
-        - for (var i = 0; i < 5; ++i) {
-          - br = post.content.indexOf('\n',br+1)
-          if br<0
-            - break
-          if br >150
-            - break
-        - }
-        if br < 0
-          .post-content
-            != post.content
-        else
-          .post-content
-            != post.content.substring(0, br)
-      p(class='readmore')
-        a(href=url_for(post.path))= __('Readmore')
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  include _partial/paginator.pug
-  if theme.disqus
-    script(id='dsq-count-scr', src='//'+ theme.disqus + '.disqus.com/count.js', async)
-  if theme.changyan
-    script#cy_cmt_num(src='https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4LaybM', async)
-  if config.mathjax
-    include _partial/mathjax.pug
-  if config.mathjax2
-    include _partial/mathjax2.pug
+    <!--Description-->
+    
+        <meta name="description" content="The home of yuluo!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Luo Yu">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="yuluo"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="The home of yuluo!" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="yuluo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>page - yuluo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="yuluo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="yuluo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Welcome to Anodyne</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Create Websites. Make Magic.</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa fa-magic"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            
+                <a href="/2016/06/24/VMware无法打开/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-06-24</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">VMware无法打开<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/04/04/算法和数据结构/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-04-04</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">算法和数据结构<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/04/03/Soft/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-04-03</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">Soft<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/02/25/把自己的lib上传到中央库/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-02-25</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">把自己的lib上传到中央库<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/02/19/如何阅读Android源码/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-02-19</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">如何阅读Android源码<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/02/16/iTunes无法连接iPhone/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-02-16</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">iTunes无法连接iPhone<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/02/02/关于Anroid的/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-02-02</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">关于Anroid的<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/01/27/Java-HashMap工作原理及实现/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-01-27</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">Java HashMap工作原理及实现<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/01/23/如何自学Android/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-01-23</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">如何自学Android<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2016/01/23/Android-开发最佳实践/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2016-01-23</span> 
+                
+                
+            </div>
+            <span class="f3 fw3 lh-copy">Android 开发最佳实践<span>
+        </div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+    </div>
+</a>
+            
+        </div>
+    </div>
+    
+    <div class="flex items-center justify-center pa4">
+        <a href="/page/8/" 
+            class="f5 no-underline inline-flex items-center pa3 ba border-box mr4 gray hover-border-main-color hover-text-main-color">
+            <i class="w1 pr2 fa fa-chevron-left" aria-hidden="true"></i>
+            <span class="pl1">Previous</span>
+        </a>
+        <a href="/page/10/" 
+            class="f5 no-underline inline-flex items-center pa3 ba border-box gray hover-border-main-color hover-text-main-color">
+            <span class="pr1">Next</span>
+            <i class="w1 pl2 fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
