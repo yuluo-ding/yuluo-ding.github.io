@@ -1,299 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+extends base
 
-<!-- Head tag -->
-<head>
+block title
+  title= page.title + ' | ' + config.title
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+block content
+  .post
+    h1.post-title= page.title
+    .post-meta= page.date.format('ll')
+      if page.categories.length > 0
+        span= ' | '
+        span.category
+          for category in page.categories.toArray()
+            a(href=url_for(category.path))= category.name
+      if theme.busuanzi == true
+        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
+        span#busuanzi_container_page_pv= ' | '
+          span#busuanzi_value_page_pv
+          span= ' ' + __('Hits')
+    if theme.disqus
+      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
+    if theme.changyan
+      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
+        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
+        span= ' ' + __('Comment')
+      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
+    if theme.valine.enable
+      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
+        span.valine-comment-count(data-xid=url_for(page.path))
+        span 条评论
+    if page.toc
+      div(class='clear')
+        div(id='toc' class='toc-article')
+          div(class='toc-title')= __('contents')
+          != toc(page.content, {list_number: theme.toc_number})
+    .post-content
+      != page.content
+    if theme.donate.enable == true
+      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
+    if theme.shareto == true
+      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
+      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
 
-    <!--Description-->
-    
-        <meta name="description" content="The home of yuluo!">
-    
+    include _partial/tag.pug
+    include _partial/post_nav.pug
 
-    <!--Author-->
-    
-        <meta name="author" content="Luo Yu">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="fail2ban 简介"/>
-    
-
-    <!--Open Graph Description-->
-    
-        <meta property="og:description" content="The home of yuluo!" />
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="yuluo"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>fail2ban 简介 - yuluo</title>
-
-    <!-- Tachyons Core CSS -->
-    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Google Analytics -->
-    
-
-
-</head>
-
-
-<body>
-
-<!-- Main Content -->
-<!-- Banner -->
-<!-- Banner -->
-<div class="w-100 bg-1 ph5-ns ph3 text-light">
-    
-    <nav class="db dt-l w-100 mw8 center border-box pv3">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="yuluo">
-            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="yuluo">
-        </a>
-        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
-            
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
-                    href="/" 
-                    title="Home">
-                    Home
-                </a>
-            
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
-                    href="/archives" 
-                    title="Archives">
-                    Archives
-                </a>
-            
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
-                    href="/about.html" 
-                    title="About">
-                    About
-                </a>
-            
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
-                    href="/contact.html" 
-                    title="Contact">
-                    Contact
-                </a>
-            
-        </div>
-    </nav>
-
-    <!-- Title -->
-    <div class="w-100 mw8 center vh-40 dt">
-        <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">fail2ban 简介</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2017-08-27</p>
-        </div>
-    </div>
-
-    <!-- Icon -->
-    <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fa fa-file-text-o"></i>
-    </div>
-</div>
-
-<!-- Content -->
-<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
-    <div class="content">
-        <div class="mw8 center">
-            <div class="cf">
-                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
-                    <!-- Tags Vertical -->
-                    
-
-                    <!-- Main Post Content -->
-                    <p>fail2ban 可以监视你的系统日志，然后匹配日志的错误信息（正则式匹配）执行相应的屏蔽动作（一般情况下是调用防火墙屏蔽），比如:当有人在试探你的SSH、SMTP、FTP密码，只要达到你预设的次数，fail2ban就会调用防火墙屏蔽这个IP，而且可以发送e-mail通知系统管理员，是一款很实用、很强大的软件。<br><a id="more"></a></p>
-<h4 id="功能和特性">功能和特性</h4><p>1、支持大量服务。如sshd,apache,qmail,proftpd,sasl等等<br>2、支持多种动作。如iptables,tcp-wrapper,shorewall(iptables第三方工具),mail notifications(邮件通知)等等。<br>3、在logpath选项中支持通配符<br>4、需要Gamin支持(注：Gamin是用于监视文件和目录是否更改的服务工具)<br>5、需要安装python,iptables,tcp-wrapper,shorewall,Gamin。如果想要发邮件，那必需安装postfix/sendmail</p>
-<h4 id="安装和配置">安装和配置</h4><p>如果是 CentOS，可以直接<code>yum install fail2ban</code><br>如果是 Ubuntu，可以直接<code>apt install fail2ban</code></p>
-<p>功能:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/etc/fail2ban/action.d            #动作文件夹，内含默认文件。iptables以及mail等动作配置</span><br><span class="line">/etc/fail2ban/fail2ban.conf        #定义了fai2ban日志级别、日志位置及sock文件位置</span><br><span class="line">/etc/fail2ban/filter.d            #条件文件夹，内含默认文件。过滤日志关键内容设置</span><br><span class="line">/etc/fail2ban/jail.conf            #主要配置文件，模块化。主要设置启用ban动作的服务及动作阀值</span><br><span class="line">/etc/rc.d/init.d/fail2ban          #启动脚本文件</span><br></pre></td></tr></table></figure></p>
-<p>主要配置:<br><code>vi /etc/fail2ban/fail2ban.conf</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Definition] </span><br><span class="line">loglevel =3 </span><br><span class="line">logtarget = SYSLOG  #我们需要做的就是把这行改成/var/log/fail2ban.log，方便用来记录日志信息 </span><br><span class="line">socket =/var/run/fail2ban/fail2ban.sock</span><br></pre></td></tr></table></figure></p>
-<p><code>vi /etc/fail2ban/jail.conf</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[DEFAULT]              #全局设置</span><br><span class="line">ignoreip = 127.0.0.1      #忽略的IP列表,不受设置限制</span><br><span class="line">bantime  = 600            #屏蔽时间，单位：秒</span><br><span class="line">findtime  = 600           #这个时间段内超过规定次数会被ban掉</span><br><span class="line">maxretry = 3              #最大尝试次数</span><br><span class="line">backend = auto            #日志修改检测机制（gamin、polling和auto这三种）</span><br><span class="line"> </span><br><span class="line">[sshd]                     #单个服务检查设置，如设置bantime、findtime、maxretry和全局冲突，服务优先级大于全局设置。</span><br><span class="line">enabled  = true               #是否激活此项（true/false）</span><br><span class="line">filter   = sshd               #过滤规则filter的名字，对应filter.d目录下的sshd.conf</span><br><span class="line">action   = iptables[name=SSH, port=ssh, protocol=tcp]#动作的相关参数，对应action.d/iptables.conf文件</span><br><span class="line">logpath  = /var/log/secure     #检测的日志文件path</span><br><span class="line">bantime  = 3600</span><br><span class="line">findtime  = 300 </span><br><span class="line">maxretry = 3                   #最大尝试次数</span><br></pre></td></tr></table></figure></p>
-<p>启动 fail2ban<br><code>service fail2ban start</code></p>
-<p>解除fail2ban绑定的IP </p>
-<p>查询限制列表<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> iptables -L --line-numbers</span></span><br><span class="line"></span><br><span class="line">Chain fail2ban-SSH (1references)</span><br><span class="line">num  target    prot opt source            destination</span><br><span class="line">1    DROP      all  -- 118.152.158.61.ha.cnc anywhere</span><br><span class="line">2    RETURN    all  -- anywhere           anywhere</span><br><span class="line">解除限制</span><br><span class="line"><span class="meta">#</span><span class="bash"> iptables -D fail2ban-SSH 1</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="vi_/etc/fail2ban-conf">vi /etc/fail2ban.conf</h1><p>SSH防攻击规则:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br></pre></td><td class="code"><pre><span class="line">ssh-iptables]enabled  = true</span><br><span class="line">filter   = sshd</span><br><span class="line">action   = iptables[name=SSH, port=ssh, protocol=tcp]</span><br><span class="line">           sendmail-whois[name=SSH, dest=root, sender=fail2ban@example.com, sendername="Fail2Ban"]</span><br><span class="line">logpath  = /var/log/secure</span><br><span class="line">maxretry = 5</span><br><span class="line">[ssh-ddos]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = sshd-ddos</span><br><span class="line">action  = iptables[name=ssh-ddos, port=ssh,sftp protocol=tcp,udp]</span><br><span class="line">logpath  = /var/log/messages</span><br><span class="line">maxretry = 2</span><br><span class="line">[osx-ssh-ipfw]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = sshd</span><br><span class="line">action   = osx-ipfw</span><br><span class="line">logpath  = /var/log/secure.log</span><br><span class="line">maxretry = 5</span><br><span class="line">[ssh-apf]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = sshd</span><br><span class="line">action  = apf[name=SSH]</span><br><span class="line">logpath = /var/log/secure</span><br><span class="line">maxretry = 5</span><br><span class="line">[osx-ssh-afctl]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = sshd</span><br><span class="line">action   = osx-afctl[bantime=600]</span><br><span class="line">logpath  = /var/log/secure.log</span><br><span class="line">maxretry = 5</span><br><span class="line">[selinux-ssh]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = selinux-ssh</span><br><span class="line">action  = iptables[name=SELINUX-SSH, port=ssh, protocol=tcp]</span><br><span class="line">logpath  = /var/log/audit/audit.log</span><br><span class="line">maxretry = 5</span><br><span class="line"></span><br><span class="line">proftp防攻击规则</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line">[proftpd-iptables]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = proftpd</span><br><span class="line">action   = iptables[name=ProFTPD, port=ftp, protocol=tcp]</span><br><span class="line">           sendmail-whois[name=ProFTPD, dest=you@example.com]</span><br><span class="line">logpath  = /var/log/proftpd/proftpd.log</span><br><span class="line">maxretry = 6</span><br><span class="line"> </span><br><span class="line">邮件防攻击规则</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line">[sasl-iptables]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = postfix-sasl</span><br><span class="line">backend  = polling</span><br><span class="line">action   = iptables[name=sasl, port=smtp, protocol=tcp]</span><br><span class="line">           sendmail-whois[name=sasl, dest=you@example.com]</span><br><span class="line">logpath  = /var/log/mail.log</span><br><span class="line">[dovecot]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = dovecot</span><br><span class="line">action  = iptables-multiport[name=dovecot, port="pop3,pop3s,imap,imaps,submission,smtps,sieve", protocol=tcp]</span><br><span class="line">logpath = /var/log/mail.log</span><br><span class="line">[dovecot-auth]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = dovecot</span><br><span class="line">action  = iptables-multiport[name=dovecot-auth, port="pop3,pop3s,imap,imaps,submission,smtps,sieve", protocol=tcp]</span><br><span class="line">logpath = /var/log/secure</span><br><span class="line">[perdition]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = perdition</span><br><span class="line">action  = iptables-multiport[name=perdition,port="110,143,993,995"]</span><br><span class="line">logpath = /var/log/maillog</span><br><span class="line"> </span><br><span class="line">[uwimap-auth]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = uwimap-auth</span><br><span class="line">action  = iptables-multiport[name=uwimap-auth,port="110,143,993,995"]</span><br><span class="line">logpath = /var/log/maillog</span><br><span class="line"> </span><br><span class="line">apache防攻击规则</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line">[apache-tcpwrapper]</span><br><span class="line">enabled  = true</span><br><span class="line">filter  = apache-auth</span><br><span class="line">action   = hostsdeny</span><br><span class="line">logpath  = /var/log/httpd/error_log</span><br><span class="line">maxretry = 6</span><br><span class="line">[apache-badbots]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = apache-badbots</span><br><span class="line">action   = iptables-multiport[name=BadBots, port="http,https"]</span><br><span class="line">           sendmail-buffered[name=BadBots, lines=5, dest=you@example.com]</span><br><span class="line">logpath  = /var/log/httpd/access_log</span><br><span class="line">bantime  = 172800</span><br><span class="line">maxretry = 1</span><br><span class="line">[apache-shorewall]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = apache-noscript</span><br><span class="line">action   = shorewall</span><br><span class="line">           sendmail[name=Postfix, dest=you@example.com]</span><br><span class="line">logpath  = /var/log/httpd/error_log</span><br><span class="line"> </span><br><span class="line">nginx防攻击规则</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line">[nginx-http-auth]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = nginx-http-auth</span><br><span class="line">action  = iptables-multiport[name=nginx-http-auth,port="80,443"]</span><br><span class="line">logpath = /var/log/nginx/error.log</span><br><span class="line"> </span><br><span class="line">lighttpd防规击规则</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line">[suhosin]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = suhosin</span><br><span class="line">action   = iptables-multiport[name=suhosin, port="http,https"]</span><br><span class="line"><span class="meta">#</span><span class="bash"> adapt the following two items as needed</span></span><br><span class="line">logpath  = /var/log/lighttpd/error.log</span><br><span class="line">maxretry = 2</span><br><span class="line">[lighttpd-auth]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = lighttpd-auth</span><br><span class="line">action   = iptables-multiport[name=lighttpd-auth, port="http,https"]</span><br><span class="line"><span class="meta">#</span><span class="bash"> adapt the following two items as needed</span></span><br><span class="line">logpath  = /var/log/lighttpd/error.log</span><br><span class="line">maxretry = 2</span><br><span class="line"> </span><br><span class="line">vsftpd防攻击规则</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line">[vsftpd-notification]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = vsftpd</span><br><span class="line">action   = sendmail-whois[name=VSFTPD, dest=you@example.com]</span><br><span class="line">logpath  = /var/log/vsftpd.log</span><br><span class="line">maxretry = 5</span><br><span class="line">bantime  = 1800</span><br><span class="line">[vsftpd-iptables]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = vsftpd</span><br><span class="line">action   = iptables[name=VSFTPD, port=ftp, protocol=tcp]</span><br><span class="line">           sendmail-whois[name=VSFTPD, dest=you@example.com]</span><br><span class="line">logpath  = /var/log/vsftpd.log</span><br><span class="line">maxretry = 5</span><br><span class="line">bantime  = 1800</span><br><span class="line"> </span><br><span class="line">pure-ftpd防攻击规则</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line">[pure-ftpd]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = pure-ftpd</span><br><span class="line">action   = iptables[name=pure-ftpd, port=ftp, protocol=tcp]</span><br><span class="line">logpath  = /var/log/pureftpd.log</span><br><span class="line">maxretry = 2</span><br><span class="line">bantime  = 86400</span><br><span class="line"> </span><br><span class="line">mysql防攻击规则</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line">[mysqld-iptables]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = mysqld-auth</span><br><span class="line">action   = iptables[name=mysql, port=3306, protocol=tcp]</span><br><span class="line">           sendmail-whois[name=MySQL, dest=root, sender=fail2ban@example.com]</span><br><span class="line">logpath  = /var/log/mysqld.log</span><br><span class="line">maxretry = 5</span><br><span class="line"> </span><br><span class="line">apache phpmyadmin 防攻击规则</span><br><span class="line"> </span><br><span class="line">[apache-phpmyadmin]</span><br><span class="line">enabled  = true</span><br><span class="line">filter   = apache-phpmyadmin</span><br><span class="line">action  = iptables[name=phpmyadmin, port=http,https protocol=tcp]</span><br><span class="line">logpath  = /var/log/httpd/error_log</span><br><span class="line">maxretry = 3</span><br><span class="line"><span class="meta">#</span><span class="bash"> /etc/fail2ban/filter.d/apache-phpmyadmin.conf</span></span><br><span class="line">将以下内容粘贴到apache-phpmyadmin.conf里保存即可以创建一个apache-phpmyadmin.conf文件.</span><br><span class="line"><span class="meta">#</span><span class="bash"> Fail2Ban configuration file</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Bans bots scanning <span class="keyword">for</span> non-existing phpMyAdmin installations on your webhost.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Author: Gina Haeussge</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"> </span><br><span class="line">[Definition]</span><br><span class="line"> </span><br><span class="line">docroot = /var/www</span><br><span class="line">badadmin = PMA|phpmyadmin|myadmin|mysql|mysqladmin|sqladmin|mypma|admin|xampp|mysqldb|mydb|db|pmadb|phpmyadmin1|phpmyadmin2</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash"> Option:  failregex</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Notes.:  Regexp to match often probed and not available phpmyadmin paths.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Values:  TEXT</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">failregex = [[]client []] File does not exist: %(docroot)s/(?:%(badadmin)s)</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash"> Option:  ignoreregex</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Notes.:  regex to ignore. If this regex matches, the line is ignored.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Values:  TEXT</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">ignoreregex =</span><br></pre></td></tr></table></figure>
-<p>重启 fail2ban 服务：<br><code>service fail2ban restart</code></p>
-<p><strong>PS：</strong><br>写在最后，在安装完fail2ban后请立即重启一下fail2ban,看是不是能正常启动，因为在后边我们配置完规则后如果发生无法启动的问题我们可以进行排查.如果安装完后以默认规则能够正常启动，而配置完规则后却不能够正常启动，请先检查一下你 /var/log/ 目录下有没有规则里的 logpath= 后边的文件，或者这个文件的路径与规则里的是不是一致. 如果不一致请在 logpath 项那里修改你的路径， 如果你的缓存目录里没有这个文件，那么请你将该配置项的 enabled 项目的值设置为 false. 然后再进行重启fail2ban，这样一般不会有什么错误了</p>
-<p><a href="https://www.cnblogs.com/carbon3/p/5607704.html" target="_blank" rel="noopener">fail2ban的介绍</a></p>
-
-                    
-                    <!-- Tags Bottom -->
-                    
-
-                    <!-- Comments -->
-                    
-
-
-
-                </div>
-                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
-                    
-                    <hr class="dn-l mw4 black-50 mt5" />
-                    
-                    <!-- Widget 1: About -->
-                    <div class="mt5 mt0-l">
-    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
-        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
-            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Luo Yu">
-        </div>
-        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
-        </div>
-    </article>
-</div>
-
-                    <hr class="dn-l mw4 black-50 mt5" />
-                    
-                    <!-- Widget 2: Categories -->
-                    
-                        <div class="mt5 tc tl-l">
-    <h3>Categories</h3>
-    
-        <p>
-            <a href="/categories/Linux/">Linux</a>
-        </p>
-    
-</div>
-
-
-                        <hr class="dn-l mw4 black-50 mt5" />
-                    
-
-                    <!-- Widget 3: Recent Posts -->
-                    <div class="mt5 tc tl-l">
-    <h3>Recent Posts</h3>
-    
-        <p>
-            <a href="/2017/12/05/Git配置不同项目的不同账号/">Git配置不同项目的不同账号</a>
-        </p>
-    
-        <p>
-            <a href="/2017/11/13/Python的最大递归深度错误/">Python的最大递归深度错误</a>
-        </p>
-    
-        <p>
-            <a href="/2017/11/12/Ubuntu安装-redis，并后台运行/">Ubuntu安装 redis，并后台运行</a>
-        </p>
-    
-        <p>
-            <a href="/2017/11/01/Linux-下后台运行Python脚本/">Linux 下后台运行Python脚本</a>
-        </p>
-    
-        <p>
-            <a href="/2017/10/30/Python-ConfigParser模块常用方法示例/">Python ConfigParser模块常用方法示例</a>
-        </p>
-    
-</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Footer -->
-<div class="bg-1 ph2 ph5-ns pv5">
-        <div class="mv8">
-            <div class="center tc">
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
-                            <i class="fa fa-dribbble"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
-                            <i class="fa fa-behance"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
-                            <i class="fa fa-500px"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
-                            <i class="fa fa-rss"></i>
-                        </a>
-                    </div>
-                
-            </div>
-            <div class="f6 f5-ns center tc white pt5 fw3">
-                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
-            </div>
-        </div>
-    </div>
-
-<!-- After Footer -->
-<!-- Disqus Comments -->
-
-
-
-</body>
-
-</html>
+    if page.comments
+      include _partial/comments.pug

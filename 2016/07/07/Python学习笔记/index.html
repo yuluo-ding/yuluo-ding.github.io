@@ -1,312 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+extends base
 
-<!-- Head tag -->
-<head>
+block title
+  title= page.title + ' | ' + config.title
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+block content
+  .post
+    h1.post-title= page.title
+    .post-meta= page.date.format('ll')
+      if page.categories.length > 0
+        span= ' | '
+        span.category
+          for category in page.categories.toArray()
+            a(href=url_for(category.path))= category.name
+      if theme.busuanzi == true
+        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
+        span#busuanzi_container_page_pv= ' | '
+          span#busuanzi_value_page_pv
+          span= ' ' + __('Hits')
+    if theme.disqus
+      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
+    if theme.changyan
+      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
+        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
+        span= ' ' + __('Comment')
+      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
+    if theme.valine.enable
+      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
+        span.valine-comment-count(data-xid=url_for(page.path))
+        span 条评论
+    if page.toc
+      div(class='clear')
+        div(id='toc' class='toc-article')
+          div(class='toc-title')= __('contents')
+          != toc(page.content, {list_number: theme.toc_number})
+    .post-content
+      != page.content
+    if theme.donate.enable == true
+      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
+    if theme.shareto == true
+      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
+      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
 
-    <!--Description-->
-    
-        <meta name="description" content="The home of yuluo!">
-    
+    include _partial/tag.pug
+    include _partial/post_nav.pug
 
-    <!--Author-->
-    
-        <meta name="author" content="Luo Yu">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="Python学习笔记"/>
-    
-
-    <!--Open Graph Description-->
-    
-        <meta property="og:description" content="The home of yuluo!" />
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="yuluo"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Python学习笔记 - yuluo</title>
-
-    <!-- Tachyons Core CSS -->
-    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Google Analytics -->
-    
-
-
-</head>
-
-
-<body>
-
-<!-- Main Content -->
-<!-- Banner -->
-<!-- Banner -->
-<div class="w-100 bg-1 ph5-ns ph3 text-light">
-    
-    <nav class="db dt-l w-100 mw8 center border-box pv3">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="yuluo">
-            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="yuluo">
-        </a>
-        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
-            
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
-                    href="/" 
-                    title="Home">
-                    Home
-                </a>
-            
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
-                    href="/archives" 
-                    title="Archives">
-                    Archives
-                </a>
-            
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
-                    href="/about.html" 
-                    title="About">
-                    About
-                </a>
-            
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
-                    href="/contact.html" 
-                    title="Contact">
-                    Contact
-                </a>
-            
-        </div>
-    </nav>
-
-    <!-- Title -->
-    <div class="w-100 mw8 center vh-40 dt">
-        <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Python学习笔记</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2016-07-07</p>
-        </div>
-    </div>
-
-    <!-- Icon -->
-    <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fa fa-file-text-o"></i>
-    </div>
-</div>
-
-<!-- Content -->
-<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
-    <div class="content">
-        <div class="mw8 center">
-            <div class="cf">
-                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
-                    <!-- Tags Vertical -->
-                    
-
-                    <!-- Main Post Content -->
-                    <h4 id="Python学习笔记">Python学习笔记</h4><a id="more"></a>
-<h5 id="1、IndentationError:_unexpected_indent你就要知道python编译器是在告诉你“Hi，老兄，你的文件里格式不对了，可能是tab和空格没对齐的问题，你需要检查下tab和空格了”。">1、IndentationError: unexpected indent你就要知道python编译器是在告诉你“Hi，老兄，你的文件里格式不对了，可能是tab和空格没对齐的问题，你需要检查下tab和空格了”。</h5><h5 id="2、Python_的stat_模块">2、Python 的stat 模块</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-- encoding:UTF-8 --</span></span><br><span class="line"><span class="keyword">import</span> os,time,stat</span><br><span class="line">fileStats = os.stat ( <span class="string">'test.txt'</span> )                         <span class="comment">#获取文件/目录的状态</span></span><br><span class="line">fileInfo = &#123;</span><br><span class="line"><span class="string">'Size'</span>:fileStats [ stat.ST_SIZE ],                         <span class="comment">#获取文件大小</span></span><br><span class="line"><span class="string">'LastModified'</span>:time.ctime( fileStats [ stat.ST_MTIME ] ),  <span class="comment">#获取文件最后修改时间</span></span><br><span class="line"><span class="string">'LastAccessed'</span>:time.ctime( fileStats [ stat.ST_ATIME ] ),  <span class="comment">#获取文件最后访问时间</span></span><br><span class="line"><span class="string">'CreationTime'</span>:time.ctime( fileStats [ stat.ST_CTIME ] ),  <span class="comment">#获取文件创建时间</span></span><br><span class="line"><span class="string">'Mode'</span>:fileStats [ stat.ST_MODE ]                          <span class="comment">#获取文件的模式</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#print fileInfo</span></span><br><span class="line"><span class="keyword">for</span> field <span class="keyword">in</span> fileInfo:                                     <span class="comment">#显示对象内容</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'%s:%s'</span> % (field,fileInfo[field])</span><br><span class="line"><span class="keyword">for</span> infoField,infoValue <span class="keyword">in</span> fileInfo:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'%s:%s'</span> % (infoField,infoValue)</span><br><span class="line"><span class="keyword">if</span> stat.S_ISDIR ( fileStats [ stat.ST_MODE ] ):           <span class="comment">#判断是否路径</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Directory. '</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Non-directory.'</span></span><br><span class="line"><span class="keyword">if</span> stat.S_ISREG( fileStats [ stat.ST_MODE ] ):           <span class="comment">#判断是否一般文件</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Regular file.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISLNK ( fileStats [ stat.ST_MODE ] ):         <span class="comment">#判断是否链接文件</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Shortcut.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISSOCK ( fileStats [ stat.ST_MODE ] ):        <span class="comment">#判断是否套接字文件    </span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Socket.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISFIFO ( fileStats [ stat.ST_MODE ] ):        <span class="comment">#判断是否命名管道</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Named pipe.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISBLK ( fileStats [ stat.ST_MODE ] ):         <span class="comment">#判断是否块设备</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Block special device.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISCHR ( fileStats [ stat.ST_MODE ] ):         <span class="comment">#判断是否字符设置</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Character special device.'</span></span><br></pre></td></tr></table></figure>
-<p>   stat模块描述了os.stat(filename)返回的文件属性列表中各值的意义.我们可方便地根据stat模块存取os.stat()中的值.</p>
-<p>os.stat(path)执行一个stat()系统调用在给定的path上，返回一个类元组对象(stat_result对象,包含10个元素),属性与stat结构成员相关:st_mode(权限模式),st_ino(inode number),st_dev(device),st_nlink(number of hard links),st_uid(所有用户的user id),st_gid(所有用户的group id),st_size(文件大小，以位为单位)，st_atime(最近访问的时间),st_mtime(最近修改的时间),st_ctime(创建的时间)</p>
-<h5 id="3、Python信号处理模块signal">3、Python信号处理模块signal</h5><p>Python中对信号处理的模块主要是使用signal模块，但signal主要是针对Unix系统，所以在Windows平台上Python不能很好的发挥信号处理的功能。</p>
-<p>要查看Python中的信号量，可以使用dir(signal)来查看。</p>
-<p>在signal模块中，主要是使用signal.signal()函数来预设信号处理函数</p>
-<p>singnal.signal(signalnum, handler)</p>
-<p>其中第一个参数是信号量，第二个参数信号处理函数。</p>
-<p>下面看个简单的例子，其中</p>
-<ul>
-<li>定义了一个信号处理函数signal_handler()，用来处理程序接收到信号时执行的操作</li>
-<li>一段循环等待发送信号<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> signal</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">signal_handler</span><span class="params">(signum, frame)</span>:</span></span><br><span class="line">    print(<span class="string">'Received signal: '</span>, signum)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    signal.signal(signal.SIGHUP, signal_handler) <span class="comment"># 1</span></span><br><span class="line">    signal.signal(signal.SIGINT, signal_handler) <span class="comment"># 2</span></span><br><span class="line">    signal.signal(signal.SIGQUIT, signal_handler) <span class="comment"># 3</span></span><br><span class="line">    signal.signal(signal.SIGALRM, signal_handler) <span class="comment"># 14</span></span><br><span class="line">    signal.signal(signal.SIGTERM, signal_handler) <span class="comment"># 15</span></span><br><span class="line">    signal.signal(signal.SIGCONT, signal_handler) <span class="comment"># 18</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        print(<span class="string">'waiting'</span>)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>运行上面的程序</p>
-<p>python test.py</p>
-<p>然后另外开一个终端，找到对应的进程，并执行下面的kill操作<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">kill <span class="number">-1</span> &lt;pid&gt;</span><br><span class="line">kill <span class="number">-2</span> &lt;pid&gt;</span><br><span class="line">kill <span class="number">-3</span> &lt;pid&gt;</span><br><span class="line">kill <span class="number">-14</span> &lt;pid&gt;</span><br><span class="line">kill <span class="number">-15</span> &lt;pid&gt;</span><br><span class="line">kill <span class="number">-18</span> &lt;pid&gt;</span><br><span class="line">kill <span class="number">-9</span> &lt;pid&gt; <span class="comment"># 最后杀死进程</span></span><br></pre></td></tr></table></figure></p>
-<p>此时可以看到test.py的输出，打印的就是具体接收到的信号。</p>
-<p>这里注意一点就是程序中注册了SIGINT信号，所以在运行程序后使用CTRL+C并不能结束进程，而是仍然打印进程接收到的信号。</p>
-<p>signal.alarm()</p>
-<p>另外，signal模块提供了一个很有用的函数signal.alarm()，它用于在一定时间后向进程自身发送SIGALRM信号，比如下面的例子设置5秒后向自己发送一个SIGALRM信号。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> signal</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">signal_handler</span><span class="params">(signum, frame)</span>:</span></span><br><span class="line">    print(<span class="string">'Received signal: '</span>, signum)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    signal.signal(signal.SIGALRM, signal_handler) <span class="comment"># 14</span></span><br><span class="line">    signal.alarm(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        print(<span class="string">'waiting'</span>)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
-<h5 id="4、python_os-path模块">4、python os.path模块</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">os.path.abspath(path) <span class="comment">#返回绝对路径</span></span><br><span class="line">os.path.basename(path) <span class="comment">#返回文件名</span></span><br><span class="line">os.path.commonprefix(list) <span class="comment">#返回list(多个路径)中，所有path共有的最长的路径。</span></span><br><span class="line">os.path.dirname(path) <span class="comment">#返回文件路径</span></span><br><span class="line">os.path.exists(path)  <span class="comment">#路径存在则返回True,路径损坏返回False</span></span><br><span class="line">os.path.lexists  <span class="comment">#路径存在则返回True,路径损坏也返回True</span></span><br><span class="line">os.path.expanduser(path)  <span class="comment">#把path中包含的"~"和"~user"转换成用户目录</span></span><br><span class="line">os.path.expandvars(path)  <span class="comment">#根据环境变量的值替换path中包含的”$name”和”$&#123;name&#125;”</span></span><br><span class="line">os.path.getatime(path)  <span class="comment">#返回最后一次进入此path的时间。</span></span><br><span class="line">os.path.getmtime(path)  <span class="comment">#返回在此path下最后一次修改的时间。</span></span><br><span class="line">os.path.getctime(path)  <span class="comment">#返回path的大小</span></span><br><span class="line">os.path.getsize(path)  <span class="comment">#返回文件大小，如果文件不存在就返回错误</span></span><br><span class="line">os.path.isabs(path)  <span class="comment">#判断是否为绝对路径</span></span><br><span class="line">os.path.isfile(path)  <span class="comment">#判断路径是否为文件</span></span><br><span class="line">os.path.isdir(path)  <span class="comment">#判断路径是否为目录</span></span><br><span class="line">os.path.islink(path)  <span class="comment">#判断路径是否为链接</span></span><br><span class="line">os.path.ismount(path)  <span class="comment">#判断路径是否为挂载点（）</span></span><br><span class="line">os.path.join(path1[, path2[, ...]])  <span class="comment">#把目录和文件名合成一个路径</span></span><br><span class="line">os.path.normcase(path)  <span class="comment">#转换path的大小写和斜杠</span></span><br><span class="line">os.path.normpath(path)  <span class="comment">#规范path字符串形式</span></span><br><span class="line">os.path.realpath(path)  <span class="comment">#返回path的真实路径</span></span><br><span class="line">os.path.relpath(path[, start])  <span class="comment">#从start开始计算相对路径</span></span><br><span class="line">os.path.samefile(path1, path2)  <span class="comment">#判断目录或文件是否相同</span></span><br><span class="line">os.path.sameopenfile(fp1, fp2)  <span class="comment">#判断fp1和fp2是否指向同一文件</span></span><br><span class="line">os.path.samestat(stat1, stat2)  <span class="comment">#判断stat tuple stat1和stat2是否指向同一个文件</span></span><br><span class="line">os.path.split(path)  <span class="comment">#把路径分割成dirname和basename，返回一个元组</span></span><br><span class="line">os.path.splitdrive(path)   <span class="comment">#一般用在windows下，返回驱动器名和路径组成的元组</span></span><br><span class="line">os.path.splitext(path)  <span class="comment">#分割路径，返回路径名和文件扩展名的元组</span></span><br><span class="line">os.path.splitunc(path)  <span class="comment">#把路径分割为加载点与文件</span></span><br><span class="line">os.path.walk(path, visit, arg)  <span class="comment">#遍历path，进入每个目录都调用visit函数，visit函数必须有</span></span><br><span class="line"><span class="number">3</span>个参数(arg, dirname, names)，dirname表示当前目录的目录名，names代表当前目录下的所有</span><br><span class="line">文件名，args则为walk的第三个参数</span><br><span class="line">os.path.supports_unicode_filenames  <span class="comment">#设置是否支持unicode路径名</span></span><br></pre></td></tr></table></figure>
-<h5 id="5、typeerror_‘builtinfunctionor_method’_object_has_no_attribute_‘__getitem‘">5、typeerror ‘builtin<em>function<em>or_method’ object has no attribute ‘__getitem</em></em>‘</h5><p>是因为把<code>path.append(py)</code>写成了<code>path.append[py]</code></p>
-<h5 id="6、将列表写入文本">6、将列表写入文本</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list = [<span class="string">'foo'</span>, <span class="string">'bar'</span>]</span><br><span class="line">list.append(<span class="string">"item"</span>)</span><br><span class="line">fl=open(<span class="string">'list.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list:</span><br><span class="line">   	fl.write(i)</span><br><span class="line">   	fl.write(<span class="string">"\n"</span>)</span><br><span class="line">fl.close()</span><br></pre></td></tr></table></figure>
-<h5 id="7、判断文件或者文件夹是否u你在">7、判断文件或者文件夹是否u你在</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os </span><br><span class="line">os.path.isfile(<span class="string">'test.txt'</span>) <span class="comment">#如果不存在就返回False </span></span><br><span class="line">os.path.exists(directory) <span class="comment">#如果目录不存在就返回False</span></span><br></pre></td></tr></table></figure>
-<h5 id="8、在用json-load()判断文件格式是否错误的时候，出现ValueError:_No_JSON_object_could_be_decoded">8、在用json.load()判断文件格式是否错误的时候，出现<code>ValueError: No JSON object could be decoded</code></h5><p>这个是由于json文件的闭合部分后面不能有<code>,</code><br>对于列表最后，添加上一个逗号，对于本身Python中的语法，是允许的,<br>对于其他语言，比如C语言，是允许的,<br>但是,在Python 2.7.3中的json库中，是不支持的。</p>
-
-                    
-                    <!-- Tags Bottom -->
-                    
-
-                    <!-- Comments -->
-                    
-
-
-
-                </div>
-                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
-                    
-                    <hr class="dn-l mw4 black-50 mt5" />
-                    
-                    <!-- Widget 1: About -->
-                    <div class="mt5 mt0-l">
-    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
-        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
-            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Luo Yu">
-        </div>
-        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
-        </div>
-    </article>
-</div>
-
-                    <hr class="dn-l mw4 black-50 mt5" />
-                    
-                    <!-- Widget 2: Categories -->
-                    
-                        <div class="mt5 tc tl-l">
-    <h3>Categories</h3>
-    
-        <p>
-            <a href="/categories/Python/">Python</a>
-        </p>
-    
-</div>
-
-
-                        <hr class="dn-l mw4 black-50 mt5" />
-                    
-
-                    <!-- Widget 3: Recent Posts -->
-                    <div class="mt5 tc tl-l">
-    <h3>Recent Posts</h3>
-    
-        <p>
-            <a href="/2017/12/05/Git配置不同项目的不同账号/">Git配置不同项目的不同账号</a>
-        </p>
-    
-        <p>
-            <a href="/2017/11/13/Python的最大递归深度错误/">Python的最大递归深度错误</a>
-        </p>
-    
-        <p>
-            <a href="/2017/11/12/Ubuntu安装-redis，并后台运行/">Ubuntu安装 redis，并后台运行</a>
-        </p>
-    
-        <p>
-            <a href="/2017/11/01/Linux-下后台运行Python脚本/">Linux 下后台运行Python脚本</a>
-        </p>
-    
-        <p>
-            <a href="/2017/10/30/Python-ConfigParser模块常用方法示例/">Python ConfigParser模块常用方法示例</a>
-        </p>
-    
-</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Footer -->
-<div class="bg-1 ph2 ph5-ns pv5">
-        <div class="mv8">
-            <div class="center tc">
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
-                            <i class="fa fa-dribbble"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
-                            <i class="fa fa-behance"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
-                            <i class="fa fa-500px"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </div>
-                
-                    <div class="dib mh3">
-                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
-                            <i class="fa fa-rss"></i>
-                        </a>
-                    </div>
-                
-            </div>
-            <div class="f6 f5-ns center tc white pt5 fw3">
-                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
-            </div>
-        </div>
-    </div>
-
-<!-- After Footer -->
-<!-- Disqus Comments -->
-
-
-
-</body>
-
-</html>
+    if page.comments
+      include _partial/comments.pug
