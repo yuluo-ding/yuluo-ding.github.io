@@ -1,4 +1,171 @@
-<!DOCTYPE html><html lang="default"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="The home of yuluo!"><title>Python学习笔记 | yuluo</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Python学习笔记</h1><a id="logo" href="/.">yuluo</a><p class="description">The home of yuluo!</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Inicio</i></a><a href="/archives/"><i class="fa fa-archive"> Archivo</i></a><a href="/about/"><i class="fa fa-user"> Acerca de</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Python学习笔记</h1><div class="post-meta">Jul 7, 2016<span> | </span><span class="category"><a href="/categories/Python/">Python</a></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">Contenidos</div><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python学习笔记"><span class="toc-number">1.</span> <span class="toc-text">Python&#x5B66;&#x4E60;&#x7B14;&#x8BB0;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、IndentationError:_unexpected_indent你就要知道python编译器是在告诉你“Hi，老兄，你的文件里格式不对了，可能是tab和空格没对齐的问题，你需要检查下tab和空格了”。"><span class="toc-number">1.1.</span> <span class="toc-text">1&#x3001;IndentationError: unexpected indent&#x4F60;&#x5C31;&#x8981;&#x77E5;&#x9053;python&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x5728;&#x544A;&#x8BC9;&#x4F60;&#x201C;Hi&#xFF0C;&#x8001;&#x5144;&#xFF0C;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x91CC;&#x683C;&#x5F0F;&#x4E0D;&#x5BF9;&#x4E86;&#xFF0C;&#x53EF;&#x80FD;&#x662F;tab&#x548C;&#x7A7A;&#x683C;&#x6CA1;&#x5BF9;&#x9F50;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x68C0;&#x67E5;&#x4E0B;tab&#x548C;&#x7A7A;&#x683C;&#x4E86;&#x201D;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、Python_的stat_模块"><span class="toc-number">1.2.</span> <span class="toc-text">2&#x3001;Python &#x7684;stat &#x6A21;&#x5757;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、Python信号处理模块signal"><span class="toc-number">1.3.</span> <span class="toc-text">3&#x3001;Python&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x6A21;&#x5757;signal</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、python_os-path模块"><span class="toc-number">1.4.</span> <span class="toc-text">4&#x3001;python os.path&#x6A21;&#x5757;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、typeerror_‘builtinfunctionor_method’_object_has_no_attribute_‘__getitem‘"><span class="toc-number">1.5.</span> <span class="toc-text">5&#x3001;typeerror &#x2018;builtin<em>function<em>or_method&#x2019; object has no attribute &#x2018;__getitem</em></em>&#x2018;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6、将列表写入文本"><span class="toc-number">1.6.</span> <span class="toc-text">6&#x3001;&#x5C06;&#x5217;&#x8868;&#x5199;&#x5165;&#x6587;&#x672C;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7、判断文件或者文件夹是否u你在"><span class="toc-number">1.7.</span> <span class="toc-text">7&#x3001;&#x5224;&#x65AD;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x6587;&#x4EF6;&#x5939;&#x662F;&#x5426;u&#x4F60;&#x5728;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8、在用json-load()判断文件格式是否错误的时候，出现ValueError:_No_JSON_object_could_be_decoded"><span class="toc-number">1.8.</span> <span class="toc-text">8&#x3001;&#x5728;&#x7528;json.load()&#x5224;&#x65AD;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x662F;&#x5426;&#x9519;&#x8BEF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x51FA;&#x73B0;<code>ValueError: No JSON object could be decoded</code></span></a></li></ol></li></ol></div></div><div class="post-content"><h4 id="Python学习笔记">Python学习笔记</h4><a id="more"></a>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="yuluo-ding.github.io">
+    <!--SEO-->
+
+<meta name="description" content="The home of yuluo!"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>Python学习笔记 | yuluo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css?rev=9.12.0">
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <div class="hide">
+    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
+    </div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="">
+            <img src="/img/avatar.jpg" alt="logo头像">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题">  
+             
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Python学习笔记">
+            
+            Python学习笔记
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <span>Python</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            null
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">2016/07/07</span>
+    </span>
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>537</strong>天之前发表，文中内容可能已经过时。
+            </p>
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h4 id="Python学习笔记">Python学习笔记</h4><a id="more"></a>
 <h5 id="1、IndentationError:_unexpected_indent你就要知道python编译器是在告诉你“Hi，老兄，你的文件里格式不对了，可能是tab和空格没对齐的问题，你需要检查下tab和空格了”。">1、IndentationError: unexpected indent你就要知道python编译器是在告诉你“Hi，老兄，你的文件里格式不对了，可能是tab和空格没对齐的问题，你需要检查下tab和空格了”。</h5><h5 id="2、Python_的stat_模块">2、Python 的stat 模块</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-- encoding:UTF-8 --</span></span><br><span class="line"><span class="keyword">import</span> os,time,stat</span><br><span class="line">fileStats = os.stat ( <span class="string">'test.txt'</span> )                         <span class="comment">#获取文件/目录的状态</span></span><br><span class="line">fileInfo = &#123;</span><br><span class="line"><span class="string">'Size'</span>:fileStats [ stat.ST_SIZE ],                         <span class="comment">#获取文件大小</span></span><br><span class="line"><span class="string">'LastModified'</span>:time.ctime( fileStats [ stat.ST_MTIME ] ),  <span class="comment">#获取文件最后修改时间</span></span><br><span class="line"><span class="string">'LastAccessed'</span>:time.ctime( fileStats [ stat.ST_ATIME ] ),  <span class="comment">#获取文件最后访问时间</span></span><br><span class="line"><span class="string">'CreationTime'</span>:time.ctime( fileStats [ stat.ST_CTIME ] ),  <span class="comment">#获取文件创建时间</span></span><br><span class="line"><span class="string">'Mode'</span>:fileStats [ stat.ST_MODE ]                          <span class="comment">#获取文件的模式</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#print fileInfo</span></span><br><span class="line"><span class="keyword">for</span> field <span class="keyword">in</span> fileInfo:                                     <span class="comment">#显示对象内容</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'%s:%s'</span> % (field,fileInfo[field])</span><br><span class="line"><span class="keyword">for</span> infoField,infoValue <span class="keyword">in</span> fileInfo:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'%s:%s'</span> % (infoField,infoValue)</span><br><span class="line"><span class="keyword">if</span> stat.S_ISDIR ( fileStats [ stat.ST_MODE ] ):           <span class="comment">#判断是否路径</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Directory. '</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Non-directory.'</span></span><br><span class="line"><span class="keyword">if</span> stat.S_ISREG( fileStats [ stat.ST_MODE ] ):           <span class="comment">#判断是否一般文件</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Regular file.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISLNK ( fileStats [ stat.ST_MODE ] ):         <span class="comment">#判断是否链接文件</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Shortcut.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISSOCK ( fileStats [ stat.ST_MODE ] ):        <span class="comment">#判断是否套接字文件    </span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Socket.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISFIFO ( fileStats [ stat.ST_MODE ] ):        <span class="comment">#判断是否命名管道</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Named pipe.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISBLK ( fileStats [ stat.ST_MODE ] ):         <span class="comment">#判断是否块设备</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Block special device.'</span></span><br><span class="line"><span class="keyword">elif</span> stat.S_ISCHR ( fileStats [ stat.ST_MODE ] ):         <span class="comment">#判断是否字符设置</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">'Character special device.'</span></span><br></pre></td></tr></table></figure>
 <p>   stat模块描述了os.stat(filename)返回的文件属性列表中各值的意义.我们可方便地根据stat模块存取os.stat()中的值.</p>
 <p>os.stat(path)执行一个stat()系统调用在给定的path上，返回一个类元组对象(stat_result对象,包含10个元素),属性与stat结构成员相关:st_mode(权限模式),st_ino(inode number),st_dev(device),st_nlink(number of hard links),st_uid(所有用户的user id),st_gid(所有用户的group id),st_size(文件大小，以位为单位)，st_atime(最近访问的时间),st_mtime(最近修改的时间),st_ctime(创建的时间)</p>
@@ -25,4 +192,203 @@
 <h5 id="6、将列表写入文本">6、将列表写入文本</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list = [<span class="string">'foo'</span>, <span class="string">'bar'</span>]</span><br><span class="line">list.append(<span class="string">"item"</span>)</span><br><span class="line">fl=open(<span class="string">'list.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list:</span><br><span class="line">   	fl.write(i)</span><br><span class="line">   	fl.write(<span class="string">"\n"</span>)</span><br><span class="line">fl.close()</span><br></pre></td></tr></table></figure>
 <h5 id="7、判断文件或者文件夹是否u你在">7、判断文件或者文件夹是否u你在</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os </span><br><span class="line">os.path.isfile(<span class="string">'test.txt'</span>) <span class="comment">#如果不存在就返回False </span></span><br><span class="line">os.path.exists(directory) <span class="comment">#如果目录不存在就返回False</span></span><br></pre></td></tr></table></figure>
 <h5 id="8、在用json-load()判断文件格式是否错误的时候，出现ValueError:_No_JSON_object_could_be_decoded">8、在用json.load()判断文件格式是否错误的时候，出现<code>ValueError: No JSON object could be decoded</code></h5><p>这个是由于json文件的闭合部分后面不能有<code>,</code><br>对于列表最后，添加上一个逗号，对于本身Python中的语法，是允许的,<br>对于其他语言，比如C语言，是允许的,<br>但是,在Python 2.7.3中的json库中，是不支持的。</p>
-</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2016/08/01/Xshell连接Ubuntu/">Xshell连接Ubuntu</a><a class="next" href="/2016/06/24/VMware无法打开/">VMware无法打开</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="yuluo-ding.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categorías</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/">Android Studio</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/">Google</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regex/">Regex</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/">Soft</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/">Study Class</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/">Xposed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/">hexo教程</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Etiquetas</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recientes</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/Git配置不同项目的不同账号/">Git配置不同项目的不同账号</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/13/Python的最大递归深度错误/">Python的最大递归深度错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/12/Ubuntu安装-redis，并后台运行/">Ubuntu安装 redis，并后台运行</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/01/Linux-下后台运行Python脚本/">Linux 下后台运行Python脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/Python-ConfigParser模块常用方法示例/">Python ConfigParser模块常用方法示例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/19/Linux-下安装-zsh/">Linux 下安装 zsh</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/Android-O的感叹号或者叉-怎么去掉呢/">Android O的感叹号或者叉 怎么去掉呢</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/最新手机号码正则表达式/">最新手机号码正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/Ubuntu中vi使用方向键与退格键乱码问题/">Ubuntu中vi使用方向键与退格键乱码问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/01/Linux-下的五个查找命令/">Linux 下的五个查找命令</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">yuluo.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+    </div>
+
+    <div class="post-footer">   
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>  
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2016/08/01/Xshell连接Ubuntu/" class="pre-post btn btn-default"><i class="fa fa-angle-left fa-fw"></i>上一篇</a>
+    
+    
+        <a href="/2016/06/24/VMware无法打开/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1966422"></script>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">    
+        <h3 class="title">Search</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢?">
+                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget notification">
+        <h3 class="title">网站公告</h3>
+        <div>
+            <p>主题Snippet v1.2.0版本已经上线！欢迎更新~ <br/>
+主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
+<hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+</p>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">Social</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/shenliyang" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
+			    	<i class="qq fa fa-qq"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="微博" target="_blank">
+			    	<i class="weibo fa fa-weibo"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="QQ群" target="_blank">
+			    	<i class="users fa fa-users"></i>
+			    </a>
+            
+	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
+			    	<i class="feed fa fa-feed"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Categories</h3>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/"><i class="fa" aria-hidden="true">Android</i></a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Studio/"><i class="fa" aria-hidden="true">Android Studio</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/"><i class="fa" aria-hidden="true">Apple</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/"><i class="fa" aria-hidden="true">GIT</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/"><i class="fa" aria-hidden="true">Github</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Google/"><i class="fa" aria-hidden="true">Google</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/"><i class="fa" aria-hidden="true">HTTP</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/"><i class="fa" aria-hidden="true">Java</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/"><i class="fa" aria-hidden="true">Life</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/"><i class="fa" aria-hidden="true">Linux</i></a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/"><i class="fa" aria-hidden="true">Python</i></a><span class="category-list-count">36</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regex/"><i class="fa" aria-hidden="true">Regex</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Soft/"><i class="fa" aria-hidden="true">Soft</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Class/"><i class="fa" aria-hidden="true">Study Class</i></a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/"><i class="fa" aria-hidden="true">Tools</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xposed/"><i class="fa" aria-hidden="true">Xposed</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo教程/"><i class="fa" aria-hidden="true">hexo教程</i></a><span class="category-list-count">8</span></li></ul>
+    </div>
+
+
+        
+        
+    <div class="widget">
+      <h3 class="title">Archives</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/"><i class="fa" aria-hidden="true">December 2017</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/"><i class="fa" aria-hidden="true">November 2017</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">October 2017</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">September 2017</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/"><i class="fa" aria-hidden="true">August 2017</i></a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">July 2017</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">June 2017</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">May 2017</i></a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">April 2017</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">March 2017</i></a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">February 2017</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">January 2017</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">December 2016</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">November 2016</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/"><i class="fa" aria-hidden="true">October 2016</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/"><i class="fa" aria-hidden="true">September 2016</i></a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/"><i class="fa" aria-hidden="true">August 2016</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/"><i class="fa" aria-hidden="true">July 2016</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/"><i class="fa" aria-hidden="true">June 2016</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/"><i class="fa" aria-hidden="true">April 2016</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/"><i class="fa" aria-hidden="true">February 2016</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/"><i class="fa" aria-hidden="true">January 2016</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/"><i class="fa" aria-hidden="true">December 2015</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/"><i class="fa" aria-hidden="true">November 2015</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/"><i class="fa" aria-hidden="true">October 2015</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/"><i class="fa" aria-hidden="true">September 2015</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/"><i class="fa" aria-hidden="true">August 2015</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/"><i class="fa" aria-hidden="true">July 2015</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/"><i class="fa" aria-hidden="true">June 2015</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">May 2015</i></a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/"><i class="fa" aria-hidden="true">April 2015</i></a><span class="archive-list-count">6</span></li></ul>
+    </div>
+
+
+        
+        
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Friends</h3>
+        <div class="content friends-link">
+        
+            <a href="http://www.shenliyang.com" class="fa" target="_blank">个人博客</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
+
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
