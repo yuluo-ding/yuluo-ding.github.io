@@ -26,7 +26,7 @@
     <!--Title-->
 
 
-<title>Xshell连接Ubuntu | yuluo</title>
+<title>解决MySQL中文乱码方法 | yuluo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
@@ -126,9 +126,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Xshell连接Ubuntu">
+        <h1 id="解决MySQL中文乱码方法">
             
-            Xshell连接Ubuntu
+            解决MySQL中文乱码方法
             
         </h1>
         <div class="post-meta">
@@ -136,7 +136,7 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Soft</span>
+        <span>Linux</span>
     </span>
     
     
@@ -152,27 +152,34 @@
     
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/08/01</span>
+        <span class="date-meta">2018/01/31</span>
     </span>
 </div>
 
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>547</strong>天之前发表，文中内容可能已经过时。
-            </p>
-            
     </div>
     
     <div class="post-body post-content">
-        <p>Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：<br><a id="more"></a><br>Xshell连接VM内的Ubuntu16</p>
-<pre><code><span class="keyword">Xshell</span> 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。<span class="keyword">Xshell</span> 通过互联网到远程主机的安全连接以及它创新性的设计和特色帮助用户在复杂的网络环境中享受他们的工作。
-
-但是在用SSH连接的时候会发现连接不上，其实这是由于Ubuntu默认不安装openssh服务导致的，
-</code></pre><p>所以若要使用ssh远程登录Ubuntu主机，首先需要安装ssh服务器。</p>
-<p>首先，判断Ubuntu是否安装了ssh服务：</p>
-<p>首先，判断Ubuntu是否安装了ssh服务：<br>1、输入：#ps -e | grep ssh 如果服务已经启动，则可以看到“sshd”，否则表示没有安装服务，或没有开机启动<br>2、安装ssh服务，输入命令：<code>#sudo apt-get install openssh-server</code><br>3、启动服务:<code>#/etc/init.d/ssh start</code><br>4、本机测试是否能够成功登录：#ssh -l 用户名 本机ip<br>5、用远程工具进行远程连接，若拒接访问，则关闭防火墙或允许22端口，参考如下。</p>
-<p>桥接模式可以使路由器使用DHCP的方式分配IP，如果你的电脑所处的网络拓扑中没有路由器的话也是ping不通的。如果有路由器，因为防火墙导致无法连接，可以使用  <code>sudo ufw disable</code> 命令禁用防火墙。或者在防火墙开启的情况下开放22端口命令是 <code>sudo ufw allow 22</code></p>
+        <p>MySQL会出现中文乱码的原因一般为以下几点：</p>
+<ol>
+<li>server本身设定问题，例如还停留在latin1</li>
+<li>table的语系设定问题(包含character与collation)</li>
+<li>客户端程式(例如php)的连线语系设定问题</li>
+</ol>
+<a id="more"></a>
+<p>进入MySQL 查看当前的状态</p>
+<p><img src="https://i.loli.net/2018/01/31/5a717fd1b305a.png" alt="Snipaste_2018-01-31_16-34-46.png"></p>
+<p>默认的是客户端和服务器都用了latin1，所以会乱码。</p>
+<p>解决的方法就是MySQL的字符串修改为utf8.</p>
+<h3 id="第一种:">第一种:</h3><p>vim /etc/mysql/my.cnf 。<strong>(5.5以前系统)</strong></p>
+<p>在<strong>client</strong>下面加入 ‘default-character-set=utf8’</p>
+<p>在<strong>mysqld</strong>下面加入’default-character-set=utf8’</p>
+<p>Notice：注意 如果修改后不能启动报错试试把’default-character-set=utf8’改为’character_set_server=utf8’，仅仅加入到mysqld下面的.client就不需要加了</p>
+<h3 id="第二种:">第二种:</h3><p>vim /etc/mysql/my.cnf 。<strong>(5.5以后系统)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure>
+<p>五、重启MySQL</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/mysql stop   </span><br><span class="line">/etc/init.d/mysql start</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -190,10 +197,8 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2016/08/09/HTTP协议下的分段下载/" class="pre-post btn btn-default"><i class="fa fa-angle-left fa-fw"></i>上一篇</a>
     
-    
-        <a href="/2016/07/07/Python学习笔记/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+        <a href="/2018/01/19/Python批量删除特定后缀名的文件和目录/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
     
 </div>
 
