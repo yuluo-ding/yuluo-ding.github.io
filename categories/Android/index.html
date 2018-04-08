@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Android 
-
+    
+        Android 
+    
 </h3>
 
     <article class="post">
@@ -141,9 +149,11 @@
                 </div>
             </div>
             <p class="brief">
-                ​    再用 Android Studio 编辑项目的时候，会出现如下错误。
+                
+                    ​    再用 Android Studio 编辑项目的时候，会出现如下错误。
 1java.lang.OutOfMemoryError: GC overhead limit exceeded
-​    根据 Sun 的描述：    1...
+​    根据 Sun 的描述：    1&quot;if too much time is being spent in garbage collection: if more than 98% of the total time is spent in garbage collection and less than 2% of the heap is recovered, an OutOfMemoryError will be thrown.&quot;…
+                
             </p> 
         </div>
     </article>
@@ -162,8 +172,10 @@
                 </div>
             </div>
             <p class="brief">
-                如何自学Android如何自学Android编程？
+                
+                    如何自学Android如何自学Android编程？
 
+                
             </p> 
         </div>
     </article>
@@ -182,12 +194,9 @@
                 </div>
             </div>
             <p class="brief">
-                Android 开发最佳实践这是Github上敢于Android开发的一些简要。
-Android 开发最佳实践
-摘要
-使用 Gradle 和它推荐的工程结构
-把密码和敏感数据放在gradle.properties
-不要自己写 HTTP...
+                
+                    Android 开发最佳实践这是Github上敢于Android开发的一些简要。…
+                
             </p> 
         </div>
     </article>
@@ -206,8 +215,10 @@ Android 开发最佳实践
                 </div>
             </div>
             <p class="brief">
-                Gson的使用Gson的使用
+                
+                    Gson的使用Gson的使用
 
+                
             </p> 
         </div>
     </article>
@@ -226,8 +237,10 @@ Android 开发最佳实践
                 </div>
             </div>
             <p class="brief">
-                Material Design中文版Material Design中文版
+                
+                    Material Design中文版Material Design中文版
 
+                
             </p> 
         </div>
     </article>
@@ -246,8 +259,10 @@ Android 开发最佳实践
                 </div>
             </div>
             <p class="brief">
-                Android6.0 新特性详解Android6.0 新特性详解
+                
+                    Android6.0 新特性详解Android6.0 新特性详解
 
+                
             </p> 
         </div>
     </article>
@@ -266,8 +281,9 @@ Android 开发最佳实践
                 </div>
             </div>
             <p class="brief">
-                Android中的Context解释
-Android系统的上下文对象，即在Context中，Activity、Service、Application都是继承自Context。Android应用程序会在如下所示的几个时间点创建应用上下文...
+                
+                    Android中的Context解释…
+                
             </p> 
         </div>
     </article>
@@ -286,12 +302,9 @@ Android系统的上下文对象，即在Context中，Activity、Service、Applic
                 </div>
             </div>
             <p class="brief">
-                Android 岗知识点清单
-如何自学Android编程？
-Java
-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？
-2.JDK和JRE的区别是什么？
-“static”关键字是什么意思？Java中是否可以覆盖(o...
+                
+                    Android 岗知识点清单…
+                
             </p> 
         </div>
     </article>
@@ -310,8 +323,9 @@ Java
                 </div>
             </div>
             <p class="brief">
-                ToolBar
-Android在5.0之后引入了toolbar来替换actionbar，增加其灵活性。在Android Studio新建工程之后，添加设计类库compile &#39;com.android.support:desig...
+                
+                    ToolBar…
+                
             </p> 
         </div>
     </article>
@@ -330,8 +344,9 @@ Android在5.0之后引入了toolbar来替换actionbar，增加其灵活性。在
                 </div>
             </div>
             <p class="brief">
-                使用Intent传递对象
-Intent可以用来启动活动、发送广播、启动服务等，也可以在Intent中添加一个附加数据。在FirtActivity中添加如下代码:1234Intent intent = new Intent(FirstA...
+                
+                    使用Intent传递对象…
+                
             </p> 
         </div>
     </article>
@@ -496,7 +511,6 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
         </div>
     </div>
 </div>
-
 
 
 

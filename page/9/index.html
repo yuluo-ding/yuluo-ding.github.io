@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -142,19 +150,22 @@
             </div>
         </div>
         <p class="brief">
-            Python删除文件和目录的方法os.remove(path)
-
-删除文件 path. 如果path是一个目录， 抛出 OSError错误。如果要删除目录，请使用rmdir().remove() 同 unlink() 的功能是一样的在...
-        </p> 
+            
+                Python删除文件和目录的方法os.remove(path)…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -162,24 +173,22 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/08/11</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/08/11/Python删除文件和目录的方法/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/08/11/Python删除文件和目录的方法/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -197,21 +206,22 @@
             </div>
         </div>
         <p class="brief">
-            Python显示当前时间可以用Pyhton提供的time模块来实现
-
-12import timeprint time.time()
-输出的结果是:1470817592.43
-但是这样是一连串的数字不是我们想要的结果，我们可以利用tim...
-        </p> 
+            
+                Python显示当前时间可以用Pyhton提供的time模块来实现…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -219,24 +229,22 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/08/10</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/08/10/Pyhton-显示时间/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/08/10/Pyhton-显示时间/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -254,18 +262,22 @@
             </div>
         </div>
         <p class="brief">
-            TCP层的分段和IP层的分片之间的关系
-数据报的分段和分片确实发生，分段发生在传输层，分片发生在网络层。但是对于分段来说，这是经常发生在UDP传输层协议上的情况，对于传输层使用TCP协议的通道来说，这种事情很少发生。1.    MTU...
-        </p> 
+            
+                TCP层的分段和IP层的分片之间的关系…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>HTTP</span>
+        <a href="/categories/HTTP">
+            HTTP
+        </a>
     </span>
     
     
@@ -273,24 +285,22 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/08/09</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/08/09/MUT和MSS的关系/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/08/09/MUT和MSS的关系/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -308,18 +318,22 @@
             </div>
         </div>
         <p class="brief">
-            在 HTTP 协议下分段下载文件
-假如一个文件有1000个字节，那么其范围就是0-999，则：Range: bytes=500- 表示读取该文件的500-999字节，共500字节。Range: bytes=500-599 表示读取该文...
-        </p> 
+            
+                在 HTTP 协议下分段下载文件…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>HTTP</span>
+        <a href="/categories/HTTP">
+            HTTP
+        </a>
     </span>
     
     
@@ -327,24 +341,22 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/08/09</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/08/09/HTTP协议下的分段下载/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/08/09/HTTP协议下的分段下载/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -362,18 +374,22 @@
             </div>
         </div>
         <p class="brief">
-            Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：Xshell连接VM内的Ubuntu16
-Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microso...
-        </p> 
+            
+                Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Soft</span>
+        <a href="/categories/Soft">
+            Soft
+        </a>
     </span>
     
     
@@ -381,24 +397,22 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/08/01</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/08/01/Xshell连接Ubuntu/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/08/01/Xshell连接Ubuntu/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -416,18 +430,22 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
             </div>
         </div>
         <p class="brief">
-            Python学习笔记
-1、IndentationError: unexpected indent你就要知道python编译器是在告诉你“Hi，老兄，你的文件里格式不对了，可能是tab和空格没对齐的问题，你需要检查下tab和空格了”。2...
-        </p> 
+            
+                Python学习笔记…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -435,24 +453,22 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/07/07</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/07/07/Python学习笔记/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/07/07/Python学习笔记/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -470,19 +486,22 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
             </div>
         </div>
         <p class="brief">
-            vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件按照以下步骤开启相应的服务就好
-
-1234567891011net start vmcinet start vmx86net start VMne...
-        </p> 
+            
+                vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件按照以下步骤开启相应的服务就好…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Tools</span>
+        <a href="/categories/Tools">
+            Tools
+        </a>
     </span>
     
     
@@ -490,24 +509,22 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/06/24</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/06/24/VMware无法打开/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/06/24/VMware无法打开/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -525,25 +542,22 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
             </div>
         </div>
         <p class="brief">
-            算法与数据结构算法与数据结构
-
-《Data structures》
-
-介绍：高级数据结构大全,基本算法：二叉树等
-
-《基于用户投票的排名算法（一）：Delicious和Hacker News》
-
-介绍：此外还有《基于用户投票的排名算法...
-        </p> 
+            
+                算法与数据结构算法与数据结构…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Study Class</span>
+        <a href="/categories/Study Class">
+            Study Class
+        </a>
     </span>
     
     
@@ -551,24 +565,22 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/04/04</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/04/04/算法和数据结构/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/04/04/算法和数据结构/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -586,19 +598,22 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
             </div>
         </div>
         <p class="brief">
-            Some Soft（SQL Server &amp; Visual Studio）1、MS SQL Server 2008 简体中文正式版下载地址(附序列号)
-
-Microsoft® SQL Server® 2008 Enterpri...
-        </p> 
+            
+                Some Soft（SQL Server &amp;amp; Visual Studio）1、MS SQL Server 2008 简体中文正式版下载地址(附序列号)…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Soft</span>
+        <a href="/categories/Soft">
+            Soft
+        </a>
     </span>
     
     
@@ -606,24 +621,22 @@ Microsoft® SQL Server® 2008 Enterpri...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/04/03</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/04/03/Soft/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/04/03/Soft/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -641,18 +654,23 @@ Microsoft® SQL Server® 2008 Enterpri...
             </div>
         </div>
         <p class="brief">
-            如何使用Android Studio把自己的Android library分发到jCenter和Maven Central把自己的lib上传到中央库
+            
+                如何使用Android Studio把自己的Android library分发到jCenter和Maven Central把自己的lib上传到中央库
 
-        </p> 
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Github</span>
+        <a href="/categories/Github">
+            Github
+        </a>
     </span>
     
     
@@ -660,24 +678,22 @@ Microsoft® SQL Server® 2008 Enterpri...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/02/25</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/02/25/把自己的lib上传到中央库/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/02/25/把自己的lib上传到中央库/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -836,7 +852,6 @@ Microsoft® SQL Server® 2008 Enterpri...
         </div>
     </div>
 </div>
-
 
 
 

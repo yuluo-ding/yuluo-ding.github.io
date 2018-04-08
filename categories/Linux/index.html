@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Linux 
-
+    
+        Linux 
+    
 </h3>
 
     <article class="post">
@@ -141,8 +149,10 @@
                 </div>
             </div>
             <p class="brief">
-                引用:fail2ban阻止SSH暴力破解
-​    fail2ban是由Python语言开发监控软件，通过监控系统日志的登录信息来调用iptables屏蔽相应登录IP，以阻止某个IP（fail2ban读对应日志文件，Debian/Ub...
+                
+                    引用:fail2ban阻止SSH暴力破解
+​    fail2ban是由Python语言开发监控软件，通过监控系统日志的登录信息来调用iptables屏蔽相应登录IP，以阻止某个IP（fail2ban读对应日志文件，Debian/Ubuntu:/var/log/auth.log、CentOS/Redhat:/var/log/secure）不停尝试密码。fail2ban在防御对SSH服务器的暴力密码破解上非常有用。经过网友强烈要求，已经集成到《OneinStack》…
+                
             </p> 
         </div>
     </article>
@@ -161,14 +171,14 @@
                 </div>
             </div>
             <p class="brief">
-                MySQL会出现中文乱码的原因一般为以下几点：
+                
+                    MySQL会出现中文乱码的原因一般为以下几点：
 
 server本身设定问题，例如还停留在latin1
 table的语系设定问题(包含character与collation)
 客户端程式(例如php)的连线语系设定问题
-
-
-进入MySQ...
+…
+                
             </p> 
         </div>
     </article>
@@ -187,12 +197,11 @@ table的语系设定问题(包含character与collation)
                 </div>
             </div>
             <p class="brief">
-                Ubuntu16.04 上安装运行 redis过程。
+                
+                    Ubuntu16.04 上安装运行 redis过程。
 安装：apt install reids 
-设置redis.conf
-
-vi /etc/redis/redis.conf
-默认情况下Redis不作为后台服务运行，这里设置为yes，...
+设置redis.conf…
+                
             </p> 
         </div>
     </article>
@@ -211,11 +220,11 @@ vi /etc/redis/redis.conf
                 </div>
             </div>
             <p class="brief">
-                如果要在Linux服务器端一直运行一个Python脚本，当然就想到了在命令后面加&amp;符号。
+                
+                    如果要在Linux服务器端一直运行一个Python脚本，当然就想到了在命令后面加&amp;amp;符号。
 例如：
-1$ python /data/python/server.py &gt;python.log &amp;
-
-​    1、 &...
+1$ python /data/python/server.py &amp;gt;python.log &amp;amp;…
+                
             </p> 
         </div>
     </article>
@@ -234,10 +243,10 @@ vi /etc/redis/redis.conf
                 </div>
             </div>
             <p class="brief">
-                Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。
-安装更新过程：
-
-1.     安装...
+                
+                    Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。
+安装更新过程：…
+                
             </p> 
         </div>
     </article>
@@ -256,13 +265,10 @@ vi /etc/redis/redis.conf
                 </div>
             </div>
             <p class="brief">
-                在Ubuntu中 使用方向键与退格键会出现ABCD等字母。
-主要有两个解决方法。
-
-方案一：
-可以安装vim full版本，在full版本下键盘正常，安装好后同样使用vi命令。
-安装vim：
-ubuntu预装的是vim tiny版本，...
+                
+                    在Ubuntu中 使用方向键与退格键会出现ABCD等字母。
+主要有两个解决方法。…
+                
             </p> 
         </div>
     </article>
@@ -281,12 +287,11 @@ ubuntu预装的是vim tiny版本，...
                 </div>
             </div>
             <p class="brief">
-                使用电脑的时候，经常需要查找文件。
+                
+                    使用电脑的时候，经常需要查找文件。
 在Linux中，有很多方法可以做到这一点。
-国外网站LinuxHaxor总结了五条命令，你可以看看自己知道几条。大多数程序员，可能经常使用其中的2到3条，对这5条命令都很熟悉的人应该是不多的。
-
-
-...
+国外网站LinuxHaxor总结了五条命令，你可以看看自己知道几条。大多数程序员，可能经常使用其中的2到3条，对这5条命令都很熟悉的人应该是不多的。…
+                
             </p> 
         </div>
     </article>
@@ -306,12 +311,10 @@ ubuntu预装的是vim tiny版本，...
             </div>
             <p class="brief">
                 
+                    
 yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。
-
-
-
-查看 yum 源仓库的 Git 信息：
-1# yu...
+…
+                
             </p> 
         </div>
     </article>
@@ -330,8 +333,10 @@ yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1�
                 </div>
             </div>
             <p class="brief">
-                Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。
-安装依赖：1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sq...
+                
+                    Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。
+安装依赖：1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel…
+                
             </p> 
         </div>
     </article>
@@ -350,7 +355,9 @@ yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1�
                 </div>
             </div>
             <p class="brief">
-                fail2ban 可以监视你的系统日志，然后匹配日志的错误信息（正则式匹配）执行相应的屏蔽动作（一般情况下是调用防火墙屏蔽），比如:当有人在试探你的SSH、SMTP、FTP密码，只要达到你预设的次数，fail2ban就会调用防火墙屏蔽...
+                
+                    fail2ban 可以监视你的系统日志，然后匹配日志的错误信息（正则式匹配）执行相应的屏蔽动作（一般情况下是调用防火墙屏蔽），比如:当有人在试探你的SSH、SMTP、FTP密码，只要达到你预设的次数，fail2ban就会调用防火墙屏蔽这个IP，而且可以发送e-mail通知系统管理员，是一款很实用、很强大的软件。…
+                
             </p> 
         </div>
     </article>
@@ -515,7 +522,6 @@ yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1�
         </div>
     </div>
 </div>
-
 
 
 

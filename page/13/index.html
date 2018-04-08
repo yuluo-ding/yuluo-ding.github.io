@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -142,18 +150,22 @@
             </div>
         </div>
         <p class="brief">
-            好用的小工具
-Goreplacer gooreplacer 是一款能够自动替换掉网页中的 Google fonts、apis、themes 为中国科学技术大学镜像资源的 Chrome、Firefox 扩展，瞬间提高网页加载速度。 这是...
-        </p> 
+            
+                好用的小工具…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Soft</span>
+        <a href="/categories/Soft">
+            Soft
+        </a>
     </span>
     
     
@@ -161,24 +173,22 @@ Goreplacer gooreplacer 是一款能够自动替换掉网页中的 Google fonts�
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/09/25</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/09/25/小工具/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/09/25/小工具/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -196,18 +206,22 @@ Goreplacer gooreplacer 是一款能够自动替换掉网页中的 Google fonts�
             </div>
         </div>
         <p class="brief">
-            Android四大组件
-1、ActivityActivity是Android应用中负责与用户交互的组件，为其提供了可视化用户界面，如果Activity应用需要多个应用界面，那么这个Activity应用将会包含多个Activity，多个...
-        </p> 
+            
+                Android四大组件…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>无</span>
+        <a href="/categories/ ">
+             
+        </a>
     </span>
     
     
@@ -215,24 +229,22 @@ Goreplacer gooreplacer 是一款能够自动替换掉网页中的 Google fonts�
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/09/03</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/09/03/Android-四大组件的简介/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/09/03/Android-四大组件的简介/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -250,18 +262,22 @@ Goreplacer gooreplacer 是一款能够自动替换掉网页中的 Google fonts�
             </div>
         </div>
         <p class="brief">
-            使用Intent传递对象
-Intent可以用来启动活动、发送广播、启动服务等，也可以在Intent中添加一个附加数据。在FirtActivity中添加如下代码:1234Intent intent = new Intent(FirstA...
-        </p> 
+            
+                使用Intent传递对象…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android</span>
+        <a href="/categories/Android">
+            Android
+        </a>
     </span>
     
     
@@ -269,24 +285,22 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/08/27</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/08/27/Android-使用Intent传递对象/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/08/27/Android-使用Intent传递对象/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -304,18 +318,22 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
             </div>
         </div>
         <p class="brief">
-            如何为Android Studio 快速安装Gradle
-1、从Gradle官网下载相应的包。2、打开C:\Android Studio\gradle目录，具体看个人的安装情况3、把下载下来的Gradle包解压到2所提到的目录下4、打...
-        </p> 
+            
+                如何为Android Studio 快速安装Gradle…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android Studio</span>
+        <a href="/categories/Android Studio">
+            Android Studio
+        </a>
     </span>
     
     
@@ -323,24 +341,22 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/08/06</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/08/06/为Android-Studio快速安装Gradle/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/08/06/为Android-Studio快速安装Gradle/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -358,18 +374,22 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
             </div>
         </div>
         <p class="brief">
-            在升级系统之后，VM虚拟机提示是否移动了虚拟机，然后网络不能连接上，应该是网络适配器没有正常工作。可以在移除之后重新添加一个。
-
-        </p> 
+            
+                在升级系统之后，VM虚拟机提示是否移动了虚拟机，然后网络不能连接上，应该是网络适配器没有正常工作。可以在移除之后重新添加一个。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android</span>
+        <a href="/categories/Android">
+            Android
+        </a>
     </span>
     
     
@@ -377,24 +397,22 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/07/30</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/07/30/关于VM虚拟机的一些问题/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/07/30/关于VM虚拟机的一些问题/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -412,19 +430,22 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
             </div>
         </div>
         <p class="brief">
-            1、cannot resolve symbol R android studio
-1Click on Build-&gt;Clean Project and that will perform a gradle clean
-2、fil...
-        </p> 
+            
+                1、cannot resolve symbol R android studio…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android Studio</span>
+        <a href="/categories/Android Studio">
+            Android Studio
+        </a>
     </span>
     
     
@@ -432,24 +453,22 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/06/14</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/06/14/Android-Studio的一些错误/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/06/14/Android-Studio的一些错误/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -467,18 +486,22 @@ Intent可以用来启动活动、发送广播、启动服务等，也可以在In
             </div>
         </div>
         <p class="brief">
-            刚创建的github版本库，在push代码时出错：
-$ git push -u origin master提示如下错误123456! [rejected]        master -&gt; master (non-fast-fo...
-        </p> 
+            
+                刚创建的github版本库，在push代码时出错：…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>GIT</span>
+        <a href="/categories/GIT">
+            GIT
+        </a>
     </span>
     
     
@@ -486,24 +509,22 @@ $ git push -u origin master提示如下错误123456! [rejected]        master -&
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/05/23</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/05/23/关于GIT的一些错误/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/05/23/关于GIT的一些错误/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -521,18 +542,22 @@ $ git push -u origin master提示如下错误123456! [rejected]        master -&
             </div>
         </div>
         <p class="brief">
-            使用adb shell提示adb server is out of date. killing...?
-是ADB端口被占用了先执行adb nodaemon server ，查看adb server的端口是多少12C:\Users\xx...
-        </p> 
+            
+                使用adb shell提示adb server is out of date. killing...?…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Study Class</span>
+        <a href="/categories/Study Class">
+            Study Class
+        </a>
     </span>
     
     
@@ -540,24 +565,22 @@ $ git push -u origin master提示如下错误123456! [rejected]        master -&
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/05/16</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/05/16/adb-shell-错误/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/05/16/adb-shell-错误/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -575,18 +598,23 @@ $ git push -u origin master提示如下错误123456! [rejected]        master -&
             </div>
         </div>
         <p class="brief">
-            在xml文件中定义一个android:onClick=&quot;NextQuestion&quot;之后在方法类中点击Textview进行操作没反应，需要在onCreate中定义onClick方法才可以。
+            
+                在xml文件中定义一个android:onClick=&amp;quot;NextQuestion&amp;quot;之后在方法类中点击Textview进行操作没反应，需要在onCreate中定义onClick方法才可以。
 
-        </p> 
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android</span>
+        <a href="/categories/Android">
+            Android
+        </a>
     </span>
     
     
@@ -594,24 +622,22 @@ $ git push -u origin master提示如下错误123456! [rejected]        master -&
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/05/13</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/05/13/Android关于TextView-点击的问题/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/05/13/Android关于TextView-点击的问题/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -629,19 +655,24 @@ $ git push -u origin master提示如下错误123456! [rejected]        master -&
             </div>
         </div>
         <p class="brief">
-            在用Android Studio的时候用原生的Handler的时候，要手动导入android.os.Handler，否则会报错。
+            
+                在用Android Studio的时候用原生的Handler的时候，要手动导入android.os.Handler，否则会报错。
 把一个对象实例化的时候，在一个类里面的实例化的话，只能在这个类里面调用。
 
-        </p> 
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android</span>
+        <a href="/categories/Android">
+            Android
+        </a>
     </span>
     
     
@@ -649,24 +680,22 @@ $ git push -u origin master提示如下错误123456! [rejected]        master -&
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/05/12</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/05/12/Android-hander错误/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/05/12/Android-hander错误/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -825,7 +854,6 @@ $ git push -u origin master提示如下错误123456! [rejected]        master -&
         </div>
     </div>
 </div>
-
 
 
 

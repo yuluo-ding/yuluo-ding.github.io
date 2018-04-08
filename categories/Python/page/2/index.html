@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Python 
-
+    
+        Python 
+    
 </h3>
 
     <article class="post">
@@ -141,8 +149,10 @@
                 </div>
             </div>
             <p class="brief">
-                只获取当前目录的文件和文件夹
-1234567list = os.listdir(rootdir)#列出目录下的所有文件和目录for line in list:    filepath = os.path.join(rootdir,li...
+                
+                    只获取当前目录的文件和文件夹
+1234567list = os.listdir(rootdir)#列出目录下的所有文件和目录for line in list:    filepath = os.path.join(rootdir,line)    if os.path.isdir(filepath):#如果filepath是目录        print &quot;dir:&quot; + filepath    else:        print &quot;file:&quot; + filepath…
+                
             </p> 
         </div>
     </article>
@@ -161,11 +171,9 @@
                 </div>
             </div>
             <p class="brief">
-                在日常的使用中，会经常遇到需要执行 Shell 命令的情况，但是很多时候，在 Python 下执行也是很方便的。下面介绍四种方法以供参考。
-
-
-OS模块中的os.system()
-12&gt;&gt;&gt;os.system('ls...
+                
+                    在日常的使用中，会经常遇到需要执行 Shell 命令的情况，但是很多时候，在 Python 下执行也是很方便的。下面介绍四种方法以供参考。…
+                
             </p> 
         </div>
     </article>
@@ -184,8 +192,11 @@ OS模块中的os.system()
                 </div>
             </div>
             <p class="brief">
-                在macOS更新完pip(9.0.1)之后使用会出现如下警告：
-1DEPRECATION: The default format will switch to columns in the future. You can use --...
+                
+                    在macOS更新完pip(9.0.1)之后使用会出现如下警告：
+1DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+虽然不影响使用，但是还是要解决。方法如下：…
+                
             </p> 
         </div>
     </article>
@@ -204,11 +215,9 @@ OS模块中的os.system()
                 </div>
             </div>
             <p class="brief">
-                ​    回文（Palindrome），就是一个序列（如字符串）正着读反着读是一样的。生物信息学上最常见的就是转录因子在DNA上的结合位点通常都是回文结构。在 Python 应该如何判断字符串？
-
-
-递归
-12345def isPal...
+                
+                    ​    回文（Palindrome），就是一个序列（如字符串）正着读反着读是一样的。生物信息学上最常见的就是转录因子在DNA上的结合位点通常都是回文结构。在 Python 应该如何判断字符串？…
+                
             </p> 
         </div>
     </article>
@@ -227,14 +236,10 @@ OS模块中的os.system()
                 </div>
             </div>
             <p class="brief">
-                unrar模块介绍
-​    unrar第三方python库是解压rar压缩文件的扩展包，可实现对rar压缩文件的读取、解压等处理。也可以使用unrar这个模块来进行编写rar压缩文件暴力破解。
-
-
-安装
-
-直接利用 pip 安装
-1...
+                
+                    unrar模块介绍
+​    unrar第三方python库是解压rar压缩文件的扩展包，可实现对rar压缩文件的读取、解压等处理。也可以使用unrar这个模块来进行编写rar压缩文件暴力破解。…
+                
             </p> 
         </div>
     </article>
@@ -254,8 +259,10 @@ OS模块中的os.system()
             </div>
             <p class="brief">
                 
+                    
 介绍
-这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。...
+这篇文章简单地介绍了python的paramiko模块的用法，paramiko实现了SSH协议，能够方便地与远程计算机交互。简单的说，就是你在terminal下执行的如下语句，现在可以通过python的paramiko实现了。…
+                
             </p> 
         </div>
     </article>
@@ -274,18 +281,14 @@ OS模块中的os.system()
                 </div>
             </div>
             <p class="brief">
-                相关特性
+                
+                    相关特性
 
 属于Python基本数据类型和结构的一种。
 本身是不可变的数据类型。
 有很多内置的方法
-
-
-
-字符串连接
-
-join方法
-1234a = ['a','b','c','d']content = ''content = ''....
+…
+                
             </p> 
         </div>
     </article>
@@ -304,11 +307,10 @@ join方法
                 </div>
             </div>
             <p class="brief">
-                对一个列表，比如[1,2,2,2,2,3,3,3,4,4,4,4]，要统计这个列表里的重复项，以及相应的次数。
-有三种方法，set,dict以及Counter
-
-第一种：
-1234L = [1,2,2,2,2,3,3,3,4,4,4,...
+                
+                    对一个列表，比如[1,2,2,2,2,3,3,3,4,4,4,4]，要统计这个列表里的重复项，以及相应的次数。
+有三种方法，set,dict以及Counter…
+                
             </p> 
         </div>
     </article>
@@ -327,12 +329,9 @@ join方法
                 </div>
             </div>
             <p class="brief">
-                Python提供了一个os模块，里面包含了很多操作文件和目录的函数全部函数可以用help(os)或是dir(os)查看其用法。
-
-
-1.重命名：os.rename(old, new)
-2.删除：os.remove(file)
-3.列出...
+                
+                    Python提供了一个os模块，里面包含了很多操作文件和目录的函数全部函数可以用help(os)或是dir(os)查看其用法。…
+                
             </p> 
         </div>
     </article>
@@ -351,8 +350,10 @@ join方法
                 </div>
             </div>
             <p class="brief">
-                UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误
-​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Pyt...
+                
+                    UnicodeEncodeError: ‘ascii’ codec can’t encode异常错误
+​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Python2的默认是ASCII的，Python默认环境编码通过下面的方法可以获取：…
+                
             </p> 
         </div>
     </article>
@@ -517,7 +518,6 @@ join方法
         </div>
     </div>
 </div>
-
 
 
 

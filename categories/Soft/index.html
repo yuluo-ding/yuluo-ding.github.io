@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Soft 
-
+    
+        Soft 
+    
 </h3>
 
     <article class="post">
@@ -141,11 +149,16 @@
                 </div>
             </div>
             <p class="brief">
-                Rufus 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。
+                
+                    Rufus 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。
 在如下场景中会非常有用：
 
 你需要把一些可引导的ISO格式的镜像（Windows，Linux，UEFI等）创建成USB安装盘的时候
-你...
+你需要使用一个还没有安装操作系统的设备的时候
+你需要从DOS系统刷写BIOS或者其他固件的时候
+你需要运行一个非常底层的工具的时候
+…
+                
             </p> 
         </div>
     </article>
@@ -164,11 +177,9 @@
                 </div>
             </div>
             <p class="brief">
-                Xshell是Windows下很好用的一款SSH软件，但是性冷淡的配色终究还是有点枯燥，分享两个还可以的配色方案。
-
-
-第一个isayme.xcs
-1234567891011121314151617181920212223[isaym...
+                
+                    Xshell是Windows下很好用的一款SSH软件，但是性冷淡的配色终究还是有点枯燥，分享两个还可以的配色方案。…
+                
             </p> 
         </div>
     </article>
@@ -187,8 +198,9 @@
                 </div>
             </div>
             <p class="brief">
-                Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：Xshell连接VM内的Ubuntu16
-Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microso...
+                
+                    Windows环境下，在用Xshell连接VM里安装的Ubuntu16的时候连接不上。解决方法如下：…
+                
             </p> 
         </div>
     </article>
@@ -207,9 +219,9 @@ Xshell 是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及M
                 </div>
             </div>
             <p class="brief">
-                Some Soft（SQL Server &amp; Visual Studio）1、MS SQL Server 2008 简体中文正式版下载地址(附序列号)
-
-Microsoft® SQL Server® 2008 Enterpri...
+                
+                    Some Soft（SQL Server &amp;amp; Visual Studio）1、MS SQL Server 2008 简体中文正式版下载地址(附序列号)…
+                
             </p> 
         </div>
     </article>
@@ -228,12 +240,9 @@ Microsoft® SQL Server® 2008 Enterpri...
                 </div>
             </div>
             <p class="brief">
-                Sublime Text3 快捷键
-
-Ctrl+D 选词 （反复按快捷键，即可继续向下同时选中下一个相同的文本进行同时编辑）
-Ctrl+G 跳转到相应的行
-Ctrl+J 合并行（已选择需要合并的多行时）
-Ctrl+L 选择整行（按住-...
+                
+                    Sublime Text3 快捷键…
+                
             </p> 
         </div>
     </article>
@@ -252,8 +261,9 @@ Ctrl+L 选择整行（按住-...
                 </div>
             </div>
             <p class="brief">
-                好用的小工具
-Goreplacer gooreplacer 是一款能够自动替换掉网页中的 Google fonts、apis、themes 为中国科学技术大学镜像资源的 Chrome、Firefox 扩展，瞬间提高网页加载速度。 这是...
+                
+                    好用的小工具…
+                
             </p> 
         </div>
     </article>
@@ -412,7 +422,6 @@ Goreplacer gooreplacer 是一款能够自动替换掉网页中的 Google fonts�
         </div>
     </div>
 </div>
-
 
 
 

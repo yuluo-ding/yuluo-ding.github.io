@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Apple 
-
+    
+        Apple 
+    
 </h3>
 
     <article class="post">
@@ -141,7 +149,10 @@
                 </div>
             </div>
             <p class="brief">
-                手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 W...
+                
+                    手贱用 Unifi 家的控制器来设置 AP，期间不知道是 Java 的 SDK 版本问题还是什么情况，就是突然连接 Unifi 家设置的 WIFI，但是不能上网。连接别的设备分享出来的 WIFI 就 OK 正常。但是手机连接它家的 WIFI 就能上网。所以猜测应该是 Unifi 的那个控制器搞坏了网卡设置。
+那么问题来了。MacBook Pro 如何重置网卡的设置。方法如下：…
+                
             </p> 
         </div>
     </article>
@@ -160,14 +171,9 @@
                 </div>
             </div>
             <p class="brief">
-                一份关于在 Macbook 上安装 PyQt5 的介绍和汇总。主要
-
-1、 首先安装基础软件
-
-这个基本是使用 MacBook 的必备软件套件。Xcode下载
-
-安装 Homebrew，这样后续可以节省不少时候，安装管理也会很方便。
-...
+                
+                    一份关于在 Macbook 上安装 PyQt5 的介绍和汇总。主要…
+                
             </p> 
         </div>
     </article>
@@ -186,12 +192,10 @@
                 </div>
             </div>
             <p class="brief">
-                请问如何让 MacBook 读取Windows 下的 txt 文本？很多时候，每次打开都是乱码。
-这个就是一个编码转换的问题。Linux 和 MacBook 都提供了一个强大的命令行命令：iconv
-
-步骤如下：
-
-打开termina...
+                
+                    请问如何让 MacBook 读取Windows 下的 txt 文本？很多时候，每次打开都是乱码。
+这个就是一个编码转换的问题。Linux 和 MacBook 都提供了一个强大的命令行命令：iconv…
+                
             </p> 
         </div>
     </article>
@@ -210,8 +214,9 @@
                 </div>
             </div>
             <p class="brief">
-                iPhone连接电脑后可以查看照片但iTunes无反应
-右键点击 计算机（或者 我的电脑）－管理－设备管理器，直接到 设备管理器－便携设备 或 图像处理设备 下面，找到带有Apple 或 iPhone 字样的设备，右键点击，更新驱动程...
+                
+                    iPhone连接电脑后可以查看照片但iTunes无反应…
+                
             </p> 
         </div>
     </article>
@@ -370,7 +375,6 @@
         </div>
     </div>
 </div>
-
 
 
 

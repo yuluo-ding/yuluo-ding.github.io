@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Python 
-
+    
+        Python 
+    
 </h3>
 
     <article class="post">
@@ -141,10 +149,10 @@
                 </div>
             </div>
             <p class="brief">
-                Python进行URL解码所用模块：urllib
-所用函数：urllib.unquote()
-
-1234import urllibrawurl = "%E8%A7%A3%E7%A0%81"url = urllib.unquote(ra...
+                
+                    Python进行URL解码所用模块：urllib
+所用函数：urllib.unquote()…
+                
             </p> 
         </div>
     </article>
@@ -163,9 +171,9 @@
                 </div>
             </div>
             <p class="brief">
-                使用Python2.7版本代码如下：
-
-123456789101112131415# /user/bin/python# -*- coding=UTF-8 -*-   import os    #执行重命名  path = 'D:\\...
+                
+                    使用Python2.7版本代码如下：…
+                
             </p> 
         </div>
     </article>
@@ -184,7 +192,9 @@
                 </div>
             </div>
             <p class="brief">
-                GetLoggerGetLogger() returns a reference to a logger instance with the specified name if it is provided, or root if n...
+                
+                    GetLoggerGetLogger() returns a reference to a logger instance with the specified name if it is provided, or root if not. The names are period-separated hierarchical structures. Multiple calls to getLogger() with the same name will return a reference to the same logger object.…
+                
             </p> 
         </div>
     </article>
@@ -203,10 +213,9 @@
                 </div>
             </div>
             <p class="brief">
-                读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json.load
-12f = file(path)data = json.load(f)
-json是被载入到一个dict类型的object对象中。
-使用...
+                
+                    读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json.load…
+                
             </p> 
         </div>
     </article>
@@ -225,9 +234,9 @@ json是被载入到一个dict类型的object对象中。
                 </div>
             </div>
             <p class="brief">
-                Python删除文件和目录的方法os.remove(path)
-
-删除文件 path. 如果path是一个目录， 抛出 OSError错误。如果要删除目录，请使用rmdir().remove() 同 unlink() 的功能是一样的在...
+                
+                    Python删除文件和目录的方法os.remove(path)…
+                
             </p> 
         </div>
     </article>
@@ -246,11 +255,9 @@ json是被载入到一个dict类型的object对象中。
                 </div>
             </div>
             <p class="brief">
-                Python显示当前时间可以用Pyhton提供的time模块来实现
-
-12import timeprint time.time()
-输出的结果是:1470817592.43
-但是这样是一连串的数字不是我们想要的结果，我们可以利用tim...
+                
+                    Python显示当前时间可以用Pyhton提供的time模块来实现…
+                
             </p> 
         </div>
     </article>
@@ -269,8 +276,9 @@ json是被载入到一个dict类型的object对象中。
                 </div>
             </div>
             <p class="brief">
-                Python学习笔记
-1、IndentationError: unexpected indent你就要知道python编译器是在告诉你“Hi，老兄，你的文件里格式不对了，可能是tab和空格没对齐的问题，你需要检查下tab和空格了”。2...
+                
+                    Python学习笔记…
+                
             </p> 
         </div>
     </article>
@@ -289,7 +297,9 @@ json是被载入到一个dict类型的object对象中。
                 </div>
             </div>
             <p class="brief">
-                Eclipse中添加web dynamic project很多Eclipse版本是不能直接新建web dynamic project的，需要从网上找插件或更新。我的Eclipse的版本是（Version: 4.5.1）代号为Mars版...
+                
+                    Eclipse中添加web dynamic project很多Eclipse版本是不能直接新建web dynamic project的，需要从网上找插件或更新。…
+                
             </p> 
         </div>
     </article>
@@ -308,8 +318,9 @@ json是被载入到一个dict类型的object对象中。
                 </div>
             </div>
             <p class="brief">
-                Python version 2.7 required, which was not found in the registry
-新建一个register.py文件，把下列代码复制进去1234567891011121314151617...
+                
+                    Python version 2.7 required, which was not found in the registry…
+                
             </p> 
         </div>
     </article>
@@ -328,8 +339,9 @@ json是被载入到一个dict类型的object对象中。
                 </div>
             </div>
             <p class="brief">
-                Python编码的一点小问题
-unicode是一个字符集，它包含了（理论上）所有可能出现的文字和符号，每个符号都有一个对应的unicode值，叫做码点，对特定字符来说，这个码点是唯一，固定的utf-xx（比如utf-8，utf-16，...
+                
+                    Python编码的一点小问题…
+                
             </p> 
         </div>
     </article>
@@ -494,7 +506,6 @@ unicode是一个字符集，它包含了（理论上）所有可能出现的文�
         </div>
     </div>
 </div>
-
 
 
 

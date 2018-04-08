@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -142,18 +150,22 @@
             </div>
         </div>
         <p class="brief">
-            Android中的Context解释
-Android系统的上下文对象，即在Context中，Activity、Service、Application都是继承自Context。Android应用程序会在如下所示的几个时间点创建应用上下文...
-        </p> 
+            
+                Android中的Context解释…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android</span>
+        <a href="/categories/Android">
+            Android
+        </a>
     </span>
     
     
@@ -161,24 +173,22 @@ Android系统的上下文对象，即在Context中，Activity、Service、Applic
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/01/06</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/01/06/Android-Context解释/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/01/06/Android-Context解释/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -196,20 +206,22 @@ Android系统的上下文对象，即在Context中，Activity、Service、Applic
             </div>
         </div>
         <p class="brief">
-            关于Linux的一些小知识点
-Linux一些小知识点
-$1 我的Linux需求
-Linux博大精深。我只在此讨论一些我对线上Linux机器维护人员的基本需求，比如装机，加硬盘，配网络。只讨论CentOS 6，或者类似的RHEL，当然U...
-        </p> 
+            
+                关于Linux的一些小知识点…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Linux</span>
+        <a href="/categories/Linux">
+            Linux
+        </a>
     </span>
     
     
@@ -217,24 +229,22 @@ Linux博大精深。我只在此讨论一些我对线上Linux机器维护人员�
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/01/06</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/01/06/Linux知识点小结/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/01/06/Linux知识点小结/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -252,18 +262,22 @@ Linux博大精深。我只在此讨论一些我对线上Linux机器维护人员�
             </div>
         </div>
         <p class="brief">
-            ADB教程什么是ADB
-adb的全称为Android Debug Bridge，就是起到调试桥的作用。通过adb我们可以在Eclipse中方便通过DDMS来调试Android程序，说白了就是debug工具。adb的工作方式比较特殊，采...
-        </p> 
+            
+                ADB教程什么是ADB…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Study Class</span>
+        <a href="/categories/Study Class">
+            Study Class
+        </a>
     </span>
     
     
@@ -271,24 +285,22 @@ adb的全称为Android Debug Bridge，就是起到调试桥的作用。通过adb
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/01/05</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/01/05/ADB的教程/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/01/05/ADB的教程/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -306,19 +318,22 @@ adb的全称为Android Debug Bridge，就是起到调试桥的作用。通过adb
             </div>
         </div>
         <p class="brief">
-            Chrome插件开发，只要你敢露我就敢抓
-Chrome插件开发，只要你敢露我就敢抓全文简单介绍了Chrome插件开发的简单教程，需要js基础。
-
-        </p> 
+            
+                Chrome插件开发，只要你敢露我就敢抓…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Study Class</span>
+        <a href="/categories/Study Class">
+            Study Class
+        </a>
     </span>
     
     
@@ -326,24 +341,22 @@ Chrome插件开发，只要你敢露我就敢抓全文简单介绍了Chrome插�
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/12/30</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/12/30/Chrome插件开发入门教程/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/12/30/Chrome插件开发入门教程/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -361,22 +374,22 @@ Chrome插件开发，只要你敢露我就敢抓全文简单介绍了Chrome插�
             </div>
         </div>
         <p class="brief">
-            Android 岗知识点清单
-如何自学Android编程？
-Java
-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？
-2.JDK和JRE的区别是什么？
-“static”关键字是什么意思？Java中是否可以覆盖(o...
-        </p> 
+            
+                Android 岗知识点清单…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android</span>
+        <a href="/categories/Android">
+            Android
+        </a>
     </span>
     
     
@@ -384,24 +397,22 @@ Java
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/12/28</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/12/28/Android知识清单/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/12/28/Android知识清单/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -419,22 +430,22 @@ Java
             </div>
         </div>
         <p class="brief">
-            Sublime Text3 快捷键
-
-Ctrl+D 选词 （反复按快捷键，即可继续向下同时选中下一个相同的文本进行同时编辑）
-Ctrl+G 跳转到相应的行
-Ctrl+J 合并行（已选择需要合并的多行时）
-Ctrl+L 选择整行（按住-...
-        </p> 
+            
+                Sublime Text3 快捷键…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Soft</span>
+        <a href="/categories/Soft">
+            Soft
+        </a>
     </span>
     
     
@@ -442,24 +453,22 @@ Ctrl+L 选择整行（按住-...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/11/09</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/11/09/Sublime-Text3/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/11/09/Sublime-Text3/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -477,18 +486,22 @@ Ctrl+L 选择整行（按住-...
             </div>
         </div>
         <p class="brief">
-            所有 HTTP 状态代码及其定义。
-代码 指示2xx 成功200 正常；请求已完成。201 正常；紧接 POST 命令。202 正常；已接受用于处理，但处理尚未完成。203 正常；部分信息 — 返回的信息只是一部分。204 正常；无响...
-        </p> 
+            
+                所有 HTTP 状态代码及其定义。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>HTTP</span>
+        <a href="/categories/HTTP">
+            HTTP
+        </a>
     </span>
     
     
@@ -496,24 +509,22 @@ Ctrl+L 选择整行（按住-...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/10/21</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/10/21/HTTP/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/10/21/HTTP/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -531,18 +542,22 @@ Ctrl+L 选择整行（按住-...
             </div>
         </div>
         <p class="brief">
-            1、google play连接不上
-在挂好VPN之后，浏览器可以正常访问外网，只有Google Play打开之后显示无连接。解决方案hosts文件有问题，在/etc/目录下面（需要root权限）找到hosts文件，用文本编辑器打开，删...
-        </p> 
+            
+                1、google play连接不上…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Google</span>
+        <a href="/categories/Google">
+            Google
+        </a>
     </span>
     
     
@@ -550,24 +565,22 @@ Ctrl+L 选择整行（按住-...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/10/10</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/10/10/Google-play-and-something/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/10/10/Google-play-and-something/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -585,18 +598,22 @@ Ctrl+L 选择整行（按住-...
             </div>
         </div>
         <p class="brief">
-            Android Studio和Gradle加速运行
-Gradle的速度在win下真心惨不忍睹，除了加大内存和上SSD，也可以试试如下方法。1、修改 studio.xxx.vmoptions文件。路径在C:\android-studio...
-        </p> 
+            
+                Android Studio和Gradle加速运行…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android Studio</span>
+        <a href="/categories/Android Studio">
+            Android Studio
+        </a>
     </span>
     
     
@@ -604,24 +621,22 @@ Gradle的速度在win下真心惨不忍睹，除了加大内存和上SSD，也�
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/10/08</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/10/08/Android-Studio的Gradle的加速/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/10/08/Android-Studio的Gradle的加速/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -639,18 +654,22 @@ Gradle的速度在win下真心惨不忍睹，除了加大内存和上SSD，也�
             </div>
         </div>
         <p class="brief">
-            ToolBar
-Android在5.0之后引入了toolbar来替换actionbar，增加其灵活性。在Android Studio新建工程之后，添加设计类库compile &#39;com.android.support:desig...
-        </p> 
+            
+                ToolBar…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android</span>
+        <a href="/categories/Android">
+            Android
+        </a>
     </span>
     
     
@@ -658,24 +677,22 @@ Android在5.0之后引入了toolbar来替换actionbar，增加其灵活性。在
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2015/09/26</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2015/09/26/Android-toolbar/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2015/09/26/Android-toolbar/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -834,7 +851,6 @@ Android在5.0之后引入了toolbar来替换actionbar，增加其灵活性。在
         </div>
     </div>
 </div>
-
 
 
 

@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Android Studio 
-
+    
+        Android Studio 
+    
 </h3>
 
     <article class="post">
@@ -141,12 +149,9 @@
                 </div>
             </div>
             <p class="brief">
-                Android Studio 实用插件推荐几款实用的Android Studio 插件
-
-android-butterknife-zelezny
-Gsonformat
-Android Postfix Completion
-Androi...
+                
+                    Android Studio 实用插件推荐几款实用的Android Studio 插件…
+                
             </p> 
         </div>
     </article>
@@ -165,8 +170,9 @@ Androi...
                 </div>
             </div>
             <p class="brief">
-                关于Android Studio的Gradle 系列文章
-Gradle for Android 第一篇( 从 Gradle 和 AS 开始 )Gradle for Android 第二篇( Build.gradle入门 )Gradle...
+                
+                    关于Android Studio的Gradle 系列文章…
+                
             </p> 
         </div>
     </article>
@@ -185,9 +191,9 @@ Gradle for Android 第一篇( 从 Gradle 和 AS 开始 )Gradle for Android 第�
                 </div>
             </div>
             <p class="brief">
-                Android Studio小技巧
-Android Studio你不知道的调试技巧
-12Error:Execution failed for task ':testcomment:transformClassesWithJarMerg...
+                
+                    Android Studio小技巧…
+                
             </p> 
         </div>
     </article>
@@ -206,8 +212,9 @@ Android Studio你不知道的调试技巧
                 </div>
             </div>
             <p class="brief">
-                Android Studio和Gradle加速运行
-Gradle的速度在win下真心惨不忍睹，除了加大内存和上SSD，也可以试试如下方法。1、修改 studio.xxx.vmoptions文件。路径在C:\android-studio...
+                
+                    Android Studio和Gradle加速运行…
+                
             </p> 
         </div>
     </article>
@@ -226,8 +233,9 @@ Gradle的速度在win下真心惨不忍睹，除了加大内存和上SSD，也�
                 </div>
             </div>
             <p class="brief">
-                如何为Android Studio 快速安装Gradle
-1、从Gradle官网下载相应的包。2、打开C:\Android Studio\gradle目录，具体看个人的安装情况3、把下载下来的Gradle包解压到2所提到的目录下4、打...
+                
+                    如何为Android Studio 快速安装Gradle…
+                
             </p> 
         </div>
     </article>
@@ -246,9 +254,9 @@ Gradle的速度在win下真心惨不忍睹，除了加大内存和上SSD，也�
                 </div>
             </div>
             <p class="brief">
-                1、cannot resolve symbol R android studio
-1Click on Build-&gt;Clean Project and that will perform a gradle clean
-2、fil...
+                
+                    1、cannot resolve symbol R android studio…
+                
             </p> 
         </div>
     </article>
@@ -407,7 +415,6 @@ Gradle的速度在win下真心惨不忍睹，除了加大内存和上SSD，也�
         </div>
     </div>
 </div>
-
 
 
 

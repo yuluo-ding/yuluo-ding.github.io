@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Study Class 
-
+    
+        Study Class 
+    
 </h3>
 
     <article class="post">
@@ -141,15 +149,9 @@
                 </div>
             </div>
             <p class="brief">
-                算法与数据结构算法与数据结构
-
-《Data structures》
-
-介绍：高级数据结构大全,基本算法：二叉树等
-
-《基于用户投票的排名算法（一）：Delicious和Hacker News》
-
-介绍：此外还有《基于用户投票的排名算法...
+                
+                    算法与数据结构算法与数据结构…
+                
             </p> 
         </div>
     </article>
@@ -168,8 +170,10 @@
                 </div>
             </div>
             <p class="brief">
-                阅读Android源码的一些姿势阅读Android源码的一些姿势
+                
+                    阅读Android源码的一些姿势阅读Android源码的一些姿势
 
+                
             </p> 
         </div>
     </article>
@@ -188,8 +192,10 @@
                 </div>
             </div>
             <p class="brief">
-                浅析 Android 的窗口浅析 Android 的窗口
+                
+                    浅析 Android 的窗口浅析 Android 的窗口
 
+                
             </p> 
         </div>
     </article>
@@ -208,16 +214,9 @@
                 </div>
             </div>
             <p class="brief">
-                夜深写算法系列蛮有意思的几个算法
-
-搜索入门
-动态规划
-树状数组
-差分约束
-初等数论
-最近公共祖先
-
-
+                
+                    夜深写算法系列蛮有意思的几个算法…
+                
             </p> 
         </div>
     </article>
@@ -236,8 +235,9 @@
                 </div>
             </div>
             <p class="brief">
-                RxJava开发精要系列
-RxJava开发精要1-从.NET到RxJavaRxJava开发精要2-为什么是Observables?RxJava开发精要3-向响应式世界问好RxJava开发精要4 – Observables过滤RxJav...
+                
+                    RxJava开发精要系列…
+                
             </p> 
         </div>
     </article>
@@ -256,8 +256,10 @@ RxJava开发精要1-从.NET到RxJavaRxJava开发精要2-为什么是Observables?
                 </div>
             </div>
             <p class="brief">
-                一个关于Java回调机制的小案例一个经典例子让你彻彻底底理解java回调机制
+                
+                    一个关于Java回调机制的小案例一个经典例子让你彻彻底底理解java回调机制
 
+                
             </p> 
         </div>
     </article>
@@ -276,8 +278,9 @@ RxJava开发精要1-从.NET到RxJavaRxJava开发精要2-为什么是Observables?
                 </div>
             </div>
             <p class="brief">
-                ADB教程什么是ADB
-adb的全称为Android Debug Bridge，就是起到调试桥的作用。通过adb我们可以在Eclipse中方便通过DDMS来调试Android程序，说白了就是debug工具。adb的工作方式比较特殊，采...
+                
+                    ADB教程什么是ADB…
+                
             </p> 
         </div>
     </article>
@@ -296,9 +299,9 @@ adb的全称为Android Debug Bridge，就是起到调试桥的作用。通过adb
                 </div>
             </div>
             <p class="brief">
-                Chrome插件开发，只要你敢露我就敢抓
-Chrome插件开发，只要你敢露我就敢抓全文简单介绍了Chrome插件开发的简单教程，需要js基础。
-
+                
+                    Chrome插件开发，只要你敢露我就敢抓…
+                
             </p> 
         </div>
     </article>
@@ -317,8 +320,9 @@ Chrome插件开发，只要你敢露我就敢抓全文简单介绍了Chrome插�
                 </div>
             </div>
             <p class="brief">
-                使用adb shell提示adb server is out of date. killing...?
-是ADB端口被占用了先执行adb nodaemon server ，查看adb server的端口是多少12C:\Users\xx...
+                
+                    使用adb shell提示adb server is out of date. killing...?…
+                
             </p> 
         </div>
     </article>
@@ -477,7 +481,6 @@ Chrome插件开发，只要你敢露我就敢抓全文简单介绍了Chrome插�
         </div>
     </div>
 </div>
-
 
 
 

@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Python 
-
+    
+        Python 
+    
 </h3>
 
     <article class="post">
@@ -141,11 +149,11 @@
                 </div>
             </div>
             <p class="brief">
-                有一个List：
-l1 = [&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;b&#39;,&#39;c&#39;,&#39;a&#39;,&#39;a&#39;]
-要去除其中的重复部分
-
-有两个方法...
+                
+                    有一个List：
+l1 = [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;d&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;a&amp;#39;]
+要去除其中的重复部分…
+                
             </p> 
         </div>
     </article>
@@ -164,10 +172,12 @@ l1 = [&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;b&#39;,&#39;c&#39;,&#39;a&#39;,&#
                 </div>
             </div>
             <p class="brief">
-                有两个列表，分别为：
-12names = ['Alice', 'Beth', 'Ceil']numbers = ['2341', '9102', '3158']
+                
+                    有两个列表，分别为：
+12names = [&#39;Alice&#39;, &#39;Beth&#39;, &#39;Ceil&#39;]numbers = [&#39;2341&#39;, &#39;9102&#39;, &#39;3158&#39;]
 生成一个字典：
-book = {&#39;Alice&#39;: &#3...
+book = {&amp;#39;Alice&amp;#39;: &amp;#39;2341&amp;#39;, &amp;#39;Beth&amp;#39;: &amp;#39;9102&amp;#39;, &amp;#39;Ceil&amp;#39;: &amp;#39;3158&amp;#39;}…
+                
             </p> 
         </div>
     </article>
@@ -186,10 +196,10 @@ book = {&#39;Alice&#39;: &#3...
                 </div>
             </div>
             <p class="brief">
-                在遇到各种比较大的问题时候，行数过多导致打开处理会出问题，则需要切割，则可以用按行数切割的方法来处理。
-代码如下：
-
-1234567891011121314151617181920212223242526272829303132333...
+                
+                    在遇到各种比较大的问题时候，行数过多导致打开处理会出问题，则需要切割，则可以用按行数切割的方法来处理。
+代码如下：…
+                
             </p> 
         </div>
     </article>
@@ -208,11 +218,14 @@ book = {&#39;Alice&#39;: &#3...
                 </div>
             </div>
             <p class="brief">
-                这是一个常用的功能，可以有两种方法，os.walk和os.listdir
+                
+                    这是一个常用的功能，可以有两种方法，os.walk和os.listdir
 文档是这么解释的：
 
 os.listdir(path)
-Return a list containing the names of the entries in...
+Return a list containing the names of the entries in the directory given by path. The list is in arbitrary order. It does not include the special entries ‘.’ and ‘..’ even if they are present in the directory.
+…
+                
             </p> 
         </div>
     </article>
@@ -231,8 +244,10 @@ Return a list containing the names of the entries in...
                 </div>
             </div>
             <p class="brief">
-                两个字典合并的，有几种方法
-1234dict1=&#123;1:[1,11,111],2:[2,22,222]&#125;dict2=&#123;3:[3,33,333],4:[4,44,444]&#125;#得到如下的结果&#123...
+                
+                    两个字典合并的，有几种方法
+1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;…
+                
             </p> 
         </div>
     </article>
@@ -251,9 +266,9 @@ Return a list containing the names of the entries in...
                 </div>
             </div>
             <p class="brief">
-                ​    最近搞处理文件，各种命令搞的头晕眼花，此处做个合并，以便之后观察使用。
-
-1.重命名：os.rename(old, new)2.删除：os.remove(file)3.列出目录下的文件 ：os.listdir(path)4....
+                
+                    ​    最近搞处理文件，各种命令搞的头晕眼花，此处做个合并，以便之后观察使用。…
+                
             </p> 
         </div>
     </article>
@@ -272,14 +287,14 @@ Return a list containing the names of the entries in...
                 </div>
             </div>
             <p class="brief">
-                流程如下：
+                
+                    流程如下：
 
 判断目录是否存在os.path.exists(path)
 创建多层目录os.path.makedirs(path)
 创建目录os.mkdir(path)
-
-
-1234567891011121314151617181920...
+…
+                
             </p> 
         </div>
     </article>
@@ -298,9 +313,11 @@ Return a list containing the names of the entries in...
                 </div>
             </div>
             <p class="brief">
-                首先有一个最简单的方法，就是用正则匹配
-123import retmp = open("123.txt", "r").read()print len(re.findall("hello", tmp))
-还可以利用Counter来实现更...
+                
+                    首先有一个最简单的方法，就是用正则匹配
+123import retmp = open(&quot;123.txt&quot;, &quot;r&quot;).read()print len(re.findall(&quot;hello&quot;, tmp))
+还可以利用Counter来实现更多的功能…
+                
             </p> 
         </div>
     </article>
@@ -319,10 +336,10 @@ Return a list containing the names of the entries in...
                 </div>
             </div>
             <p class="brief">
-                Python版本：2.7.x
-代码如下：
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#!/usr/bin...
+                
+                    Python版本：2.7.x
+代码如下：…
+                
             </p> 
         </div>
     </article>
@@ -341,8 +358,10 @@ Return a list containing the names of the entries in...
                 </div>
             </div>
             <p class="brief">
-                有以下几个方法：
-1、    现在有两个列表，list1 = [&#39;key1&#39;,&#39;key2&#39;,&#39;key3&#39;]和list2 = [&#39;1&#39;,&#39;2&#39;,&#39;3...
+                
+                    有以下几个方法：
+1、    现在有两个列表，list1 = [&amp;#39;key1&amp;#39;,&amp;#39;key2&amp;#39;,&amp;#39;key3&amp;#39;]和list2 = [&amp;#39;1&amp;#39;,&amp;#39;2&amp;#39;,&amp;#39;3&amp;#39;]，把他们转为这样的字典：{&amp;#39;key1&amp;#39;:&amp;#39;1&amp;#39;,&amp;#39;key2&amp;#39;:&amp;#39;2&amp;#39;,&amp;#39;key3&amp;#39;:&amp;#39;3&amp;#39;}…
+                
             </p> 
         </div>
     </article>
@@ -507,7 +526,6 @@ Return a list containing the names of the entries in...
         </div>
     </div>
 </div>
-
 
 
 

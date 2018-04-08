@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Python 
-
+    
+        Python 
+    
 </h3>
 
     <article class="post">
@@ -141,8 +149,10 @@
                 </div>
             </div>
             <p class="brief">
-                在用json.load导入json 格式的文件的时候, 打印出来的dict, 会显示的是unicode 编码形式, 下面一种方法可以利用检测编码的形式把u去掉.
+                
+                    在用json.load导入json 格式的文件的时候, 打印出来的dict, 会显示的是unicode 编码形式, 下面一种方法可以利用检测编码的形式把u去掉.
 1234567891011for i in range(len(coln...
+                
             </p> 
         </div>
     </article>
@@ -161,14 +171,19 @@
                 </div>
             </div>
             <p class="brief">
-                XML文档的结构良好性验证，结构良好的xml文档，需要遵守下面这些规则：
+                
+                    XML文档的结构良好性验证，结构良好的xml文档，需要遵守下面这些规则：
 
 所有开始标签必须有对应的结束标签
 元素可以嵌套，但是不可以重叠
 有且只能有一个根元素
 属性值必须使用引号
 一个元素不能有两个同样属性名字的属性
-注释不能出现在...
+注释不能出现在标签内部
+没有转义的” &amp;lt;” 或者” $”不能出现在元素和属性的字符中
+
+如何检查XML文档良构?…
+                
             </p> 
         </div>
     </article>
@@ -187,9 +202,11 @@
                 </div>
             </div>
             <p class="brief">
-                利用 Python 在日常工作中，删除指定目录已经子目录下的特定后缀的文件名。
+                
+                    利用 Python 在日常工作中，删除指定目录已经子目录下的特定后缀的文件名。
 Python Version: 2.7
 123456789101112131415161718192021222324252627282930313233...
+                
             </p> 
         </div>
     </article>
@@ -208,7 +225,9 @@ Python Version: 2.7
                 </div>
             </div>
             <p class="brief">
-                简介:PyInstaller可以用来打包python应用程序，打包完的程序就可以在没有安装Python解释器的机器上运行了。PyInstaller支持Python 2.7和Python 3.3+。可以在Windows、Mac OS X...
+                
+                    简介:PyInstaller可以用来打包python应用程序，打包完的程序就可以在没有安装Python解释器的机器上运行了。PyInstaller支持Python 2.7和Python 3.3+。可以在Windows、Mac OS X和Linux上使用，但是并不是跨平台的，而是说你要是希望打包成.exe文件，需要在Windows系统上运行PyInstaller进行打包工作；打包成mac app，需要在Mac OS上使用。…
+                
             </p> 
         </div>
     </article>
@@ -227,11 +246,10 @@ Python Version: 2.7
                 </div>
             </div>
             <p class="brief">
-                今天在用 Python 的爬虫的时候，遇到一个错误maximum recursion depth exceeded while calling a Python object，意思是：当调用该对象超过最大递归深度。
-报错如下:
-
-
- ...
+                
+                    今天在用 Python 的爬虫的时候，遇到一个错误maximum recursion depth exceeded while calling a Python object，意思是：当调用该对象超过最大递归深度。
+报错如下:…
+                
             </p> 
         </div>
     </article>
@@ -250,8 +268,10 @@ Python Version: 2.7
                 </div>
             </div>
             <p class="brief">
-                在程序中使用配置文件来灵活的配置一些参数是一件很常见的事情，配置文件的解析并不复杂，在Python里更是如此，在官方发布的库中就包含有做这件事情的库，那就是ConfigParser，这里简单的做一些介绍。  
-Python Confi...
+                
+                    在程序中使用配置文件来灵活的配置一些参数是一件很常见的事情，配置文件的解析并不复杂，在Python里更是如此，在官方发布的库中就包含有做这件事情的库，那就是ConfigParser，这里简单的做一些介绍。  
+Python ConfigParser模块解析的配置文件的格式比较象ini的配置文件格式，就是文件中由多个section构成，每个section下又有多个配置项.…
+                
             </p> 
         </div>
     </article>
@@ -270,14 +290,11 @@ Python Confi...
                 </div>
             </div>
             <p class="brief">
-                pip 当前内建命令并不支持升级所有已安装的Python模块。
+                
+                    pip 当前内建命令并不支持升级所有已安装的Python模块。
 列出当前安装的包：
-1pip list
-
-列出可升级的包：
-1pip list --outdate
-升级一个包：
-1pip install --upgrade reque...
+1pip list…
+                
             </p> 
         </div>
     </article>
@@ -296,8 +313,9 @@ Python Confi...
                 </div>
             </div>
             <p class="brief">
-                字符串也是一种数据类型，但比较特殊的是字符串存在一个编码问题，也就是我们怎么用计算机来表示相应的字符并存储。在编程语言中，我们经常会处理文本编码之间的转化问题，因为文本可能存在不同的编码，比如 ASCII、GBK、UTF-8 等等。
-...
+                
+                    字符串也是一种数据类型，但比较特殊的是字符串存在一个编码问题，也就是我们怎么用计算机来表示相应的字符并存储。在编程语言中，我们经常会处理文本编码之间的转化问题，因为文本可能存在不同的编码，比如 ASCII、GBK、UTF-8 等等。…
+                
             </p> 
         </div>
     </article>
@@ -316,10 +334,10 @@ Python Confi...
                 </div>
             </div>
             <p class="brief">
-                模块zlib用来解压和压缩字符串或者文件，能够自动识别压缩格式来自动解压。
-字符串的解压与字符串：
-
-12345678import zlibmessage = 'abcd1234'compressed = zlib.compress(...
+                
+                    模块zlib用来解压和压缩字符串或者文件，能够自动识别压缩格式来自动解压。
+字符串的解压与字符串：…
+                
             </p> 
         </div>
     </article>
@@ -338,9 +356,11 @@ Python Confi...
                 </div>
             </div>
             <p class="brief">
-                由于josn库的loads方法会把类型全部转换成 Unicode。如果想要变成str对象的话，就要自己去encode。
+                
+                    由于josn库的loads方法会把类型全部转换成 Unicode。如果想要变成str对象的话，就要自己去encode。
 试试如下代码：
 123456789def byteify(input):    if isinstance(inp...
+                
             </p> 
         </div>
     </article>
@@ -505,7 +525,6 @@ Python Confi...
         </div>
     </div>
 </div>
-
 
 
 

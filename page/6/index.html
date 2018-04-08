@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -142,21 +150,27 @@
             </div>
         </div>
         <p class="brief">
-            这是一个常用的功能，可以有两种方法，os.walk和os.listdir
+            
+                这是一个常用的功能，可以有两种方法，os.walk和os.listdir
 文档是这么解释的：
 
 os.listdir(path)
-Return a list containing the names of the entries in...
-        </p> 
+Return a list containing the names of the entries in the directory given by path. The list is in arbitrary order. It does not include the special entries ‘.’ and ‘..’ even if they are present in the directory.
+…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -164,24 +178,22 @@ Return a list containing the names of the entries in...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/03/10</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/03/10/Pyhton遍历文件夹/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/03/10/Pyhton遍历文件夹/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -199,22 +211,24 @@ Return a list containing the names of the entries in...
             </div>
         </div>
         <p class="brief">
-            只针对Ubuntu16以上的版本。
+            
+                只针对Ubuntu16以上的版本。
 执行很简单，首先是三条命令
-123apt updateapt install python-pippip install shadowsocks
-
-pip 是 Python 下方便的包管理工具
-之后...
-        </p> 
+123apt updateapt install python-pippip install shadowsocks…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Tools</span>
+        <a href="/categories/Tools">
+            Tools
+        </a>
     </span>
     
     
@@ -222,24 +236,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/02/28</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/02/28/Ubuntu-16-04LTS-搭建-Shadowsocks/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -257,19 +269,24 @@ pip 是 Python 下方便的包管理工具
             </div>
         </div>
         <p class="brief">
-            ​    再用 Android Studio 编辑项目的时候，会出现如下错误。
+            
+                ​    再用 Android Studio 编辑项目的时候，会出现如下错误。
 1java.lang.OutOfMemoryError: GC overhead limit exceeded
-​    根据 Sun 的描述：    1...
-        </p> 
+​    根据 Sun 的描述：    1&quot;if too much time is being spent in garbage collection: if more than 98% of the total time is spent in garbage collection and less than 2% of the heap is recovered, an OutOfMemoryError will be thrown.&quot;…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Android</span>
+        <a href="/categories/Android">
+            Android
+        </a>
     </span>
     
     
@@ -277,24 +294,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/02/13</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -312,19 +327,22 @@ pip 是 Python 下方便的包管理工具
             </div>
         </div>
         <p class="brief">
-            ​    MacBook在安装好 hexo 和 node 之后，还是会出现如下的错误。
-
-12345678910全局已经安装hexo，当前项目下也装了blog git:(master) ✗ hexo&#123; [Error: Can...
-        </p> 
+            
+                ​    MacBook在安装好 hexo 和 node 之后，还是会出现如下的错误。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>hexo教程</span>
+        <a href="/categories/hexo教程">
+            hexo教程
+        </a>
     </span>
     
     
@@ -332,24 +350,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/02/12</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/02/12/hexo教程-error/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/02/12/hexo教程-error/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -367,17 +383,22 @@ pip 是 Python 下方便的包管理工具
             </div>
         </div>
         <p class="brief">
-            ​    Hexo新建一篇文章的命令很简单hexo new arctical&#39;s title，然后在Hexo的根目录的source文件夹下的_posts目录下自动创建相应的md文件，之后打开该目录，找到Hexo自动生成的文件打...
-        </p> 
+            
+                ​    Hexo新建一篇文章的命令很简单hexo new arctical&amp;#39;s title，然后在Hexo的根目录的source文件夹下的_posts目录下自动创建相应的md文件，之后打开该目录，找到Hexo自动生成的文件打开编辑即可。但是当文件比较多的时候，找一个新的文件是很麻烦的一件事。那么我们便可以通过 js 脚本自动打开相应的编辑器来省事。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>hexo教程</span>
+        <a href="/categories/hexo教程">
+            hexo教程
+        </a>
     </span>
     
     
@@ -385,24 +406,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/02/11</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/02/11/Hexo添加文章自动打开编辑器/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/02/11/Hexo添加文章自动打开编辑器/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -420,21 +439,22 @@ pip 是 Python 下方便的包管理工具
             </div>
         </div>
         <p class="brief">
-            Xshell是Windows下很好用的一款SSH软件，但是性冷淡的配色终究还是有点枯燥，分享两个还可以的配色方案。
-
-
-第一个isayme.xcs
-1234567891011121314151617181920212223[isaym...
-        </p> 
+            
+                Xshell是Windows下很好用的一款SSH软件，但是性冷淡的配色终究还是有点枯燥，分享两个还可以的配色方案。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Soft</span>
+        <a href="/categories/Soft">
+            Soft
+        </a>
     </span>
     
     
@@ -442,24 +462,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/01/20</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/01/20/Xshell配色方案/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/01/20/Xshell配色方案/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -477,18 +495,23 @@ pip 是 Python 下方便的包管理工具
             </div>
         </div>
         <p class="brief">
-            两个字典合并的，有几种方法
-1234dict1=&#123;1:[1,11,111],2:[2,22,222]&#125;dict2=&#123;3:[3,33,333],4:[4,44,444]&#125;#得到如下的结果&#123...
-        </p> 
+            
+                两个字典合并的，有几种方法
+1234dict1=&amp;#123;1:[1,11,111],2:[2,22,222]&amp;#125;dict2=&amp;#123;3:[3,33,333],4:[4,44,444]&amp;#125;#得到如下的结果&amp;#123;1:[1,11,111],2:[2,22,222],3:[3,33,333],4:[4,44,444]&amp;#125;…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -496,24 +519,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/01/17</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/01/17/Python两个字典的合并/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/01/17/Python两个字典的合并/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -531,19 +552,22 @@ pip 是 Python 下方便的包管理工具
             </div>
         </div>
         <p class="brief">
-            ​    最近搞处理文件，各种命令搞的头晕眼花，此处做个合并，以便之后观察使用。
-
-1.重命名：os.rename(old, new)2.删除：os.remove(file)3.列出目录下的文件 ：os.listdir(path)4....
-        </p> 
+            
+                ​    最近搞处理文件，各种命令搞的头晕眼花，此处做个合并，以便之后观察使用。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -551,24 +575,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/01/12</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/01/12/Pyhton的文件操作/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/01/12/Pyhton的文件操作/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -586,17 +608,22 @@ pip 是 Python 下方便的包管理工具
             </div>
         </div>
         <p class="brief">
-            由于非法重启或硬盘故障，会导致linux系统无法启动，无法进入操作系统。当你看到提示：give root password for maintenance(or type control-D to continue):的时候，你还有补...
-        </p> 
+            
+                由于非法重启或硬盘故障，会导致linux系统无法启动，无法进入操作系统。当你看到提示：give root password for maintenance(or type control-D to continue):的时候，你还有补救的机会。问题原因应该是/usr /home /boot分区磁盘检测出了问题。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Linux</span>
+        <a href="/categories/Linux">
+            Linux
+        </a>
     </span>
     
     
@@ -604,24 +631,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/01/09</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2017/01/09/Linux提示Give-root-password-for-maintenance/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2017/01/09/Linux提示Give-root-password-for-maintenance/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -639,24 +664,27 @@ pip 是 Python 下方便的包管理工具
             </div>
         </div>
         <p class="brief">
-            流程如下：
+            
+                流程如下：
 
 判断目录是否存在os.path.exists(path)
 创建多层目录os.path.makedirs(path)
 创建目录os.mkdir(path)
-
-
-1234567891011121314151617181920...
-        </p> 
+…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -664,24 +692,22 @@ pip 是 Python 下方便的包管理工具
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/12/30</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/12/30/Python创建目录/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/12/30/Python创建目录/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -840,7 +866,6 @@ pip 是 Python 下方便的包管理工具
         </div>
     </div>
 </div>
-
 
 
 

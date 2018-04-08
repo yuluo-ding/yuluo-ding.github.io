@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -122,9 +130,9 @@
             <div class="row">
                 <main class="col-md-8 main-content ">
                     <h3> 
-
-    Linux 
-
+    
+        Linux 
+    
 </h3>
 
     <article class="post">
@@ -141,10 +149,15 @@
                 </div>
             </div>
             <p class="brief">
-                在客户端来看，SSH提供两种级别的安全验证。
+                
+                    在客户端来看，SSH提供两种级别的安全验证。
 
 第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。
-第二种级别（基于密钥的安全验证），需要依靠密钥，也就是你必须为自己创建一对密钥，并...
+第二种级别（基于密钥的安全验证），需要依靠密钥，也就是你必须为自己创建一对密钥，并把公有密钥放在需要访问的服务器上。
+
+
+这里要讨论的ssh密钥认证自动登录正是基于第二种级别的安全验证方式。…
+                
             </p> 
         </div>
     </article>
@@ -163,10 +176,14 @@
                 </div>
             </div>
             <p class="brief">
-                阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
+                
+                    阿里云是的香港服务器对于的国内用户来说是一个很好的低延迟的中转。以下是一些第一次启动可能需要做的事情。
 
 卸载阿里云安骑士
-下载 wget http://update.aegis.aliyun.com/download/uninst...
+下载 wget http://update.aegis.aliyun.com/download/uninstall.sh
+执行下列命令：
+12chmod +x uninstall.sh./uninstall.sh…
+                
             </p> 
         </div>
     </article>
@@ -185,10 +202,9 @@
                 </div>
             </div>
             <p class="brief">
-                ​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。
-
-安装
-Install...
+                
+                    ​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。…
+                
             </p> 
         </div>
     </article>
@@ -207,9 +223,11 @@ Install...
                 </div>
             </div>
             <p class="brief">
-                先介绍几个和apt-get相关的目录:
+                
+                    先介绍几个和apt-get相关的目录:
 /var/lib/dpkg/available文件的内容是软件包的描述信息, 该软件包括当前系统所使用的 Debian 安装源中的所有软件包,其中包括当前系统中已安装的和未安装的软件包.
-/va...
+/var/cache/apt/archives目录是在用 apt-get install 安装软件时，软件包的临时存放路径…
+                
             </p> 
         </div>
     </article>
@@ -228,12 +246,9 @@ Install...
                 </div>
             </div>
             <p class="brief">
-                A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为192.168.1.1 ;A和B的系统都是Linux.
-
-
-什么是 SSH？
-
-Secure Shell（缩写为SSH），由IETF的...
+                
+                    A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为192.168.1.1 ;A和B的系统都是Linux.…
+                
             </p> 
         </div>
     </article>
@@ -252,10 +267,9 @@ Secure Shell（缩写为SSH），由IETF的...
                 </div>
             </div>
             <p class="brief">
-                使用 iTerm2的时候，在 SSH 连接 VPS 过程中，要是有段时间不操作就会断开连接。其中要是有写了一半的数据，那就呵呵呵了。有两种方法暂时可以解决该问题。
-
-第一种方法：
-iTerm2 中有一个选项： When idle, s...
+                
+                    使用 iTerm2的时候，在 SSH 连接 VPS 过程中，要是有段时间不操作就会断开连接。其中要是有写了一半的数据，那就呵呵呵了。有两种方法暂时可以解决该问题。…
+                
             </p> 
         </div>
     </article>
@@ -274,10 +288,12 @@ iTerm2 中有一个选项： When idle, s...
                 </div>
             </div>
             <p class="brief">
-                很多常用的命令，很长的路径输出很麻烦，用户可利用alias，自定指令的别名。
+                
+                    很多常用的命令，很长的路径输出很麻烦，用户可利用alias，自定指令的别名。
 可以利用 alias 来解决
 语　　法：alias[别名]=[指令名称]
-补充说明：若仅输入alias，则可列出目前所有的别名设置。alias的效力仅及于该...
+补充说明：若仅输入alias，则可列出目前所有的别名设置。alias的效力仅及于该次登入的操作。若要每次登入是即自动设好别名，可在/etc/profile或自己的~/.bashrc中设定指令的别名。…
+                
             </p> 
         </div>
     </article>
@@ -296,7 +312,9 @@ iTerm2 中有一个选项： When idle, s...
                 </div>
             </div>
             <p class="brief">
-                由于非法重启或硬盘故障，会导致linux系统无法启动，无法进入操作系统。当你看到提示：give root password for maintenance(or type control-D to continue):的时候，你还有补...
+                
+                    由于非法重启或硬盘故障，会导致linux系统无法启动，无法进入操作系统。当你看到提示：give root password for maintenance(or type control-D to continue):的时候，你还有补救的机会。问题原因应该是/usr /home /boot分区磁盘检测出了问题。…
+                
             </p> 
         </div>
     </article>
@@ -315,13 +333,10 @@ iTerm2 中有一个选项： When idle, s...
                 </div>
             </div>
             <p class="brief">
-                在连接MySQL中，遇到ERROR 2002 (HY000): mysql这个其实是Linux防火墙的阻拦
-解决办法就是关闭防火墙即可。
-
-步骤如下：
-
-立即关闭：service iptables stop
-永久关闭：iptables...
+                
+                    在连接MySQL中，遇到ERROR 2002 (HY000): mysql这个其实是Linux防火墙的阻拦
+解决办法就是关闭防火墙即可。…
+                
             </p> 
         </div>
     </article>
@@ -340,12 +355,9 @@ iTerm2 中有一个选项： When idle, s...
                 </div>
             </div>
             <p class="brief">
-                Apache 2配置SSL证书本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。
-
-确保Apache SSL模块的开启1sudo a2enmod ssl
-配置SSL证书完整的SSL证书分为四个部分：
-
-CA...
+                
+                    Apache 2配置SSL证书本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。…
+                
             </p> 
         </div>
     </article>
@@ -510,7 +522,6 @@ CA...
         </div>
     </div>
 </div>
-
 
 
 

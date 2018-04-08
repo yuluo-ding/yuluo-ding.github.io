@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="default">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -16,6 +17,8 @@
     <!--SEO-->
 
 <meta name="description" content="The home of yuluo!"/>
+
+
 
 
 
@@ -38,8 +41,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css?rev=@@hash">
@@ -48,9 +49,11 @@
 
 
     
-    <div class="hide">
-    	<script src="https://s4.cnzz.com/z_stat.php?id=1263868967&web_id=1263868967" language="JavaScript"></script>
-    </div>
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
@@ -73,14 +76,14 @@
 <body>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="">
-            <img src="/img/avatar.jpg" alt="logo头像">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题">  
-             
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
     	</div>
     </div>
 </header>
@@ -89,26 +92,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
                         
-                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>Home</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/前端/"><i class="fa fa-fw "></i>前端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/工具/"><i class="fa fa-fw "></i>工具</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
                             </li>
                         
-                            <li role="presentation"><a href="/categories/资源/"><i class="fa fa-fw "></i>资源</a>
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
                             </li>
                         
                     </ul>
@@ -142,23 +150,23 @@
             </div>
         </div>
         <p class="brief">
-            在连接MySQL中，遇到ERROR 2002 (HY000): mysql这个其实是Linux防火墙的阻拦
-解决办法就是关闭防火墙即可。
-
-步骤如下：
-
-立即关闭：service iptables stop
-永久关闭：iptables...
-        </p> 
+            
+                在连接MySQL中，遇到ERROR 2002 (HY000): mysql这个其实是Linux防火墙的阻拦
+解决办法就是关闭防火墙即可。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Linux</span>
+        <a href="/categories/Linux">
+            Linux
+        </a>
     </span>
     
     
@@ -166,24 +174,22 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/12/02</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/12/02/Linux防火墙的关闭/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/12/02/Linux防火墙的关闭/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -201,19 +207,24 @@
             </div>
         </div>
         <p class="brief">
-            首先有一个最简单的方法，就是用正则匹配
-123import retmp = open("123.txt", "r").read()print len(re.findall("hello", tmp))
-还可以利用Counter来实现更...
-        </p> 
+            
+                首先有一个最简单的方法，就是用正则匹配
+123import retmp = open(&quot;123.txt&quot;, &quot;r&quot;).read()print len(re.findall(&quot;hello&quot;, tmp))
+还可以利用Counter来实现更多的功能…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -221,24 +232,22 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/11/30</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/11/30/统计一个文件中某个单词的出现次数/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/11/30/统计一个文件中某个单词的出现次数/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -256,22 +265,24 @@
             </div>
         </div>
         <p class="brief">
-            MySQL查询结果有三种方法输出到文本中
+            
+                MySQL查询结果有三种方法输出到文本中
 直接执行命令
-1&gt; select name from table  into outfile '/tmp/test.txt';
-
-在目录/tmp/下会产生文件test.txt
-报错：ER...
-        </p> 
+1&amp;gt; select name from table  into outfile &#39;/tmp/test.txt&#39;;…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>SQL</span>
+        <a href="/categories/SQL">
+            SQL
+        </a>
     </span>
     
     
@@ -279,24 +290,22 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/11/30</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/11/30/把SQL的显示结果输出到文本中/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/11/30/把SQL的显示结果输出到文本中/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -314,24 +323,22 @@
             </div>
         </div>
         <p class="brief">
-            如何在已经提交代码之后，移除.idea等配置文件总结，先删除，再提交。
-
-
-先把.idea的配置文件剪贴到别的地方
-通过git提交
-git add .
-git commit -m &quot;&quot;
-git push origi...
-        </p> 
+            
+                如何在已经提交代码之后，移除.idea等配置文件总结，先删除，再提交。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>GIT</span>
+        <a href="/categories/GIT">
+            GIT
+        </a>
     </span>
     
     
@@ -339,24 +346,22 @@ git push origi...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/11/10</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/11/10/Git移除-deal等配置文件/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/11/10/Git移除-deal等配置文件/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -374,22 +379,22 @@ git push origi...
             </div>
         </div>
         <p class="brief">
-            Apache 2配置SSL证书本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。
-
-确保Apache SSL模块的开启1sudo a2enmod ssl
-配置SSL证书完整的SSL证书分为四个部分：
-
-CA...
-        </p> 
+            
+                Apache 2配置SSL证书本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Linux</span>
+        <a href="/categories/Linux">
+            Linux
+        </a>
     </span>
     
     
@@ -397,24 +402,22 @@ CA...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/10/27</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/10/27/SSL证书的配置过程/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/10/27/SSL证书的配置过程/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -432,17 +435,23 @@ CA...
             </div>
         </div>
         <p class="brief">
-            虚拟机中的Ubuntu16.04启动时自动设置分辨率1920x1080​    vmware不能自动适应Ubuntu16.04的分辨率，而且Ubuntu16.04的display设置中也没有1920x1080的分辨率，因此需要通过修改...
-        </p> 
+            
+                虚拟机中的Ubuntu16.04启动时自动设置分辨率1920x1080​    vmware不能自动适应Ubuntu16.04的分辨率，而且Ubuntu16.04的display设置中也没有1920x1080的分辨率，因此需要通过修改/etc/profile文件文件来实现登录时自动设置分辨率为1920x1080。
+​…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Linux</span>
+        <a href="/categories/Linux">
+            Linux
+        </a>
     </span>
     
     
@@ -450,24 +459,22 @@ CA...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/10/24</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/10/24/Linux虚拟机分辨率设置/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/10/24/Linux虚拟机分辨率设置/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -485,20 +492,23 @@ CA...
             </div>
         </div>
         <p class="brief">
-            Python版本：2.7.x
-代码如下：
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#!/usr/bin...
-        </p> 
+            
+                Python版本：2.7.x
+代码如下：…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -506,24 +516,22 @@ CA...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/10/13</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/10/13/Python列出目录下的所有文件夹和文件/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/10/13/Python列出目录下的所有文件夹和文件/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -541,18 +549,23 @@ CA...
             </div>
         </div>
         <p class="brief">
-            有以下几个方法：
-1、    现在有两个列表，list1 = [&#39;key1&#39;,&#39;key2&#39;,&#39;key3&#39;]和list2 = [&#39;1&#39;,&#39;2&#39;,&#39;3...
-        </p> 
+            
+                有以下几个方法：
+1、    现在有两个列表，list1 = [&amp;#39;key1&amp;#39;,&amp;#39;key2&amp;#39;,&amp;#39;key3&amp;#39;]和list2 = [&amp;#39;1&amp;#39;,&amp;#39;2&amp;#39;,&amp;#39;3&amp;#39;]，把他们转为这样的字典：{&amp;#39;key1&amp;#39;:&amp;#39;1&amp;#39;,&amp;#39;key2&amp;#39;:&amp;#39;2&amp;#39;,&amp;#39;key3&amp;#39;:&amp;#39;3&amp;#39;}…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -560,24 +573,22 @@ CA...
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/10/01</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/10/01/Python中把列表转换为字典/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/10/01/Python中把列表转换为字典/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -595,24 +606,26 @@ CA...
             </div>
         </div>
         <p class="brief">
-            该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令
+            
+                该Linux解压是在Ubuntu14LTS下进行的，主要是几个常见的命令
 .tar
 解包：tar xvf FileName.tar
 打包：tar cvf FileName.tar DirName
-PS：打包和压缩是两个概念
-
-
-.gz...
-        </p> 
+PS：打包和压缩是两个概念…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Linux</span>
+        <a href="/categories/Linux">
+            Linux
+        </a>
     </span>
     
     
@@ -620,24 +633,22 @@ PS：打包和压缩是两个概念
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/09/21</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/09/21/Linux压缩解压的几个命令/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/09/21/Linux压缩解压的几个命令/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -655,20 +666,23 @@ PS：打包和压缩是两个概念
             </div>
         </div>
         <p class="brief">
-            Python进行URL解码所用模块：urllib
-所用函数：urllib.unquote()
-
-1234import urllibrawurl = "%E8%A7%A3%E7%A0%81"url = urllib.unquote(ra...
-        </p> 
+            
+                Python进行URL解码所用模块：urllib
+所用函数：urllib.unquote()…
+            
+        </p>
     </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <span>Python</span>
+        <a href="/categories/Python">
+            Python
+        </a>
     </span>
     
     
@@ -676,24 +690,22 @@ PS：打包和压缩是两个概念
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+                
             
         </span>
     </span>
     
+
     
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2016/09/18</span>
-    </span>
 </div>
 
-        </div>
+            </div>
 
-        <div class="post-permalink"> 
-            <a href="/2016/09/18/Python进行URL解码/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
+            <div class="post-permalink">
+                <a href="/2016/09/18/Python进行URL解码/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
 </article>
 
 
@@ -852,7 +864,6 @@ PS：打包和压缩是两个概念
         </div>
     </div>
 </div>
-
 
 
 
