@@ -29,7 +29,7 @@
     <!--Title-->
 
 
-<title>mac OS 设置单个应用的方法 | yuluo</title>
+<title>mac OS 设置单个应用语言的方法 | yuluo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
@@ -126,9 +126,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="mac OS 设置单个应用的方法">
+        <h1 id="mac OS 设置单个应用语言的方法">
             
-	            mac OS 设置单个应用的方法
+	            mac OS 设置单个应用语言的方法
             
         </h1>
         <div class="post-meta">
@@ -173,6 +173,10 @@
 <p>如上, 其余的应用, 也可以如此设置.</p>
 <p>如果不想要这个语言设置了, 可以使用如下设置:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults delete com.apple.AddressBook AppleLanguages</span><br></pre></td></tr></table></figure>
+<p> 其实查询语言的ID 的为</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdls -name kMDItemCFBundleIdentifier /Applications/Microsoft\ Word.app</span><br></pre></td></tr></table></figure>
+<p> 结果为</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kMDItemCFBundleIdentifier = "com.microsoft.Word"</span><br></pre></td></tr></table></figure>
 
     </div>
 
