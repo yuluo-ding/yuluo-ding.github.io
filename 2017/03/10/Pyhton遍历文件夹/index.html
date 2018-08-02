@@ -174,11 +174,15 @@
 <p>文档是这么解释的：</p>
 <blockquote>
 <p>os.<strong>listdir</strong>(<em>path</em>)</p>
+</blockquote>
+<blockquote>
 <p>Return a list containing the names of the entries in the directory given by <em>path</em>. The list is in arbitrary order. It does not include the special entries ‘.’ and ‘..’ even if they are present in the directory.</p>
 </blockquote>
 <a id="more"></a>
 <blockquote>
 <p>os.<strong>walk</strong>(<em>top</em>, <em>topdown=True</em>, <em>onerror=None</em>, <em>followlinks=False</em>)</p>
+</blockquote>
+<blockquote>
 <p>Generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory <em>top</em> (including <em>top</em> itself), it yields a 3-tuple (dirpath, dirnames, filenames).</p>
 </blockquote>
 <p>代码如下：</p>
