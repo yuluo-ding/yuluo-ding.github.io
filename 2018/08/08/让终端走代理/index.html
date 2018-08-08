@@ -29,7 +29,7 @@
     <!--Title-->
 
 
-<title>Python2.7的UnicodeEncodeError | yuluo</title>
+<title>让终端走代理 | yuluo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
@@ -128,9 +128,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Python2.7的UnicodeEncodeError">
+        <h1 id="让终端走代理">
             
-	            Python2.7的UnicodeEncodeError
+	            让终端走代理
             
         </h1>
         <div class="post-meta">
@@ -138,8 +138,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/Python">
-            Python
+        <a href="/categories/mac OS">
+            mac OS
         </a>
     </span>
     
@@ -158,30 +158,25 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2017/03/22</span>
+            <span class="date-meta">2018/08/08</span>
         </span>
     
 </div>
 
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>504</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
-        <p><code>UnicodeEncodeError: ‘ascii’ codec can’t encode</code>异常错误</p>
-<p>​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Python2的默认是<code>ASCII</code>的，Python默认环境编码通过下面的方法可以获取：</p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">print</span> sys.getdefaultencoding()</span><br><span class="line"><span class="comment"># 'ascii'</span></span><br></pre></td></tr></table></figure>
-<p>​    基本上是ascii编码方式，由此Python自然调用ascii编码解码程序去处理字符流，当字符流不属于ascii范围内，就会抛出异常（ordinal not in range(128)）。</p>
-<p>​    解决的方案很简单，修改默认的编码模式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
-<p>​    还有一种更好的方法，在输出的时候，对文件制定特定的UTF-8编码即可。</p>
-<p>​    就是在打开一个文件的时候，不是用<code>open</code>而是用<code>codecs</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fp = codecs.open(‘output.txt’, ‘a+’, ‘utf<span class="number">-8</span>’)</span><br><span class="line">fp.write(row[<span class="number">1</span>])</span><br><span class="line">fp.close()</span><br></pre></td></tr></table></figure>
+        <p>在某些时候, mac  OS 下的终端在现在这个环境下. GitHub 等网站动不动连不上, 需要走代理. 现在可以有三种方式:</p>
+<ul>
+<li>Surge Mac 2 的增强模式</li>
+<li>Proxifier 把终端设置为走代理模式</li>
+<li>zsh 的配置模式</li>
+</ul>
+<p>其中可以在<code>.zshrc</code>的配置文件中:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> proxy</span></span><br><span class="line">proxy () &#123;</span><br><span class="line">  export http_proxy="http://127.0.0.1:8888"</span><br><span class="line">  export https_proxy="http://127.0.0.1:8888"</span><br><span class="line">  echo "HTTP Proxy on"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> noproxy</span></span><br><span class="line">noproxy () &#123;</span><br><span class="line">  unset http_proxy</span><br><span class="line">  unset https_proxy</span><br><span class="line">  echo "HTTP Proxy off"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用的时候输入 Proxy 打开代理模式，关闭代理时输入 noproxy 即可.</p>
 
     </div>
 
@@ -199,15 +194,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/03/23/Linux自定义命令/" class="pre-post btn btn-default" title='Linux自定义命令'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Linux自定义命令</span>
-        </a>
     
-    
-        <a href="/2017/03/20/Python去重列表的重复元素/" class="next-post btn btn-default" title='Python去重列表的重复元素'>
+        <a href="/2018/08/07/pm升级所有可更新包/" class="next-post btn btn-default" title='npm升级所有可更新包'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Python去重列表的重复元素</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">npm升级所有可更新包</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
