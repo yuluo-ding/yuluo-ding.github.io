@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[开启snippet的本地搜索功能]]></title>
+    <url>%2F2018%2F08%2F10%2F%E5%BC%80%E5%90%AFsnippet%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[由于使用的是snippet的主题，使用文档已经说出了如何开启本地的搜索功能。 如果要使用本地站点搜索，必须安装插件hexo-generator-json-content来创建本地搜索json文件 1npm i hexo-generator-json-content@2.2.0 -S 然后修改主题配置_config.yml文件下jsonContent相关参数。 12345678910## 搜索jsonContent: searchLocal: true // 是否启用本地搜索 searchGoogle: true //是否启用谷歌搜索 posts: title: true text: true content: true categories: true tags: true]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[让终端走代理]]></title>
     <url>%2F2018%2F08%2F08%2F%E8%AE%A9%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86%2F</url>
     <content type="text"><![CDATA[在某些时候, mac OS 下的终端在现在这个环境下. GitHub 等网站动不动连不上, 需要走代理. 现在可以有三种方式: Surge Mac 2 的增强模式 Proxifier 把终端设置为走代理模式 zsh 的配置模式 其中可以在.zshrc的配置文件中: 12345678910111213# where proxyproxy () &#123; export http_proxy="http://127.0.0.1:8888" export https_proxy="http://127.0.0.1:8888" echo "HTTP Proxy on"&#125;# where noproxynoproxy () &#123; unset http_proxy unset https_proxy echo "HTTP Proxy off"&#125; 使用的时候输入 Proxy 打开代理模式，关闭代理时输入 noproxy 即可.]]></content>
