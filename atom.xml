@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>yuluo</title>
+  
+  <subtitle>The home of yuluo!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="yuluo-ding.github.io/"/>
+  <updated>2018-08-10T01:42:09.642Z</updated>
+  <id>yuluo-ding.github.io/</id>
+  
+  <author>
+    <name>Luo Yu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开启snippet的本地搜索功能</title>
+    <link href="yuluo-ding.github.io/2018/08/10/%E5%BC%80%E5%90%AFsnippet%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/"/>
+    <id>yuluo-ding.github.io/2018/08/10/开启snippet的本地搜索功能/</id>
+    <published>2018-08-10T01:24:28.000Z</published>
+    <updated>2018-08-10T01:42:09.642Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于使用的是snippet的主题，使用文档已经说出了如何开启本地的搜索功能。</p><p>如果要使用本地站点搜索，必须安装插件hexo-generator-json-content来创建本地搜索json文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content@2.2.0 -S</span><br></pre></td></tr></table></figure><p>然后修改主题配置_config.yml文件下<code>jsonContent</code>相关参数。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 搜索</span></span><br><span class="line">jsonContent:</span><br><span class="line">  searchLocal: true // 是否启用本地搜索</span><br><span class="line">  searchGoogle: true //是否启用谷歌搜索</span><br><span class="line">  posts:</span><br><span class="line">    title: true</span><br><span class="line">    text: true</span><br><span class="line">    content: true</span><br><span class="line">    categories: true</span><br><span class="line">    tags: true</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;由于使用的是snippet的主题，使用文档已经说出了如何开启本地的搜索功能。&lt;/p&gt;
+&lt;p&gt;如果要使用本地站点搜索，必须安装插件hexo-generator-json-content来创建本地搜索json文件&lt;/p&gt;
+&lt;figure class=&quot;highlight she
+      
+    
+    </summary>
+    
+      <category term="hexo教程" scheme="yuluo-ding.github.io/categories/hexo%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="hexo" scheme="yuluo-ding.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>让终端走代理</title>
+    <link href="yuluo-ding.github.io/2018/08/08/%E8%AE%A9%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86/"/>
+    <id>yuluo-ding.github.io/2018/08/08/让终端走代理/</id>
+    <published>2018-08-08T15:21:42.000Z</published>
+    <updated>2018-08-09T09:15:10.660Z</updated>
+    
+    <content type="html"><![CDATA[<p>在某些时候, mac  OS 下的终端在现在这个环境下. GitHub 等网站动不动连不上, 需要走代理. 现在可以有三种方式:</p><ul><li>Surge Mac 2 的增强模式</li><li>Proxifier 把终端设置为走代理模式</li><li>zsh 的配置模式</li></ul><p>其中可以在<code>.zshrc</code>的配置文件中:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> proxy</span></span><br><span class="line">proxy () &#123;</span><br><span class="line">  export http_proxy="http://127.0.0.1:8888"</span><br><span class="line">  export https_proxy="http://127.0.0.1:8888"</span><br><span class="line">  echo "HTTP Proxy on"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> noproxy</span></span><br><span class="line">noproxy () &#123;</span><br><span class="line">  unset http_proxy</span><br><span class="line">  unset https_proxy</span><br><span class="line">  echo "HTTP Proxy off"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用的时候输入 Proxy 打开代理模式，关闭代理时输入 noproxy 即可.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在某些时候, mac  OS 下的终端在现在这个环境下. GitHub 等网站动不动连不上, 需要走代理. 现在可以有三种方式:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Surge Mac 2 的增强模式&lt;/li&gt;
+&lt;li&gt;Proxifier 把终端设置为走代理模式&lt;/li&gt;
+&lt;li&gt;z
+      
+    
+    </summary>
+    
+      <category term="mac OS" scheme="yuluo-ding.github.io/categories/mac-OS/"/>
+    
+    
+      <category term="terminal" scheme="yuluo-ding.github.io/tags/terminal/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm升级所有可更新包</title>
+    <link href="yuluo-ding.github.io/2018/08/07/npm%E5%8D%87%E7%BA%A7%E6%89%80%E6%9C%89%E5%8F%AF%E6%9B%B4%E6%96%B0%E5%8C%85/"/>
+    <id>yuluo-ding.github.io/2018/08/07/npm升级所有可更新包/</id>
+    <published>2018-08-07T15:38:51.000Z</published>
+    <updated>2018-08-09T09:19:06.846Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用npm管理node的包，可以使用<code>npm update &lt;name&gt;</code>对单个包升级，对于npm的版本大于 <code>2.6.1</code>,可以使用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g</span><br></pre></td></tr></table></figure><p> 这样升级全部的包</p><p>如果上述不太方便, 还可以使用<code>shell脚本</code>和<code>npm-ckeck</code></p><h3 id="shell_脚本">shell 脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">set -e</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> -x</span></span><br><span class="line">for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)</span><br><span class="line">do</span><br><span class="line">    npm -g install "$package"</span><br><span class="line">done</span><br></pre></td></tr></table></figure><h3 id="npm-check">npm-check</h3><p><a href="https://www.npmjs.com/package/npm-check" target="_blank" rel="noopener">npm-check</a>是用来检查npm依赖包是否有更新，错误以及不在使用的，我们也可以使用npm-check进行包的更新。</p><p>安装npm-check：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check</span><br></pre></td></tr></table></figure><p>检查npm包的状态:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm-check -u -g</span><br></pre></td></tr></table></figure><p>通过上下键可以移动光标，使用空格键可以选择需要处理的包，回车直接进行处理。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;使用npm管理node的包，可以使用&lt;code&gt;npm update &amp;lt;name&amp;gt;&lt;/code&gt;对单个包升级，对于npm的版本大于 &lt;code&gt;2.6.1&lt;/code&gt;,可以使用命令:&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;t
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="yuluo-ding.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="npm" scheme="yuluo-ding.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS 升级JDK至1.8</title>
+    <link href="yuluo-ding.github.io/2018/08/02/macOS-%E5%8D%87%E7%BA%A7JDK%E8%87%B31-8/"/>
+    <id>yuluo-ding.github.io/2018/08/02/macOS-升级JDK至1-8/</id>
+    <published>2018-08-02T15:55:13.000Z</published>
+    <updated>2018-08-02T16:04:53.661Z</updated>
+    
+    <content type="html"><![CDATA[<p>Macbook Pro原生自带的Java JDK版本是1.6，而有的时候呢需要高一点的版本，这时候就需要升级JDK的版本。</p><p>通过<code>java -version</code>可以查看当前的版本:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Java version "1.6.0_65"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4833)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)</span><br></pre></td></tr></table></figure><ol><li><p>首先去下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">Java SE Developent Kit</a>，下载完成后安装上，安装好的jdk在这个位置:<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents</code></p></li><li><p>然后去苹果的官网下载最新的java版本 <a href="https://support.apple.com/en-us/HT204036" target="_blank" rel="noopener">Java From Apple</a>,下载完成安装上以后可以在 系统偏好设置–&gt;Java–&gt;Java控制面板 中查看Java相关的信息。</p></li><li><p>去JavaFramework索引目录下修改当前的jdk引用路径:<code>cd /System/Library/Frameworks/JavaVM.framework/Versions</code></p></li><li><p>移除旧的引用:<code>sudo rm CurrentJDK</code>，如果你的系统是最新的<code>10.13</code>的话，会有这个提示：<code>rm: CurrentJDK: Operation not permitted</code>。</p><blockquote><p>这是因为<code>EI Capitan</code>加入了<code>Rootless机制</code>，不再能够随心所欲的读写很多路径下得内容了，即使是设置了<code>root</code>权限也不行。 苹果这样做也是为了用户的安全考虑，避免用户误删文件，当然也能够在一定程度下减小恶意软件对用户造成危害的几率。 但是这是我们自己需要这样的操作怎么办呢 ？苹果也考虑到了大家的需求，可以这么做：</p><p><strong>1).</strong> 重启电脑，在将要启动的时候按住 <code>Command + R</code>键，进入恢复模式； </p><p><strong>2).</strong> 选择菜单栏中得使用工具，在其中打开终端；</p><p><strong>3).</strong> 输入 <code>csrutil disable</code>，暂时关闭<code>Rootless</code>； </p><p><strong>4).</strong> 重启即可继续操作。</p><p><strong>5).</strong> 如果想要恢复，可以再次重启并进入终端，输入 <code>csrutil enable</code> 即可。</p></blockquote></li><li><p>删除 <code>CurrentJDK</code> 后，不要离开当前目录，添加新的jdk引用路径：<code>sudo ln -s /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents CurrentJDK</code></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Macbook Pro原生自带的Java JDK版本是1.6，而有的时候呢需要高一点的版本，这时候就需要升级JDK的版本。&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;java -version&lt;/code&gt;可以查看当前的版本:&lt;/p&gt;
+&lt;figure class=&quot;highlight 
+      
+    
+    </summary>
+    
+      <category term="mac OS" scheme="yuluo-ding.github.io/categories/mac-OS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>国内外主流android第三方服务</title>
+    <link href="yuluo-ding.github.io/2018/08/01/%E5%9B%BD%E5%86%85%E5%A4%96%E4%B8%BB%E6%B5%81android%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8A%A1/"/>
+    <id>yuluo-ding.github.io/2018/08/01/国内外主流android第三方服务/</id>
+    <published>2018-08-01T15:53:53.000Z</published>
+    <updated>2018-08-01T15:55:36.368Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>统计分析</strong></p><p>国内：Talking Data, 可惜友盟现在启动就带上阿里全家桶。</p><p>国外: Flurry, 国外统计分析系统的标杆，免费的。</p><p><strong>Crash分析</strong></p><p>国内: 腾讯Bugly, 号称全球唯一自带ANR收集，其实原理很简单，不知别家为何不做。</p><p>国外: Crashlytics, 已经收归Twitter Fabric开发者工具集，免费好用。</p><p><strong>推送</strong></p><p>国内: LeanCloud，这个没实际用过，身边朋友反馈很好。</p><p>国外: Parse, 正如覃超所说,FB也在用，30qps免费限制，一般中小应用够用。</p><p><strong>分享</strong></p><p>国内: ShareSDK，专业做社交分享。</p><p>国外: 各社交平台自家SDK, 注意不同国家主流社交平台不同。</p><p><strong>评论</strong></p><p>国内：畅言, 基本抄的Disqus, 免费，算是良心产品了。</p><p>国外：Disqus, 基本不用考虑其他家的，虽然确实有竞品。</p><p><strong>广告变现</strong></p><p>国内：百度 or 广点通，两个效果差不多。</p><p>国外：FB or Google，做native广告，效果最佳。</p><p><strong>支付</strong></p><p>国内: 支付宝, 微信</p><p>国外: payssion, 专业做海外跨境收款的，能省很多事。</p><p><strong>短信验证</strong></p><p>国内：没用过，Google找一家最便宜的就行。</p><p>国外：Fabric Digits, twitter出品，居然不要钱。</p><p><strong>灰度测试</strong></p><p>国内：AppAdhoc，移动AB测试国内最专业的一家。</p><p>国外：optimizely, 支持Android, iOS, 直接在线改UI做AB测试, 三观都要颠覆了。</p><p><strong>云测</strong></p><p>国内：百度云测试。</p><p>国外：test in, 其实百度的也跑，国内的Android设备都卖到国外去了。</p><p><strong>客服</strong></p><p>国内：微客服, 有免费额度，中小应用够用。</p><p>国外：helpshift，国外最专业的客服平台。</p><p><strong>推广</strong></p><p>国内：这个真不了解。</p><p>国外：Appsflyer, 海外推广为数不多的选择之一。</p><p><strong>可视化分析</strong></p><p>国内：growingio, 还在内测中，linkedin数据分析大牛回国创业，据说黑科技，可以直接在app上实时查看各种转化率数据。</p><p>国外：appsee, 绝对黑科技，PM最爱。</p><p><strong>网络优化</strong></p><p>国外：TwinPrime, 颇具特色的网络优化服务。</p><p>国内：暂时还没发现同类产品，不过TwinPrime理论上是支持全球的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;统计分析&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;国内：Talking Data, 可惜友盟现在启动就带上阿里全家桶。&lt;/p&gt;
+&lt;p&gt;国外: Flurry, 国外统计分析系统的标杆，免费的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Crash分析&lt;/strong&gt;&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="Apple" scheme="yuluo-ding.github.io/categories/Apple/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>相似图片检测：感知哈希算法之dHash的Python实现</title>
+    <link href="yuluo-ding.github.io/2018/07/20/%E7%9B%B8%E4%BC%BC%E5%9B%BE%E7%89%87%E6%A3%80%E6%B5%8B%EF%BC%9A%E6%84%9F%E7%9F%A5%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%E4%B9%8BdHash%E7%9A%84Python%E5%AE%9E%E7%8E%B0/"/>
+    <id>yuluo-ding.github.io/2018/07/20/相似图片检测：感知哈希算法之dHash的Python实现/</id>
+    <published>2018-07-20T15:53:38.000Z</published>
+    <updated>2018-07-20T16:26:48.528Z</updated>
+    
+    <content type="html"><![CDATA[<p>根据这篇文章<a href="https://blog.csdn.net/haluoluo211/article/details/52769325https://blog.csdn.net/haluoluo211/article/details/52769325" target="_blank" rel="noopener">相似图片检测：感知哈希算法之dHash的Python实现</a></p><p>实现步骤如下：</p><p>1、将图片缩放至9*8像素，即一共有8行，每行有9个像素</p><p>2、将缩放的图转为灰度图，每个像素由一个0到255的整数表示灰度</p><p>3、将每一行灰度值与第二个灰度值进行比较，如果大于则用1表示，否则用0表示，不同行间的灰度值不进行比较，比较后的结果可以得到由1、0组成的64个数值，该64个数值可以看作是该图片的指纹</p><p>4、将两张图的指纹进行比较，即将两个指纹相同位置的数值进行对比，如果相同则不计数，如不同则计数1，最终比较结果，如果计数小于5，即视为相同或相似的图片，如果大于10则视为两张不同的照片</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /user/bin/python</span></span><br><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image  <span class="comment"># 导入pillow库下的image模块，主要用于图片缩放、图片灰度化、获取像素灰度值</span></span><br><span class="line"></span><br><span class="line">path = <span class="string">'/Users/test/Downloads/photo'</span></span><br><span class="line">error_path = <span class="string">'/Users/test/Downloads/HEIC/error'</span></span><br><span class="line">res_path = <span class="string">'/Users/test/Downloads/HEIC/result.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># image为图片的路径，resize_width为缩放图片的宽度，resize_heith为缩放图片的高度</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grayscale_Image</span><span class="params">(image, resize_width=<span class="number">9</span>, resize_heith=<span class="number">8</span>)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        im = Image.open(image)  <span class="comment"># 使用Image的open方法打开图片</span></span><br><span class="line">        smaller_image = im.resize((resize_width, resize_heith))  <span class="comment"># 将图片进行缩放</span></span><br><span class="line">        grayscale_image = smaller_image.convert(<span class="string">'L'</span>)  <span class="comment"># 将图片灰度化</span></span><br><span class="line">        <span class="keyword">return</span> grayscale_image</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(image)</span><br><span class="line">        shutil.move(image, error_path)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hash_String</span><span class="params">(image, resize_width=<span class="number">9</span>, resize_heith=<span class="number">8</span>)</span>:</span></span><br><span class="line">    hash_string = <span class="string">""</span>  <span class="comment"># 定义空字符串的变量，用于后续构造比较后的字符串</span></span><br><span class="line">    pixels = list(grayscale_Image(image, resize_width, resize_heith).getdata())</span><br><span class="line">    <span class="comment"># 上一个函数grayscale_Image()缩放图片并返回灰度化图片，.getdata()方法可以获得每个像素的灰度值，使用内置函数list()将获得的灰度值序列化</span></span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> range(<span class="number">1</span>, len(pixels) + <span class="number">1</span>):  <span class="comment"># 获取pixels元素个数，从1开始遍历</span></span><br><span class="line">        <span class="keyword">if</span> row % resize_width:  <span class="comment"># 因不同行之间的灰度值不进行比较，当与宽度的余数为0时，即表示当前位置为行首位，我们不进行比较</span></span><br><span class="line">            <span class="keyword">if</span> pixels[row - <span class="number">1</span>] &gt; pixels[row]:  <span class="comment"># 当前位置非行首位时，我们拿前一位数值与当前位进行比较</span></span><br><span class="line">                hash_string += <span class="string">'1'</span>  <span class="comment"># 当为真时，构造字符串为1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hash_string += <span class="string">'0'</span>  <span class="comment"># 否则，构造字符串为0</span></span><br><span class="line">        <span class="comment"># 最后可得出由0、1组64位数字字符串，可视为图像的指纹</span></span><br><span class="line">    <span class="keyword">return</span> int(hash_string, <span class="number">2</span>)  <span class="comment"># 把64位数当作2进制的数值并转换成十进制数值</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Difference</span><span class="params">(dhash1, dhash2)</span>:</span></span><br><span class="line">    difference = dhash1 ^ dhash2  <span class="comment"># 将两个数值进行异或运算</span></span><br><span class="line">    <span class="keyword">return</span> bin(difference).count(<span class="string">'1'</span>)  <span class="comment"># 异或运算后计算两数不同的个数，即个数&lt;5，可视为同一或相似图片</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    path_list = []</span><br><span class="line">    path_dic = &#123;&#125;</span><br><span class="line">    pic_list = []</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">        <span class="keyword">if</span> file.endswith(<span class="string">'.jpg'</span>) <span class="keyword">or</span> file.endswith(<span class="string">'.JPG'</span>) <span class="keyword">or</span> file.endswith(<span class="string">'.PNG'</span>) <span class="keyword">or</span> file.endswith(<span class="string">'.png'</span>):</span><br><span class="line">            pic_list.append(file)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> pic_list:</span><br><span class="line">        file_path = os.path.join(path, file)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            Image.open(file_path)</span><br><span class="line"></span><br><span class="line">            path_list.append(file_path)</span><br><span class="line"></span><br><span class="line">            tmp_hash = hash_String(file_path)</span><br><span class="line">            path_dic[file_path] = tmp_hash</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(e)</span><br><span class="line">            shutil.move(file_path, error_path)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># for key, value in path_dic.items():</span></span><br><span class="line">    <span class="comment">#     print(key, value)</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> path_dic.values():</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> path_dic.values():</span><br><span class="line">            tmp = Difference(i, j)</span><br><span class="line">            <span class="keyword">if</span> tmp &lt;= <span class="number">5</span>:</span><br><span class="line">                <span class="comment"># print(i, j)</span></span><br><span class="line">                <span class="comment"># list(dicxx.keys())[list(dicxx.values()).index("001")]</span></span><br><span class="line">                var_i = list(path_dic.keys())[list(path_dic.values()).index(i)]</span><br><span class="line">                var_j = list(path_dic.keys())[list(path_dic.values()).index(j)]</span><br><span class="line">                <span class="keyword">if</span> var_i != var_j:</span><br><span class="line">                    print(var_i, var_j)</span><br><span class="line">                    <span class="keyword">with</span> open(res_path, <span class="string">'a'</span>) <span class="keyword">as</span> f:</span><br><span class="line">                        f.write(var_i)</span><br><span class="line">                        f.write(var_j)</span><br><span class="line">                        f.write(<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure><p>​    </p><p>​    </p><p>​    </p><p>​    </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;根据这篇文章&lt;a href=&quot;https://blog.csdn.net/haluoluo211/article/details/52769325https://blog.csdn.net/haluoluo211/article/details/52769325&quot; targ
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 解决Vi输入中文乱码的问题</title>
+    <link href="yuluo-ding.github.io/2018/06/19/Linux-%E8%A7%A3%E5%86%B3Vi%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>yuluo-ding.github.io/2018/06/19/Linux-解决Vi输入中文乱码的问题/</id>
+    <published>2018-06-19T07:27:41.000Z</published>
+    <updated>2018-06-19T08:00:01.746Z</updated>
+    
+    <content type="html"><![CDATA[<p>在VPS 中, 有时vi 打开一个文件中, 中文会显示乱码, 用locale 查看如下, </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ locale</span><br><span class="line">LANG=en_US.UTF-8</span><br><span class="line">LANGUAGE=en_US.UTF-8</span><br><span class="line">LC_CTYPE="en_US.UTF-8"</span><br><span class="line">LC_NUMERIC="en_US.UTF-8"</span><br><span class="line">LC_TIME="en_US.UTF-8"</span><br><span class="line">LC_COLLATE="en_US.UTF-8"</span><br><span class="line">LC_MONETARY="en_US.UTF-8"</span><br><span class="line">LC_MESSAGES="en_US.UTF-8"</span><br><span class="line">LC_PAPER="en_US.UTF-8"</span><br><span class="line">LC_NAME="en_US.UTF-8"</span><br><span class="line">LC_ADDRESS="en_US.UTF-8"</span><br><span class="line">LC_TELEPHONE="en_US.UTF-8"</span><br><span class="line">LC_MEASUREMENT="en_US.UTF-8"</span><br><span class="line">LC_IDENTIFICATION="en_US.UTF-8"</span><br><span class="line">LC_ALL=en_US.UTF-8</span><br></pre></td></tr></table></figure><p>其实vi中输入中文乱码与上述系统语言编码无关，是vi自身的环境变量设置出了问题, 解决办法如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~ vi .viminfo  # ubuntu 18</span><br><span class="line">encoding=latin1#修改成下面</span><br><span class="line">encoding=utf-8</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在VPS 中, 有时vi 打开一个文件中, 中文会显示乱码, 用locale 查看如下, &lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Red Hat Linux卸载旧版本的JDK安装新版本的JDK</title>
+    <link href="yuluo-ding.github.io/2018/06/14/Red-Hat-Linux%E5%8D%B8%E8%BD%BD%E6%97%A7%E7%89%88%E6%9C%AC%E7%9A%84JDK%E5%AE%89%E8%A3%85%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84JDK/"/>
+    <id>yuluo-ding.github.io/2018/06/14/Red-Hat-Linux卸载旧版本的JDK安装新版本的JDK/</id>
+    <published>2018-06-14T06:15:37.000Z</published>
+    <updated>2018-06-14T06:42:41.434Z</updated>
+    
+    <content type="html"><![CDATA[<p>做一个安装和记录的流程:</p><ol><li><p>查看内核</p><p><code>uname -a</code>来判断是32 位还是64 位还是其余什么的机器</p></li><li><p>查看java 版本</p><p><code>rpm -qa | grep gcj</code></p></li><li><p>卸载java</p><p><code>yum -y remove javaname</code></p></li><li><p>给新的java 程序分配权限</p><p><code>chmod +x newjavaname</code></p></li><li><p>执行安装程序</p><p><code>./newjavaname</code></p></li><li><p>设置path与classpath</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/newjavaname</span><br><span class="line">export path=$path:$JAVA_HOME/bin;</span><br><span class="line">export path=$path:$JAVA_HOME/jre/bin</span><br><span class="line">export classpath=.:/usr/java/newjavaname/lib:/usr/java/newjavaname/jre/lib:$CLASSPATH</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;做一个安装和记录的流程:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;查看内核&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;uname -a&lt;/code&gt;来判断是32 位还是64 位还是其余什么的机器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看java 版本&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rpm -qa | g
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mac OS 设置单个应用语言的方法</title>
+    <link href="yuluo-ding.github.io/2018/05/04/mac-OS-%E8%AE%BE%E7%BD%AE%E5%8D%95%E4%B8%AA%E5%BA%94%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>yuluo-ding.github.io/2018/05/04/mac-OS-设置单个应用的方法/</id>
+    <published>2018-05-04T06:40:28.000Z</published>
+    <updated>2018-05-28T13:44:03.028Z</updated>
+    
+    <content type="html"><![CDATA[<p>​    最近使用office时候发现了一个问题，由于电脑设置默认语言为英文。office也会自动切换为英文语言。想单独改office为中文版。找了一圈没找到方法，搜索了半天，发现很多人无法解决，要么就是修改电脑默认语言，还好最后在office官网找到了一个答案。</p><p><a href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_other-mso_mac-mso_mac2016/how-to-manually-change-the-language-used-in-office/abe2a9c1-f550-45de-9d0e-58b99f206c41" target="_blank" rel="noopener">关于office 语言修改</a></p><p>可以使用以下命令修改:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.microsoft.Word AppleLanguages '("zh-cn")'</span><br><span class="line">defaults write com.microsoft.Excel AppleLanguages '("zh-cn")'</span><br><span class="line">defaults write com.microsoft.Powerpoint AppleLanguages '("zh-cn")'</span><br></pre></td></tr></table></figure><p>如上, 其余的应用, 也可以如此设置.</p><p>如果不想要这个语言设置了, 可以使用如下设置:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults delete com.apple.AddressBook AppleLanguages</span><br></pre></td></tr></table></figure><p> 其实查询语言的ID 的为</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdls -name kMDItemCFBundleIdentifier /Applications/Microsoft\ Word.app</span><br></pre></td></tr></table></figure><p> 结果为</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kMDItemCFBundleIdentifier = "com.microsoft.Word"</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;​    最近使用office时候发现了一个问题，由于电脑设置默认语言为英文。office也会自动切换为英文语言。想单独改office为中文版。找了一圈没找到方法，搜索了半天，发现很多人无法解决，要么就是修改电脑默认语言，还好最后在office官网找到了一个答案。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="mac OS" scheme="yuluo-ding.github.io/categories/mac-OS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>获取小程序的openid与unionid</title>
+    <link href="yuluo-ding.github.io/2018/04/16/%E8%8E%B7%E5%8F%96%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84openid%E4%B8%8Eunionid/"/>
+    <id>yuluo-ding.github.io/2018/04/16/获取小程序的openid与unionid/</id>
+    <published>2018-04-16T01:56:22.000Z</published>
+    <updated>2018-05-04T06:38:25.681Z</updated>
+    
+    <content type="html"><![CDATA[<p>需要发布的小程序基本都要用到openid，这里保存一下自己的代码。<br>一种是不需要服务器的，通过微信提供的接口简单获取openid；一种是有服务器的情况下，获取openid和一些加密的信息，如unionid。</p><h4 id="简单获取openid">简单获取openid</h4><h6 id="这里的简单获取，是指调试的时候可以使用，正常的情况应该是通过服务器来获取">这里的简单获取，是指调试的时候可以使用，正常的情况应该是通过服务器来获取</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">wx.login(&#123;</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> code = res.code; <span class="comment">// 复制给变量就可以打印了，醉了</span></span><br><span class="line">    <span class="keyword">if</span> (res.code) &#123;</span><br><span class="line">      wx.getUserInfo(&#123;</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">          <span class="comment">// userInfo 只存储个人的基础数据</span></span><br><span class="line">          wx.setStorageSync(<span class="string">'userInfo'</span>, res.userInfo);</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 只获取openid的话，自己就可以</span></span><br><span class="line">          that.getOpenid(code);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'获取用户登录态失败！'</span> + res.errMsg)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 自己获取openid和session_key</span></span><br><span class="line">  <span class="comment">// 微信提供的接口，其中appid和secret都是放在globalData中的</span></span><br><span class="line">  getOpenid: <span class="function"><span class="keyword">function</span> (<span class="params">code</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">'https://api.weixin.qq.com/sns/jscode2session?appid='</span> + that.globalData.appid + <span class="string">'&amp;secret='</span> + that.globalData.secret + <span class="string">'&amp;js_code='</span> + code + <span class="string">'&amp;grant_type=authorization_code'</span>,</span><br><span class="line">      data: &#123;&#125;,</span><br><span class="line">      method: <span class="string">'GET'</span>,</span><br><span class="line">      success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">        obj.openid = res.data.openid;</span><br><span class="line">        obj.expires_in = <span class="built_in">Date</span>.now() + res.data.expires_in;</span><br><span class="line">        obj.session_key = res.data.session_key; </span><br><span class="line">        wx.setStorageSync(<span class="string">'openid'</span>, obj.openid);<span class="comment">// 存储openid  </span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure><h4 id="通过服务器获取openid和unionid">通过服务器获取openid和unionid</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">wx.login(&#123;</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> code = res.code; <span class="comment">// 复制给变量就可以打印了，醉了</span></span><br><span class="line">    <span class="keyword">if</span> (res.code) &#123;</span><br><span class="line">      wx.getUserInfo(&#123;</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">          <span class="comment">// userInfo 只存储个人的基础数据</span></span><br><span class="line">          wx.setStorageSync(<span class="string">'userInfo'</span>, res.userInfo);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 请求自己的服务器，解密用户信息 获取unionId等加密信息</span></span><br><span class="line">        wx.request(&#123;</span><br><span class="line">          url: url.host + <span class="string">'/decodeUserInfo'</span>,<span class="comment">//自己的服务接口地址</span></span><br><span class="line">          method: <span class="string">'POST'</span>,</span><br><span class="line">          header: &#123;</span><br><span class="line">          <span class="string">'content-type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">          &#125;,</span><br><span class="line">          data: &#123;</span><br><span class="line">          encryptedData: res.encryptedData,</span><br><span class="line">          iv: res.iv,</span><br><span class="line">          code: code,</span><br><span class="line">          &#125;,</span><br><span class="line">          success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">            <span class="comment">//4.解密成功后 获取自己服务器返回的结果</span></span><br><span class="line">            <span class="keyword">if</span> (data.data.code == <span class="number">200</span>) &#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="string">'解密成功'</span>);</span><br><span class="line">              <span class="keyword">var</span> encryptInfo = data.data.data;</span><br><span class="line">                    </span><br><span class="line">              wx.setStorageSync(<span class="string">'openid'</span>, encryptInfo.openId); <span class="comment">// 单独存储openid</span></span><br><span class="line">              wx.setStorageSync(<span class="string">'encryptInfo'</span>, encryptInfo); <span class="comment">// 存储解密之后的数据</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="string">'解密失败'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125; </span><br><span class="line">        &#125;,</span><br><span class="line">        fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(res);</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'请求错误'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'获取用户登录态失败！'</span> + res.errMsg)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h4 id="最后，可以把这个方法给暴露出来，让其他界面调用">最后，可以把这个方法给暴露出来，让其他界面调用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给其他界面调用，用来获取用户信息，防止没有获取成功</span></span><br><span class="line">  getUserInfo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">var</span> userInfo = wx.getStorageSync(<span class="string">'userInfo'</span>) || &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> openid = wx.getStorageSync(<span class="string">'openid'</span>) || <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (!userInfo.nickName || !openid) &#123;</span><br><span class="line">      that.getData();  <span class="comment">// 将wx.login(&#123;&#125;) 方法放入其中</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>其实获取unionid的方法主要在后台实现，需要根据微信提供的方法去解密，具体的解密文档可以参考以下内容: <a href="https://link.jianshu.com/?t=http%3A%2F%2Fblog.csdn.net%2Fqq_27626333%2Farticle%2Fdetails%2F54614037" target="_blank" rel="noopener">微信小程序获取用户openid</a> 与 <a href="https://link.jianshu.com/?t=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F25124713" target="_blank" rel="noopener">微信小程序联盟：微信小程序之获取并解密用户数据（获取openId、unionId）</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;需要发布的小程序基本都要用到openid，这里保存一下自己的代码。&lt;br&gt;一种是不需要服务器的，通过微信提供的接口简单获取openid；一种是有服务器的情况下，获取openid和一些加密的信息，如unionid。&lt;/p&gt;
+&lt;h4 id=&quot;简单获取openid&quot;&gt;简单获取op
+      
+    
+    </summary>
+    
+      <category term="WeiXin" scheme="yuluo-ding.github.io/categories/WeiXin/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>VPS 安全措施</title>
+    <link href="yuluo-ding.github.io/2018/04/15/VPS-%E5%AE%89%E5%85%A8%E6%8E%AA%E6%96%BD/"/>
+    <id>yuluo-ding.github.io/2018/04/15/VPS-安全措施/</id>
+    <published>2018-04-15T15:39:47.000Z</published>
+    <updated>2018-04-15T15:45:11.022Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个部署在公网的VPS, 面临不断的网络扫描和攻击, 可以参考如下步骤.</p><h5 id="1-_配置SSH安全访问密钥，关闭密码登录">1. 配置SSH安全访问密钥，关闭密码登录</h5><p>a.参考<a href="https://link.jianshu.com/?t=http://edges.blog.51cto.com/705035/581346/" target="_blank" rel="noopener">SecureCRT密钥连接Linux</a>，使用SecureCRT在本机生成公私密钥<br>b.在VPS对应的用户目录下，新建.ssh文件夹，并上传公钥，然后更名为authorized_keys，并修改权限，如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh #如果当前用户目录下没有 .ssh 目录，就先创建目录</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">mv id_rsa.pub ~/.ssh</span><br><span class="line">cd .ssh</span><br><span class="line">mv id_rsa.pub authorized_keys</span><br><span class="line">chmod 600 authorized_keys</span><br></pre></td></tr></table></figure><p>c.关闭ssh密码登录</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">PasswordAuthentication no #此处改为no</span><br></pre></td></tr></table></figure><p>d.【可选】添加普通用户</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd roubin</span><br><span class="line">passwd roubin</span><br></pre></td></tr></table></figure><p>e.【可选】禁止root登陆</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">PermitRootLogin no  #此处改为no</span><br></pre></td></tr></table></figure><p>f.重启ssh服务</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service sshd restart</span><br></pre></td></tr></table></figure><h5 id="2-更改SSH端口及设置">2.更改SSH端口及设置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">Port 22222  #更改默认端口号</span><br><span class="line">MaxAuthTries 5</span><br><span class="line">PermitEmptyPasswords no  #不允许空密码</span><br><span class="line">service sshd reload</span><br><span class="line">iptables -I INPUT -p tcp --dport 22222 -j ACCEPT #CentOS 6 中防火墙开启对应端口</span><br><span class="line">firewall-cmd --zone=public --add-port=22222/tcp --permanent #CentOS 7 中防火墙开启对应端口</span><br></pre></td></tr></table></figure><h5 id="3-锁定口令文件">3.锁定口令文件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# chattr +i /etc/passwd</span><br><span class="line">[root@localhost /]# chattr +i /etc/shadow</span><br><span class="line">[root@localhost /]# chattr +i /etc/group</span><br><span class="line">[root@localhost /]# chattr +i /etc/gshadow</span><br></pre></td></tr></table></figure><h5 id="4-安装fail2ban防止暴力破解">4.安装fail2ban防止暴力破解</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">apt install -y fail2ban</span><br><span class="line">cp -pf /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</span><br><span class="line">vim /etc/fail2ban/jail.local</span><br><span class="line"></span><br><span class="line"> [sshd]</span><br><span class="line">enabled = trueport = 22222</span><br><span class="line">logpath = %(sshd_log)s</span><br><span class="line">backend = %(sshd_backend)s</span><br><span class="line">filter = sshd</span><br><span class="line">action = iptables[name=SSH, port=22222, protocol=tcp] sendmail-whois[name=SSH, dest=root, sender=fail2ban@example.com]</span><br><span class="line">logpath = /var/log/secure</span><br><span class="line">maxretry = 3</span><br></pre></td></tr></table></figure><h5 id="5-启用iptables">5.启用iptables</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 清除已有iptables规则</span></span><br><span class="line">iptables -F</span><br><span class="line"><span class="meta">#</span><span class="bash"> 允许本地回环接口(即运行本机访问本机)</span></span><br><span class="line">iptables -A INPUT -i lo -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash"> 允许已建立的或相关连的通行</span></span><br><span class="line">iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash">允许所有本机向外的访问</span></span><br><span class="line">iptables -A OUTPUT -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash"> 允许访问22222(SSH)端口，以下几条相同，分别是22222,80,443端口的访问</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 22222 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 443 -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash">如果有其他端口的话，规则也类似，稍微修改上述语句就行</span></span><br><span class="line"><span class="meta">#</span><span class="bash">允许ping</span></span><br><span class="line">iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash">禁止其他未允许的规则访问（注意：如果22端口未加入允许规则，SSH链接会直接断开。）</span></span><br><span class="line">iptables -A INPUT -j REJECT </span><br><span class="line">iptables -A FORWARD -j REJECT</span><br><span class="line"><span class="meta">#</span><span class="bash">保存防火墙规则</span></span><br><span class="line">service iptables save</span><br><span class="line"><span class="meta">#</span><span class="bash">设置防火墙开机启动</span></span><br><span class="line">chkconfig --level 345 iptables on</span><br></pre></td></tr></table></figure><h5 id="6-禁用ipv6">6.禁用ipv6</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">编辑/etc/sysconfig/network添加行：</span></span><br><span class="line">NETWORKING_IPV6=no</span><br><span class="line"><span class="meta">#</span><span class="bash">修改/etc/hosts,把ipv6本地主机名解析的注释掉（可选）：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">::1 localhost localhost6 localhost6.localdomain6</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">禁止系统加载ipv6相关模块，创建modprobe关于禁用ipv6的设定文件/etc/modprobe.d/disable_ipv6.conf(名字随便起)（RHEL6.0之后没有/etc/modprobe.conf这个文件），内容如下，三选其一（本次使用的第一种）：</span></span><br><span class="line">alias net-pf-10 off</span><br><span class="line">options ipv6 disable=1</span><br><span class="line"><span class="meta">#</span><span class="bash">禁止开机启动</span></span><br><span class="line">chkconfig ip6tables off</span><br><span class="line"><span class="meta">#</span><span class="bash">查看ipv6是否被禁用</span></span><br><span class="line">lsmod | grep -i ipv6</span><br><span class="line">ifconfig | grep -i inet6</span><br></pre></td></tr></table></figure><h5 id="7-阻止百度收录真实位置">7.阻止百度收录真实位置</h5><p>恩，免得上门查水表</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br><span class="line"></span><br><span class="line">0.0.0.0 api.map.baidu.com</span><br><span class="line">0.0.0.0 ps.map.baidu.com</span><br><span class="line">0.0.0.0 sv.map.baidu.com</span><br><span class="line">0.0.0.0 offnavi.map.baidu.com</span><br><span class="line">0.0.0.0 newvector.map.baidu.com</span><br><span class="line">0.0.0.0 ulog.imap.baidu.com</span><br><span class="line">0.0.0.0 newloc.map.n.shifen.com</span><br><span class="line"></span><br><span class="line">:: api.map.baidu.com</span><br><span class="line">:: ps.map.baidu.com</span><br><span class="line">:: sv.map.baidu.com</span><br><span class="line">:: offnavi.map.baidu.com</span><br><span class="line">:: newvector.map.baidu.com</span><br><span class="line">:: ulog.imap.baidu.com</span><br><span class="line">:: newloc.map.n.shifen.com</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一个部署在公网的VPS, 面临不断的网络扫描和攻击, 可以参考如下步骤.&lt;/p&gt;
+&lt;h5 id=&quot;1-_配置SSH安全访问密钥，关闭密码登录&quot;&gt;1. 配置SSH安全访问密钥，关闭密码登录&lt;/h5&gt;&lt;p&gt;a.参考&lt;a href=&quot;https://link.jianshu.co
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Pyhton 去掉字符串前边的u</title>
+    <link href="yuluo-ding.github.io/2018/04/08/Pyhton-%E5%8E%BB%E6%8E%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E8%BE%B9%E7%9A%84u/"/>
+    <id>yuluo-ding.github.io/2018/04/08/Pyhton-去掉字符串前边的u/</id>
+    <published>2018-04-08T08:32:36.000Z</published>
+    <updated>2018-04-16T02:00:35.436Z</updated>
+    
+    <content type="html"><![CDATA[<p>在用<code>json.load</code>导入json 格式的文件的时候, 打印出来的dict, 会显示的是unicode 编码形式, 下面一种方法可以利用检测编码的形式把<code>u</code>去掉.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(colnames)):</span><br><span class="line">    <span class="keyword">print</span> type(rowData[i])</span><br><span class="line">    <span class="keyword">if</span> type(rowData[i]) == float :<span class="comment">#如果是字符串类型，则进行编码</span></span><br><span class="line">      <span class="keyword">print</span> colnames[i]</span><br><span class="line">      eachRowData[colnames[i].encode(<span class="string">'ascii'</span>)] = rowData[i]</span><br><span class="line">          <span class="comment">#.encode('raw_unicode_escape')</span></span><br><span class="line">    <span class="keyword">elif</span> type(rowData[i]) == unicode:</span><br><span class="line">        eachRowData[colnames[i].encode(<span class="string">'ascii'</span>)] = rowData[i].encode(<span class="string">'ascii'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list.append(eachRowData)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在用&lt;code&gt;json.load&lt;/code&gt;导入json 格式的文件的时候, 打印出来的dict, 会显示的是unicode 编码形式, 下面一种方法可以利用检测编码的形式把&lt;code&gt;u&lt;/code&gt;去掉.&lt;/p&gt;
+&lt;figure class=&quot;highlight p
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>fail2ban阻止SSH暴力破解</title>
+    <link href="yuluo-ding.github.io/2018/02/06/fail2ban%E9%98%BB%E6%AD%A2SSH%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/"/>
+    <id>yuluo-ding.github.io/2018/02/06/fail2ban阻止SSH暴力破解/</id>
+    <published>2018-02-05T16:05:55.000Z</published>
+    <updated>2018-02-05T16:16:57.246Z</updated>
+    
+    <content type="html"><![CDATA[<p>引用:<a href="https://blog.linuxeye.cn/454.html" target="_blank" rel="noopener">fail2ban阻止SSH暴力破解</a></p><p>​    fail2ban是由Python语言开发监控软件，通过监控系统日志的登录信息来调用iptables屏蔽相应登录IP，以阻止某个IP（fail2ban读对应日志文件，Debian/Ubuntu:/var/log/auth.log、CentOS/Redhat:/var/log/secure）不停尝试密码。fail2ban在防御对SSH服务器的暴力密码破解上非常有用。经过网友强烈要求，已经集成到《<a href="https://blog.linuxeye.cn/wp-content/themes/begin/inc/go.php?url=https://oneinstack.com" target="_blank" rel="noopener">OneinStack</a>》</p><a id="more"></a><h3 id="安装配置Fail2ban">安装配置Fail2ban</h3><p>使用《<a href="https://blog.linuxeye.cn/wp-content/themes/begin/inc/go.php?url=https://oneinstack.com" target="_blank" rel="noopener">OneinStack</a>》，内置<a href="https://blog.linuxeye.cn/454.html" target="_blank" rel="noopener">fail2ban</a>，一键安装并设置好即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget mirrors.linuxeye.com/oneinstack.tar.gz</span><br><span class="line">pushd oneinstack</span><br><span class="line">./addons.sh  #选择11，安装fail2ban</span><br></pre></td></tr></table></figure><p><img src="https://static.oneinstack.com/images/addons.png" alt="tu"></p><h3 id="Fail2ban配置文件说明">Fail2ban配置文件说明</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@OneinStack ~]# cat /etc/fail2ban/jail.local</span><br><span class="line">[DEFAULT]</span><br><span class="line">ignoreip = 127.0.0.1/8  #指定哪些地址可以忽略 fail2ban 防御</span><br><span class="line">bantime  = 86400         #客户端主机被禁止的时长（秒）</span><br><span class="line">findtime = 600             #查找失败次数的时长（秒）</span><br><span class="line">maxretry = 5                 #客户端主机被禁止前允许失败的次数</span><br><span class="line">[ssh-iptables]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = sshd</span><br><span class="line">action  = iptables[name=SSH, port=22, protocol=tcp]</span><br><span class="line">logpath = /var/log/secure</span><br></pre></td></tr></table></figure><p>fail2ban会自动禁止在最近10分钟内有超过5次访问尝试失败的任意IP地址。这个IP地址将会在24小时内一直被禁止访问SSH服务。安装设置启用后，Fail2ban会在iptables添加相关规则，如下：</p><p><img src="https://blog.linuxeye.cn/wp-content/uploads/2017/03/fail2ban_iptables.png" alt="tu"></p><h3 id="fail2ban测试">fail2ban测试</h3><p>ssh 你的服务器IP，输错密码5次以上，查看日志/var/log/fail2ban.log [ssh-iptables] Ban 91.195.103.166即被禁用</p><p><img src="https://blog.linuxeye.cn/wp-content/uploads/2017/03/fail2ban_test.png" alt=""></p><h3 id="fail2ban状态">fail2ban状态</h3><p><code>/usr/local/python/bin/fail2ban-client status ssh-iptables</code></p><p>显示出被禁止IP地址列表</p><p><img src="https://blog.linuxeye.cn/wp-content/uploads/2017/03/fail2ban_status.png" alt=""></p><h3 id="fail2ban解锁IP">fail2ban解锁IP</h3><p>为了解锁特定的IP地址命令：</p><p><code>/usr/local/python/bin/fail2ban-client set ssh-iptables unbanip 91.195.103.166</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;引用:&lt;a href=&quot;https://blog.linuxeye.cn/454.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;fail2ban阻止SSH暴力破解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;​    fail2ban是由Python语言开发监控软件，通过监控系统日志的登录信息来调用iptables屏蔽相应登录IP，以阻止某个IP（fail2ban读对应日志文件，Debian/Ubuntu:/var/log/auth.log、CentOS/Redhat:/var/log/secure）不停尝试密码。fail2ban在防御对SSH服务器的暴力密码破解上非常有用。经过网友强烈要求，已经集成到《&lt;a href=&quot;https://blog.linuxeye.cn/wp-content/themes/begin/inc/go.php?url=https://oneinstack.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OneinStack&lt;/a&gt;》&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>XML的有效性的检测</title>
+    <link href="yuluo-ding.github.io/2018/01/31/XML%E7%9A%84%E6%9C%89%E6%95%88%E6%80%A7%E7%9A%84%E6%A3%80%E6%B5%8B/"/>
+    <id>yuluo-ding.github.io/2018/01/31/XML的有效性的检测/</id>
+    <published>2018-01-31T15:59:17.000Z</published>
+    <updated>2018-01-31T15:59:52.424Z</updated>
+    
+    <content type="html"><![CDATA[<p>XML文档的结构良好性验证，结构良好的xml文档，需要遵守下面这些规则：</p><ol><li>所有开始标签必须有对应的结束标签</li><li>元素可以嵌套，但是不可以重叠</li><li>有且只能有一个根元素</li><li>属性值必须使用引号</li><li>一个元素不能有两个同样属性名字的属性</li><li>注释不能出现在标签内部</li><li>没有转义的” &lt;” 或者” $”不能出现在元素和属性的字符中</li></ol><p>如何检查XML文档良构?</p><a id="more"></a><h5 id="方法一">方法一</h5><p>以ElementTree模块为例，直接使用parse方法。如果不报错，这表示该XML是良构的</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xml.etree <span class="keyword">import</span> ElementTree <span class="keyword">as</span> ET  </span><br><span class="line"><span class="keyword">try</span>:  </span><br><span class="line">    ET.parse(<span class="string">'test.xml'</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这是一个良构的XML文档'</span>  </span><br><span class="line"><span class="keyword">except</span> Exception,e:  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这不是一个良构的XML文档'</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'可能原因：'</span>,e</span><br></pre></td></tr></table></figure><h5 id="方法二">方法二</h5><p>如果希望获取更加详细信息，可使用lxml模块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  lxml.etree <span class="keyword">as</span> ET  </span><br><span class="line"><span class="keyword">try</span>:  </span><br><span class="line">    ET.parse(<span class="string">'test.xml'</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这是一个良构的XML文档'</span>  </span><br><span class="line"><span class="keyword">except</span> Exception,e:  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这不是一个良构的XML文档'</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'可能原因：'</span>,e</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;XML文档的结构良好性验证，结构良好的xml文档，需要遵守下面这些规则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;所有开始标签必须有对应的结束标签&lt;/li&gt;
+&lt;li&gt;元素可以嵌套，但是不可以重叠&lt;/li&gt;
+&lt;li&gt;有且只能有一个根元素&lt;/li&gt;
+&lt;li&gt;属性值必须使用引号&lt;/li&gt;
+&lt;li&gt;一个元素不能有两个同样属性名字的属性&lt;/li&gt;
+&lt;li&gt;注释不能出现在标签内部&lt;/li&gt;
+&lt;li&gt;没有转义的” &amp;lt;” 或者” $”不能出现在元素和属性的字符中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如何检查XML文档良构?&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决MySQL中文乱码方法</title>
+    <link href="yuluo-ding.github.io/2018/01/31/%E8%A7%A3%E5%86%B3MySQL%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E6%96%B9%E6%B3%95/"/>
+    <id>yuluo-ding.github.io/2018/01/31/解决MySQL中文乱码方法/</id>
+    <published>2018-01-31T08:15:50.000Z</published>
+    <updated>2018-01-31T08:40:31.702Z</updated>
+    
+    <content type="html"><![CDATA[<p>MySQL会出现中文乱码的原因一般为以下几点：</p><ol><li>server本身设定问题，例如还停留在latin1</li><li>table的语系设定问题(包含character与collation)</li><li>客户端程式(例如php)的连线语系设定问题</li></ol><a id="more"></a><p>进入MySQL 查看当前的状态</p><p><img src="https://i.loli.net/2018/01/31/5a717fd1b305a.png" alt="Snipaste_2018-01-31_16-34-46.png"></p><p>默认的是客户端和服务器都用了latin1，所以会乱码。</p><p>解决的方法就是MySQL的字符串修改为utf8.</p><p>###第一种:</p><p>vim /etc/mysql/my.cnf 。<strong>(5.5以前系统)</strong></p><p>在<strong>client</strong>下面加入 ‘default-character-set=utf8’</p><p>在<strong>mysqld</strong>下面加入’default-character-set=utf8’</p><p>Notice：注意 如果修改后不能启动报错试试把’default-character-set=utf8’改为’character_set_server=utf8’，仅仅加入到mysqld下面的.client就不需要加了</p><p>###第二种:</p><p>vim /etc/mysql/my.cnf 。<strong>(5.5以后系统)</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure><p>五、重启MySQL</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/mysql stop   </span><br><span class="line">/etc/init.d/mysql start</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL会出现中文乱码的原因一般为以下几点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;server本身设定问题，例如还停留在latin1&lt;/li&gt;
+&lt;li&gt;table的语系设定问题(包含character与collation)&lt;/li&gt;
+&lt;li&gt;客户端程式(例如php)的连线语系设定问题&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python批量删除特定后缀名的文件和目录</title>
+    <link href="yuluo-ding.github.io/2018/01/19/Python%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E7%89%B9%E5%AE%9A%E5%90%8E%E7%BC%80%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95/"/>
+    <id>yuluo-ding.github.io/2018/01/19/Python批量删除特定后缀名的文件和目录/</id>
+    <published>2018-01-19T00:42:05.000Z</published>
+    <updated>2018-01-19T05:23:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>利用 Python 在日常工作中，删除指定目录已经子目录下的特定后缀的文件名。</p><p>Python Version: 2.7</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取当前路径</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fileDir</span><span class="params">()</span> :</span></span><br><span class="line">    path = sys.path[ <span class="number">0</span> ]</span><br><span class="line">    print(path)</span><br><span class="line">    <span class="comment">#判断为脚本文件还是编译后文件，如果是脚本文件则返回脚本目录，否则返回编件译后的文件路径</span></span><br><span class="line">    <span class="keyword">if</span> os.path.isdir( path ) :</span><br><span class="line">        <span class="keyword">return</span> path</span><br><span class="line">    <span class="keyword">elif</span> os.path.isfile( path ) :</span><br><span class="line">        <span class="keyword">return</span> os.path.dirname( path )</span><br><span class="line">    </span><br><span class="line"><span class="comment">#获取文件后缀名</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">suffix</span><span class="params">(fileName, *suffixName)</span> :</span></span><br><span class="line">    array = map(fileName.endswith, suffixName)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">True</span> <span class="keyword">in</span> array :</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">#删除目录下扩展名为.exe,.bak的文件</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deleteFile</span><span class="params">()</span> :</span></span><br><span class="line">    target_dir = fileDir()</span><br><span class="line">    <span class="keyword">for</span> root, dir_names, file_names <span class="keyword">in</span> os.walk(target_dir):</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> file_names:</span><br><span class="line">            target_file = os.path.join(root, file)</span><br><span class="line">            <span class="keyword">if</span> suffix(file, <span class="string">'.doc'</span>, <span class="string">'.xls'</span>):</span><br><span class="line">                os.remove(target_file)</span><br><span class="line">            <span class="comment"># 文件夹名字</span></span><br><span class="line">            <span class="keyword">if</span> file == <span class="string">'a'</span>:</span><br><span class="line">                shutil.rmtree(os.path.join(root, dir_names))</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span> :</span><br><span class="line">    deleteFile()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;利用 Python 在日常工作中，删除指定目录已经子目录下的特定后缀的文件名。&lt;/p&gt;
+&lt;p&gt;Python Version: 2.7&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>pyinstaller教程</title>
+    <link href="yuluo-ding.github.io/2018/01/01/pyinstaller%E6%95%99%E7%A8%8B/"/>
+    <id>yuluo-ding.github.io/2018/01/01/pyinstaller教程/</id>
+    <published>2018-01-01T14:07:27.000Z</published>
+    <updated>2018-01-01T14:50:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>简介:PyInstaller可以用来打包python应用程序，打包完的程序就可以在没有安装Python解释器的机器上运行了。PyInstaller支持Python 2.7和Python 3.3+。可以在Windows、Mac OS X和Linux上使用，但是并不是跨平台的，而是说你要是希望打包成.exe文件，需要在Windows系统上运行PyInstaller进行打包工作；打包成mac app，需要在Mac OS上使用。</p><a id="more"></a><h3 id="安装">安装</h3><p><strong>Linux or Mac</strong></p><p>可以直接用pip 安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyinstaller</span><br></pre></td></tr></table></figure><p>版本更新</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade pyinstaller</span><br></pre></td></tr></table></figure><p><strong>Window</strong></p><p>Windows上运行PyInstaller还需要PyWin32或者pypiwin32，其中pypiwin32在你安装PyInstaller的时候会自动安装。</p><h3 id="使用PyInstaller">使用PyInstaller</h3><p>PyInstaller分析你的python程序，找到所有的依赖项。然后将依赖文件和python解释器放到一个文件夹下或者一个可执行文件中。</p><h4 id="打包成一个文件夹">打包成一个文件夹</h4><p>当使用PyInstaller打包的时候，默认生成一个文件夹，文件夹中包含所有依赖项，以及可执行文件。打包成文件夹的好处就是debug的时候可以清楚的看到依赖项有没有包含。另一个好处是更新的时候，只需要更新可执行文件就可以了。当然缺点也很明显，不方便，不易管理。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller script.py</span><br></pre></td></tr></table></figure><p>那么它是如何工作的呢？PyInstaller的引导程序是一个二进制可执行程序。当用户启动你的程序的时候，PyInstaller的引导程序开始运行，首先创建一个临时的Python环境，然后通过Python解释器导入程序的依赖，当然他们都在同一个文件夹下。</p><h4 id="打包成一个文件">打包成一个文件</h4><p>我们可以用onefile参数将所有文件打包到一个可执行文件中。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --onefile script.py</span><br></pre></td></tr></table></figure><p>打包成一个文件相对于文件夹更容易管理。坏处运行相对比较慢。这个文件中包含了压缩的依赖文件拷贝（.so文件）。</p><p>当程序运行时，PyInstaller的引导程序会新建一个临时文件夹。然后解压程序的第三方依赖文件到临时文件夹中。这也是为什么一个可执行文件比文件夹中执行的时间要长的原因。剩下的就和上面的一样了。</p><h4 id="spec_文件">spec 文件</h4><p>当你执行下面命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller options..script.py</span><br></pre></td></tr></table></figure><p>PyInstaller首先建一个sepc(specification)文件：script.spec。这个文件的存放地址可以使用参数–specpath= 来定义，默认放在当前文件夹下。</p><p>spec文件的作用是什么呢？它会告诉PyInstaller如何处理你的py文件，它会将你的py文件名字和输入的大部分参数进行编码。PyInstaller通过执行spec文件中的内容来生成app，有点像makefile。正常使用中我们是不需要管spec文件的，但是下面几种情况需要修改spec文件：</p><ul><li>需要打包资源文件</li><li>需要include一些PyInstaller不知道的run-time库</li><li>为可执行文件添加run-time 选项</li><li>多程序打包</li></ul><p>可以通过下面命令生成spec文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyi-makespec options script.py [other scripts ...]</span><br></pre></td></tr></table></figure><p>修改完spec文件，就可以通过下面命令来生成app文件了</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller options script.spec</span><br></pre></td></tr></table></figure><p>当通过spec文件来生成app文件的时候只有下面几个参数是有用的：</p><ul><li>–upx-dir=</li><li>–distpath=</li><li>–noconfirm=</li><li>–ascii</li></ul><h4 id="spec_文件解析">spec 文件解析</h4><p>下面是一个spec文件的例子。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">block_cipher = None</span><br><span class="line">a = Analysis(['minimal.py'],</span><br><span class="line">        pathex=['/Developer/PItests/minimal'],</span><br><span class="line">        binaries=None,</span><br><span class="line">        datas=None,</span><br><span class="line">        hiddenimports=[],</span><br><span class="line">        hookspath=None,</span><br><span class="line">        runtime_hooks=None,</span><br><span class="line">        excludes=None,</span><br><span class="line">        ciper=block_cipher)</span><br><span class="line">pyz = PYZ(a.pure, a.zipped_data,</span><br><span class="line">        cipher=block_cipher)</span><br><span class="line">exe = EXE(pyz, ...)</span><br><span class="line">coll = COLLECT(...)</span><br></pre></td></tr></table></figure><p>spec文件中主要包含4个class: Analysis, PYZ, EXE和COLLECT.</p><ul><li>Analysis以py文件为输入，它会分析py文件的依赖模块，并生成相应的信息</li><li>PYZ是一个.pyz的压缩包，包含程序运行需要的所有依赖</li><li>EXE根据上面两项生成</li><li>COLLECT生成其他部分的输出文件夹，COLLECT也可以没有</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = Analysis(</span><br><span class="line">    ...</span><br><span class="line">    datas = [('you/source/file/path','file_name_in_project'),</span><br><span class="line">    ('source/file2', 'file_name2')]</span><br><span class="line">    ...</span><br><span class="line">    )</span><br></pre></td></tr></table></figure><p>可以认为datas是一个List,每个元素是一个二元组。元组的第一个元素是你本地文件索引，第二个元素是拷贝到项目中之后的文件名字。除了上面那种写法，也可以将其提出来。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">added_files = [...]</span><br><span class="line">a = Analysis(</span><br><span class="line">    ...</span><br><span class="line">    datas = added_files,</span><br><span class="line">    ...</span><br><span class="line">    )</span><br></pre></td></tr></table></figure><p>其他的二进制文件添加方法类似。</p><h4 id="总结">总结</h4><p>最后简单来说，我们要通过PyInstaller生成可执行的文件主要下面两步。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller [option] mypython.py</span><br></pre></td></tr></table></figure><p>option为空生成文件夹，选择onefile，生成一个文件。<br>如果项目有一些依赖的数据文件，上面生成的二进制文件是无法运行的，这个时候可以通过修改spec文件，让后再用pyinstaller运行spec文件。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller [option] mypython.spec</span><br></pre></td></tr></table></figure><p>当然也按上文那样先生成spec文件。</p><p><a href="http://legendtkl.com/2015/11/06/pyinstaller/" target="_blank" rel="noopener">pyinstaller简洁教程</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简介:PyInstaller可以用来打包python应用程序，打包完的程序就可以在没有安装Python解释器的机器上运行了。PyInstaller支持Python 2.7和Python 3.3+。可以在Windows、Mac OS X和Linux上使用，但是并不是跨平台的，而是说你要是希望打包成.exe文件，需要在Windows系统上运行PyInstaller进行打包工作；打包成mac app，需要在Mac OS上使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git配置不同项目的不同账号</title>
+    <link href="yuluo-ding.github.io/2017/12/05/Git%E9%85%8D%E7%BD%AE%E4%B8%8D%E5%90%8C%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%B8%8D%E5%90%8C%E8%B4%A6%E5%8F%B7/"/>
+    <id>yuluo-ding.github.io/2017/12/05/Git配置不同项目的不同账号/</id>
+    <published>2017-12-05T15:03:02.000Z</published>
+    <updated>2017-12-05T15:27:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>​    在公司里做项目，一般都是公司直接分配git账号。而我自己在GitHub上也托管了自己的博客。两边使用的账号是不同的对应的ssh key也不一样。每次都手工更改是很麻烦的，也不是程序员应有的解决方案。这里我记录下我是如何解决git多账号登录的。</p><p>​    首先当初最开始设置 Git 的时候，都是默认全局设置的。例如：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "your_name" </span><br><span class="line">git config --global user.email "your_email"</span><br></pre></td></tr></table></figure><a id="more"></a><p>​    一般情况下，参与的项目都是同一个邮箱用户名是没啥问题的。但是碰到我这种情况，又不想换掉其中一个项目的用户名（我也没有这个决定权）。我就需要针对不同的项目设置不同的用户名邮箱。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~/you project #进入项目文件夹 </span><br><span class="line">git init #初始化项目（如果已经是git目录了则不需要） </span><br><span class="line">git config user.name "your_name" #重新设置用户名和邮箱 </span><br><span class="line">git config user.email "your_email"</span><br></pre></td></tr></table></figure><p>​    说白了，也就是进入到你的git项目相对根目录下，然后执行git config设置记录。这时候我们打开项目中的<code>.git</code>文件夹，查看<code>config</code>文件会发现多了两行.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[branch "master"]</span><br><span class="line">    remote = origin</span><br><span class="line">    merge = refs/heads/master</span><br><span class="line">[user]</span><br><span class="line">    name = you name</span><br><span class="line">    email = youemail@host.com</span><br></pre></td></tr></table></figure><p>在下一次提交的时候就优先是用项目文件中的git配置信息了。如果有必要可以执行取消全局设置的命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br></pre></td></tr></table></figure><h4 id="SSH配置">SSH配置</h4><p>邮箱不同也会对应不同的SSH key，所以要针对不同的项目使用不同的key。所以打开git全局配置文件。一般在用户目录下的<code>.ssh</code>文件夹中。比如windows用户就是：<code>C:\Users\用户名\.ssh</code></p><p>Linux就是<code>～/.ssh</code><br>找到config文件。没有就新建一个，用文本编辑器打开，添加如下配置：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一个git项目账号</span></span><br><span class="line">Host first     #给这个项目服务器起个名字，待会用到</span><br><span class="line">HostName test.com #这里需要用真实的项目检出hostname，为了项目安全，我这里随意写的</span><br><span class="line">User A           #用户名</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_first #该项目ssh key 所在路径</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">第二个git项目账号  和上面的项目配置一样</span></span><br><span class="line">Host second</span><br><span class="line">HostName test2.com</span><br><span class="line">Port 1334</span><br><span class="line">User B</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_second</span><br></pre></td></tr></table></figure><p>​    如果还没有生成ssh key 可以用一下命令生成,不同项目起不同名字或者放到不同路径，在上面的config配置中应用不同路径即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -C "your_email" -t rsa</span><br></pre></td></tr></table></figure><p>使配置生效</p><p>上面配置了ssh key时候指定了host名称，所以再次打开项目文件夹下的<code>.git</code>目录下的config文件，修改url配置，把原来的host name url 改成你上面配置的host 值比如 ‘first’ 、’seceond’等，类似如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[remote "origin"] </span><br><span class="line">url = git@first:A/proxy.git </span><br><span class="line">fetch = +refs/heads/*:refs/remotes/origin/*</span><br></pre></td></tr></table></figure><p>也可以使用命令行完成配置。这里需要注意，使用.ssh目录下的host代替真实的hostname，这样才能让git识别出来</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add first git@first:A/project.git</span><br></pre></td></tr></table></figure><p>如果使用的是repo，也是同样操作</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u ssh://A@first -b branch</span><br></pre></td></tr></table></figure><p>push的时候，push到对应的Host即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push fist master  #first项目中：</span><br></pre></td></tr></table></figure><p>作者： K_Biao<br>链接：<a href="http://www.imooc.com/article/7419" target="_blank" rel="noopener">http://www.imooc.com/article/7419</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;​    在公司里做项目，一般都是公司直接分配git账号。而我自己在GitHub上也托管了自己的博客。两边使用的账号是不同的对应的ssh key也不一样。每次都手工更改是很麻烦的，也不是程序员应有的解决方案。这里我记录下我是如何解决git多账号登录的。&lt;/p&gt;
+&lt;p&gt;​    首先当初最开始设置 Git 的时候，都是默认全局设置的。例如：&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &quot;your_name&quot; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &quot;your_email&quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python的最大递归深度错误</title>
+    <link href="yuluo-ding.github.io/2017/11/13/Python%E7%9A%84%E6%9C%80%E5%A4%A7%E9%80%92%E5%BD%92%E6%B7%B1%E5%BA%A6%E9%94%99%E8%AF%AF/"/>
+    <id>yuluo-ding.github.io/2017/11/13/Python的最大递归深度错误/</id>
+    <published>2017-11-13T02:12:44.000Z</published>
+    <updated>2017-11-13T02:18:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在用 Python 的爬虫的时候，遇到一个错误<code>maximum recursion depth exceeded while calling a Python object</code>，意思是：当调用该对象超过最大递归深度。</p><p>报错如下:</p><a id="more"></a><blockquote><p> File “/usr/lib/python3.5/enum.py”, line 241, in <strong>call</strong></p><p>   return cls.<strong>new</strong>(cls, value)<br> File “/usr/lib/python3.5/enum.py”, line 463, in <strong>new</strong><br>   if type(value) is cls:<br>RecursionError: maximum recursion depth exceeded while calling a Python object</p></blockquote><p>原因是在Python里的递归调用是有限制的，可以使用sys模块里的getrecursionlimit方法查看的到，<a href="https://cyrusin.github.io/2015/12/08/python-20151208/" target="_blank" rel="noopener">打破递归栈的深度限制: 解析一种Python尾递归优化的方法</a></p><p>打开终端运行Python，可以看到默认限制值为1000.</p><p>解决方法：</p><p><code>sys.setrecursionlimit(2000)</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在用 Python 的爬虫的时候，遇到一个错误&lt;code&gt;maximum recursion depth exceeded while calling a Python object&lt;/code&gt;，意思是：当调用该对象超过最大递归深度。&lt;/p&gt;
+&lt;p&gt;报错如下:&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu安装 redis，并后台运行</title>
+    <link href="yuluo-ding.github.io/2017/11/12/Ubuntu%E5%AE%89%E8%A3%85-redis%EF%BC%8C%E5%B9%B6%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/"/>
+    <id>yuluo-ding.github.io/2017/11/12/Ubuntu安装-redis，并后台运行/</id>
+    <published>2017-11-12T12:31:49.000Z</published>
+    <updated>2017-11-12T12:38:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ubuntu16.04 上安装运行 redis过程。</p><p>安装：<code>apt install reids</code> </p><p>设置<code>redis.conf</code></p><a id="more"></a><p><code>vi /etc/redis/redis.conf</code></p><p>默认情况下Redis不作为后台服务运行，这里设置为yes，即可作为后台服务运行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># By default Redis does not run as a daemon. Use &apos;yes&apos; if you need it.</span><br><span class="line"># Note that Redis will write a pid file in /var/run/redis.pid when daemonized.</span><br><span class="line">daemonize yes</span><br></pre></td></tr></table></figure><p>启动redis 服务</p><p><code>redis-server /etc/redis/redis.conf</code></p><p>检测服务是否已经启动</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ps</span> -ef |<span class="keyword">grep</span> redis</span><br></pre></td></tr></table></figure><p>检测6379端口是否监听</p><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lntp <span class="string">| grep 6379</span></span><br></pre></td></tr></table></figure><p>检测客户端连接是否正常 使用客户端<code>redis-cli</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line"><span class="comment">#(empty list or set)</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">set</span> key <span class="string">"hello world"</span></span><br><span class="line"><span class="comment">#OK</span></span><br><span class="line">127.0.0.1:6379&gt; get key</span><br><span class="line"><span class="comment">#"hello world"</span></span><br></pre></td></tr></table></figure><p>停止redis服务</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli shutdown</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Ubuntu16.04 上安装运行 redis过程。&lt;/p&gt;
+&lt;p&gt;安装：&lt;code&gt;apt install reids&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;设置&lt;code&gt;redis.conf&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+</feed>
