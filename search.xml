@@ -204,10 +204,13 @@
   <entry>
     <title><![CDATA[Android O的感叹号或者叉 怎么去掉呢]]></title>
     <url>%2F2017%2F10%2F18%2FAndroid-O%E7%9A%84%E6%84%9F%E5%8F%B9%E5%8F%B7%E6%88%96%E8%80%85%E5%8F%89-%E6%80%8E%E4%B9%88%E5%8E%BB%E6%8E%89%E5%91%A2%2F</url>
-    <content type="text"><![CDATA[Andorid O上的感叹号看着确实烦人，只要运行以下命令就好。 1adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204]]></content>
+    <content type="text"><![CDATA[Andorid O上的感叹号看着确实烦人，只要运行以下命令就好。 1adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204 7.0-7.1.0需要服务器支持https 或者使用命令 adb shell `“settings put global captive_portal_use_https 0”` 禁用https即可。 恢复可用 adb shell `“settings put global captive_portal_use_https 1”` 或者 adb shell `“settings delete global captive_portal_use_https”` 7.1.1 从7.1.1开始，检测用的服务器地址储存格式发生了变化，改为了： 123private static String getCaptivePortalServerHttpsUrl(Context context) &#123; return getSetting(context, Settings.Global.CAPTIVE_PORTAL_HTTPS_URL, DEFAULT_HTTPS_URL);&#125; 以及 123public static String getCaptivePortalServerHttpUrl(Context context) &#123; return getSetting(context, Settings.Global.CAPTIVE_PORTAL_HTTP_URL, DEFAULT_HTTP_URL);&#125; 可以看到，系统不会自动加入”generate_204″的后缀了，这意味着url可以设计的更加灵活，同时也意味着在设置的时候需要填入完整的url： adb shell `“settings put global captive_portal_https_url https://www.noisyfox.cn/generate_204&quot;` 当然如果只有http的话，可以执行： adb shell `“settings put global captive_portal_use_https 0”` adb shell `“settings put global captive_portal_http_url http://www.noisyfox.cn/generate_204&quot;` 7.1.2自7.1.2（开始？），”captive_portal_detection_enabled”设置已被废弃，现在改为了”captive_portal_mode”选项，该选项可设置为以下3种值： 0：彻底禁用检测(Don’t attempt to detect captive portals.) 1：检测到需要登录则弹窗提醒（默认值）(When detecting a captive portal, display a notification that prompts the user to sign in.) 2：检测到需要登录则自动断开此热点并不再自动连接(When detecting a captive portal, immediately disconnect from the network and do not reconnect to that network in the future.)]]></content>
       <categories>
         <category>Google</category>
       </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[最新手机号码正则表达式]]></title>
