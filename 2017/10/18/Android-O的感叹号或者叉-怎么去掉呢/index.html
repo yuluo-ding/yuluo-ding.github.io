@@ -176,7 +176,7 @@
             
             
             <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>301</strong>天之前发表，文中内容可能已经过时。
+                本文于<strong>302</strong>天之前发表，文中内容可能已经过时。
             </p>
         
     </div>
@@ -186,12 +186,12 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure>
 <h3 id="7-0-7-1-0">7.0-7.1.0</h3><p>需要服务器支持https</p>
 <p>或者使用命令</p>
-<p><code>adb shell `</code>“settings put global captive_portal_use_https 0”`</p>
+<p><code>adb shell &quot;settings put global captive_portal_use_https 0&quot;</code></p>
 <p>禁用https即可。</p>
 <p>恢复可用</p>
-<p><code>adb shell `</code>“settings put global captive_portal_use_https 1”`</p>
+<p><code>adb shell &quot;settings put global captive_portal_use_https 1&quot;</code></p>
 <p>或者</p>
-<p><code>adb shell `</code>“settings delete global captive_portal_use_https”`</p>
+<p><code>adb shell &quot;settings delete global captive_portal_use_https&quot;</code></p>
 <h3 id="7-1-1">7.1.1</h3><p> 从7.1.1开始，检测用的服务器地址储存格式发生了变化，改为了：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getCaptivePortalServerHttpsUrl</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getSetting(context, Settings.Global.CAPTIVE_PORTAL_HTTPS_URL, DEFAULT_HTTPS_URL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以及</p>
@@ -199,8 +199,8 @@
 <p>可以看到，系统不会自动加入”generate_204″的后缀了，这意味着url可以设计的更加灵活，同时也意味着在设置的时候需要填入完整的url：</p>
 <p><code>adb shell `</code>“settings put global captive_portal_https_url <a href="https://www.noisyfox.cn/generate_204&quot;`" target="_blank" rel="noopener">https://www.noisyfox.cn/generate_204&quot;`</a></p>
 <p>当然如果只有http的话，可以执行：</p>
-<p><code>adb shell `</code>“settings put global captive_portal_use_https 0”`</p>
-<p><code>adb shell `</code>“settings put global captive_portal_http_url <a href="http://www.noisyfox.cn/generate_204&quot;`" target="_blank" rel="noopener">http://www.noisyfox.cn/generate_204&quot;`</a></p>
+<p><code>adb shell &quot;settings put global captive_portal_use_https 0&quot;</code></p>
+<p><code>adb shell &quot;settings put global captive_portal_http_url http://www.noisyfox.cn/generate_204&quot;</code></p>
 <h3 id="7-1-2">7.1.2</h3><p>自7.1.2（开始？），”captive_portal_detection_enabled”设置已被废弃，现在改为了”captive_portal_mode”选项，该选项可设置为以下3种值：</p>
 <ul>
 <li>0：彻底禁用检测(Don’t attempt to detect captive portals.)</li>
