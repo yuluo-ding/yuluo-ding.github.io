@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2018-08-17T08:37:15.835Z</updated>
+  <updated>2018-09-09T15:22:01.787Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python利用哈希值比较两个文件的一致性</title>
+    <link href="yuluo-ding.github.io/2018/09/09/Python%E5%88%A9%E7%94%A8%E5%93%88%E5%B8%8C%E5%80%BC%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7/"/>
+    <id>yuluo-ding.github.io/2018/09/09/Python利用哈希值比较两个文件的一致性/</id>
+    <published>2018-09-09T15:19:53.000Z</published>
+    <updated>2018-09-09T15:22:01.787Z</updated>
+    
+    <content type="html"><![CDATA[<p>Python的内置函数hash(),深入发现通过python的哈希值可以做很多的事情</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Python的内置函数hash(),深入发现通过python的哈希值可以做很多的事情&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+      <category term="Hash" scheme="yuluo-ding.github.io/tags/Hash/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 利用paramiko模块监控服务器</title>
@@ -491,26 +517,6 @@
     </summary>
     
       <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Git配置不同项目的不同账号</title>
-    <link href="yuluo-ding.github.io/2017/12/05/Git%E9%85%8D%E7%BD%AE%E4%B8%8D%E5%90%8C%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%B8%8D%E5%90%8C%E8%B4%A6%E5%8F%B7/"/>
-    <id>yuluo-ding.github.io/2017/12/05/Git配置不同项目的不同账号/</id>
-    <published>2017-12-05T15:03:02.000Z</published>
-    <updated>2017-12-05T15:27:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>​    在公司里做项目，一般都是公司直接分配git账号。而我自己在GitHub上也托管了自己的博客。两边使用的账号是不同的对应的ssh key也不一样。每次都手工更改是很麻烦的，也不是程序员应有的解决方案。这里我记录下我是如何解决git多账号登录的。</p><p>​    首先当初最开始设置 Git 的时候，都是默认全局设置的。例如：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "your_name" </span><br><span class="line">git config --global user.email "your_email"</span><br></pre></td></tr></table></figure><a id="more"></a><p>​    一般情况下，参与的项目都是同一个邮箱用户名是没啥问题的。但是碰到我这种情况，又不想换掉其中一个项目的用户名（我也没有这个决定权）。我就需要针对不同的项目设置不同的用户名邮箱。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~/you project #进入项目文件夹 </span><br><span class="line">git init #初始化项目（如果已经是git目录了则不需要） </span><br><span class="line">git config user.name "your_name" #重新设置用户名和邮箱 </span><br><span class="line">git config user.email "your_email"</span><br></pre></td></tr></table></figure><p>​    说白了，也就是进入到你的git项目相对根目录下，然后执行git config设置记录。这时候我们打开项目中的<code>.git</code>文件夹，查看<code>config</code>文件会发现多了两行.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[branch "master"]</span><br><span class="line">    remote = origin</span><br><span class="line">    merge = refs/heads/master</span><br><span class="line">[user]</span><br><span class="line">    name = you name</span><br><span class="line">    email = youemail@host.com</span><br></pre></td></tr></table></figure><p>在下一次提交的时候就优先是用项目文件中的git配置信息了。如果有必要可以执行取消全局设置的命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br></pre></td></tr></table></figure><h4 id="SSH配置">SSH配置</h4><p>邮箱不同也会对应不同的SSH key，所以要针对不同的项目使用不同的key。所以打开git全局配置文件。一般在用户目录下的<code>.ssh</code>文件夹中。比如windows用户就是：<code>C:\Users\用户名\.ssh</code></p><p>Linux就是<code>～/.ssh</code><br>找到config文件。没有就新建一个，用文本编辑器打开，添加如下配置：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一个git项目账号</span></span><br><span class="line">Host first     #给这个项目服务器起个名字，待会用到</span><br><span class="line">HostName test.com #这里需要用真实的项目检出hostname，为了项目安全，我这里随意写的</span><br><span class="line">User A           #用户名</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_first #该项目ssh key 所在路径</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">第二个git项目账号  和上面的项目配置一样</span></span><br><span class="line">Host second</span><br><span class="line">HostName test2.com</span><br><span class="line">Port 1334</span><br><span class="line">User B</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_second</span><br></pre></td></tr></table></figure><p>​    如果还没有生成ssh key 可以用一下命令生成,不同项目起不同名字或者放到不同路径，在上面的config配置中应用不同路径即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -C "your_email" -t rsa</span><br></pre></td></tr></table></figure><p>使配置生效</p><p>上面配置了ssh key时候指定了host名称，所以再次打开项目文件夹下的<code>.git</code>目录下的config文件，修改url配置，把原来的host name url 改成你上面配置的host 值比如 ‘first’ 、’seceond’等，类似如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[remote "origin"] </span><br><span class="line">url = git@first:A/proxy.git </span><br><span class="line">fetch = +refs/heads/*:refs/remotes/origin/*</span><br></pre></td></tr></table></figure><p>也可以使用命令行完成配置。这里需要注意，使用.ssh目录下的host代替真实的hostname，这样才能让git识别出来</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add first git@first:A/project.git</span><br></pre></td></tr></table></figure><p>如果使用的是repo，也是同样操作</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u ssh://A@first -b branch</span><br></pre></td></tr></table></figure><p>push的时候，push到对应的Host即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push fist master  #first项目中：</span><br></pre></td></tr></table></figure><p>作者： K_Biao<br>链接：<a href="http://www.imooc.com/article/7419" target="_blank" rel="noopener">http://www.imooc.com/article/7419</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;​    在公司里做项目，一般都是公司直接分配git账号。而我自己在GitHub上也托管了自己的博客。两边使用的账号是不同的对应的ssh key也不一样。每次都手工更改是很麻烦的，也不是程序员应有的解决方案。这里我记录下我是如何解决git多账号登录的。&lt;/p&gt;
-&lt;p&gt;​    首先当初最开始设置 Git 的时候，都是默认全局设置的。例如：&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &quot;your_name&quot; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &quot;your_email&quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
     
     
   </entry>
