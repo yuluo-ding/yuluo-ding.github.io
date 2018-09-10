@@ -29,7 +29,7 @@
     <!--Title-->
 
 
-<title>Python中执行 Sehll 命令 | yuluo</title>
+<title>恢复Chrome的地址栏www | yuluo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
@@ -128,9 +128,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Python中执行 Sehll 命令">
+        <h1 id="恢复Chrome的地址栏www">
             
-	            Python中执行 Sehll 命令
+	            恢复Chrome的地址栏www
             
         </h1>
         <div class="post-meta">
@@ -138,8 +138,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/Python">
-            Python
+        <a href="/categories/Google">
+            Google
         </a>
     </span>
     
@@ -148,6 +148,10 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
+                
+                    <a href="/tags/Chrome" title='Chrome'>
+                        Chrome
+                    </a>
                 
             
         </span>
@@ -158,49 +162,30 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2017/06/13</span>
+            <span class="date-meta">2018/09/10</span>
         </span>
     
 </div>
 
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>454</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
-        <p>在日常的使用中，会经常遇到需要执行 Shell 命令的情况，但是很多时候，在 Python 下执行也是很方便的。下面介绍四种方法以供参考。</p>
-<a id="more"></a>
-<ol>
-<li><p>OS模块中的<code>os.system()</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;os.system(<span class="string">'ls'</span>)</span><br><span class="line"><span class="number">123.</span>txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>popen()</code> 得到一个字符串，需要处理下。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> os</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str = os.popen(<span class="string">"ls"</span>).read()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = str.split(<span class="string">"\n"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> b <span class="keyword">in</span> a:</span><br><span class="line">        <span class="keyword">print</span> b</span><br></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-<li><p><code>commands</code>模块#可以很方便的取得命令的输出（包括标准和错误输出）和执行状态位</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> commands</span><br><span class="line">a,b = commands.getstatusoutput(<span class="string">'ls'</span>)</span><br><span class="line">a<span class="comment">#是退出状态</span></span><br><span class="line">b<span class="comment">#是输出的结果。</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> commands</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a,b = commands.getstatusoutput(<span class="string">'ls'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> a</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> b</span><br><span class="line">anaconda-ks.cfg</span><br><span class="line">install.log</span><br><span class="line">install.log.syslog</span><br></pre></td></tr></table></figure>
-<p><code>commands.getstatusoutput(cmd)</code>返回 <code>status,output</code></p>
-<p><code>commands.getoutput(cmd)</code>只返回输出结果</p>
-</li>
-<li><p><code>subprocess</code>模块</p>
-<p>使用<code>subprocess</code>模块可以创建新的进程，可以与新建进程的输入/输出/错误管道连通，并可以获得新建进程执行的返回状态。</p>
-<p>使用<code>subprocess</code>模块的目的是替代<code>os.system()</code>、<code>os.popen*()</code>、<code>commands.*</code>等旧的函数或模块。</p>
-<ol>
-<li><p><code>subprocess.call(command, shell=True)</code>直接打印结果</p>
-</li>
-<li><p><code>subprocess.Popen(command, shell=True)</code> 也可以是</p>
-<p><code>subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)</code>这样就可以输出结果了。</p>
-<p>如果<code>command</code>不是一个可执行文件，<code>shell=True</code>是不可省略的。</p>
-</li>
+        <ol>
+<li>打开chrome</li>
+<li>地址栏输入</li>
+<li>chrome://flags/#omnibox-ui-hide-steady-state-url-scheme-and-subdomains</li>
+<li>将选项改为disabled</li>
+<li>重启浏览器</li>
 </ol>
-</li>
+<p>恢复HTTPS 安全图标</p>
+<ol>
+<li>chrome://flags/#simplify-https-indicator</li>
+<li>将选项改为</li>
+<li>enabled（show secure chip for non-ev https pages）</li>
+<li>重启浏览器</li>
 </ol>
-<p>以上就是四种方法。</p>
 
     </div>
 
@@ -218,15 +203,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/06/20/install-PyQt5-for-Macbook/" class="pre-post btn btn-default" title='Install PyQt5 for Macbook'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Install PyQt5 for Macbook</span>
-        </a>
     
-    
-        <a href="/2017/06/04/使用-Runfus-为-Windows10-创建-USB-启动盘/" class="next-post btn btn-default" title='使用 Runfus 为 Windows10 创建 USB 启动盘'>
+        <a href="/2018/09/09/Python利用哈希值比较两个文件的一致性/" class="next-post btn btn-default" title='Python利用哈希值比较两个文件的一致性'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">使用 Runfus 为 Windows10 创建 USB 启动盘</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Python利用哈希值比较两个文件的一致性</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
