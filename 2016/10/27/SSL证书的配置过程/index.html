@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="yuluo-ding.github.io">
+    <!--SEO-->
+
+<meta name="description" content="The home of yuluo!"/>
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>SSL证书的配置过程 | yuluo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(https://i.loli.net/2018/08/15/5b74422f051eb.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="yuluo-ding.github.io">yuluo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Android/"><i class="fa "></i>Android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Linux/"><i class="fa "></i>Linux</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Soft/"><i class="fa "></i>Tools</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Python/"><i class="fa "></i>Python</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSL证书的配置过程">
+            
+	            SSL证书的配置过程
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/Linux">
+            Linux
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/10/27</span>
+        </span>
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>683</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="Apache_2配置SSL证书">Apache 2配置SSL证书</h3><p>本文描述在 Apache 2.x HTTP 服务器上安装并配置 SSL 证书。</p>
+<a id="more"></a>
+<h4 id="确保Apache_SSL模块的开启">确保Apache SSL模块的开启</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod ssl</span><br></pre></td></tr></table></figure>
+<h4 id="配置SSL证书">配置SSL证书</h4><p>完整的SSL证书分为四个部分：</p>
+<ul>
+<li>CA 根证书 (root CA)</li>
+<li>中级证书 (Intermediate Certificate)</li>
+<li>域名证书</li>
+<li>证书密钥 (仅本人持有)</li>
+</ul>
+<p>以 COMODO PositiveSSL 证书为例，将收到四份文件：</p>
+<ul>
+<li>根证书 - <code>AddTrustExternalCARoot.crt</code></li>
+<li>中级证书 - <code>COMODORSAAddTrustCA.crt</code></li>
+<li>中级证书 - <code>COMODORSADomainValidationSecureServerCA.crt</code></li>
+<li>您的域名证书 - <code>example_com.crt</code></li>
+</ul>
+<p>要依照 <strong>中间证书 -&gt; 根证书</strong> 的顺序串联为证书链，才能被绝大多数浏览器信任。使用 <code>cat</code> 命令串联证书：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt &gt; ca-bundle.crt</span><br></pre></td></tr></table></figure>
+<p>得到 <code>ca-bundle.crt</code> 后，和证书文件 <code>example_com.crt</code>，密钥文件 <code>example_com.key</code> 一同上传至服务器并保存在安全的位置，例如 <code>/etc/ssl/private</code> 目录下 (没有此目录请创建)。</p>
+<h4 id="修改Apache站点配置">修改Apache站点配置</h4><p>下面是一份针对 Apache 2.4 的 SSL 部分配置</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SSLEngine on</span><br><span class="line">SSLCertificateFile    <span class="regexp">/etc/</span>ssl<span class="regexp">/private/</span>example_com.crt</span><br><span class="line">SSLCertificateKeyFile <span class="regexp">/etc/</span>ssl<span class="regexp">/private/</span>example_com.key</span><br><span class="line">SSLCertificateChainFile <span class="regexp">/etc/</span>ssl<span class="regexp">/private/</span>ca-bundle.crt</span><br></pre></td></tr></table></figure>
+<p>以下为 <virtualhost> 的详细配置</virtualhost></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:443&gt;</span><br><span class="line">DocumentRoot /var/www/</span><br><span class="line">SSLEngine on</span><br><span class="line">SSLCertificateFile    /etc/ssl/private/example_com.crt</span><br><span class="line">SSLCertificateKeyFile /etc/ssl/private/example_com.key</span><br><span class="line">SSLCertificateChainFile /etc/ssl/private/ca-bundle.crt</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>请注意如果你的 Apache2 版本大于 2.4.8，您可以将所有证书串联为一个文件作为 SSLCertificateFile 的值，而不必写 SSLCertificateChainFile</strong></p>
+<h4 id="强制定向到HTTPS">强制定向到HTTPS</h4><p>首先，我们需要确认 Apache 开启 <code>mod_rewrite</code> 模块，如果没有开启，请使用 <code>sudo a2enmod rewrite</code> 命令开启。</p>
+<p>其次，你需要在站点配置文件中开启 <code>AllowOverride</code>，这样 <code>.htaccess</code> 文件才会起作用。</p>
+<p>开启并重启 <code>Apache</code> 后，复制一下代码到你目录的 <code>.htaccess</code> 文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine On</span><br><span class="line">RewriteCond %&#123;HTTPS&#125; off</span><br><span class="line">RewriteRule (.*) https://%&#123;HTTP_HOST&#125;%&#123;REQUEST_URI&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="SSL安全配置">SSL安全配置</h4><h5 id="禁用压缩">禁用压缩</h5><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">SSLCompression</span> <span class="literal">off</span></span><br></pre></td></tr></table></figure>
+<h5 id="禁用_SSLv2_和_SSLv3">禁用 SSLv2 和 SSLv3</h5><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SSLProtocol All -SSLv2 -SSLv3</span><br></pre></td></tr></table></figure>
+<h5 id="抵御_Poodle_和_SSL_Downgrade_攻击">抵御 Poodle 和 SSL Downgrade 攻击</h5><p>您需要支持 <code>TLS-FALLBACK-SCSV</code> 以自动开启此功能。下列 OpenSSL 版本包含对 <code>TLS-FALLBACK-SCSV</code> 的支持，Lighttpd 会自动启用此特性。</p>
+<ul>
+<li>OpenSSL <strong>1.0.1</strong> 在 <code>1.0.1j</code> 及之后的版本中支持</li>
+<li>OpenSSL <strong>1.0.0</strong> 在 <code>1.0.0o</code> 及之后的版本中支持</li>
+<li>OpenSSL <strong>0.9.8</strong> 在 <code>0.9.8zc</code> 及之后的版本中支持</li>
+</ul>
+<h5 id="加密和交换算法">加密和交换算法</h5><p>一份推荐的配置：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SSLCipherSuite <span class="number">EECDH</span>+AESGCM:<span class="number">EDH</span>+AESGCM:AES256+<span class="number">EECDH</span>:AES256+<span class="number">EDH</span></span><br></pre></td></tr></table></figure>
+<p>如果您需要兼容老式系统和浏览器 (Windows XP, IE6)，请使用下面的：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SSLCipherSuite EECDH+<span class="string">AESGCM:</span>EDH+<span class="string">AESGCM:</span>AES256+<span class="string">EECDH:</span>ECDHE-RSA-AES128-<span class="string">SHA:</span>DHE-RSA-AES128-GCM-<span class="string">SHA256:</span>AES256+<span class="string">EDH:</span>ECDHE-RSA-AES256-GCM-<span class="string">SHA384:</span>ECDHE-RSA-AES128-GCM-<span class="string">SHA256:</span>DHE-RSA-AES256-GCM-<span class="string">SHA384:</span>ECDHE-RSA-AES256-<span class="string">SHA384:</span>ECDHE-RSA-AES128-<span class="string">SHA256:</span>ECDHE-RSA-AES256-<span class="string">SHA:</span>DHE-RSA-AES256-<span class="string">SHA256:</span>DHE-RSA-AES128-<span class="string">SHA256:</span>DHE-RSA-AES256-<span class="string">SHA:</span>DHE-RSA-AES128-<span class="string">SHA:</span>ECDHE-RSA-DES-CBC3-<span class="string">SHA:</span>EDH-RSA-DES-CBC3-<span class="string">SHA:</span>AES256-GCM-<span class="string">SHA384:</span>AES128-GCM-<span class="string">SHA256:</span>AES256-<span class="string">SHA256:</span>AES128-<span class="string">SHA256:</span>AES256-<span class="string">SHA:</span>AES128-<span class="string">SHA:</span>DES-CBC3-<span class="string">SHA:</span><span class="string">HIGH:</span>!<span class="string">aNULL:</span>!<span class="string">eNULL:</span>!<span class="string">EXPORT:</span>!<span class="string">DES:</span>!<span class="string">MD5:</span>!<span class="string">PSK:</span>!RC4</span><br></pre></td></tr></table></figure>
+<h5 id="Forward_Secrecy_和_DHE_参数">Forward Secrecy 和 DHE 参数</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/ssl/certs</span><br><span class="line">openssl dhparam -out dhparam.pem 4096</span><br></pre></td></tr></table></figure>
+<p><strong>建议您使用性能强劲的平台生成此文件</strong>，例如最新版的至强物理机。如果您只有一台小型 VPS，请使用 <code>openssl dhparam -out dhparam.pem 2048</code> 命令生成 2048bit 的参数文件。</p>
+<p>添加到配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SSLOpenSSLConfCmd DHParameters "/etc/ssl/certs/dhparam.pem"</span><br></pre></td></tr></table></figure>
+<h5 id="启用_HSTS">启用 HSTS</h5><p>添加到配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Optionally load the headers module:</span></span><br><span class="line">LoadModule headers_module modules/mod_headers.so</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost 67.89.123.45:443&gt;</span><br><span class="line">    Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains; preload"</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="重启_Apache">重启 Apache</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">yuluo</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2016/11/10/Git移除-deal等配置文件/" class="pre-post btn btn-default" title='Git移除.deal等配置文件'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Git移除.deal等配置文件</span>
+        </a>
+    
+    
+        <a href="/2016/10/24/Linux虚拟机分辨率设置/" class="next-post btn btn-default" title='Linux虚拟机分辨率设置'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Linux虚拟机分辨率设置</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+   <p>评论系统未开启，无法评论！</p>
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache_2配置SSL证书"><span class="toc-text">Apache 2配置SSL证书</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#确保Apache_SSL模块的开启"><span class="toc-text">确保Apache SSL模块的开启</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置SSL证书"><span class="toc-text">配置SSL证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改Apache站点配置"><span class="toc-text">修改Apache站点配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#强制定向到HTTPS"><span class="toc-text">强制定向到HTTPS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSL安全配置"><span class="toc-text">SSL安全配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#禁用压缩"><span class="toc-text">禁用压缩</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#禁用_SSLv2_和_SSLv3"><span class="toc-text">禁用 SSLv2 和 SSLv3</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#抵御_Poodle_和_SSL_Downgrade_攻击"><span class="toc-text">抵御 Poodle 和 SSL Downgrade 攻击</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加密和交换算法"><span class="toc-text">加密和交换算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Forward_Secrecy_和_DHE_参数"><span class="toc-text">Forward Secrecy 和 DHE 参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#启用_HSTS"><span class="toc-text">启用 HSTS</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启_Apache"><span class="toc-text">重启 Apache</span></a>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+
+</body>
+</html>

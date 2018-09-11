@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="yuluo-ding.github.io">
+    <!--SEO-->
+
+<meta name="description" content="The home of yuluo!"/>
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>HTTP | yuluo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(https://i.loli.net/2018/08/15/5b74422f051eb.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="yuluo-ding.github.io">yuluo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Android/"><i class="fa "></i>Android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Linux/"><i class="fa "></i>Linux</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Soft/"><i class="fa "></i>Tools</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Python/"><i class="fa "></i>Python</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="HTTP">
+            
+	            HTTP
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/HTTP">
+            HTTP
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2015/10/21</span>
+        </span>
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>1056</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>####所有 HTTP 状态代码及其定义。<br><a id="more"></a><br>代码 指示<br>2xx 成功<br>200 正常；请求已完成。<br>201 正常；紧接 POST 命令。<br>202 正常；已接受用于处理，但处理尚未完成。<br>203 正常；部分信息 — 返回的信息只是一部分。<br>204 正常；无响应 — 已接收请求，但不存在要回送的信息。<br>206 正常；代表数据的分段传输<br>3xx 重定向<br>301 已移动 — 请求的数据具有新的位置且更改是永久的。<br>302 已找到 — 请求的数据临时具有不同 URI。<br>303 请参阅其它 — 可在另一 URI 下找到对请求的响应，且应使用 GET 方法检索此响应。<br>304 未修改 — 未按预期修改文档。<br>305 使用代理 — 必须通过位置字段中提供的代理来访问请求的资源。<br>306 未使用 — 不再使用；保留此代码以便将来使用。<br>4xx 客户机中出现的错误<br>400 错误请求 — 请求中有语法问题，或不能满足请求。<br>401 未授权 — 未授权客户机访问数据。<br>402 需要付款 — 表示计费系统已有效。<br>403 禁止 — 即使有授权也不需要访问。<br>404 找不到 — 服务器找不到给定的资源；文档不存在。<br>407 代理认证请求 — 客户机首先必须使用代理认证自身。<br>415 介质类型不受支持 — 服务器拒绝服务请求，因为不支持请求实体的格式。<br>5xx 服务器中出现的错误<br>500 内部错误 — 因为意外情况，服务器不能完成请求。<br>501 未执行 — 服务器不支持请求的工具。<br>502 错误网关 — 服务器接收到来自上游服务器的无效响应。<br>503 无法获得服务 — 由于临时过载或维护，服务器无法处理请求。</p>
+<p>HTTP 400 - 请求无效<br>HTTP 401.1 - 未授权：登录失败<br>HTTP 401.2 - 未授权：服务器配置问题导致登录失败<br>HTTP 401.3 - ACL 禁止访问资源<br>HTTP 401.4 - 未授权：授权被筛选器拒绝<br>HTTP 401.5 - 未授权：ISAPI 或 CGI 授权失败<br>HTTP 403 - 禁止访问<br>HTTP 403 - 对 Internet 服务管理器 (HTML) 的访问仅限于 Localhost<br>HTTP 403.1 禁止访问：禁止可执行访问<br>HTTP 403.2 - 禁止访问：禁止读访问<br>HTTP 403.3 - 禁止访问：禁止写访问<br>HTTP 403.4 - 禁止访问：要求 SSL<br>HTTP 403.5 - 禁止访问：要求 SSL 128<br>HTTP 403.6 - 禁止访问：IP 地址被拒绝<br>HTTP 403.7 - 禁止访问：要求客户证书<br>HTTP 403.8 - 禁止访问：禁止站点访问<br>HTTP 403.9 - 禁止访问：连接的用户过多<br>HTTP 403.10 - 禁止访问：配置无效<br>HTTP 403.11 - 禁止访问：密码更改<br>HTTP 403.12 - 禁止访问：映射器拒绝访问<br>HTTP 403.13 - 禁止访问：客户证书已被吊销<br>HTTP 403.15 - 禁止访问：客户访问许可过多<br>HTTP 403.16 - 禁止访问：客户证书不可信或者无效<br>HTTP 403.17 - 禁止访问：客户证书已经到期或者尚未生效<br>HTTP 404.1 - 无法找到 Web 站点<br>HTTP 404 - 无法找到文件<br>HTTP 405 - 资源被禁止<br>HTTP 406 - 无法接受<br>HTTP 407 - 要求代理身份验证<br>HTTP 410 - 永远不可用<br>HTTP 412 - 先决条件失败<br>HTTP 414 - 请求 - URI 太长<br>HTTP 500 - 内部服务器错误<br>HTTP 500.100 - 内部服务器错误 - ASP 错误<br>HTTP 500-11 服务器关闭<br>HTTP 500-12 应用程序重新启动<br>HTTP 500-13 - 服务器太忙<br>HTTP 500-14 - 应用程序无效<br>HTTP 500-15 - 不允许请求 global.asa<br>Error 501 - 未实现<br>HTTP 502 - 网关错误</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">yuluo</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2015/11/09/Sublime-Text3/" class="pre-post btn btn-default" title='Sublime Text3'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Sublime Text3</span>
+        </a>
+    
+    
+        <a href="/2015/10/10/Google-play-and-something/" class="next-post btn btn-default" title='Google play and something'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Google play and something</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+   <p>评论系统未开启，无法评论！</p>
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+
+</body>
+</html>
