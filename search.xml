@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[面向对象的文件系统路径-pathlib]]></title>
+    <url>%2F2018%2F09%2F11%2F%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84-pathlib%2F</url>
+    <content type="text"><![CDATA[该模块提供表示文件系统路径的类，其语义适用于不同的操作系统。 pathlib类在纯路径之间划分，纯路径提供纯粹的计算操作而没有I / O，以及具体路径，它继承纯路径但也提供I / O操作。 如果你之前从未使用过此模块，或者只是不确定哪个类适合你的任务，那么Path很可能就是你所需要的。 为运行代码的平台提供了实例化的具体路径。 纯路径在某些特殊情况下很有用; 例如： 如果要在Unix计算机上操作Windows路径（反之亦然）。 在Unix上运行时无法实例化WindowsPath，但可以实例化PureWindowsPath。 你希望确保你的代码仅操作路径而不实际访问操作系统。 在这种情况下，实例化其中一个纯类可能很有用，因为那些只是没有任何操作系统访问操作。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>path</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[恢复Chrome的地址栏www]]></title>
     <url>%2F2018%2F09%2F10%2F%E6%81%A2%E5%A4%8DChrome%E7%9A%84%E5%9C%B0%E5%9D%80%E6%A0%8Fwww%2F</url>
     <content type="text"><![CDATA[打开chrome 地址栏输入 chrome://flags/#omnibox-ui-hide-steady-state-url-scheme-and-subdomains 将选项改为disabled 重启浏览器 恢复HTTPS 安全图标 chrome://flags/#simplify-https-indicator 将选项改为 enabled（show secure chip for non-ev https pages） 重启浏览器]]></content>
