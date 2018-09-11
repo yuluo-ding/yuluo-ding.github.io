@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="yuluo-ding.github.io">
+    <!--SEO-->
+
+<meta name="description" content="The home of yuluo!"/>
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>sshpass 的使用 | yuluo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Luo Yu'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="yuluo-ding.github.io">yuluo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="sshpass 的使用">
+            
+	            sshpass 的使用
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/Linux">
+            Linux
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/20</span>
+        </span>
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>479</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>​    ssh远程连接时，每次都提示需要输入密码。需要ssh到多台机器时很不方便。sshpass可以解决这个问题。sshpass可以实现ssh的自动的登录。直接在命令里输入密码，但是安全性的问题需要自己判断。</p>
+<a id="more"></a>
+<h4 id="安装">安装</h4><ol>
+<li><p><strong>Installing on Ubuntu</strong></p>
+<p><code>apt-get install sshpass</code></p>
+</li>
+<li><p><strong>Installing on OS X</strong></p>
+<ul>
+<li><p>开始之前需要安装<code>install xcode and command line tools.</code></p>
+</li>
+<li><p>之后安装Installing with Homebrew</p>
+</li>
+<li><p>由于安全问题，brew 官方默认不允许安装，可以尝试如下方法：</p>
+<p><code>brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb</code></p>
+</li>
+</ul>
+</li>
+<li><p><strong>源码安装</strong></p>
+<ul>
+<li>Download the <a href="http://sourceforge.net/projects/sshpass/" target="_blank" rel="noopener">Source Code</a></li>
+<li>Extract it and cd into the directory</li>
+<li><code>./configure</code></li>
+<li><code>sudo make install</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="用法介绍">用法介绍</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@zhu ~]<span class="comment"># sshpass --help</span></span><br><span class="line">sshpass: invalid option -- <span class="string">'-'</span></span><br><span class="line">Usage: sshpass [-f|-d|-p|-e] [-hV] <span class="built_in">command</span> parameters</span><br><span class="line">   -f filename   Take password to use from file</span><br><span class="line">   -d number     Use number as file descriptor <span class="keyword">for</span> getting password</span><br><span class="line">   -p password   Provide password as argument (security unwise)</span><br><span class="line">   -e            Password is passed as env-var <span class="string">"SSHPASS"</span></span><br><span class="line">   With no parameters - password will be taken from stdin</span><br><span class="line">   -h            Show <span class="built_in">help</span> (this screen)</span><br><span class="line">   -V            Print version information</span><br><span class="line">At most one of -f, -d, -p or -e should be used</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-p password <span class="comment">#后跟密码</span></span><br><span class="line">[root@zhu ~]<span class="comment"># sshpass -p 123456 ssh root@192.168.56.102</span></span><br><span class="line">Last login: Wed Apr 16 15:35:22 2014 from 192.168.56.1</span><br><span class="line">[root@jiang ~]<span class="comment"># exit</span></span><br><span class="line"><span class="built_in">logout</span></span><br><span class="line">Connection to 192.168.56.102 closed.</span><br><span class="line">-f filename <span class="comment">#后跟保存密码的文件名，密码是文件内容的第一行。</span></span><br><span class="line">[root@zhu ~]<span class="comment"># cat 1.txt</span></span><br><span class="line">123456</span><br><span class="line">[root@zhu ~]<span class="comment"># sshpass -f 1.txt  ssh root@192.168.56.102</span></span><br><span class="line">Last login: Fri Apr 18 13:48:20 2014 from 192.168.56.101</span><br><span class="line">[root@jiang ~]<span class="comment"># exit</span></span><br><span class="line"><span class="built_in">logout</span></span><br><span class="line">Connection to 192.168.56.102 closed.</span><br><span class="line">-e <span class="comment">#将环境变量SSHPASS作为密码</span></span><br><span class="line">[root@zhu ~]<span class="comment"># export SSHPASS=123456</span></span><br><span class="line">[root@zhu ~]<span class="comment"># sshpass -e  ssh root@192.168.56.102</span></span><br><span class="line">Last login: Fri Apr 18 13:51:45 2014 from 192.168.56.101</span><br><span class="line">[root@jiang ~]<span class="comment"># exit</span></span><br><span class="line"><span class="built_in">logout</span></span><br><span class="line">Connection to 192.168.56.102 closed.</span><br></pre></td></tr></table></figure>
+<p>如果在多台主机执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@zhu ~]<span class="comment"># cat a.sh</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(cat /root/1.txt)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line">    sshpass -p123456 ssh root@<span class="variable">$i</span> <span class="string">'ls -l'</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/31/让-macbook-读取-txt-文本/" class="pre-post btn btn-default" title='让 MacBook 读取 txt 文本'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">让 MacBook 读取 txt 文本</span>
+        </a>
+    
+    
+        <a href="/2017/05/17/Python-Pip-使用警告/" class="next-post btn btn-default" title='Python Pip 使用警告'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Python Pip 使用警告</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用法介绍"><span class="toc-text">用法介绍</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+
+</body>
+</html>
