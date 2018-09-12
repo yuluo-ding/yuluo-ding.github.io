@@ -180,6 +180,22 @@
 <li>如果要在Unix计算机上操作Windows路径（反之亦然）。 在Unix上运行时无法实例化WindowsPath，但可以实例化PureWindowsPath。</li>
 <li>你希望确保你的代码仅操作路径而不实际访问操作系统。 在这种情况下，实例化其中一个纯类可能很有用，因为那些只是没有任何操作系统访问操作。</li>
 </ol>
+<h3 id="基础使用">基础使用</h3><p>导入主类:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br></pre></td></tr></table></figure>
+<p> 列出子目录</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = Path(<span class="string">'.'</span>)</span><br><span class="line">[x <span class="keyword">for</span> x <span class="keyword">in</span> p.iterdir() <span class="keyword">if</span> x.is_dir()]</span><br><span class="line"><span class="comment"># [PosixPath('.hg'), PosixPath('docs'), PosixPath('dist'),PosixPath('__pycache__'), PosixPath('build')]</span></span><br></pre></td></tr></table></figure>
+<p>在此目录树中列出Python源文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list(p.glob(<span class="string">'**/*.py'</span>))</span><br><span class="line"><span class="comment"># [PosixPath('test_pathlib.py'), PosixPath('setup.py'),PosixPath('pathlib.py'), PosixPath('docs/conf.py'),PosixPath('build/lib/pathlib.py')]</span></span><br></pre></td></tr></table></figure>
+<p>在根目录插入目录树</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p = Path(<span class="string">'/etc'</span>)</span><br><span class="line">q = p / <span class="string">'init.d'</span> / <span class="string">'reboot'</span></span><br><span class="line">print(q)</span><br><span class="line"><span class="comment"># PosixPath('/etc/init.d/reboot')</span></span><br><span class="line">q.resolve()</span><br><span class="line"><span class="comment"># PosixPath('/etc/rc.d/init.d/halt')</span></span><br></pre></td></tr></table></figure>
+<p>查询目录属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">q.exists()</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line">q.is_dir()</span><br><span class="line"><span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<p> 打开一个文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> q.open() <span class="keyword">as</span> f: f.readline()</span><br></pre></td></tr></table></figure>
+<h3 id="Pure_paths">Pure paths</h3><p><code>Pure path</code> 对象提供了实际上不访问文件系统的路径处理操作。 有三种方法可以访问这些类，我们也称之为<code>flavours</code>：</p>
+<p>class pathlib.PurePath(*pathsegments)</p>
+<p>表示系统路径风格的泛型类（实例化它会创建PurePosixPath或PureWindowsPath）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PurePath(<span class="string">'setup.py'</span>)      <span class="comment"># Running on a Unix machine</span></span><br><span class="line"><span class="comment"># PurePosixPath('setup.py')</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -222,7 +238,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础使用"><span class="toc-text">基础使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pure_paths"><span class="toc-text">Pure paths</span></a></li></ol>
         
     </div>
 </aside>
