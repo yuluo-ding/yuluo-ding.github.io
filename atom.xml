@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2018-09-14T02:36:22.966Z</updated>
+  <updated>2018-10-16T14:22:49.243Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="yuluo-ding.github.io/2018/10/16/mac-OS-%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%9F%E6%88%90md5-sha1-sha256-%E6%A0%A1%E9%AA%8C%E5%80%BC/"/>
+    <id>yuluo-ding.github.io/2018/10/16/mac-OS-在命令行中生成md5-sha1-sha256-校验值/</id>
+    <published>2018-10-16T14:20:38.133Z</published>
+    <updated>2018-10-16T14:22:49.243Z</updated>
+    
+    <content type="html"><![CDATA[<p>title: ‘mac OS 在命令行中生成md5, sha1, sha256 校验值’<br>date: 2018-10-16 22:20:38<br>categories: mac OS</p><h2 id="tag:_terminal">tag: terminal</h2><h4 id="计算_MD5_校验和">计算 MD5 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-1_校验和">计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-256_校验和">计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;title: ‘mac OS 在命令行中生成md5, sha1, sha256 校验值’&lt;br&gt;date: 2018-10-16 22:20:38&lt;br&gt;categories: mac OS&lt;/p&gt;
+&lt;h2 id=&quot;tag:_terminal&quot;&gt;tag: terminal&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Python 两个list 求交集，并集，差集</title>
@@ -498,36 +520,6 @@
     </summary>
     
       <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>XML的有效性的检测</title>
-    <link href="yuluo-ding.github.io/2018/01/31/XML%E7%9A%84%E6%9C%89%E6%95%88%E6%80%A7%E7%9A%84%E6%A3%80%E6%B5%8B/"/>
-    <id>yuluo-ding.github.io/2018/01/31/XML的有效性的检测/</id>
-    <published>2018-01-31T15:59:17.000Z</published>
-    <updated>2018-01-31T15:59:52.424Z</updated>
-    
-    <content type="html"><![CDATA[<p>XML文档的结构良好性验证，结构良好的xml文档，需要遵守下面这些规则：</p><ol><li>所有开始标签必须有对应的结束标签</li><li>元素可以嵌套，但是不可以重叠</li><li>有且只能有一个根元素</li><li>属性值必须使用引号</li><li>一个元素不能有两个同样属性名字的属性</li><li>注释不能出现在标签内部</li><li>没有转义的” &lt;” 或者” $”不能出现在元素和属性的字符中</li></ol><p>如何检查XML文档良构?</p><a id="more"></a><h5 id="方法一">方法一</h5><p>以ElementTree模块为例，直接使用parse方法。如果不报错，这表示该XML是良构的</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xml.etree <span class="keyword">import</span> ElementTree <span class="keyword">as</span> ET  </span><br><span class="line"><span class="keyword">try</span>:  </span><br><span class="line">    ET.parse(<span class="string">'test.xml'</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这是一个良构的XML文档'</span>  </span><br><span class="line"><span class="keyword">except</span> Exception,e:  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这不是一个良构的XML文档'</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'可能原因：'</span>,e</span><br></pre></td></tr></table></figure><h5 id="方法二">方法二</h5><p>如果希望获取更加详细信息，可使用lxml模块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  lxml.etree <span class="keyword">as</span> ET  </span><br><span class="line"><span class="keyword">try</span>:  </span><br><span class="line">    ET.parse(<span class="string">'test.xml'</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这是一个良构的XML文档'</span>  </span><br><span class="line"><span class="keyword">except</span> Exception,e:  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这不是一个良构的XML文档'</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'可能原因：'</span>,e</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;XML文档的结构良好性验证，结构良好的xml文档，需要遵守下面这些规则：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;所有开始标签必须有对应的结束标签&lt;/li&gt;
-&lt;li&gt;元素可以嵌套，但是不可以重叠&lt;/li&gt;
-&lt;li&gt;有且只能有一个根元素&lt;/li&gt;
-&lt;li&gt;属性值必须使用引号&lt;/li&gt;
-&lt;li&gt;一个元素不能有两个同样属性名字的属性&lt;/li&gt;
-&lt;li&gt;注释不能出现在标签内部&lt;/li&gt;
-&lt;li&gt;没有转义的” &amp;lt;” 或者” $”不能出现在元素和属性的字符中&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;如何检查XML文档良构?&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
     
     
   </entry>
