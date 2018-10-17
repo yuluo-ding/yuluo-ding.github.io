@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2018-10-17T01:17:38.775Z</updated>
+  <updated>2018-10-17T01:19:43.709Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="yuluo-ding.github.io/2018/10/16/mac-OS-%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%9F%E6%88%90md5-sha1-sha256-%E6%A0%A1%E9%AA%8C%E5%80%BC/"/>
     <id>yuluo-ding.github.io/2018/10/16/mac-OS-在命令行中生成md5-sha1-sha256-校验值/</id>
     <published>2018-10-16T14:20:38.133Z</published>
-    <updated>2018-10-17T01:17:38.775Z</updated>
+    <updated>2018-10-17T01:19:43.709Z</updated>
     
-    <content type="html"><![CDATA[<p>title: ‘mac OS 在命令行中生成md5, sha1, sha256 校验值’<br>date: 2018-10-16 22:20:38<br>tag: terminal</p><h2 id="categories:_mac_OS">categories: mac OS</h2><h4 id="计算_MD5_校验和">计算 MD5 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-1_校验和">计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-256_校验和">计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>title: mac OS 在命令行中生成md5, sha1, sha256 校验值<br>date: 2018-10-16 22:20:38<br>tag: terminal</p><h2 id="categories:_mac_OS">categories: mac OS</h2><h4 id="计算_MD5_校验和">计算 MD5 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-1_校验和">计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-256_校验和">计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;title: ‘mac OS 在命令行中生成md5, sha1, sha256 校验值’&lt;br&gt;date: 2018-10-16 22:20:38&lt;br&gt;tag: terminal&lt;/p&gt;
-&lt;h2 id=&quot;categories:_mac_OS&quot;&gt;categories: ma
+        &lt;p&gt;title: mac OS 在命令行中生成md5, sha1, sha256 校验值&lt;br&gt;date: 2018-10-16 22:20:38&lt;br&gt;tag: terminal&lt;/p&gt;
+&lt;h2 id=&quot;categories:_mac_OS&quot;&gt;categories: mac 
       
     
     </summary>
