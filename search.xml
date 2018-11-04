@@ -5,7 +5,7 @@
     <url>%2F2018%2F11%2F04%2F%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%A3%E5%88%97%E5%80%BC%2F</url>
     <content type="text"><![CDATA[计算 MD5 校验和 1md5 filename 计算 SHA-1 校验和1shasum -a 1 filename 计算 SHA-256 校验和1shasum -a 256 filename]]></content>
       <categories>
-        <category>mac OS计算 MD5 校验和</category>
+        <category>mac OS</category>
       </categories>
       <tags>
         <tag>terminal</tag>
