@@ -12,11 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>%2F2018%2F10%2F17%2F%E5%9C%A8mac-OS-%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%9F%E6%88%90md5-sha1-sha256-%E6%A0%A1%E9%AA%8C%E5%80%BC%2F</url>
-    <content type="text"><![CDATA[title: 让 MacBook 读取 txt 文本date: 2018-10-17 09:27:30 categories: mac OS下载文件之后一般要计算以下散列值, 来查看文件的完整性. 计算 MD5 校验和1md5 filename 计算 SHA-1 校验和1shasum -a 1 filename 计算 SHA-256 校验和1shasum -a 256 filename]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Python 两个list 求交集，并集，差集]]></title>
     <url>%2F2018%2F09%2F14%2FPython-%E4%B8%A4%E4%B8%AAlist-%E6%B1%82%E4%BA%A4%E9%9B%86%EF%BC%8C%E5%B9%B6%E9%9B%86%EF%BC%8C%E5%B7%AE%E9%9B%86%2F</url>
     <content type="text"><![CDATA[在python中，分别求两个list 的交集，并集与差集，怎么实现比较方便呢？除了两个for 循环, 还有其余的更方便的方法 1234567891011121314151617181920212223242526272829#!/usr/bin/python#coding:utf-8def diff(listA,listB): #求交集的两种方式 retA = [i for i in listA if i in listB] retB = list(set(listA).intersection(set(listB))) print "retA is: ",retA print "retB is: ",retB #求并集 retC = list(set(listA).union(set(listB))) print "retC1 is: ",retC #求差集，在B中但不在A中 retD = list(set(listB).difference(set(listA))) print "retD is: ",retD retE = [i for i in listB if i not in listA] print "retE is: ",retEdef main(): listA = [1,2,3,4,5] listB = [3,4,5,6,7] diff(listA,listB)if __name__ == '__main__': main() 大体上是两种思路：1.使用列表解析式. 列表解析式一般来说比循环更快.2.将list转成set以后，使用set的各种方法去处理.]]></content>
