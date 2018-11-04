@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2018-10-17T01:28:03.125Z</updated>
+  <updated>2018-11-04T15:01:27.917Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="yuluo-ding.github.io/2018/10/17/%E5%9C%A8mac-OS-%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%9F%E6%88%90md5-sha1-sha256-%E6%A0%A1%E9%AA%8C%E5%80%BC/"/>
     <id>yuluo-ding.github.io/2018/10/17/在mac-OS-的命令行中生成md5-sha1-sha256-校验值/</id>
     <published>2018-10-17T01:27:30.108Z</published>
-    <updated>2018-10-17T01:28:03.125Z</updated>
+    <updated>2018-11-04T15:01:27.917Z</updated>
     
-    <content type="html"><![CDATA[<p>title: ‘在mac OS 的命令行中生成md5, sha1, sha256 校验值’<br>date: 2018-10-17 09:27:30<br>tag: terminal</p><h2 id="categories:_mac_OS">categories: mac OS</h2><p>下载文件之后一般要计算以下散列值, 来查看文件的完整性.</p><h4 id="计算_MD5_校验和">计算 MD5 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-1_校验和">计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-256_校验和">计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>title: 在命令行中生成校验值<br>date: 2018-10-17 09:27:30<br>tag: terminal</p><h2 id="categories:_mac_OS">categories: mac OS</h2><p>下载文件之后一般要计算以下散列值, 来查看文件的完整性.</p><h4 id="计算_MD5_校验和">计算 MD5 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-1_校验和">计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure><h4 id="计算_SHA-256_校验和">计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;title: ‘在mac OS 的命令行中生成md5, sha1, sha256 校验值’&lt;br&gt;date: 2018-10-17 09:27:30&lt;br&gt;tag: terminal&lt;/p&gt;
-&lt;h2 id=&quot;categories:_mac_OS&quot;&gt;categories: m
+        &lt;p&gt;title: 在命令行中生成校验值&lt;br&gt;date: 2018-10-17 09:27:30&lt;br&gt;tag: terminal&lt;/p&gt;
+&lt;h2 id=&quot;categories:_mac_OS&quot;&gt;categories: mac OS&lt;/h2&gt;&lt;p&gt;下载文件之后一般要计算以下散列
       
     
     </summary>
