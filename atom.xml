@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2018-11-04T15:10:09.118Z</updated>
+  <updated>2018-11-05T15:02:55.301Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android各国分发渠道</title>
+    <link href="yuluo-ding.github.io/2018/11/05/Android%E5%90%84%E5%9B%BD%E5%88%86%E5%8F%91%E6%B8%A0%E9%81%93/"/>
+    <id>yuluo-ding.github.io/2018/11/05/Android各国分发渠道/</id>
+    <published>2018-11-05T14:57:55.000Z</published>
+    <updated>2018-11-05T15:02:55.301Z</updated>
+    
+    <content type="html"><![CDATA[<p>绝大多数国家，主要市场是Google Play，部分国家有一些第三方市场。<br>通用的商店：Aptoide、Mobango、Mobogenie</p><p>美洲</p><p>美国： Google Play （主要）<br>​             Amazon Appstore<br>​             GetJar<br>​             AppBrain<br>​             SlideME (slide Me会在超过两千万的不同的OEM APP STORE上预安装)</p><p>巴西： 1.Mobo Robo market MoboRobo - The Android Smartphone PC Manager. Free for Life!<br>​             2.F-Droid F-Droid | Free and Open Source Android App Repository</p><p>墨西哥 Google Play<br>阿根廷 Google Play<br>哥伦比亚 Google Play<br>加拿大 Google Play</p><p>亚洲</p><p>印度 Google Play<br>泰国 Google Play<br>越南 越南大部分Market并不提供自己的下载，而是直接指向Google Play链接</p><p>印尼： 1. Jalan Tikus<br>​             2. Gudang Aplikasi<br>​             3.TemanDev<br>​             4. WePlay</p><p>韩国：SK T-Store,<br>​            Naver NStore,<br>​            APPZIL,olleh Market<br>​            Sumsang Apps会在超过1亿的Galaxy智能机上预安装</p><p>欧洲</p><p>俄罗斯： 1.Yandex: Yandex.Store<br>​                 2. Androidpit: Новости, игры и приложения для Android<br>​                 3. Все для Андроид. Cкачать лучшие приложения для Андроид</p><p>意大利： 1.Androidpit Tutte le applicazioni per Android AndroidPIT<br>2.Vshare vShare Android Market: Free download Android Apps &amp; Best Android Apk games for Android tablet and mobilephones<br>3.appbrain AppBrain App Market (Android)<br>4.softonic . <a href="http://best-apps-market.softonic.it/android" target="_blank" rel="noopener">http://best-apps-market.softonic.it/android</a></p><p>英国 Google Play</p><p>德国： 1.avira app store Avira AppStore<br>2.9 apps Free Android Apps Download<br>3.Apk4fun APK4Fun - Download APK for Fun Android Apps &amp; Games<br>4.Androidpit Alle Android-Apps &amp; Android-Spiele aus dem Google Play Store AndroidPIT</p><ol start="5"><li>goodereader Android App Store &amp; Blackberry App Store</li></ol><p>芬兰 Google Play</p><p>法国： 1. 1 mobile market 1Mobile Market<br>2.androidpit Tout sur Android: Nouveautés, applications, tests, astuces, forum &amp; communauté</p><p>波兰 Google Play<br>土耳其 Google Play<br>西班牙 Google Play</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;绝大多数国家，主要市场是Google Play，部分国家有一些第三方市场。&lt;br&gt;通用的商店：Aptoide、Mobango、Mobogenie&lt;/p&gt;
+&lt;p&gt;美洲&lt;/p&gt;
+&lt;p&gt;美国： Google Play （主要）&lt;br&gt;​             Amazon Ap
+      
+    
+    </summary>
+    
+      <category term="Life" scheme="yuluo-ding.github.io/categories/Life/"/>
+    
+    
+      <category term="Android" scheme="yuluo-ding.github.io/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>终端命令行计算文件的散列值</title>
@@ -503,27 +530,6 @@
     </summary>
     
       <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>fail2ban阻止SSH暴力破解</title>
-    <link href="yuluo-ding.github.io/2018/02/06/fail2ban%E9%98%BB%E6%AD%A2SSH%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/"/>
-    <id>yuluo-ding.github.io/2018/02/06/fail2ban阻止SSH暴力破解/</id>
-    <published>2018-02-05T16:05:55.000Z</published>
-    <updated>2018-02-05T16:16:57.246Z</updated>
-    
-    <content type="html"><![CDATA[<p>引用:<a href="https://blog.linuxeye.cn/454.html" target="_blank" rel="noopener">fail2ban阻止SSH暴力破解</a></p><p>​    fail2ban是由Python语言开发监控软件，通过监控系统日志的登录信息来调用iptables屏蔽相应登录IP，以阻止某个IP（fail2ban读对应日志文件，Debian/Ubuntu:/var/log/auth.log、CentOS/Redhat:/var/log/secure）不停尝试密码。fail2ban在防御对SSH服务器的暴力密码破解上非常有用。经过网友强烈要求，已经集成到《<a href="https://blog.linuxeye.cn/wp-content/themes/begin/inc/go.php?url=https://oneinstack.com" target="_blank" rel="noopener">OneinStack</a>》</p><a id="more"></a><h3 id="安装配置Fail2ban">安装配置Fail2ban</h3><p>使用《<a href="https://blog.linuxeye.cn/wp-content/themes/begin/inc/go.php?url=https://oneinstack.com" target="_blank" rel="noopener">OneinStack</a>》，内置<a href="https://blog.linuxeye.cn/454.html" target="_blank" rel="noopener">fail2ban</a>，一键安装并设置好即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget mirrors.linuxeye.com/oneinstack.tar.gz</span><br><span class="line">pushd oneinstack</span><br><span class="line">./addons.sh  #选择11，安装fail2ban</span><br></pre></td></tr></table></figure><p><img src="https://static.oneinstack.com/images/addons.png" alt="tu"></p><h3 id="Fail2ban配置文件说明">Fail2ban配置文件说明</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@OneinStack ~]# cat /etc/fail2ban/jail.local</span><br><span class="line">[DEFAULT]</span><br><span class="line">ignoreip = 127.0.0.1/8  #指定哪些地址可以忽略 fail2ban 防御</span><br><span class="line">bantime  = 86400         #客户端主机被禁止的时长（秒）</span><br><span class="line">findtime = 600             #查找失败次数的时长（秒）</span><br><span class="line">maxretry = 5                 #客户端主机被禁止前允许失败的次数</span><br><span class="line">[ssh-iptables]</span><br><span class="line">enabled = true</span><br><span class="line">filter  = sshd</span><br><span class="line">action  = iptables[name=SSH, port=22, protocol=tcp]</span><br><span class="line">logpath = /var/log/secure</span><br></pre></td></tr></table></figure><p>fail2ban会自动禁止在最近10分钟内有超过5次访问尝试失败的任意IP地址。这个IP地址将会在24小时内一直被禁止访问SSH服务。安装设置启用后，Fail2ban会在iptables添加相关规则，如下：</p><p><img src="https://blog.linuxeye.cn/wp-content/uploads/2017/03/fail2ban_iptables.png" alt="tu"></p><h3 id="fail2ban测试">fail2ban测试</h3><p>ssh 你的服务器IP，输错密码5次以上，查看日志/var/log/fail2ban.log [ssh-iptables] Ban 91.195.103.166即被禁用</p><p><img src="https://blog.linuxeye.cn/wp-content/uploads/2017/03/fail2ban_test.png" alt=""></p><h3 id="fail2ban状态">fail2ban状态</h3><p><code>/usr/local/python/bin/fail2ban-client status ssh-iptables</code></p><p>显示出被禁止IP地址列表</p><p><img src="https://blog.linuxeye.cn/wp-content/uploads/2017/03/fail2ban_status.png" alt=""></p><h3 id="fail2ban解锁IP">fail2ban解锁IP</h3><p>为了解锁特定的IP地址命令：</p><p><code>/usr/local/python/bin/fail2ban-client set ssh-iptables unbanip 91.195.103.166</code></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;引用:&lt;a href=&quot;https://blog.linuxeye.cn/454.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;fail2ban阻止SSH暴力破解&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;​    fail2ban是由Python语言开发监控软件，通过监控系统日志的登录信息来调用iptables屏蔽相应登录IP，以阻止某个IP（fail2ban读对应日志文件，Debian/Ubuntu:/var/log/auth.log、CentOS/Redhat:/var/log/secure）不停尝试密码。fail2ban在防御对SSH服务器的暴力密码破解上非常有用。经过网友强烈要求，已经集成到《&lt;a href=&quot;https://blog.linuxeye.cn/wp-content/themes/begin/inc/go.php?url=https://oneinstack.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OneinStack&lt;/a&gt;》&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
     
     
   </entry>
