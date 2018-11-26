@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2018-11-05T15:04:25.628Z</updated>
+  <updated>2018-11-26T14:25:30.163Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Python的paramiko模块</title>
+    <link href="yuluo-ding.github.io/2018/11/26/%E4%BD%BF%E7%94%A8Python%E7%9A%84paramiko%E6%A8%A1%E5%9D%97/"/>
+    <id>yuluo-ding.github.io/2018/11/26/使用Python的paramiko模块/</id>
+    <published>2018-11-26T14:25:04.000Z</published>
+    <updated>2018-11-26T14:25:30.163Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="介绍">介绍</h3><p>使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作.</p><h3 id="安装">安装</h3><p>直接使用pip安装即可.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install paramiko</span><br></pre></td></tr></table></figure><h3 id="使用">使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> paramiko</span><br><span class="line">ssh = paramiko.SSHClient()</span><br><span class="line"></span><br><span class="line"><span class="comment">#允许连接不在know_hosts文件中的主机。</span></span><br><span class="line">ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</span><br><span class="line">ssh.connect(ip,  port, username, password)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行shell命令</span></span><br><span class="line">ssh.exec_command(<span class="string">'ls'</span>)</span><br></pre></td></tr></table></figure><p>API文档:<a href="https://paramiko-docs.readthedocs.io/en/2.4/api/client.html" target="_blank" rel="noopener">https://paramiko-docs.readthedocs.io/en/2.4/api/client.html</a></p><h3 id="SFTP">SFTP</h3><p>通过paramiko模块可以实现SCP的功能<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#在新建好ssh链接对象之后, 新建一个链接对象.</span></span><br><span class="line">sftp = ssh.open_sftp()</span><br><span class="line"></span><br><span class="line"><span class="comment">#上传文件</span></span><br><span class="line">sftp.put(local_file, remote_file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#下载文件</span></span><br><span class="line">sftp.get(remote_file, local_file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出目录</span></span><br><span class="line">sftp.listdir()<span class="comment">#默认当前目录</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;&lt;p&gt;使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作.&lt;/p&gt;
+&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;&lt;p&gt;直接使用pip安装即可.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;t
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="yuluo-ding.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Android各国分发渠道</title>
@@ -146,33 +173,6 @@
     
     
       <category term="Chrome" scheme="yuluo-ding.github.io/tags/Chrome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Python的paramiko模块</title>
-    <link href="yuluo-ding.github.io/2018/09/09/%E4%BD%BF%E7%94%A8Python%E7%9A%84paramiko%E6%A8%A1%E5%9D%97/"/>
-    <id>yuluo-ding.github.io/2018/09/09/使用Python的paramiko模块/</id>
-    <published>2018-09-09T15:19:53.000Z</published>
-    <updated>2018-11-26T14:21:33.339Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="介绍">介绍</h3><p>使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作.</p><h3 id="安装">安装</h3><p>直接使用pip安装即可.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install paramiko</span><br></pre></td></tr></table></figure><h3 id="使用">使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> paramiko</span><br><span class="line">ssh = paramiko.SSHClient()</span><br><span class="line"></span><br><span class="line"><span class="comment">#允许连接不在know_hosts文件中的主机。</span></span><br><span class="line">ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</span><br><span class="line">ssh.connect(ip,  port, username, password)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行shell命令</span></span><br><span class="line">ssh.exec_command(<span class="string">'ls'</span>)</span><br></pre></td></tr></table></figure><p>API文档:<a href="https://paramiko-docs.readthedocs.io/en/2.4/api/client.html" target="_blank" rel="noopener">https://paramiko-docs.readthedocs.io/en/2.4/api/client.html</a></p><h3 id="SFTP">SFTP</h3><p>通过paramiko模块可以实现SCP的功能<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#在新建好ssh链接对象之后, 新建一个链接对象.</span></span><br><span class="line">sftp = ssh.open_sftp()</span><br><span class="line"></span><br><span class="line"><span class="comment">#上传文件</span></span><br><span class="line">sftp.put(local_file, remote_file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#下载文件</span></span><br><span class="line">sftp.get(remote_file, local_file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出目录</span></span><br><span class="line">sftp.listdir()<span class="comment">#默认当前目录</span></span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;&lt;p&gt;使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作.&lt;/p&gt;
-&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;&lt;p&gt;直接使用pip安装即可.&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;t
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="yuluo-ding.github.io/tags/Python/"/>
     
   </entry>
   

@@ -29,7 +29,7 @@
     <!--Title-->
 
 
-<title>Android各国分发渠道 | yuluo</title>
+<title>使用Python的paramiko模块 | yuluo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
@@ -128,9 +128,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Android各国分发渠道">
+        <h1 id="使用Python的paramiko模块">
             
-	            Android各国分发渠道
+	            使用Python的paramiko模块
             
         </h1>
         <div class="post-meta">
@@ -138,8 +138,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/Life">
-            Life
+        <a href="/categories/Python">
+            Python
         </a>
     </span>
     
@@ -149,8 +149,8 @@
         <span class="tags-meta">
             
                 
-                    <a href="/tags/Android" title='Android'>
-                        Android
+                    <a href="/tags/Python" title='Python'>
+                        Python
                     </a>
                 
             
@@ -162,7 +162,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/11/05</span>
+            <span class="date-meta">2018/11/26</span>
         </span>
     
 </div>
@@ -172,23 +172,12 @@
     </div>
     
     <div class="post-body post-content">
-        <p>绝大多数国家，主要市场是Google Play，部分国家有一些第三方市场。<br>通用的商店：Aptoide、Mobango、Mobogenie</p>
-<h5 id="美洲">美洲</h5><p>美国： Google Play （主要）<br>​             Amazon Appstore<br>​             GetJar<br>​             AppBrain<br>​             SlideME (slide Me会在超过两千万的不同的OEM APP STORE上预安装)</p>
-<p>巴西： 1.Mobo Robo market MoboRobo - The Android Smartphone PC Manager. Free for Life!<br>​             2.F-Droid F-Droid | Free and Open Source Android App Repository</p>
-<p>墨西哥 Google Play<br>阿根廷 Google Play<br>哥伦比亚 Google Play<br>加拿大 Google Play</p>
-<h5 id="亚洲">亚洲</h5><p>印度 Google Play<br>泰国 Google Play<br>越南 越南大部分Market并不提供自己的下载，而是直接指向Google Play链接</p>
-<p>印尼： 1. Jalan Tikus<br>​             2. Gudang Aplikasi<br>​             3.TemanDev<br>​             4. WePlay</p>
-<p>韩国：SK T-Store,<br>​            Naver NStore,<br>​            APPZIL,olleh Market<br>​            Sumsang Apps会在超过1亿的Galaxy智能机上预安装</p>
-<h5 id="欧洲">欧洲</h5><p>俄罗斯： 1.Yandex: Yandex.Store<br>​                 2. Androidpit: Новости, игры и приложения для Android<br>​                 3. Все для Андроид. Cкачать лучшие приложения для Андроид</p>
-<p>意大利： 1.Androidpit Tutte le applicazioni per Android AndroidPIT<br>2.Vshare vShare Android Market: Free download Android Apps &amp; Best Android Apk games for Android tablet and mobilephones<br>3.appbrain AppBrain App Market (Android)<br>4.softonic . <a href="http://best-apps-market.softonic.it/android" target="_blank" rel="noopener">http://best-apps-market.softonic.it/android</a></p>
-<p>英国 Google Play</p>
-<p>德国： 1.avira app store Avira AppStore<br>2.9 apps Free Android Apps Download<br>3.Apk4fun APK4Fun - Download APK for Fun Android Apps &amp; Games<br>4.Androidpit Alle Android-Apps &amp; Android-Spiele aus dem Google Play Store AndroidPIT</p>
-<ol start="5">
-<li>goodereader Android App Store &amp; Blackberry App Store</li>
-</ol>
-<p>芬兰 Google Play</p>
-<p>法国： 1. 1 mobile market 1Mobile Market<br>2.androidpit Tout sur Android: Nouveautés, applications, tests, astuces, forum &amp; communauté</p>
-<p>波兰 Google Play<br>土耳其 Google Play<br>西班牙 Google Play</p>
+        <h3 id="介绍">介绍</h3><p>使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作.</p>
+<h3 id="安装">安装</h3><p>直接使用pip安装即可.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install paramiko</span><br></pre></td></tr></table></figure>
+<h3 id="使用">使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> paramiko</span><br><span class="line">ssh = paramiko.SSHClient()</span><br><span class="line"></span><br><span class="line"><span class="comment">#允许连接不在know_hosts文件中的主机。</span></span><br><span class="line">ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</span><br><span class="line">ssh.connect(ip,  port, username, password)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行shell命令</span></span><br><span class="line">ssh.exec_command(<span class="string">'ls'</span>)</span><br></pre></td></tr></table></figure>
+<p>API文档:<a href="https://paramiko-docs.readthedocs.io/en/2.4/api/client.html" target="_blank" rel="noopener">https://paramiko-docs.readthedocs.io/en/2.4/api/client.html</a></p>
+<h3 id="SFTP">SFTP</h3><p>通过paramiko模块可以实现SCP的功能<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#在新建好ssh链接对象之后, 新建一个链接对象.</span></span><br><span class="line">sftp = ssh.open_sftp()</span><br><span class="line"></span><br><span class="line"><span class="comment">#上传文件</span></span><br><span class="line">sftp.put(local_file, remote_file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#下载文件</span></span><br><span class="line">sftp.get(remote_file, local_file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出目录</span></span><br><span class="line">sftp.listdir()<span class="comment">#默认当前目录</span></span><br></pre></td></tr></table></figure></p>
 
     </div>
 
@@ -206,15 +195,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/11/26/使用Python的paramiko模块/" class="pre-post btn btn-default" title='使用Python的paramiko模块'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">使用Python的paramiko模块</span>
-        </a>
     
-    
-        <a href="/2018/11/04/终端命令行计算文件的散列值/" class="next-post btn btn-default" title='终端命令行计算文件的散列值'>
+        <a href="/2018/11/05/Android各国分发渠道/" class="next-post btn btn-default" title='Android各国分发渠道'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">终端命令行计算文件的散列值</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Android各国分发渠道</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -236,7 +220,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#美洲"><span class="toc-text">美洲</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#亚洲"><span class="toc-text">亚洲</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#欧洲"><span class="toc-text">欧洲</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SFTP"><span class="toc-text">SFTP</span></a></li></ol>
         
     </div>
 </aside>
