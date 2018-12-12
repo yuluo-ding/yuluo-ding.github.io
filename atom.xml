@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2018-11-26T14:25:30.163Z</updated>
+  <updated>2018-12-12T14:38:36.770Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows手动添加开机启动项</title>
+    <link href="yuluo-ding.github.io/2018/12/12/Windows%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9/"/>
+    <id>yuluo-ding.github.io/2018/12/12/Windows手动添加开机启动项/</id>
+    <published>2018-12-12T14:35:52.000Z</published>
+    <updated>2018-12-12T14:38:36.770Z</updated>
+    
+    <content type="html"><![CDATA[<p>有时安装了绿色的应用, 想要自启动. 有以下三种方式.</p><ul><li><p>方法1.<br>添加程序完整路径到注册表HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run下<br>或者添加到HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run下</p></li><li><p>方法2.<br>将一个.lnk文件添加到C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup目录下</p></li><li><p>方法3.</p><p>使用命令行命令如以下格式（此例为添加TTPlayer.exe为开机启动项）：</p></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v TTplayerLaunch /t REG_EXPAND_SZ /d "D:\Program Files\TTPlayer\TTPlayer.exe"</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;有时安装了绿色的应用, 想要自启动. 有以下三种方式.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;方法1.&lt;br&gt;添加程序完整路径到注册表HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run下&lt;br&gt;或者添加
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="yuluo-ding.github.io/categories/Windows/"/>
+    
+    
+      <category term="windows" scheme="yuluo-ding.github.io/tags/windows/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Python的paramiko模块</title>
@@ -508,30 +535,6 @@
     </summary>
     
       <category term="WeiXin" scheme="yuluo-ding.github.io/categories/WeiXin/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>VPS 安全措施</title>
-    <link href="yuluo-ding.github.io/2018/04/15/VPS-%E5%AE%89%E5%85%A8%E6%8E%AA%E6%96%BD/"/>
-    <id>yuluo-ding.github.io/2018/04/15/VPS-安全措施/</id>
-    <published>2018-04-15T15:39:47.000Z</published>
-    <updated>2018-04-15T15:45:11.022Z</updated>
-    
-    <content type="html"><![CDATA[<p>一个部署在公网的VPS, 面临不断的网络扫描和攻击, 可以参考如下步骤.</p><h5 id="1-_配置SSH安全访问密钥，关闭密码登录">1. 配置SSH安全访问密钥，关闭密码登录</h5><p>a.参考<a href="https://link.jianshu.com/?t=http://edges.blog.51cto.com/705035/581346/" target="_blank" rel="noopener">SecureCRT密钥连接Linux</a>，使用SecureCRT在本机生成公私密钥<br>b.在VPS对应的用户目录下，新建.ssh文件夹，并上传公钥，然后更名为authorized_keys，并修改权限，如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh #如果当前用户目录下没有 .ssh 目录，就先创建目录</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">mv id_rsa.pub ~/.ssh</span><br><span class="line">cd .ssh</span><br><span class="line">mv id_rsa.pub authorized_keys</span><br><span class="line">chmod 600 authorized_keys</span><br></pre></td></tr></table></figure><p>c.关闭ssh密码登录</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">PasswordAuthentication no #此处改为no</span><br></pre></td></tr></table></figure><p>d.【可选】添加普通用户</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd roubin</span><br><span class="line">passwd roubin</span><br></pre></td></tr></table></figure><p>e.【可选】禁止root登陆</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">PermitRootLogin no  #此处改为no</span><br></pre></td></tr></table></figure><p>f.重启ssh服务</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service sshd restart</span><br></pre></td></tr></table></figure><h5 id="2-更改SSH端口及设置">2.更改SSH端口及设置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">Port 22222  #更改默认端口号</span><br><span class="line">MaxAuthTries 5</span><br><span class="line">PermitEmptyPasswords no  #不允许空密码</span><br><span class="line">service sshd reload</span><br><span class="line">iptables -I INPUT -p tcp --dport 22222 -j ACCEPT #CentOS 6 中防火墙开启对应端口</span><br><span class="line">firewall-cmd --zone=public --add-port=22222/tcp --permanent #CentOS 7 中防火墙开启对应端口</span><br></pre></td></tr></table></figure><h5 id="3-锁定口令文件">3.锁定口令文件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# chattr +i /etc/passwd</span><br><span class="line">[root@localhost /]# chattr +i /etc/shadow</span><br><span class="line">[root@localhost /]# chattr +i /etc/group</span><br><span class="line">[root@localhost /]# chattr +i /etc/gshadow</span><br></pre></td></tr></table></figure><h5 id="4-安装fail2ban防止暴力破解">4.安装fail2ban防止暴力破解</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">apt install -y fail2ban</span><br><span class="line">cp -pf /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</span><br><span class="line">vim /etc/fail2ban/jail.local</span><br><span class="line"></span><br><span class="line"> [sshd]</span><br><span class="line">enabled = trueport = 22222</span><br><span class="line">logpath = %(sshd_log)s</span><br><span class="line">backend = %(sshd_backend)s</span><br><span class="line">filter = sshd</span><br><span class="line">action = iptables[name=SSH, port=22222, protocol=tcp] sendmail-whois[name=SSH, dest=root, sender=fail2ban@example.com]</span><br><span class="line">logpath = /var/log/secure</span><br><span class="line">maxretry = 3</span><br></pre></td></tr></table></figure><h5 id="5-启用iptables">5.启用iptables</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 清除已有iptables规则</span></span><br><span class="line">iptables -F</span><br><span class="line"><span class="meta">#</span><span class="bash"> 允许本地回环接口(即运行本机访问本机)</span></span><br><span class="line">iptables -A INPUT -i lo -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash"> 允许已建立的或相关连的通行</span></span><br><span class="line">iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash">允许所有本机向外的访问</span></span><br><span class="line">iptables -A OUTPUT -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash"> 允许访问22222(SSH)端口，以下几条相同，分别是22222,80,443端口的访问</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 22222 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 443 -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash">如果有其他端口的话，规则也类似，稍微修改上述语句就行</span></span><br><span class="line"><span class="meta">#</span><span class="bash">允许ping</span></span><br><span class="line">iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT</span><br><span class="line"><span class="meta">#</span><span class="bash">禁止其他未允许的规则访问（注意：如果22端口未加入允许规则，SSH链接会直接断开。）</span></span><br><span class="line">iptables -A INPUT -j REJECT </span><br><span class="line">iptables -A FORWARD -j REJECT</span><br><span class="line"><span class="meta">#</span><span class="bash">保存防火墙规则</span></span><br><span class="line">service iptables save</span><br><span class="line"><span class="meta">#</span><span class="bash">设置防火墙开机启动</span></span><br><span class="line">chkconfig --level 345 iptables on</span><br></pre></td></tr></table></figure><h5 id="6-禁用ipv6">6.禁用ipv6</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">编辑/etc/sysconfig/network添加行：</span></span><br><span class="line">NETWORKING_IPV6=no</span><br><span class="line"><span class="meta">#</span><span class="bash">修改/etc/hosts,把ipv6本地主机名解析的注释掉（可选）：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">::1 localhost localhost6 localhost6.localdomain6</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">禁止系统加载ipv6相关模块，创建modprobe关于禁用ipv6的设定文件/etc/modprobe.d/disable_ipv6.conf(名字随便起)（RHEL6.0之后没有/etc/modprobe.conf这个文件），内容如下，三选其一（本次使用的第一种）：</span></span><br><span class="line">alias net-pf-10 off</span><br><span class="line">options ipv6 disable=1</span><br><span class="line"><span class="meta">#</span><span class="bash">禁止开机启动</span></span><br><span class="line">chkconfig ip6tables off</span><br><span class="line"><span class="meta">#</span><span class="bash">查看ipv6是否被禁用</span></span><br><span class="line">lsmod | grep -i ipv6</span><br><span class="line">ifconfig | grep -i inet6</span><br></pre></td></tr></table></figure><h5 id="7-阻止百度收录真实位置">7.阻止百度收录真实位置</h5><p>恩，免得上门查水表</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br><span class="line"></span><br><span class="line">0.0.0.0 api.map.baidu.com</span><br><span class="line">0.0.0.0 ps.map.baidu.com</span><br><span class="line">0.0.0.0 sv.map.baidu.com</span><br><span class="line">0.0.0.0 offnavi.map.baidu.com</span><br><span class="line">0.0.0.0 newvector.map.baidu.com</span><br><span class="line">0.0.0.0 ulog.imap.baidu.com</span><br><span class="line">0.0.0.0 newloc.map.n.shifen.com</span><br><span class="line"></span><br><span class="line">:: api.map.baidu.com</span><br><span class="line">:: ps.map.baidu.com</span><br><span class="line">:: sv.map.baidu.com</span><br><span class="line">:: offnavi.map.baidu.com</span><br><span class="line">:: newvector.map.baidu.com</span><br><span class="line">:: ulog.imap.baidu.com</span><br><span class="line">:: newloc.map.n.shifen.com</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;一个部署在公网的VPS, 面临不断的网络扫描和攻击, 可以参考如下步骤.&lt;/p&gt;
-&lt;h5 id=&quot;1-_配置SSH安全访问密钥，关闭密码登录&quot;&gt;1. 配置SSH安全访问密钥，关闭密码登录&lt;/h5&gt;&lt;p&gt;a.参考&lt;a href=&quot;https://link.jianshu.co
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
     
     
   </entry>
