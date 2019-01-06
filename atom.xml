@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2018-12-12T14:38:36.770Z</updated>
+  <updated>2019-01-06T15:19:03.456Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="yuluo-ding.github.io/2018/12/12/Windows%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9/"/>
     <id>yuluo-ding.github.io/2018/12/12/Windows手动添加开机启动项/</id>
     <published>2018-12-12T14:35:52.000Z</published>
-    <updated>2018-12-12T14:38:36.770Z</updated>
+    <updated>2019-01-06T15:19:03.456Z</updated>
     
-    <content type="html"><![CDATA[<p>有时安装了绿色的应用, 想要自启动. 有以下三种方式.</p><ul><li><p>方法1.<br>添加程序完整路径到注册表HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run下<br>或者添加到HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run下</p></li><li><p>方法2.<br>将一个.lnk文件添加到C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup目录下</p></li><li><p>方法3.</p><p>使用命令行命令如以下格式（此例为添加TTPlayer.exe为开机启动项）：</p></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v TTplayerLaunch /t REG_EXPAND_SZ /d "D:\Program Files\TTPlayer\TTPlayer.exe"</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>有时安装了绿色的应用, 想要自启动. 有以下三种方式.</p><ul><li><p>方法1.<br>添加程序完整路径到注册表<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code>下<br>或者添加到<code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run</code>下</p></li><li><p>方法2.<br>将一个.lnk文件添加到<code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup</code>目录下</p></li><li><p>方法3.</p><p>使用命令行命令如以下格式（此例为添加TTPlayer.exe为开机启动项）：</p></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v TTplayerLaunch /t REG_EXPAND_SZ /d "D:\Program Files\TTPlayer\TTPlayer.exe"</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -31,7 +31,7 @@
       
         &lt;p&gt;有时安装了绿色的应用, 想要自启动. 有以下三种方式.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;方法1.&lt;br&gt;添加程序完整路径到注册表HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run下&lt;br&gt;或者添加
+&lt;li&gt;&lt;p&gt;方法1.&lt;br&gt;添加程序完整路径到注册表&lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&lt;/c
       
     
     </summary>
