@@ -166,7 +166,7 @@
             
             
             <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>478</strong>天之前发表，文中内容可能已经过时。
+                本文于<strong>503</strong>天之前发表，文中内容可能已经过时。
             </p>
         
     </div>
@@ -181,7 +181,7 @@
 <p>升级一个包：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</span><br></pre></td></tr></table></figure>
 <p>升级所有可升级的包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip install -U</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3的平台</span></span><br><span class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip install -U</span><br><span class="line"><span class="comment"># python2的平台</span></span><br><span class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip2 install -U</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</span><br></pre></td></tr></table></figure>
 
     </div>
 
