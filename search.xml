@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[No toolchains found in the NDK toolchains folder for ABI with prefix:mips64el-linux-android]]></title>
+    <url>%2F2019%2F01%2F10%2FNo-toolchains-found-in-the-NDK-toolchains-folder-for-ABI-with-prefix-mips64el-linux-android%2F</url>
+    <content type="text"><![CDATA[在使用Android Studio编译Demo的时候, 提示No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android错误 这个其实是Android的SDK里面缺少一个编译工具 解决办法: 从NDK下载对应平台的NDK 解压, 找到ndk-bundle成长文件夹, 找到toolchains下的mips类似的文件夹 最后把上面的文件夹复制到对应SDK的android-sdk-&gt;ndk-bundle-&gt;toolchains下面.]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Windows手动添加开机启动项]]></title>
     <url>%2F2018%2F12%2F12%2FWindows%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[有时安装了绿色的应用, 想要自启动. 有以下三种方式. 方法1.添加程序完整路径到注册表HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run下或者添加到HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run下 方法2.将一个.lnk文件添加到C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup目录下 方法3. 使用命令行命令如以下格式（此例为添加TTPlayer.exe为开机启动项）： 1REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v TTplayerLaunch /t REG_EXPAND_SZ /d "D:\Program Files\TTPlayer\TTPlayer.exe"]]></content>
