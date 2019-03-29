@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[GIOP]]></title>
-    <url>%2F2019%2F03%2F29%2FGIOP%2F</url>
-    <content type="text"><![CDATA[GIOP查询GIOP是CORBA通常使用的协议， 使用TCP作为传输协议。提供了一下协议： Internet对象请求代理间通信协议（Internet InterORB Protocol，IIOP）：IIOP是对用于Internet的GIOP的实现，并提供了GIOP消息和TCP/IP层之间的映射关系。 SSL对象请求代理间通信协议（SSL InterORB Protocol，SSLIOP）：SSLIOP是通过SSL的IIOP，提供加密和身份验证。 超文本对象请求代理间通信协议（HyperText InterORB Protocol，HTIOP）：HTIOP是通过HTTP的IIOP，提供透明代理旁路。 压缩的对象请求代理间通信协议（Zipped IOP，ZIOP）：GIOP的压缩版本，可以减少带宽的使用]]></content>
-      <tags>
-        <tag>Test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[No toolchains found in the NDK toolchains folder for ABI with prefix:mips64el-linux-android]]></title>
     <url>%2F2019%2F01%2F10%2FNo-toolchains-found-in-the-NDK-toolchains-folder-for-ABI-with-prefix-mips64el-linux-android%2F</url>
     <content type="text"><![CDATA[在使用Android Studio编译Demo的时候, 提示No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android错误 这个其实是Android的SDK里面缺少一个编译工具 解决办法: 从NDK下载对应平台的NDK 解压, 找到ndk-bundle成长文件夹, 找到toolchains下的mips类似的文件夹 最后把上面的文件夹复制到对应SDK的android-sdk-&gt;ndk-bundle-&gt;toolchains下面.]]></content>
