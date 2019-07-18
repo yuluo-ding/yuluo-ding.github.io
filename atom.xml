@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2019-07-03T01:33:06.766Z</updated>
+  <updated>2019-07-18T15:22:58.188Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解决macOS声音的问题</title>
+    <link href="yuluo-ding.github.io/2019/07/18/%E8%A7%A3%E5%86%B3macOS%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>yuluo-ding.github.io/2019/07/18/解决macOS声音的问题/</id>
+    <published>2019-07-18T14:50:47.000Z</published>
+    <updated>2019-07-18T15:22:58.188Z</updated>
+    
+    <content type="html"><![CDATA[<p>macOS系统有时会莫名其妙无法工作，在新添音频设备、唤醒或者更新操作系统后，都可能会遇到音频错误。</p><p>在调整了音量大小或者静音无法解决之后，按照如下步骤尝试，应该可以解决。</p><h3 id="检查硬件">检查硬件</h3><p>确保系统没有静音，以及声音出问题之前没遇到磕碰之类的。</p><h3 id="选择正确音频">选择正确音频</h3><p>插入耳机之后听不到耳机，可能是新音频设备时选择了错误的输出设备。、</p><p>System Preferences ——&gt; Sound ——&gt; Output</p><p>选择正确的输出设备，尝试切换之后再重新选择正确的输出设备。</p><h3 id="重置音频核心">重置音频核心</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo killall coreaudiod</span><br></pre></td></tr></table></figure><h3 id="重启大法">重启大法</h3><p>直接<strong>重启</strong>电脑，然后尝试听声音。</p><h3 id="重置Mac上的NVRAM或PRAM">重置Mac上的NVRAM或PRAM</h3><p>这个方法是Apple官方的案例，<a href="https://support.apple.com/zh-cn/HT204063" target="_blank" rel="noopener">重置Mac上的NVRAM</a></p><p>以上几种方法如果还是不能解决，那就判断是不是需要去售后做一个检测了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;macOS系统有时会莫名其妙无法工作，在新添音频设备、唤醒或者更新操作系统后，都可能会遇到音频错误。&lt;/p&gt;
+&lt;p&gt;在调整了音量大小或者静音无法解决之后，按照如下步骤尝试，应该可以解决。&lt;/p&gt;
+&lt;h3 id=&quot;检查硬件&quot;&gt;检查硬件&lt;/h3&gt;&lt;p&gt;确保系统没有静音，以及声音
+      
+    
+    </summary>
+    
+      <category term="Apple" scheme="yuluo-ding.github.io/categories/Apple/"/>
+    
+    
+      <category term="macOS" scheme="yuluo-ding.github.io/tags/macOS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CentOS 7下安装Python3.7</title>
     <link href="yuluo-ding.github.io/2019/07/03/CentOS-7%E4%B8%8B%E5%AE%89%E8%A3%85Python3-7/"/>
     <id>yuluo-ding.github.io/2019/07/03/CentOS-7下安装Python3-7/</id>
     <published>2019-07-03T01:11:16.000Z</published>
     <updated>2019-07-03T01:33:06.766Z</updated>
     
-    <content type="html"><![CDATA[<p>CentOS 7只有默认的Python2，并没有Python3，为了不影响使用，做个安装记录。</p><h3 id="编译安装Python_3_相关的包">编译安装Python 3 相关的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel</span><br></pre></td></tr></table></figure><p>这里面有一个包很关键<code>libffi-devel</code>，因为只有3.7才会用到这个包，如果不安装这个包的话，在 make 阶段会出现如下的报错：</p><blockquote><h1 id="ModuleNotFoundError:_No_module_named_‘_ctypes’">ModuleNotFoundError: No module named ‘_ctypes’</h1></blockquote><h3 id="下载安装">下载安装</h3><p>CentOS 默认没有<code>wget</code>，需要下载安装下，并且添加一个扩展源：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line"><span class="meta">#</span>运行这个命令添加epel扩展源 </span><br><span class="line">yum -y install epel-release</span><br></pre></td></tr></table></figure><p> 下载，解压，安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz</span><br><span class="line">tar -zxvf Python-3.7.1.tgz </span><br><span class="line">cd Python-3.7.1</span><br><span class="line">./configure -prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure><h3 id="添加软链接">添加软链接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>添加python3的软链接 </span><br><span class="line">ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3</span><br><span class="line"><span class="meta">#</span>添加 pip3 的软链接 </span><br><span class="line">ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3</span><br><span class="line"><span class="meta">#</span>测试是否安装成功了 </span><br><span class="line">python3 -V</span><br><span class="line"><span class="meta">#</span> Python 3.7.1</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>CentOS 7只有默认的Python2，并没有Python3，为了不影响使用，做个安装记录。</p><h3 id="编译安装Python_3_相关的包">编译安装Python 3 相关的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel</span><br></pre></td></tr></table></figure><p>这里面有一个包很关键<code>libffi-devel</code>，因为只有3.7才会用到这个包，如果不安装这个包的话，在 make 阶段会出现如下的报错：</p><blockquote><h1 id="ModuleNotFoundError:_No_module_named_‘_ctypes’">ModuleNotFoundError: No module named ‘_ctypes’</h1></blockquote><h3 id="下载安装">下载安装</h3><p>CentOS 默认没有<code>wget</code>，需要下载安装下，并且添加一个扩展源：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line"><span class="meta">#</span><span class="bash">运行这个命令添加epel扩展源 </span></span><br><span class="line">yum -y install epel-release</span><br></pre></td></tr></table></figure><p> 下载，解压，安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz</span><br><span class="line">tar -zxvf Python-3.7.1.tgz </span><br><span class="line">cd Python-3.7.1</span><br><span class="line">./configure -prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure><h3 id="添加软链接">添加软链接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">添加python3的软链接 </span></span><br><span class="line">ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3</span><br><span class="line"><span class="meta">#</span><span class="bash">添加 pip3 的软链接 </span></span><br><span class="line">ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3</span><br><span class="line"><span class="meta">#</span><span class="bash">测试是否安装成功了 </span></span><br><span class="line">python3 -V</span><br><span class="line"><span class="meta">#</span><span class="bash"> Python 3.7.1</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -504,35 +531,6 @@
       
         &lt;p&gt;在VPS 中, 有时vi 打开一个文件中, 中文会显示乱码, 用locale 查看如下, &lt;/p&gt;
 &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Red Hat Linux卸载旧版本的JDK安装新版本的JDK</title>
-    <link href="yuluo-ding.github.io/2018/06/14/Red-Hat-Linux%E5%8D%B8%E8%BD%BD%E6%97%A7%E7%89%88%E6%9C%AC%E7%9A%84JDK%E5%AE%89%E8%A3%85%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84JDK/"/>
-    <id>yuluo-ding.github.io/2018/06/14/Red-Hat-Linux卸载旧版本的JDK安装新版本的JDK/</id>
-    <published>2018-06-14T06:15:37.000Z</published>
-    <updated>2018-06-14T06:42:41.434Z</updated>
-    
-    <content type="html"><![CDATA[<p>做一个安装和记录的流程:</p><ol><li><p>查看内核</p><p><code>uname -a</code>来判断是32 位还是64 位还是其余什么的机器</p></li><li><p>查看java 版本</p><p><code>rpm -qa | grep gcj</code></p></li><li><p>卸载java</p><p><code>yum -y remove javaname</code></p></li><li><p>给新的java 程序分配权限</p><p><code>chmod +x newjavaname</code></p></li><li><p>执行安装程序</p><p><code>./newjavaname</code></p></li><li><p>设置path与classpath</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/newjavaname</span><br><span class="line">export path=$path:$JAVA_HOME/bin;</span><br><span class="line">export path=$path:$JAVA_HOME/jre/bin</span><br><span class="line">export classpath=.:/usr/java/newjavaname/lib:/usr/java/newjavaname/jre/lib:$CLASSPATH</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;做一个安装和记录的流程:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看内核&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;uname -a&lt;/code&gt;来判断是32 位还是64 位还是其余什么的机器&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查看java 版本&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;rpm -qa | g
       
     
     </summary>

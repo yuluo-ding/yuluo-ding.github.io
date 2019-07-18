@@ -178,10 +178,10 @@
 <blockquote>
 <h1 id="ModuleNotFoundError:_No_module_named_‘_ctypes’">ModuleNotFoundError: No module named ‘_ctypes’</h1></blockquote>
 <h3 id="下载安装">下载安装</h3><p>CentOS 默认没有<code>wget</code>，需要下载安装下，并且添加一个扩展源：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line"><span class="meta">#</span>运行这个命令添加epel扩展源 </span><br><span class="line">yum -y install epel-release</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line"><span class="meta">#</span><span class="bash">运行这个命令添加epel扩展源 </span></span><br><span class="line">yum -y install epel-release</span><br></pre></td></tr></table></figure>
 <p> 下载，解压，安装：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz</span><br><span class="line">tar -zxvf Python-3.7.1.tgz </span><br><span class="line">cd Python-3.7.1</span><br><span class="line">./configure -prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<h3 id="添加软链接">添加软链接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>添加python3的软链接 </span><br><span class="line">ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3</span><br><span class="line"><span class="meta">#</span>添加 pip3 的软链接 </span><br><span class="line">ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3</span><br><span class="line"><span class="meta">#</span>测试是否安装成功了 </span><br><span class="line">python3 -V</span><br><span class="line"><span class="meta">#</span> Python 3.7.1</span><br></pre></td></tr></table></figure>
+<h3 id="添加软链接">添加软链接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">添加python3的软链接 </span></span><br><span class="line">ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3</span><br><span class="line"><span class="meta">#</span><span class="bash">添加 pip3 的软链接 </span></span><br><span class="line">ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3</span><br><span class="line"><span class="meta">#</span><span class="bash">测试是否安装成功了 </span></span><br><span class="line">python3 -V</span><br><span class="line"><span class="meta">#</span><span class="bash"> Python 3.7.1</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -198,6 +198,11 @@
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/18/解决macOS声音的问题/" class="pre-post btn btn-default" title="解决macOS声音的问题">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">解决macOS声音的问题</span>
+        </a>
     
     
         <a href="/2019/01/10/No-toolchains-found-in-the-NDK-toolchains-folder-for-ABI-with-prefix-mips64el-linux-android/" class="next-post btn btn-default" title="No toolchains found in the NDK toolchains folder for ABI with prefix:mips64el-linux-android">
