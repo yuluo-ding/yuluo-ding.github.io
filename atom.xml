@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2019-07-18T15:22:58.188Z</updated>
+  <updated>2019-07-29T14:33:23.891Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 字符串和常用数据结构</title>
+    <link href="yuluo-ding.github.io/2019/07/29/Python-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>yuluo-ding.github.io/2019/07/29/Python-字符串和常用数据结构/</id>
+    <published>2019-07-29T14:31:18.000Z</published>
+    <updated>2019-07-29T14:33:23.891Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/07.%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">Python中常用的字符串：</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    str1 = <span class="string">'hello, world!'</span></span><br><span class="line">    <span class="comment"># 通过len函数计算字符串的长度</span></span><br><span class="line">    print(len(str1))  <span class="comment"># 13</span></span><br><span class="line">    <span class="comment"># 获得字符串首字母大写的拷贝</span></span><br><span class="line">    print(str1.capitalize())  <span class="comment"># Hello, world!</span></span><br><span class="line">    <span class="comment"># 获得字符串变大写后的拷贝</span></span><br><span class="line">    print(str1.upper())  <span class="comment"># HELLO, WORLD!</span></span><br><span class="line">    <span class="comment"># 从字符串中查找子串所在位置</span></span><br><span class="line">    print(str1.find(<span class="string">'or'</span>))  <span class="comment"># 8</span></span><br><span class="line">    print(str1.find(<span class="string">'shit'</span>))  <span class="comment"># -1</span></span><br><span class="line">    <span class="comment"># 与find类似但找不到子串时会引发异常</span></span><br><span class="line">    <span class="comment"># print(str1.index('or'))</span></span><br><span class="line">    <span class="comment"># print(str1.index('shit'))</span></span><br><span class="line">    <span class="comment"># 检查字符串是否以指定的字符串开头</span></span><br><span class="line">    print(str1.startswith(<span class="string">'He'</span>))  <span class="comment"># False</span></span><br><span class="line">    print(str1.startswith(<span class="string">'hel'</span>))  <span class="comment"># True</span></span><br><span class="line">    <span class="comment"># 检查字符串是否以指定的字符串结尾</span></span><br><span class="line">    print(str1.endswith(<span class="string">'!'</span>))  <span class="comment"># True</span></span><br><span class="line">    <span class="comment"># 将字符串以指定的宽度居中并在两侧填充指定的字符</span></span><br><span class="line">    print(str1.center(<span class="number">50</span>, <span class="string">'*'</span>))</span><br><span class="line">    <span class="comment"># 将字符串以指定的宽度靠右放置左侧填充指定的字符</span></span><br><span class="line">    print(str1.rjust(<span class="number">50</span>, <span class="string">' '</span>))</span><br><span class="line">    str2 = <span class="string">'abc123456'</span></span><br><span class="line">    <span class="comment"># 从字符串中取出指定位置的字符(下标运算)</span></span><br><span class="line">    print(str2[<span class="number">2</span>])  <span class="comment"># c</span></span><br><span class="line">    <span class="comment"># 字符串切片(从指定的开始索引到指定的结束索引)</span></span><br><span class="line">    print(str2[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># c12</span></span><br><span class="line">    print(str2[<span class="number">2</span>:])  <span class="comment"># c123456</span></span><br><span class="line">    print(str2[<span class="number">2</span>::<span class="number">2</span>])  <span class="comment"># c246</span></span><br><span class="line">    print(str2[::<span class="number">2</span>])  <span class="comment"># ac246</span></span><br><span class="line">    print(str2[::<span class="number">-1</span>])  <span class="comment"># 654321cba</span></span><br><span class="line">    print(str2[<span class="number">-3</span>:<span class="number">-1</span>])  <span class="comment"># 45</span></span><br><span class="line">    <span class="comment"># 检查字符串是否由数字构成</span></span><br><span class="line">    print(str2.isdigit())  <span class="comment"># False</span></span><br><span class="line">    <span class="comment"># 检查字符串是否以字母构成</span></span><br><span class="line">    print(str2.isalpha())  <span class="comment"># False</span></span><br><span class="line">    <span class="comment"># 检查字符串是否以数字和字母构成</span></span><br><span class="line">    print(str2.isalnum())  <span class="comment"># True</span></span><br><span class="line">    str3 = <span class="string">'  jackfrued@126.com '</span></span><br><span class="line">    print(str3)</span><br><span class="line">    <span class="comment"># 获得字符串修剪左右两侧空格的拷贝</span></span><br><span class="line">    print(str3.strip())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/07.%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%B8%B8%E7%94%A8%E6%9
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="yuluo-ding.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>解决macOS声音的问题</title>
@@ -512,30 +537,6 @@
     </summary>
     
       <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 解决Vi输入中文乱码的问题</title>
-    <link href="yuluo-ding.github.io/2018/06/19/Linux-%E8%A7%A3%E5%86%B3Vi%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>yuluo-ding.github.io/2018/06/19/Linux-解决Vi输入中文乱码的问题/</id>
-    <published>2018-06-19T07:27:41.000Z</published>
-    <updated>2018-06-19T08:00:01.746Z</updated>
-    
-    <content type="html"><![CDATA[<p>在VPS 中, 有时vi 打开一个文件中, 中文会显示乱码, 用locale 查看如下, </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ locale</span><br><span class="line">LANG=en_US.UTF-8</span><br><span class="line">LANGUAGE=en_US.UTF-8</span><br><span class="line">LC_CTYPE="en_US.UTF-8"</span><br><span class="line">LC_NUMERIC="en_US.UTF-8"</span><br><span class="line">LC_TIME="en_US.UTF-8"</span><br><span class="line">LC_COLLATE="en_US.UTF-8"</span><br><span class="line">LC_MONETARY="en_US.UTF-8"</span><br><span class="line">LC_MESSAGES="en_US.UTF-8"</span><br><span class="line">LC_PAPER="en_US.UTF-8"</span><br><span class="line">LC_NAME="en_US.UTF-8"</span><br><span class="line">LC_ADDRESS="en_US.UTF-8"</span><br><span class="line">LC_TELEPHONE="en_US.UTF-8"</span><br><span class="line">LC_MEASUREMENT="en_US.UTF-8"</span><br><span class="line">LC_IDENTIFICATION="en_US.UTF-8"</span><br><span class="line">LC_ALL=en_US.UTF-8</span><br></pre></td></tr></table></figure><p>其实vi中输入中文乱码与上述系统语言编码无关，是vi自身的环境变量设置出了问题, 解决办法如下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~ vi .viminfo  # ubuntu 18</span><br><span class="line">encoding=latin1#修改成下面</span><br><span class="line">encoding=utf-8</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在VPS 中, 有时vi 打开一个文件中, 中文会显示乱码, 用locale 查看如下, &lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
     
     
   </entry>

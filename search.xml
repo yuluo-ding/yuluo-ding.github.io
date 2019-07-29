@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python 字符串和常用数据结构]]></title>
+    <url>%2F2019%2F07%2F29%2FPython-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[Python中常用的字符串： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647def main(): str1 = 'hello, world!' # 通过len函数计算字符串的长度 print(len(str1)) # 13 # 获得字符串首字母大写的拷贝 print(str1.capitalize()) # Hello, world! # 获得字符串变大写后的拷贝 print(str1.upper()) # HELLO, WORLD! # 从字符串中查找子串所在位置 print(str1.find('or')) # 8 print(str1.find('shit')) # -1 # 与find类似但找不到子串时会引发异常 # print(str1.index('or')) # print(str1.index('shit')) # 检查字符串是否以指定的字符串开头 print(str1.startswith('He')) # False print(str1.startswith('hel')) # True # 检查字符串是否以指定的字符串结尾 print(str1.endswith('!')) # True # 将字符串以指定的宽度居中并在两侧填充指定的字符 print(str1.center(50, '*')) # 将字符串以指定的宽度靠右放置左侧填充指定的字符 print(str1.rjust(50, ' ')) str2 = 'abc123456' # 从字符串中取出指定位置的字符(下标运算) print(str2[2]) # c # 字符串切片(从指定的开始索引到指定的结束索引) print(str2[2:5]) # c12 print(str2[2:]) # c123456 print(str2[2::2]) # c246 print(str2[::2]) # ac246 print(str2[::-1]) # 654321cba print(str2[-3:-1]) # 45 # 检查字符串是否由数字构成 print(str2.isdigit()) # False # 检查字符串是否以字母构成 print(str2.isalpha()) # False # 检查字符串是否以数字和字母构成 print(str2.isalnum()) # True str3 = ' jackfrued@126.com ' print(str3) # 获得字符串修剪左右两侧空格的拷贝 print(str3.strip())if __name__ == '__main__': main()]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[解决macOS声音的问题]]></title>
     <url>%2F2019%2F07%2F18%2F%E8%A7%A3%E5%86%B3macOS%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[macOS系统有时会莫名其妙无法工作，在新添音频设备、唤醒或者更新操作系统后，都可能会遇到音频错误。 在调整了音量大小或者静音无法解决之后，按照如下步骤尝试，应该可以解决。 检查硬件确保系统没有静音，以及声音出问题之前没遇到磕碰之类的。 选择正确音频插入耳机之后听不到耳机，可能是新音频设备时选择了错误的输出设备。、 System Preferences ——&gt; Sound ——&gt; Output 选择正确的输出设备，尝试切换之后再重新选择正确的输出设备。 重置音频核心1sudo killall coreaudiod 重启大法直接重启电脑，然后尝试听声音。 重置Mac上的NVRAM或PRAM这个方法是Apple官方的案例，重置Mac上的NVRAM 以上几种方法如果还是不能解决，那就判断是不是需要去售后做一个检测了。]]></content>
