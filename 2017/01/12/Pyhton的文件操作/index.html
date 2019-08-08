@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="yuluo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="yuluo-ding.github.io">
+    <!--SEO-->
+
+    <meta name="keywords" content="undefined">
+
+
+    <meta name="description" content="​    最近搞处理文件，各种命令搞的头晕眼花，此处做个合并，以便之后观察使用。
+
+1.重命名：os.rename(old, new)2.删除：os.remove(file)3.列出目录下的文件...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Pyhton的文件操作 | yuluo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Luo Yu">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="yuluo-ding.github.io">yuluo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Pyhton的文件操作">
+            
+	            Pyhton的文件操作
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Python/">Python</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/01/12</span>
+        </span>
+        
+    
+</div>
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>938</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>​    最近搞处理文件，各种命令搞的头晕眼花，此处做个合并，以便之后观察使用。</p>
+<a id="more"></a>
+<p>1.重命名：<code>os.rename(old, new)</code><br>2.删除：<code>os.remove(file)</code><br>3.列出目录下的文件 ：<code>os.listdir(path)</code><br>4.获取当前工作目录：<code>os.getcwd()</code><br>5.改变工作目录：<code>os.chdir(newdir)</code><br>6.创建多级目录：<code>os.makedirs(r&quot;c:\python \test&quot;)</code><br>7.创建单个目录：<code>os.mkdir(&quot;test&quot;)</code><br>8.删除多个目录：<code>os.removedirs(r&quot;c:\python&quot;)</code> #删除所给路径最后一个目录下所有空目录。也可用<code>shutil.rmtree()</code><br>9.删除单个目录：<code>os.rmdir(&quot;test&quot;)</code><br>10.获取文件属性：<code>os.stat(file)</code><br>11.修改文件权限与时间戳：<code>os.chmod(file)</code><br>12.执行操作系统命令：<code>os.system(&quot;dir&quot;)</code><br>13.启动新进程：<code>os.exec()</code>, <code>os.execvp()</code><br>14.在后台执行程序：<code>osspawnv()</code><br>15.终止当前进程：<code>os.exit()</code>, <code>os._exit()</code><br>16.分离文件名：<code>os.path.split(r&quot;c:\python\hello.py&quot;) --&gt; (&quot;c:\\python&quot;, &quot;hello.py&quot;)</code><br>17.分离扩展名：<code>os.path.splitext(r&quot;c:\python\hello.py&quot;) --&gt; (&quot;c:\\python\\hello&quot;, &quot;.py&quot;)</code><br>18.获取路径名：<code>os.path.dirname(r&quot;c:\python\hello.py&quot;) --&gt; &quot;c:\\python&quot;</code><br>19.获取文件名：<code>os.path.basename(r&quot;r:\python\hello.py&quot;) --&gt; &quot;hello.py&quot;</code><br>20.判断文件或目录是否存在：<code>os.path.exists(r&quot;c:\python\hello.py&quot;) --&gt; True</code><br>21.判断是否是绝对路径：<code>os.path.isabs(r&quot;.\python\&quot;) --&gt; False</code><br>22.判断是否是目录：<code>os.path.isdir(r&quot;c:\python&quot;) --&gt; True</code><br>23.判断是否是文件：<code>os.path.isfile(r&quot;c:\python\hello.py&quot;) --&gt; True</code><br>24.判断是否是链接文件：<code>os.path.islink(r&quot;c:\python\hello.py&quot;) --&gt; False</code><br>25.获取文件大小：<code>os.path.getsize(filename)</code><br>26.搜索目录下的所有文件：<code>os.path.walk()</code></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/01/17/Python两个字典的合并/" class="pre-post btn btn-default" title="Python两个字典的合并">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Python两个字典的合并</span>
+        </a>
+    
+    
+        <a href="/2017/01/09/Linux提示Give-root-password-for-maintenance/" class="next-post btn btn-default" title="Linux提示Give root password for maintenance">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Linux提示Give root password for maintenance</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
