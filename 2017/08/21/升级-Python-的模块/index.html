@@ -21,14 +21,9 @@
     <meta name="keywords" content="undefined">
 
 
-    <meta name="description" content="pip 当前内建命令并不支持升级所有已安装的Python模块。
-列出当前安装的包：
-1pip list
-
-列出可升级的包：
-1pip list --outdate
-升级一个包：
-1pip ins...">
+    <meta name="description" content="pip 当前内建命令并不支持升级所有已安装的Python模块，所有使用命令行来查询和升级 Python 的模块
+列出当前安装的包：1pip list
+列出可升级的包：1pip list --ou...">
 
 
 
@@ -185,16 +180,11 @@
     </div>
     
     <div class="post-body post-content">
-        <p>pip 当前内建命令并不支持升级所有已安装的Python模块。</p>
-<p>列出当前安装的包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>列出可升级的包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list --outdate</span><br></pre></td></tr></table></figure>
-<p>升级一个包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</span><br></pre></td></tr></table></figure>
-<p>升级所有可升级的包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3的平台</span></span><br><span class="line">$ pip3 freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip3 install -U</span><br><span class="line"><span class="comment"># python2的平台</span></span><br><span class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip2 install -U</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</span><br></pre></td></tr></table></figure>
+        <p>pip 当前内建命令并不支持升级所有已安装的Python模块，所有使用命令行来查询和升级 Python 的模块</p>
+<h5 id="列出当前安装的包：">列出当前安装的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<h5 id="列出可升级的包：">列出可升级的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list --outdate</span><br></pre></td></tr></table></figure>
+<h5 id="升级一个包：">升级一个包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</span><br></pre></td></tr></table></figure>
+<h5 id="升级所有可升级的包：">升级所有可升级的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3的平台</span></span><br><span class="line">$ pip3 freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip3 install -U</span><br><span class="line"><span class="comment"># python2的平台</span></span><br><span class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip2 install -U</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</span><br></pre></td></tr></table></figure>
 
     </div>
     
@@ -242,7 +232,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#列出当前安装的包："><span class="toc-text">列出当前安装的包：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#列出可升级的包："><span class="toc-text">列出可升级的包：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#升级一个包："><span class="toc-text">升级一个包：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#升级所有可升级的包："><span class="toc-text">升级所有可升级的包：</span></a></li></ol>
         
     </div>
 </aside>

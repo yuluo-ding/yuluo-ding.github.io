@@ -422,7 +422,7 @@
   <entry>
     <title><![CDATA[升级 Python 的模块]]></title>
     <url>%2F2017%2F08%2F21%2F%E5%8D%87%E7%BA%A7-Python-%E7%9A%84%E6%A8%A1%E5%9D%97%2F</url>
-    <content type="text"><![CDATA[pip 当前内建命令并不支持升级所有已安装的Python模块。 列出当前安装的包： 1pip list 列出可升级的包： 1pip list --outdate 升级一个包： 1pip install --upgrade requests // mac,linux,unix 在命令前加 sudo -H 升级所有可升级的包： 12345# python3的平台$ pip3 freeze --local | grep -v '^-e' | cut -d = -f 1 | xargs -n1 pip3 install -U# python2的平台$ pip freeze --local | grep -v '^-e' | cut -d = -f 1 | xargs -n1 pip2 install -U$ for i in `pip list -o --format legacy|awk '&#123;print $1&#125;'` ; do pip install --upgrade $i; done]]></content>
+    <content type="text"><![CDATA[pip 当前内建命令并不支持升级所有已安装的Python模块，所有使用命令行来查询和升级 Python 的模块 列出当前安装的包：1pip list 列出可升级的包：1pip list --outdate 升级一个包：1pip install --upgrade requests // mac,linux,unix 在命令前加 sudo -H 升级所有可升级的包：12345# python3的平台$ pip3 freeze --local | grep -v '^-e' | cut -d = -f 1 | xargs -n1 pip3 install -U# python2的平台$ pip freeze --local | grep -v '^-e' | cut -d = -f 1 | xargs -n1 pip2 install -U$ for i in `pip list -o --format legacy|awk '&#123;print $1&#125;'` ; do pip install --upgrade $i; done]]></content>
       <categories>
         <category>Python</category>
       </categories>
