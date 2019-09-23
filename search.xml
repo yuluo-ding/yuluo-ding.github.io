@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[让Chrome显示www和https]]></title>
+    <url>%2F2019%2F09%2F23%2F%E8%AE%A9Chrome%E6%98%BE%E7%A4%BAwww%E5%92%8Chttps%2F</url>
+    <content type="text"><![CDATA[新版的Chrome 77又把www和https给隐藏了，日常搞事啊，恢复显示的步骤如下 在浏览器的地址栏输入以下两个命令： chrome://flags/#omnibox-ui-hide-steady-state-url-scheme，然后选择disabled chrome://flags/#omnibox-ui-hide-steady-state-url-trivial-subdomains，然后选择disabled 重启Chrome浏览器 重新打开网站，应该就能恢复了。]]></content>
+      <categories>
+        <category>Google</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[在Android Pie中安装Xposed]]></title>
     <url>%2F2019%2F09%2F10%2F%E5%9C%A8Android-Pie%E4%B8%AD%E5%AE%89%E8%A3%85Xposed%2F</url>
     <content type="text"><![CDATA[如今重新命名的Android 10都已经发布了，但是针对Android Pie的Xpsoed官方版还是没有发布，据说作者去Apple工作去了？但是开源社区的好处就是有人能够实现同样的效果。 这个是Elder Driver开发的非官方端口，Xposed for Android Pie。它被命名为EDXposed， 还需要额外安装Riru Core，具体步骤如下。 下载 Riru Core压缩包，放入手机 下载 EdXposed压缩包，可以选择YAHFA，放入手机 下载 XposedInstaller的apk，并且安装 首先需要刷入Magisk， 打开Magisk manager， 打开多功能菜单，选择模块，然后点击添加按钮，分别刷入上文下载的两个压缩包 重启手机激活以上两个模块，然后打开EDXposed，看到已经激活了。 如果没有，请卸载，重新尝试以上步骤。]]></content>

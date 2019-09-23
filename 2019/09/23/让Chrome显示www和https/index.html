@@ -18,15 +18,13 @@
     <link rel="dns-prefetch" href="yuluo-ding.github.io">
     <!--SEO-->
 
-    <meta name="keywords" content="undefined">
+    <meta name="keywords" content="Chrome">
 
 
-    <meta name="description" content="A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为192.168.1.1 ;A和B的系统都是Linux.
+    <meta name="description" content="新版的Chrome 77又把www和https给隐藏了，日常搞事啊，恢复显示的步骤如下
+在浏览器的地址栏输入以下两个命令：
 
-
-什么是 SSH？
-
-Secure ...">
+chrome://flags/#omnibox-ui-hide-st...">
 
 
 
@@ -38,7 +36,7 @@ Secure ...">
     <!--Title-->
 
 
-<title>Linux 免密登录 | yuluo</title>
+<title>让Chrome显示www和https | yuluo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="yuluo" type="application/atom+xml">
@@ -147,16 +145,16 @@ Secure ...">
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Linux 免密登录">
+        <h1 id="让Chrome显示www和https">
             
-	            Linux 免密登录
+	            让Chrome显示www和https
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/Linux/">Linux</a>
+            <a class="category-link" href="/categories/Google/">Google</a>
         </span>
     
 
@@ -164,6 +162,8 @@ Secure ...">
         <span class="fa-wrap">
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Chrome/">Chrome</a>
                 
             </span>
         </span>
@@ -173,48 +173,24 @@ Secure ...">
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2017/04/27</span>
+            <span class="date-meta">2019/09/23</span>
         </span>
         
     
 </div>
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>878</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
-        <p>A为本地主机(即用于控制其他主机的机器) ;<br>B为远程主机(即被控制的机器Server), 假如ip为<code>192.168.1.1</code> ;<br>A和B的系统都是Linux.</p>
-<a id="more"></a>
+        <p>新版的Chrome 77又把<code>www</code>和<code>https</code>给隐藏了，日常搞事啊，恢复显示的步骤如下</p>
+<p>在浏览器的地址栏输入以下两个命令：</p>
 <ol>
-<li><p>什么是 SSH？</p>
-<blockquote>
-<p>Secure Shell（缩写为SSH），由IETF的网络工作小组（Network Working Group）所制定；SSH为一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。</p>
-<p>传统的网络服务程序，如rsh、FTP、POP和Telnet其本质上都是不安全的；因为它们在网络上用明文传送数据、用户帐号和用户口令，很容易受到中间人（man-in-the-middle）攻击方式的攻击。就是存在另一个人或者一台机器冒充真正的服务器接收用户传给服务器的数据，然后再冒充用户把数据传给真正的服务器。</p>
-<p>而SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用SSH协议可以有效防止远程管理过程中的信息泄露问题。通过SSH可以对所有传输的数据进行加密，也能够防止DNS欺骗和IP欺骗。</p>
-<p>SSH之另一项优点为其传输的数据可以是经过压缩的，所以可以加快传输的速度。SSH有很多功能，它既可以代替Telnet，又可以为FTP、POP、甚至为PPP提供一个安全的“通道”。</p>
-<p><a href="https://www.wikiwand.com/zh-cn/Secure_Shell" target="_blank" rel="noopener">Secure Shell</a></p>
-</blockquote>
-</li>
-<li><p>基本用法</p>
-<p>假设要以用户名 <code>user</code>,远程登录主机 <code>host</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host</span><br></pre></td></tr></table></figure>
-<p>SSH的默认端口是<code>22</code>，如果不是这个端口登录，需要添加<code>-p</code>参数</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p port user@host</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>公钥登录</p>
-<p>如最开始的说明，每次登录固定的 <code>host</code>，不想输入密码在怎么登录。</p>
-<p>​</p>
-<p>在A上的命令:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa #(连续三次回车,即在本地生成了公钥和私钥,不设置密码)</span><br><span class="line">ssh root@172.24.253.2 "mkdir .ssh;chmod 0700 .ssh" #(需要输入密码， 注:必须将.ssh的权限设为700)</span><br><span class="line">scp ~/.ssh/id_rsa.pub root@172.24.253.2:.ssh/id_rsa.pub #(需要输入密码)</span><br></pre></td></tr></table></figure>
-<p>在 B 上的命令:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch /root/.ssh/authorized_keys #(如果已经存在这个文件, 跳过这条)</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys  #(# 注意： 必须将~/.ssh/authorized_keys的权限改为600, 该文件用于保存ssh客户端生成的公钥，可以修改服务器的ssh服务端配置文件/etc/ssh/sshd_config来指定其他文件名）</span><br><span class="line">cat /root/.ssh/id_rsa.pub  &gt;&gt; /root/.ssh/authorized_keys #(将id_rsa.pub的内容追加到 authorized_keys 中, 注意不要用 &gt; ，否则会清空原有的内容，使其他人无法使用原有的密钥登录)</span><br></pre></td></tr></table></figure>
-<p>​</p>
-</li>
+<li><code>chrome://flags/#omnibox-ui-hide-steady-state-url-scheme</code>，然后选择disabled</li>
+<li><code>chrome://flags/#omnibox-ui-hide-steady-state-url-trivial-subdomains</code>，然后选择disabled</li>
+<li>重启Chrome浏览器</li>
 </ol>
+<p>重新打开网站，应该就能恢复了。</p>
 
     </div>
     
@@ -232,15 +208,10 @@ Secure ...">
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/05/03/Python字符串处理/" class="pre-post btn btn-default" title="Python字符串处理">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Python字符串处理</span>
-        </a>
     
-    
-        <a href="/2017/04/20/iTerm2保持-SSH-连接/" class="next-post btn btn-default" title="iTerm2保持 SSH 连接">
+        <a href="/2019/09/10/在Android-Pie中安装Xposed/" class="next-post btn btn-default" title="在Android Pie中安装Xposed">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">iTerm2保持 SSH 连接</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">在Android Pie中安装Xposed</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
