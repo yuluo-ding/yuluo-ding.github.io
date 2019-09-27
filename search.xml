@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux查找并杀死多个进程]]></title>
+    <url>%2F2019%2F09%2F27%2FLinux%E6%9F%A5%E6%89%BE%E5%B9%B6%E6%9D%80%E6%AD%BB%E5%A4%9A%E4%B8%AA%E8%BF%9B%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[ps -ef|grep python|grep -v grep|cut -c 9-15|xargs kill -9 ps -ef查看所有进程 grep python塞选出含有python的进程 grep -v grep排除最上面那个命令的进程 cut -c 9-15是截取输入行的第9个字符到第15个字符，而这正好是进程号PID xargs kill -9中的xargs命令是用来把前面命令的输出结果（PID）作为“kill -9”命令的参数，并执行该命令]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[让Chrome显示www和https]]></title>
     <url>%2F2019%2F09%2F23%2F%E8%AE%A9Chrome%E6%98%BE%E7%A4%BAwww%E5%92%8Chttps%2F</url>
     <content type="text"><![CDATA[新版的Chrome 77又把www和https给隐藏了，日常搞事啊，恢复显示的步骤如下 在浏览器的地址栏输入以下两个命令： chrome://flags/#omnibox-ui-hide-steady-state-url-scheme，然后选择disabled chrome://flags/#omnibox-ui-hide-steady-state-url-trivial-subdomains，然后选择disabled 重启Chrome浏览器 重新打开网站，应该就能恢复了。]]></content>

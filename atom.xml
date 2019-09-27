@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2019-09-23T02:46:42.385Z</updated>
+  <updated>2019-09-27T09:30:59.337Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux查找并杀死多个进程</title>
+    <link href="yuluo-ding.github.io/2019/09/27/Linux%E6%9F%A5%E6%89%BE%E5%B9%B6%E6%9D%80%E6%AD%BB%E5%A4%9A%E4%B8%AA%E8%BF%9B%E7%A8%8B/"/>
+    <id>yuluo-ding.github.io/2019/09/27/Linux查找并杀死多个进程/</id>
+    <published>2019-09-27T09:27:34.000Z</published>
+    <updated>2019-09-27T09:30:59.337Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>ps -ef|grep python|grep -v grep|cut -c 9-15|xargs kill -9</code></p><p><code>ps -ef</code>查看所有进程</p><p><code>grep python</code>塞选出含有python的进程</p><p><code>grep -v grep</code>排除最上面那个命令的进程</p><p><code>cut -c 9-15</code>是截取输入行的第9个字符到第15个字符，而这正好是进程号PID</p><p><code>xargs kill -9</code>中的xargs命令是用来把前面命令的输出结果（PID）作为“kill -9”命令的参数，并执行该命令</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;ps -ef|grep python|grep -v grep|cut -c 9-15|xargs kill -9&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ps -ef&lt;/code&gt;查看所有进程&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep python&lt;/code&gt;塞选
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>让Chrome显示www和https</title>
@@ -518,32 +545,6 @@
     
     
       <category term="terminal" scheme="yuluo-ding.github.io/tags/terminal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>npm升级所有可更新包</title>
-    <link href="yuluo-ding.github.io/2018/08/07/npm%E5%8D%87%E7%BA%A7%E6%89%80%E6%9C%89%E5%8F%AF%E6%9B%B4%E6%96%B0%E5%8C%85/"/>
-    <id>yuluo-ding.github.io/2018/08/07/npm升级所有可更新包/</id>
-    <published>2018-08-07T15:38:51.000Z</published>
-    <updated>2018-08-09T09:19:06.846Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用npm管理node的包，可以使用<code>npm update &lt;name&gt;</code>对单个包升级，对于npm的版本大于 <code>2.6.1</code>,可以使用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g</span><br></pre></td></tr></table></figure><p> 这样升级全部的包</p><p>如果上述不太方便, 还可以使用<code>shell脚本</code>和<code>npm-ckeck</code></p><h3 id="shell_脚本">shell 脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">set -e</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> -x</span></span><br><span class="line">for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)</span><br><span class="line">do</span><br><span class="line">    npm -g install "$package"</span><br><span class="line">done</span><br></pre></td></tr></table></figure><h3 id="npm-check">npm-check</h3><p><a href="https://www.npmjs.com/package/npm-check" target="_blank" rel="noopener">npm-check</a>是用来检查npm依赖包是否有更新，错误以及不在使用的，我们也可以使用npm-check进行包的更新。</p><p>安装npm-check：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check</span><br></pre></td></tr></table></figure><p>检查npm包的状态:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm-check -u -g</span><br></pre></td></tr></table></figure><p>通过上下键可以移动光标，使用空格键可以选择需要处理的包，回车直接进行处理。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;使用npm管理node的包，可以使用&lt;code&gt;npm update &amp;lt;name&amp;gt;&lt;/code&gt;对单个包升级，对于npm的版本大于 &lt;code&gt;2.6.1&lt;/code&gt;,可以使用命令:&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;t
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="yuluo-ding.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="npm" scheme="yuluo-ding.github.io/tags/npm/"/>
     
   </entry>
   
