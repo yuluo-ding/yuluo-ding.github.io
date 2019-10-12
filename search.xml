@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu18 设置静态IP]]></title>
+    <url>%2F2019%2F10%2F12%2FUbuntu18-%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%2F</url>
+    <content type="text"><![CDATA[Ubuntu18 的网络管理程序变成了netplan，所以配置方式也跟16不一样了。 现在的网卡配置文件是： /etc/netplan/50-cloud-init.yaml 采用了YAML的文件格式，设置静态IP的格式如下： 12345678910network: ethernets: enp0s3: addresses: [192.168.199.101/24] dhcp4: no dhcp6: no gateway4: 192.168.1.1 nameservers: addresses: [8.8.8.8, 9.9.9.9] version: 2 保存之后，利用netplan apply生效 ifconfig查看是否是新的IP地址]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu18</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux查找并杀死多个进程]]></title>
     <url>%2F2019%2F09%2F27%2FLinux%E6%9F%A5%E6%89%BE%E5%B9%B6%E6%9D%80%E6%AD%BB%E5%A4%9A%E4%B8%AA%E8%BF%9B%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[ps -ef|grep python|grep -v grep|cut -c 9-15|xargs kill -9 ps -ef查看所有进程 grep python塞选出含有python的进程 grep -v grep排除最上面那个命令的进程 cut -c 9-15是截取输入行的第9个字符到第15个字符，而这正好是进程号PID xargs kill -9中的xargs命令是用来把前面命令的输出结果（PID）作为“kill -9”命令的参数，并执行该命令]]></content>

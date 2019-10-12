@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2019-09-27T09:30:59.337Z</updated>
+  <updated>2019-10-12T03:02:04.779Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu18 设置静态IP</title>
+    <link href="yuluo-ding.github.io/2019/10/12/Ubuntu18-%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/"/>
+    <id>yuluo-ding.github.io/2019/10/12/Ubuntu18-设置静态IP/</id>
+    <published>2019-10-12T02:38:07.000Z</published>
+    <updated>2019-10-12T03:02:04.779Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ubuntu18 的网络管理程序变成了netplan，所以配置方式也跟16不一样了。</p><p>现在的网卡配置文件是：</p><p><code>/etc/netplan/50-cloud-init.yaml</code></p><p>采用了YAML的文件格式，设置静态IP的格式如下：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">network:</span></span><br><span class="line"><span class="attr">    ethernets:</span></span><br><span class="line"><span class="attr">        enp0s3:</span></span><br><span class="line"><span class="attr">            addresses:</span> <span class="string">[192.168.199.101/24]</span></span><br><span class="line"><span class="attr">            dhcp4:</span> <span class="literal">no</span></span><br><span class="line"><span class="attr">            dhcp6:</span> <span class="literal">no</span></span><br><span class="line"><span class="attr">            gateway4:</span>  <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line"><span class="attr">            nameservers:</span></span><br><span class="line"><span class="attr">                addresses:</span> <span class="string">[8.8.8.8,</span> <span class="number">9.9</span><span class="number">.9</span><span class="number">.9</span><span class="string">]</span></span><br><span class="line"><span class="attr">    version:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure><p>保存之后，利用<code>netplan apply</code>生效</p><p><code>ifconfig</code>查看是否是新的IP地址</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ubuntu18 的网络管理程序变成了netplan，所以配置方式也跟16不一样了。&lt;/p&gt;
+&lt;p&gt;现在的网卡配置文件是：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/etc/netplan/50-cloud-init.yaml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;采用了YAML的文件格式，设置静
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+      <category term="Ubuntu18" scheme="yuluo-ding.github.io/tags/Ubuntu18/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux查找并杀死多个进程</title>
@@ -516,35 +544,6 @@
     
     
       <category term="hexo" scheme="yuluo-ding.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>让终端走代理</title>
-    <link href="yuluo-ding.github.io/2018/08/08/%E8%AE%A9%E7%BB%88%E7%AB%AF%E8%B5%B0%E4%BB%A3%E7%90%86/"/>
-    <id>yuluo-ding.github.io/2018/08/08/让终端走代理/</id>
-    <published>2018-08-08T15:21:42.000Z</published>
-    <updated>2018-08-09T09:15:10.660Z</updated>
-    
-    <content type="html"><![CDATA[<p>在某些时候, mac  OS 下的终端在现在这个环境下. GitHub 等网站动不动连不上, 需要走代理. 现在可以有三种方式:</p><ul><li>Surge Mac 2 的增强模式</li><li>Proxifier 把终端设置为走代理模式</li><li>zsh 的配置模式</li></ul><p>其中可以在<code>.zshrc</code>的配置文件中:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> proxy</span></span><br><span class="line">proxy () &#123;</span><br><span class="line">  export http_proxy="http://127.0.0.1:8888"</span><br><span class="line">  export https_proxy="http://127.0.0.1:8888"</span><br><span class="line">  echo "HTTP Proxy on"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> noproxy</span></span><br><span class="line">noproxy () &#123;</span><br><span class="line">  unset http_proxy</span><br><span class="line">  unset https_proxy</span><br><span class="line">  echo "HTTP Proxy off"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用的时候输入 Proxy 打开代理模式，关闭代理时输入 noproxy 即可.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在某些时候, mac  OS 下的终端在现在这个环境下. GitHub 等网站动不动连不上, 需要走代理. 现在可以有三种方式:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Surge Mac 2 的增强模式&lt;/li&gt;
-&lt;li&gt;Proxifier 把终端设置为走代理模式&lt;/li&gt;
-&lt;li&gt;z
-      
-    
-    </summary>
-    
-      <category term="mac OS" scheme="yuluo-ding.github.io/categories/mac-OS/"/>
-    
-    
-      <category term="terminal" scheme="yuluo-ding.github.io/tags/terminal/"/>
     
   </entry>
   
