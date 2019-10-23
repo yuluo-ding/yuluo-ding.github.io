@@ -12,9 +12,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Ubuntu18 设置静态IP]]></title>
+    <title><![CDATA[Ubuntu 18 设置静态IP]]></title>
     <url>%2F2019%2F10%2F12%2FUbuntu18-%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%2F</url>
-    <content type="text"><![CDATA[Ubuntu18 的网络管理程序变成了netplan，所以配置方式也跟16不一样了。 现在的网卡配置文件是： /etc/netplan/50-cloud-init.yaml 采用了YAML的文件格式，设置静态IP的格式如下： 12345678910network: ethernets: enp0s3: addresses: [192.168.1.100/24] dhcp4: no dhcp6: no gateway4: 192.168.1.1 nameservers: addresses: [8.8.8.8, 9.9.9.9] version: 2 保存之后，利用netplan apply生效 ifconfig查看是否是新的IP地址 PS： 基于YAML的格式要求，每一行的:要有空格，否则在重启的时候会报错。]]></content>
+    <content type="text"><![CDATA[Ubuntu 18 的网络管理程序变成了netplan，所以配置方式也跟16不一样了。 现在的网卡配置文件是： /etc/netplan/50-cloud-init.yaml 采用了YAML的文件格式，设置静态IP的格式如下： 12345678910network: ethernets: enp0s3: addresses: [192.168.1.100/24] dhcp4: no dhcp6: no gateway4: 192.168.1.1 nameservers: addresses: [8.8.8.8, 9.9.9.9] version: 2 保存之后，利用netplan apply生效 ifconfig查看是否是新的IP地址 PS： 基于YAML的格式要求，每一行的:要有空格，否则在重启的时候会报错。]]></content>
       <categories>
         <category>Linux</category>
       </categories>
