@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CentOS 7 ping baidu.com 报错name or service not know]]></title>
+    <url>%2F2019%2F12%2F03%2FCentOS-7-ping-baidu-com-%E6%8A%A5%E9%94%99name-or-service-not-know%2F</url>
+    <content type="text"><![CDATA[在用VirtualBox安装了CentOS 7 的虚拟机之后，尝试测试用ping baidu.com来测试网络的连接性，提示name or service not know这个错误，解决如下： 首先在/etc/sysonfit/network-scripts的路径下找到网卡的配置文件 用vi编辑配置文件，例如vi ifcfg-eth0，把其中的ONBOOT=NO改成ONBOOT=yes 重启网卡systemctl restart network 如果以上还不行，则按照如下步骤： 添加DNS服务器：vi /etc/resolv.conf 添加nameserver 114.114.114.114 保存该配置文件，重启。基本可以解决]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>CentOS 7</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python 读写CSV文档]]></title>
     <url>%2F2019%2F10%2F25%2FPython-%E8%AF%BB%E5%86%99CSV%E6%96%87%E6%A1%A3%2F</url>
     <content type="text"><![CDATA[逗号分隔值（Comma-Separated Values，CSV，有时也称为字符分隔值，因为分隔字符也可以不是逗号），其文件以纯文本形式存储表格数据（数字和文本）。纯文本意味着该文件是一个字符序列，不含必须像二进制数字那样被解读的数据。CSV文件由任意数目的记录组成，记录间以某种换行符分隔；每条记录由字段组成，字段间的分隔符是其它字符或字符串，最常见的是逗号或制表符。通常，所有记录都有完全相同的字段序列。通常都是纯文本文件。建议使用WORDPAD或是记事本来开启，再则先另存新档后用EXCEL开启，也是方法之一。 直接创建CSV文件有两种通用的办法： 直接用Excel新建文件，保存为.csv格式的文件即可 用文本编辑器，例如Sublime Text新建文件，保存为.csv格式的文件即可 每一行的数据是由,分隔 Python 处理CSV文档读取CSV文档利用Python 的CSV 库来处理对应的文档 12345678910111213import csv# 读取文件至字典csv_file = open("test.csv", "r")reader = csv.reader(csv_file)# 建立字典result = &#123;&#125;for item in reader: result[item[0]] = item[1]# 关闭文件csv_file.close()print(result) 每行数据会有一个属性：line_num表示行数 在遍历的时候，每一行就是一个list, 写入CSV文档要把数据写入CSV 的文件，可以直接把list格式的数据写入，但是需要注意的是要使用writerow，否者不会自动换行 12345678910111213141516171819import csv# 文件头，一般就是数据名fileHeader = ["name", "score"]# 假设我们要写入的是以下两行数据d1 = ["Wang", "100"]d2 = ["Li", "80"]# 写入数据csv_file = open("test.csv", "w")writer = csv.writer(csvFile)# 写入的内容都是以列表的形式传入函数writer.writerow(fileHeader)writer.writerow(d1)writer.writerow(d1)csv_file.close() 也可以直接使用writerows，一次性把数据放入一个list里面直接写入。 DictReader可以直接把数据读取为字典的形式，第一行一般是文件的内容描述，自动作为字典的key值。 1csv_file = csv.DictReader(csv_file) DictWriter以字典的形式把数据写入文本。 1csv_file = csv.DictWriter(csv_file, fileheader)]]></content>
