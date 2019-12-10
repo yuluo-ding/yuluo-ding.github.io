@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux tar]]></title>
+    <url>%2F2019%2F12%2F10%2FLinux-tar%2F</url>
+    <content type="text"><![CDATA[简单的说： 123456#压缩tar -zcvf ***.tar.gztar -jcvf ***.tar.bz2#解压tar -zxvf ***.tar.gztar -jxvf ***.tar.bz2 tar [-cxtzjvfpPN] 文件与目录 …. 常用参数： -c ：建立一个压缩文件的参数指令(create 的意思)； -x ：解开一个压缩文件的参数指令！ -t ：查看 tarfile 里面的文件！ Ps: 特别注意，在参数的下达中， c/x/t 仅能存在一个,不可同时存在. -z ：是否同时具有 gzip 的属性？亦即是否需要用 gzip 压缩？ -j ：是否同时具有 bzip2 的属性？亦即是否需要用 bzip2 压缩？ -v ：压缩的过程中显示文件！这个常用，但不建议用在背景执行过程！ -f ：使用档名，请留意，在 f 之后要立即接档名 -p ：使用原文件的原来属性（属性不会依据使用者而变） -P ：可以使用绝对路径来压缩！ -N ：比后面接的日期(yyyy/mm/dd)还要新的才会被打包进新建的文件中！ –exclude FILE：在压缩的过程中，不要将 FILE 打包！ 参考 ：linux tar (打包.压缩.解压缩)命令说明 | tar如何解压文件到指定的目录？]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>tar</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CentOS 7 ping baidu.com 报错name or service not know]]></title>
     <url>%2F2019%2F12%2F03%2FCentOS-7-ping-baidu-com-%E6%8A%A5%E9%94%99name-or-service-not-know%2F</url>
     <content type="text"><![CDATA[在用VirtualBox安装了CentOS 7 的虚拟机之后，尝试测试用ping baidu.com来测试网络的连接性，提示name or service not know这个错误，解决如下： 首先在/etc/sysonfit/network-scripts的路径下找到网卡的配置文件 用vi编辑配置文件，例如vi ifcfg-eth0，把其中的ONBOOT=NO改成ONBOOT=yes 重启网卡systemctl restart network 如果以上还不行，则按照如下步骤： 添加DNS服务器：vi /etc/resolv.conf 添加nameserver 114.114.114.114 保存该配置文件，重启。基本可以解决]]></content>
