@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[CentOS 7 ping baidu.com 报错name or service not know]]></title>
     <url>%2F2019%2F12%2F03%2FCentOS-7-ping-baidu-com-%E6%8A%A5%E9%94%99name-or-service-not-know%2F</url>
-    <content type="text"><![CDATA[在用VirtualBox安装了CentOS 7 的虚拟机之后，尝试测试用ping baidu.com来测试网络的连接性，提示name or service not know这个错误，解决如下： 首先在/etc/sysonfit/network-scripts的路径下找到网卡的配置文件 用vi编辑配置文件，例如vi ifcfg-eth0，把其中的ONBOOT=NO改成ONBOOT=yes 重启网卡systemctl restart network 如果以上还不行，则按照如下步骤： 添加DNS服务器：vi /etc/resolv.conf 添加nameserver 114.114.114.114 保存该配置文件，重启。基本可以解决]]></content>
+    <content type="text"><![CDATA[在用 VirtualBox 安装了CentOS 7 的虚拟机之后，尝试测试用ping baidu.com来测试网络的连接性，提示name or service not know这个错误，解决办法如下： 首先在/etc/sysonfit/network-scripts的路径下找到网卡的配置文件 用vi编辑配置文件，例如vi ifcfg-eth0，把其中的ONBOOT=NO改成ONBOOT=yes 重启网卡systemctl restart network 如果以上还不行，则按照如下步骤： 添加DNS服务器：vi /etc/resolv.conf 添加nameserver 114.114.114.114 保存该配置文件，重启网络服务systemctl restart network]]></content>
       <categories>
         <category>Linux</category>
       </categories>

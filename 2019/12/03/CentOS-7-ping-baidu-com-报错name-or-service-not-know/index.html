@@ -21,8 +21,7 @@
     <meta name="keywords" content="CentOS 7">
 
 
-    <meta name="description" content="在用VirtualBox安装了CentOS 7 的虚拟机之后，尝试测试用ping baidu.com来测试网络的连接性，提示name or service not know这个错误，解决如下：
-...">
+    <meta name="description" content="在用 VirtualBox 安装了CentOS 7 的虚拟机之后，尝试测试用ping baidu.com来测试网络的连接性，提示name or service not know这个错误，解决办法...">
 
 
 
@@ -181,14 +180,24 @@
     </div>
     
     <div class="post-body post-content">
-        <p>在用VirtualBox安装了CentOS 7 的虚拟机之后，尝试测试用<code>ping baidu.com</code>来测试网络的连接性，提示<code>name or service not know</code>这个错误，解决如下：</p>
-<p>首先在<code>/etc/sysonfit/network-scripts</code>的路径下找到网卡的配置文件</p>
-<p>用vi编辑配置文件，例如<code>vi ifcfg-eth0</code>，把其中的<code>ONBOOT=NO</code>改成<code>ONBOOT=yes</code></p>
-<p>重启网卡<code>systemctl restart network</code></p>
+        <p>在用 VirtualBox 安装了CentOS 7 的虚拟机之后，尝试测试用<code>ping baidu.com</code>来测试网络的连接性，提示<code>name or service not know</code>这个错误，解决办法如下：</p>
+<ol>
+<li><p>首先在<code>/etc/sysonfit/network-scripts</code>的路径下找到网卡的配置文件</p>
+</li>
+<li><p>用vi编辑配置文件，例如<code>vi ifcfg-eth0</code>，把其中的<code>ONBOOT=NO</code>改成<code>ONBOOT=yes</code></p>
+</li>
+<li><p>重启网卡<code>systemctl restart network</code></p>
+</li>
+</ol>
 <p>如果以上还不行，则按照如下步骤：</p>
-<p>添加DNS服务器：<code>vi /etc/resolv.conf</code></p>
-<p>添加<code>nameserver 114.114.114.114</code></p>
-<p>保存该配置文件，重启。基本可以解决</p>
+<ol>
+<li><p>添加DNS服务器：<code>vi /etc/resolv.conf</code></p>
+</li>
+<li><p>添加<code>nameserver 114.114.114.114</code></p>
+</li>
+<li><p>保存该配置文件，重启网络服务<code>systemctl restart network</code></p>
+</li>
+</ol>
 
     </div>
     
