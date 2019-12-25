@@ -10,16 +10,16 @@
 <title>npm升级所有可更新包 - yuluo</title>
 
 
-    <meta name="description" content="使用npm管理node的包，可以使用npm update &lt;name&gt;对单个包升级，对于npm的版本大于 2.6.1,可以使用命令: 1npm install -g   这样升级全部的包 如果上述不太方便, 还可以使用shell脚本和npm-ckeck shell 脚本1234567#!&#x2F;bin&#x2F;shset -e#set -xfor package in $(npm -g outdat">
+    <meta name="description" content="使用npm管理node的包，可以使用npm update &lt;name&gt;对单个包升级，对于npm的版本大于 2.6.1,可以使用命令: 1npm install -g   这样升级全部的包 如果上述不太方便, 还可以使用shell脚本和npm-ckeck">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm升级所有可更新包">
 <meta property="og:url" content="yuluo-ding.github.io/2018/08/07/npm%E5%8D%87%E7%BA%A7%E6%89%80%E6%9C%89%E5%8F%AF%E6%9B%B4%E6%96%B0%E5%8C%85/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="使用npm管理node的包，可以使用npm update &lt;name&gt;对单个包升级，对于npm的版本大于 2.6.1,可以使用命令: 1npm install -g   这样升级全部的包 如果上述不太方便, 还可以使用shell脚本和npm-ckeck shell 脚本1234567#!&#x2F;bin&#x2F;shset -e#set -xfor package in $(npm -g outdat">
+<meta property="og:description" content="使用npm管理node的包，可以使用npm update &lt;name&gt;对单个包升级，对于npm的版本大于 2.6.1,可以使用命令: 1npm install -g   这样升级全部的包 如果上述不太方便, 还可以使用shell脚本和npm-ckeck">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="/images/og_image.png">
 <meta property="article:published_time" content="2018-08-07T15:38:51.000Z">
-<meta property="article:modified_time" content="2018-08-09T09:19:06.846Z">
+<meta property="article:modified_time" content="2019-12-25T07:18:19.200Z">
 <meta property="article:author" content="Luo Yu">
 <meta property="article:tag" content="npm">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="npm升级所有可更新包" height="28">
+                VISION
             
             </a>
         </div>
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 206 个字)
+                    1 分钟 读完 (大约 207 个字)
                 </span>
                 
                 
@@ -173,6 +173,8 @@
 
 <p> 这样升级全部的包</p>
 <p>如果上述不太方便, 还可以使用<code>shell脚本</code>和<code>npm-ckeck</code></p>
+<a id="more"></a>
+
 <h3 id="shell-脚本"><a href="#shell-脚本" class="headerlink" title="shell 脚本"></a>shell 脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">set -e</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> -x</span></span><br><span class="line">for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)</span><br><span class="line">do</span><br><span class="line">    npm -g install "$package"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 <h3 id="npm-check"><a href="#npm-check" class="headerlink" title="npm-check"></a>npm-check</h3><p><a href="https://www.npmjs.com/package/npm-check">npm-check</a>是用来检查npm依赖包是否有更新，错误以及不在使用的，我们也可以使用npm-check进行包的更新。</p>
@@ -332,7 +334,7 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://github.com/yuluo-ding" target="_blank" rel="noopener">
                 关注我</a>
         </div>
         
@@ -341,7 +343,7 @@
         <div class="level is-mobile">
             
             <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Github" href="https://github.com/ppoffice">
+                title="Github" href="https://github.com/yuluo-ding">
                 
                 <i class="fab fa-github"></i>
                 
@@ -2234,7 +2236,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="npm升级所有可更新包" height="28">
+                    VISION
                 
                 </a>
                 <p class="is-size-7">

@@ -86,7 +86,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="yuluo" height="28">
+                VISION
             
             </a>
         </div>
@@ -529,7 +529,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 405 个字)
+                    3 分钟 读完 (大约 406 个字)
                 </span>
                 
                 
@@ -548,31 +548,16 @@
 <h3 id="7-0-7-1-0"><a href="#7-0-7-1-0" class="headerlink" title="7.0-7.1.0"></a>7.0-7.1.0</h3><p>需要服务器支持https</p>
 <p>或者使用命令</p>
 <p><code>adb shell &quot;settings put global captive_portal_use_https 0&quot;</code></p>
-<p>禁用https即可。</p>
-<p>恢复可用</p>
-<p><code>adb shell &quot;settings put global captive_portal_use_https 1&quot;</code></p>
-<p>或者</p>
-<p><code>adb shell &quot;settings delete global captive_portal_use_https&quot;</code></p>
-<h3 id="7-1-1"><a href="#7-1-1" class="headerlink" title="7.1.1"></a>7.1.1</h3><p> 从7.1.1开始，检测用的服务器地址储存格式发生了变化，改为了：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getCaptivePortalServerHttpsUrl</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getSetting(context, Settings.Global.CAPTIVE_PORTAL_HTTPS_URL, DEFAULT_HTTPS_URL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以及</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getCaptivePortalServerHttpUrl</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getSetting(context, Settings.Global.CAPTIVE_PORTAL_HTTP_URL, DEFAULT_HTTP_URL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以看到，系统不会自动加入”generate_204″的后缀了，这意味着url可以设计的更加灵活，同时也意味着在设置的时候需要填入完整的url：</p>
-<p><code>adb shell ``&quot;settings put global captive_portal_https_url https://www.noisyfox.cn/generate_204&quot;</code></p>
-<p>当然如果只有http的话，可以执行：</p>
-<p><code>adb shell &quot;settings put global captive_portal_use_https 0&quot;</code></p>
-<p><code>adb shell &quot;settings put global captive_portal_http_url http://www.noisyfox.cn/generate_204&quot;</code></p>
-<h3 id="7-1-2"><a href="#7-1-2" class="headerlink" title="7.1.2"></a>7.1.2</h3><p>自7.1.2（开始？），”captive_portal_detection_enabled”设置已被废弃，现在改为了”captive_portal_mode”选项，该选项可设置为以下3种值：</p>
-<ul>
-<li>0：彻底禁用检测(Don’t attempt to detect captive portals.)</li>
-<li>1：检测到需要登录则弹窗提醒（默认值）(When detecting a captive portal, display a notification that prompts the user to sign in.)</li>
-<li>2：检测到需要登录则自动断开此热点并不再自动连接(When detecting a captive portal, immediately disconnect from the network and do not reconnect to that network in the future.)</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2017/10/18/Android-O%E7%9A%84%E6%84%9F%E5%8F%B9%E5%8F%B7%E6%88%96%E8%80%85%E5%8F%89-%E6%80%8E%E4%B9%88%E5%8E%BB%E6%8E%89%E5%91%A2/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -794,7 +779,7 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://github.com/yuluo-ding" target="_blank" rel="noopener">
                 关注我</a>
         </div>
         
@@ -803,7 +788,7 @@
         <div class="level is-mobile">
             
             <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Github" href="https://github.com/ppoffice">
+                title="Github" href="https://github.com/yuluo-ding">
                 
                 <i class="fab fa-github"></i>
                 
@@ -2696,7 +2681,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="yuluo" height="28">
+                    VISION
                 
                 </a>
                 <p class="is-size-7">

@@ -10,16 +10,16 @@
 <title>使用Python的paramiko模块 - yuluo</title>
 
 
-    <meta name="description" content="介绍使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作. 安装直接使用pip安装即可. 1pip install paramiko  使用123456789import paramikossh &#x3D; paramiko.SSHClient()#允许连接不在know_hosts文件中的主机。ssh.set_missing_host_key_policy(paramiko.Aut">
+    <meta name="description" content="介绍使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作. 安装直接使用pip安装即可. 1pip install paramiko">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Python的paramiko模块">
 <meta property="og:url" content="yuluo-ding.github.io/2018/11/26/%E4%BD%BF%E7%94%A8Python%E7%9A%84paramiko%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="介绍使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作. 安装直接使用pip安装即可. 1pip install paramiko  使用123456789import paramikossh &#x3D; paramiko.SSHClient()#允许连接不在know_hosts文件中的主机。ssh.set_missing_host_key_policy(paramiko.Aut">
+<meta property="og:description" content="介绍使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作. 安装直接使用pip安装即可. 1pip install paramiko">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="/images/og_image.png">
 <meta property="article:published_time" content="2018-11-26T14:25:04.000Z">
-<meta property="article:modified_time" content="2018-11-26T14:25:30.163Z">
+<meta property="article:modified_time" content="2019-12-25T07:17:08.597Z">
 <meta property="article:author" content="Luo Yu">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="使用Python的paramiko模块" height="28">
+                VISION
             
             </a>
         </div>
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 166 个字)
+                    1 分钟 读完 (大约 167 个字)
                 </span>
                 
                 
@@ -171,6 +171,8 @@
             <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作.</p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>直接使用pip安装即可.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install paramiko</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> paramiko</span><br><span class="line">ssh = paramiko.SSHClient()</span><br><span class="line"></span><br><span class="line"><span class="comment">#允许连接不在know_hosts文件中的主机。</span></span><br><span class="line">ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</span><br><span class="line">ssh.connect(ip,  port, username, password)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行shell命令</span></span><br><span class="line">ssh.exec_command(<span class="string">'ls'</span>)</span><br></pre></td></tr></table></figure>
 
@@ -326,7 +328,7 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://github.com/yuluo-ding" target="_blank" rel="noopener">
                 关注我</a>
         </div>
         
@@ -335,7 +337,7 @@
         <div class="level is-mobile">
             
             <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Github" href="https://github.com/ppoffice">
+                title="Github" href="https://github.com/yuluo-ding">
                 
                 <i class="fab fa-github"></i>
                 
@@ -2228,7 +2230,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="使用Python的paramiko模块" height="28">
+                    VISION
                 
                 </a>
                 <p class="is-size-7">

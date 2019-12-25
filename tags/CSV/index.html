@@ -86,7 +86,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="yuluo" height="28">
+                VISION
             
             </a>
         </div>
@@ -163,7 +163,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 647 个字)
+                    4 分钟 读完 (大约 648 个字)
                 </span>
                 
                 
@@ -179,32 +179,16 @@
             <blockquote>
 <p><strong>逗号分隔值</strong>（Comma-Separated Values，<strong>CSV</strong>，有时也称为<strong>字符分隔值</strong>，因为分隔字符也可以不是逗号），其文件以纯文本形式存储表格数据（数字和文本）。纯文本意味着该文件是一个<a href="https://baike.baidu.com/item/字符/4768913">字符</a>序列，不含必须像二进制数字那样被解读的数据。CSV文件由任意数目的记录组成，记录间以某种换行符分隔；每条记录由<a href="https://baike.baidu.com/item/字段/2885972">字段</a>组成，字段间的分隔符是其它字符或字符串，最常见的是逗号或<a href="https://baike.baidu.com/item/制表符/7337607">制表符</a>。通常，所有记录都有完全相同的字段序列。通常都是纯文本文件。建议使用WORDPAD或是记事本来开启，再则先另存新档后用EXCEL开启，也是方法之一。</p>
 </blockquote>
-<p>直接创建CSV文件有两种通用的办法：</p>
-<ol>
-<li>直接用Excel新建文件，保存为<code>.csv</code>格式的文件即可</li>
-<li>用文本编辑器，例如Sublime Text新建文件，保存为<code>.csv</code>格式的文件即可</li>
-</ol>
-<p>每一行的数据是由<code>,</code>分隔</p>
-<h4 id="Python-处理CSV文档"><a href="#Python-处理CSV文档" class="headerlink" title="Python 处理CSV文档"></a>Python 处理CSV文档</h4><h5 id="读取CSV文档"><a href="#读取CSV文档" class="headerlink" title="读取CSV文档"></a>读取CSV文档</h5><p>利用Python 的CSV 库来处理对应的文档</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文件至字典</span></span><br><span class="line">csv_file = open(<span class="string">"test.csv"</span>, <span class="string">"r"</span>)</span><br><span class="line">reader = csv.reader(csv_file)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立字典</span></span><br><span class="line">result = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> reader:</span><br><span class="line">    result[item[<span class="number">0</span>]] = item[<span class="number">1</span>]</span><br><span class="line"><span class="comment"># 关闭文件</span></span><br><span class="line">csv_file.close()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-
-<p>每行数据会有一个属性：<code>line_num</code>表示行数</p>
-<p>在遍历的时候，每一行就是一个<code>list</code>,</p>
-<h5 id="写入CSV文档"><a href="#写入CSV文档" class="headerlink" title="写入CSV文档"></a>写入CSV文档</h5><p>要把数据写入CSV 的文件，可以直接把list格式的数据写入，但是需要注意的是要使用<code>writerow</code>，否者不会自动换行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件头，一般就是数据名</span></span><br><span class="line">fileHeader = [<span class="string">"name"</span>, <span class="string">"score"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 假设我们要写入的是以下两行数据</span></span><br><span class="line">d1 = [<span class="string">"Wang"</span>, <span class="string">"100"</span>]</span><br><span class="line">d2 = [<span class="string">"Li"</span>, <span class="string">"80"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入数据</span></span><br><span class="line">csv_file = open(<span class="string">"test.csv"</span>, <span class="string">"w"</span>)</span><br><span class="line">writer = csv.writer(csvFile)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入的内容都是以列表的形式传入函数</span></span><br><span class="line">writer.writerow(fileHeader)</span><br><span class="line">writer.writerow(d1)</span><br><span class="line">writer.writerow(d1)</span><br><span class="line"></span><br><span class="line">csv_file.close()</span><br></pre></td></tr></table></figure>
-
-<p>也可以直接使用<code>writerows</code>，一次性把数据放入一个list里面直接写入。</p>
-<h5 id="DictReader"><a href="#DictReader" class="headerlink" title="DictReader"></a>DictReader</h5><p>可以直接把数据读取为字典的形式，第一行一般是文件的内容描述，自动作为字典的key值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csv_file = csv.DictReader(csv_file)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="DictWriter"><a href="#DictWriter" class="headerlink" title="DictWriter"></a>DictWriter</h5><p>以字典的形式把数据写入文本。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csv_file = csv.DictWriter(csv_file, fileheader)</span><br></pre></td></tr></table></figure>
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/25/Python-%E8%AF%BB%E5%86%99CSV%E6%96%87%E6%A1%A3/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -289,7 +273,7 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://github.com/yuluo-ding" target="_blank" rel="noopener">
                 关注我</a>
         </div>
         
@@ -298,7 +282,7 @@
         <div class="level is-mobile">
             
             <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Github" href="https://github.com/ppoffice">
+                title="Github" href="https://github.com/yuluo-ding">
                 
                 <i class="fab fa-github"></i>
                 
@@ -2191,7 +2175,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="yuluo" height="28">
+                    VISION
                 
                 </a>
                 <p class="is-size-7">

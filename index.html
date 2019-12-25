@@ -86,7 +86,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="yuluo" height="28">
+                VISION
             
             </a>
         </div>
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 211 个字)
+                    1 分钟 读完 (大约 212 个字)
                 </span>
                 
                 
@@ -172,21 +172,16 @@
 <li><p>用cmd命令查看是哪个应用占用了</p>
 <p>打开cmd，然后<code>netstat -aon|findstr &quot;1080&quot;</code>，通过最后一列得到该应用的PID，</p>
 <p>然后根据PID找出是哪个应用，<code>tasklist|findstr PID</code> ，</p>
-<p>最后用任务管理器kill该应用即可。</p>
-</li>
-<li><p>使用CurrPorts软件来查看</p>
-<p><a href="http://www.nirsoft.net/utils/cports.html#DownloadLinks">下载地址</a></p>
-<p>下载后直接解压运行</p>
-<p>找到被占用的端口</p>
-<p>右键，选择 “Close Selected TCP Connections”</p>
-</li>
-<li><p>修改要用的端口</p>
-<p>例如在目录下找到<code>gui-config.json</code>文件，把其中的<code>&quot;localPort&quot; : 1080,</code>换成<code>&quot;localPort&quot; : 1090,</code>或者其余的端口，然后保存文件，重启应用。</p>
-</li>
-</ol>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/12/24/%E8%A7%A3%E5%86%B31080-%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -216,7 +211,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 344 个字)
+                    2 分钟 读完 (大约 345 个字)
                 </span>
                 
                 
@@ -231,25 +226,16 @@
         <div class="content">
             <p>简单的说：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#压缩</span></span><br><span class="line">tar -zcvf ***.tar.gz</span><br><span class="line">tar -jcvf ***.tar.bz2</span><br><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -zxvf ***.tar.gz</span><br><span class="line">tar -jxvf ***.tar.bz2</span><br></pre></td></tr></table></figure>
-
-<p>tar [-cxtzjvfpPN] 文件与目录 ….</p>
-<p>常用参数：</p>
-<p>-c ：建立一个压缩文件的参数指令(create 的意思)；</p>
-<p>-x ：解开一个压缩文件的参数指令！</p>
-<p>-t ：查看 tarfile 里面的文件！</p>
-<p>Ps: 特别注意，在参数的下达中， c/x/t 仅能存在一个,不可同时存在.</p>
-<p>-z ：是否同时具有 gzip 的属性？亦即是否需要用 gzip 压缩？</p>
-<p>-j ：是否同时具有 bzip2 的属性？亦即是否需要用 bzip2 压缩？</p>
-<p>-v ：压缩的过程中显示文件！这个常用，但不建议用在背景执行过程！</p>
-<p>-f ：使用档名，请留意，在 f 之后要立即接档名</p>
-<p>-p ：使用原文件的原来属性（属性不会依据使用者而变）</p>
-<p>-P ：可以使用绝对路径来压缩！</p>
-<p>-N ：比后面接的日期(yyyy/mm/dd)还要新的才会被打包进新建的文件中！</p>
-<p>–exclude FILE：在压缩的过程中，不要将 FILE 打包！</p>
-<p>参考 ：<a href="https://www.cnblogs.com/52linux/archive/2012/03/04/2379738.html"><a href="https://www.cnblogs.com/52linux/archive/2012/03/04/2379738.html">linux tar (打包.压缩.解压缩)命令说明 | tar如何解压文件到指定的目录？</a></a></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/12/10/Linux-tar/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -279,7 +265,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 150 个字)
+                    1 分钟 读完 (大约 151 个字)
                 </span>
                 
                 
@@ -294,25 +280,20 @@
         <div class="content">
             <p>在用 VirtualBox 安装了CentOS 7 的虚拟机之后，尝试测试用<code>ping baidu.com</code>来测试网络的连接性，提示<code>name or service not know</code>这个错误，解决办法如下：</p>
 <ol>
-<li><p>首先在<code>/etc/sysonfit/network-scripts</code>的路径下找到网卡的配置文件</p>
-</li>
-<li><p>用vi编辑配置文件，例如<code>vi ifcfg-eth0</code>，把其中的<code>ONBOOT=NO</code>改成<code>ONBOOT=yes</code></p>
-</li>
-<li><p>重启网卡<code>systemctl restart network</code></p>
-</li>
+<li>首先在<code>/etc/sysonfit/network-scripts</code>的路径下找到网卡的配置文件</li>
+<li>用vi编辑配置文件，例如<code>vi ifcfg-eth0</code>，把其中的<code>ONBOOT=NO</code>改成<code>ONBOOT=yes</code></li>
+<li>重启网卡<code>systemctl restart network</code></li>
 </ol>
-<p>如果以上还不行，则按照如下步骤：</p>
-<ol>
-<li><p>添加DNS服务器：<code>vi /etc/resolv.conf</code></p>
-</li>
-<li><p>添加<code>nameserver 114.114.114.114</code></p>
-</li>
-<li><p>保存该配置文件，重启网络服务<code>systemctl restart network</code></p>
-</li>
-</ol>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/12/03/CentOS-7-ping-baidu-com-%E6%8A%A5%E9%94%99name-or-service-not-know/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -342,7 +323,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 647 个字)
+                    4 分钟 读完 (大约 648 个字)
                 </span>
                 
                 
@@ -358,32 +339,16 @@
             <blockquote>
 <p><strong>逗号分隔值</strong>（Comma-Separated Values，<strong>CSV</strong>，有时也称为<strong>字符分隔值</strong>，因为分隔字符也可以不是逗号），其文件以纯文本形式存储表格数据（数字和文本）。纯文本意味着该文件是一个<a href="https://baike.baidu.com/item/字符/4768913">字符</a>序列，不含必须像二进制数字那样被解读的数据。CSV文件由任意数目的记录组成，记录间以某种换行符分隔；每条记录由<a href="https://baike.baidu.com/item/字段/2885972">字段</a>组成，字段间的分隔符是其它字符或字符串，最常见的是逗号或<a href="https://baike.baidu.com/item/制表符/7337607">制表符</a>。通常，所有记录都有完全相同的字段序列。通常都是纯文本文件。建议使用WORDPAD或是记事本来开启，再则先另存新档后用EXCEL开启，也是方法之一。</p>
 </blockquote>
-<p>直接创建CSV文件有两种通用的办法：</p>
-<ol>
-<li>直接用Excel新建文件，保存为<code>.csv</code>格式的文件即可</li>
-<li>用文本编辑器，例如Sublime Text新建文件，保存为<code>.csv</code>格式的文件即可</li>
-</ol>
-<p>每一行的数据是由<code>,</code>分隔</p>
-<h4 id="Python-处理CSV文档"><a href="#Python-处理CSV文档" class="headerlink" title="Python 处理CSV文档"></a>Python 处理CSV文档</h4><h5 id="读取CSV文档"><a href="#读取CSV文档" class="headerlink" title="读取CSV文档"></a>读取CSV文档</h5><p>利用Python 的CSV 库来处理对应的文档</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文件至字典</span></span><br><span class="line">csv_file = open(<span class="string">"test.csv"</span>, <span class="string">"r"</span>)</span><br><span class="line">reader = csv.reader(csv_file)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立字典</span></span><br><span class="line">result = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> reader:</span><br><span class="line">    result[item[<span class="number">0</span>]] = item[<span class="number">1</span>]</span><br><span class="line"><span class="comment"># 关闭文件</span></span><br><span class="line">csv_file.close()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-
-<p>每行数据会有一个属性：<code>line_num</code>表示行数</p>
-<p>在遍历的时候，每一行就是一个<code>list</code>,</p>
-<h5 id="写入CSV文档"><a href="#写入CSV文档" class="headerlink" title="写入CSV文档"></a>写入CSV文档</h5><p>要把数据写入CSV 的文件，可以直接把list格式的数据写入，但是需要注意的是要使用<code>writerow</code>，否者不会自动换行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件头，一般就是数据名</span></span><br><span class="line">fileHeader = [<span class="string">"name"</span>, <span class="string">"score"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 假设我们要写入的是以下两行数据</span></span><br><span class="line">d1 = [<span class="string">"Wang"</span>, <span class="string">"100"</span>]</span><br><span class="line">d2 = [<span class="string">"Li"</span>, <span class="string">"80"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入数据</span></span><br><span class="line">csv_file = open(<span class="string">"test.csv"</span>, <span class="string">"w"</span>)</span><br><span class="line">writer = csv.writer(csvFile)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入的内容都是以列表的形式传入函数</span></span><br><span class="line">writer.writerow(fileHeader)</span><br><span class="line">writer.writerow(d1)</span><br><span class="line">writer.writerow(d1)</span><br><span class="line"></span><br><span class="line">csv_file.close()</span><br></pre></td></tr></table></figure>
-
-<p>也可以直接使用<code>writerows</code>，一次性把数据放入一个list里面直接写入。</p>
-<h5 id="DictReader"><a href="#DictReader" class="headerlink" title="DictReader"></a>DictReader</h5><p>可以直接把数据读取为字典的形式，第一行一般是文件的内容描述，自动作为字典的key值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csv_file = csv.DictReader(csv_file)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="DictWriter"><a href="#DictWriter" class="headerlink" title="DictWriter"></a>DictWriter</h5><p>以字典的形式把数据写入文本。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csv_file = csv.DictWriter(csv_file, fileheader)</span><br></pre></td></tr></table></figure>
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/25/Python-%E8%AF%BB%E5%86%99CSV%E6%96%87%E6%A1%A3/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -413,7 +378,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 298 个字)
+                    2 分钟 读完 (大约 299 个字)
                 </span>
                 
                 
@@ -432,20 +397,16 @@
 <li>TWRP：官网上小米6的3.2.1</li>
 <li>安装完成后刷入了基于原生Android开源项目的ROM包（基于android 8.1.0）</li>
 </ul>
-<h3 id="准备好adb-fastboot工具"><a href="#准备好adb-fastboot工具" class="headerlink" title="准备好adb/fastboot工具"></a>准备好adb/fastboot工具</h3><p><a href="https://developer.android.com/studio/releases/platform-tools">Google官网地址</a><br><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">ADB和fastboot for Windows</a><br><a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">ADB和fastboot for macOS</a></p>
-<h3 id="下载TWRP"><a href="#下载TWRP" class="headerlink" title="下载TWRP"></a>下载TWRP</h3><p>在<a href="http://link.zhihu.com/?target=https%3A//twrp.me/Devices/">TWRP设备列表</a>找到对应的设备，然后选择一个区域下载img文件到本地</p>
-<h3 id="刷机步骤"><a href="#刷机步骤" class="headerlink" title="刷机步骤"></a>刷机步骤</h3><ol>
-<li><p>保证手机已经打开USB调试模式<br> 用<code>adb devices</code>能在输出中看到设备记录就算成功</p>
-</li>
-<li><p>用数据线连接手机和电脑，打开终端或者进入ADB目录文件下</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line">adb reboot bootloader</span><br><span class="line">fastboot flash recovery twrp.img</span><br><span class="line">fastboot boot twrp.img # 此行命令可以进TWRP的recovery，但是如果没有刷ROM就重启，那么recovery就会被覆盖</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把ROM推送到手机中，刷ROM<br> <code>adb push *.zip /sdcard</code><br> 然后在手机中操作，先三清，然后选择该ROM刷入</p>
-</li>
-</ol>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/23/%E5%B0%8F%E7%B1%B36-%E5%88%B7%E6%9C%BA%E8%AE%B0%E5%BD%95/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -475,7 +436,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 131 个字)
+                    1 分钟 读完 (大约 132 个字)
                 </span>
                 
                 
@@ -492,15 +453,16 @@
 <p>现在的网卡配置文件是：</p>
 <p><code>/etc/netplan/50-cloud-init.yaml</code></p>
 <p>采用了YAML的文件格式，设置静态IP的格式如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">network:</span></span><br><span class="line">    <span class="attr">ethernets:</span></span><br><span class="line">        <span class="attr">enp0s3:</span></span><br><span class="line">            <span class="attr">addresses:</span> <span class="string">[192.168.1.100/24]</span></span><br><span class="line">            <span class="attr">dhcp4:</span> <span class="literal">no</span></span><br><span class="line">            <span class="attr">dhcp6:</span> <span class="literal">no</span></span><br><span class="line">            <span class="attr">gateway4:</span>  <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line">            <span class="attr">nameservers:</span></span><br><span class="line">                <span class="attr">addresses:</span> <span class="string">[8.8.8.8,</span> <span class="number">9.9</span><span class="number">.9</span><span class="number">.9</span><span class="string">]</span></span><br><span class="line">    <span class="attr">version:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>保存之后，利用<code>netplan apply</code>生效</p>
-<p><code>ifconfig</code>查看是否是新的IP地址</p>
-<p>PS：</p>
-<p>基于YAML的格式要求，每一行的<code>:</code>要有空格，否则在重启的时候会报错。</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/12/Ubuntu18-%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -634,7 +596,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 261 个字)
+                    2 分钟 读完 (大约 262 个字)
                 </span>
                 
                 
@@ -649,17 +611,16 @@
         <div class="content">
             <p>如今重新命名的Android 10都已经发布了，但是针对Android Pie的Xpsoed官方版还是没有发布，据说作者去Apple工作去了？但是开源社区的好处就是有人能够实现同样的效果。</p>
 <p>这个是Elder Driver开发的非官方端口，Xposed for Android Pie。它被命名为<code>EDXposed</code>， 还需要额外安装<code>Riru Core</code>，具体步骤如下。</p>
-<ul>
-<li>下载 <a href="https://github.com/RikkaApps/Riru/releases">Riru Core</a>压缩包，放入手机</li>
-<li>下载 <a href="https://github.com/ElderDrivers/EdXposed/releases">EdXposed</a>压缩包，可以选择YAHFA，放入手机</li>
-<li>下载 <a href="https://github.com/solohsu/XposedInstaller/releases">XposedInstaller</a>的apk，并且安装</li>
-</ul>
-<p>首先需要刷入<code>Magisk</code>， 打开<code>Magisk manager</code>， 打开多功能菜单，选择模块，然后点击添加按钮，分别刷入上文下载的两个压缩包</p>
-<p>重启手机激活以上两个模块，然后打开<code>EDXposed</code>，看到已经激活了。</p>
-<p>如果没有，请卸载，重新尝试以上步骤。</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/09/10/%E5%9C%A8Android-Pie%E4%B8%AD%E5%AE%89%E8%A3%85Xposed/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -689,7 +650,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 分钟 读完 (大约 1133 个字)
+                    8 分钟 读完 (大约 1134 个字)
                 </span>
                 
                 
@@ -708,148 +669,16 @@
 </blockquote>
 <p>其中，<code>BUSINESS</code>是分类，<code>gl=ru</code>是国家的代号</p>
 <p>只要按照这个规则，直接在浏览器中访问特定的URL就那个看到对应的应用排名</p>
-<p>举例国家代码：</p>
-<ul>
-<li><a href="https://play.google.com/?gl=al">https://play.google.com/?gl=al</a> Albania</li>
-<li><a href="https://play.google.com/?gl=dz">https://play.google.com/?gl=dz</a> Algeria</li>
-<li><a href="https://play.google.com/?gl=ao">https://play.google.com/?gl=ao</a> Angola</li>
-<li><a href="https://play.google.com/?gl=ag">https://play.google.com/?gl=ag</a> Antigua and Barbuda</li>
-<li><a href="https://play.google.com/?gl=ar">https://play.google.com/?gl=ar</a> Argentina</li>
-<li><a href="https://play.google.com/?gl=am">https://play.google.com/?gl=am</a> Armenia</li>
-<li><a href="https://play.google.com/?gl=aw">https://play.google.com/?gl=aw</a> Aruba</li>
-<li><a href="https://play.google.com/?gl=au">https://play.google.com/?gl=au</a> Australia</li>
-<li><a href="https://play.google.com/?gl=at">https://play.google.com/?gl=at</a> Austria</li>
-<li><a href="https://play.google.com/?gl=az">https://play.google.com/?gl=az</a> Azerbaijan</li>
-<li><a href="https://play.google.com/?gl=bs">https://play.google.com/?gl=bs</a> Bahamas</li>
-<li><a href="https://play.google.com/?gl=bh">https://play.google.com/?gl=bh</a> Bahrain</li>
-<li><a href="https://play.google.com/?gl=bd">https://play.google.com/?gl=bd</a> Bangladesh</li>
-<li><a href="https://play.google.com/?gl=by">https://play.google.com/?gl=by</a> Belarus</li>
-<li><a href="https://play.google.com/?gl=be">https://play.google.com/?gl=be</a> Belgium</li>
-<li><a href="https://play.google.com/?gl=bz">https://play.google.com/?gl=bz</a> Belize</li>
-<li><a href="https://play.google.com/?gl=bj">https://play.google.com/?gl=bj</a> Benin</li>
-<li><a href="https://play.google.com/?gl=bo">https://play.google.com/?gl=bo</a> Bolivia</li>
-<li><a href="https://play.google.com/?gl=ba">https://play.google.com/?gl=ba</a> Bosnia and Herzegovina</li>
-<li><a href="https://play.google.com/?gl=bw">https://play.google.com/?gl=bw</a> Botswana</li>
-<li><a href="https://play.google.com/?gl=br">https://play.google.com/?gl=br</a> Brazil</li>
-<li><a href="https://play.google.com/?gl=bg">https://play.google.com/?gl=bg</a> Bulgaria</li>
-<li><a href="https://play.google.com/?gl=bf">https://play.google.com/?gl=bf</a> Burkina</li>
-<li><a href="https://play.google.com/?gl=kh">https://play.google.com/?gl=kh</a> Cambodia</li>
-<li><a href="https://play.google.com/?gl=cm">https://play.google.com/?gl=cm</a> Cameroon</li>
-<li><a href="https://play.google.com/?gl=ca">https://play.google.com/?gl=ca</a> Canada</li>
-<li><a href="https://play.google.com/?gl=cv">https://play.google.com/?gl=cv</a> Cape Verde</li>
-<li><a href="https://play.google.com/?gl=cl">https://play.google.com/?gl=cl</a> Chile</li>
-<li><a href="https://play.google.com/?gl=co">https://play.google.com/?gl=co</a> Colombia</li>
-<li><a href="https://play.google.com/?gl=cr">https://play.google.com/?gl=cr</a> Costa Rica</li>
-<li><a href="https://play.google.com/?gl=ci">https://play.google.com/?gl=ci</a> Cote d’ Ivore</li>
-<li><a href="https://play.google.com/?gl=hr">https://play.google.com/?gl=hr</a> Croatia</li>
-<li><a href="https://play.google.com/?gl=cy">https://play.google.com/?gl=cy</a> Cyprus</li>
-<li><a href="https://play.google.com/?gl=cz">https://play.google.com/?gl=cz</a> Czech Republic</li>
-<li><a href="https://play.google.com/?gl=dk">https://play.google.com/?gl=dk</a> Denmark</li>
-<li><a href="https://play.google.com/?gl=do">https://play.google.com/?gl=do</a> Dominican Republic</li>
-<li><a href="https://play.google.com/?gl=ec">https://play.google.com/?gl=ec</a> Ecuador</li>
-<li><a href="https://play.google.com/?gl=eg">https://play.google.com/?gl=eg</a> Egypt</li>
-<li><a href="https://play.google.com/?gl=sv">https://play.google.com/?gl=sv</a> El Salvador</li>
-<li><a href="https://play.google.com/?gl=ee">https://play.google.com/?gl=ee</a> Estonia</li>
-<li><a href="https://play.google.com/?gl=fj">https://play.google.com/?gl=fj</a> Fiji</li>
-<li><a href="https://play.google.com/?gl=fi">https://play.google.com/?gl=fi</a> Finland</li>
-<li><a href="https://play.google.com/?gl=fr">https://play.google.com/?gl=fr</a> France</li>
-<li><a href="https://play.google.com/?gl=ga">https://play.google.com/?gl=ga</a> Gabon</li>
-<li><a href="https://play.google.com/?gl=de">https://play.google.com/?gl=de</a> Germany</li>
-<li><a href="https://play.google.com/?gl=gh">https://play.google.com/?gl=gh</a> Ghana</li>
-<li><a href="https://play.google.com/?gl=gr">https://play.google.com/?gl=gr</a> Greece</li>
-<li><a href="https://play.google.com/?gl=gt">https://play.google.com/?gl=gt</a> Guatemala</li>
-<li><a href="https://play.google.com/?gl=gw">https://play.google.com/?gl=gw</a> Guinea-Bissau</li>
-<li><a href="https://play.google.com/?gl=ht">https://play.google.com/?gl=ht</a> Haiti</li>
-<li><a href="https://play.google.com/?gl=hn">https://play.google.com/?gl=hn</a> Honduras</li>
-<li><a href="https://play.google.com/?gl=hk">https://play.google.com/?gl=hk</a> Hong Kong</li>
-<li><a href="https://play.google.com/?gl=hu">https://play.google.com/?gl=hu</a> Hungary</li>
-<li><a href="https://play.google.com/?gl=is">https://play.google.com/?gl=is</a> Iceland</li>
-<li><a href="https://play.google.com/?gl=in">https://play.google.com/?gl=in</a> India</li>
-<li><a href="https://play.google.com/?gl=id">https://play.google.com/?gl=id</a> Indonesia</li>
-<li><a href="https://play.google.com/?gl=ie">https://play.google.com/?gl=ie</a> Ireland</li>
-<li><a href="https://play.google.com/?gl=il">https://play.google.com/?gl=il</a> Israel</li>
-<li><a href="https://play.google.com/?gl=it">https://play.google.com/?gl=it</a> Italy</li>
-<li><a href="https://play.google.com/?gl=jm">https://play.google.com/?gl=jm</a> Jamaica</li>
-<li><a href="https://play.google.com/?gl=jp">https://play.google.com/?gl=jp</a> Japan</li>
-<li><a href="https://play.google.com/?gl=jo">https://play.google.com/?gl=jo</a> Jordan</li>
-<li><a href="https://play.google.com/?gl=kz">https://play.google.com/?gl=kz</a> Kazakhstan</li>
-<li><a href="https://play.google.com/?gl=ke">https://play.google.com/?gl=ke</a> Kenya</li>
-<li><a href="https://play.google.com/?gl=kw">https://play.google.com/?gl=kw</a> Kuwait</li>
-<li><a href="https://play.google.com/?gl=kg">https://play.google.com/?gl=kg</a> Kyrgyzstan</li>
-<li><a href="https://play.google.com/?gl=la">https://play.google.com/?gl=la</a> Laos</li>
-<li><a href="https://play.google.com/?gl=lv">https://play.google.com/?gl=lv</a> Latvia</li>
-<li><a href="https://play.google.com/?gl=lb">https://play.google.com/?gl=lb</a> Lebanon</li>
-<li><a href="https://play.google.com/?gl=li">https://play.google.com/?gl=li</a> Liechtenstein</li>
-<li><a href="https://play.google.com/?gl=lt">https://play.google.com/?gl=lt</a> Lithuania</li>
-<li><a href="https://play.google.com/?gl=lu">https://play.google.com/?gl=lu</a> Luxembourg</li>
-<li><a href="https://play.google.com/?gl=mk">https://play.google.com/?gl=mk</a> Macedonia</li>
-<li><a href="https://play.google.com/?gl=my">https://play.google.com/?gl=my</a> Malaysia</li>
-<li><a href="https://play.google.com/?gl=ml">https://play.google.com/?gl=ml</a> Mali</li>
-<li><a href="https://play.google.com/?gl=mt">https://play.google.com/?gl=mt</a> Malta</li>
-<li><a href="https://play.google.com/?gl=mu">https://play.google.com/?gl=mu</a> Mauritius</li>
-<li><a href="https://play.google.com/?gl=mx">https://play.google.com/?gl=mx</a> Mexico</li>
-<li><a href="https://play.google.com/?gl=md">https://play.google.com/?gl=md</a> Moldova</li>
-<li><a href="https://play.google.com/?gl=ma">https://play.google.com/?gl=ma</a> Morocco</li>
-<li><a href="https://play.google.com/?gl=mz">https://play.google.com/?gl=mz</a> Mozambique</li>
-<li><a href="https://play.google.com/?gl=na">https://play.google.com/?gl=na</a> Namibia</li>
-<li><a href="https://play.google.com/?gl=np">https://play.google.com/?gl=np</a> Nepal</li>
-<li><a href="https://play.google.com/?gl=nl">https://play.google.com/?gl=nl</a> Netherlands</li>
-<li><a href="https://play.google.com/?gl=an">https://play.google.com/?gl=an</a> Netherlands Antilles</li>
-<li><a href="https://play.google.com/?gl=nz">https://play.google.com/?gl=nz</a> New Zealand</li>
-<li><a href="https://play.google.com/?gl=ni">https://play.google.com/?gl=ni</a> Nicaragua</li>
-<li><a href="https://play.google.com/?gl=ne">https://play.google.com/?gl=ne</a> Niger</li>
-<li><a href="https://play.google.com/?gl=ng">https://play.google.com/?gl=ng</a> Nigeria</li>
-<li><a href="https://play.google.com/?gl=no">https://play.google.com/?gl=no</a> Norway</li>
-<li><a href="https://play.google.com/?gl=om">https://play.google.com/?gl=om</a> Oman</li>
-<li><a href="https://play.google.com/?gl=pk">https://play.google.com/?gl=pk</a> Pakistan</li>
-<li><a href="https://play.google.com/?gl=pa">https://play.google.com/?gl=pa</a> Panama</li>
-<li><a href="https://play.google.com/?gl=pg">https://play.google.com/?gl=pg</a> Papua New Guinea</li>
-<li><a href="https://play.google.com/?gl=py">https://play.google.com/?gl=py</a> Paraguay</li>
-<li><a href="https://play.google.com/?gl=pe">https://play.google.com/?gl=pe</a> Peru</li>
-<li><a href="https://play.google.com/?gl=ph">https://play.google.com/?gl=ph</a> Philippines</li>
-<li><a href="https://play.google.com/?gl=pl">https://play.google.com/?gl=pl</a> Poland</li>
-<li><a href="https://play.google.com/?gl=pt">https://play.google.com/?gl=pt</a> Portugal</li>
-<li><a href="https://play.google.com/?gl=qa">https://play.google.com/?gl=qa</a> Qatar</li>
-<li><a href="https://play.google.com/?gl=ro">https://play.google.com/?gl=ro</a> Romania</li>
-<li><a href="https://play.google.com/?gl=ru">https://play.google.com/?gl=ru</a> Russia</li>
-<li><a href="https://play.google.com/?gl=rw">https://play.google.com/?gl=rw</a> Rwanda</li>
-<li><a href="https://play.google.com/?gl=sa">https://play.google.com/?gl=sa</a> Saudi Arabia</li>
-<li><a href="https://play.google.com/?gl=sn">https://play.google.com/?gl=sn</a> Senegal</li>
-<li><a href="https://play.google.com/?gl=rs">https://play.google.com/?gl=rs</a> Serbia</li>
-<li><a href="https://play.google.com/?gl=sg">https://play.google.com/?gl=sg</a> Singapore</li>
-<li><a href="https://play.google.com/?gl=sk">https://play.google.com/?gl=sk</a> Slovakia</li>
-<li><a href="https://play.google.com/?gl=si">https://play.google.com/?gl=si</a> Slovenia</li>
-<li><a href="https://play.google.com/?gl=za">https://play.google.com/?gl=za</a> South Africa</li>
-<li><a href="https://play.google.com/?gl=kr">https://play.google.com/?gl=kr</a> South Korea</li>
-<li><a href="https://play.google.com/?gl=es">https://play.google.com/?gl=es</a> Spain</li>
-<li><a href="https://play.google.com/?gl=lk">https://play.google.com/?gl=lk</a> Sri Lanka</li>
-<li><a href="https://play.google.com/?gl=se">https://play.google.com/?gl=se</a> Sweden</li>
-<li><a href="https://play.google.com/?gl=ch">https://play.google.com/?gl=ch</a> Switzerland</li>
-<li><a href="https://play.google.com/?gl=tw">https://play.google.com/?gl=tw</a> Taiwan</li>
-<li><a href="https://play.google.com/?gl=tj">https://play.google.com/?gl=tj</a> Tajikistan</li>
-<li><a href="https://play.google.com/?gl=tz">https://play.google.com/?gl=tz</a> Tanzania</li>
-<li><a href="https://play.google.com/?gl=th">https://play.google.com/?gl=th</a> Thailand</li>
-<li><a href="https://play.google.com/?gl=tg">https://play.google.com/?gl=tg</a> Togo</li>
-<li><a href="https://play.google.com/?gl=tt">https://play.google.com/?gl=tt</a> Trinidad and Tobago</li>
-<li><a href="https://play.google.com/?gl=tn">https://play.google.com/?gl=tn</a> Tunisia</li>
-<li><a href="https://play.google.com/?gl=tr">https://play.google.com/?gl=tr</a> Turkey</li>
-<li><a href="https://play.google.com/?gl=tm">https://play.google.com/?gl=tm</a> Turkmenistan</li>
-<li><a href="https://play.google.com/?gl=ug">https://play.google.com/?gl=ug</a> Uganda</li>
-<li><a href="https://play.google.com/?gl=ua">https://play.google.com/?gl=ua</a> Ukraine</li>
-<li><a href="https://play.google.com/?gl=ae">https://play.google.com/?gl=ae</a> United Arab Emirates</li>
-<li><a href="https://play.google.com/?gl=gb">https://play.google.com/?gl=gb</a> United Kingdom</li>
-<li><a href="https://play.google.com/?gl=us">https://play.google.com/?gl=us</a> United States (including Puerto Rico, American Samoa, Guam, Marshall Islands, Northern Mariana Islands, Palau and US Virgin Islands)</li>
-<li><a href="https://play.google.com/?gl=uy">https://play.google.com/?gl=uy</a> Uruguay</li>
-<li><a href="https://play.google.com/?gl=uz">https://play.google.com/?gl=uz</a> Uzbekistan</li>
-<li><a href="https://play.google.com/?gl=ve">https://play.google.com/?gl=ve</a> Venezuela</li>
-<li><a href="https://play.google.com/?gl=vn">https://play.google.com/?gl=vn</a> Vietnam</li>
-<li><a href="https://play.google.com/?gl=ye">https://play.google.com/?gl=ye</a> Yemen</li>
-<li><a href="https://play.google.com/?gl=zm">https://play.google.com/?gl=zm</a> Zambia</li>
-<li><a href="https://play.google.com/?gl=zw">https://play.google.com/?gl=zw</a> Zimbabwe</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/22/%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9C%8B%E5%85%B6%E4%BB%96%E5%9B%BD%E5%AE%B6-%E5%9C%B0%E5%8C%BA%E7%9A%84Google-Play%E6%8E%92%E5%90%8D/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -957,7 +786,7 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://github.com/yuluo-ding" target="_blank" rel="noopener">
                 关注我</a>
         </div>
         
@@ -966,7 +795,7 @@
         <div class="level is-mobile">
             
             <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Github" href="https://github.com/ppoffice">
+                title="Github" href="https://github.com/yuluo-ding">
                 
                 <i class="fab fa-github"></i>
                 
@@ -2859,7 +2688,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="yuluo" height="28">
+                    VISION
                 
                 </a>
                 <p class="is-size-7">
