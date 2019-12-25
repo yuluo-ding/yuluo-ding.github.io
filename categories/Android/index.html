@@ -177,23 +177,22 @@
             
         </h1>
         <div class="content">
-            <h3 id="小米6刷机记录">小米6刷机记录</h3><ul>
+            <h3 id="小米6刷机记录"><a href="#小米6刷机记录" class="headerlink" title="小米6刷机记录"></a>小米6刷机记录</h3><ul>
 <li>adb/fastboot工具：Minimal ADB and Fastboot</li>
 <li>刷之前的MIUI为：MIUI的稳定版</li>
 <li>TWRP：官网上小米6的3.2.1</li>
 <li>安装完成后刷入了基于原生Android开源项目的ROM包（基于android 8.1.0）</li>
 </ul>
-<h3 id="准备好adb/fastboot工具">准备好adb/fastboot工具</h3><p><a href="https://developer.android.com/studio/releases/platform-tools" target="_blank" rel="noopener">Google官网地址</a><br><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">ADB和fastboot for Windows</a><br><a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip" target="_blank" rel="noopener">ADB和fastboot for macOS</a></p>
-<h3 id="下载TWRP">下载TWRP</h3><p>在<a href="http://link.zhihu.com/?target=https%3A//twrp.me/Devices/" target="_blank" rel="noopener">TWRP设备列表</a>找到对应的设备，然后选择一个区域下载img文件到本地</p>
-<h3 id="刷机步骤">刷机步骤</h3><ol>
+<h3 id="准备好adb-fastboot工具"><a href="#准备好adb-fastboot工具" class="headerlink" title="准备好adb/fastboot工具"></a>准备好adb/fastboot工具</h3><p><a href="https://developer.android.com/studio/releases/platform-tools">Google官网地址</a><br><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">ADB和fastboot for Windows</a><br><a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">ADB和fastboot for macOS</a></p>
+<h3 id="下载TWRP"><a href="#下载TWRP" class="headerlink" title="下载TWRP"></a>下载TWRP</h3><p>在<a href="http://link.zhihu.com/?target=https%3A//twrp.me/Devices/">TWRP设备列表</a>找到对应的设备，然后选择一个区域下载img文件到本地</p>
+<h3 id="刷机步骤"><a href="#刷机步骤" class="headerlink" title="刷机步骤"></a>刷机步骤</h3><ol>
 <li><p>保证手机已经打开USB调试模式<br> 用<code>adb devices</code>能在输出中看到设备记录就算成功</p>
 </li>
 <li><p>用数据线连接手机和电脑，打开终端或者进入ADB目录文件下</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line">adb reboot bootloader</span><br><span class="line">fastboot flash recovery twrp.img</span><br><span class="line">fastboot boot twrp.img # 此行命令可以进TWRP的recovery，但是如果没有刷ROM就重启，那么recovery就会被覆盖</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol start="3">
-<li>把ROM推送到手机中，刷ROM<br> <code>adb push *.zip /sdcard</code><br> 然后在手机中操作，先三清，然后选择该ROM刷入</li>
+<li><p>把ROM推送到手机中，刷ROM<br> <code>adb push *.zip /sdcard</code><br> 然后在手机中操作，先三清，然后选择该ROM刷入</p>
+</li>
 </ol>
 
         </div>
@@ -243,9 +242,9 @@
             <p>如今重新命名的Android 10都已经发布了，但是针对Android Pie的Xpsoed官方版还是没有发布，据说作者去Apple工作去了？但是开源社区的好处就是有人能够实现同样的效果。</p>
 <p>这个是Elder Driver开发的非官方端口，Xposed for Android Pie。它被命名为<code>EDXposed</code>， 还需要额外安装<code>Riru Core</code>，具体步骤如下。</p>
 <ul>
-<li>下载 <a href="https://github.com/RikkaApps/Riru/releases" target="_blank" rel="noopener">Riru Core</a>压缩包，放入手机</li>
-<li>下载 <a href="https://github.com/ElderDrivers/EdXposed/releases" target="_blank" rel="noopener">EdXposed</a>压缩包，可以选择YAHFA，放入手机</li>
-<li>下载 <a href="https://github.com/solohsu/XposedInstaller/releases" target="_blank" rel="noopener">XposedInstaller</a>的apk，并且安装</li>
+<li>下载 <a href="https://github.com/RikkaApps/Riru/releases">Riru Core</a>压缩包，放入手机</li>
+<li>下载 <a href="https://github.com/ElderDrivers/EdXposed/releases">EdXposed</a>压缩包，可以选择YAHFA，放入手机</li>
+<li>下载 <a href="https://github.com/solohsu/XposedInstaller/releases">XposedInstaller</a>的apk，并且安装</li>
 </ul>
 <p>首先需要刷入<code>Magisk</code>， 打开<code>Magisk manager</code>， 打开多功能菜单，选择模块，然后点击添加按钮，分别刷入上文下载的两个压缩包</p>
 <p>重启手机激活以上两个模块，然后打开<code>EDXposed</code>，看到已经激活了。</p>
@@ -298,7 +297,7 @@
             <p>在使用Android Studio编译Demo的时候, 提示<code>No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android</code>错误</p>
 <p>这个其实是Android的SDK里面缺少一个编译工具</p>
 <p>解决办法:</p>
-<p>从<a href="https://developer.android.com/ndk/downloads/?hl=zh-en" target="_blank" rel="noopener">NDK</a>下载对应平台的NDK</p>
+<p>从<a href="https://developer.android.com/ndk/downloads/?hl=zh-en">NDK</a>下载对应平台的NDK</p>
 <p>解压, 找到<code>ndk-bundle</code>成长文件夹, 找到<code>toolchains</code>下的mips类似的文件夹</p>
 <p>最后把上面的文件夹复制到对应SDK的<code>android-sdk-&gt;ndk-bundle-&gt;toolchains</code>下面.</p>
 
@@ -348,7 +347,8 @@
         <div class="content">
             <p>​    再用 Android Studio 编辑项目的时候，会出现如下错误。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.OutOfMemoryError: GC overhead <span class="built_in">limit</span> exceeded</span><br></pre></td></tr></table></figure>
-<p>​    根据 Sun 的描述：<br>    <figure class="highlight mizar"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"if too much time <span class="keyword">is</span> <span class="keyword">being</span> spent <span class="keyword">in</span> garbage collection: if more than 98% <span class="keyword">of</span> the total time <span class="keyword">is</span> spent <span class="keyword">in</span> garbage collection <span class="keyword">and</span> less than 2% <span class="keyword">of</span> the heap <span class="keyword">is</span> recovered, an OutOfMemoryError will <span class="keyword">be</span> thrown."</span><br></pre></td></tr></table></figure></p>
+
+<p>​    根据 Sun 的描述：<br>    <figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">"if too much time is being spent in garbage collection: if more than 98% of the total time is spent in garbage collection and less than 2% of the heap is recovered, an OutOfMemoryError will be thrown."</span></span><br></pre></td></tr></table></figure></p>
         </div>
         
         
@@ -401,7 +401,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="如何自学Android">如何自学Android</h4><p><a href="(http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=402135493&amp;idx=1&amp;sn=c2e040f95551082cbe2bdf7182dc3e9f#rd">如何自学Android编程？</a></p>
+            <h4 id="如何自学Android"><a href="#如何自学Android" class="headerlink" title="如何自学Android"></a>如何自学Android</h4><p><a href="(http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=402135493&idx=1&sn=c2e040f95551082cbe2bdf7182dc3e9f#rd">如何自学Android编程？</a></p>
 
         </div>
         
@@ -447,7 +447,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="Android_开发最佳实践">Android 开发最佳实践</h4><p>这是Github上敢于Android开发的一些简要。<br>
+            <h4 id="Android-开发最佳实践"><a href="#Android-开发最佳实践" class="headerlink" title="Android 开发最佳实践"></a>Android 开发最佳实践</h4><p>这是Github上敢于Android开发的一些简要。</p>
         </div>
         
         
@@ -500,7 +500,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="Gson的使用">Gson的使用</h4><p><a href="http://www.cnblogs.com/Jude95/p/Mr_Dentist.html" target="_blank" rel="noopener">Gson的使用</a></p>
+            <h4 id="Gson的使用"><a href="#Gson的使用" class="headerlink" title="Gson的使用"></a>Gson的使用</h4><p><a href="http://www.cnblogs.com/Jude95/p/Mr_Dentist.html">Gson的使用</a></p>
 
         </div>
         
@@ -546,7 +546,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="Material_Design中文版">Material Design中文版</h4><p><a href="http://wiki.jikexueyuan.com/project/material-design/material-design-intro/introduction.html" target="_blank" rel="noopener">Material Design中文版</a></p>
+            <h4 id="Material-Design中文版"><a href="#Material-Design中文版" class="headerlink" title="Material Design中文版"></a>Material Design中文版</h4><p><a href="http://wiki.jikexueyuan.com/project/material-design/material-design-intro/introduction.html">Material Design中文版</a></p>
 
         </div>
         
@@ -592,7 +592,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="Android6-0_新特性详解">Android6.0 新特性详解</h4><p><a href="http://leanote.com/blog/post/561658f938f41126b2000298?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="noopener">Android6.0 新特性详解</a></p>
+            <h4 id="Android6-0-新特性详解"><a href="#Android6-0-新特性详解" class="headerlink" title="Android6.0 新特性详解"></a>Android6.0 新特性详解</h4><p><a href="http://leanote.com/blog/post/561658f938f41126b2000298?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io">Android6.0 新特性详解</a></p>
 
         </div>
         
@@ -638,7 +638,7 @@
             
         </h1>
         <div class="content">
-            <p>####Android中的Context解释<br>
+            <p>####Android中的Context解释</p>
         </div>
         
         

@@ -170,19 +170,26 @@
             <p>如果要在Linux服务器端一直运行一个Python脚本，当然就想到了在命令后面加&amp;符号。</p>
 <p>例如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python /data/python/server.py &gt;python.log &amp;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
+
 <p>​    1、 &gt; 表示把标准输出（STDOUT）重定向到 那个文件，这里重定向到了<code>python.log</code>。</p>
 <p>​         2、 &amp; 表示在后台执行脚本。这样可以到达目的，但是，我们退出shell窗口的时候，必须用exit命令来退出，否则，                          退出之后，该进程也会随着shell的消失而消失（退出、关闭）    </p>
 <p>使用nohup(not hang up)：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nohup python /data/python/server.py &gt; python.log3 <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
+
 <p>​    1、1是标准输出（STDOUT）的文件描述符，2是标准错误（STDERR）的文件描述符</p>
 <p>​     1&gt; python.log 简化为 &gt; python.log，表示把标准输出重定向到python.log这个文件</p>
 <p>​    2、2&gt;&amp;1 表示把标准错误重定向到标准输出，这里&amp;1表示标准输出，为什么需要将标准错误重定向到标准输出的原因，是因为标准错误没有缓冲区，而STDOUT有。​这就会导致  commond &gt; python.log  2&gt; python.log 文件python.log被两次打开，而STDOUT和 STDERR将会竞争覆盖，这肯定不是我门想要的</p>
 <p>​    3、好了，我们现在可以直接关闭shell窗口（我用的是SecureCRT，用的比较多的还有Xshell），而不用再输入exit这个命令来退出shell了</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux|grep python</span><br><span class="line">tomener <span class="number">1885</span>  <span class="number">0.1</span>  <span class="number">0.4</span>  <span class="number">13120</span>  <span class="number">4528</span> pts/<span class="number">0</span>    S    <span class="number">15</span>:<span class="number">48</span>   <span class="number">0</span>:<span class="number">00</span> python /data/python/server.py</span><br><span class="line">tomener <span class="number">1887</span>  <span class="number">0.0</span>  <span class="number">0.0</span>   <span class="number">5980</span>   <span class="number">752</span> pts/<span class="number">0</span>    S+   <span class="number">15</span>:<span class="number">48</span>   <span class="number">0</span>:<span class="number">00</span> grep python</span><br></pre></td></tr></table></figure>
+
 <p>​    现在当我们直接关闭shell窗口，再连接上服务器，查看Python的进程，发现进程还在,但是，在python运行中却查看不到输出！</p>
 <p>​    因为：Python的输出有缓冲，导致python.log3并不能够马上看到输出。使用<code>-u</code>参数，使得python不启用缓冲。所以改正命令，就可以正常使用了。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nohup python -u test.py &gt; out.log <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
+
+
+
 
         </div>
         

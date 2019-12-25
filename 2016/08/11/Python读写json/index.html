@@ -167,16 +167,21 @@
             
         </h1>
         <div class="content">
-            <h4 id="读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json-load">读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用<code>json.load</code></h4><a id="more"></a>
+            <h4 id="读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json-load"><a href="#读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json-load" class="headerlink" title="读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用json.load"></a>读写中文的json数据，可以用Python中的json库来进行操作。读取可以使用<code>json.load</code></h4><a id="more"></a>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = file(path)</span><br><span class="line">data = json.load(f)</span><br></pre></td></tr></table></figure>
+
 <p>json是被载入到一个dict类型的object对象中。</p>
 <p>使用<code>json.dump</code>可以输出json。不过输出的文本不是中文而是转换为utf-8的格式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output = json.dump(jsonData,targetFile,ensure_ascii=<span class="keyword">False</span>,indent=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output = json.dump(jsonData,targetFile,ensure_ascii=<span class="literal">False</span>,indent=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
 <p>输出中文的json。通过使用 ensure_ascii=False，输出原有的语言文字。indent参数是缩进数量。</p>
 <p>如果把上文的String直接写入文件可能会出错，一般是在Python2.7的版本出现：</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnicodeEncodeError: <span class="symbol">'ascii</span>' codec can<span class="symbol">'t</span> encode characters <span class="keyword">in</span> position <span class="number">1</span>-<span class="number">9</span>: ordinal <span class="keyword">not</span> <span class="keyword">in</span> <span class="keyword">range</span>(<span class="number">128</span>)</span><br></pre></td></tr></table></figure>
+
 <p>解决的办法是在输出的时候进行编码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"><span class="keyword">with</span> codecs.open(path,<span class="string">'w'</span>,<span class="string">'utf-8'</span>) <span class="keyword">as</span> w:</span><br><span class="line">    <span class="comment">#write to w</span></span><br></pre></td></tr></table></figure>
+
 
         </div>
         

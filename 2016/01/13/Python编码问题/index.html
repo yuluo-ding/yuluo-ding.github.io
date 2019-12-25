@@ -167,7 +167,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="Python编码的一点小问题">Python编码的一点小问题</h4><a id="more"></a>
+            <h4 id="Python编码的一点小问题"><a href="#Python编码的一点小问题" class="headerlink" title="Python编码的一点小问题"></a>Python编码的一点小问题</h4><a id="more"></a>
 <p><code>unicode</code>是一个字符集，它包含了（理论上）所有可能出现的文字和符号，每个符号都有一个对应的unicode值，叫做码点，对特定字符来说，这个码点是唯一，固定的<br><code>utf-xx</code>（比如utf-8，utf-16，utf-32等）是<code>unicode</code>码点的一种特定的编码方式，因为码点最终要以某种形式存在于内存或者文件中，所以必须指定一种编码方式来表示某个码点<br>同一个码点，用不同的编码方式，得到的结果是不同的<br><code>ASCII</code>编码和<code>Unicode</code>编码的区别：<code>ASCII</code>编码是1个字节，而<code>Unicode</code>编码通常是2个字节。而utf-16跟utf-8是平级的概念——都是<code>Unicode</code>的某种编码方式<br><code>gbk</code>，规定了（理论上）每个汉字在内存或者文件中的编码方式<br>而Unicode可以认为只是字符集，不限定编码规则<br>只是<code>gbk</code>和<code>utf-8</code>的前256个字符，都保持跟<code>ASCII</code>兼容</p>
 <p>Python 2.x里</p>
 <blockquote>

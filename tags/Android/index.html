@@ -179,7 +179,7 @@
             <p>在使用Android Studio编译Demo的时候, 提示<code>No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android</code>错误</p>
 <p>这个其实是Android的SDK里面缺少一个编译工具</p>
 <p>解决办法:</p>
-<p>从<a href="https://developer.android.com/ndk/downloads/?hl=zh-en" target="_blank" rel="noopener">NDK</a>下载对应平台的NDK</p>
+<p>从<a href="https://developer.android.com/ndk/downloads/?hl=zh-en">NDK</a>下载对应平台的NDK</p>
 <p>解压, 找到<code>ndk-bundle</code>成长文件夹, 找到<code>toolchains</code>下的mips类似的文件夹</p>
 <p>最后把上面的文件夹复制到对应SDK的<code>android-sdk-&gt;ndk-bundle-&gt;toolchains</code>下面.</p>
 
@@ -228,19 +228,16 @@
         </h1>
         <div class="content">
             <p>绝大多数国家，主要市场是Google Play，部分国家有一些第三方市场。<br>通用的商店：Aptoide、Mobango、Mobogenie</p>
-<h5 id="美洲">美洲</h5><p>美国： Google Play （主要）<br>​             Amazon Appstore<br>​             GetJar<br>​             AppBrain<br>​             SlideME (slide Me会在超过两千万的不同的OEM APP STORE上预安装)</p>
+<h5 id="美洲"><a href="#美洲" class="headerlink" title="美洲"></a>美洲</h5><p>美国： Google Play （主要）<br>​             Amazon Appstore<br>​             GetJar<br>​             AppBrain<br>​             SlideME (slide Me会在超过两千万的不同的OEM APP STORE上预安装)</p>
 <p>巴西： 1.Mobo Robo market MoboRobo - The Android Smartphone PC Manager. Free for Life!<br>​             2.F-Droid F-Droid | Free and Open Source Android App Repository</p>
 <p>墨西哥 Google Play<br>阿根廷 Google Play<br>哥伦比亚 Google Play<br>加拿大 Google Play</p>
-<h5 id="亚洲">亚洲</h5><p>印度 Google Play<br>泰国 Google Play<br>越南 越南大部分Market并不提供自己的下载，而是直接指向Google Play链接</p>
+<h5 id="亚洲"><a href="#亚洲" class="headerlink" title="亚洲"></a>亚洲</h5><p>印度 Google Play<br>泰国 Google Play<br>越南 越南大部分Market并不提供自己的下载，而是直接指向Google Play链接</p>
 <p>印尼： 1. Jalan Tikus<br>​             2. Gudang Aplikasi<br>​             3.TemanDev<br>​             4. WePlay</p>
 <p>韩国：SK T-Store,<br>​            Naver NStore,<br>​            APPZIL,olleh Market<br>​            Sumsang Apps会在超过1亿的Galaxy智能机上预安装</p>
-<h5 id="欧洲">欧洲</h5><p>俄罗斯： 1.Yandex: Yandex.Store<br>​                 2. Androidpit: Новости, игры и приложения для Android<br>​                 3. Все для Андроид. Cкачать лучшие приложения для Андроид</p>
-<p>意大利： 1.Androidpit Tutte le applicazioni per Android AndroidPIT<br>2.Vshare vShare Android Market: Free download Android Apps &amp; Best Android Apk games for Android tablet and mobilephones<br>3.appbrain AppBrain App Market (Android)<br>4.softonic . <a href="http://best-apps-market.softonic.it/android" target="_blank" rel="noopener">http://best-apps-market.softonic.it/android</a></p>
+<h5 id="欧洲"><a href="#欧洲" class="headerlink" title="欧洲"></a>欧洲</h5><p>俄罗斯： 1.Yandex: Yandex.Store<br>​                 2. Androidpit: Новости, игры и приложения для Android<br>​                 3. Все для Андроид. Cкачать лучшие приложения для Андроид</p>
+<p>意大利： 1.Androidpit Tutte le applicazioni per Android AndroidPIT<br>2.Vshare vShare Android Market: Free download Android Apps &amp; Best Android Apk games for Android tablet and mobilephones<br>3.appbrain AppBrain App Market (Android)<br>4.softonic . <a href="http://best-apps-market.softonic.it/android">http://best-apps-market.softonic.it/android</a></p>
 <p>英国 Google Play</p>
-<p>德国： 1.avira app store Avira AppStore<br>2.9 apps Free Android Apps Download<br>3.Apk4fun APK4Fun - Download APK for Fun Android Apps &amp; Games<br>4.Androidpit Alle Android-Apps &amp; Android-Spiele aus dem Google Play Store AndroidPIT</p>
-<ol start="5">
-<li>goodereader Android App Store &amp; Blackberry App Store</li>
-</ol>
+<p>德国： 1.avira app store Avira AppStore<br>2.9 apps Free Android Apps Download<br>3.Apk4fun APK4Fun - Download APK for Fun Android Apps &amp; Games<br>4.Androidpit Alle Android-Apps &amp; Android-Spiele aus dem Google Play Store AndroidPIT<br>5. goodereader Android App Store &amp; Blackberry App Store</p>
 <p>芬兰 Google Play</p>
 <p>法国： 1. 1 mobile market 1Mobile Market<br>2.androidpit Tout sur Android: Nouveautés, applications, tests, astuces, forum &amp; communauté</p>
 <p>波兰 Google Play<br>土耳其 Google Play<br>西班牙 Google Play</p>
@@ -291,7 +288,8 @@
         <div class="content">
             <p>Andorid O上的感叹号看着确实烦人，只要运行以下命令就好。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure>
-<h3 id="7-0-7-1-0">7.0-7.1.0</h3><p>需要服务器支持https</p>
+
+<h3 id="7-0-7-1-0"><a href="#7-0-7-1-0" class="headerlink" title="7.0-7.1.0"></a>7.0-7.1.0</h3><p>需要服务器支持https</p>
 <p>或者使用命令</p>
 <p><code>adb shell &quot;settings put global captive_portal_use_https 0&quot;</code></p>
 <p>禁用https即可。</p>
@@ -299,16 +297,18 @@
 <p><code>adb shell &quot;settings put global captive_portal_use_https 1&quot;</code></p>
 <p>或者</p>
 <p><code>adb shell &quot;settings delete global captive_portal_use_https&quot;</code></p>
-<h3 id="7-1-1">7.1.1</h3><p> 从7.1.1开始，检测用的服务器地址储存格式发生了变化，改为了：</p>
+<h3 id="7-1-1"><a href="#7-1-1" class="headerlink" title="7.1.1"></a>7.1.1</h3><p> 从7.1.1开始，检测用的服务器地址储存格式发生了变化，改为了：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getCaptivePortalServerHttpsUrl</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getSetting(context, Settings.Global.CAPTIVE_PORTAL_HTTPS_URL, DEFAULT_HTTPS_URL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>以及</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getCaptivePortalServerHttpUrl</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getSetting(context, Settings.Global.CAPTIVE_PORTAL_HTTP_URL, DEFAULT_HTTP_URL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>可以看到，系统不会自动加入”generate_204″的后缀了，这意味着url可以设计的更加灵活，同时也意味着在设置的时候需要填入完整的url：</p>
-<p><code>adb shell `</code>“settings put global captive_portal_https_url <a href="https://www.noisyfox.cn/generate_204&quot;`" target="_blank" rel="noopener">https://www.noisyfox.cn/generate_204&quot;`</a></p>
+<p><code>adb shell ``&quot;settings put global captive_portal_https_url https://www.noisyfox.cn/generate_204&quot;</code></p>
 <p>当然如果只有http的话，可以执行：</p>
 <p><code>adb shell &quot;settings put global captive_portal_use_https 0&quot;</code></p>
 <p><code>adb shell &quot;settings put global captive_portal_http_url http://www.noisyfox.cn/generate_204&quot;</code></p>
-<h3 id="7-1-2">7.1.2</h3><p>自7.1.2（开始？），”captive_portal_detection_enabled”设置已被废弃，现在改为了”captive_portal_mode”选项，该选项可设置为以下3种值：</p>
+<h3 id="7-1-2"><a href="#7-1-2" class="headerlink" title="7.1.2"></a>7.1.2</h3><p>自7.1.2（开始？），”captive_portal_detection_enabled”设置已被废弃，现在改为了”captive_portal_mode”选项，该选项可设置为以下3种值：</p>
 <ul>
 <li>0：彻底禁用检测(Don’t attempt to detect captive portals.)</li>
 <li>1：检测到需要登录则弹窗提醒（默认值）(When detecting a captive portal, display a notification that prompts the user to sign in.)</li>

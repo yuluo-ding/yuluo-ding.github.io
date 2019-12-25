@@ -169,8 +169,10 @@
         <div class="content">
             <p>在VPS 中, 有时vi 打开一个文件中, 中文会显示乱码, 用locale 查看如下, </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ locale</span><br><span class="line">LANG=en_US.UTF-8</span><br><span class="line">LANGUAGE=en_US.UTF-8</span><br><span class="line">LC_CTYPE="en_US.UTF-8"</span><br><span class="line">LC_NUMERIC="en_US.UTF-8"</span><br><span class="line">LC_TIME="en_US.UTF-8"</span><br><span class="line">LC_COLLATE="en_US.UTF-8"</span><br><span class="line">LC_MONETARY="en_US.UTF-8"</span><br><span class="line">LC_MESSAGES="en_US.UTF-8"</span><br><span class="line">LC_PAPER="en_US.UTF-8"</span><br><span class="line">LC_NAME="en_US.UTF-8"</span><br><span class="line">LC_ADDRESS="en_US.UTF-8"</span><br><span class="line">LC_TELEPHONE="en_US.UTF-8"</span><br><span class="line">LC_MEASUREMENT="en_US.UTF-8"</span><br><span class="line">LC_IDENTIFICATION="en_US.UTF-8"</span><br><span class="line">LC_ALL=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+
 <p>其实vi中输入中文乱码与上述系统语言编码无关，是vi自身的环境变量设置出了问题, 解决办法如下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~ vi .viminfo  # ubuntu 18</span><br><span class="line">encoding=latin1#修改成下面</span><br><span class="line">encoding=utf-8</span><br></pre></td></tr></table></figure>
+
 
         </div>
         

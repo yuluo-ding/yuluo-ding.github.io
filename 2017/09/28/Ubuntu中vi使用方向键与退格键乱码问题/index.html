@@ -170,11 +170,13 @@
             <p>在Ubuntu中 使用方向键与退格键会出现ABCD等字母。</p>
 <p>主要有两个解决方法。</p>
 <a id="more"></a>
+
 <p><strong>方案一：</strong></p>
 <p>可以安装vim full版本，在full版本下键盘正常，安装好后同样使用vi命令。</p>
 <p>安装vim：</p>
 <p>ubuntu预装的是vim tiny版本，而需要的是vim full版本。执行下面的语句安装vim full版本：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">sudo apt-get remove vim-common</span></span><br><span class="line"><span class="meta">$</span><span class="bash">sudo apt-get install vim</span></span><br></pre></td></tr></table></figure>
+
 <p>这样就行了，vim是一款优秀的软件，可以在运用中体会到。</p>
 <p><strong>方案二：</strong></p>
 <p>在vi命令行使用命令“：set nocompatible”，就是设置vi不使用兼容模式。</p>

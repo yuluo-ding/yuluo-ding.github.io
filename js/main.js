@@ -1,204 +1,154 @@
-require([], function (){
-
-    var isMobileInit = false;
-    var loadMobile = function(){
-        require([yiliaConfig.rootUrl + 'js/mobile.js'], function(mobile){
-            mobile.init();
-            isMobileInit = true;
-        })
-    }
-    var isPCInit = false;
-    var loadPC = function(){
-        require([yiliaConfig.rootUrl + 'js/pc.js'], function(pc){
-            pc.init();
-            isPCInit = true;
-        })
-    }
-
-    var browser = {
-        versions: function() {
-        var u = window.navigator.userAgent;
-        return {
-            trident: u.indexOf('Trident') > -1, //IE内核
-            presto: u.indexOf('Presto') > -1, //opera内核
-            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-            iPad: u.indexOf('iPad') > -1, //是否为iPad
-            webApp: u.indexOf('Safari') == -1 ,//是否为web应用程序，没有头部与底部
-            weixin: u.indexOf('MicroMessenger') == -1 //是否为微信浏览器
-            };
-        }()
-    }
-
-    $(window).bind("resize", function() {
-        if (isMobileInit && isPCInit) {
-            $(window).unbind("resize");
-            return;
-        }
-        var w = $(window).width();
-        if (w >= 700) {
-            loadPC();
-        } else {
-            loadMobile();
+(function ($) {
+    $('.article img:not(".not-gallery-item")').each(function () {
+        // wrap images with link and add caption if possible
+        if ($(this).parent('a').length === 0) {
+            $(this).wrap('<a class="gallery-item" href="' + $(this).attr('src') + '"></a>');
+            if (this.alt) {
+                $(this).after('<div class="has-text-centered is-size-6 has-text-grey caption">' + this.alt + '</div>');
+            }
         }
     });
 
-    if(!!browser.versions.mobile || $(window).width() < 800){
-        loadMobile();
-    } else {
-        loadPC();
+    if (typeof (moment) === 'function') {
+        $('.article-meta time').each(function () {
+            $(this).text(moment($(this).attr('datetime')).fromNow());
+        });
     }
 
-    resetTags = function(){
-        var tags = $(".tagcloud a");
-        for(var i = 0; i < tags.length; i++){
-            var num = Math.floor(Math.random()*7);
-            tags.eq(i).addClass("color" + num);
+    $('.article > .content > table').each(function () {
+        if ($(this).width() > $(this).parent().width()) {
+            $(this).wrap('<div class="table-overflow"></div>');
         }
-        $(".article-category a:nth-child(-n+2)").attr("class", "color0");
-    }
+    });
 
-    // fancyBox
-    if(!!yiliaConfig.fancybox){
-        require([yiliaConfig.fancybox_js], function(pc){
-            var isFancy = $(".isFancy");
-            if(isFancy.length != 0){
-                var imgArr = $(".article-inner img");
-                for(var i=0,len=imgArr.length;i<len;i++){
-                    var src = imgArr.eq(i).attr("src");
-                    var title = imgArr.eq(i).attr("alt");
-                    if(typeof(title) == "undefined"){
-                        var title = imgArr.eq(i).attr("title");
-                    }
-                    var width = imgArr.eq(i).attr("width");
-                    var height = imgArr.eq(i).attr("height");
-                    imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' width="+width+" height="+height+" title='"+title+"' alt='"+title+"'></a>");
-                }
-                $(".article-inner .fancy-ctn").fancybox({ type: "image" });
-            }
-        })
-    }
-
-    // Animate on Homepage
-    if(!!yiliaConfig.animate) {
-        if(!!yiliaConfig.isHome) {
-            require([yiliaConfig.scrollreveal], function (ScrollReveal) {
-                var animationNames = [
-                "pulse", "fadeIn","fadeInRight", "flipInX", "lightSpeedIn","rotateInUpLeft", "slideInUp","zoomIn",
-                ],
-                len = animationNames.length,
-                randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
-
-                // Fallback (CSS3 keyframe, requestAnimationFrame)
-                if (!window.requestAnimationFrame) {
-                    $('.body-wrap > article').css({opacity: 1});
-                    if (navigator.userAgent.match(/Safari/i)) {
-                        function showArticle(){
-                            $(".article").each(function(){
-                                if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
-                                    $(this).removeClass("hidden").addClass("show");
-                                    $(this).addClass("is-hiddened");
-                                } else {
-                                    if(!$(this).hasClass("is-hiddened")) {
-                                        $(this).addClass("hidden");
-                                    }
-                                }
-                            })
-                        }
-                        $(window).on('scroll', function(){
-                            showArticle();
-                        });
-                        showArticle();
-                    }
-                    return;
-                }
-
-                var animateScope = ".body-wrap > article";
-                var $firstArticle = $(".body-wrap > article:first-child");
-                if ($firstArticle.height() > $(window).height()) {
-                    var animateScope = ".body-wrap > article:not(:first-child)";
-                    $firstArticle.css({opacity: 1});
-                }
-                ScrollReveal({
-                    duration: 0,
-                    afterReveal: function (domEl) {
-                        $(domEl).addClass('animated ' + randomAnimationName).css({opacity: 1})
-                    }
-                }).reveal(animateScope);
-            })
+    function adjustNavbar() {
+        const navbarWidth = $('.navbar-main .navbar-start').outerWidth() + $('.navbar-main .navbar-end').outerWidth();
+        if ($(document).outerWidth() < navbarWidth) {
+            $('.navbar-main .navbar-menu').addClass('is-flex-start');
         } else {
-            $('.body-wrap > article').css({opacity: 1});
+            $('.navbar-main .navbar-menu').removeClass('is-flex-start');
+        }
+    }
+    adjustNavbar();
+    $(window).resize(adjustNavbar);
+
+    $('figure.highlight table').wrap('<div class="highlight-body">');
+    if (typeof (IcarusThemeSettings) !== 'undefined' &&
+        typeof (IcarusThemeSettings.article) !== 'undefined' &&
+        typeof (IcarusThemeSettings.article.highlight) !== 'undefined') {
+
+        $('figure.highlight').addClass('hljs');
+        $('figure.highlight .code .line span').each(function () {
+            const classes = $(this).attr('class').split(/\s+/);
+            if (classes.length === 1) {
+                $(this).addClass('hljs-' + classes[0]);
+                $(this).removeClass(classes[0]);
+            }
+        });
+
+        if (typeof (ClipboardJS) !== 'undefined' && IcarusThemeSettings.article.highlight.clipboard) {
+            $('figure.highlight').each(function () {
+                var id = 'code-' + Date.now() + (Math.random() * 1000 | 0);
+                var button = '<a href="javascript:;" class="copy" title="Copy" data-clipboard-target="#' + id + ' .code"><i class="fas fa-copy"></i></a>';
+                $(this).attr('id', id);
+                if ($(this).find('figcaption').length) {
+                    $(this).find('figcaption').prepend(button);
+                } else {
+                    $(this).prepend('<figcaption>' + button + '</figcaption>');
+                }
+            });
+            new ClipboardJS('.highlight .copy');
+        }
+        var fold = IcarusThemeSettings.article.highlight.fold;
+        if (fold.trim()) {
+            var button = '<span class="fold">' + (fold === 'unfolded' ? '<i class="fas fa-angle-down"></i>' : '<i class="fas fa-angle-right"></i>') + '</span>';
+            $('figure.highlight').each(function () {
+                if ($(this).find('figcaption').length) {
+                    $(this).find('figcaption').prepend(button);
+                } else {
+                    $(this).prepend('<figcaption>' + button + '</figcaption>');
+                }
+            });
+
+            function toggleFold(codeBlock, isFolded) {
+                var $toggle = $(codeBlock).find('.fold i');
+                !isFolded ? $(codeBlock).removeClass('folded') : $(codeBlock).addClass('folded');
+                !isFolded ? $toggle.removeClass('fa-angle-right') : $toggle.removeClass('fa-angle-down');
+                !isFolded ? $toggle.addClass('fa-angle-down') : $toggle.addClass('fa-angle-right');
+            }
+
+            $('figure.highlight').each(function () {
+                toggleFold(this, fold === 'folded');
+            });
+            $('figure.highlight figcaption .fold').click(function () {
+                var $code = $(this).closest('figure.highlight');
+                toggleFold($code.eq(0), !$code.hasClass('folded'));
+            });
         }
     }
 
-    // TOC
-    if (yiliaConfig.toc) {
-        require(['toc'], function(){ })
-    }
+    var $toc = $('#toc');
+    if ($toc.length > 0) {
+        var $mask = $('<div>');
+        $mask.attr('id', 'toc-mask');
 
-    // Random Color 边栏顶部随机颜色
-    var colorList = ["#6da336", "#ff945c", "#66CC66", "#99CC99", "#CC6666", "#76becc", "#c99979", "#918597", "#4d4d4d"];
-    var id = Math.ceil(Math.random()*(colorList.length-1));
-    // PC
-    $("#container .left-col .overlay").css({"background-color": colorList[id],"opacity": .3});
-    // Mobile
-    $("#container #mobile-nav .overlay").css({"background-color": colorList[id],"opacity": .7});
+        $('body').append($mask);
 
-    // Table
-    $("table").wrap("<div class='table-area'></div>");
-
-    // Hide Comment Button
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
+        function toggleToc() {
+            $toc.toggleClass('is-active');
+            $mask.toggleClass('is-active');
         }
-    })
 
-    // Hide Labels
-    if(yiliaConfig.isArchive || yiliaConfig.isTag || yiliaConfig.isCategory) {
-        $(document).ready(function() {
-            $("#footer").after("<button class='hide-labels'>TAGS</button>");
-            $(".hide-labels").click(function() {
-                $(".article-info").toggle(200);
-            })
-        })
+        $toc.on('click', toggleToc);
+        $mask.on('click', toggleToc);
+        $('.navbar-main .catalogue').on('click', toggleToc);
     }
 
-    // Task lists in markdown
-    $('ul > li').each(function() {
-        var taskList = {
-            field: this.textContent.substring(0, 2),
-            check: function(str) {
-                var re = new RegExp(str);
-                return this.field.match(re);
+    // hexo-util/lib/is_external_link.js
+    function isExternalLink(input, sitehost, exclude) {
+        try {
+            sitehost = new URL(sitehost).hostname;
+        } catch (e) { }
+
+        if (!sitehost) return false;
+
+        // handle relative url
+        const data = new URL(input, 'http://' + sitehost);
+
+        // handle mailto: javascript: vbscript: and so on
+        if (data.origin === 'null') return false;
+
+        const host = data.hostname;
+
+        if (exclude) {
+            exclude = Array.isArray(exclude) ? exclude : [exclude];
+
+            if (exclude && exclude.length) {
+                for (const i of exclude) {
+                    if (host === i) return false;
+                }
             }
         }
 
-        var string = ["[ ]", ["[x]", "checked"]];
-        var checked = taskList.check(string[1][0]);
-        var unchecked = taskList.check(string[0]);
+        if (host !== sitehost) return true;
 
-        var $current = $(this);
-        function update(str, check) {
-            var click = ["disabled", ""];
-            $current.html($current.html().replace(
-              str, "<input type='checkbox' " + check + " " + click[1] + " >")
-            )
-        }
+        return false;
+    }
 
-        if (checked || unchecked) {
-            this.classList.add("task-list");
-            if (checked) {
-                update(string[1][0], string[1][1]);
-                this.classList.add("check");
-            } else {
-                update(string[0], "");
-            }
-        }
-    })
-
-})
+    if (typeof (IcarusThemeSettings) !== 'undefined' &&
+        typeof (IcarusThemeSettings.site.url) !== 'undefined' &&
+        typeof (IcarusThemeSettings.site.external_link) !== 'undefined' &&
+        IcarusThemeSettings.site.external_link.enable) {
+        $('.article .content a').filter(function (i, link) {
+            return link.href &&
+                !$(link).attr('href').startsWith('#') &&
+                link.classList.length === 0 &&
+                isExternalLink(link.href,
+                    IcarusThemeSettings.site.url,
+                    IcarusThemeSettings.site.external_link.exclude);
+        }).each(function (i, link) {
+            link.relList.add('noopener');
+            link.target = '_blank';
+        });
+    }
+})(jQuery);

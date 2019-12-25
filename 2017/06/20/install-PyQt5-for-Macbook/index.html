@@ -169,12 +169,14 @@
         <div class="content">
             <p>一份关于在 Macbook 上安装 PyQt5 的介绍和汇总。主要</p>
 <a id="more"></a>
+
 <p>1、 首先安装基础软件</p>
 <ol>
-<li><p>这个基本是使用 MacBook 的必备软件套件。<a href="https://developer.apple.com/xcode/downloads/" target="_blank" rel="noopener">Xcode下载</a></p>
+<li><p>这个基本是使用 MacBook 的必备软件套件。<a href="https://developer.apple.com/xcode/downloads/">Xcode下载</a></p>
 </li>
 <li><p>安装 Homebrew，这样后续可以节省不少时候，安装管理也会很方便。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span><br></pre></td></tr></table></figure>
+
 <p>Homebrew 会将软件包安装到独立目录，并将其文件软链接至 <code>/usr/local</code> 。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /usr/<span class="built_in">local</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> find Cellar</span></span><br><span class="line">Cellar/wget/1.16.1</span><br><span class="line">Cellar/wget/1.16.1/bin/wget</span><br><span class="line">Cellar/wget/1.16.1/share/man/man1/wget.1</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls -l bin</span></span><br><span class="line">bin/wget -&gt; ../Cellar/wget/1.16.1/bin/wget</span><br></pre></td></tr></table></figure>
 </li>
@@ -187,15 +189,15 @@
 </li>
 <li><p>安装 Qt</p>
 <p>这个我直接选择的是去官网下载免费的开源版本。需要回答几个问题，注册个账号。</p>
-<p><a href="https://www.qt.io/cn/download/" target="_blank" rel="noopener">Qt 下载页面</a>选择对的系统版本。</p>
+<p><a href="https://www.qt.io/cn/download/">Qt 下载页面</a>选择对的系统版本。</p>
 </li>
 </ol>
 <p>以上：基础软件到此基本就安装好了。Qt 也自带Qt Creater 这个 IDE。</p>
 <p>但是，最好的 IDE除了神级的 VS，就是JetBrain 家族的了。写 Python 当然最好是 PyCharm了。所以还想继续折腾的，参考以下链接。</p>
 <p>参考链接：</p>
 <ol>
-<li><a href="http://gavinliu.cn/2016/01/17/Python-Mac%E4%B8%8BPyCharm-PyQt5%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_blank" rel="noopener">Python - Mac下PyCharm&amp;PyQt5环境搭建</a></li>
-<li><a href="https://gist.github.com/guillaumevincent/10983814" target="_blank" rel="noopener">Guide to install PyQt5 on Mac OS X with python 3.4 virtualenv</a></li>
+<li><a href="http://gavinliu.cn/2016/01/17/Python-Mac%E4%B8%8BPyCharm-PyQt5%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Python - Mac下PyCharm&amp;PyQt5环境搭建</a></li>
+<li><a href="https://gist.github.com/guillaumevincent/10983814">Guide to install PyQt5 on Mac OS X with python 3.4 virtualenv</a></li>
 </ol>
 
         </div>

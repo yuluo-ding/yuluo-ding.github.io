@@ -170,6 +170,7 @@
             <p><strong>unrar模块介绍</strong></p>
 <p>​    unrar第三方python库是解压rar压缩文件的扩展包，可实现对rar压缩文件的读取、解压等处理。也可以使用unrar这个模块来进行编写rar压缩文件暴力破解。</p>
 <a id="more"></a>
+
 <ul>
 <li><p><strong>安装</strong></p>
 <ol>
@@ -177,14 +178,15 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install unrar</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>官网下载源文件安装</p>
-<p><a href="https://pypi.python.org/pypi/rarfile/" target="_blank" rel="noopener">unrar 源文件</a></p>
+<p><a href="https://pypi.python.org/pypi/rarfile/">unrar 源文件</a></p>
 <p>在官网下载文件，利用<code>python setup.py install</code>进行安装</p>
-<p><a href="https://rarfile.readthedocs.io/en/latest/" target="_blank" rel="noopener">文档地址</a></p>
+<p><a href="https://rarfile.readthedocs.io/en/latest/">文档地址</a></p>
 </li>
 </ol>
 </li>
 <li><p>案例</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from unrar import rarfile  <span class="comment">#导入rarfile，处理rar文件</span></span><br><span class="line">&gt;&gt;&gt; rar = rarfile.RarFile(<span class="string">'sample.rar'</span>)  <span class="comment">#读取rar文件</span></span><br><span class="line">&gt;&gt;&gt; rar.namelist() <span class="comment">#列出rar压缩文件中的文件列表</span></span><br><span class="line">[u<span class="string">'test_file.txt'</span>]</span><br><span class="line">&gt;&gt;&gt; rar.printdir() <span class="comment">#打印rar压缩文件中的文件列表</span></span><br><span class="line">File Name                                             Modified             Size</span><br><span class="line">test_file.txt                                  2013-04-14 08:20:28           17</span><br><span class="line">&gt;&gt;&gt; rar.testrar()</span><br><span class="line">&gt;&gt;&gt; info = rar.infolist()[0] <span class="comment">#通过索引获取压缩文件中的文件</span></span><br><span class="line">&gt;&gt;&gt; info.filename <span class="comment">#获取压缩文件名</span></span><br><span class="line">u<span class="string">'test_file.txt'</span></span><br><span class="line">&gt;&gt;&gt; info.file_size <span class="comment">#获取压缩文件大小</span></span><br><span class="line">17L</span><br><span class="line">&gt;&gt;&gt; info.date_time <span class="comment">#获取压缩文件创建日期</span></span><br><span class="line">(2013L, 4L, 14L, 8L, 20L, 28L)</span><br><span class="line">&gt;&gt;&gt; rar.read(<span class="string">'test_file.txt'</span>) <span class="comment">#读取压缩文件的内容</span></span><br><span class="line"><span class="string">'This is for test.'</span></span><br><span class="line">&gt;&gt;&gt; rar.extractall() <span class="comment">#解压rar压缩文件</span></span><br><span class="line">&gt;&gt;&gt; rar.close() <span class="comment">#关闭rar文件</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 

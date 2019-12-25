@@ -10,12 +10,12 @@
 <title>卸载 JDK for Mac - yuluo</title>
 
 
-    <meta name="description" content="由于 Unifi 事件，根据官网提供的文档，怀疑是 JDK 版本过高导致。那么就需要卸载新版本 Java。Oracle 官方提供的了解决方案。  本文适用于:  平台: Macintosh OS X Java 版本: 7.0, 8.0">
+    <meta name="description" content="由于 Unifi 事件，根据官网提供的文档，怀疑是 JDK 版本过高导致。那么就需要卸载新版本 Java。Oracle 官方提供的了解决方案。  本文适用于:  *平台: *Macintosh OS X *Java 版本: *7.0, 8.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卸载 JDK for Mac">
 <meta property="og:url" content="yuluo-ding.github.io/2017/08/18/%E5%8D%B8%E8%BD%BD-JDK-for-Mac/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="由于 Unifi 事件，根据官网提供的文档，怀疑是 JDK 版本过高导致。那么就需要卸载新版本 Java。Oracle 官方提供的了解决方案。  本文适用于:  平台: Macintosh OS X Java 版本: 7.0, 8.0">
+<meta property="og:description" content="由于 Unifi 事件，根据官网提供的文档，怀疑是 JDK 版本过高导致。那么就需要卸载新版本 Java。Oracle 官方提供的了解决方案。  本文适用于:  *平台: *Macintosh OS X *Java 版本: *7.0, 8.0">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="/images/og_image.png">
 <meta property="article:published_time" content="2017-08-17T23:16:37.000Z">
@@ -170,12 +170,14 @@
             <p>由于 Unifi 事件，根据官网提供的文档，怀疑是 JDK 版本过高导致。那么就需要卸载新版本 Java。Oracle 官方提供的了解决方案。 </p>
 <p>本文适用于:</p>
 <ul>
-<li><strong>平台: </strong>Macintosh OS X</li>
-<li><strong>Java 版本: </strong>7.0, 8.0</li>
+<li>*<em>平台: *</em>Macintosh OS X</li>
+<li>*<em>Java 版本: *</em>7.0, 8.0</li>
 </ul>
 <a id="more"></a>
+
 <p>使用终端卸载 Oracle Java<strong>注</strong>：要卸载 Java，必须具有管理员权限，并且必须以 root 用户身份或者使用 <code>sudo</code> 工具来执行删除命令。按照下面所示，删除一个目录和一个文件（符号链接）：单击位于停靠栏中的 <strong>Finder</strong> 图标单击<strong>实用程序</strong>文件夹双击<strong>终端</strong>图标在“终端”窗口中，复制和粘贴命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin</span><br><span class="line">sudo rm -fr /Library/PreferencesPanes/JavaControlPanel.prefPane</span><br><span class="line">sudo rm -fr ~/Library/Application\ Support/Java</span><br></pre></td></tr></table></figure>
+
 <p>请勿尝试通过从 <code>/usr/bin</code> 删除 Java 工具来卸载 Java。此目录是系统软件的一部分，下次对操作系统执行更新时，Apple 会重置所有更改。</p>
 
         </div>

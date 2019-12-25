@@ -170,6 +170,7 @@
             <p>两个字典合并的，有几种方法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict1=&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>]&#125;</span><br><span class="line">dict2=&#123;<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</span><br><span class="line"><span class="comment">#得到如下的结果</span></span><br><span class="line">&#123;<span class="number">1</span>:[<span class="number">1</span>,<span class="number">11</span>,<span class="number">111</span>],<span class="number">2</span>:[<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>],<span class="number">3</span>:[<span class="number">3</span>,<span class="number">33</span>,<span class="number">333</span>],<span class="number">4</span>:[<span class="number">4</span>,<span class="number">44</span>,<span class="number">444</span>]&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
+
 <p>两个方法：</p>
 <ol>
 <li><p><code>dictMerged=dict(dict1.items()+dict2.items())</code></p>
@@ -181,7 +182,8 @@
 </ol>
 <p>但是如果两个字典中有相同的key怎么办？</p>
 <p>如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = dict(a=<span class="number">1</span>, b=<span class="keyword">None</span>, c=<span class="number">3</span>)</span><br><span class="line">b = dict(a=<span class="keyword">None</span>, b=<span class="number">2</span>, c=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = dict(a=<span class="number">1</span>, b=<span class="literal">None</span>, c=<span class="number">3</span>)</span><br><span class="line">b = dict(a=<span class="literal">None</span>, b=<span class="number">2</span>, c=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
 <p>要合并这两个字典该怎么办？</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> b.items():</span><br><span class="line">    <span class="keyword">if</span> v:</span><br><span class="line">        a[k] = v</span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
 

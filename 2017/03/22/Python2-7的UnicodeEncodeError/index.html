@@ -170,13 +170,17 @@
             <p><code>UnicodeEncodeError: ‘ascii’ codec can’t encode</code>异常错误</p>
 <p>​    这个错误是编码问题，Unicode编码与ASCII编码的不兼容，现在Python脚本文件是由utf-8编码的，但是 Python2的默认是<code>ASCII</code>的，Python默认环境编码通过下面的方法可以获取：</p>
 <a id="more"></a>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">print</span> sys.getdefaultencoding()</span><br><span class="line"><span class="comment"># 'ascii'</span></span><br></pre></td></tr></table></figure>
+
 <p>​    基本上是ascii编码方式，由此Python自然调用ascii编码解码程序去处理字符流，当字符流不属于ascii范围内，就会抛出异常（ordinal not in range(128)）。</p>
 <p>​    解决的方案很简单，修改默认的编码模式。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
+
 <p>​    还有一种更好的方法，在输出的时候，对文件制定特定的UTF-8编码即可。</p>
 <p>​    就是在打开一个文件的时候，不是用<code>open</code>而是用<code>codecs</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fp = codecs.open(‘output.txt’, ‘a+’, ‘utf<span class="number">-8</span>’)</span><br><span class="line">fp.write(row[<span class="number">1</span>])</span><br><span class="line">fp.close()</span><br></pre></td></tr></table></figure>
+
 
         </div>
         

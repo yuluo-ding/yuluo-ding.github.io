@@ -176,8 +176,8 @@
             
         </h1>
         <div class="content">
-            <p>这个搜索API允许你通过关键词在你的网站上搜索iTunes Store，App Store, iBooks Store and Mac App Store。你可以搜索各种内容；包括应用、图书、电影、广播、音乐、视频、有声读物以及TV节目。你也可以调用一个实名查询请求来创建内容库之间的映射和数字目录。开发者可以使用API里的推广的内容，包括歌曲预览，音乐录像，专辑封面和APP图标只用在推广的店面，不用于娱乐用途。从API里使用音乐样本及其他必须和店面徽章相似。<a href="https://link.jianshu.com?t=https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#legal" target="_blank" rel="noopener">条款和条件适用</a>。</p>
-<p>这项计划允许当你的网站或者app获得点击后获得一些佣金。该项计划更多信息请查看：<a href="https://link.jianshu.com/?t=http://www.apple.com/itunes/affiliates" target="_blank" rel="noopener">http://www.apple.com/itunes/affiliates</a>。</p>
+            <p>这个搜索API允许你通过关键词在你的网站上搜索iTunes Store，App Store, iBooks Store and Mac App Store。你可以搜索各种内容；包括应用、图书、电影、广播、音乐、视频、有声读物以及TV节目。你也可以调用一个实名查询请求来创建内容库之间的映射和数字目录。开发者可以使用API里的推广的内容，包括歌曲预览，音乐录像，专辑封面和APP图标只用在推广的店面，不用于娱乐用途。从API里使用音乐样本及其他必须和店面徽章相似。<a href="https://link.jianshu.com?t=https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#legal">条款和条件适用</a>。</p>
+<p>这项计划允许当你的网站或者app获得点击后获得一些佣金。该项计划更多信息请查看：<a href="https://link.jianshu.com/?t=http://www.apple.com/itunes/affiliates">http://www.apple.com/itunes/affiliates</a>。</p>
 <p>通过web去查找并且显示结果在web网站上。你必须创建一个搜索区域，通过完全限定的URL请求iTunes Store，并从返回的结果中解析JSON。然后将结果显示在web上。 完整的网址必须有以下格式：</p>
 <p><code>https://itunes.apple.com/search?parameterkeyvalue</code></p>
 <p>在参数里有一个或多个键值对，来详细说明你返回的结果。</p>
@@ -196,8 +196,7 @@
 <th>Values</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>term</td>
 <td>The URL-encoded text string you want to search for. For example: jack+johnson.</td>
 <td>Y</td>
@@ -207,7 +206,7 @@
 <td>country</td>
 <td>The two-letter country code for the store you want to search. The search uses the default store front for the specified country. For example: US. The default is US.</td>
 <td>Y</td>
-<td>See <a href="http://en.wikipedia.org/wiki/%20ISO_3166-1_alpha-2" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/ ISO_3166-1_alpha-2</a> for a list of ISO Country Codes.</td>
+<td>See <a href="http://en.wikipedia.org/wiki/%20ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ ISO_3166-1_alpha-2</a> for a list of ISO Country Codes.</td>
 </tr>
 <tr>
 <td>media</td>
@@ -257,47 +256,46 @@
 <td>N</td>
 <td>Yes, No</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>关键是要正确编码你的URL才能被委托会员链接。在编码原始链接附属票据可以在<a href="https://link.jianshu.com?t=https://affiliate.itunes.apple.com/resources/documentation/linking-to-the-itunes-music-store/" target="_blank" rel="noopener">Advanced Affiliate Linking</a>的文档中找到。</li>
+<li>关键是要正确编码你的URL才能被委托会员链接。在编码原始链接附属票据可以在<a href="https://link.jianshu.com?t=https://affiliate.itunes.apple.com/resources/documentation/linking-to-the-itunes-music-store/">Advanced Affiliate Linking</a>的文档中找到。</li>
 <li>为了提高请求时间，通过指定适当的limit参数，在检索api的时候返回极少数的结果。</li>
 <li>大型网站应该建立缓存逻辑，检索查找api的请求。为了说明这一点，请稍后查看本篇文章的Caching Architecture。</li>
 </ul>
 <p>以下是具体的搜索请求完全合格的URL的例子：</p>
 <ul>
-<li>要搜索所有杰克·约翰逊的音频和视频内容（电影，播客，音乐，音乐视频，有声读物，电影短片和电视节目），您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=jack+johnson" target="_blank" rel="noopener">https://itunes.apple.com/search?term=jack+johnson</a> </li>
-<li>要搜索所有杰克·约翰逊的音频和视频内容（电影，播客，音乐，音乐视频，有声读物，电影短片和电视节目），并且只返回前25条。您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=jack+johnson&amp;limit=25" target="_blank" rel="noopener">https://itunes.apple.com/search?term=jack+johnson&amp;limit=25</a> </li>
-<li>要检索杰克·约翰逊的音频，您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=jack+johnson&amp;entity=musicVideo" target="_blank" rel="noopener">https://itunes.apple.com/search?term=jack+johnson&amp;entity=musicVideo</a> </li>
-<li>要搜索所有吉姆·琼斯音频和视频内容，并返回只从加拿大iTunes商店的结果，您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=jim+jones&amp;country=ca" target="_blank" rel="noopener">https://itunes.apple.com/search?term=jim+jones&amp;country=ca</a> </li>
-<li>要搜索名为“Yelp的”应用程序和来自美国的iTunes商店只返回的结果，您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=yelp&amp;country=us&amp;entity=software" target="_blank" rel="noopener">https://itunes.apple.com/search?term=yelp&amp;country=us&amp;entity=software</a></li>
+<li>要搜索所有杰克·约翰逊的音频和视频内容（电影，播客，音乐，音乐视频，有声读物，电影短片和电视节目），您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=jack+johnson">https://itunes.apple.com/search?term=jack+johnson</a> </li>
+<li>要搜索所有杰克·约翰逊的音频和视频内容（电影，播客，音乐，音乐视频，有声读物，电影短片和电视节目），并且只返回前25条。您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=jack+johnson&limit=25">https://itunes.apple.com/search?term=jack+johnson&amp;limit=25</a> </li>
+<li>要检索杰克·约翰逊的音频，您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo">https://itunes.apple.com/search?term=jack+johnson&amp;entity=musicVideo</a> </li>
+<li>要搜索所有吉姆·琼斯音频和视频内容，并返回只从加拿大iTunes商店的结果，您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=jim+jones&country=ca">https://itunes.apple.com/search?term=jim+jones&amp;country=ca</a> </li>
+<li>要搜索名为“Yelp的”应用程序和来自美国的iTunes商店只返回的结果，您的网址将如下所示：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/search?term=yelp&country=us&entity=software">https://itunes.apple.com/search?term=yelp&amp;country=us&amp;entity=software</a></li>
 </ul>
 <p>你也可以创建一个基于iTunes IDs, UPCs/ EANs的搜索请求去商店里面搜索内容。和所有音乐指南（AMG）标识的存储内容。基于ID的查找速度更快，而且含有较少的假阳性结果。</p>
 <p>以下是具体的查找请求完全合格的URL的例子：</p>
 <ul>
-<li><p>通过iTunes艺术家ID查找杰克·约翰逊：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?id=909253" target="_blank" rel="noopener">https://itunes.apple.com/lookup?id=909253</a> </p>
+<li><p>通过iTunes艺术家ID查找杰克·约翰逊：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?id=909253">https://itunes.apple.com/lookup?id=909253</a> </p>
 </li>
-<li><p>通过iTunes ID查找Yelp的软件应用程序：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?id=284910350" target="_blank" rel="noopener">https://itunes.apple.com/lookup?id=284910350</a> </p>
+<li><p>通过iTunes ID查找Yelp的软件应用程序：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?id=284910350">https://itunes.apple.com/lookup?id=284910350</a> </p>
 </li>
-<li><p>通过AMG艺术家ID查找杰克·约翰逊：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgArtistId=468749" target="_blank" rel="noopener">https://itunes.apple.com/lookup?amgArtistId=468749</a> </p>
+<li><p>通过AMG艺术家ID查找杰克·约翰逊：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgArtistId=468749">https://itunes.apple.com/lookup?amgArtistId=468749</a> </p>
 </li>
-<li><p>通过AMG艺术家的ID查找多个艺术家：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgArtistId=468749,5723" target="_blank" rel="noopener">https://itunes.apple.com/lookup?amgArtistId=468749,5723</a> </p>
+<li><p>通过AMG艺术家的ID查找多个艺术家：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgArtistId=468749,5723">https://itunes.apple.com/lookup?amgArtistId=468749,5723</a> </p>
 </li>
-<li><p>查找的杰克·约翰逊的所有专辑：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?id=909253&amp;entity=album" target="_blank" rel="noopener">https://itunes.apple.com/lookup?id=909253&amp;entity=album</a> </p>
+<li><p>查找的杰克·约翰逊的所有专辑：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?id=909253&entity=album">https://itunes.apple.com/lookup?id=909253&amp;entity=album</a> </p>
 </li>
-<li><p>其AMG艺术家的ID查找多个艺术家和获得每个艺术家的前5张专辑：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgArtistId=468749,5723&amp;entity=album&amp;limit=5" target="_blank" rel="noopener">https://itunes.apple.com/lookup?amgArtistId=468749,5723&amp;entity=album&amp;limit=5</a> </p>
+<li><p>其AMG艺术家的ID查找多个艺术家和获得每个艺术家的前5张专辑：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgArtistId=468749,5723&entity=album&limit=5">https://itunes.apple.com/lookup?amgArtistId=468749,5723&amp;entity=album&amp;limit=5</a> </p>
 </li>
-<li><p>通过AMG艺术家的ID查找多个艺术家和获得每个艺术家的5最新歌曲：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgArtistId=468749,5723&amp;entity=song&amp;limit=5&amp;sort=recent" target="_blank" rel="noopener">https://itunes.apple.com/lookup?amgArtistId=468749,5723&amp;entity=song&amp;limit=5&amp;sort=recent</a> </p>
+<li><p>通过AMG艺术家的ID查找多个艺术家和获得每个艺术家的5最新歌曲：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgArtistId=468749,5723&entity=song&limit=5&sort=recent">https://itunes.apple.com/lookup?amgArtistId=468749,5723&amp;entity=song&amp;limit=5&amp;sort=recent</a> </p>
 </li>
-<li><p>通过UPC查找一个专辑或视频：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?upc=720642462928" target="_blank" rel="noopener">https://itunes.apple.com/lookup?upc=720642462928</a> </p>
+<li><p>通过UPC查找一个专辑或视频：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?upc=720642462928">https://itunes.apple.com/lookup?upc=720642462928</a> </p>
 </li>
-<li><p>通过UPC查找专辑，包括这张专辑的曲目：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?upc=720642462928&amp;entity=song" target="_blank" rel="noopener">https://itunes.apple.com/lookup?upc=720642462928&amp;entity=song</a> </p>
+<li><p>通过UPC查找专辑，包括这张专辑的曲目：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?upc=720642462928&entity=song">https://itunes.apple.com/lookup?upc=720642462928&amp;entity=song</a> </p>
 </li>
-<li><p>通过专辑ID来查找一个专辑：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgAlbumId=15175,15176,15177,15178,15183,15184,15187,1519,15191,15195,15197,15198" target="_blank" rel="noopener">https://itunes.apple.com/lookup?amgAlbumId=15175,15176,15177,15178,15183,15184,15187,1519,15191,15195,15197,15198</a> </p>
+<li><p>通过专辑ID来查找一个专辑：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgAlbumId=15175,15176,15177,15178,15183,15184,15187,1519,15191,15195,15197,15198">https://itunes.apple.com/lookup?amgAlbumId=15175,15176,15177,15178,15183,15184,15187,1519,15191,15195,15197,15198</a> </p>
 </li>
-<li><p>通过AMG视频ID查找一部电影：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgVideoId=17120" target="_blank" rel="noopener">https://itunes.apple.com/lookup?amgVideoId=17120</a> </p>
+<li><p>通过AMG视频ID查找一部电影：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?amgVideoId=17120">https://itunes.apple.com/lookup?amgVideoId=17120</a> </p>
 </li>
-<li><p>通过13位ISBN查找一本书：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?isbn=9780316069359" target="_blank" rel="noopener">https://itunes.apple.com/lookup?isbn=9780316069359</a> </p>
+<li><p>通过13位ISBN查找一本书：<br> <a href="https://link.jianshu.com?t=https://itunes.apple.com/lookup?isbn=9780316069359">https://itunes.apple.com/lookup?isbn=9780316069359</a> </p>
 <p>了解搜索结果你搜索的结果用JSON格式返回，JSON有两种结构：</p>
 </li>
 <li><p>一种key/value的集合。也可以称之为一种对象，这个概念类似于Java Map对象，一个Javascript字典，或Pearl/ Ruby的哈希值。对象是一个无序的名称/值对，用左括号开始（{）和一个右括号结束（}）。每个名称由双引号包围，后跟一个冒号（:)）;名称/值对用逗号（，）隔开。</p>
@@ -305,9 +303,12 @@
 <li><p>值的有序列表，也称为阵列。数组是值的有序集合，用左括号开头（[），并以右括号结束（]）。值用逗号（，）分隔。 </p>
 </li>
 </ul>
-<p>所有的JSON结果被编码为UTF-8。有关JSON的更多信息，请参阅<a href="https://link.jianshu.com/?t=http://www.json.org" target="_blank" rel="noopener">http://www.json.org</a>。</p>
+<p>所有的JSON结果被编码为UTF-8。有关JSON的更多信息，请参阅<a href="https://link.jianshu.com/?t=http://www.json.org">http://www.json.org</a>。</p>
 <p>下面的示例显示在iTunes Store的歌曲JSON的结果 </p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"wrapperType"</span>:<span class="string">"track"</span>,</span><br><span class="line"> <span class="attr">"kind"</span>:<span class="string">"song"</span>,</span><br><span class="line"> <span class="attr">"artistId"</span>:<span class="number">909253</span>,</span><br><span class="line"> <span class="attr">"collectionId"</span>:<span class="number">120954021</span>,</span><br><span class="line"> <span class="attr">"trackId"</span>:<span class="number">120954025</span>,</span><br><span class="line"> <span class="attr">"artistName"</span>:<span class="string">"Jack Johnson"</span>,</span><br><span class="line"> <span class="attr">"collectionName"</span>:<span class="string">"Sing-a-Longs and Lullabies for the Film Curious George"</span>,</span><br><span class="line"> <span class="attr">"trackName"</span>:<span class="string">"Upside Down"</span>,</span><br><span class="line"> <span class="attr">"collectionCensoredName"</span>:<span class="string">"Sing-a-Longs and Lullabies for the Film Curious George"</span>,</span><br><span class="line"> <span class="attr">"trackCensoredName"</span>:<span class="string">"Upside Down"</span>,</span><br><span class="line"> <span class="attr">"artistViewUrl"</span>:<span class="string">"https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewArtist?id=909253"</span>,</span><br><span class="line"> <span class="attr">"collectionViewUrl"</span>:<span class="string">"https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?i=120954025&amp;id=120954021&amp;s=143441"</span>,</span><br><span class="line"> <span class="attr">"trackViewUrl"</span>:<span class="string">"https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?i=120954025&amp;id=120954021&amp;s=143441"</span>,</span><br><span class="line"> <span class="attr">"previewUrl"</span>:<span class="string">"http://a1099.itunes.apple.com/r10/Music/f9/54/43/mzi.gqvqlvcq.aac.p.m4p"</span>,</span><br><span class="line"> <span class="attr">"artworkUrl60"</span>:<span class="string">"http://a1.itunes.apple.com/r10/Music/3b/6a/33/mzi.qzdqwsel.60x60-50.jpg"</span>,</span><br><span class="line"> <span class="attr">"artworkUrl100"</span>:<span class="string">"http://a1.itunes.apple.com/r10/Music/3b/6a/33/mzi.qzdqwsel.100x100-75.jpg"</span>,</span><br><span class="line"> <span class="attr">"collectionPrice"</span>:<span class="number">10.99</span>,</span><br><span class="line"> <span class="attr">"trackPrice"</span>:<span class="number">0.99</span>,</span><br><span class="line"> <span class="attr">"collectionExplicitness"</span>:<span class="string">"notExplicit"</span>,</span><br><span class="line"> <span class="attr">"trackExplicitness"</span>:<span class="string">"notExplicit"</span>,</span><br><span class="line"> <span class="attr">"discCount"</span>:<span class="number">1</span>,</span><br><span class="line"> <span class="attr">"discNumber"</span>:<span class="number">1</span>,</span><br><span class="line"> <span class="attr">"trackCount"</span>:<span class="number">14</span>,</span><br><span class="line"> <span class="attr">"trackNumber"</span>:<span class="number">1</span>,</span><br><span class="line"> <span class="attr">"trackTimeMillis"</span>:<span class="number">210743</span>,</span><br><span class="line"> <span class="attr">"country"</span>:<span class="string">"USA"</span>,</span><br><span class="line"> <span class="attr">"currency"</span>:<span class="string">"USD"</span>,</span><br><span class="line"> <span class="attr">"primaryGenreName"</span>:<span class="string">"Rock"</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <p> 下表定义了JSON格式返回结果的键和值：</p>
 <table>
 <thead>
@@ -318,8 +319,7 @@
 <th>Return Values and Examples</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>wrapperType</td>
 <td>The name of the object returned by the search request.</td>
 <td>Y</td>
@@ -327,7 +327,7 @@
 </tr>
 <tr>
 <td>*explicitness</td>
-<td>The Recording Industry Association of America (RIAA) parental advisory for the content returned by the search request.For more information, see <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/parentalAdvisory" target="_blank" rel="noopener">http://itunes.apple.com/WebObjects/MZStore.woa/wa/parentalAdvisory</a>.</td>
+<td>The Recording Industry Association of America (RIAA) parental advisory for the content returned by the search request.For more information, see <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/parentalAdvisory">http://itunes.apple.com/WebObjects/MZStore.woa/wa/parentalAdvisory</a>.</td>
 <td>Y</td>
 <td>explicit (explicit lyrics, possibly explicit album cover), cleaned (explicit lyrics “bleeped out”), notExplicit (no explicit lyrics)For example: “trackExplicitness”:”notExplicit”.</td>
 </tr>
@@ -357,7 +357,7 @@
 </tr>
 <tr>
 <td>*censoredName</td>
-<td>The name of the album, TV season, audiobook, and so on returned by the search request, with objectionable words *’d out.<strong>Note:</strong> Artist names are never censored.</td>
+<td>The name of the album, TV season, audiobook, and so on returned by the search request, with objectionable words <em>’d out.*</em>Note:** Artist names are never censored.</td>
 <td>Y</td>
 <td>For example: “S**t Happens”.</td>
 </tr>
@@ -383,9 +383,9 @@
 <td>trackTimeMillis</td>
 <td>The returned track’s time in milliseconds.</td>
 <td>Only returned when media type is track</td>
+<td></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p> 缓存框架</p>
 <p><img src="https://i.loli.net/2018/08/15/5b74494401e32.jpg" alt="cache-architecture-1.jpg"></p>
 <p><strong>法律声明</strong> </p>

@@ -169,6 +169,7 @@
         <div class="content">
             <p>由于非法重启或硬盘故障，会导致linux系统无法启动，无法进入操作系统。当你看到提示：<code>give root password for maintenance(or type control-D to continue):</code>的时候，你还有补救的机会。问题原因应该是/usr /home /boot分区磁盘检测出了问题。</p>
 <a id="more"></a>
+
 <p>用两个办法可以尝试。</p>
 <p>方法一：</p>
 <ol>
@@ -183,6 +184,7 @@
 <ol>
 <li><p>重启后界面停在：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">give root password for maintenance</span><br><span class="line">(or type control-D to continue):</span><br></pre></td></tr></table></figure>
+
 <p>此时输入root密码，回车</p>
 </li>
 <li><p>输入<code>fsck -y</code>回车，会开始修复文件系统，时间长短不一。</p>

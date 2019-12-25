@@ -171,10 +171,12 @@
 <p>yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.9.2。想要安装最新版本的的 Git，只能下载源码进行安装。</p>
 </blockquote>
 <a id="more"></a>
+
 <ol>
 <li><p>查看 yum 源仓库的 Git 信息：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum info git</span></span><br></pre></td></tr></table></figure>
-<p>​可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最<a href="https://github.com/git/git/releases" target="_blank" rel="noopener">新的 Git 发布版本</a>，已经 2.14.1 了。</p>
+
+<p>​可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最<a href="https://github.com/git/git/releases">新的 Git 发布版本</a>，已经 2.14.1 了。</p>
 </li>
 <li><p>依赖库安装</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> yum install  gcc perl-ExtUtils-MakeMaker</span></span><br></pre></td></tr></table></figure>

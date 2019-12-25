@@ -178,8 +178,11 @@
         <div class="content">
             <p>计算 MD5 校验和</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5 filename</span><br></pre></td></tr></table></figure>
-<h4 id="计算_SHA-1_校验和">计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure>
-<h4 id="计算_SHA-256_校验和">计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>
+
+<h4 id="计算-SHA-1-校验和"><a href="#计算-SHA-1-校验和" class="headerlink" title="计算 SHA-1 校验和"></a>计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure>
+
+<h4 id="计算-SHA-256-校验和"><a href="#计算-SHA-256-校验和" class="headerlink" title="计算 SHA-256 校验和"></a>计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -233,6 +236,7 @@
 </ul>
 <p>其中可以在<code>.zshrc</code>的配置文件中:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> proxy</span></span><br><span class="line">proxy () &#123;</span><br><span class="line">  export http_proxy="http://127.0.0.1:8888"</span><br><span class="line">  export https_proxy="http://127.0.0.1:8888"</span><br><span class="line">  echo "HTTP Proxy on"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> noproxy</span></span><br><span class="line">noproxy () &#123;</span><br><span class="line">  unset http_proxy</span><br><span class="line">  unset https_proxy</span><br><span class="line">  echo "HTTP Proxy off"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>使用的时候输入 Proxy 打开代理模式，关闭代理时输入 noproxy 即可.</p>
 
         </div>

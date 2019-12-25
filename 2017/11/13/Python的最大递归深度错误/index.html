@@ -170,11 +170,12 @@
             <p>今天在用 Python 的爬虫的时候，遇到一个错误<code>maximum recursion depth exceeded while calling a Python object</code>，意思是：当调用该对象超过最大递归深度。</p>
 <p>报错如下:</p>
 <a id="more"></a>
+
 <blockquote>
 <p> File “/usr/lib/python3.5/enum.py”, line 241, in <strong>call</strong></p>
 <p>   return cls.<strong>new</strong>(cls, value)<br> File “/usr/lib/python3.5/enum.py”, line 463, in <strong>new</strong><br>   if type(value) is cls:<br>RecursionError: maximum recursion depth exceeded while calling a Python object</p>
 </blockquote>
-<p>原因是在Python里的递归调用是有限制的，可以使用sys模块里的getrecursionlimit方法查看的到，<a href="https://cyrusin.github.io/2015/12/08/python-20151208/" target="_blank" rel="noopener">打破递归栈的深度限制: 解析一种Python尾递归优化的方法</a></p>
+<p>原因是在Python里的递归调用是有限制的，可以使用sys模块里的getrecursionlimit方法查看的到，<a href="https://cyrusin.github.io/2015/12/08/python-20151208/">打破递归栈的深度限制: 解析一种Python尾递归优化的方法</a></p>
 <p>打开终端运行Python，可以看到默认限制值为1000.</p>
 <p>解决方法：</p>
 <p><code>sys.setrecursionlimit(2000)</code></p>

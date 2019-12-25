@@ -167,7 +167,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="在客户端来看，SSH提供两种级别的安全验证。">在客户端来看，SSH提供两种级别的安全验证。</h4><blockquote>
+            <h4 id="在客户端来看，SSH提供两种级别的安全验证。"><a href="#在客户端来看，SSH提供两种级别的安全验证。" class="headerlink" title="在客户端来看，SSH提供两种级别的安全验证。"></a>在客户端来看，SSH提供两种级别的安全验证。</h4><blockquote>
 <ul>
 <li>第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。</li>
 <li>第二种级别（基于<strong>密钥</strong>的安全验证），需要依靠密钥，也就是你必须为自己创建一对密钥，并把公有密钥放在需要访问的服务器上。</li>
@@ -175,6 +175,7 @@
 </blockquote>
 <p>这里要讨论的<strong>ssh密钥认证自动登录</strong>正是基于第二种级别的安全验证方式。</p>
 <a id="more"></a>
+
 <ol>
 <li><p>本地创建公钥</p>
 <p>打开终端运行如下命令：</p>
@@ -198,12 +199,15 @@
 </li>
 <li><p>如果你本地终端使用的是<strong>zsh</strong>，给 <strong>zsh</strong>添加别名</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo "alias ssh-to-username='ssh username@hostname'" &gt;&gt; ~/.zshrc #将username和hostname替换为你的服务器信息</span><br><span class="line">source ~/.zshrc   #重新加载更改后的zshrc文件</span><br><span class="line">ssh-to-username   #使用别名，一条命令即可登录你的ssh服务器</span><br></pre></td></tr></table></figure>
+
 <p> ​</p>
 </li>
 <li><p>最后关闭密码登录</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
 <p> 修改如下内容</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PasswordAuthentication yes</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#修改为如下内容：</span></span></span><br><span class="line">PasswordAuthentication no</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#使用命令重启ssh服务：</span></span></span><br><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+
 <p> ​</p>
 </li>
 </ol>

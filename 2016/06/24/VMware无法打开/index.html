@@ -167,8 +167,9 @@
             
         </h1>
         <div class="content">
-            <h4 id="vmware安装无法打开内核设备_\-\Global\vmx86:_系统找不到指定的文件">vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件</h4><p>按照以下步骤开启相应的服务就好</p>
+            <h4 id="vmware安装无法打开内核设备-Global-vmx86-系统找不到指定的文件"><a href="#vmware安装无法打开内核设备-Global-vmx86-系统找不到指定的文件" class="headerlink" title="vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件"></a>vmware安装无法打开内核设备 \.\Global\vmx86: 系统找不到指定的文件</h4><p>按照以下步骤开启相应的服务就好</p>
 <a id="more"></a>
+
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">net start vmci</span><br><span class="line"></span><br><span class="line">net start vmx86</span><br><span class="line"></span><br><span class="line">net start VMnetuserif</span><br><span class="line"></span><br><span class="line">sc config vmci=auto</span><br><span class="line"></span><br><span class="line">sc config vmx86=auto</span><br><span class="line"></span><br><span class="line">sc config VMnetuserif=auto</span><br></pre></td></tr></table></figure>
         </div>
         

@@ -277,7 +277,7 @@
         </h1>
         <div class="content">
             <p>Centos7自动的 python 版本为2.7.5，要升级到2.7.x 的最新版。</p>
-<h4 id="安装依赖：">安装依赖：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel</span><br></pre></td></tr></table></figure>
+<h4 id="安装依赖："><a href="#安装依赖：" class="headerlink" title="安装依赖："></a>安装依赖：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel gcc openssl-devel</span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -330,7 +330,7 @@
             
         </h1>
         <div class="content">
-            <p>fail2ban 可以监视你的系统日志，然后匹配日志的错误信息（正则式匹配）执行相应的屏蔽动作（一般情况下是调用防火墙屏蔽），比如:当有人在试探你的SSH、SMTP、FTP密码，只要达到你预设的次数，fail2ban就会调用防火墙屏蔽这个IP，而且可以发送e-mail通知系统管理员，是一款很实用、很强大的软件。<br>
+            <p>fail2ban 可以监视你的系统日志，然后匹配日志的错误信息（正则式匹配）执行相应的屏蔽动作（一般情况下是调用防火墙屏蔽），比如:当有人在试探你的SSH、SMTP、FTP密码，只要达到你预设的次数，fail2ban就会调用防火墙屏蔽这个IP，而且可以发送e-mail通知系统管理员，是一款很实用、很强大的软件。</p>
         </div>
         
         
@@ -383,7 +383,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="在客户端来看，SSH提供两种级别的安全验证。">在客户端来看，SSH提供两种级别的安全验证。</h4><blockquote>
+            <h4 id="在客户端来看，SSH提供两种级别的安全验证。"><a href="#在客户端来看，SSH提供两种级别的安全验证。" class="headerlink" title="在客户端来看，SSH提供两种级别的安全验证。"></a>在客户端来看，SSH提供两种级别的安全验证。</h4><blockquote>
 <ul>
 <li>第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。</li>
 <li>第二种级别（基于<strong>密钥</strong>的安全验证），需要依靠密钥，也就是你必须为自己创建一对密钥，并把公有密钥放在需要访问的服务器上。</li>
@@ -501,10 +501,16 @@
         </h1>
         <div class="content">
             <p>pip 当前内建命令并不支持升级所有已安装的Python模块，所有使用命令行来查询和升级 Python 的模块</p>
-<h5 id="列出当前安装的包：">列出当前安装的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<h5 id="列出可升级的包：">列出可升级的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list --outdate</span><br></pre></td></tr></table></figure>
-<h5 id="升级一个包：">升级一个包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</span><br></pre></td></tr></table></figure>
-<h5 id="升级所有可升级的包：">升级所有可升级的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3的平台</span></span><br><span class="line">$ pip3 freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip3 install -U</span><br><span class="line"><span class="comment"># python2的平台</span></span><br><span class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip2 install -U</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</span><br></pre></td></tr></table></figure>
+<h5 id="列出当前安装的包："><a href="#列出当前安装的包：" class="headerlink" title="列出当前安装的包："></a>列出当前安装的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+
+<h5 id="列出可升级的包："><a href="#列出可升级的包：" class="headerlink" title="列出可升级的包："></a>列出可升级的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list --outdate</span><br></pre></td></tr></table></figure>
+
+<h5 id="升级一个包："><a href="#升级一个包：" class="headerlink" title="升级一个包："></a>升级一个包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade requests  // mac,linux,unix 在命令前加 sudo -H</span><br></pre></td></tr></table></figure>
+
+<h5 id="升级所有可升级的包："><a href="#升级所有可升级的包：" class="headerlink" title="升级所有可升级的包："></a>升级所有可升级的包：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3的平台</span></span><br><span class="line">$ pip3 freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip3 install -U</span><br><span class="line"><span class="comment"># python2的平台</span></span><br><span class="line">$ pip freeze --local | grep -v <span class="string">'^-e'</span> | cut -d = -f <span class="number">1</span>  | xargs -n1 pip2 install -U</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> `pip list -o --format legacy|awk <span class="string">'&#123;print $1&#125;'</span>` ; do pip install --upgrade $i; done</span><br></pre></td></tr></table></figure>
+
+
+
 
         </div>
         
@@ -553,8 +559,8 @@
             <p>由于 Unifi 事件，根据官网提供的文档，怀疑是 JDK 版本过高导致。那么就需要卸载新版本 Java。Oracle 官方提供的了解决方案。 </p>
 <p>本文适用于:</p>
 <ul>
-<li><strong>平台: </strong>Macintosh OS X</li>
-<li><strong>Java 版本: </strong>7.0, 8.0</li>
+<li>*<em>平台: *</em>Macintosh OS X</li>
+<li>*<em>Java 版本: *</em>7.0, 8.0</li>
 </ul>
         </div>
         

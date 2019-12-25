@@ -167,7 +167,9 @@
             
         </h1>
         <div class="content">
-            <p>####关于Linux的一些小知识点<br><a id="more"></a><br><a href="https://blog.huachao.me/2016/1/Linux%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="noopener">Linux一些小知识点</a></p>
+            <p>####关于Linux的一些小知识点</p>
+<a id="more"></a>
+<p><a href="https://blog.huachao.me/2016/1/Linux%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io">Linux一些小知识点</a></p>
 <p>$1 我的Linux需求</p>
 <p>Linux博大精深。我只在此讨论一些我对线上Linux机器维护人员的基本需求，比如装机，加硬盘，配网络。只讨论CentOS 6，或者类似的RHEL，当然Ubuntu也可以此类推，但是一些新特性不予讨论，因为我不懂，比如CentOS 7的xfs不予讨论，并不是说xfs不好，而是以目前我的Linux水平需要更新很多xfs的知识，驾驭需要时间。CentOS 7将ifconfig，netstat等原来常用的命令也干掉了，用ip，lsof替换是更加好的工具，但是大部分的线上机器都应该还没有更新到CentOS 7。下面我们以CentOS 6作为基础，谈我认为最基本的4点。</p>
 <p>$1.1 最小化安装</p>
@@ -186,6 +188,7 @@
 <p>$2.2 Linux的权限管理</p>
 <p>Linux的-rwxrwxrwx权限管理也可谓人尽皆知，其实Linux自己也意识到了这样的权限管理所带来的一些局限性。首先rwx的权限管理是基于用户和组的，并且只是大致的分为owner|group|other这三类，无法再作更加细粒度的划分。有鉴于此，Linux目前默认是有ACL(Access Control List)管理的，所谓ACL就是能够提供更加细粒度的用户和组管理，比如可以明确哪个user可以有什么样的权限。如下示例</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getfacl abc</span><br><span class="line"><span class="comment"># file: abc</span></span><br><span class="line"><span class="comment"># owner: someone</span></span><br><span class="line"><span class="comment"># group: someone</span></span><br><span class="line">user::rw-</span><br><span class="line">user:johny:r-x</span><br><span class="line">group::r--</span><br><span class="line">mask::r-x</span><br><span class="line">other::r--</span><br></pre></td></tr></table></figure>
+
 <p>而SELinux提供了不基于用户与组的权限管理，SELinux是基于应用程序的，什么样的应用程序可以使用什么资源，对于这些资源这个应用程序能干嘛，这个就是SELinux的管理方式。</p>
 <p>$2.3 Linux上的Service</p>
 <p>Linux上的Service组织得非常清晰，/etc/init.d/里面包含了所有的Service启动脚本，对应的二进制文件在/usr/bin 、 /usr/sbin 、 /usr/local/bin等目录下，一般而言配置文件在/etc/app_name下，还有一个chkconfig的工具来管理各个runlevel下需要启动的Service。这样的约定俗成使得管理员在配置和使用的时候非常方便。Linux标准的Service都会将log记录到/var/log/messages中，使得系统管理员不需要翻阅各种log，直接在/var/log/messages中就可以找到绝大部分的log来判断当前系统是否正常。更甚者，syslogd被rsyslogd替换以后，可以将/var/log/messages中的内容通过UDP发送到远端用专业的log分析工具进行分析。我们需要学习Linux上Service的这些优秀的编程习惯和技巧。</p>
@@ -203,7 +206,7 @@
 <p>getenforce来查看SELinux是否被启用<br>/etc/sysconfig/selinux enforcing启用SELinux<br>SELinux对“运行程序”配置和检查其是否有权限操作“对象”（文件系统），而普通的ACL(rwx)就是根据文件所属owner及其组来判断。SELinux是看可执行文件的type和目录文件的type是否兼容，来决定可执行文件是否能操作资源<br>$5.3 防火墙</p>
 <p>下面是学习时候的一些摘录。特别一点，要开启内核参数net.ipv4.ip_forward=1，在/etc/sysctl.conf文件中，用sysctl -p来保存。所谓ip_forward指的是内核提供的从一个iface到另外一个iface的IP包转发，比如将IP包从192.168.1.10的eth0转发到10.0.0.123的eth1上。防火墙配置是需要专业技能的。</p>
 <p>tcp_wrapper需要libwrap.so的支持，可执行文件在ldd bin_file出来没有libwrap.so的，都不能用tcp_wrapper<br>iptables是按照规则进行短路判断的，即 满足条件1-&gt;执行action1-&gt;结束<br>iptables-save来更加清晰的查看<br>先删掉全部规则，然后添加，比较简单。添加的时候，先添加策略，再添加细部规则。一般来讲，我们需要关注的是filter这个表的INPUT与OUTPUT<br>iptables -A(I) INPUT(OUTPUT,FORWARD) -i(o) iface -p tcp(ump,imp,all) -s (!)source -d dest -j ACCEPT(REJECT,DROP), 还支持的参数 —dport —sport<br>$6 工具</p>
-<p><a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/base/index.html" target="_blank" rel="noopener">一个好的Linux命令参考网站</a></p>
+<p><a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/base/index.html">一个好的Linux命令参考网站</a></p>
 <p>$6.1 CPU</p>
 <p>top 特别注意load<br>ps aux和ps -ef 特别注意进程状态<br>vmstat 1表示每秒采集一次<br>sar -u 1 查看所有cpu相关的运行时间<br>$6.2 Memory</p>
 <p>free<br>vmstat 1 注意其中的swap ram block之间的关系<br>sar -r 1 内存使用率<br>sar -W 1 查看swap，查询是否由于内存不足产生大量内存交换<br>$6.3 IO</p>

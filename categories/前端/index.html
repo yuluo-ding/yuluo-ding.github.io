@@ -179,14 +179,18 @@
         <div class="content">
             <p>使用npm管理node的包，可以使用<code>npm update &lt;name&gt;</code>对单个包升级，对于npm的版本大于 <code>2.6.1</code>,可以使用命令:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g</span><br></pre></td></tr></table></figure>
+
 <p> 这样升级全部的包</p>
 <p>如果上述不太方便, 还可以使用<code>shell脚本</code>和<code>npm-ckeck</code></p>
-<h3 id="shell_脚本">shell 脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">set -e</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> -x</span></span><br><span class="line">for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)</span><br><span class="line">do</span><br><span class="line">    npm -g install "$package"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<h3 id="npm-check">npm-check</h3><p><a href="https://www.npmjs.com/package/npm-check" target="_blank" rel="noopener">npm-check</a>是用来检查npm依赖包是否有更新，错误以及不在使用的，我们也可以使用npm-check进行包的更新。</p>
+<h3 id="shell-脚本"><a href="#shell-脚本" class="headerlink" title="shell 脚本"></a>shell 脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">set -e</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> -x</span></span><br><span class="line">for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)</span><br><span class="line">do</span><br><span class="line">    npm -g install "$package"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h3 id="npm-check"><a href="#npm-check" class="headerlink" title="npm-check"></a>npm-check</h3><p><a href="https://www.npmjs.com/package/npm-check">npm-check</a>是用来检查npm依赖包是否有更新，错误以及不在使用的，我们也可以使用npm-check进行包的更新。</p>
 <p>安装npm-check：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check</span><br></pre></td></tr></table></figure>
+
 <p>检查npm包的状态:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm-check -u -g</span><br></pre></td></tr></table></figure>
+
 <p>通过上下键可以移动光标，使用空格键可以选择需要处理的包，回车直接进行处理。</p>
 
         </div>

@@ -169,10 +169,15 @@
         <div class="content">
             <p>​    Hexo新建一篇文章的命令很简单<code>hexo new arctical&#39;s title</code>，然后在Hexo的根目录的<code>source</code>文件夹下的<code>_posts</code>目录下自动创建相应的md文件，之后打开该目录，找到Hexo自动生成的文件打开编辑即可。但是当文件比较多的时候，找一个新的文件是很麻烦的一件事。那么我们便可以通过 js 脚本自动打开相应的编辑器来省事。</p>
 <a id="more"></a>
+
 <p>分为两个平台，如果是 Windows 平台</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).exec;</span><br><span class="line"><span class="comment">// Hexo 2.x 用户复制这段</span></span><br><span class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">path</span>)</span>&#123;</span><br><span class="line">  exec(<span class="string">'start  "markdown编辑器绝对路径.exe" '</span> + path);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// Hexo 3 用户复制这段</span></span><br><span class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  exec(<span class="string">'start  "markdown编辑器绝对路径.exe" '</span> + data.path);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>如果是MacBook 平台</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">'child_process'</span>).exec;</span><br><span class="line"><span class="comment">// Hexo 2.x 用户复制这段</span></span><br><span class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">path</span>)</span>&#123;</span><br><span class="line">    exec(<span class="string">'open -a "markdown编辑器绝对路径.app" '</span> + path);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// Hexo 3 用户复制这段</span></span><br><span class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    exec(<span class="string">'open -a "markdown编辑器绝对路径.app" '</span> + data.path);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
 <p>之后重新新建文件，变回自动打开文件。</p>
 
         </div>

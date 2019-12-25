@@ -167,7 +167,7 @@
             
         </h1>
         <div class="content">
-            <h4 id="在_HTTP_协议下分段下载文件">在 HTTP 协议下分段下载文件</h4><a id="more"></a>
+            <h4 id="在-HTTP-协议下分段下载文件"><a href="#在-HTTP-协议下分段下载文件" class="headerlink" title="在 HTTP 协议下分段下载文件"></a>在 HTTP 协议下分段下载文件</h4><a id="more"></a>
 <p>假如一个文件有1000个字节，那么其范围就是0-999，则：<br>Range: bytes=500- 表示读取该文件的500-999字节，共500字节。<br>Range: bytes=500-599 表示读取该文件的500-599字节，共100字节。<br>Range还有其它几种写法，但上面这两种是最常用的，对于断点续传也足矣了。如果HTTP请求中包含Range字段，那么服务器会返回206（Partial Content），同时HTTP头中也会有一个相应的Content-Range字段，类似下面的格式：<br>Content-Range: bytes 500-999/1000<br>Content-Range字段说明服务器返回了文件的某个范围及文件的总长度。这时Content-Length字段就不是整个文件的大小了，而是对应文件这个范围的字节数，这一点一定要注意。</p>
 
         </div>

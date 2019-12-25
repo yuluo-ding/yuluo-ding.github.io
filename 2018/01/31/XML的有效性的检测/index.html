@@ -179,10 +179,13 @@
 </ol>
 <p>如何检查XML文档良构?</p>
 <a id="more"></a>
-<h5 id="方法一">方法一</h5><p>以ElementTree模块为例，直接使用parse方法。如果不报错，这表示该XML是良构的</p>
+
+<h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><p>以ElementTree模块为例，直接使用parse方法。如果不报错，这表示该XML是良构的</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xml.etree <span class="keyword">import</span> ElementTree <span class="keyword">as</span> ET  </span><br><span class="line"><span class="keyword">try</span>:  </span><br><span class="line">    ET.parse(<span class="string">'test.xml'</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这是一个良构的XML文档'</span>  </span><br><span class="line"><span class="keyword">except</span> Exception,e:  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这不是一个良构的XML文档'</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'可能原因：'</span>,e</span><br></pre></td></tr></table></figure>
-<h5 id="方法二">方法二</h5><p>如果希望获取更加详细信息，可使用lxml模块：</p>
+
+<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5><p>如果希望获取更加详细信息，可使用lxml模块：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  lxml.etree <span class="keyword">as</span> ET  </span><br><span class="line"><span class="keyword">try</span>:  </span><br><span class="line">    ET.parse(<span class="string">'test.xml'</span>)  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这是一个良构的XML文档'</span>  </span><br><span class="line"><span class="keyword">except</span> Exception,e:  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'这不是一个良构的XML文档'</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'可能原因：'</span>,e</span><br></pre></td></tr></table></figure>
+
 
         </div>
         

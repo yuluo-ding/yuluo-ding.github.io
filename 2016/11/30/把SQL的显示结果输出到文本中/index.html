@@ -167,20 +167,24 @@
             
         </h1>
         <div class="content">
-            <h3 id="MySQL查询结果有三种方法输出到文本中">MySQL查询结果有三种方法输出到文本中</h3><ol>
+            <h3 id="MySQL查询结果有三种方法输出到文本中"><a href="#MySQL查询结果有三种方法输出到文本中" class="headerlink" title="MySQL查询结果有三种方法输出到文本中"></a>MySQL查询结果有三种方法输出到文本中</h3><ol>
 <li><p>直接执行命令</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; select name from table  into outfile '/tmp/test.txt';</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
+
 <p>在目录<code>/tmp/</code>下会产生文件test.txt</p>
 <p>报错：<code>ERROR 1 (HY000): Can&#39;t create/write to file &#39;/data/test.xls&#39; (Errcode: 13)</code></p>
 <p>mysql没有写权限</p>
 </li>
 <li><p>查询时自动写入文件</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; pager cat &gt; /tmp/test.txt ;</span><br><span class="line">PAGER <span class="keyword">set</span> <span class="keyword">to</span> <span class="string">'cat &gt; /tmp/test.txt'</span></span><br></pre></td></tr></table></figure>
+
 <p>之后的所有查询结果都自动写入<code>/tmp/test.txt&#39;</code>，并前后覆盖</p>
 </li>
 <li><p>直接在bash下执行</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mysql -h 127.0.0.1 -u root -p dabase_name -P 3306 -e "select * from table"  &gt; /tmp/test.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysql -h 127.0.0.1 -u root -p dabase_name -P 3306 -e "select * from table"  &gt; /tmp/test.txt</span></span><br></pre></td></tr></table></figure>
+
 <p>​</p>
 </li>
 </ol>

@@ -169,16 +169,19 @@
         <div class="content">
             <p>在日常的使用中，会经常遇到需要执行 Shell 命令的情况，但是很多时候，在 Python 下执行也是很方便的。下面介绍四种方法以供参考。</p>
 <a id="more"></a>
+
 <ol>
 <li><p>OS模块中的<code>os.system()</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;os.system(<span class="string">'ls'</span>)</span><br><span class="line"><span class="number">123.</span>txt</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>popen()</code> 得到一个字符串，需要处理下。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> os</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str = os.popen(<span class="string">"ls"</span>).read()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = str.split(<span class="string">"\n"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> b <span class="keyword">in</span> a:</span><br><span class="line">        <span class="keyword">print</span> b</span><br></pre></td></tr></table></figure>
+
 <p>​</p>
 </li>
 <li><p><code>commands</code>模块#可以很方便的取得命令的输出（包括标准和错误输出）和执行状态位</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> commands</span><br><span class="line">a,b = commands.getstatusoutput(<span class="string">'ls'</span>)</span><br><span class="line">a<span class="comment">#是退出状态</span></span><br><span class="line">b<span class="comment">#是输出的结果。</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> commands</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a,b = commands.getstatusoutput(<span class="string">'ls'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> a</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> b</span><br><span class="line">anaconda-ks.cfg</span><br><span class="line">install.log</span><br><span class="line">install.log.syslog</span><br></pre></td></tr></table></figure>
+
 <p><code>commands.getstatusoutput(cmd)</code>返回 <code>status,output</code></p>
 <p><code>commands.getoutput(cmd)</code>只返回输出结果</p>
 </li>

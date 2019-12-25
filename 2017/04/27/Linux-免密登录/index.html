@@ -169,6 +169,7 @@
         <div class="content">
             <p>A为本地主机(即用于控制其他主机的机器) ;<br>B为远程主机(即被控制的机器Server), 假如ip为<code>192.168.1.1</code> ;<br>A和B的系统都是Linux.</p>
 <a id="more"></a>
+
 <ol>
 <li><p>什么是 SSH？</p>
 <blockquote>
@@ -176,12 +177,13 @@
 <p>传统的网络服务程序，如rsh、FTP、POP和Telnet其本质上都是不安全的；因为它们在网络上用明文传送数据、用户帐号和用户口令，很容易受到中间人（man-in-the-middle）攻击方式的攻击。就是存在另一个人或者一台机器冒充真正的服务器接收用户传给服务器的数据，然后再冒充用户把数据传给真正的服务器。</p>
 <p>而SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用SSH协议可以有效防止远程管理过程中的信息泄露问题。通过SSH可以对所有传输的数据进行加密，也能够防止DNS欺骗和IP欺骗。</p>
 <p>SSH之另一项优点为其传输的数据可以是经过压缩的，所以可以加快传输的速度。SSH有很多功能，它既可以代替Telnet，又可以为FTP、POP、甚至为PPP提供一个安全的“通道”。</p>
-<p><a href="https://www.wikiwand.com/zh-cn/Secure_Shell" target="_blank" rel="noopener">Secure Shell</a></p>
+<p><a href="https://www.wikiwand.com/zh-cn/Secure_Shell">Secure Shell</a></p>
 </blockquote>
 </li>
 <li><p>基本用法</p>
 <p>假设要以用户名 <code>user</code>,远程登录主机 <code>host</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host</span><br></pre></td></tr></table></figure>
+
 <p>SSH的默认端口是<code>22</code>，如果不是这个端口登录，需要添加<code>-p</code>参数</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p port user@host</span><br></pre></td></tr></table></figure>
 </li>
@@ -190,8 +192,10 @@
 <p>​</p>
 <p>在A上的命令:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa #(连续三次回车,即在本地生成了公钥和私钥,不设置密码)</span><br><span class="line">ssh root@172.24.253.2 "mkdir .ssh;chmod 0700 .ssh" #(需要输入密码， 注:必须将.ssh的权限设为700)</span><br><span class="line">scp ~/.ssh/id_rsa.pub root@172.24.253.2:.ssh/id_rsa.pub #(需要输入密码)</span><br></pre></td></tr></table></figure>
+
 <p>在 B 上的命令:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch /root/.ssh/authorized_keys #(如果已经存在这个文件, 跳过这条)</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys  #(# 注意： 必须将~/.ssh/authorized_keys的权限改为600, 该文件用于保存ssh客户端生成的公钥，可以修改服务器的ssh服务端配置文件/etc/ssh/sshd_config来指定其他文件名）</span><br><span class="line">cat /root/.ssh/id_rsa.pub  &gt;&gt; /root/.ssh/authorized_keys #(将id_rsa.pub的内容追加到 authorized_keys 中, 注意不要用 &gt; ，否则会清空原有的内容，使其他人无法使用原有的密钥登录)</span><br></pre></td></tr></table></figure>
+
 <p>​</p>
 </li>
 </ol>

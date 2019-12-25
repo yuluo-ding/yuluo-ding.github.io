@@ -179,8 +179,11 @@
         <div class="content">
             <p>计算 MD5 校验和</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5 filename</span><br></pre></td></tr></table></figure>
-<h4 id="计算_SHA-1_校验和">计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure>
-<h4 id="计算_SHA-256_校验和">计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>
+
+<h4 id="计算-SHA-1-校验和"><a href="#计算-SHA-1-校验和" class="headerlink" title="计算 SHA-1 校验和"></a>计算 SHA-1 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 1 filename</span><br></pre></td></tr></table></figure>
+
+<h4 id="计算-SHA-256-校验和"><a href="#计算-SHA-256-校验和" class="headerlink" title="计算 SHA-256 校验和"></a>计算 SHA-256 校验和</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shasum -a 256 filename</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -234,6 +237,7 @@
 </ul>
 <p>其中可以在<code>.zshrc</code>的配置文件中:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> proxy</span></span><br><span class="line">proxy () &#123;</span><br><span class="line">  export http_proxy="http://127.0.0.1:8888"</span><br><span class="line">  export https_proxy="http://127.0.0.1:8888"</span><br><span class="line">  echo "HTTP Proxy on"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> noproxy</span></span><br><span class="line">noproxy () &#123;</span><br><span class="line">  unset http_proxy</span><br><span class="line">  unset https_proxy</span><br><span class="line">  echo "HTTP Proxy off"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>使用的时候输入 Proxy 打开代理模式，关闭代理时输入 noproxy 即可.</p>
 
         </div>
@@ -283,10 +287,11 @@
             <p>Macbook Pro原生自带的Java JDK版本是1.6，而有的时候呢需要高一点的版本，这时候就需要升级JDK的版本。</p>
 <p>通过<code>java -version</code>可以查看当前的版本:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Java version "1.6.0_65"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4833)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)</span><br></pre></td></tr></table></figure>
+
 <ol>
-<li><p>首先去下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">Java SE Developent Kit</a>，下载完成后安装上，安装好的jdk在这个位置:<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents</code></p>
+<li><p>首先去下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Developent Kit</a>，下载完成后安装上，安装好的jdk在这个位置:<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents</code></p>
 </li>
-<li><p>然后去苹果的官网下载最新的java版本 <a href="https://support.apple.com/en-us/HT204036" target="_blank" rel="noopener">Java From Apple</a>,下载完成安装上以后可以在 系统偏好设置–&gt;Java–&gt;Java控制面板 中查看Java相关的信息。</p>
+<li><p>然后去苹果的官网下载最新的java版本 <a href="https://support.apple.com/en-us/HT204036">Java From Apple</a>,下载完成安装上以后可以在 系统偏好设置–&gt;Java–&gt;Java控制面板 中查看Java相关的信息。</p>
 </li>
 <li><p>去JavaFramework索引目录下修改当前的jdk引用路径:<code>cd /System/Library/Frameworks/JavaVM.framework/Versions</code></p>
 </li>
@@ -349,17 +354,23 @@
         </h1>
         <div class="content">
             <p>​    最近使用office时候发现了一个问题，由于电脑设置默认语言为英文。office也会自动切换为英文语言。想单独改office为中文版。找了一圈没找到方法，搜索了半天，发现很多人无法解决，要么就是修改电脑默认语言，还好最后在office官网找到了一个答案。</p>
-<p><a href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_other-mso_mac-mso_mac2016/how-to-manually-change-the-language-used-in-office/abe2a9c1-f550-45de-9d0e-58b99f206c41" target="_blank" rel="noopener">关于office 语言修改</a></p>
+<p><a href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_other-mso_mac-mso_mac2016/how-to-manually-change-the-language-used-in-office/abe2a9c1-f550-45de-9d0e-58b99f206c41">关于office 语言修改</a></p>
 <p>可以使用以下命令修改:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.microsoft.Word AppleLanguages '("zh-cn")'</span><br><span class="line">defaults write com.microsoft.Excel AppleLanguages '("zh-cn")'</span><br><span class="line">defaults write com.microsoft.Powerpoint AppleLanguages '("zh-cn")'</span><br></pre></td></tr></table></figure>
+
 <p>如上, 其余的应用, 也可以如此设置.</p>
 <p>如果不想要这个语言设置了, 可以使用如下设置:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults delete com.apple.AddressBook AppleLanguages</span><br></pre></td></tr></table></figure>
+
 <p> 其实查询语言的ID 的为</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdls -name kMDItemCFBundleIdentifier /Applications/Microsoft\ Word.app</span><br></pre></td></tr></table></figure>
+
 <p> 结果为</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kMDItemCFBundleIdentifier = "com.microsoft.Word"</span><br></pre></td></tr></table></figure>
-<p>终极简单的方法， 用<a href="https://itunes.apple.com/us/app/app-language-chooser/id451732904?mt=12" target="_blank" rel="noopener">App Language Chooser </a>， 把Application目录下的应用拖到这个软件里面， 然后选择中文即刻。记得勾选最下面的默认。</p>
+
+
+
+<p>终极简单的方法， 用<a href="https://itunes.apple.com/us/app/app-language-chooser/id451732904?mt=12">App Language Chooser </a>， 把Application目录下的应用拖到这个软件里面， 然后选择中文即刻。记得勾选最下面的默认。</p>
 
         </div>
         

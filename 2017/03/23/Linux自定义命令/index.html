@@ -172,6 +172,7 @@
 <p><strong>语　　法：</strong><code>alias[别名]=[指令名称]</code></p>
 <p><strong>补充说明：</strong>若仅输入alias，则可列出目前所有的别名设置。alias的效力仅及于该次登入的操作。若要每次登入是即自动设好别名，可在<code>/etc/profile</code>或自己的<code>~/.bashrc</code>中设定指令的别名。</p>
 <a id="more"></a>
+
 <p>bashrc是环境变量的配置文件 <code>/etc/bashrc</code>和<code>~/.bashrc</code> 区别就在于</p>
 <p><code>/etc/bashrc</code> 是设置给全系统</p>
 <p><code>~/.bashrc</code> 是设置给单用户使用.</p>
@@ -179,6 +180,7 @@
 <p>如果想永久生效,就把这条写入到 /etc/bashrc里面</p>
 <p>修改后，通过以下命令即可生效：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#全局配置</span></span><br><span class="line"><span class="built_in">source</span> /etc/bashrc</span><br><span class="line"><span class="comment">#个人配置</span></span><br><span class="line"><span class="built_in">source</span> .bashrc</span><br></pre></td></tr></table></figure>
+
 
         </div>
         

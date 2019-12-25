@@ -173,6 +173,7 @@
 <p>下载 <code>wget http://update.aegis.aliyun.com/download/uninstall.sh</code></p>
 <p>执行下列命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x uninstall.sh</span><br><span class="line">./uninstall.sh</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 </li>
 <li><p>卸载阿里云aliyun.service</p>
@@ -192,6 +193,7 @@
 <li><p>授予 sudo 权限</p>
 <p><code>vi /etc/sudoers</code>然后找到，如下添加</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Allow root to run any commands anywhere</span></span></span><br><span class="line">root	ALL(ALL) = ALL</span><br><span class="line">username	ALL(ALL) = ALL   # username 是新建的用户名</span><br></pre></td></tr></table></figure>
+
 <p> 在保存的时候可能需要<code>wq!</code></p>
 </li>
 </ol>
@@ -201,6 +203,9 @@
 </li>
 <li><p>禁止 root 用户登录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line">PermitRootLogin no</span><br><span class="line">service ssh restart  #CentOS6</span><br><span class="line">systemctl restart sshd #CentOS7</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ol>
 <p>现在就可以用新建的那个用户登录了。</p>

@@ -10,12 +10,12 @@
 <title>Android java.lang.OutOfMemoryError: GC overhead limit exceeded - yuluo</title>
 
 
-    <meta name="description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。 1java.lang.OutOfMemoryError: GC overhead limit exceeded ​    根据 Sun 的描述：    1&quot;if too much time is being spent in garbage collection: if more than 98% of the tot">
+    <meta name="description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。 1java.lang.OutOfMemoryError: GC overhead limit exceeded  ​    根据 Sun 的描述：    1&quot;if too much time is being spent in garbage collection: if more than 98% of the to">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android java.lang.OutOfMemoryError: GC overhead limit exceeded">
 <meta property="og:url" content="yuluo-ding.github.io/2017/02/13/Android-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。 1java.lang.OutOfMemoryError: GC overhead limit exceeded ​    根据 Sun 的描述：    1&quot;if too much time is being spent in garbage collection: if more than 98% of the tot">
+<meta property="og:description" content="​    再用 Android Studio 编辑项目的时候，会出现如下错误。 1java.lang.OutOfMemoryError: GC overhead limit exceeded  ​    根据 Sun 的描述：    1&quot;if too much time is being spent in garbage collection: if more than 98% of the to">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="/images/og_image.png">
 <meta property="article:published_time" content="2017-02-13T14:19:15.000Z">
@@ -169,12 +169,16 @@
         <div class="content">
             <p>​    再用 Android Studio 编辑项目的时候，会出现如下错误。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.OutOfMemoryError: GC overhead <span class="built_in">limit</span> exceeded</span><br></pre></td></tr></table></figure>
-<p>​    根据 Sun 的描述：<br>    <figure class="highlight mizar"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"if too much time <span class="keyword">is</span> <span class="keyword">being</span> spent <span class="keyword">in</span> garbage collection: if more than 98% <span class="keyword">of</span> the total time <span class="keyword">is</span> spent <span class="keyword">in</span> garbage collection <span class="keyword">and</span> less than 2% <span class="keyword">of</span> the heap <span class="keyword">is</span> recovered, an OutOfMemoryError will <span class="keyword">be</span> thrown."</span><br></pre></td></tr></table></figure></p>
+
+<p>​    根据 Sun 的描述：<br>    <figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">"if too much time is being spent in garbage collection: if more than 98% of the total time is spent in garbage collection and less than 2% of the heap is recovered, an OutOfMemoryError will be thrown."</span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
+
 <p>​    首先更改 Android Studio 的运行内存，MacBook 在<code>Content/bin/studio.vmoptions</code>,修改如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># *DO NOT* modify this file directly. If there is a value that you would like to override,</span></span><br><span class="line"><span class="comment"># please add it to your user specific configuration file.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># See http://tools.android.com/tech-docs/configuration</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">-Xms256m</span><br><span class="line">-Xmx4096m</span><br><span class="line">-XX:MaxPermSize=1024m</span><br><span class="line">-XX:ReservedCodeCacheSize=768m</span><br><span class="line">-XX:+UseCompressedOops</span><br></pre></td></tr></table></figure>
+
 <p>​    之后在项目的<code>build.gradle</code>中添加一个设置:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exOptions &#123;</span><br><span class="line">        javaMaxHeapSize "4g"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>​    接下来运行就能通过。</p>
 
         </div>

@@ -277,6 +277,7 @@
 <p>试试如下代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">byteify</span><span class="params">(input)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(input, dict):</span><br><span class="line">        <span class="keyword">return</span> &#123;byteify(key): byteify(value) <span class="keyword">for</span> key, value <span class="keyword">in</span> input.iteritems()&#125;</span><br><span class="line">    <span class="keyword">elif</span> isinstance(input, list):</span><br><span class="line">        <span class="keyword">return</span> [byteify(element) <span class="keyword">for</span> element <span class="keyword">in</span> input]</span><br><span class="line">    <span class="keyword">elif</span> isinstance(input, unicode):</span><br><span class="line">        <span class="keyword">return</span> input.encode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> input</span><br></pre></td></tr></table></figure>
 
+
         </div>
         
         
@@ -379,7 +380,7 @@
 <p><strong>Git 的安装有几个方式：</strong></p>
 <ol>
 <li><p>源码安装：</p>
-<p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git 官网下载地址 for Mac</a></p>
+<p><a href="https://git-scm.com/">Git 官网下载地址 for Mac</a></p>
         </div>
         
         
@@ -538,7 +539,7 @@
             
         </h1>
         <div class="content">
-            <p><a href="https://rufus.akeo.ie/?locale=zh_CN" target="_blank" rel="noopener">Rufus</a> 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。</p>
+            <p><a href="https://rufus.akeo.ie/?locale=zh_CN">Rufus</a> 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。</p>
 <p>在如下场景中会非常有用：</p>
 <ul>
 <li>你需要把一些可引导的ISO格式的镜像（Windows，Linux，UEFI等）创建成USB安装盘的时候</li>
