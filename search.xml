@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解决macOS端口被占用]]></title>
+    <url>%2F2019%2F12%2F26%2F%E8%A7%A3%E5%86%B3macOS%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[在部署和测试hexo的时候，经常出现一下提示： Error: listen EADDRINUSE: address already in use :::4000 这是说明4000端口呗占用了，之前讲了Windows下怎么解决，这次说明下macOS下怎么解决 1sudo lsof -i:port # port为对应的端口号 之后出现如下提示： 12COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAMEnode 10906 yuluo 42u IPv6 0xcd611b6cd0d363df 0t0 TCP *:terabase (LISTEN) 找到PID，然后杀掉该进程就可以 1sudo kill -9 PID #上面显示的PID]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[解决1080 端口被占用]]></title>
     <url>%2F2019%2F12%2F24%2F%E8%A7%A3%E5%86%B31080-%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%2F</url>
     <content type="text"><![CDATA[在用Windows的时候，或者一些特殊软件的时候，会提示端口被占用了，例如1080端口。 有以下几个解决办法： 用cmd命令查看是哪个应用占用了 打开cmd，然后netstat -aon|findstr &quot;1080&quot;，通过最后一列得到该应用的PID， 然后根据PID找出是哪个应用，tasklist|findstr PID ， 最后用任务管理器kill该应用即可。 使用CurrPorts软件来查看 下载地址 下载后直接解压运行 找到被占用的端口 右键，选择 “Close Selected TCP Connections” 修改要用的端口 例如在目录下找到gui-config.json文件，把其中的&quot;localPort&quot; : 1080,换成&quot;localPort&quot; : 1090,或者其余的端口，然后保存文件，重启应用。]]></content>
