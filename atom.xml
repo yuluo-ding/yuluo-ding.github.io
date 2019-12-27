@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2019-12-27T07:01:34.851Z</updated>
+  <updated>2019-12-27T07:11:09.618Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="yuluo-ding.github.io/2019/12/26/%E8%A7%A3%E5%86%B3macOS%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/"/>
     <id>yuluo-ding.github.io/2019/12/26/解决macOS端口被占用/</id>
     <published>2019-12-26T15:18:54.000Z</published>
-    <updated>2019-12-27T07:01:34.851Z</updated>
+    <updated>2019-12-27T07:11:09.618Z</updated>
     
     <content type="html"><![CDATA[<p>在部署和测试hexo的时候，经常出现一下提示：</p><p><code>Error: listen EADDRINUSE: address already in use :::4000</code></p><p>这是说明4000端口呗占用了，之前讲了Windows下怎么解决，这次说明下macOS下怎么解决</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i:port # port为对应的端口号</span><br></pre></td></tr></table></figure><a id="more"></a><p>之后出现如下提示：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">node    10906 username   42u  IPv6 0xcd611b6cd0d363df      0t0  TCP *:terabase (LISTEN)</span><br></pre></td></tr></table></figure><p>找到PID，然后杀掉该进程就可以</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kill -9 PID #上面显示的PID</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -34,10 +34,10 @@
     
     </summary>
     
-      <category term="macOS" scheme="yuluo-ding.github.io/categories/macOS/"/>
+      <category term="mac OS" scheme="yuluo-ding.github.io/categories/mac-OS/"/>
     
     
-      <category term="mac OS" scheme="yuluo-ding.github.io/tags/mac-OS/"/>
+      <category term="macOS" scheme="yuluo-ding.github.io/tags/macOS/"/>
     
   </entry>
   
