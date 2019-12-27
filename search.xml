@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[解决macOS端口被占用]]></title>
     <url>%2F2019%2F12%2F26%2F%E8%A7%A3%E5%86%B3macOS%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[在部署和测试hexo的时候，经常出现一下提示： Error: listen EADDRINUSE: address already in use :::4000 这是说明4000端口呗占用了，之前讲了Windows下怎么解决，这次说明下macOS下怎么解决 1sudo lsof -i:port # port为对应的端口号 之后出现如下提示： 12COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAMEnode 10906 yuluo 42u IPv6 0xcd611b6cd0d363df 0t0 TCP *:terabase (LISTEN) 找到PID，然后杀掉该进程就可以 1sudo kill -9 PID #上面显示的PID]]></content>
+    <content type="text"><![CDATA[在部署和测试hexo的时候，经常出现一下提示： Error: listen EADDRINUSE: address already in use :::4000 这是说明4000端口呗占用了，之前讲了Windows下怎么解决，这次说明下macOS下怎么解决 1sudo lsof -i:port # port为对应的端口号 之后出现如下提示： 12COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAMEnode 10906 username 42u IPv6 0xcd611b6cd0d363df 0t0 TCP *:terabase (LISTEN) 找到PID，然后杀掉该进程就可以 1sudo kill -9 PID #上面显示的PID]]></content>
       <categories>
         <category>macOS</category>
       </categories>

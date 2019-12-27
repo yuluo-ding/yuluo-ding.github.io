@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="/images/og_image.png">
 <meta property="article:published_time" content="2019-12-26T15:18:54.000Z">
-<meta property="article:modified_time" content="2019-12-26T15:23:35.473Z">
+<meta property="article:modified_time" content="2019-12-27T02:22:28.907Z">
 <meta property="article:author" content="Luo Yu">
 <meta property="article:tag" content="macOS">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 
 <p>之后出现如下提示：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">node    10906 yuluo   42u  IPv6 0xcd611b6cd0d363df      0t0  TCP *:terabase (LISTEN)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">node    10906 username   42u  IPv6 0xcd611b6cd0d363df      0t0  TCP *:terabase (LISTEN)</span><br></pre></td></tr></table></figure>
 
 <p>找到PID，然后杀掉该进程就可以</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kill -9 PID #上面显示的PID</span><br></pre></td></tr></table></figure>
