@@ -302,7 +302,7 @@
     <url>%2F2018%2F08%2F07%2Fnpm%E5%8D%87%E7%BA%A7%E6%89%80%E6%9C%89%E5%8F%AF%E6%9B%B4%E6%96%B0%E5%8C%85%2F</url>
     <content type="text"><![CDATA[使用npm管理node的包，可以使用npm update &lt;name&gt;对单个包升级，对于npm的版本大于 2.6.1,可以使用命令: 1npm install -g 这样升级全部的包 如果上述不太方便, 还可以使用shell脚本和npm-ckeck shell 脚本1234567#!/bin/shset -e#set -xfor package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)do npm -g install "$package"done npm-checknpm-check是用来检查npm依赖包是否有更新，错误以及不在使用的，我们也可以使用npm-check进行包的更新。 安装npm-check： 1npm install -g npm-check 检查npm包的状态: 1npm-check -u -g 通过上下键可以移动光标，使用空格键可以选择需要处理的包，回车直接进行处理。]]></content>
       <categories>
-        <category>前端</category>
+        <category>hexo教程</category>
       </categories>
       <tags>
         <tag>npm</tag>
