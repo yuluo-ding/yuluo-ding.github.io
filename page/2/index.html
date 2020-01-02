@@ -328,7 +328,7 @@ var _hmt = _hmt || [];
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 249 个字)
+                    2 分钟 读完 (大约 254 个字)
                 </span>
                 
                 
@@ -342,7 +342,7 @@ var _hmt = _hmt || [];
         </h1>
         <div class="content">
             <p>CentOS 7只有默认的Python2，并没有Python3，为了不影响使用，做个安装记录。</p>
-<h3 id="编译安装Python-3-相关的包"><a href="#编译安装Python-3-相关的包" class="headerlink" title="编译安装Python 3 相关的包"></a>编译安装Python 3 相关的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel</span><br></pre></td></tr></table></figure>
+<h3 id="编译安装Python-3-相关的包"><a href="#编译安装Python-3-相关的包" class="headerlink" title="编译安装Python 3 相关的包"></a>编译安装Python 3 相关的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel</span><br></pre></td></tr></table></figure>
 
 <p>这里面有一个包很关键<code>libffi-devel</code>，因为只有3.7才会用到这个包，如果不安装这个包的话，在 make 阶段会出现如下的报错：</p>
         </div>
