@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2019-12-27T07:11:09.618Z</updated>
+  <updated>2020-01-24T15:26:59.337Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>macOS下预览webp格式的图片</title>
+    <link href="yuluo-ding.github.io/2020/01/24/macOS%E4%B8%8B%E9%A2%84%E8%A7%88webp%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%9B%BE%E7%89%87/"/>
+    <id>yuluo-ding.github.io/2020/01/24/macOS下预览webp格式的图片/</id>
+    <published>2020-01-24T15:22:57.000Z</published>
+    <updated>2020-01-24T15:26:59.337Z</updated>
+    
+    <content type="html"><![CDATA[<p>webp格式的图片本来可以使用Chrome 查看，但是macOS自带的无法预览。</p><p>可以使用如下方法可以预览webp格式的图片。</p><p>下载安装webp-quicklook</p><a id="more"></a><ol><li>下载<a href="https://github.com/dchest/webp-quicklook/releases">webp-quicklook</a></li><li>解压得到WebP.qlgenerator</li><li>复制到<code>/Library/QuickLook</code>目录</li><li>option+右击，点击relaunch，等待Finder线程</li><li>可以使用空格点击webp格式的图片预览</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;webp格式的图片本来可以使用Chrome 查看，但是macOS自带的无法预览。&lt;/p&gt;
+&lt;p&gt;可以使用如下方法可以预览webp格式的图片。&lt;/p&gt;
+&lt;p&gt;下载安装webp-quicklook&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="macOS" scheme="yuluo-ding.github.io/categories/macOS/"/>
+    
+    
+      <category term="webp" scheme="yuluo-ding.github.io/tags/webp/"/>
+    
+  </entry>
   
   <entry>
     <title>解决macOS端口被占用</title>
@@ -494,28 +518,6 @@
     
     
       <category term="terminal" scheme="yuluo-ding.github.io/tags/terminal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 两个list 求交集，并集，差集</title>
-    <link href="yuluo-ding.github.io/2018/09/14/Python-%E4%B8%A4%E4%B8%AAlist-%E6%B1%82%E4%BA%A4%E9%9B%86%EF%BC%8C%E5%B9%B6%E9%9B%86%EF%BC%8C%E5%B7%AE%E9%9B%86/"/>
-    <id>yuluo-ding.github.io/2018/09/14/Python-两个list-求交集，并集，差集/</id>
-    <published>2018-09-14T02:34:00.000Z</published>
-    <updated>2019-12-25T07:17:29.624Z</updated>
-    
-    <content type="html"><![CDATA[<p>在python中，分别求两个list 的交集，并集与差集，怎么实现比较方便呢？<br>除了两个for 循环, 还有其余的更方便的方法</p><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">diff</span><span class="params">(listA,listB)</span>:</span></span><br><span class="line">    <span class="comment">#求交集的两种方式</span></span><br><span class="line">    retA = [i <span class="keyword">for</span> i <span class="keyword">in</span> listA <span class="keyword">if</span> i <span class="keyword">in</span> listB]</span><br><span class="line">    retB = list(set(listA).intersection(set(listB)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"retA is: "</span>,retA</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"retB is: "</span>,retB</span><br><span class="line"></span><br><span class="line">    <span class="comment">#求并集</span></span><br><span class="line">    retC = list(set(listA).union(set(listB)))</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"retC1 is: "</span>,retC</span><br><span class="line"></span><br><span class="line">    <span class="comment">#求差集，在B中但不在A中</span></span><br><span class="line">    retD = list(set(listB).difference(set(listA)))</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"retD is: "</span>,retD</span><br><span class="line"></span><br><span class="line">    retE = [i <span class="keyword">for</span> i <span class="keyword">in</span> listB <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> listA]</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"retE is: "</span>,retE</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    listA = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">    listB = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">    diff(listA,listB)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure><p>大体上是两种思路：<br>1.使用列表解析式. 列表解析式一般来说比循环更快.<br>2.将list转成set以后，使用set的各种方法去处理.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在python中，分别求两个list 的交集，并集与差集，怎么实现比较方便呢？&lt;br&gt;除了两个for 循环, 还有其余的更方便的方法&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
-    
-    
-      <category term="list" scheme="yuluo-ding.github.io/tags/list/"/>
     
   </entry>
   
