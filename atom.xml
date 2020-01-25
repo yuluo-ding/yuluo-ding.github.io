@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2020-01-24T15:26:59.337Z</updated>
+  <updated>2020-01-25T10:22:30.034Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="yuluo-ding.github.io/2020/01/24/macOS%E4%B8%8B%E9%A2%84%E8%A7%88webp%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%9B%BE%E7%89%87/"/>
     <id>yuluo-ding.github.io/2020/01/24/macOS下预览webp格式的图片/</id>
     <published>2020-01-24T15:22:57.000Z</published>
-    <updated>2020-01-24T15:26:59.337Z</updated>
+    <updated>2020-01-25T10:22:30.034Z</updated>
     
     <content type="html"><![CDATA[<p>webp格式的图片本来可以使用Chrome 查看，但是macOS自带的无法预览。</p><p>可以使用如下方法可以预览webp格式的图片。</p><p>下载安装webp-quicklook</p><a id="more"></a><ol><li>下载<a href="https://github.com/dchest/webp-quicklook/releases">webp-quicklook</a></li><li>解压得到WebP.qlgenerator</li><li>复制到<code>/Library/QuickLook</code>目录</li><li>option+右击，点击relaunch，等待Finder线程</li><li>可以使用空格点击webp格式的图片预览</li></ol>]]></content>
     
@@ -33,7 +33,7 @@
     
     </summary>
     
-      <category term="macOS" scheme="yuluo-ding.github.io/categories/macOS/"/>
+      <category term="mac OS" scheme="yuluo-ding.github.io/categories/mac-OS/"/>
     
     
       <category term="webp" scheme="yuluo-ding.github.io/tags/webp/"/>
