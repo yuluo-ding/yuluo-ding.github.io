@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2020-03-05T05:38:22.803Z</updated>
+  <updated>2020-03-11T07:51:48.456Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 格式化时间</title>
+    <link href="yuluo-ding.github.io/2020/03/11/Python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/"/>
+    <id>yuluo-ding.github.io/2020/03/11/Python-格式化时间/</id>
+    <published>2020-03-11T07:33:54.000Z</published>
+    <updated>2020-03-11T07:51:48.456Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们日常可能需要显示时间，在Python 中，一般可以使用自带的<code>datetime</code>模块。</p><p>基本语法如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.datetime.now())</span><br></pre></td></tr></table></figure><p>但是这个输出的是固定格式的微秒，在需要自定义的时候，还得格式化这个输出。</p><a id="more"></a><p>格式化参数：<strong>strftime</strong></p><p>使用方法如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.now().strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>)</span><br></pre></td></tr></table></figure><p>剩下的其余参数如下：</p><ul><li>%y 两位数的年份表示</li><li>%Y 四位数的年份表示</li><li>%m 月份</li><li>%d 月内中的一天</li><li>%H 24小时制小时数</li><li>%I 12小时制小时数</li><li>%M 分钟数</li><li>%S 秒</li><li>%a 本地简化星期名称</li><li>%A 本地完整星期名称</li><li>%b 本地简化的月份名称</li><li>%B 本地完整的月份名称</li><li>%c 本地相应的日期表示和时间表示</li><li>%j 年内的一天</li><li>%p 本地A.M.或P.M.的等价符</li><li>%U 一年中的星期数星期天为星期的开始</li><li>%w 星期，星期天为星期的开始</li><li>%W 一年中的星期数星期一为星期的开始</li><li>%x 本地相应的日期表示</li><li>%X 本地相应的时间表示</li><li>%Z 当前时区的名称</li><li>%% %号本身</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们日常可能需要显示时间，在Python 中，一般可以使用自带的&lt;code&gt;datetime&lt;/code&gt;模块。&lt;/p&gt;
+&lt;p&gt;基本语法如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; datetime&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(datetime.datetime.now())&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;但是这个输出的是固定格式的微秒，在需要自定义的时候，还得格式化这个输出。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+      <category term="格式化时间" scheme="yuluo-ding.github.io/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>如何在Linux 中优先使用IPV 4</title>
@@ -492,30 +518,6 @@
     
     
       <category term="windows" scheme="yuluo-ding.github.io/tags/windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Python的paramiko模块</title>
-    <link href="yuluo-ding.github.io/2018/11/26/%E4%BD%BF%E7%94%A8Python%E7%9A%84paramiko%E6%A8%A1%E5%9D%97/"/>
-    <id>yuluo-ding.github.io/2018/11/26/使用Python的paramiko模块/</id>
-    <published>2018-11-26T14:25:04.000Z</published>
-    <updated>2019-12-25T07:17:08.597Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作.</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>直接使用pip安装即可.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install paramiko</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> paramiko</span><br><span class="line">ssh = paramiko.SSHClient()</span><br><span class="line"></span><br><span class="line"><span class="comment">#允许连接不在know_hosts文件中的主机。</span></span><br><span class="line">ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</span><br><span class="line">ssh.connect(ip,  port, username, password)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行shell命令</span></span><br><span class="line">ssh.exec_command(<span class="string">'ls'</span>)</span><br></pre></td></tr></table></figure><p>API文档:<a href="https://paramiko-docs.readthedocs.io/en/2.4/api/client.html">https://paramiko-docs.readthedocs.io/en/2.4/api/client.html</a></p><h3 id="SFTP"><a href="#SFTP" class="headerlink" title="SFTP"></a>SFTP</h3><p>通过paramiko模块可以实现SCP的功能</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#在新建好ssh链接对象之后, 新建一个链接对象.</span></span><br><span class="line">sftp = ssh.open_sftp()</span><br><span class="line"></span><br><span class="line"><span class="comment">#上传文件</span></span><br><span class="line">sftp.put(local_file, remote_file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#下载文件</span></span><br><span class="line">sftp.get(remote_file, local_file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出目录</span></span><br><span class="line">sftp.listdir()<span class="comment">#默认当前目录</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h3&gt;&lt;p&gt;使用paramiko模块， 在Python的环境下实现 SSH 下的一些操作.&lt;/p&gt;
-&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;直接使用pip安装即可.&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install paramiko&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="yuluo-ding.github.io/tags/Python/"/>
     
   </entry>
   

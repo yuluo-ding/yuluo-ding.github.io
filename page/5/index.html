@@ -151,6 +151,54 @@ var _hmt = _hmt || [];
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-04-08T08:32:36.000Z">2018-04-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 113 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/04/08/Pyhton-%E5%8E%BB%E6%8E%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E8%BE%B9%E7%9A%84u/">Pyhton 去掉字符串前边的u</a>
+            
+        </h1>
+        <div class="content">
+            <p>在用<code>json.load</code>导入json 格式的文件的时候, 打印出来的dict, 会显示的是unicode 编码形式, 下面一种方法可以利用检测编码的形式把<code>u</code>去掉.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(colnames)):</span><br><span class="line">    <span class="keyword">print</span> type(rowData[i])</span><br><span class="line">    <span class="keyword">if</span> type(rowData[i]) == float :<span class="comment">#如果是字符串类型，则进行编码</span></span><br><span class="line">      <span class="keyword">print</span> colnames[i]</span><br><span class="line">      eachRowData[colnames[i].encode(<span class="string">'ascii'</span>)] = rowData[i]</span><br><span class="line">          <span class="comment">#.encode('raw_unicode_escape')</span></span><br><span class="line">    <span class="keyword">elif</span> type(rowData[i]) == unicode:</span><br><span class="line">        eachRowData[colnames[i].encode(<span class="string">'ascii'</span>)] = rowData[i].encode(<span class="string">'ascii'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list.append(eachRowData)</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2018-02-05T16:05:55.000Z">2018-02-06</time>
                 
                 <div class="level-item">
@@ -636,60 +684,6 @@ var _hmt = _hmt || [];
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-10-30T08:02:46.000Z">2017-10-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 444 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2017/10/30/Python-ConfigParser%E6%A8%A1%E5%9D%97%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B/">Python ConfigParser模块常用方法示例</a>
-            
-        </h1>
-        <div class="content">
-            <p>在程序中使用配置文件来灵活的配置一些参数是一件很常见的事情，配置文件的解析并不复杂，在Python里更是如此，在官方发布的库中就包含有做这件事情的库，那就是ConfigParser，这里简单的做一些介绍。  </p>
-<p><code>Python ConfigParser</code>模块解析的配置文件的格式比较象ini的配置文件格式，就是文件中由多个section构成，每个section下又有多个配置项.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2017/10/30/Python-ConfigParser%E6%A8%A1%E5%9D%97%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -759,7 +753,7 @@ var _hmt = _hmt || [];
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            177
+                            178
                         </p>
                     </a>
                 </div>
@@ -783,7 +777,7 @@ var _hmt = _hmt || [];
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            27
+                            28
                         </p>
                     </a>
                 </div>
@@ -932,7 +926,7 @@ var _hmt = _hmt || [];
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">49</span>
+                <span class="level-item tag">50</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Regex/">
@@ -1025,7 +1019,7 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSV/" style="font-size: 10px;">CSV</a> <a href="/tags/CentOS-7/" style="font-size: 10px;">CentOS 7</a> <a href="/tags/Chrome/" style="font-size: 15px;">Chrome</a> <a href="/tags/Google-Play/" style="font-size: 10px;">Google Play</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/IPV4/" style="font-size: 10px;">IPV4</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Ubuntu18/" style="font-size: 10px;">Ubuntu18</a> <a href="/tags/Xposed/" style="font-size: 10px;">Xposed</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iTunes/" style="font-size: 10px;">iTunes</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/macOS/" style="font-size: 15px;">macOS</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/path/" style="font-size: 10px;">path</a> <a href="/tags/python-linux/" style="font-size: 10px;">python, linux</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/terminal/" style="font-size: 15px;">terminal</a> <a href="/tags/webp/" style="font-size: 10px;">webp</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E5%B0%8F%E7%B1%B3-6/" style="font-size: 10px;">小米 6</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E7%BD%91%E5%8D%A1/" style="font-size: 10px;">网卡</a>
+        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSV/" style="font-size: 10px;">CSV</a> <a href="/tags/CentOS-7/" style="font-size: 10px;">CentOS 7</a> <a href="/tags/Chrome/" style="font-size: 15px;">Chrome</a> <a href="/tags/Google-Play/" style="font-size: 10px;">Google Play</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/IPV4/" style="font-size: 10px;">IPV4</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Ubuntu18/" style="font-size: 10px;">Ubuntu18</a> <a href="/tags/Xposed/" style="font-size: 10px;">Xposed</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iTunes/" style="font-size: 10px;">iTunes</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/macOS/" style="font-size: 15px;">macOS</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/path/" style="font-size: 10px;">path</a> <a href="/tags/python-linux/" style="font-size: 10px;">python, linux</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/terminal/" style="font-size: 15px;">terminal</a> <a href="/tags/webp/" style="font-size: 10px;">webp</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E5%B0%8F%E7%B1%B3-6/" style="font-size: 10px;">小米 6</a> <a href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/" style="font-size: 10px;">格式化时间</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E7%BD%91%E5%8D%A1/" style="font-size: 10px;">网卡</a>
     </div>
 </div>
     
@@ -1037,6 +1031,25 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/11/Python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Python 格式化时间">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-11T07:33:54.000Z">2020-03-11</time></div>
+                    <a href="/2020/03/11/Python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Python 格式化时间</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1114,25 +1127,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/24/%E8%A7%A3%E5%86%B31080-%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="解决1080 端口被占用">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-24T08:40:48.000Z">2019-12-24</time></div>
-                    <a href="/2019/12/24/%E8%A7%A3%E5%86%B31080-%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">解决1080 端口被占用</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Windows/">Windows</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1150,7 +1144,7 @@ var _hmt = _hmt || [];
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1878,6 +1872,13 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E5%B0%8F%E7%B1%B3-6/">
                         <span class="tag">小米 6</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/">
+                        <span class="tag">格式化时间</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1920,6 +1921,25 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
+            <a href="/2020/03/11/Python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Python 格式化时间">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-11T07:33:54.000Z">2020-03-11</time></div>
+                    <a href="/2020/03/11/Python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Python 格式化时间</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/05/%E5%A6%82%E4%BD%95%E5%9C%A8Linux-%E4%B8%AD%E4%BC%98%E5%85%88%E4%BD%BF%E7%94%A8IPV-4/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="如何在Linux 中优先使用IPV 4">
@@ -1994,25 +2014,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/24/%E8%A7%A3%E5%86%B31080-%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="解决1080 端口被占用">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-24T08:40:48.000Z">2019-12-24</time></div>
-                    <a href="/2019/12/24/%E8%A7%A3%E5%86%B31080-%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">解决1080 端口被占用</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Windows/">Windows</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2030,7 +2031,7 @@ var _hmt = _hmt || [];
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -2758,6 +2759,13 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E5%B0%8F%E7%B1%B3-6/">
                         <span class="tag">小米 6</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/">
+                        <span class="tag">格式化时间</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
