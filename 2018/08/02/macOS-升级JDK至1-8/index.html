@@ -10,16 +10,16 @@
 <title>macOS 升级JDK至1.8 - yuluo</title>
 
 
-    <meta name="description" content="Macbook Pro原生自带的Java JDK版本是1.6，而有的时候呢需要高一点的版本，这时候就需要升级JDK的版本。 通过java -version可以查看当前的版本: 123Java version &quot;1.6.0_65&quot;Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4833)Java HotSpot(TM) 64-Bi">
+    <meta name="description" content="Macbook Pro原生自带的Java JDK版本是1.6，而有的时候需要高一点的版本，这时候就需要升级JDK的版本。 通过java -version可以查看当前的版本: 123Java version &quot;1.6.0_65&quot;Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4833)Java HotSpot(TM) 64-Bit">
 <meta property="og:type" content="article">
 <meta property="og:title" content="macOS 升级JDK至1.8">
 <meta property="og:url" content="yuluo-ding.github.io/2018/08/02/macOS-%E5%8D%87%E7%BA%A7JDK%E8%87%B31-8/index.html">
 <meta property="og:site_name" content="yuluo">
-<meta property="og:description" content="Macbook Pro原生自带的Java JDK版本是1.6，而有的时候呢需要高一点的版本，这时候就需要升级JDK的版本。 通过java -version可以查看当前的版本: 123Java version &quot;1.6.0_65&quot;Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4833)Java HotSpot(TM) 64-Bi">
+<meta property="og:description" content="Macbook Pro原生自带的Java JDK版本是1.6，而有的时候需要高一点的版本，这时候就需要升级JDK的版本。 通过java -version可以查看当前的版本: 123Java version &quot;1.6.0_65&quot;Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4833)Java HotSpot(TM) 64-Bit">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="/images/og_image.png">
 <meta property="article:published_time" content="2018-08-02T15:55:13.000Z">
-<meta property="article:modified_time" content="2019-12-25T07:18:37.097Z">
+<meta property="article:modified_time" content="2020-03-11T01:12:48.744Z">
 <meta property="article:author" content="Luo Yu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="/images/og_image.png">
@@ -162,7 +162,7 @@ var _hmt = _hmt || [];
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 510 个字)
+                    3 分钟 读完 (大约 506 个字)
                 </span>
                 
                 
@@ -175,7 +175,7 @@ var _hmt = _hmt || [];
             
         </h1>
         <div class="content">
-            <p>Macbook Pro原生自带的Java JDK版本是1.6，而有的时候呢需要高一点的版本，这时候就需要升级JDK的版本。</p>
+            <p>Macbook Pro原生自带的Java JDK版本是1.6，而有的时候需要高一点的版本，这时候就需要升级JDK的版本。</p>
 <p>通过<code>java -version</code>可以查看当前的版本:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Java version "1.6.0_65"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4833)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)</span><br></pre></td></tr></table></figure>
 
@@ -188,7 +188,7 @@ var _hmt = _hmt || [];
 </li>
 <li><p>去JavaFramework索引目录下修改当前的jdk引用路径:<code>cd /System/Library/Frameworks/JavaVM.framework/Versions</code></p>
 </li>
-<li><p>移除旧的引用:<code>sudo rm CurrentJDK</code>，如果你的系统是最新的<code>10.13</code>的话，会有这个提示：<code>rm: CurrentJDK: Operation not permitted</code>。</p>
+<li><p>移除旧的引用:<code>sudo rm CurrentJDK</code>，如果你的系统是新的<code>10.13</code>的话，会有提示：<code>rm: CurrentJDK: Operation not permitted</code>。</p>
 <blockquote>
 <p>这是因为<code>EI Capitan</code>加入了<code>Rootless机制</code>，不再能够随心所欲的读写很多路径下得内容了，即使是设置了<code>root</code>权限也不行。 苹果这样做也是为了用户的安全考虑，避免用户误删文件，当然也能够在一定程度下减小恶意软件对用户造成危害的几率。 但是这是我们自己需要这样的操作怎么办呢 ？苹果也考虑到了大家的需求，可以这么做：</p>
 <p><strong>1).</strong> 重启电脑，在将要启动的时候按住 <code>Command + R</code>键，进入恢复模式； </p>
