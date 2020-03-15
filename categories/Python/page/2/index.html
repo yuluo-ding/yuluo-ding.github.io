@@ -162,6 +162,54 @@ var _hmt = _hmt || [];
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-04-08T08:32:36.000Z">2018-04-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 113 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/04/08/Pyhton-%E5%8E%BB%E6%8E%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E8%BE%B9%E7%9A%84u/">Pyhton 去掉字符串前边的u</a>
+            
+        </h1>
+        <div class="content">
+            <p>在用<code>json.load</code>导入json 格式的文件的时候, 打印出来的dict, 会显示的是unicode 编码形式, 下面一种方法可以利用检测编码的形式把<code>u</code>去掉.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(colnames)):</span><br><span class="line">    <span class="keyword">print</span> type(rowData[i])</span><br><span class="line">    <span class="keyword">if</span> type(rowData[i]) == float :<span class="comment">#如果是字符串类型，则进行编码</span></span><br><span class="line">      <span class="keyword">print</span> colnames[i]</span><br><span class="line">      eachRowData[colnames[i].encode(<span class="string">'ascii'</span>)] = rowData[i]</span><br><span class="line">          <span class="comment">#.encode('raw_unicode_escape')</span></span><br><span class="line">    <span class="keyword">elif</span> type(rowData[i]) == unicode:</span><br><span class="line">        eachRowData[colnames[i].encode(<span class="string">'ascii'</span>)] = rowData[i].encode(<span class="string">'ascii'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list.append(eachRowData)</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2018-01-31T15:59:17.000Z">2018-01-31</time>
                 
                 <div class="level-item">
@@ -640,60 +688,6 @@ var _hmt = _hmt || [];
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-07-21T06:13:16.000Z">2017-07-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Python/">Python</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 138 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2017/07/21/Python-%E5%88%97%E5%87%BA%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9/">Python 列出当前目录的文件和文件夹</a>
-            
-        </h1>
-        <div class="content">
-            <p>只获取当前目录的文件和文件夹</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list = os.listdir(rootdir)<span class="comment">#列出目录下的所有文件和目录</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> list:</span><br><span class="line">    filepath = os.path.join(rootdir,line)</span><br><span class="line">    <span class="keyword">if</span> os.path.isdir(filepath):<span class="comment">#如果filepath是目录</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"dir:"</span> + filepath</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"file:"</span> + filepath</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2017/07/21/Python-%E5%88%97%E5%87%BA%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -712,9 +706,9 @@ var _hmt = _hmt || [];
             
             <li><a class="pagination-link has-text-black-ter" href="/categories/Python/page/3/">3</a></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/categories/Python/page/4/">4</a></li>
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/categories/Python/page/5/">5</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/categories/Python/page/6/">6</a></li>
             
         </ul>
     </nav>
@@ -759,7 +753,7 @@ var _hmt = _hmt || [];
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            178
+                            179
                         </p>
                     </a>
                 </div>
@@ -783,7 +777,7 @@ var _hmt = _hmt || [];
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            28
+                            29
                         </p>
                     </a>
                 </div>
@@ -932,7 +926,7 @@ var _hmt = _hmt || [];
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">50</span>
+                <span class="level-item tag">51</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Regex/">
@@ -1025,7 +1019,7 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSV/" style="font-size: 10px;">CSV</a> <a href="/tags/CentOS-7/" style="font-size: 10px;">CentOS 7</a> <a href="/tags/Chrome/" style="font-size: 15px;">Chrome</a> <a href="/tags/Google-Play/" style="font-size: 10px;">Google Play</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/IPV4/" style="font-size: 10px;">IPV4</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Ubuntu18/" style="font-size: 10px;">Ubuntu18</a> <a href="/tags/Xposed/" style="font-size: 10px;">Xposed</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iTunes/" style="font-size: 10px;">iTunes</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/macOS/" style="font-size: 15px;">macOS</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/path/" style="font-size: 10px;">path</a> <a href="/tags/python-linux/" style="font-size: 10px;">python, linux</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/terminal/" style="font-size: 15px;">terminal</a> <a href="/tags/webp/" style="font-size: 10px;">webp</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E5%B0%8F%E7%B1%B3-6/" style="font-size: 10px;">小米 6</a> <a href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/" style="font-size: 10px;">格式化时间</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E7%BD%91%E5%8D%A1/" style="font-size: 10px;">网卡</a>
+        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSV/" style="font-size: 10px;">CSV</a> <a href="/tags/CentOS-7/" style="font-size: 10px;">CentOS 7</a> <a href="/tags/Chrome/" style="font-size: 15px;">Chrome</a> <a href="/tags/Google-Play/" style="font-size: 10px;">Google Play</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/IPV4/" style="font-size: 10px;">IPV4</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Ubuntu18/" style="font-size: 10px;">Ubuntu18</a> <a href="/tags/Xposed/" style="font-size: 10px;">Xposed</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iTunes/" style="font-size: 10px;">iTunes</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/macOS/" style="font-size: 15px;">macOS</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/path/" style="font-size: 10px;">path</a> <a href="/tags/python-linux/" style="font-size: 10px;">python, linux</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/terminal/" style="font-size: 15px;">terminal</a> <a href="/tags/webp/" style="font-size: 10px;">webp</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/%E5%B0%8F%E7%B1%B3-6/" style="font-size: 10px;">小米 6</a> <a href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/" style="font-size: 10px;">格式化时间</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E7%BD%91%E5%8D%A1/" style="font-size: 10px;">网卡</a>
     </div>
 </div>
     
@@ -1037,6 +1031,25 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/15/Python%E6%A0%BC%E5%BC%8F%E5%8C%96xml%E6%96%87%E4%BB%B6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Python格式化xml文件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-15T14:55:50.000Z">2020-03-15</time></div>
+                    <a href="/2020/03/15/Python%E6%A0%BC%E5%BC%8F%E5%8C%96xml%E6%96%87%E4%BB%B6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Python格式化xml文件</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1114,25 +1127,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/26/%E8%A7%A3%E5%86%B3macOS%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="解决macOS端口被占用">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T15:18:54.000Z">2019-12-26</time></div>
-                    <a href="/2019/12/26/%E8%A7%A3%E5%86%B3macOS%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">解决macOS端口被占用</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/mac-OS/">mac OS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1150,7 +1144,7 @@ var _hmt = _hmt || [];
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1871,6 +1865,13 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/windows/">
                         <span class="tag">windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/xml/">
+                        <span class="tag">xml</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1927,6 +1928,25 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
+            <a href="/2020/03/15/Python%E6%A0%BC%E5%BC%8F%E5%8C%96xml%E6%96%87%E4%BB%B6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Python格式化xml文件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-15T14:55:50.000Z">2020-03-15</time></div>
+                    <a href="/2020/03/15/Python%E6%A0%BC%E5%BC%8F%E5%8C%96xml%E6%96%87%E4%BB%B6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Python格式化xml文件</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/11/Python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Python 格式化时间">
@@ -2001,25 +2021,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/26/%E8%A7%A3%E5%86%B3macOS%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="解决macOS端口被占用">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T15:18:54.000Z">2019-12-26</time></div>
-                    <a href="/2019/12/26/%E8%A7%A3%E5%86%B3macOS%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">解决macOS端口被占用</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/mac-OS/">mac OS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2037,7 +2038,7 @@ var _hmt = _hmt || [];
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -2758,6 +2759,13 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/windows/">
                         <span class="tag">windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/xml/">
+                        <span class="tag">xml</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
