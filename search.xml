@@ -371,7 +371,7 @@
         <category>mac OS</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -609,10 +609,13 @@
   <entry>
     <title><![CDATA[卸载 JDK for Mac]]></title>
     <url>%2F2017%2F08%2F18%2F%E5%8D%B8%E8%BD%BD-JDK-for-Mac%2F</url>
-    <content type="text"><![CDATA[由于 Unifi 事件，根据官网提供的文档，怀疑是 JDK 版本过高导致。那么就需要卸载新版本 Java。Oracle 官方提供的了解决方案。 本文适用于: *平台: *Macintosh OS X *Java 版本: *7.0, 8.0 使用终端卸载 Oracle Java注：要卸载 Java，必须具有管理员权限，并且必须以 root 用户身份或者使用 sudo 工具来执行删除命令。按照下面所示，删除一个目录和一个文件（符号链接）：单击位于停靠栏中的 Finder 图标单击实用程序文件夹双击终端图标在“终端”窗口中，复制和粘贴命令： 123sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.pluginsudo rm -fr /Library/PreferencesPanes/JavaControlPanel.prefPanesudo rm -fr ~/Library/Application\ Support/Java 请勿尝试通过从 /usr/bin 删除 Java 工具来卸载 Java。此目录是系统软件的一部分，下次对操作系统执行更新时，Apple 会重置所有更改。]]></content>
+    <content type="text"><![CDATA[由于 Unifi 事件，根据官网提供的文档，怀疑是 JDK 版本过高导致。那么就需要卸载新版本 Java。Oracle 官方提供的了解决方案。 本文适用于: *平台: * macOS *Java 版本: * 7.0, 8.0 使用终端卸载 Oracle Java注：要卸载 Java，必须具有管理员权限，并且必须以 root 用户身份或者使用 sudo 工具来执行删除命令。按照下面所示，删除一个目录和一个文件（符号链接）：单击位于停靠栏中的 Finder 图标单击实用程序文件夹双击终端图标在“终端”窗口中，复制和粘贴命令： 123sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.pluginsudo rm -fr /Library/PreferencesPanes/JavaControlPanel.prefPanesudo rm -fr ~/Library/Application\ Support/Java 请勿尝试通过从 /usr/bin 删除 Java 工具来卸载 Java。此目录是系统软件的一部分，下次对操作系统执行更新时，Apple 会重置所有更改。]]></content>
       <categories>
         <category>Java</category>
       </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[重置 MacBook 的网卡]]></title>
