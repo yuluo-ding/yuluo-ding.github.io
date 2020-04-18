@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python 创建XML文件]]></title>
+    <url>%2F2020%2F04%2F18%2FPython%E5%88%9B%E5%BB%BAXML%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[​ 可扩展标记语言（英语：Extensible Markup Language，简称：XML）是一种标记语言。标记指计算机所能理解的信息符号，通过此种标记，计算机之间可以处理包含各种信息的文章等。如何定义这些标记，既可以选择国际通用的标记语言，比如HTML，也可以使用像XML这样由相关人士自由决定的标记语言，这就是语言的可扩展性。XML是从标准通用标记语言（SGML）中简化修改出来的。它主要用到的有可扩展标记语言、可扩展样式语言（XSL）、XBRL和XPath等。 ​ Python 也可以创建XML格式的文件，并且有以下集中方法。 创建的方法一： 1234567891011121314151617from xml.etree import ElementTree as ET# 创建根节点root = ET.Element("fm")# 创建第一个节点s1 = root.makeelement('s', &#123;'name': 'g1'&#125;)# 创建第二个节点s2 = root.makeelement('s', &#123;"name": 'g2'&#125;)# 在第一个节点创建两个子节点ss1 = s1.makeelement('ss', &#123;'name': 'g11'&#125;)ss2 = s1.makeelement('ss', &#123;'name': 'g12'&#125;)s1.append(ss1)s1.append(ss2)# 把子节点添加到根节点中root.append(s1)root.append(s1)tree = ET.ElementTree(root)tree.write('oooo.xml', encoding='utf-8', short_empty_elements=False) 创建的方法二： 1234567891011121314from xml.etree import ElementTree as ET# 创建根节点root = ET.Element("fm")# 创建第一个节点s1 = ET.SubElement(root, "s", attrib=&#123;'name': 'g1'&#125;)# 创建第二个节点s2 = ET.SubElement(root, "s", attrib=&#123;"name": "g2"&#125;)# 在第一个节点中创建两个子节点ss1 = ET.SubElement(s1, "age", attrib=&#123;'name': 'g11'&#125;)ss1.text = 'txt'ss2 = ET.SubElement(s1, "age", attrib=&#123;'name': 'g12'&#125;)ss2.text = 'sxs'et = ET.ElementTree(root) #生成文档对象et.write("test.xml", encoding="utf-8", xml_declaration=True, short_empty_elements=False)]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>XML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python格式化xml文件]]></title>
     <url>%2F2020%2F03%2F15%2FPython%E6%A0%BC%E5%BC%8F%E5%8C%96xml%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[在使用Python构建XML文件的时候，默认是没有缩减的。 发现BeautifulSoup自带自动缩减 方法如下： 12345from bs4 import BeautifulSoupbs = BeautifulSoup(open(tmp_file), 'xml')with open(filename, 'w', encoding='utf-8') as f: f.write(bs.prettify())]]></content>

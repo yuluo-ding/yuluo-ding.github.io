@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2020-03-15T15:10:55.194Z</updated>
+  <updated>2020-04-18T15:39:41.775Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 创建XML文件</title>
+    <link href="yuluo-ding.github.io/2020/04/18/Python%E5%88%9B%E5%BB%BAXML%E6%96%87%E4%BB%B6/"/>
+    <id>yuluo-ding.github.io/2020/04/18/Python创建XML文件/</id>
+    <published>2020-04-18T15:13:28.000Z</published>
+    <updated>2020-04-18T15:39:41.775Z</updated>
+    
+    <content type="html"><![CDATA[<p>​        可扩展标记语言（英语：Extensible Markup Language，简称：XML）是一种标记语言。标记指计算机所能理解的信息符号，通过此种标记，计算机之间可以处理包含各种信息的文章等。如何定义这些标记，既可以选择国际通用的标记语言，比如HTML，也可以使用像XML这样由相关人士自由决定的标记语言，这就是语言的可扩展性。XML是从标准通用标记语言（SGML）中简化修改出来的。它主要用到的有可扩展标记语言、可扩展样式语言（XSL）、XBRL和XPath等。</p><p>​        Python 也可以创建XML格式的文件，并且有以下集中方法。</p><a id="more"></a><ol><li><p>创建的方法一：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xml.etree <span class="keyword">import</span> ElementTree <span class="keyword">as</span> ET</span><br><span class="line"><span class="comment"># 创建根节点</span></span><br><span class="line">root = ET.Element(<span class="string">"fm"</span>)</span><br><span class="line"><span class="comment"># 创建第一个节点</span></span><br><span class="line">s1 = root.makeelement(<span class="string">'s'</span>, &#123;<span class="string">'name'</span>: <span class="string">'g1'</span>&#125;)</span><br><span class="line"><span class="comment"># 创建第二个节点</span></span><br><span class="line">s2 = root.makeelement(<span class="string">'s'</span>, &#123;<span class="string">"name"</span>: <span class="string">'g2'</span>&#125;)</span><br><span class="line"><span class="comment"># 在第一个节点创建两个子节点</span></span><br><span class="line">ss1 = s1.makeelement(<span class="string">'ss'</span>, &#123;<span class="string">'name'</span>: <span class="string">'g11'</span>&#125;)</span><br><span class="line">ss2 = s1.makeelement(<span class="string">'ss'</span>, &#123;<span class="string">'name'</span>: <span class="string">'g12'</span>&#125;)</span><br><span class="line">s1.append(ss1)</span><br><span class="line">s1.append(ss2)</span><br><span class="line"><span class="comment"># 把子节点添加到根节点中</span></span><br><span class="line">root.append(s1)</span><br><span class="line">root.append(s1)</span><br><span class="line">tree = ET.ElementTree(root)</span><br><span class="line">tree.write(<span class="string">'oooo.xml'</span>, encoding=<span class="string">'utf-8'</span>, short_empty_elements=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></li><li><p>创建的方法二：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xml.etree <span class="keyword">import</span> ElementTree <span class="keyword">as</span> ET</span><br><span class="line"><span class="comment"># 创建根节点</span></span><br><span class="line">root = ET.Element(<span class="string">"fm"</span>)</span><br><span class="line"><span class="comment"># 创建第一个节点</span></span><br><span class="line">s1 = ET.SubElement(root, <span class="string">"s"</span>, attrib=&#123;<span class="string">'name'</span>: <span class="string">'g1'</span>&#125;)</span><br><span class="line"><span class="comment"># 创建第二个节点</span></span><br><span class="line">s2 = ET.SubElement(root, <span class="string">"s"</span>, attrib=&#123;<span class="string">"name"</span>: <span class="string">"g2"</span>&#125;)</span><br><span class="line"><span class="comment"># 在第一个节点中创建两个子节点</span></span><br><span class="line">ss1 = ET.SubElement(s1, <span class="string">"age"</span>, attrib=&#123;<span class="string">'name'</span>: <span class="string">'g11'</span>&#125;)</span><br><span class="line">ss1.text = <span class="string">'txt'</span></span><br><span class="line">ss2 = ET.SubElement(s1, <span class="string">"age"</span>, attrib=&#123;<span class="string">'name'</span>: <span class="string">'g12'</span>&#125;)</span><br><span class="line">ss2.text = <span class="string">'sxs'</span></span><br><span class="line">et = ET.ElementTree(root)  <span class="comment">#生成文档对象</span></span><br><span class="line">et.write(<span class="string">"test.xml"</span>, encoding=<span class="string">"utf-8"</span>, xml_declaration=<span class="literal">True</span>, short_empty_elements=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;​        可扩展标记语言（英语：Extensible Markup Language，简称：XML）是一种标记语言。标记指计算机所能理解的信息符号，通过此种标记，计算机之间可以处理包含各种信息的文章等。如何定义这些标记，既可以选择国际通用的标记语言，比如HTML，也可以使用像XML这样由相关人士自由决定的标记语言，这就是语言的可扩展性。XML是从标准通用标记语言（SGML）中简化修改出来的。它主要用到的有可扩展标记语言、可扩展样式语言（XSL）、XBRL和XPath等。&lt;/p&gt;
+&lt;p&gt;​        Python 也可以创建XML格式的文件，并且有以下集中方法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
+    
+    
+      <category term="XML" scheme="yuluo-ding.github.io/tags/XML/"/>
+    
+  </entry>
   
   <entry>
     <title>Python格式化xml文件</title>
@@ -490,31 +513,6 @@
     
     
       <category term="Linux" scheme="yuluo-ding.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>No toolchains found in the NDK toolchains folder for ABI with prefix:mips64el-linux-android</title>
-    <link href="yuluo-ding.github.io/2019/01/10/No-toolchains-found-in-the-NDK-toolchains-folder-for-ABI-with-prefix-mips64el-linux-android/"/>
-    <id>yuluo-ding.github.io/2019/01/10/No-toolchains-found-in-the-NDK-toolchains-folder-for-ABI-with-prefix-mips64el-linux-android/</id>
-    <published>2019-01-10T13:58:55.000Z</published>
-    <updated>2019-01-10T14:04:55.401Z</updated>
-    
-    <content type="html"><![CDATA[<p>在使用Android Studio编译Demo的时候, 提示<code>No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android</code>错误</p><p>这个其实是Android的SDK里面缺少一个编译工具</p><p>解决办法:</p><p>从<a href="https://developer.android.com/ndk/downloads/?hl=zh-en">NDK</a>下载对应平台的NDK</p><p>解压, 找到<code>ndk-bundle</code>成长文件夹, 找到<code>toolchains</code>下的mips类似的文件夹</p><p>最后把上面的文件夹复制到对应SDK的<code>android-sdk-&gt;ndk-bundle-&gt;toolchains</code>下面.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在使用Android Studio编译Demo的时候, 提示&lt;code&gt;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&lt;/code&gt;错误
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="yuluo-ding.github.io/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="yuluo-ding.github.io/tags/Android/"/>
     
   </entry>
   
