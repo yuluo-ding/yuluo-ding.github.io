@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2020-04-18T15:39:41.775Z</updated>
+  <updated>2020-08-10T07:38:22.893Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>原生Android 去除叉号</title>
+    <link href="yuluo-ding.github.io/2020/08/10/%E5%8E%9F%E7%94%9FAndroid-%E5%8E%BB%E9%99%A4%E5%8F%89%E5%8F%B7/"/>
+    <id>yuluo-ding.github.io/2020/08/10/原生Android-去除叉号/</id>
+    <published>2020-08-10T07:35:14.000Z</published>
+    <updated>2020-08-10T07:38:22.893Z</updated>
+    
+    <content type="html"><![CDATA[<p>Android 5.0 引入的一种检测网络是否正常连接的机制，通过 HTTP 返回的状态码是否是 204 来判断是否成功，如果访问得到了 200，那你就可能处在一个需要登录验证才能上网的环境里，比如说校园网，再比如说一些酒店提供的客户才能免费使用的 Wi-Fi（其实是通过 DNS 劫持实现的），如果连接超时（根本就连接不上）就在 Wi-Fi 图标和信号图标上加一个标志，Android 5 和 Android 6 是叹号，Android 7 改成一个叉了。只不过默认访问的是谷歌自家的验证服务器，然而 Google 是被墙掉了，导致 Android 没有办法正确评估网络。所以，系统每隔一定时间都会重新尝试连接，就在不知不觉中消耗了数据流量。更恐怖的就是 Android 认为在 Wi-Fi 下无法连接互联网，就让联网的程序通通走流量…</p><a id="more"></a><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>利用ADB直接修改命令，前提是手机开启开发者选项</p><h3 id="Android-5-0-6-0"><a href="#Android-5-0-6-0" class="headerlink" title="Android 5.0 - 6.0"></a>Android 5.0 - 6.0</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 删除地址就可以恢复默认的谷歌服务器</span></span><br><span class="line">adb shell settings delete global captive_portal_server</span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置一个可用地址</span></span><br><span class="line">adb shell settings put global captive_portal_server http://developers.google.cn/generate_204</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询当前地址</span></span><br><span class="line">adb shell settings get global captive_portal_server</span><br></pre></td></tr></table></figure><h3 id="Android-7-0-Android-10-0"><a href="#Android-7-0-Android-10-0" class="headerlink" title="Android 7.0 - Android 10.0"></a>Android 7.0 - Android 10.0</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 删除（删除默认用HTTPS）</span></span><br><span class="line">adb shell settings delete global captive_portal_https_url</span><br><span class="line">adb shell settings delete global captive_portal_http_url</span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置一个可用地址</span></span><br><span class="line">adb shell settings put global captive_portal_http_url http://developers.google.cn/generate_204</span><br><span class="line">adb shell settings put global captive_portal_https_url https://developers.google.cn/generate_204</span><br></pre></td></tr></table></figure><p>以上执行完成之后，都需要开启一下飞机模式</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Android 5.0 引入的一种检测网络是否正常连接的机制，通过 HTTP 返回的状态码是否是 204 来判断是否成功，如果访问得到了 200，那你就可能处在一个需要登录验证才能上网的环境里，比如说校园网，再比如说一些酒店提供的客户才能免费使用的 Wi-Fi（其实是通过 DNS 劫持实现的），如果连接超时（根本就连接不上）就在 Wi-Fi 图标和信号图标上加一个标志，Android 5 和 Android 6 是叹号，Android 7 改成一个叉了。只不过默认访问的是谷歌自家的验证服务器，然而 Google 是被墙掉了，导致 Android 没有办法正确评估网络。所以，系统每隔一定时间都会重新尝试连接，就在不知不觉中消耗了数据流量。更恐怖的就是 Android 认为在 Wi-Fi 下无法连接互联网，就让联网的程序通通走流量…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="yuluo-ding.github.io/categories/Android/"/>
+    
+    
+      <category term="叉号" scheme="yuluo-ding.github.io/tags/%E5%8F%89%E5%8F%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 创建XML文件</title>
@@ -488,31 +510,6 @@
     
     
       <category term="macOS" scheme="yuluo-ding.github.io/tags/macOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS 7下安装Python3.7</title>
-    <link href="yuluo-ding.github.io/2019/07/03/CentOS-7%E4%B8%8B%E5%AE%89%E8%A3%85Python3-7/"/>
-    <id>yuluo-ding.github.io/2019/07/03/CentOS-7下安装Python3-7/</id>
-    <published>2019-07-03T01:11:16.000Z</published>
-    <updated>2020-01-02T14:51:15.907Z</updated>
-    
-    <content type="html"><![CDATA[<p>CentOS 7只有默认的Python2，并没有Python3，为了不影响使用，做个安装记录。</p><h3 id="编译安装Python-3-相关的包"><a href="#编译安装Python-3-相关的包" class="headerlink" title="编译安装Python 3 相关的包"></a>编译安装Python 3 相关的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel</span><br></pre></td></tr></table></figure><p>这里面有一个包很关键<code>libffi-devel</code>，因为只有3.7才会用到这个包，如果不安装这个包的话，在 make 阶段会出现如下的报错：</p><a id="more"></a><blockquote><h1 id="ModuleNotFoundError-No-module-named-‘-ctypes’"><a href="#ModuleNotFoundError-No-module-named-‘-ctypes’" class="headerlink" title="ModuleNotFoundError: No module named ‘_ctypes’"></a>ModuleNotFoundError: No module named ‘_ctypes’</h1></blockquote><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>CentOS 默认没有<code>wget</code>，需要下载安装下，并且添加一个扩展源：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line"><span class="meta">#</span><span class="bash">运行这个命令添加epel扩展源 </span></span><br><span class="line">yum -y install epel-release</span><br></pre></td></tr></table></figure><p> 下载，解压，安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir py &amp;&amp; cd py</span><br><span class="line">wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz</span><br><span class="line">tar -zxvf Python-3.7.1.tgz </span><br><span class="line">cd Python-3.7.1</span><br><span class="line">./configure -prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure><h3 id="添加软链接"><a href="#添加软链接" class="headerlink" title="添加软链接"></a>添加软链接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">添加python3的软链接 </span></span><br><span class="line">ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3</span><br><span class="line"><span class="meta">#</span><span class="bash">添加 pip3 的软链接 </span></span><br><span class="line">ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3</span><br><span class="line"><span class="meta">#</span><span class="bash">测试是否安装成功了 </span></span><br><span class="line">python3 -V</span><br><span class="line"><span class="meta">#</span><span class="bash"> Python 3.7.1</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;CentOS 7只有默认的Python2，并没有Python3，为了不影响使用，做个安装记录。&lt;/p&gt;
-&lt;h3 id=&quot;编译安装Python-3-相关的包&quot;&gt;&lt;a href=&quot;#编译安装Python-3-相关的包&quot; class=&quot;headerlink&quot; title=&quot;编译安装Python 3 相关的包&quot;&gt;&lt;/a&gt;编译安装Python 3 相关的包&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;这里面有一个包很关键&lt;code&gt;libffi-devel&lt;/code&gt;，因为只有3.7才会用到这个包，如果不安装这个包的话，在 make 阶段会出现如下的报错：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="yuluo-ding.github.io/tags/Linux/"/>
     
   </entry>
   
