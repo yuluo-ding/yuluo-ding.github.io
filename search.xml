@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Open GApps 的不同版本]]></title>
+    <url>%2F2020%2F09%2F13%2FOpen-GApps-%E7%9A%84%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%2F</url>
+    <content type="text"><![CDATA[虽然现在刷机的人群比之前少了很多，但是由于各种原因还是需要刷机的。 其中绝大部分还是需要GMS的服务，也就有了opengapps，但是官网有各种版本，每个版本的还是有区别。 OpenGApps有几个不同的版本，super、stock、full、mini、micro、nano、pico，很多人不知道差别是什么，这里说明一下 Aroma 与 super 版所包含的 GApps 相同，但是在 Recovery 中引入了图形化界面，可以自行选择安装哪些 GApps super 包含了所有 GApps ，像韩语日语中文拼音中文注音输入法等。（请注意：如果你是用的是基于原生的 ROM ，本版本会替换相机，通讯录等等所有有关应用）。体积1G左右，如果System分区剩余空间不够，就会刷入失败。 stock 类似于 Google Pixel 出厂内置的 GApps ，相比 super 版少了其他语种的输入法以及 Google 地球等。（请注意：如果你是用的是基于原生的 ROM ，本版本会替换相机，通讯录等等所有有关应用）。体积820M~840M左右，如果System分区剩余空间不够，就会刷入失败。 full 与 stock 版所包含的内容相同，但此版本不会替换手机原本的应用。体积670~690M左右，如果System分区剩余空间不够，就会刷入失败。 mini 包含基础的 Google 服务框架，以及一些影响力较大的 GApps ，相比 full 版去掉了 Docs 等应用。体积370M~390M左右，如果System分区剩余空间不够，就会刷入失败。 micro 包含基础的 Google 服务框架和 Gmail 等常见 GApps。体积190~210M左右，如果System分区剩余空间不够，就会刷入失败。 nano 包含基础的 Google 服务框架，但不会有其他 不必要的 GApps。体积160M~180M左右，如果System分区剩余空间不够，就会刷入失败。 pico 包含最迷你的 Google 服务框架，但由于框架并非完整，部分 GApps 可能无法运行。体积110~120M左右，如果System分区剩余空间不够，就会刷入失败。 以上关于体积的描述，指的是arm64设备。第三方原生ROM的System空间会更大一点，但仍需谨慎选择Super、Stock和full版本版本。因此，选择谷歌服务包的版本不能任性，要量力而为。]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[原生Android 去除叉号]]></title>
     <url>%2F2020%2F08%2F10%2F%E5%8E%9F%E7%94%9FAndroid-%E5%8E%BB%E9%99%A4%E5%8F%89%E5%8F%B7%2F</url>
     <content type="text"><![CDATA[Android 5.0 引入的一种检测网络是否正常连接的机制，通过 HTTP 返回的状态码是否是 204 来判断是否成功，如果访问得到了 200，那你就可能处在一个需要登录验证才能上网的环境里，比如说校园网，再比如说一些酒店提供的客户才能免费使用的 Wi-Fi（其实是通过 DNS 劫持实现的），如果连接超时（根本就连接不上）就在 Wi-Fi 图标和信号图标上加一个标志，Android 5 和 Android 6 是叹号，Android 7 改成一个叉了。只不过默认访问的是谷歌自家的验证服务器，然而 Google 是被墙掉了，导致 Android 没有办法正确评估网络。所以，系统每隔一定时间都会重新尝试连接，就在不知不觉中消耗了数据流量。更恐怖的就是 Android 认为在 Wi-Fi 下无法连接互联网，就让联网的程序通通走流量… 解决办法利用ADB直接修改命令，前提是手机开启开发者选项 Android 5.0 - 6.0123456# 删除地址就可以恢复默认的谷歌服务器adb shell settings delete global captive_portal_server# 设置一个可用地址adb shell settings put global captive_portal_server http://developers.google.cn/generate_204# 查询当前地址adb shell settings get global captive_portal_server Android 7.0 - Android 10.0123456# 删除（删除默认用HTTPS）adb shell settings delete global captive_portal_https_urladb shell settings delete global captive_portal_http_url# 设置一个可用地址adb shell settings put global captive_portal_http_url http://developers.google.cn/generate_204adb shell settings put global captive_portal_https_url https://developers.google.cn/generate_204 以上执行完成之后，都需要开启一下飞机模式]]></content>

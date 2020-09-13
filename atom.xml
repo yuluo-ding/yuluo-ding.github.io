@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2020-08-10T07:38:22.893Z</updated>
+  <updated>2020-09-13T12:11:57.666Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Open GApps 的不同版本</title>
+    <link href="yuluo-ding.github.io/2020/09/13/Open-GApps-%E7%9A%84%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC/"/>
+    <id>yuluo-ding.github.io/2020/09/13/Open-GApps-的不同版本/</id>
+    <published>2020-09-13T12:02:29.000Z</published>
+    <updated>2020-09-13T12:11:57.666Z</updated>
+    
+    <content type="html"><![CDATA[<p>虽然现在刷机的人群比之前少了很多，但是由于各种原因还是需要刷机的。</p><p>其中绝大部分还是需要GMS的服务，也就有了<a href="https://opengapps.org/">opengapps</a>，但是官网有各种版本，每个版本的还是有区别。</p><a id="more"></a><p>OpenGApps有几个不同的版本，super、stock、full、mini、micro、nano、pico，很多人不知道差别是什么，这里说明一下</p><ul><li><strong>Aroma</strong></li></ul><p>与 <code>super</code> 版所包含的 GApps 相同，但是在 Recovery 中引入了图形化界面，可以自行选择安装哪些 GApps</p><ul><li><strong>super</strong></li></ul><p>包含了所有 GApps ，像韩语日语中文拼音中文注音输入法等。（请注意：如果你是用的是基于原生的 ROM ，本版本会替换相机，通讯录等等所有有关应用）。体积1G左右，如果System分区剩余空间不够，就会刷入失败。</p><ul><li><strong>stock</strong></li></ul><p>类似于 Google Pixel 出厂内置的 GApps ，相比 super 版少了其他语种的输入法以及 Google 地球等。（请注意：如果你是用的是基于原生的 ROM ，本版本会替换相机，通讯录等等所有有关应用）。体积820M~840M左右，如果System分区剩余空间不够，就会刷入失败。</p><ul><li><strong>full</strong></li></ul><p>与 stock 版所包含的内容相同，但此版本不会替换手机原本的应用。体积670~690M左右，如果System分区剩余空间不够，就会刷入失败。</p><ul><li><strong>mini</strong></li></ul><p>包含基础的 Google 服务框架，以及一些影响力较大的 GApps ，相比 full 版去掉了 Docs 等应用。体积370M~390M左右，如果System分区剩余空间不够，就会刷入失败。</p><ul><li><strong>micro</strong></li></ul><p>包含基础的 Google 服务框架和 Gmail 等常见 GApps。体积190~210M左右，如果System分区剩余空间不够，就会刷入失败。</p><ul><li><strong>nano</strong></li></ul><p>包含基础的 Google 服务框架，但不会有其他 不必要的 GApps。体积160M~180M左右，如果System分区剩余空间不够，就会刷入失败。</p><ul><li><strong>pico</strong></li></ul><p>包含最迷你的 Google 服务框架，但由于框架并非完整，部分 GApps 可能无法运行。体积110~120M左右，如果System分区剩余空间不够，就会刷入失败。</p><p>以上关于体积的描述，指的是arm64设备。第三方原生ROM的System空间会更大一点，但仍需谨慎选择Super、Stock和full版本版本。因此，选择谷歌服务包的版本不能任性，要量力而为。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽然现在刷机的人群比之前少了很多，但是由于各种原因还是需要刷机的。&lt;/p&gt;
+&lt;p&gt;其中绝大部分还是需要GMS的服务，也就有了&lt;a href=&quot;https://opengapps.org/&quot;&gt;opengapps&lt;/a&gt;，但是官网有各种版本，每个版本的还是有区别。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="yuluo-ding.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="yuluo-ding.github.io/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>原生Android 去除叉号</title>
@@ -485,31 +508,6 @@
     
     
       <category term="Python" scheme="yuluo-ding.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决macOS声音的问题</title>
-    <link href="yuluo-ding.github.io/2019/07/18/%E8%A7%A3%E5%86%B3macOS%E5%A3%B0%E9%9F%B3%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>yuluo-ding.github.io/2019/07/18/解决macOS声音的问题/</id>
-    <published>2019-07-18T14:50:47.000Z</published>
-    <updated>2019-12-25T07:16:31.700Z</updated>
-    
-    <content type="html"><![CDATA[<p>macOS系统有时会莫名其妙无法工作，在新添音频设备、唤醒或者更新操作系统后，都可能会遇到音频错误。</p><p>在调整了音量大小或者静音无法解决之后，按照如下步骤尝试，应该可以解决。</p><h3 id="检查硬件"><a href="#检查硬件" class="headerlink" title="检查硬件"></a>检查硬件</h3><p>确保系统没有静音，以及声音出问题之前没遇到磕碰之类的。</p><h3 id="选择正确音频"><a href="#选择正确音频" class="headerlink" title="选择正确音频"></a>选择正确音频</h3><a id="more"></a><p>插入耳机之后听不到耳机，可能是新音频设备时选择了错误的输出设备。、</p><p>System Preferences ——&gt; Sound ——&gt; Output</p><p>选择正确的输出设备，尝试切换之后再重新选择正确的输出设备。</p><h3 id="重置音频核心"><a href="#重置音频核心" class="headerlink" title="重置音频核心"></a>重置音频核心</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo killall coreaudiod</span><br></pre></td></tr></table></figure><h3 id="重启大法"><a href="#重启大法" class="headerlink" title="重启大法"></a>重启大法</h3><p>直接<strong>重启</strong>电脑，然后尝试听声音。</p><h3 id="重置Mac上的NVRAM或PRAM"><a href="#重置Mac上的NVRAM或PRAM" class="headerlink" title="重置Mac上的NVRAM或PRAM"></a>重置Mac上的NVRAM或PRAM</h3><p>这个方法是Apple官方的案例，<a href="https://support.apple.com/zh-cn/HT204063">重置Mac上的NVRAM</a></p><p>以上几种方法如果还是不能解决，那就判断是不是需要去售后做一个检测了。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;macOS系统有时会莫名其妙无法工作，在新添音频设备、唤醒或者更新操作系统后，都可能会遇到音频错误。&lt;/p&gt;
-&lt;p&gt;在调整了音量大小或者静音无法解决之后，按照如下步骤尝试，应该可以解决。&lt;/p&gt;
-&lt;h3 id=&quot;检查硬件&quot;&gt;&lt;a href=&quot;#检查硬件&quot; class=&quot;headerlink&quot; title=&quot;检查硬件&quot;&gt;&lt;/a&gt;检查硬件&lt;/h3&gt;&lt;p&gt;确保系统没有静音，以及声音出问题之前没遇到磕碰之类的。&lt;/p&gt;
-&lt;h3 id=&quot;选择正确音频&quot;&gt;&lt;a href=&quot;#选择正确音频&quot; class=&quot;headerlink&quot; title=&quot;选择正确音频&quot;&gt;&lt;/a&gt;选择正确音频&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="Apple" scheme="yuluo-ding.github.io/categories/Apple/"/>
-    
-    
-      <category term="macOS" scheme="yuluo-ding.github.io/tags/macOS/"/>
     
   </entry>
   
