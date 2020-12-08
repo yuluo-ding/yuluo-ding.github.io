@@ -551,7 +551,7 @@
   <entry>
     <title><![CDATA[Linux 下安装 zsh]]></title>
     <url>%2F2017%2F10%2F19%2FLinux-%E4%B8%8B%E5%AE%89%E8%A3%85-zsh%2F</url>
-    <content type="text"><![CDATA[Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。 安装更新过程： 1. 安装 zsh 软件包和 git12CentOS： yum -y install zsh gitUbuntu: sudo apt -y install zsh git 2. 克隆 oh-my-zsh1$ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 3. 复制 .zshrc，修改命令提示符样式12$ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrcZSH_THEME="ys" 4. 修改 shell 类型1$ chsh -s /bin/zsh 5. 更新 oh-my-zsh 1$ upgrade_oh_my_zsh 6. 如果要换 oh-my-fish 123$ uninstall_oh_my_zsh$ brew install fish$ curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.sh | sh]]></content>
+    <content type="text"><![CDATA[Zsh 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进。 安装更新过程： 1. 安装 zsh 软件包和 git12CentOS： yum -y install zsh gitUbuntu: sudo apt -y install zsh git 2. 克隆 oh-my-zsh1$ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 3. 复制 .zshrc，修改命令提示符样式12$ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrcZSH_THEME=&quot;ys&quot; 4. 修改 shell 类型1$ chsh -s /bin/zsh 5. 更新 oh-my-zsh 1$ omz update 6. 如果要换 oh-my-fish 123$ uninstall_oh_my_zsh$ brew install fish$ curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.sh | sh]]></content>
       <categories>
         <category>Linux</category>
       </categories>
