@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2020-09-13T12:11:57.666Z</updated>
+  <updated>2020-12-08T09:40:46.828Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决ln -s 软链接的提示错误</title>
+    <link href="yuluo-ding.github.io/2020/12/08/%E8%A7%A3%E5%86%B3ln-s-%E8%BD%AF%E9%93%BE%E6%8E%A5%E7%9A%84%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF/"/>
+    <id>yuluo-ding.github.io/2020/12/08/解决ln-s-软链接的提示错误/</id>
+    <published>2020-12-08T09:38:51.000Z</published>
+    <updated>2020-12-08T09:40:46.828Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用<code>ln -s</code>的时候，会提示<code>Too many levels of symbolic links</code>，</p><p>这个一般是由于使用的是相对路径，改成绝对路径即可：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/nginx/sites-available/default //etc/nginx/sites-enabled</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用&lt;code&gt;ln -s&lt;/code&gt;的时候，会提示&lt;code&gt;Too many levels of symbolic links&lt;/code&gt;，&lt;/p&gt;
+&lt;p&gt;这个一般是由于使用的是相对路径，改成绝对路径即可：&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ln -s /etc/nginx/sites-available/default //etc/nginx/sites-enabled&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="yuluo-ding.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Open GApps 的不同版本</title>
@@ -486,28 +510,6 @@
     
     
       <category term="Google Play" scheme="yuluo-ding.github.io/tags/Google-Play/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 字符串和常用数据结构</title>
-    <link href="yuluo-ding.github.io/2019/07/29/Python-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>yuluo-ding.github.io/2019/07/29/Python-字符串和常用数据结构/</id>
-    <published>2019-07-29T14:31:18.000Z</published>
-    <updated>2019-12-25T07:16:11.154Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/07.%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md">Python中常用的字符串：</a></p><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    str1 = <span class="string">'hello, world!'</span></span><br><span class="line">    <span class="comment"># 通过len函数计算字符串的长度</span></span><br><span class="line">    print(len(str1))  <span class="comment"># 13</span></span><br><span class="line">    <span class="comment"># 获得字符串首字母大写的拷贝</span></span><br><span class="line">    print(str1.capitalize())  <span class="comment"># Hello, world!</span></span><br><span class="line">    <span class="comment"># 获得字符串变大写后的拷贝</span></span><br><span class="line">    print(str1.upper())  <span class="comment"># HELLO, WORLD!</span></span><br><span class="line">    <span class="comment"># 从字符串中查找子串所在位置</span></span><br><span class="line">    print(str1.find(<span class="string">'or'</span>))  <span class="comment"># 8</span></span><br><span class="line">    print(str1.find(<span class="string">'shit'</span>))  <span class="comment"># -1</span></span><br><span class="line">    <span class="comment"># 与find类似但找不到子串时会引发异常</span></span><br><span class="line">    <span class="comment"># print(str1.index('or'))</span></span><br><span class="line">    <span class="comment"># print(str1.index('shit'))</span></span><br><span class="line">    <span class="comment"># 检查字符串是否以指定的字符串开头</span></span><br><span class="line">    print(str1.startswith(<span class="string">'He'</span>))  <span class="comment"># False</span></span><br><span class="line">    print(str1.startswith(<span class="string">'hel'</span>))  <span class="comment"># True</span></span><br><span class="line">    <span class="comment"># 检查字符串是否以指定的字符串结尾</span></span><br><span class="line">    print(str1.endswith(<span class="string">'!'</span>))  <span class="comment"># True</span></span><br><span class="line">    <span class="comment"># 将字符串以指定的宽度居中并在两侧填充指定的字符</span></span><br><span class="line">    print(str1.center(<span class="number">50</span>, <span class="string">'*'</span>))</span><br><span class="line">    <span class="comment"># 将字符串以指定的宽度靠右放置左侧填充指定的字符</span></span><br><span class="line">    print(str1.rjust(<span class="number">50</span>, <span class="string">' '</span>))</span><br><span class="line">    str2 = <span class="string">'abc123456'</span></span><br><span class="line">    <span class="comment"># 从字符串中取出指定位置的字符(下标运算)</span></span><br><span class="line">    print(str2[<span class="number">2</span>])  <span class="comment"># c</span></span><br><span class="line">    <span class="comment"># 字符串切片(从指定的开始索引到指定的结束索引)</span></span><br><span class="line">    print(str2[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># c12</span></span><br><span class="line">    print(str2[<span class="number">2</span>:])  <span class="comment"># c123456</span></span><br><span class="line">    print(str2[<span class="number">2</span>::<span class="number">2</span>])  <span class="comment"># c246</span></span><br><span class="line">    print(str2[::<span class="number">2</span>])  <span class="comment"># ac246</span></span><br><span class="line">    print(str2[::<span class="number">-1</span>])  <span class="comment"># 654321cba</span></span><br><span class="line">    print(str2[<span class="number">-3</span>:<span class="number">-1</span>])  <span class="comment"># 45</span></span><br><span class="line">    <span class="comment"># 检查字符串是否由数字构成</span></span><br><span class="line">    print(str2.isdigit())  <span class="comment"># False</span></span><br><span class="line">    <span class="comment"># 检查字符串是否以字母构成</span></span><br><span class="line">    print(str2.isalpha())  <span class="comment"># False</span></span><br><span class="line">    <span class="comment"># 检查字符串是否以数字和字母构成</span></span><br><span class="line">    print(str2.isalnum())  <span class="comment"># True</span></span><br><span class="line">    str3 = <span class="string">'  jackfrued@126.com '</span></span><br><span class="line">    print(str3)</span><br><span class="line">    <span class="comment"># 获得字符串修剪左右两侧空格的拷贝</span></span><br><span class="line">    print(str3.strip())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/07.%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md&quot;&gt;Python中常用的字符串：&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="yuluo-ding.github.io/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="yuluo-ding.github.io/tags/Python/"/>
     
   </entry>
   
