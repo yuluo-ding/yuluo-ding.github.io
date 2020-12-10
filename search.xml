@@ -201,7 +201,7 @@
   <entry>
     <title><![CDATA[在Android Pie中安装Xposed]]></title>
     <url>%2F2019%2F09%2F10%2F%E5%9C%A8Android-Pie%E4%B8%AD%E5%AE%89%E8%A3%85Xposed%2F</url>
-    <content type="text"><![CDATA[如今重新命名的Android 10都已经发布了，但是针对Android Pie的Xpsoed官方版还是没有发布，据说作者去Apple工作去了？但是开源社区的好处就是有人能够实现同样的效果。 这个是Elder Driver开发的非官方端口，Xposed for Android Pie。它被命名为EDXposed， 还需要额外安装Riru Core，具体步骤如下。 下载 Riru Core压缩包，放入手机 下载 EdXposed压缩包，可以选择YAHFA，放入手机 下载 XposedInstaller的apk，并且安装 PS：由于Magisk的官方没有合并一些PR，导致需要使用第三方的Magisk，下载并且在Recovery中刷入系统。 打开Magisk manager， 打开多功能菜单，选择模块，然后点击添加按钮，分别刷入上文下载的两个压缩包。 重启手机激活以上两个模块，然后打开EdXposed Manager，看到已经激活了。 如果没有，请卸载，重新尝试以上步骤。]]></content>
+    <content type="text"><![CDATA[如今重新命名的Android 10都已经发布了，但是针对Android Pie的Xpsoed官方版还是没有发布，据说作者去Apple工作去了？但是开源社区的好处就是有人能够实现同样的效果。 这个是Elder Driver开发的非官方端口，Xposed for Android Pie。它被命名为EDXposed， 还需要额外安装Riru Core，具体步骤如下。 下载 Riru Core压缩包，放入手机 下载 EdXposed压缩包，可以选择YAHFA，放入手机 下载 EdXposedManager的apk，并且安装 打开Magisk manager， 打开多功能菜单，选择模块，然后点击添加按钮，分别刷入上文下载的两个压缩包。 重启手机激活以上两个模块，然后打开EdXposed Manager，看到已经激活了。 如果没有，请卸载，重新尝试以上步骤。]]></content>
       <categories>
         <category>Android</category>
       </categories>
