@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2020-12-16T09:39:38.666Z</updated>
+  <updated>2021-02-19T01:29:41.480Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>macOS 虚拟桌面黑屏</title>
+    <link href="yuluo-ding.github.io/2021/02/19/macOS-%E8%99%9A%E6%8B%9F%E6%A1%8C%E9%9D%A2%E9%BB%91%E5%B1%8F/"/>
+    <id>yuluo-ding.github.io/2021/02/19/macOS-虚拟桌面黑屏/</id>
+    <published>2021-02-19T01:22:42.000Z</published>
+    <updated>2021-02-19T01:29:41.480Z</updated>
+    
+    <content type="html"><![CDATA[<p>有几次出现如图的情况，以为是iTerm的问题，但是在关闭软件，重启之后，依旧无效。</p><p><img src="https://i.loli.net/2021/02/19/gUQyNMsmko3ZPAp.jpg" alt="gUQyNMsmko3ZPAp"></p><p>后面经过网友告知，才知道是虚拟桌面的问题。</p><p>为了清理这个问题，有以下两种方法</p><a id="more"></a><ol><li><p>在终端输入以下命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm ~/Library/Preferences/com.apple.spaces.plist</span><br><span class="line">sudo restart </span><br></pre></td></tr></table></figure></li><li><p>重置Dock初始状态</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo rm ~/Library/Preferences/com.apple.spaces.plist</span><br><span class="line">sudo rm ~/Library/Preferences/com.apple.dock.plist</span><br><span class="line">sudo restart </span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有几次出现如图的情况，以为是iTerm的问题，但是在关闭软件，重启之后，依旧无效。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/02/19/gUQyNMsmko3ZPAp.jpg&quot; alt=&quot;gUQyNMsmko3ZPAp&quot;&gt;&lt;/p&gt;
+&lt;p&gt;后面经过网友告知，才知道是虚拟桌面的问题。&lt;/p&gt;
+&lt;p&gt;为了清理这个问题，有以下两种方法&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="macOS" scheme="yuluo-ding.github.io/categories/macOS/"/>
+    
+    
+      <category term="macOS" scheme="yuluo-ding.github.io/tags/macOS/"/>
+    
+  </entry>
   
   <entry>
     <title>在Debian上使用UFW</title>
@@ -482,29 +507,6 @@
     
     
       <category term="Chrome" scheme="yuluo-ding.github.io/tags/Chrome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在Android Pie中安装Xposed</title>
-    <link href="yuluo-ding.github.io/2019/09/10/%E5%9C%A8Android-Pie%E4%B8%AD%E5%AE%89%E8%A3%85Xposed/"/>
-    <id>yuluo-ding.github.io/2019/09/10/在Android-Pie中安装Xposed/</id>
-    <published>2019-09-10T05:58:06.000Z</published>
-    <updated>2020-12-10T03:08:46.571Z</updated>
-    
-    <content type="html"><![CDATA[<p>如今重新命名的Android 10都已经发布了，但是针对Android Pie的Xpsoed官方版还是没有发布，据说作者去Apple工作去了？但是开源社区的好处就是有人能够实现同样的效果。</p><p>这个是Elder Driver开发的非官方端口，Xposed for Android Pie。它被命名为<code>EDXposed</code>， 还需要额外安装<code>Riru Core</code>，具体步骤如下。</p><a id="more"></a><ul><li>下载 <a href="https://github.com/RikkaApps/Riru/releases">Riru Core</a>压缩包，放入手机</li><li>下载 <a href="https://github.com/ElderDrivers/EdXposed/releases">EdXposed</a>压缩包，可以选择YAHFA，放入手机</li><li>下载 <a href="https://github.com/ElderDrivers/EdXposedManager/releases">EdXposedManager</a>的apk，并且安装</li></ul><p>打开<code>Magisk manager</code>， 打开多功能菜单，选择模块，然后点击添加按钮，分别刷入上文下载的两个压缩包。</p><p>重启手机激活以上两个模块，然后打开<code>EdXposed Manager</code>，看到已经激活了。</p><p>如果没有，请卸载，重新尝试以上步骤。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如今重新命名的Android 10都已经发布了，但是针对Android Pie的Xpsoed官方版还是没有发布，据说作者去Apple工作去了？但是开源社区的好处就是有人能够实现同样的效果。&lt;/p&gt;
-&lt;p&gt;这个是Elder Driver开发的非官方端口，Xposed for Android Pie。它被命名为&lt;code&gt;EDXposed&lt;/code&gt;， 还需要额外安装&lt;code&gt;Riru Core&lt;/code&gt;，具体步骤如下。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="yuluo-ding.github.io/categories/Android/"/>
-    
-    
-      <category term="Xposed" scheme="yuluo-ding.github.io/tags/Xposed/"/>
     
   </entry>
   

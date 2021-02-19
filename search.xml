@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>macOS 虚拟桌面黑屏</title>
+      <link href="/2021/02/19/macOS-%E8%99%9A%E6%8B%9F%E6%A1%8C%E9%9D%A2%E9%BB%91%E5%B1%8F/"/>
+      <url>/2021/02/19/macOS-%E8%99%9A%E6%8B%9F%E6%A1%8C%E9%9D%A2%E9%BB%91%E5%B1%8F/</url>
+      <content type="html"><![CDATA[<p>有几次出现如图的情况，以为是iTerm的问题，但是在关闭软件，重启之后，依旧无效。</p><p><img src="https://i.loli.net/2021/02/19/gUQyNMsmko3ZPAp.jpg" alt="gUQyNMsmko3ZPAp"></p><p>后面经过网友告知，才知道是虚拟桌面的问题。</p><p>为了清理这个问题，有以下两种方法</p><a id="more"></a><ol><li><p>在终端输入以下命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm ~/Library/Preferences/com.apple.spaces.plist</span><br><span class="line">sudo restart </span><br></pre></td></tr></table></figure></li><li><p>重置Dock初始状态</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo rm ~/Library/Preferences/com.apple.spaces.plist</span><br><span class="line">sudo rm ~/Library/Preferences/com.apple.dock.plist</span><br><span class="line">sudo restart </span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      <categories>
+          
+          <category> macOS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> macOS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>在Debian上使用UFW</title>
       <link href="/2020/12/16/%E5%9C%A8Debian%E4%B8%8A%E4%BD%BF%E7%94%A8UFW/"/>
       <url>/2020/12/16/%E5%9C%A8Debian%E4%B8%8A%E4%BD%BF%E7%94%A8UFW/</url>
