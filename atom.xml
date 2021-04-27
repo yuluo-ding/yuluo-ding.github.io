@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yuluo-ding.github.io/"/>
-  <updated>2021-02-19T01:29:41.480Z</updated>
+  <updated>2021-04-26T07:21:35.960Z</updated>
   <id>yuluo-ding.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>macOS 备份提速</title>
+    <link href="yuluo-ding.github.io/2021/04/26/mac-OS-%E5%A4%87%E4%BB%BD%E6%8F%90%E9%80%9F/"/>
+    <id>yuluo-ding.github.io/2021/04/26/mac-OS-备份提速/</id>
+    <published>2021-04-26T07:13:21.000Z</published>
+    <updated>2021-04-26T07:21:35.960Z</updated>
+    
+    <content type="html"><![CDATA[<p>macOS的Time Machine是 Mac 上最方便的备份工具了，免费和无缝备份。</p><p>然而使用Time Machine备份系统资料时，发现备份速度非常慢，跟本地的网络也不匹配，甚至有时花费超过 48 小时都无法完成，即便接了网线、关掉所有 APP 后，备份速度都没有明显提升。</p><p> macOS 本身对其进行了限流的措施，对硬盘读写的频率和内存使用都做了一定的限制，主要是为了防止在备份期间影响了用户正常使用电脑工作。</p><a id="more"></a><p>macOS 的Time Machine备份加速命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl debug.lowpri_throttle_enabled=0</span><br></pre></td></tr></table></figure><p>如果觉得影响了资源，可以使用以下命令进行恢复限制</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl debug.lowpri_throttle_enabled=1</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;macOS的Time Machine是 Mac 上最方便的备份工具了，免费和无缝备份。&lt;/p&gt;
+&lt;p&gt;然而使用Time Machine备份系统资料时，发现备份速度非常慢，跟本地的网络也不匹配，甚至有时花费超过 48 小时都无法完成，即便接了网线、关掉所有 APP 后，备份速度都没有明显提升。&lt;/p&gt;
+&lt;p&gt; macOS 本身对其进行了限流的措施，对硬盘读写的频率和内存使用都做了一定的限制，主要是为了防止在备份期间影响了用户正常使用电脑工作。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="macOS" scheme="yuluo-ding.github.io/categories/macOS/"/>
+    
+    
+      <category term="macOS" scheme="yuluo-ding.github.io/tags/macOS/"/>
+    
+  </entry>
   
   <entry>
     <title>macOS 虚拟桌面黑屏</title>
@@ -479,34 +503,6 @@
     
     
       <category term="Linux" scheme="yuluo-ding.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>让Chrome显示www和https</title>
-    <link href="yuluo-ding.github.io/2019/09/23/%E8%AE%A9Chrome%E6%98%BE%E7%A4%BAwww%E5%92%8Chttps/"/>
-    <id>yuluo-ding.github.io/2019/09/23/让Chrome显示www和https/</id>
-    <published>2019-09-23T02:42:29.000Z</published>
-    <updated>2019-09-23T02:46:42.385Z</updated>
-    
-    <content type="html"><![CDATA[<p>新版的Chrome 77又把<code>www</code>和<code>https</code>给隐藏了，日常搞事啊，恢复显示的步骤如下</p><p>在浏览器的地址栏输入以下两个命令：</p><ol><li><code>chrome://flags/#omnibox-ui-hide-steady-state-url-scheme</code>，然后选择disabled</li><li><code>chrome://flags/#omnibox-ui-hide-steady-state-url-trivial-subdomains</code>，然后选择disabled</li><li>重启Chrome浏览器</li></ol><p>重新打开网站，应该就能恢复了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;新版的Chrome 77又把&lt;code&gt;www&lt;/code&gt;和&lt;code&gt;https&lt;/code&gt;给隐藏了，日常搞事啊，恢复显示的步骤如下&lt;/p&gt;
-&lt;p&gt;在浏览器的地址栏输入以下两个命令：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;chrome://flags/#omnibox
-      
-    
-    </summary>
-    
-      <category term="Google" scheme="yuluo-ding.github.io/categories/Google/"/>
-    
-    
-      <category term="Chrome" scheme="yuluo-ding.github.io/tags/Chrome/"/>
     
   </entry>
   
